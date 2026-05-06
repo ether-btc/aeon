@@ -140,6 +140,11 @@ skills:
   smithery-manifest: { enabled: false, schedule: "0 6 1/7 * *", model: "claude-sonnet-4-6" } # weekly — refresh docs/smithery-manifest.json + smithery.yaml + smithery-submission.md from skills.json + aeon-mcp; PR + notify only on diff
   show-hn-draft: { enabled: false, schedule: "workflow_dispatch", var: "" } # one-shot — draft Show HN post + r/MachineLearning + r/selfhosted variants from live repo state, ready for the operator to paste at launch time. Set var to one of {show-hn, r/MachineLearning, r/selfhosted} to regenerate that single variant.
 
+  # --- GitHub filing workflow (upstream PR/issue tracking) ---
+  github-upstream-tracker: { enabled: true, schedule: "*/30 * * * *" } # sync filed upstream PRs against live GH state every 30min
+  github-filing-registry: { enabled: false, schedule: "workflow_dispatch" } # on-demand — add/status/triage/sync/log filing registry
+  gh-filing-standards:    { enabled: false, schedule: "workflow_dispatch" } # on-demand — pre-filing evidence gate (Tier 0-3)
+
   # --- Utilities ---
   auto-workflow: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — var: URL to analyze
   onboard: { enabled: false, schedule: "workflow_dispatch", var: "" } # one-shot setup validator — checks secrets/workflows/memory writability and notifies a checklist with fix commands; pair with ./onboard CLI
