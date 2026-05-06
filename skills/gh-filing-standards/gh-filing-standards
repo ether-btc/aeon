@@ -1,0 +1,153 @@
+#!/usr/bin/env bash
+# gh-filing-standards — pre-filing evidence gate
+# Usage: ./gh-filing-standards {check|verify-file|format-issue} [args]
+set -euo pipefail
+
+AEON_ROOT="${AEON_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
+GH="gh api"
+
+err() { echo "GATE_FAIL: $*" >&2; exit 1; }
+
+cmd_check() {
+  local target="" tier="" title="" stack_trace="" file_line="" test_case="" dual_confirm=""
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --tier)          tier="$2";        shift 2 ;;
+      --title)         title="$2";        shift 2 ;;
+      --stack-trace)   stack_trace="$2";  shift 2 ;;
+      --file-line)     file_line="$2";    shift 2 ;;
+      --test-case)     test_case="$2";    shift 2 ;;
+      --dual-confirm)  dual_confirm="$2";  shift 2 ;;
+      *)
+        [[ "$target" == "" ]] && target="$1" || { echo "Unknown arg: $1" >&2; exit 1; }
+        shift ;;
+    esac
+  done
+
+  [[ -z "$tier" ]]    && err "missing --tier"
+  [[ -z "$title" ]]   && err "missing --title"
+
+  # Parse owner/repo#N
+  local owner repo number
+  owner=$(echo "$target" | cut -d'/' -f1)
+  repo=$(echo "$target" | cut -d'/' -f2 | cut -d'#' -f1)
+  number=$(echo "$target" | cut -d'#' -f2 2>/dev/null || echo "")
+
+  # 1. Reachability check
+  if [[ -n "$number" ]]; then
+    if ! $GH "repos/$owner/$repo/issues/$number" --jq '.number' &>/dev/null; then
+      err "TARGET_NOT_FOUND: $owner/$repo#$number"
+    fi
+  fi
+
+  # 2. Duplicate check via filing-registry
+  if [[ -x "$AEON_ROOT/skills/github-filing-registry/filing-registry" ]]; then
+    local dup_output
+    dup_output=$("$AEON_ROOT/skills/github-filing-registry/filing-registry" \
+      check-duplicate "$target" --title "$title" 2>&1) || true
+    if echo "$dup_output" | grep -q "^DUPLICATE_ID\|^POSSIBLE_DUPLICATE"; then
+      echo "$dup_output"
+      err "DUPLICATE_FOUND: see above"
+    fi
+  fi
+
+  # 3. Tier-specific checks
+  case "$tier" in
+    0)  echo "GATE_PASS: tier_0 — verified fact, no evidence required" ;;
+    1)
+      [[ -z "$dual_confirm" ]] && err "tier_1_requires_dual_confirmation: provide --dual-confirm"
+      echo "GATE_PASS: tier_1 — dual confirmation provided"
+      ;;
+    2)
+      local has_proof=false
+      [[ -n "$stack_trace" ]] && has_proof=true
+      [[ -n "$file_line" ]]   && has_proof=true
+      [[ -n "$test_case" ]]   && has_proof=true
+      [[ "$has_proof" == "false" ]] && err "tier_2_requires_evidence: provide --stack-trace, --file-line, or --test-case"
+      echo "GATE_PASS: tier_2 — evidence provided"
+      ;;
+    3)
+      echo "GATE_PASS: tier_3 — fix demonstrated (submitter responsible for linking fix PR)"
+      ;;
+    *)  err "unknown_tier: $tier (must be 0|1|2|3)" ;;
+  esac
+}
+
+cmd_verify_file() {
+  local repo="" file="" line="" expected=""
+  repo="$1"; shift
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --line)     line="$2";     shift 2 ;;
+      --expected) expected="$2"; shift 2 ;;
+      *)          file="$1";      shift ;;
+    esac
+  done
+
+  [[ -z "$repo" || -z "$file" ]] && { echo "Usage: verify-file owner/repo FILE [--line N --expected TEXT]" >&2; exit 1; }
+
+  local content
+  content=$($GH "repos/$repo/contents/$file" --jq '.content' 2>/dev/null | base64 -d) || \
+    err "FILE_NOT_FOUND: $repo/$file"
+
+  if [[ -n "$line" && -n "$expected" ]]; then
+    local line_content
+    line_content=$(echo "$content" | sed -n "${line}p" 2>/dev/null) || err "LINE_OUT_OF_BOUNDS: $line"
+    if ! echo "$line_content" | grep -qF "$expected"; then
+      err "LINE_MISMATCH: expected '$expected' at line $line, got: $line_content"
+    fi
+    echo "VERIFY_OK: $repo/$file:$line contains '$expected'"
+  else
+    echo "FILE_FOUND: $repo/$file ($(echo "$content" | wc -l) lines)"
+  fi
+}
+
+cmd_format_issue() {
+  local title="" tier="" evidence="" cited=""
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --title)   title="$2";   shift 2 ;;
+      --tier)    tier="$2";    shift 2 ;;
+      --evidence) evidence="$2"; shift 2 ;;
+      --cited)   cited="$2";   shift 2 ;;
+      *)         echo "Unknown: $1" >&2; exit 1 ;;
+    esac
+  done
+
+  local tier_label
+  case "$tier" in
+    0) tier_label="Tier 0 — Already-Verified Fact" ;;
+    1) tier_label="Tier 1 — Inferred Claim (UNVERIFIED)" ;;
+    2) tier_label="Tier 2 — Runtime-Confirmed" ;;
+    3) tier_label="Tier 3 — Fix Demonstrated" ;;
+    *) tier_label="Tier $tier" ;;
+  esac
+
+  cat << EOF
+## Summary
+
+$title
+
+## Evidence
+
+**Tier:** $tier_label
+
+**What:** $evidence
+
+$(if [[ -n "$cited" ]]; then echo "**Cited from:** $cited"; fi)
+
+---
+
+*Filed by Aeon (https://github.com/aaronjmars/aeon) — autonomous filing agent*
+EOF
+}
+
+CMD="${1:-}"; shift || true
+case "$CMD" in
+  check)          cmd_check "$@" ;;
+  verify-file)    cmd_verify_file "$@" ;;
+  format-issue)   cmd_format_issue "$@" ;;
+  *) echo "Usage: gh-filing-standards {check|verify-file|format-issue}" >&2; exit 1 ;;
+esac
