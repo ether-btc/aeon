@@ -3,8 +3,8 @@
 # Usage: ./filing-registry {add|status|triage|sync|log|check-duplicate} [args]
 set -euo pipefail
 
-AEON_ROOT="${AEON_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
-REGISTRY="$AEON_ROOT/memory/filing-registry.json"
+AEON_ROOT="${AEON_ROOT:-$(cd "$(dirname "$0")/../.." && pwd)}"
+REGISTRY="${REGISTRY:-$AEON_ROOT/memory/filing-registry.json}"
 TODAY=$(date -u +%Y-%m-%d)
 NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 mkdir -p "$AEON_ROOT/memory"
@@ -307,18 +307,23 @@ cmd_sync() {
       changes=$((changes + 1))
       local new_status="closed"
       [[ "$type" == "pr" && "$gh_state" == "closed" ]] && new_status="merged"
-      updated_registry=$(echo "$updated_registry" | jq \
-        --arg id "$id" \
-        --arg gh_state "$gh_state" \
-        --arg new_status "$new_status" \
-        '(.pulls + .issues | to_entries) as $items |
-        $items | to_entries | map(
-          select(.value.id == $id) | .value.state = $gh_state | .value.status = $new_status
-        ) as $updated |
-        reduce $updated[] as $u ({}; .[$u.key // "issues"] = $u.value) |
-        if (.pulls | type) == "array" then
-          .pulls = (.pulls | map(select(.id != $id))) + ($updated | map(select(.type == "pr")))
-        else . end' 2>/dev/null || true
+      local updated
+      if [[ "$type" == "pr" ]]; then
+        updated=$(echo "$updated_registry" | jq \
+          --arg id "$id" \
+          --arg gh_state "$gh_state" \
+          --arg new_status "$new_status" \
+          '(.pulls | map(if .id == $id then .state = $gh_state | .status = $new_status else . end)) as $new_pulls |
+          {pulls: $new_pulls, issues: .issues, version: .version, last_synced: .last_synced, account: .account, activity_log: .activity_log}')
+      else
+        updated=$(echo "$updated_registry" | jq \
+          --arg id "$id" \
+          --arg gh_state "$gh_state" \
+          --arg new_status "$new_status" \
+          '(.issues | map(if .id == $id then .state = $gh_state | .status = $new_status else . end)) as $new_issues |
+          {pulls: .pulls, issues: $new_issues, version: .version, last_synced: .last_synced, account: .account, activity_log: .activity_log}')
+      fi
+      updated_registry="${updated:-$updated_registry}"
       echo "  CHANGED: $id $registry_state → $gh_state (status → $new_status)"
     fi
   done < <(echo "$items" | jq -c '.[]' 2>/dev/null)
