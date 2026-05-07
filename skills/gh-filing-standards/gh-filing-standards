@@ -3,7 +3,7 @@
 # Usage: ./gh-filing-standards {check|verify-file|format-issue} [args]
 set -euo pipefail
 
-AEON_ROOT="${AEON_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
+AEON_ROOT="${AEON_ROOT:-$(cd "$(dirname "$0")/../.." && pwd)}"
 GH="gh api"
 
 err() { echo "GATE_FAIL: $*" >&2; exit 1; }

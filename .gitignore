@@ -49,3 +49,6 @@ node_modules/
 # Stale artifacts
 .external-work
 .vuln-scan/
+
+# Filing registry data (generated at runtime)
+memory/"
