@@ -126,8 +126,8 @@
       "number": 738,
       "type": "pr",
       "title": "fix: preserve early conversation context — slice(0, maxChars) not slice(-maxChars)",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Await upstream review",
       "actions_taken": [
         "Note: Bug 1 of 3 from issue #574. Bug 2+3 already fixed by #581/#582."
@@ -292,8 +292,8 @@
       "number": 19270,
       "type": "pr",
       "title": "feat: per-skill model/provider override via SKILL.md frontmatter",
-      "state": "open",
-      "status": "reviewed",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Await upstream response",
       "actions_taken": [
         "Note: HIGH ARCHITECTURAL VALUE. Frontmatter model/provider routing. Pattern extensible."
@@ -340,8 +340,8 @@
       "number": 19200,
       "type": "pr",
       "title": "feat: auto-context retrieval — automatic session search + system message injection",
-      "state": "open",
-      "status": "reviewed",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Await upstream response to configurable trigger + ranking threshold",
       "actions_taken": [
         "Note: MEDIUM-HIGH VALUE. run_agent.py +56/-7. Configurable threshold recommended."
@@ -363,8 +363,8 @@
       "number": 19174,
       "type": "pr",
       "title": "feat(skills): add lazy load mode to reduce startup token usage",
-      "state": "open",
-      "status": "reviewed",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Verify duplicate status vs canonical version",
       "actions_taken": [
         "Note: LOW-MEDIUM VALUE. 21 lines. Labeled duplicate. Need canonical version verification."
@@ -545,8 +545,8 @@
       "number": 19308,
       "type": "pr",
       "title": "Add native vision path for main models",
-      "state": "open",
-      "status": "reviewed",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Await upstream merge",
       "actions_taken": [
         "Note: HIGH LONG-TERM VALUE. 9 files, +243/-6. Unblocks multimodal roadmap for non-Anthropic providers."
@@ -637,6 +637,586 @@
       "last_action": "2026-05-03T00:00:00Z",
       "labels": [],
       "url": "https://github.com/NousResearch/hermes-agent/pull/7656",
+      "is_upstream": true
+    },
+    {
+      "id": "AxDSan/mnemosyne#57",
+      "repo": "AxDSan/mnemosyne",
+      "number": 57,
+      "type": "pr",
+      "title": "fix: chunk memories before summarization in summarize_memories()",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:16:49Z",
+      "last_action": "2026-05-09T21:16:49Z",
+      "url": "https://github.com/AxDSan/mnemosyne/pull/57",
+      "actions_taken": [
+        "Filed: fix: chunk memories before summarization in summarize_memories()"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "AxDSan/mnemosyne#35",
+      "repo": "AxDSan/mnemosyne",
+      "number": 35,
+      "type": "pr",
+      "title": "fix: llm_used detection always False + remote fallback blocks local LLM + Llama token prompt",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:16:50Z",
+      "last_action": "2026-05-09T21:16:50Z",
+      "url": "https://github.com/AxDSan/mnemosyne/pull/35",
+      "actions_taken": [
+        "Filed: fix: llm_used detection always False + remote fallback blocks local LLM + Llama token prompt"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/agent-skills#1",
+      "repo": "ether-btc/agent-skills",
+      "number": 1,
+      "type": "pr",
+      "title": "docs: Add example SKILL.md template for contributors",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:16:51Z",
+      "last_action": "2026-05-09T21:16:51Z",
+      "url": "https://github.com/ether-btc/agent-skills/pull/1",
+      "actions_taken": [
+        "Filed: docs: Add example SKILL.md template for contributors"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "LeventeNagy/hermes-prompt-vault#9",
+      "repo": "LeventeNagy/hermes-prompt-vault",
+      "number": 9,
+      "type": "pr",
+      "title": "Fix: onRestore prop was empty, now passes handleRestore function",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:16:53Z",
+      "last_action": "2026-05-09T21:16:53Z",
+      "url": "https://github.com/LeventeNagy/hermes-prompt-vault/pull/9",
+      "actions_taken": [
+        "Filed: Fix: onRestore prop was empty, now passes handleRestore function"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#19616",
+      "repo": "NousResearch/hermes-agent",
+      "number": 19616,
+      "type": "pr",
+      "title": "feat(circuit-breaker): add use_auxiliary_judgment option",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:16:54Z",
+      "last_action": "2026-05-09T21:16:54Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/19616",
+      "actions_taken": [
+        "Filed: feat(circuit-breaker): add use_auxiliary_judgment option"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "xD4O/praxis#1",
+      "repo": "xD4O/praxis",
+      "number": 1,
+      "type": "pr",
+      "title": "fix(session-start): replace fragile sed YAML parser with robust bash",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:16:55Z",
+      "last_action": "2026-05-09T21:16:55Z",
+      "url": "https://github.com/xD4O/praxis/pull/1",
+      "actions_taken": [
+        "Filed: fix(session-start): replace fragile sed YAML parser with robust bash"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/hermes-vault#1",
+      "repo": "ether-btc/hermes-vault",
+      "number": 1,
+      "type": "pr",
+      "title": "chore: absorb morpheus-p2p-playbook into morpheus-proxy-router (v4.3.0)",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:16:56Z",
+      "last_action": "2026-05-09T21:16:56Z",
+      "url": "https://github.com/ether-btc/hermes-vault/pull/1",
+      "actions_taken": [
+        "Filed: chore: absorb morpheus-p2p-playbook into morpheus-proxy-router (v4.3.0)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "fajarhide/omni#68",
+      "repo": "fajarhide/omni",
+      "number": 68,
+      "type": "pr",
+      "title": "fix: increase rewind hash from 8 to 16 hex chars (64-bit entropy)",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:16:57Z",
+      "last_action": "2026-05-09T21:16:57Z",
+      "url": "https://github.com/fajarhide/omni/pull/68",
+      "actions_taken": [
+        "Filed: fix: increase rewind hash from 8 to 16 hex chars (64-bit entropy)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ogallotti/rtk-hermes#7",
+      "repo": "ogallotti/rtk-hermes",
+      "number": 7,
+      "type": "pr",
+      "title": "fix: entry point loading, exit code 3 handling, observability improvements",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:16:58Z",
+      "last_action": "2026-05-09T21:16:58Z",
+      "url": "https://github.com/ogallotti/rtk-hermes/pull/7",
+      "actions_taken": [
+        "Filed: fix: entry point loading, exit code 3 handling, observability improvements"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/openclaw-correlation-plugin#4",
+      "repo": "ether-btc/openclaw-correlation-plugin",
+      "number": 4,
+      "type": "pr",
+      "title": "fix: security audit — config injection, ReDoS, confidence consistency, bounds",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:16:59Z",
+      "last_action": "2026-05-09T21:16:59Z",
+      "url": "https://github.com/ether-btc/openclaw-correlation-plugin/pull/4",
+      "actions_taken": [
+        "Filed: fix: security audit — config injection, ReDoS, confidence consistency, bounds"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/morpheus-proxy-router#5",
+      "repo": "ether-btc/morpheus-proxy-router",
+      "number": 5,
+      "type": "pr",
+      "title": "docs: update with live deployment findings (68 models, session economics, Node.js v24 fix)",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:00Z",
+      "last_action": "2026-05-09T21:17:00Z",
+      "url": "https://github.com/ether-btc/morpheus-proxy-router/pull/5",
+      "actions_taken": [
+        "Filed: docs: update with live deployment findings (68 models, session economics, Node.js v24 fix)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/morpheus-proxy-router#4",
+      "repo": "ether-btc/morpheus-proxy-router",
+      "number": 4,
+      "type": "pr",
+      "title": "refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:01Z",
+      "last_action": "2026-05-09T21:17:01Z",
+      "url": "https://github.com/ether-btc/morpheus-proxy-router/pull/4",
+      "actions_taken": [
+        "Filed: refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "diegosouzapw/OmniRoute#1504",
+      "repo": "diegosouzapw/OmniRoute",
+      "number": 1504,
+      "type": "pr",
+      "title": "fix(logs): add periodic runtime log rotation check",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:03Z",
+      "last_action": "2026-05-09T21:17:03Z",
+      "url": "https://github.com/diegosouzapw/OmniRoute/pull/1504",
+      "actions_taken": [
+        "Filed: fix(logs): add periodic runtime log rotation check"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "h4ckf0r0day/obscura#9",
+      "repo": "h4ckf0r0day/obscura",
+      "number": 9,
+      "type": "pr",
+      "title": "fix: handle client_stream errors and worker connection failures",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:04Z",
+      "last_action": "2026-05-09T21:17:04Z",
+      "url": "https://github.com/h4ckf0r0day/obscura/pull/9",
+      "actions_taken": [
+        "Filed: fix: handle client_stream errors and worker connection failures"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "h4ckf0r0day/obscura#8",
+      "repo": "h4ckf0r0day/obscura",
+      "number": 8,
+      "type": "pr",
+      "title": "fix: route /json WebSocket upgrades through load balancer",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:05Z",
+      "last_action": "2026-05-09T21:17:05Z",
+      "url": "https://github.com/h4ckf0r0day/obscura/pull/8",
+      "actions_taken": [
+        "Filed: fix: route /json WebSocket upgrades through load balancer"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/openclaw-correlation-plugin#3",
+      "repo": "ether-btc/openclaw-correlation-plugin",
+      "number": 3,
+      "type": "pr",
+      "title": "v2.1.0: version sync + CHANGELOG",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:06Z",
+      "last_action": "2026-05-09T21:17:06Z",
+      "url": "https://github.com/ether-btc/openclaw-correlation-plugin/pull/3",
+      "actions_taken": [
+        "Filed: v2.1.0: version sync + CHANGELOG"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "mfoud444/ollamafreeapi#11",
+      "repo": "mfoud444/ollamafreeapi",
+      "number": 11,
+      "type": "pr",
+      "title": "fix: performance-weighted server selection + critical error handling",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:07Z",
+      "last_action": "2026-05-09T21:17:07Z",
+      "url": "https://github.com/mfoud444/ollamafreeapi/pull/11",
+      "actions_taken": [
+        "Filed: fix: performance-weighted server selection + critical error handling"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/memory-lancedb-pro#1",
+      "repo": "ether-btc/memory-lancedb-pro",
+      "number": 1,
+      "type": "pr",
+      "title": "fix: guard on settled status not array length (F1)",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:08Z",
+      "last_action": "2026-05-09T21:17:08Z",
+      "url": "https://github.com/ether-btc/memory-lancedb-pro/pull/1",
+      "actions_taken": [
+        "Filed: fix: guard on settled status not array length (F1)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "win4r/lossless-claw-enhanced#16",
+      "repo": "win4r/lossless-claw-enhanced",
+      "number": 16,
+      "type": "pr",
+      "title": "fix: nonSpecialCount guard + deterministic generateSummaryId",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:09Z",
+      "last_action": "2026-05-09T21:17:09Z",
+      "url": "https://github.com/win4r/lossless-claw-enhanced/pull/16",
+      "actions_taken": [
+        "Filed: fix: nonSpecialCount guard + deterministic generateSummaryId"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "CortexReach/memory-lancedb-pro#582",
+      "repo": "CortexReach/memory-lancedb-pro",
+      "number": 582,
+      "type": "pr",
+      "title": "fix: skip 75ms retry when store is empty (Bug 2)",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:10Z",
+      "last_action": "2026-05-09T21:17:10Z",
+      "url": "https://github.com/CortexReach/memory-lancedb-pro/pull/582",
+      "actions_taken": [
+        "Filed: fix: skip 75ms retry when store is empty (Bug 2)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "CortexReach/memory-lancedb-pro#581",
+      "repo": "CortexReach/memory-lancedb-pro",
+      "number": 581,
+      "type": "pr",
+      "title": "fix: hybrid retrieval graceful degradation with Promise.allSettled",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:11Z",
+      "last_action": "2026-05-09T21:17:11Z",
+      "url": "https://github.com/CortexReach/memory-lancedb-pro/pull/581",
+      "actions_taken": [
+        "Filed: fix: hybrid retrieval graceful degradation with Promise.allSettled"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "win4r/lossless-claw-enhanced#14",
+      "repo": "win4r/lossless-claw-enhanced",
+      "number": 14,
+      "type": "pr",
+      "title": "fix: remove duplicate summaryModel/summaryProvider type declarations",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:12Z",
+      "last_action": "2026-05-09T21:17:12Z",
+      "url": "https://github.com/win4r/lossless-claw-enhanced/pull/14",
+      "actions_taken": [
+        "Filed: fix: remove duplicate summaryModel/summaryProvider type declarations"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "rtk-ai/rtk#1024",
+      "repo": "rtk-ai/rtk",
+      "number": 1024,
+      "type": "pr",
+      "title": "Security hardening: SE-requested changes from RTK audit",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:13Z",
+      "last_action": "2026-05-09T21:17:13Z",
+      "url": "https://github.com/rtk-ai/rtk/pull/1024",
+      "actions_taken": [
+        "Filed: Security hardening: SE-requested changes from RTK audit"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/rtk#1",
+      "repo": "ether-btc/rtk",
+      "number": 1,
+      "type": "pr",
+      "title": "Security hardening: SE-requested changes from RTK audit",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:14Z",
+      "last_action": "2026-05-09T21:17:14Z",
+      "url": "https://github.com/ether-btc/rtk/pull/1",
+      "actions_taken": [
+        "Filed: Security hardening: SE-requested changes from RTK audit"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/openclaw-correlation-plugin#2",
+      "repo": "ether-btc/openclaw-correlation-plugin",
+      "number": 2,
+      "type": "pr",
+      "title": "fix: resolve workspace path via ctx.workspaceDir",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:15Z",
+      "last_action": "2026-05-09T21:17:15Z",
+      "url": "https://github.com/ether-btc/openclaw-correlation-plugin/pull/2",
+      "actions_taken": [
+        "Filed: fix: resolve workspace path via ctx.workspaceDir"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "digitalknk/openclaw-runbook#19",
+      "repo": "digitalknk/openclaw-runbook",
+      "number": 19,
+      "type": "pr",
+      "title": "Add Claworc - multi-instance orchestration showcase",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:17Z",
+      "last_action": "2026-05-09T21:17:17Z",
+      "url": "https://github.com/digitalknk/openclaw-runbook/pull/19",
+      "actions_taken": [
+        "Filed: Add Claworc - multi-instance orchestration showcase"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/openclaw-delegation-patterns#2",
+      "repo": "ether-btc/openclaw-delegation-patterns",
+      "number": 2,
+      "type": "pr",
+      "title": "feat: add subagent compaction resilience docs",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:18Z",
+      "last_action": "2026-05-09T21:17:18Z",
+      "url": "https://github.com/ether-btc/openclaw-delegation-patterns/pull/2",
+      "actions_taken": [
+        "Filed: feat: add subagent compaction resilience docs"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/openclaw-delegation-patterns#1",
+      "repo": "ether-btc/openclaw-delegation-patterns",
+      "number": 1,
+      "type": "pr",
+      "title": "fix: update stale model references + add compaction resilience docs",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-09T21:17:19Z",
+      "last_action": "2026-05-09T21:17:19Z",
+      "url": "https://github.com/ether-btc/openclaw-delegation-patterns/pull/1",
+      "actions_taken": [
+        "Filed: fix: update stale model references + add compaction resilience docs"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "stephenschoettler/hermes-lcm#161",
+      "repo": "stephenschoettler/hermes-lcm",
+      "number": 161,
+      "type": "pr",
+      "title": "feat: add opt-in path containment hardening via LCM_HERMES_BASE_DIR",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-12T04:36:10Z",
+      "last_action": "2026-05-12T04:36:10Z",
+      "url": "https://github.com/stephenschoettler/hermes-lcm/pull/161",
+      "actions_taken": [
+        "Filed: feat: add opt-in path containment hardening via LCM_HERMES_BASE_DIR"
+      ],
+      "notes": "",
+      "labels": [],
       "is_upstream": true
     }
   ],
@@ -831,8 +1411,8 @@
       "number": 574,
       "type": "issue",
       "title": "[4 bugs] Memory accumulation without consolidation (Bug 1 unfixed)",
-      "state": "open",
-      "status": "has_fix_pr",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Watch PR #738 for merge; close after merge",
       "actions_taken": [
         "Note: Bug 1: head truncation (slice(-maxChars)). Bug 2+3: fixed. 4 hardening items remain."
@@ -878,8 +1458,8 @@
       "number": 1284,
       "type": "issue",
       "title": "Experience entries accumulate without consolidation — unbounded growth",
-      "state": "open",
-      "status": "has_fix_pr",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Watch PR #1371 for merge; close issue after merge",
       "actions_taken": [
         "Note: Fix PR #1371 adds semantic deduplication."
@@ -1123,10 +1703,30 @@
       ],
       "url": "https://github.com/fajarhide/omni/issues/69",
       "is_upstream": true
+    },
+    {
+      "id": "test/repo#1",
+      "repo": "test/repo",
+      "number": 1,
+      "type": "issue",
+      "title": "test: test issue",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-11T10:07:00Z",
+      "last_action": "2026-05-11T10:07:00Z",
+      "url": "https://github.com/test/repo/issues/1",
+      "actions_taken": [
+        "Filed: test: test issue"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.0",
-  "last_synced": "2026-05-07T11:50:51Z",
+  "last_synced": "2026-05-12T04:36:10Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -1134,6 +1734,186 @@
       "type": "migrated",
       "ref": "system",
       "desc": "Migrated from github-activity-registry: 30 PRs, 21 issues"
+    },
+    {
+      "ts": "2026-05-09T21:16:49Z",
+      "type": "filed",
+      "ref": "AxDSan/mnemosyne#57",
+      "desc": "Filed: fix: chunk memories before summarization in summarize_memories()"
+    },
+    {
+      "ts": "2026-05-09T21:16:50Z",
+      "type": "filed",
+      "ref": "AxDSan/mnemosyne#35",
+      "desc": "Filed: fix: llm_used detection always False + remote fallback blocks local LLM + Llama token prompt"
+    },
+    {
+      "ts": "2026-05-09T21:16:51Z",
+      "type": "filed",
+      "ref": "ether-btc/agent-skills#1",
+      "desc": "Filed: docs: Add example SKILL.md template for contributors"
+    },
+    {
+      "ts": "2026-05-09T21:16:53Z",
+      "type": "filed",
+      "ref": "LeventeNagy/hermes-prompt-vault#9",
+      "desc": "Filed: Fix: onRestore prop was empty, now passes handleRestore function"
+    },
+    {
+      "ts": "2026-05-09T21:16:54Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#19616",
+      "desc": "Filed: feat(circuit-breaker): add use_auxiliary_judgment option"
+    },
+    {
+      "ts": "2026-05-09T21:16:55Z",
+      "type": "filed",
+      "ref": "xD4O/praxis#1",
+      "desc": "Filed: fix(session-start): replace fragile sed YAML parser with robust bash"
+    },
+    {
+      "ts": "2026-05-09T21:16:56Z",
+      "type": "filed",
+      "ref": "ether-btc/hermes-vault#1",
+      "desc": "Filed: chore: absorb morpheus-p2p-playbook into morpheus-proxy-router (v4.3.0)"
+    },
+    {
+      "ts": "2026-05-09T21:16:57Z",
+      "type": "filed",
+      "ref": "fajarhide/omni#68",
+      "desc": "Filed: fix: increase rewind hash from 8 to 16 hex chars (64-bit entropy)"
+    },
+    {
+      "ts": "2026-05-09T21:16:58Z",
+      "type": "filed",
+      "ref": "ogallotti/rtk-hermes#7",
+      "desc": "Filed: fix: entry point loading, exit code 3 handling, observability improvements"
+    },
+    {
+      "ts": "2026-05-09T21:16:59Z",
+      "type": "filed",
+      "ref": "ether-btc/openclaw-correlation-plugin#4",
+      "desc": "Filed: fix: security audit — config injection, ReDoS, confidence consistency, bounds"
+    },
+    {
+      "ts": "2026-05-09T21:17:00Z",
+      "type": "filed",
+      "ref": "ether-btc/morpheus-proxy-router#5",
+      "desc": "Filed: docs: update with live deployment findings (68 models, session economics, Node.js v24 fix)"
+    },
+    {
+      "ts": "2026-05-09T21:17:01Z",
+      "type": "filed",
+      "ref": "ether-btc/morpheus-proxy-router#4",
+      "desc": "Filed: refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md"
+    },
+    {
+      "ts": "2026-05-09T21:17:03Z",
+      "type": "filed",
+      "ref": "diegosouzapw/OmniRoute#1504",
+      "desc": "Filed: fix(logs): add periodic runtime log rotation check"
+    },
+    {
+      "ts": "2026-05-09T21:17:04Z",
+      "type": "filed",
+      "ref": "h4ckf0r0day/obscura#9",
+      "desc": "Filed: fix: handle client_stream errors and worker connection failures"
+    },
+    {
+      "ts": "2026-05-09T21:17:05Z",
+      "type": "filed",
+      "ref": "h4ckf0r0day/obscura#8",
+      "desc": "Filed: fix: route /json WebSocket upgrades through load balancer"
+    },
+    {
+      "ts": "2026-05-09T21:17:06Z",
+      "type": "filed",
+      "ref": "ether-btc/openclaw-correlation-plugin#3",
+      "desc": "Filed: v2.1.0: version sync + CHANGELOG"
+    },
+    {
+      "ts": "2026-05-09T21:17:07Z",
+      "type": "filed",
+      "ref": "mfoud444/ollamafreeapi#11",
+      "desc": "Filed: fix: performance-weighted server selection + critical error handling"
+    },
+    {
+      "ts": "2026-05-09T21:17:08Z",
+      "type": "filed",
+      "ref": "ether-btc/memory-lancedb-pro#1",
+      "desc": "Filed: fix: guard on settled status not array length (F1)"
+    },
+    {
+      "ts": "2026-05-09T21:17:09Z",
+      "type": "filed",
+      "ref": "win4r/lossless-claw-enhanced#16",
+      "desc": "Filed: fix: nonSpecialCount guard + deterministic generateSummaryId"
+    },
+    {
+      "ts": "2026-05-09T21:17:10Z",
+      "type": "filed",
+      "ref": "CortexReach/memory-lancedb-pro#582",
+      "desc": "Filed: fix: skip 75ms retry when store is empty (Bug 2)"
+    },
+    {
+      "ts": "2026-05-09T21:17:11Z",
+      "type": "filed",
+      "ref": "CortexReach/memory-lancedb-pro#581",
+      "desc": "Filed: fix: hybrid retrieval graceful degradation with Promise.allSettled"
+    },
+    {
+      "ts": "2026-05-09T21:17:12Z",
+      "type": "filed",
+      "ref": "win4r/lossless-claw-enhanced#14",
+      "desc": "Filed: fix: remove duplicate summaryModel/summaryProvider type declarations"
+    },
+    {
+      "ts": "2026-05-09T21:17:13Z",
+      "type": "filed",
+      "ref": "rtk-ai/rtk#1024",
+      "desc": "Filed: Security hardening: SE-requested changes from RTK audit"
+    },
+    {
+      "ts": "2026-05-09T21:17:14Z",
+      "type": "filed",
+      "ref": "ether-btc/rtk#1",
+      "desc": "Filed: Security hardening: SE-requested changes from RTK audit"
+    },
+    {
+      "ts": "2026-05-09T21:17:15Z",
+      "type": "filed",
+      "ref": "ether-btc/openclaw-correlation-plugin#2",
+      "desc": "Filed: fix: resolve workspace path via ctx.workspaceDir"
+    },
+    {
+      "ts": "2026-05-09T21:17:17Z",
+      "type": "filed",
+      "ref": "digitalknk/openclaw-runbook#19",
+      "desc": "Filed: Add Claworc - multi-instance orchestration showcase"
+    },
+    {
+      "ts": "2026-05-09T21:17:18Z",
+      "type": "filed",
+      "ref": "ether-btc/openclaw-delegation-patterns#2",
+      "desc": "Filed: feat: add subagent compaction resilience docs"
+    },
+    {
+      "ts": "2026-05-09T21:17:19Z",
+      "type": "filed",
+      "ref": "ether-btc/openclaw-delegation-patterns#1",
+      "desc": "Filed: fix: update stale model references + add compaction resilience docs"
+    },
+    {
+      "ts": "2026-05-11T10:07:00Z",
+      "type": "filed",
+      "ref": "test/repo#1",
+      "desc": "Filed: test: test issue"
+    },
+    {
+      "ts": "2026-05-12T04:36:10Z",
+      "type": "filed",
+      "ref": "stephenschoettler/hermes-lcm#161",
+      "desc": "Filed: feat: add opt-in path containment hardening via LCM_HERMES_BASE_DIR"
     }
   ]
 }
