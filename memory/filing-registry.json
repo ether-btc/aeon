@@ -1239,7 +1239,7 @@
         "Cleanup script for optional DB purge (scripts/cleanup_noisy_mentions.py)",
         "All 49 tests passing"
       ],
-      "notes": "Non-destructive defense-in-depth: filters noise at extraction time AND retrieval time. No DB DELETE required.",
+      "notes": "PR #120: Non-destructive mention annotation noise fix. 7 commits on branch fix/mention-entity-extraction-quality. Changes: entities.py (write-time stopwords, case-insensitive, multi-word filter), annotations.py (retrieval-time filter_clean_mentions), tests/test_entities.py, scripts/cleanup_noisy_mentions.py, CONTINUE_HERE.md. All 49 tests pass. Pushed to fork. Awaiting upstream merge.",
       "labels": [
         "memory",
         "entities",
@@ -1954,6 +1954,12 @@
       "type": "committed",
       "ref": "ether-btc/hermes-vault:master",
       "desc": "CONTINUE_HERE.md: updated with Phase 1+2 session summary (79861eb)"
+    },
+    {
+      "ref": "AxDSan/mnemosyne#120",
+      "action": "commit",
+      "ts": "2026-05-13T17:30:00Z",
+      "desc": "Committed all changes: entity extraction stopwords, retrieval-time filter, test updates, cleanup script, CONTINUE_HERE.md. Pushed to fork/fix/mention-entity-extraction-quality. Awaiting upstream merge."
     }
   ]
 }
