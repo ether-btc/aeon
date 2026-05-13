@@ -1,0 +1,235 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Display help if --help is passed
+if [[ "$1" == "--help" ]]; then
+  cat <<EOF
+Usage: aeon [<subcommand>]
+
+Aeon GitHub Filing Registry & Monitoring System
+
+Subcommands:
+  triage          Show items needing attention
+  sync            Reconcile registry against live GitHub
+  add             Register a new filing
+  status          Update or inspect a filing entry
+  log             Show activity history for a filing
+  check-duplicate Check if a filing already exists
+  full-sync       Run sync followed by triage
+
+  discover        (Not implemented) Auto-discover new filings
+  monitor         (Not implemented) Track upstream changes
+
+Options:
+  --help          Show this help message
+
+Environment:
+  AEON_ROOT       Path to Aeon installation (default: ~/aeon)
+
+Examples:
+  aeon triage
+  aeon add --id "owner/repo#N" --type issue --title "fix: title" --evidence tier_2 --url "https://github.com/owner/repo/issues/N"
+  AEON_ROOT=/custom/path aeon triage
+
+Notes:
+  - Requires gh CLI and jq
+  - Authenticated with GitHub (see github-auth skill)
+EOF
+  exit 0
+fi
+
+# Determine AEON_ROOT (where the aeon project is located)
+if [ -z "${AEON_ROOT:-}" ]; then
+  # If this script is running from the skills/aeon directory, find root
+  if [ -f "../CLAUDE.md" ] && [ -f "../README.md" ]; then
+    AEON_ROOT="$(dirname "$(dirname "$0")")"
+  elif [ -f "CLAUDE.md" ] && [ -f "README.md" ]; then
+    AEON_ROOT="$(pwd)"
+  else
+    # Fallback: try to find aeon in home directory
+    AEON_ROOT="$HOME/aeon"
+  fi
+fi
+
+# Allow AEON_ROOT to be overridden by environment variable
+export AEON_ROOT
+
+# Ensure we're in the right directory
+cd "$AEON_ROOT" || { echo "Error: Failed to cd to AEON_ROOT: $AEON_ROOT" >&2; exit 1; }
+
+# Check dependencies
+MISSING_DEPS=()
+if ! command -v gh >/dev/null; then
+  MISSING_DEPS+=("gh CLI")
+fi
+if ! command -v jq >/dev/null; then
+  MISSING_DEPS+=("jq")
+fi
+if [ ${#MISSING_DEPS[@]} -gt 0 ]; then
+  echo "Error: Missing dependencies: ${MISSING_DEPS[*]}. Install with:" >&2
+  if [[ " ${MISSING_DEPS[*]} " =~ " gh CLI" ]]; then
+    echo "  - gh CLI: https://cli.github.com/" >&2
+  fi
+  if [[ " ${MISSING_DEPS[*]} " =~ "jq" ]]; then
+    echo "  - jq: sudo apt-get install jq" >&2
+  fi
+  exit 1
+fi
+
+# Parse command line arguments
+SUBCOMMAND="${1:-triage}"  # Default to triage
+shift || true
+
+# Check if the requested subcommand is supported
+SUPPORTED_COMMANDS="triage sync add status log check-duplicate discover monitor full-sync health"
+if [[ ! " $SUPPORTED_COMMANDS " =~ $SUBCOMMAND ]]; then
+  echo "Error: Unknown subcommand '$SUBCOMMAND'" >&2
+  echo "Usage: aeon <triage|sync|add|status|log|check-duplicate|discover|monitor|full-sync|health>" >&2
+  exit 1
+fi
+
+# Execute the command directly
+case "$SUBCOMMAND" in
+    triage)
+        if [ -x "./skills/github-filing-registry/filing-registry" ]; then
+          exec "./skills/github-filing-registry/filing-registry" triage "$@"
+        else
+          echo "Error: Missing required script: ./skills/github-filing-registry/filing-registry" >&2
+          echo "Please ensure the github-filing-registry skill is properly installed." >&2
+          exit 1
+        fi
+        ;;
+    sync)
+        if [ -x "./skills/github-filing-registry/filing-registry" ]; then
+          exec "./skills/github-filing-registry/filing-registry" sync "$@"
+        else
+          echo "Error: Missing required script: ./skills/github-filing-registry/filing-registry" >&2
+          echo "Please ensure the github-filing-registry skill is properly installed." >&2
+          exit 1
+        fi
+        ;;
+    add)
+        if [ -x "./skills/github-filing-registry/filing-registry" ]; then
+          exec "./skills/github-filing-registry/filing-registry" add "$@"
+        else
+          echo "Error: Missing required script: ./skills/github-filing-registry/filing-registry" >&2
+          echo "Please ensure the github-filing-registry skill is properly installed." >&2
+          exit 1
+        fi
+        ;;
+    status)
+        if [ -x "./skills/github-filing-registry/filing-registry" ]; then
+          exec "./skills/github-filing-registry/filing-registry" status "$@"
+        else
+          echo "Error: Missing required script: ./skills/github-filing-registry/filing-registry" >&2
+          echo "Please ensure the github-filing-registry skill is properly installed." >&2
+          exit 1
+        fi
+        ;;
+    log)
+        if [ -x "./skills/github-filing-registry/filing-registry" ]; then
+          exec "./skills/github-filing-registry/filing-registry" log "$@"
+        else
+          echo "Error: Missing required script: ./skills/github-filing-registry/filing-registry" >&2
+          echo "Please ensure the github-filing-registry skill is properly installed." >&2
+          exit 1
+        fi
+        ;;
+    check-duplicate)
+        if [ -x "./skills/github-filing-registry/filing-registry" ]; then
+          exec "./skills/github-filing-registry/filing-registry" check-duplicate "$@"
+        else
+          echo "Error: Missing required script: ./skills/github-filing-registry/filing-registry" >&2
+          echo "Please ensure the github-filing-registry skill is properly installed." >&2
+          exit 1
+        fi
+        ;;
+    discover)
+        if [ -x "./skills/github-upstream-tracker/gh-upstream-tracker" ]; then
+          exec "./skills/github-upstream-tracker/gh-upstream-tracker" discover "$@"
+        else
+          echo "Error: Subcommand 'discover' is not available." >&2
+          echo "The github-upstream-tracker skill is not yet implemented." >&2
+          echo "Use 'aeon monitor' for available monitoring features, or 'aeon triage' for triage." >&2
+          exit 1
+        fi
+        ;;
+    monitor)
+        if [ -x "./skills/github-upstream-tracker/gh-upstream-tracker" ]; then
+          exec "./skills/github-upstream-tracker/gh-upstream-tracker" monitor "$@"
+        else
+          echo "Error: Subcommand 'monitor' is not available." >&2
+          echo "The github-upstream-tracker skill is not yet implemented." >&2
+          echo "Use 'aeon triage' for triage, or 'aeon sync' for syncing state." >&2
+          exit 1
+        fi
+        ;;
+    health)
+        echo "=== Aeon Health Check ==="
+        echo ""
+        # Check AEON_ROOT
+        echo "AEON_ROOT: $AEON_ROOT"
+        if [ ! -d "$AEON_ROOT" ]; then
+          echo "❌ ERROR: AEON_ROOT does not exist: $AEON_ROOT"
+          exit 1
+        fi
+        echo "✓ AEON_ROOT directory exists"
+        
+        # Check memory directory
+        MEMORY_DIR="$AEON_ROOT/memory"
+        if [ ! -d "$MEMORY_DIR" ]; then
+          echo "❌ WARNING: memory directory does not exist: $MEMORY_DIR"
+          echo "  Consider running: mkdir -p $MEMORY_DIR"
+        else
+          echo "✓ memory directory exists"
+        fi
+        
+        # Check filing-registry script
+        FILING_REGISTRY="$AEON_ROOT/skills/github-filing-registry/filing-registry"
+        if [ ! -x "$FILING_REGISTRY" ]; then
+          echo "❌ ERROR: filing-registry script not found or not executable: $FILING_REGISTRY"
+          exit 1
+        else
+          echo "✓ github-filing-registry script is available and executable"
+        fi
+        
+        # Check dependencies
+        echo ""
+        echo "Checking dependencies..."
+        if command -v gh >/dev/null; then
+          echo "✓ gh CLI: $(command -v gh)"
+        else
+          echo "❌ ERROR: gh CLI not found"
+          exit 1
+        fi
+        
+        if command -v jq >/dev/null; then
+          echo "✓ jq: $(command -v jq)"
+        else
+          echo "❌ ERROR: jq not found"
+          exit 1
+        fi
+        
+        # Check registry file
+        REGISTRY="$MEMORY_DIR/filing-registry.json"
+        if [ -f "$REGISTRY" ]; then
+          echo "✓ Registry file exists: $REGISTRY"
+          echo "  Size: $(du -h "$REGISTRY" | cut -f1)"
+          echo "  Items: $(jq '[.pulls[], .issues[]] | length' "$REGISTRY" 2>/dev/null || echo 'N/A')"
+        else
+          echo "ℹ️  Registry file not found: $REGISTRY"
+          echo "  This is OK for a new installation."
+        fi
+        
+        echo ""
+        echo "=== Health Check Summary ==="
+        echo "Aeon installation appears to be functional!"
+        ;;
+    *)
+        echo "Error: Unknown subcommand '$SUBCOMMAND'" >&2
+        echo "Usage: aeon <triage|sync|add|status|log|check-duplicate|discover|monitor|full-sync>" >&2
+        exit 1
+        ;;
+esac
+
+exit $?
