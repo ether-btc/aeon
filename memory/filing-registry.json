@@ -1959,10 +1959,30 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "ether-btc/rust-cave-001#99994",
+      "repo": "ether-btc/rust-cave-001",
+      "number": 99994,
+      "type": "issue",
+      "title": "Self-learning framework MVP: compress_adaptive() + benchmark oracle",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-16T09:01:11Z",
+      "last_action": "2026-05-16T09:01:11Z",
+      "url": "https://github.com/ether-btc/rust-cave-001/commit/238d23a",
+      "actions_taken": [
+        "Filed: Self-learning framework MVP: compress_adaptive() + benchmark oracle"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.0",
-  "last_synced": "2026-05-16T08:50:15Z",
+  "last_synced": "2026-05-16T09:01:11Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -2216,6 +2236,12 @@
       "type": "filed",
       "ref": "ether-btc/rust-cave-001#99995",
       "desc": "Filed: v0.2.1 published to PyPI + CI fixes (clippy, cache@v5)"
+    },
+    {
+      "ts": "2026-05-16T09:01:11Z",
+      "type": "filed",
+      "ref": "ether-btc/rust-cave-001#99994",
+      "desc": "Filed: Self-learning framework MVP: compress_adaptive() + benchmark oracle"
     }
   ]
 }
