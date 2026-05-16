@@ -1337,14 +1337,16 @@
         "5-model multi-expert review \u2014 4 bugs fixed",
         "OnceLock regex caching (63\u21921 compilation)",
         "Pushed 4d8136b, tagged v0.3.0, PyPI published",
-        "Acronym protection, pipeline reorder, 13 new tests (108 total)"
+        "Acronym protection, pipeline reorder, 13 new tests (108 total)",
+        "crates.io published v0.3.0 (commit ea040a3)"
       ],
-      "notes": "48.7% avg token reduction (+0.3%). 108 tests, clippy clean. crates.io pending (no token).",
+      "notes": "48.7% avg token reduction (+0.3%). 108 tests, clippy clean. PyPI + crates.io published.",
       "timestamp": "2026-05-16T10:51:31Z",
       "labels": [
         "v0.3.0",
         "released",
-        "published"
+        "published",
+        "crates.io"
       ]
     },
     {
