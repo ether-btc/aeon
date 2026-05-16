@@ -1939,10 +1939,30 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "ether-btc/rust-cave-001#99995",
+      "repo": "ether-btc/rust-cave-001",
+      "number": 99995,
+      "type": "issue",
+      "title": "v0.2.1 published to PyPI + CI fixes (clippy, cache@v5)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-16T08:50:15Z",
+      "last_action": "2026-05-16T08:50:15Z",
+      "url": "https://pypi.org/project/rust-cave-001/0.2.1/",
+      "actions_taken": [
+        "Filed: v0.2.1 published to PyPI + CI fixes (clippy, cache@v5)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.0",
-  "last_synced": "2026-05-16T08:25:16Z",
+  "last_synced": "2026-05-16T08:50:15Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -2190,6 +2210,12 @@
       "type": "filed",
       "ref": "ether-btc/rust-cave-001#99996",
       "desc": "Filed: Gap analysis: CI fix, classifier tests, GH Release, docs updated, wiki synced"
+    },
+    {
+      "ts": "2026-05-16T08:50:15Z",
+      "type": "filed",
+      "ref": "ether-btc/rust-cave-001#99995",
+      "desc": "Filed: v0.2.1 published to PyPI + CI fixes (clippy, cache@v5)"
     }
   ]
 }
