@@ -1879,10 +1879,50 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "ether-btc/rust-cave-001#99998",
+      "repo": "ether-btc/rust-cave-001",
+      "number": 99998,
+      "type": "issue",
+      "title": "v0.2.1: code audit, deduplication, docs cleanup, test expansion",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-16T08:00:04Z",
+      "last_action": "2026-05-16T08:00:04Z",
+      "url": "https://github.com/ether-btc/rust-cave-001/releases/tag/v0.2.1",
+      "actions_taken": [
+        "Filed: v0.2.1: code audit, deduplication, docs cleanup, test expansion"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/rust-cave-001#99997",
+      "repo": "ether-btc/rust-cave-001",
+      "number": 99997,
+      "type": "issue",
+      "title": "feat: input text classifier for adaptive compression strategy selection",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-16T08:11:58Z",
+      "last_action": "2026-05-16T08:11:58Z",
+      "url": "https://github.com/ether-btc/rust-cave-001/commit/ce9088c",
+      "actions_taken": [
+        "Filed: feat: input text classifier for adaptive compression strategy selection"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.0",
-  "last_synced": "2026-05-16T07:43:55Z",
+  "last_synced": "2026-05-16T08:11:58Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -2112,6 +2152,18 @@
       "type": "note",
       "ref": "ether-btc/hermes-agent#99999",
       "desc": "Diagnosed CI failure: PermissionError in _build_service_path_dirs. 2/23182 tests fail. Issues disabled on repo. Registered in Aeon."
+    },
+    {
+      "ts": "2026-05-16T08:00:04Z",
+      "type": "filed",
+      "ref": "ether-btc/rust-cave-001#99998",
+      "desc": "Filed: v0.2.1: code audit, deduplication, docs cleanup, test expansion"
+    },
+    {
+      "ts": "2026-05-16T08:11:58Z",
+      "type": "filed",
+      "ref": "ether-btc/rust-cave-001#99997",
+      "desc": "Filed: feat: input text classifier for adaptive compression strategy selection"
     }
   ]
 }
