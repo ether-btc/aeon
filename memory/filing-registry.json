@@ -125,7 +125,7 @@
       "repo": "CortexReach/memory-lancedb-pro",
       "number": 738,
       "type": "pr",
-      "title": "fix: preserve early conversation context — slice(0, maxChars) not slice(-maxChars)",
+      "title": "fix: preserve early conversation context \u2014 slice(0, maxChars) not slice(-maxChars)",
       "state": "closed",
       "status": "merged",
       "next_action": "Await upstream review",
@@ -146,8 +146,8 @@
       "number": 1686,
       "type": "pr",
       "title": "fix: pre-extraction tar -tf check blocks path traversal patterns (CWE-22)",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Await upstream review",
       "actions_taken": [
         "Note: Fixes issue #1250 (CWE-22 path traversal reported by security audit)."
@@ -166,8 +166,8 @@
       "number": 1,
       "type": "pr",
       "title": "fix: log OMNI distillation failures at DEBUG level",
-      "state": "open",
-      "status": "watching",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Watch for upstream merge or feedback",
       "actions_taken": [
         "Filed: fix: log OMNI distillation failures at DEBUG level"
@@ -225,7 +225,7 @@
       "repo": "NousResearch/hermes-agent",
       "number": 16145,
       "type": "pr",
-      "title": "[Decision] awesome-hermes-ecosystem repo location — Option B chosen",
+      "title": "[Decision] awesome-hermes-ecosystem repo location \u2014 Option B chosen",
       "state": "closed",
       "status": "closed",
       "next_action": null,
@@ -247,7 +247,7 @@
       "repo": "NousResearch/hermes-agent",
       "number": 16146,
       "type": "pr",
-      "title": "[Decision] awesome-hermes-ecosystem naming — voted and confirmed",
+      "title": "[Decision] awesome-hermes-ecosystem naming \u2014 voted and confirmed",
       "state": "closed",
       "status": "closed",
       "next_action": null,
@@ -339,7 +339,7 @@
       "repo": "NousResearch/hermes-agent",
       "number": 19200,
       "type": "pr",
-      "title": "feat: auto-context retrieval — automatic session search + system message injection",
+      "title": "feat: auto-context retrieval \u2014 automatic session search + system message injection",
       "state": "closed",
       "status": "merged",
       "next_action": "Await upstream response to configurable trigger + ranking threshold",
@@ -501,7 +501,7 @@
       "repo": "NousResearch/hermes-agent",
       "number": 18943,
       "type": "pr",
-      "title": "feat(cli): add /reasoning reveal — post-hoc reasoning display",
+      "title": "feat(cli): add /reasoning reveal \u2014 post-hoc reasoning display",
       "state": "open",
       "status": "reviewed",
       "next_action": "Await upstream merge",
@@ -589,9 +589,9 @@
       "status": "merged",
       "next_action": "Await upstream merge",
       "actions_taken": [
-        "Note: MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s→7s startup improvement."
+        "Note: MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s\u21927s startup improvement."
       ],
-      "notes": "MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s→7s startup improvement.",
+      "notes": "MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s\u21927s startup improvement.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
       "last_action": "2026-05-03T00:00:00Z",
@@ -685,8 +685,8 @@
       "number": 1,
       "type": "pr",
       "title": "docs: Add example SKILL.md template for contributors",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Await upstream review",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-09T21:16:51Z",
@@ -821,7 +821,7 @@
       "repo": "ether-btc/openclaw-correlation-plugin",
       "number": 4,
       "type": "pr",
-      "title": "fix: security audit — config injection, ReDoS, confidence consistency, bounds",
+      "title": "fix: security audit \u2014 config injection, ReDoS, confidence consistency, bounds",
       "state": "closed",
       "status": "merged",
       "next_action": "Await upstream review",
@@ -830,7 +830,7 @@
       "last_action": "2026-05-09T21:16:59Z",
       "url": "https://github.com/ether-btc/openclaw-correlation-plugin/pull/4",
       "actions_taken": [
-        "Filed: fix: security audit — config injection, ReDoS, confidence consistency, bounds"
+        "Filed: fix: security audit \u2014 config injection, ReDoS, confidence consistency, bounds"
       ],
       "notes": "",
       "labels": [],
@@ -861,7 +861,7 @@
       "repo": "ether-btc/morpheus-proxy-router",
       "number": 4,
       "type": "pr",
-      "title": "refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md",
+      "title": "refactor: adopt Agent Skills spec \u2014 docs\u2192references, spec-compliant SKILL.md",
       "state": "closed",
       "status": "merged",
       "next_action": "Await upstream review",
@@ -870,7 +870,7 @@
       "last_action": "2026-05-09T21:17:01Z",
       "url": "https://github.com/ether-btc/morpheus-proxy-router/pull/4",
       "actions_taken": [
-        "Filed: refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md"
+        "Filed: refactor: adopt Agent Skills spec \u2014 docs\u2192references, spec-compliant SKILL.md"
       ],
       "notes": "",
       "labels": [],
@@ -1253,7 +1253,7 @@
       "title": "fix: auto-derive conversation_id when gateway omits or mirrors session_id",
       "state": "closed",
       "status": "closed",
-      "next_action": "None — fix belongs in Hermes gateway, not LCM",
+      "next_action": "None \u2014 fix belongs in Hermes gateway, not LCM",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-13T15:02:03Z",
       "last_action": "2026-05-13T15:04:00Z",
@@ -1301,7 +1301,7 @@
       "repo": "AxDSan/mnemosyne",
       "number": 129,
       "type": "pr",
-      "title": "feat(plugins): CompressionPlugin — replace hardcoded env-var compression in beam.py",
+      "title": "feat(plugins): CompressionPlugin \u2014 replace hardcoded env-var compression in beam.py",
       "state": "closed",
       "status": "merged",
       "next_action": "Await upstream review",
@@ -1310,7 +1310,7 @@
       "last_action": "2026-05-14T06:01:36Z",
       "url": "https://github.com/AxDSan/mnemosyne/pull/129",
       "actions_taken": [
-        "Filed: feat(plugins): CompressionPlugin — replace hardcoded env-var compression in beam.py"
+        "Filed: feat(plugins): CompressionPlugin \u2014 replace hardcoded env-var compression in beam.py"
       ],
       "notes": "",
       "labels": [],
@@ -1326,13 +1326,13 @@
       "title": "v0.3.0: verb maps (306pp/357pres), contraction expansion, be removal, conjunction reduction, 5-model review fixes",
       "state": "closed",
       "status": "merged",
-      "next_action": "None — released and published",
+      "next_action": "None \u2014 released and published",
       "actions_taken": [
-        "Stage 1: Verb maps extracted to module (94→306 PP, 147→357 PRES)",
+        "Stage 1: Verb maps extracted to module (94\u2192306 PP, 147\u2192357 PRES)",
         "Stage 2: Contraction expansion (60+ forms) + copular be removal",
         "Stage 3: and/or conjunction reduction",
-        "5-model multi-expert review — 4 bugs fixed",
-        "OnceLock regex caching (63→1 compilation)",
+        "5-model multi-expert review \u2014 4 bugs fixed",
+        "OnceLock regex caching (63\u21921 compilation)",
         "Pushed 4d8136b, tagged v0.3.0, PyPI published",
         "Acronym protection, pipeline reorder, 13 new tests (108 total)",
         "crates.io published v0.3.0 (commit ea040a3)"
@@ -1351,7 +1351,7 @@
       "repo": "profbernardoj/morpheus-skill",
       "number": 3,
       "type": "issue",
-      "title": "[CRITICAL] Auto-renewal flow calls closeSession on expiry — MOR tokens on-chain hold",
+      "title": "[CRITICAL] Auto-renewal flow calls closeSession on expiry \u2014 MOR tokens on-chain hold",
       "state": "closed",
       "status": "closed",
       "next_action": "Push fixes as PR to upstream",
@@ -1374,7 +1374,7 @@
       "repo": "profbernardoj/morpheus-skill",
       "number": 2,
       "type": "issue",
-      "title": "[CRITICAL] Auto-renewal closes sessions as user (Type 0) — ~49.77 MOR locked",
+      "title": "[CRITICAL] Auto-renewal closes sessions as user (Type 0) \u2014 ~49.77 MOR locked",
       "state": "open",
       "status": "needs_attention",
       "next_action": "Push fixes as PR to upstream profbernardoj/morpheus-skill",
@@ -1420,14 +1420,14 @@
       "repo": "MorpheusAIs/SmartContracts",
       "number": 62,
       "type": "issue",
-      "title": "BUG: withdrawUserStakes() selector not registered on MOR Diamond — ~49.77 MOR locked",
+      "title": "BUG: withdrawUserStakes() selector not registered on MOR Diamond \u2014 ~49.77 MOR locked",
       "state": "open",
       "status": "escalated",
       "next_action": "Await MorpheusAIs team response",
       "actions_taken": [
-        "Note: On-chain bug — Diamond proxy selector not registered. ~49.77 MOR permanently locked."
+        "Note: On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked."
       ],
-      "notes": "On-chain bug — Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
+      "notes": "On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-04-15T00:00:00Z",
       "last_action": "2026-04-15T00:00:00Z",
@@ -1444,8 +1444,8 @@
       "number": 717,
       "type": "issue",
       "title": "Session accounting discrepancy: MOR stake not fully returned on session close",
-      "state": "open",
-      "status": "needs_attention",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Investigate stake return logic in Lumerin-Node",
       "actions_taken": [
         "Note: 0.88 MOR unaccounted after 23 sessions (ether-btc fork). Correlates with #1 and #2."
@@ -1466,7 +1466,7 @@
       "repo": "fajarhide/omni",
       "number": 71,
       "type": "issue",
-      "title": "session/learn.rs:40 — unwrap() on TOML parse causes panic",
+      "title": "session/learn.rs:40 \u2014 unwrap() on TOML parse causes panic",
       "state": "closed",
       "status": "closed",
       "next_action": "none",
@@ -1582,7 +1582,7 @@
       "repo": "vectorize-io/hindsight",
       "number": 1284,
       "type": "issue",
-      "title": "Experience entries accumulate without consolidation — unbounded growth",
+      "title": "Experience entries accumulate without consolidation \u2014 unbounded growth",
       "state": "closed",
       "status": "closed",
       "next_action": "Watch PR #1371 for merge; close issue after merge",
@@ -1606,9 +1606,9 @@
       "repo": "moltlaunch/cashclaw",
       "number": 82,
       "type": "issue",
-      "title": "Dynamic import at runtime to invalidate search index — error swallowed",
-      "state": "open",
-      "status": "pending",
+      "title": "Dynamic import at runtime to invalidate search index \u2014 error swallowed",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Assess and file fix PR",
       "actions_taken": [
         "Note: Part of 17-issue security audit."
@@ -1630,8 +1630,8 @@
       "number": 81,
       "type": "issue",
       "title": "Inconsistent atomic write patterns across memory modules",
-      "state": "open",
-      "status": "pending",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Standardize atomic write pattern",
       "actions_taken": [
         "Note: Part of 17-issue security audit."
@@ -1652,9 +1652,9 @@
       "repo": "moltlaunch/cashclaw",
       "number": 80,
       "type": "issue",
-      "title": "CORS origin not validated — static string without Origin check",
-      "state": "open",
-      "status": "pending",
+      "title": "CORS origin not validated \u2014 static string without Origin check",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Add Origin header validation",
       "actions_taken": [
         "Note: Part of 17-issue security audit."
@@ -1676,8 +1676,8 @@
       "number": 79,
       "type": "issue",
       "title": "Tool registry memoization bug: stale tool map on config change",
-      "state": "open",
-      "status": "pending",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Fix memoization cache invalidation",
       "actions_taken": [
         "Note: Part of 17-issue security audit."
@@ -1698,9 +1698,9 @@
       "repo": "moltlaunch/cashclaw",
       "number": 77,
       "type": "issue",
-      "title": "LLM API calls have no timeout — hung connections stall agent loop",
-      "state": "open",
-      "status": "pending",
+      "title": "LLM API calls have no timeout \u2014 hung connections stall agent loop",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Add timeout to LLM API calls",
       "actions_taken": [
         "Note: Part of 17-issue security audit."
@@ -1722,9 +1722,9 @@
       "number": 76,
       "type": "issue",
       "title": "Path traversal guard uses startsWith instead of equals",
-      "state": "open",
-      "status": "pending",
-      "next_action": "Fix path traversal guard — use equals, not startsWith",
+      "state": "closed",
+      "status": "closed",
+      "next_action": "Fix path traversal guard \u2014 use equals, not startsWith",
       "actions_taken": [
         "Note: Part of 17-issue security audit."
       ],
@@ -1744,10 +1744,10 @@
       "repo": "ether-btc/morpheus-proxy-router",
       "number": 3,
       "type": "issue",
-      "title": "Auto-renewal deletes session before new confirmed — silent MOR lock",
-      "state": "open",
-      "status": "needs_attention",
-      "next_action": "Fix auto-renewal race condition — confirm new session before deleting old",
+      "title": "Auto-renewal deletes session before new confirmed \u2014 silent MOR lock",
+      "state": "closed",
+      "status": "closed",
+      "next_action": "Fix auto-renewal race condition \u2014 confirm new session before deleting old",
       "actions_taken": [
         "Note: Same root cause as profbernardoj/morpheus-skill #2 and #3. ~49.77 MOR locked."
       ],
@@ -1768,8 +1768,8 @@
       "number": 2,
       "type": "issue",
       "title": "cmdFund() delegates to missing safe-transfer.mjs script",
-      "state": "open",
-      "status": "pending",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Implement cmdFund() or inline the transfer logic",
       "actions_taken": [
         "Filed: cmdFund() delegates to missing safe-transfer.mjs script"
@@ -1790,9 +1790,9 @@
       "number": 1,
       "type": "issue",
       "title": "Session accounting discrepancy: 0.88 MOR permanently unaccounted after 23 sessions",
-      "state": "open",
-      "status": "needs_attention",
-      "next_action": "Audit stake tracking — find where 0.88 MOR is lost",
+      "state": "closed",
+      "status": "closed",
+      "next_action": "Audit stake tracking \u2014 find where 0.88 MOR is lost",
       "actions_taken": [
         "Note: 0.88 MOR unaccounted after 23 sessions. Correlates with MorpheusAIs/Morpheus-Lumerin-Node#717."
       ],
@@ -1812,14 +1812,14 @@
       "repo": "fajarhide/omni",
       "number": 69,
       "type": "issue",
-      "title": "MCP server has no authentication — all tools accessible to any local process",
+      "title": "MCP server has no authentication \u2014 all tools accessible to any local process",
       "state": "closed",
       "status": "closed",
       "next_action": "none",
       "actions_taken": [
         "Note: Owner correctly closed: stdio MCP has no network surface, OS permission model is the security bounda"
       ],
-      "notes": "Owner correctly closed: stdio MCP has no network surface, OS permission model is the security boundary. No auth layer needed for local IPC. Our threat model assessment was incomplete — same-user process threat is outside application threat model.",
+      "notes": "Owner correctly closed: stdio MCP has no network surface, OS permission model is the security boundary. No auth layer needed for local IPC. Our threat model assessment was incomplete \u2014 same-user process threat is outside application threat model.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T07:55:00Z",
       "last_action": "2026-05-03T08:32:23.756152+00:00",
@@ -1856,7 +1856,9 @@
       "status": "open",
       "evidence": "tier_1",
       "filed_at": "2026-05-15T18:43:10.798267+00:00",
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/881"
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/881",
+      "id": "harry0703/MoneyPrinterTurbo#881",
+      "type": "issue"
     },
     {
       "repo": "harry0703/MoneyPrinterTurbo",
@@ -1865,7 +1867,9 @@
       "status": "open",
       "evidence": "tier_1",
       "filed_at": "2026-05-15T18:43:10.798267+00:00",
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/882"
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/882",
+      "id": "harry0703/MoneyPrinterTurbo#882",
+      "type": "issue"
     },
     {
       "repo": "harry0703/MoneyPrinterTurbo",
@@ -1874,7 +1878,9 @@
       "status": "open",
       "evidence": "tier_1",
       "filed_at": "2026-05-15T18:43:10.798267+00:00",
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/883"
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/883",
+      "id": "harry0703/MoneyPrinterTurbo#883",
+      "type": "issue"
     },
     {
       "repo": "harry0703/MoneyPrinterTurbo",
@@ -1883,7 +1889,9 @@
       "status": "open",
       "evidence": "tier_2",
       "filed_at": "2026-05-15T18:43:10.798267+00:00",
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/884"
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/884",
+      "id": "harry0703/MoneyPrinterTurbo#884",
+      "type": "issue"
     },
     {
       "id": "ether-btc/hermes-agent#99999",
@@ -2007,7 +2015,7 @@
     }
   ],
   "version": "1.0",
-  "last_synced": "2026-05-19T07:01:38Z",
+  "last_synced": "2026-05-19T12:01:39Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -2073,7 +2081,7 @@
       "ts": "2026-05-09T21:16:59Z",
       "type": "filed",
       "ref": "ether-btc/openclaw-correlation-plugin#4",
-      "desc": "Filed: fix: security audit — config injection, ReDoS, confidence consistency, bounds"
+      "desc": "Filed: fix: security audit \u2014 config injection, ReDoS, confidence consistency, bounds"
     },
     {
       "ts": "2026-05-09T21:17:00Z",
@@ -2085,7 +2093,7 @@
       "ts": "2026-05-09T21:17:01Z",
       "type": "filed",
       "ref": "ether-btc/morpheus-proxy-router#4",
-      "desc": "Filed: refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md"
+      "desc": "Filed: refactor: adopt Agent Skills spec \u2014 docs\u2192references, spec-compliant SKILL.md"
     },
     {
       "ts": "2026-05-09T21:17:03Z",
@@ -2223,7 +2231,7 @@
       "ts": "2026-05-14T06:01:36Z",
       "type": "filed",
       "ref": "AxDSan/mnemosyne#129",
-      "desc": "Filed: feat(plugins): CompressionPlugin — replace hardcoded env-var compression in beam.py"
+      "desc": "Filed: feat(plugins): CompressionPlugin \u2014 replace hardcoded env-var compression in beam.py"
     },
     {
       "ts": "2026-05-16T07:43:12Z",
