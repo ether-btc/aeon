@@ -317,15 +317,15 @@
       "type": "pr",
       "title": "feat: add user_mapper.py for cross-channel memory unification",
       "state": "open",
-      "status": "reviewed",
-      "next_action": "Await upstream response to location/persistence questions",
+      "status": "stale",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "actions_taken": [
         "Note: HIGH ARCHITECTURAL VALUE. 456-line net-new. Location concern raised."
       ],
       "notes": "HIGH ARCHITECTURAL VALUE. 456-line net-new. Location concern raised.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
-      "last_action": "2026-05-03T00:00:00Z",
+      "last_action": "2026-05-22T18:25:00Z",
       "labels": [
         "type/feature",
         "comp/agent",
@@ -387,15 +387,15 @@
       "type": "pr",
       "title": "feat(api_server): add audio routing for input_audio content parts",
       "state": "open",
-      "status": "reviewed",
-      "next_action": "Await upstream format coverage confirmation",
+      "status": "stale",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "actions_taken": [
         "Note: HIGH VALUE. api_server audio routing. +729 lines. Clean modular architecture."
       ],
       "notes": "HIGH VALUE. api_server audio routing. +729 lines. Clean modular architecture.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
-      "last_action": "2026-05-03T00:00:00Z",
+      "last_action": "2026-05-22T18:25:00Z",
       "labels": [
         "type/feature",
         "comp/gateway"
@@ -410,15 +410,15 @@
       "type": "pr",
       "title": "feat: configure MoA provider routing",
       "state": "open",
-      "status": "reviewed",
-      "next_action": "Await upstream documentation of cascading error behavior",
+      "status": "stale",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "actions_taken": [
         "Note: VERY HIGH VALUE. Largest top-10 PR. ~2000 lines. 14 files. MoA routing configuration."
       ],
       "notes": "VERY HIGH VALUE. Largest top-10 PR. ~2000 lines. 14 files. MoA routing configuration.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
-      "last_action": "2026-05-03T00:00:00Z",
+      "last_action": "2026-05-22T18:25:00Z",
       "labels": [
         "type/feature",
         "comp/cli",
@@ -434,15 +434,15 @@
       "type": "pr",
       "title": "feat: HERMES_SEALED env var to lock the runtime to a single profile",
       "state": "open",
-      "status": "reviewed",
-      "next_action": "Await upstream merge",
+      "status": "stale",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "actions_taken": [
         "Note: HIGH VALUE. Multi-tenant security isolation. +321 lines. Merge-ready."
       ],
       "notes": "HIGH VALUE. Multi-tenant security isolation. +321 lines. Merge-ready.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
-      "last_action": "2026-05-03T00:00:00Z",
+      "last_action": "2026-05-22T18:25:00Z",
       "labels": [
         "type/feature",
         "comp/cli"
@@ -457,15 +457,15 @@
       "type": "pr",
       "title": "feat(api_server): add /api/config/persona + /api/config/toolsets endpoints",
       "state": "open",
-      "status": "reviewed",
-      "next_action": "Await upstream auth/authz clarification",
+      "status": "stale",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "actions_taken": [
         "Note: MEDIUM-HIGH VALUE. REST API extension. +425 lines. Merge-ready with auth clarification."
       ],
       "notes": "MEDIUM-HIGH VALUE. REST API extension. +425 lines. Merge-ready with auth clarification.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
-      "last_action": "2026-05-03T00:00:00Z",
+      "last_action": "2026-05-22T18:25:00Z",
       "labels": [
         "type/feature",
         "comp/gateway"
@@ -480,15 +480,15 @@
       "type": "pr",
       "title": "feat(cli): add --stream flag to chat -Q for live response feedback",
       "state": "open",
-      "status": "reviewed",
-      "next_action": "Await upstream merge",
+      "status": "stale",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "actions_taken": [
         "Note: MEDIUM VALUE. CLI streaming UX. +184 lines. Small, clean."
       ],
       "notes": "MEDIUM VALUE. CLI streaming UX. +184 lines. Small, clean.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
-      "last_action": "2026-05-03T00:00:00Z",
+      "last_action": "2026-05-22T18:25:00Z",
       "labels": [
         "type/feature",
         "comp/cli"
@@ -503,15 +503,15 @@
       "type": "pr",
       "title": "feat(cli): add /reasoning reveal \u2014 post-hoc reasoning display",
       "state": "open",
-      "status": "reviewed",
-      "next_action": "Await upstream merge",
+      "status": "stale",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "actions_taken": [
         "Note: MEDIUM VALUE. CLI /reasoning. +30 lines. Fast merge endorsed."
       ],
       "notes": "MEDIUM VALUE. CLI /reasoning. +30 lines. Fast merge endorsed.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
-      "last_action": "2026-05-03T00:00:00Z",
+      "last_action": "2026-05-22T18:25:00Z",
       "labels": [
         "type/feature",
         "comp/cli"
@@ -526,15 +526,15 @@
       "type": "pr",
       "title": "Harden local runtime compression, Honcho, quick commands, and delegation",
       "state": "open",
-      "status": "reviewed",
-      "next_action": "Await upstream merge",
+      "status": "stale",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "actions_taken": [
         "Note: VERY HIGH ARCHITECTURAL VALUE. 20 files, +1744/-183. 5 subsystems hardened in coherent direction."
       ],
       "notes": "VERY HIGH ARCHITECTURAL VALUE. 20 files, +1744/-183. 5 subsystems hardened in coherent direction.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
-      "last_action": "2026-05-03T00:00:00Z",
+      "last_action": "2026-05-22T18:25:00Z",
       "labels": [],
       "url": "https://github.com/NousResearch/hermes-agent/pull/19279",
       "is_upstream": true
@@ -566,15 +566,15 @@
       "type": "pr",
       "title": "feat(vertex): add Vertex AI provider for Gemini models",
       "state": "open",
-      "status": "reviewed",
-      "next_action": "Await upstream merge",
+      "status": "stale",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "actions_taken": [
         "Note: MED-HIGH STRATEGIC VALUE. 21 files, +786/-69. GCP enterprise OAuth2 integration."
       ],
       "notes": "MED-HIGH STRATEGIC VALUE. 21 files, +786/-69. GCP enterprise OAuth2 integration.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
-      "last_action": "2026-05-03T00:00:00Z",
+      "last_action": "2026-05-22T18:25:00Z",
       "labels": [],
       "url": "https://github.com/NousResearch/hermes-agent/pull/8427",
       "is_upstream": true
@@ -626,15 +626,15 @@
       "type": "pr",
       "title": "feat: add ask_advisor tool for multi-model strategic guidance",
       "state": "open",
-      "status": "reviewed",
-      "next_action": "Await upstream merge",
+      "status": "stale",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "actions_taken": [
         "Note: MEDIUM INNOVATION VALUE. 7 files, +513/-1. Multi-model advisor pattern with +261 test lines."
       ],
       "notes": "MEDIUM INNOVATION VALUE. 7 files, +513/-1. Multi-model advisor pattern with +261 test lines.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
-      "last_action": "2026-05-03T00:00:00Z",
+      "last_action": "2026-05-22T18:25:00Z",
       "labels": [],
       "url": "https://github.com/NousResearch/hermes-agent/pull/7656",
       "is_upstream": true
@@ -1444,14 +1444,14 @@
       "title": "BUG: withdrawUserStakes() selector not registered on MOR Diamond \u2014 ~49.77 MOR locked",
       "state": "open",
       "status": "escalated",
-      "next_action": "Monitor for MorpheusAIs team response. On-chain bug \u2014 no code fix possible. ~49.77 MOR permanently locked.",
+      "next_action": "On-chain bug \u2014 MorpheusAIs team needs to redeploy Diamond with selector. ~49.77 MOR locked. No code fix possible. Await team response.",
       "actions_taken": [
         "Note: On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked."
       ],
       "notes": "On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-04-15T00:00:00Z",
-      "last_action": "2026-05-22T18:15:00Z",
+      "last_action": "2026-05-22T18:25:00Z",
       "labels": [
         "critical",
         "on-chain"
