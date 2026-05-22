@@ -714,7 +714,8 @@
       ],
       "notes": "",
       "labels": [],
-      "is_upstream": true
+      "is_upstream": true,
+      "id": "#9"
     },
     {
       "id": "NousResearch/hermes-agent#19616",
@@ -1279,7 +1280,8 @@
         "Stop-word removal algorithm (50 English stopwords)",
         "11 unit tests passing",
         "Binary installed at ~/.local/bin/caveman-rs"
-      ]
+      ],
+      "id": "ether-btc/rust-caveman#1"
     },
     {
       "repo": "ether-btc/caveman-plugin",
@@ -1294,7 +1296,8 @@
         "31 integration tests passing",
         "Tools: caveman_compress, caveman_health, /caveman_cleanup",
         "Retry logic + Python fallback"
-      ]
+      ],
+      "id": "ether-btc/caveman-plugin#1"
     },
     {
       "id": "AxDSan/mnemosyne#129",
@@ -1336,6 +1339,24 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "ether-btc/hermes-lcm#1",
+      "repo": "ether-btc/hermes-lcm",
+      "number": 1,
+      "type": "pr",
+      "title": "fix: LCM config defaults (context_threshold=0.35, incremental_max_depth=3, fresh_tail_count=32)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Config-only \u2014 does NOT address normalization ordering or rollover_session TypeError blockers from stephenschoettler/hermes-lcm#178",
+      "actions_taken": [],
+      "notes": "Config defaults only. Does not fix engine.py normalization ordering bug or rollover_session TypeError.",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-22T18:30:00Z",
+      "last_action": "2026-05-22T18:30:00Z",
+      "labels": [],
+      "url": "https://github.com/ether-btc/hermes-lcm/pull/1",
+      "is_upstream": false
     }
   ],
   "issues": [
