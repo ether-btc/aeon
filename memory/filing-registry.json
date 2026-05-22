@@ -1315,6 +1315,27 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "stephenschoettler/hermes-lcm#178",
+      "repo": "stephenschoettler/hermes-lcm",
+      "number": 178,
+      "type": "pr",
+      "title": "fix(engine): auto-derive conversation_id when gateway omits or mirrors session_id",
+      "state": "closed",
+      "status": "pending_upstream",
+      "next_action": "Await replacement PR from ether-btc",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-22T15:42:44Z",
+      "last_action": "2026-05-22T15:45:00Z",
+      "url": "https://github.com/stephenschoettler/hermes-lcm/pull/178",
+      "actions_taken": [
+        "Filed: fix(engine): auto-derive conversation_id when gateway omits or mirrors session_id",
+        "Filed via gh comment review; awaiting ether-btc replacement PR"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "issues": [
@@ -1853,45 +1874,49 @@
       "repo": "harry0703/MoneyPrinterTurbo",
       "number": 881,
       "title": "TLS certificate verification disabled on all outbound API requests",
-      "status": "open",
+      "status": "closed",
       "evidence": "tier_1",
       "filed_at": "2026-05-15T18:43:10.798267+00:00",
       "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/881",
       "id": "harry0703/MoneyPrinterTurbo#881",
-      "type": "issue"
+      "type": "issue",
+      "state": "closed"
     },
     {
       "repo": "harry0703/MoneyPrinterTurbo",
       "number": 882,
       "title": "API auth (verify_token) exists but is commented out in all routers",
-      "status": "open",
+      "status": "closed",
       "evidence": "tier_1",
       "filed_at": "2026-05-15T18:43:10.798267+00:00",
       "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/882",
       "id": "harry0703/MoneyPrinterTurbo#882",
-      "type": "issue"
+      "type": "issue",
+      "state": "closed"
     },
     {
       "repo": "harry0703/MoneyPrinterTurbo",
       "number": 883,
       "title": "g4f (gpt4free) dependency is a supply chain risk for production use",
-      "status": "open",
+      "status": "closed",
       "evidence": "tier_1",
       "filed_at": "2026-05-15T18:43:10.798267+00:00",
       "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/883",
       "id": "harry0703/MoneyPrinterTurbo#883",
-      "type": "issue"
+      "type": "issue",
+      "state": "closed"
     },
     {
       "repo": "harry0703/MoneyPrinterTurbo",
       "number": 884,
       "title": "voice.py (2066 lines), llm.py complexity 57, silent exception swallowing, code quality issues",
-      "status": "open",
+      "status": "closed",
       "evidence": "tier_2",
       "filed_at": "2026-05-15T18:43:10.798267+00:00",
       "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/884",
       "id": "harry0703/MoneyPrinterTurbo#884",
-      "type": "issue"
+      "type": "issue",
+      "state": "open"
     },
     {
       "id": "ether-btc/hermes-agent#99999",
@@ -2012,10 +2037,52 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "stephenschoettler/hermes-lcm#133",
+      "repo": "stephenschoettler/hermes-lcm",
+      "number": 133,
+      "type": "issue",
+      "title": "Feature: auto-link sessions into conversations when gateway doesn't pass conversation_id",
+      "state": "open",
+      "status": "pending_upstream",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-22T15:42:45Z",
+      "last_action": "2026-05-22T15:42:45Z",
+      "url": "https://github.com/stephenschoettler/hermes-lcm/issues/133",
+      "actions_taken": [
+        "Filed: Feature: auto-link sessions into conversations when gateway doesn't pass conversation_id"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "stephenschoettler/hermes-lcm#171",
+      "repo": "stephenschoettler/hermes-lcm",
+      "number": 171,
+      "type": "issue",
+      "title": "Feature: include thread/topic scope in host-provided conversation_id",
+      "state": "open",
+      "status": "pending_upstream",
+      "next_action": "Replacement PR must address thread/topic scope for Telegram and Discord",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-22T15:45:00Z",
+      "last_action": "2026-05-22T15:45:00Z",
+      "actions_taken": [
+        "Child issue of #133"
+      ],
+      "notes": "Telegram topics and Discord threads need separate lifecycle bindings even in same parent chat",
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/stephenschoettler/hermes-lcm/issues/171",
+      "is_upstream": true
     }
   ],
   "version": "1.0",
-  "last_synced": "2026-05-19T12:01:39Z",
+  "last_synced": "2026-05-22T15:42:45Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -2274,6 +2341,18 @@
       "type": "filed",
       "ref": "ether-btc/rust-cave-001#99994",
       "desc": "Filed: Self-learning framework MVP: compress_adaptive() + benchmark oracle"
+    },
+    {
+      "ts": "2026-05-22T15:42:44Z",
+      "type": "filed",
+      "ref": "stephenschoettler/hermes-lcm#178",
+      "desc": "Filed: fix(engine): auto-derive conversation_id when gateway omits or mirrors session_id"
+    },
+    {
+      "ts": "2026-05-22T15:42:45Z",
+      "type": "filed",
+      "ref": "stephenschoettler/hermes-lcm#133",
+      "desc": "Filed: Feature: auto-link sessions into conversations when gateway doesn't pass conversation_id"
     }
   ]
 }
