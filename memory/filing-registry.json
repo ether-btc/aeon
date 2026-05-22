@@ -1327,7 +1327,7 @@
       "next_action": "Await replacement PR from ether-btc",
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-22T15:42:44Z",
-      "last_action": "2026-05-22T15:45:00Z",
+      "last_action": "2026-05-22T18:00:00Z",
       "url": "https://github.com/stephenschoettler/hermes-lcm/pull/178",
       "actions_taken": [
         "Filed: fix(engine): auto-derive conversation_id when gateway omits or mirrors session_id",

@@ -179,31 +179,34 @@ cmd_status() {
     exit 0
   fi
 
-  # Build update
-  local updates=""
-  [[ -n "$set_status" ]] && updates="$updates | .status = \"$set_status\""
-  [[ -n "$next_action" ]] && updates="$updates | .next_action = \"$next_action\""
-  [[ -n "$notes" ]] && updates="$updates | .notes = \"$notes\""
-
+  # Build update as a JSON object
+  local upd_json="{}"
+  if [[ -n "$set_status" ]]; then
+    upd_json=$(echo "$upd_json" | jq --arg v "$set_status" '.status = $v')
+  fi
+  if [[ -n "$next_action" ]]; then
+    upd_json=$(echo "$upd_json" | jq --arg v "$next_action" '.next_action = $v')
+  fi
+  if [[ -n "$notes" ]]; then
+    upd_json=$(echo "$upd_json" | jq --arg v "$notes" '.notes = $v')
+  fi
   if [[ -n "$action" ]]; then
-    updates="$updates | .actions_taken += [\"$action\"]"
-    updates="$updates | .last_action = \"$(now_str)\""
+    upd_json=$(echo "$upd_json" | jq --arg v "$action" '.actions_taken = [$v] | .last_action = "'"$(now_str)"'"')
   fi
-
   if [[ -n "$fix_pr" ]]; then
-    updates="$updates | .has_fix_pr = true | .fix_pr_url = \"$fix_pr\""
-    [[ -z "$set_status" ]] && updates="$updates | .status = \"has_fix_pr\""
+    upd_json=$(echo "$upd_json" | jq --arg v "$fix_pr" '.has_fix_pr = true | .fix_pr_url = $v')
+    [[ -z "$set_status" ]] && upd_json=$(echo "$upd_json" | jq '.status = "has_fix_pr"')
   fi
 
-  if [[ -n "$updates" ]]; then
-    updates="${updates:1}"  # trim leading |
+  if [[ "$upd_json" != "{}" ]]; then
     local new_registry
-    new_registry=$(echo "$current" | jq --arg id "$id" --arg key "$result_key" \
-      --argjson upd "$updates" \
-      'foreach (.[$key] | to_entries)[] as $item ({r: .};
+    new_registry=$(echo "$current" | jq --argjson upd "$upd_json" --arg id "$id" --arg key "$result_key" \
+      'reduce (.[$key] | to_entries)[] as $item
+        (.;
         if $item.value.id == $id then
-          .r[$key][$item.key] |= . + $upd
-        else . end; .r; .r = {}) | .r | .last_synced = "$(now_str)"')
+          .[$key][$item.key] |= . + $upd
+        else . end)
+      | .last_synced = "'"$(now_str)"'"')
     echo "$new_registry" > "$REGISTRY"
     log_activity "status_update" "$id" "${set_status:+$set_status }${action:+$action}"
     echo "UPDATED: $id"
