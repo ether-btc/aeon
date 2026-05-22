@@ -1397,7 +1397,7 @@
       "type": "issue",
       "title": "[CRITICAL] Auto-renewal closes sessions as user (Type 0) \u2014 ~49.77 MOR locked",
       "state": "open",
-      "status": "needs_attention",
+      "status": "stale",
       "next_action": "Push fixes as PR to upstream profbernardoj/morpheus-skill",
       "actions_taken": [
         "Note: ~49.77 MOR locked. Same root cause as #3."
@@ -1405,7 +1405,7 @@
       "notes": "~49.77 MOR locked. Same root cause as #3.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-04-15T00:00:00Z",
-      "last_action": "2026-04-15T00:00:00Z",
+      "last_action": "2026-05-22T18:15:00Z",
       "labels": [
         "critical",
         "financial-risk"
@@ -1420,7 +1420,7 @@
       "type": "issue",
       "title": "Session accounting discrepancy: MOR stake not fully returned on session close",
       "state": "open",
-      "status": "needs_attention",
+      "status": "stale",
       "next_action": "Investigate stake return logic",
       "actions_taken": [
         "Note: MOR stake accounting discrepancy on session close."
@@ -1428,7 +1428,7 @@
       "notes": "MOR stake accounting discrepancy on session close.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-04-15T00:00:00Z",
-      "last_action": "2026-04-15T00:00:00Z",
+      "last_action": "2026-05-22T18:15:00Z",
       "labels": [
         "high",
         "accounting"
@@ -1444,14 +1444,14 @@
       "title": "BUG: withdrawUserStakes() selector not registered on MOR Diamond \u2014 ~49.77 MOR locked",
       "state": "open",
       "status": "escalated",
-      "next_action": "Await MorpheusAIs team response",
+      "next_action": "Monitor for MorpheusAIs team response. On-chain bug \u2014 no code fix possible. ~49.77 MOR permanently locked.",
       "actions_taken": [
         "Note: On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked."
       ],
       "notes": "On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-04-15T00:00:00Z",
-      "last_action": "2026-04-15T00:00:00Z",
+      "last_action": "2026-05-22T18:15:00Z",
       "labels": [
         "critical",
         "on-chain"
