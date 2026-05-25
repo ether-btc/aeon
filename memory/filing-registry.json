@@ -1361,6 +1361,30 @@
   ],
   "issues": [
     {
+      "id": "NousResearch/hermes-agent#20353",
+      "repo": "NousResearch/hermes-agent",
+      "number": 20353,
+      "type": "issue",
+      "title": "[IMPROVEMENT] no_agent=True cron jobs silently produce no output on failure",
+      "state": "open",
+      "status": "needs_attention",
+      "next_action": "Review heartbeat_interval_seconds design. Track consecutive_no_output_ticks per job. Per-job configurable interval, default off. Non-zero exit already delivers error.",
+      "actions_taken": [
+        "Subagent architecture review: non-zero exit already handles crash/timeout. Silent gap is exit-0-empty-output.",
+        "Subagent implementation review: heartbeat_interval_seconds implementable using _run_install_with_heartbeat threading pattern.",
+        "User ether-btc (2 comments): RSS pre-scan script hit this. Pattern: mandatory heartbeat stdout line + semantic exit codes."
+      ],
+      "evidence_tier": "tier_1",
+      "labels": [
+        "type/feature",
+        "comp/cron",
+        "P3"
+      ],
+      "notes": "Severity Low. heartbeat_interval_seconds: track consecutive_no_output_ticks. If >= heartbeat_interval_ticks without output, deliver alert. wakeAgent=false only checks final output, not heartbeats.",
+      "timestamp": "2026-05-25T17:56:36Z",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/20353"
+    },
+    {
       "id": "ether-btc/rust-cave-001#v030",
       "repo": "ether-btc/rust-cave-001",
       "number": 99999,
@@ -1417,8 +1441,8 @@
       "number": 2,
       "type": "issue",
       "title": "[CRITICAL] Auto-renewal closes sessions as user (Type 0) \u2014 ~49.77 MOR locked",
-      "state": "open",
-      "status": "stale",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Push fixes as PR to upstream profbernardoj/morpheus-skill",
       "actions_taken": [
         "Note: ~49.77 MOR locked. Same root cause as #3."
@@ -1440,8 +1464,8 @@
       "number": 1,
       "type": "issue",
       "title": "Session accounting discrepancy: MOR stake not fully returned on session close",
-      "state": "open",
-      "status": "stale",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Investigate stake return logic",
       "actions_taken": [
         "Note: MOR stake accounting discrepancy on session close."
@@ -2103,7 +2127,7 @@
     }
   ],
   "version": "1.0",
-  "last_synced": "2026-05-22T15:42:45Z",
+  "last_synced": "2026-05-25T17:56:36Z",
   "account": "ether-btc",
   "activity_log": [
     {
