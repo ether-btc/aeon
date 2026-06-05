@@ -1357,6 +1357,41 @@
       "labels": [],
       "url": "https://github.com/ether-btc/hermes-lcm/pull/1",
       "is_upstream": false
+    },
+    {
+      "id": "NousResearch/hermes-agent#TBD-minimax-picker-live-catalog",
+      "repo": "NousResearch/hermes-agent",
+      "number": null,
+      "type": "pr-prep",
+      "title": "fix(model_switch): include MiniMax in live /v1/models catalog discovery",
+      "state": "local",
+      "status": "awaiting_maintainer_filing",
+      "next_action": "Maintainer: apply /home/hermes-pi/minimax-picker.patch to a fresh branch on ether-btc/hermes-agent, then open PR to NousResearch/hermes-agent:main",
+      "actions_taken": [
+        "2026-06-05: Drafted 4-file patch addressing 3 bugs in MiniMax /model picker live-catalog path",
+        "2026-06-05: Wrote 17 new tests in tests/hermes_cli/test_minimax_picker.py (4 classes)",
+        "2026-06-05: Verified patch applies cleanly to upstream/main via 3-way merge",
+        "2026-06-05: 71/71 related tests pass (test_minimax_picker 17, test_minimax_model_validation, test_minimax_provider)",
+        "2026-06-05: Local commit 2f99a1078 on branch fix/audit-findings-2026-05-28 in /home/hermes-pi/hermes-agent",
+        "2026-06-05: User instructed: maintainer handles GH filing; PRs 39815 and 39818 closed",
+        "2026-06-05: Patch preserved at /home/hermes-pi/minimax-picker.patch (format-patch, 30 KB, 681 lines)"
+      ],
+      "notes": "Three bugs, one fix:\n1. plugins/model-providers/minimax/__init__.py \u2014 set models_url on all 3 profiles\n   (default fetch_models hit <base_url>/models = .../anthropic/models \u2192 404)\n2. hermes_cli/models.py \u2014 add minimax, minimax-cn to _MODELS_DEV_PREFERRED\n   (the gate that triggers live /v1/models fetch in list_authenticated_providers)\n3. validate_requested_model \u2014 fix misleading comment about /v1/models endpoint\n\nPRs 39815 and 39818 to NousResearch/hermes-agent were opened, then closed per\nuser instruction. The 39815 PR was conflicting (origin/main 5 commits behind\nupstream/main). The 39818 PR was blocked at push by PAT scope (workflow file\nfrom upstream requires 'workflow' scope that the current gh PAT doesn't have).\n\nLocal commit 2f99a1078 on branch fix/audit-findings-2026-05-28 in\n/home/hermes-pi/hermes-agent contains the 4-file change (525 insertions,\n17 deletions). The 3-way-merged version on /tmp/hermes-pr was discarded\nwhen the push was blocked.\n\nUpstream already has several recent MiniMax improvements (default_aux_model\nchanged to M3 in 3d1d0a49f, vision video_url handling in 0b46c4163, etc.) \u2014\nthis patch is complementary: it adds the live /v1/models catalog discovery\nto the picker, which is independent of those changes.",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-06-05T15:00:00Z",
+      "last_action": "2026-06-05T15:00:00Z",
+      "labels": [
+        "model-switch",
+        "minimax",
+        "live-catalog",
+        "picker"
+      ],
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "is_upstream": true,
+      "patch_path": "/home/hermes-pi/minimax-picker.patch",
+      "patch_size_bytes": 30250,
+      "local_commit_sha": "2f99a107850bbf3adde52c666cb6ecbafe3b484c",
+      "local_branch": "fix/audit-findings-2026-05-28"
     }
   ],
   "issues": [
@@ -2406,5 +2441,6 @@
       "ref": "stephenschoettler/hermes-lcm#133",
       "desc": "Filed: Feature: auto-link sessions into conversations when gateway doesn't pass conversation_id"
     }
-  ]
+  ],
+  "last_updated": "2026-06-05T15:00:00Z"
 }
