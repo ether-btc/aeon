@@ -136,7 +136,7 @@
       "repo": "CortexReach/memory-lancedb-pro",
       "state": "closed",
       "status": "merged",
-      "title": "fix: preserve early conversation context — slice(0, maxChars) not slice(-maxChars)",
+      "title": "fix: preserve early conversation context \u2014 slice(0, maxChars) not slice(-maxChars)",
       "type": "pr",
       "url": "https://github.com/CortexReach/memory-lancedb-pro/pull/738"
     },
@@ -238,7 +238,7 @@
       "repo": "NousResearch/hermes-agent",
       "state": "closed",
       "status": "closed",
-      "title": "[Decision] awesome-hermes-ecosystem repo location — Option B chosen",
+      "title": "[Decision] awesome-hermes-ecosystem repo location \u2014 Option B chosen",
       "type": "pr",
       "url": "https://github.com/NousResearch/hermes-agent/issues/16145"
     },
@@ -260,7 +260,7 @@
       "repo": "NousResearch/hermes-agent",
       "state": "closed",
       "status": "closed",
-      "title": "[Decision] awesome-hermes-ecosystem naming — voted and confirmed",
+      "title": "[Decision] awesome-hermes-ecosystem naming \u2014 voted and confirmed",
       "type": "pr",
       "url": "https://github.com/NousResearch/hermes-agent/issues/16146"
     },
@@ -324,7 +324,7 @@
         "tool/memory"
       ],
       "last_action": "2026-05-22T18:25:00Z",
-      "next_action": "No action needed — stale, reviewed, no upstream action",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "notes": "HIGH ARCHITECTURAL VALUE. 456-line net-new. Location concern raised.",
       "number": 19163,
       "repo": "NousResearch/hermes-agent",
@@ -353,7 +353,7 @@
       "repo": "NousResearch/hermes-agent",
       "state": "closed",
       "status": "merged",
-      "title": "feat: auto-context retrieval — automatic session search + system message injection",
+      "title": "feat: auto-context retrieval \u2014 automatic session search + system message injection",
       "type": "pr",
       "url": "https://github.com/NousResearch/hermes-agent/pull/19200"
     },
@@ -393,7 +393,7 @@
         "comp/gateway"
       ],
       "last_action": "2026-05-22T18:25:00Z",
-      "next_action": "No action needed — stale, reviewed, no upstream action",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "notes": "HIGH VALUE. api_server audio routing. +729 lines. Clean modular architecture.",
       "number": 18975,
       "repo": "NousResearch/hermes-agent",
@@ -417,7 +417,7 @@
         "comp/tools"
       ],
       "last_action": "2026-05-22T18:25:00Z",
-      "next_action": "No action needed — stale, reviewed, no upstream action",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "notes": "VERY HIGH VALUE. Largest top-10 PR. ~2000 lines. 14 files. MoA routing configuration.",
       "number": 19060,
       "repo": "NousResearch/hermes-agent",
@@ -440,7 +440,7 @@
         "comp/cli"
       ],
       "last_action": "2026-05-22T18:25:00Z",
-      "next_action": "No action needed — stale, reviewed, no upstream action",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "notes": "HIGH VALUE. Multi-tenant security isolation. +321 lines. Merge-ready.",
       "number": 19054,
       "repo": "NousResearch/hermes-agent",
@@ -463,7 +463,7 @@
         "comp/gateway"
       ],
       "last_action": "2026-05-22T18:25:00Z",
-      "next_action": "No action needed — stale, reviewed, no upstream action",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "notes": "MEDIUM-HIGH VALUE. REST API extension. +425 lines. Merge-ready with auth clarification.",
       "number": 19076,
       "repo": "NousResearch/hermes-agent",
@@ -486,7 +486,7 @@
         "comp/cli"
       ],
       "last_action": "2026-05-22T18:25:00Z",
-      "next_action": "No action needed — stale, reviewed, no upstream action",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "notes": "MEDIUM VALUE. CLI streaming UX. +184 lines. Small, clean.",
       "number": 18983,
       "repo": "NousResearch/hermes-agent",
@@ -509,13 +509,13 @@
         "comp/cli"
       ],
       "last_action": "2026-05-22T18:25:00Z",
-      "next_action": "No action needed — stale, reviewed, no upstream action",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "notes": "MEDIUM VALUE. CLI /reasoning. +30 lines. Fast merge endorsed.",
       "number": 18943,
       "repo": "NousResearch/hermes-agent",
       "state": "{\r\n  \"message\": \"Bad credentials\",\r\n  \"documentation_url\": \"https://docs.github.com/rest\",\r\n  \"status\": \"401\"\r\n}unknown",
       "status": "closed",
-      "title": "feat(cli): add /reasoning reveal — post-hoc reasoning display",
+      "title": "feat(cli): add /reasoning reveal \u2014 post-hoc reasoning display",
       "type": "pr",
       "url": "https://github.com/NousResearch/hermes-agent/pull/18943"
     },
@@ -529,7 +529,7 @@
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-05-22T18:25:00Z",
-      "next_action": "No action needed — stale, reviewed, no upstream action",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "notes": "VERY HIGH ARCHITECTURAL VALUE. 20 files, +1744/-183. 5 subsystems hardened in coherent direction.",
       "number": 19279,
       "repo": "NousResearch/hermes-agent",
@@ -569,7 +569,7 @@
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-05-22T18:25:00Z",
-      "next_action": "No action needed — stale, reviewed, no upstream action",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "notes": "MED-HIGH STRATEGIC VALUE. 21 files, +786/-69. GCP enterprise OAuth2 integration.",
       "number": 8427,
       "repo": "NousResearch/hermes-agent",
@@ -581,7 +581,7 @@
     },
     {
       "actions_taken": [
-        "Note: MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s→7s startup improvement."
+        "Note: MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s\u21927s startup improvement."
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
@@ -590,7 +590,7 @@
       "labels": [],
       "last_action": "2026-05-03T00:00:00Z",
       "next_action": "Await upstream merge",
-      "notes": "MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s→7s startup improvement.",
+      "notes": "MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s\u21927s startup improvement.",
       "number": 19326,
       "repo": "NousResearch/hermes-agent",
       "state": "closed",
@@ -629,7 +629,7 @@
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-05-22T18:25:00Z",
-      "next_action": "No action needed — stale, reviewed, no upstream action",
+      "next_action": "No action needed \u2014 stale, reviewed, no upstream action",
       "notes": "MEDIUM INNOVATION VALUE. 7 files, +513/-1. Multi-model advisor pattern with +261 test lines.",
       "number": 7656,
       "repo": "NousResearch/hermes-agent",
@@ -819,7 +819,7 @@
     },
     {
       "actions_taken": [
-        "Filed: fix: security audit — config injection, ReDoS, confidence consistency, bounds"
+        "Filed: fix: security audit \u2014 config injection, ReDoS, confidence consistency, bounds"
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-09T21:16:59Z",
@@ -833,7 +833,7 @@
       "repo": "ether-btc/openclaw-correlation-plugin",
       "state": "closed",
       "status": "merged",
-      "title": "fix: security audit — config injection, ReDoS, confidence consistency, bounds",
+      "title": "fix: security audit \u2014 config injection, ReDoS, confidence consistency, bounds",
       "type": "pr",
       "url": "https://github.com/ether-btc/openclaw-correlation-plugin/pull/4"
     },
@@ -859,7 +859,7 @@
     },
     {
       "actions_taken": [
-        "Filed: refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md"
+        "Filed: refactor: adopt Agent Skills spec \u2014 docs\u2192references, spec-compliant SKILL.md"
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-09T21:17:01Z",
@@ -873,7 +873,7 @@
       "repo": "ether-btc/morpheus-proxy-router",
       "state": "closed",
       "status": "merged",
-      "title": "refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md",
+      "title": "refactor: adopt Agent Skills spec \u2014 docs\u2192references, spec-compliant SKILL.md",
       "type": "pr",
       "url": "https://github.com/ether-btc/morpheus-proxy-router/pull/4"
     },
@@ -1257,7 +1257,7 @@
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-05-13T15:04:00Z",
-      "next_action": "None — fix belongs in Hermes gateway, not LCM",
+      "next_action": "None \u2014 fix belongs in Hermes gateway, not LCM",
       "notes": "Tosko4 review correct on both points: (1) derivation in _status_text is display-only, never feeds lifecycle binding at on_session_start; (2) platform IDs (chat_id, guild_id) don't exist in runtime_identity. Root cause: gateway must compute conversation_id from its own metadata and pass it to LCM.",
       "number": 167,
       "repo": "stephenschoettler/hermes-lcm",
@@ -1301,7 +1301,7 @@
     },
     {
       "actions_taken": [
-        "Filed: feat(plugins): CompressionPlugin — replace hardcoded env-var compression in beam.py"
+        "Filed: feat(plugins): CompressionPlugin \u2014 replace hardcoded env-var compression in beam.py"
       ],
       "evidence_tier": "tier_3",
       "filed_at": "2026-05-14T06:01:36Z",
@@ -1315,7 +1315,7 @@
       "repo": "AxDSan/mnemosyne",
       "state": "closed",
       "status": "merged",
-      "title": "feat(plugins): CompressionPlugin — replace hardcoded env-var compression in beam.py",
+      "title": "feat(plugins): CompressionPlugin \u2014 replace hardcoded env-var compression in beam.py",
       "type": "pr",
       "url": "https://github.com/AxDSan/mnemosyne/pull/129"
     },
@@ -1348,7 +1348,7 @@
       "is_upstream": false,
       "labels": [],
       "last_action": "2026-05-22T18:30:00Z",
-      "next_action": "Config-only — does NOT address normalization ordering or rollover_session TypeError blockers from stephenschoettler/hermes-lcm#178",
+      "next_action": "Config-only \u2014 does NOT address normalization ordering or rollover_session TypeError blockers from stephenschoettler/hermes-lcm#178",
       "notes": "Config defaults only. Does not fix engine.py normalization ordering bug or rollover_session TypeError.",
       "number": 1,
       "repo": "ether-btc/hermes-lcm",
@@ -1382,7 +1382,7 @@
       "local_branch": "fix/audit-findings-2026-05-28",
       "local_commit_sha": "2f99a107850bbf3adde52c666cb6ecbafe3b484c",
       "next_action": "Maintainer: apply /home/hermes-pi/minimax-picker.patch to a fresh branch on ether-btc/hermes-agent, then open PR to NousResearch/hermes-agent:main",
-      "notes": "Three bugs, one fix:\n1. plugins/model-providers/minimax/__init__.py — set models_url on all 3 profiles\n   (default fetch_models hit <base_url>/models = .../anthropic/models → 404)\n2. hermes_cli/models.py — add minimax, minimax-cn to _MODELS_DEV_PREFERRED\n   (the gate that triggers live /v1/models fetch in list_authenticated_providers)\n3. validate_requested_model — fix misleading comment about /v1/models endpoint\n\nPRs 39815 and 39818 to NousResearch/hermes-agent were opened, then closed per\nuser instruction. The 39815 PR was conflicting (origin/main 5 commits behind\nupstream/main). The 39818 PR was blocked at push by PAT scope (workflow file\nfrom upstream requires 'workflow' scope that the current gh PAT doesn't have).\n\nLocal commit 2f99a1078 on branch fix/audit-findings-2026-05-28 in\n/home/hermes-pi/hermes-agent contains the 4-file change (525 insertions,\n17 deletions). The 3-way-merged version on /tmp/hermes-pr was discarded\nwhen the push was blocked.\n\nUpstream already has several recent MiniMax improvements (default_aux_model\nchanged to M3 in 3d1d0a49f, vision video_url handling in 0b46c4163, etc.) —\nthis patch is complementary: it adds the live /v1/models catalog discovery\nto the picker, which is independent of those changes.",
+      "notes": "Three bugs, one fix:\n1. plugins/model-providers/minimax/__init__.py \u2014 set models_url on all 3 profiles\n   (default fetch_models hit <base_url>/models = .../anthropic/models \u2192 404)\n2. hermes_cli/models.py \u2014 add minimax, minimax-cn to _MODELS_DEV_PREFERRED\n   (the gate that triggers live /v1/models fetch in list_authenticated_providers)\n3. validate_requested_model \u2014 fix misleading comment about /v1/models endpoint\n\nPRs 39815 and 39818 to NousResearch/hermes-agent were opened, then closed per\nuser instruction. The 39815 PR was conflicting (origin/main 5 commits behind\nupstream/main). The 39818 PR was blocked at push by PAT scope (workflow file\nfrom upstream requires 'workflow' scope that the current gh PAT doesn't have).\n\nLocal commit 2f99a1078 on branch fix/audit-findings-2026-05-28 in\n/home/hermes-pi/hermes-agent contains the 4-file change (525 insertions,\n17 deletions). The 3-way-merged version on /tmp/hermes-pr was discarded\nwhen the push was blocked.\n\nUpstream already has several recent MiniMax improvements (default_aux_model\nchanged to M3 in 3d1d0a49f, vision video_url handling in 0b46c4163, etc.) \u2014\nthis patch is complementary: it adds the live /v1/models catalog discovery\nto the picker, which is independent of those changes.",
       "number": null,
       "patch_path": "/home/hermes-pi/minimax-picker.patch",
       "patch_size_bytes": 30250,
@@ -1418,7 +1418,7 @@
       "local_branch": "feature/platform-agnosticism",
       "local_commit_sha": "edfc2c72",
       "next_action": "MERGED into origin/master at 2026-06-07T19:43:10Z. No further action.",
-      "notes": "MERGED into origin/master at 2026-06-07T19:43:10Z. Pre-merge CI: 13/13 jobs PASSED including macOS, Windows, Linux + cross-compile musl + Docker amd64/arm64. Cross-platform fixes: SIGTERM handler (tokio::signal::ctrl_c), PATH walk for executable lookup, PermissionsExt gating, CI matrix (3 OSes), multi-stage Dockerfile, distroless runtime. Note: GH API reports same mergeCommit as PR #9 (62d82f5) — likely an API quirk; actual PR #8 changes are in master via subsequent merges (PR #7, PR #11).",
+      "notes": "MERGED into origin/master at 2026-06-07T19:43:10Z. Pre-merge CI: 13/13 jobs PASSED including macOS, Windows, Linux + cross-compile musl + Docker amd64/arm64. Cross-platform fixes: SIGTERM handler (tokio::signal::ctrl_c), PATH walk for executable lookup, PermissionsExt gating, CI matrix (3 OSes), multi-stage Dockerfile, distroless runtime. Note: GH API reports same mergeCommit as PR #9 (62d82f5) \u2014 likely an API quirk; actual PR #8 changes are in master via subsequent merges (PR #7, PR #11).",
       "actions_taken": [
         "2026-06-05: Picked up from previous session (in_progress rebase on fix/health-score-avg-latency)",
         "2026-06-05: Completed interactive rebase (rebased onto c385722)",
@@ -1437,11 +1437,11 @@
         "2026-06-06: Posted follow-up PR comment linking each commit to its review item",
         "2026-06-06: Aeon entry updated (this entry)",
         "2026-06-06: fac9eec chore(fmt) cargo fmt --all",
-        "2026-06-06: 5c6b397 fix(lint) manual_checked_ops → checked_div",
-        "2026-06-06: dc26568 fix(lint) useless_format → to_string",
-        "2026-06-06: a1e685d fix(test) concurrent_cas threshold 50ms → 500ms (Windows flake)",
-        "2026-06-06: 8725f41 fix(ci) docker-build matrix arch dim (tags reject /) — MY BUG",
-        "2026-06-06: 5fd8563 fix(dockerfile) rust image 1.83 → 1-slim-bookworm",
+        "2026-06-06: 5c6b397 fix(lint) manual_checked_ops \u2192 checked_div",
+        "2026-06-06: dc26568 fix(lint) useless_format \u2192 to_string",
+        "2026-06-06: a1e685d fix(test) concurrent_cas threshold 50ms \u2192 500ms (Windows flake)",
+        "2026-06-06: 8725f41 fix(ci) docker-build matrix arch dim (tags reject /) \u2014 MY BUG",
+        "2026-06-06: 5fd8563 fix(dockerfile) rust image 1.83 \u2192 1-slim-bookworm",
         "2026-06-06: 3029702 fix(dockerfile) clean .fingerprint/ after pre-warm (not just deps/)",
         "2026-06-06: All 7 commits pushed, CI run 27063788376 started",
         "2026-06-06: Aeon entry updated (this entry)"
@@ -1453,7 +1453,7 @@
       "id": "ether-btc/rust-cave-001#11",
       "number": 11,
       "repo": "ether-btc/rust-cave-001",
-      "title": "fix(data): PP→SP 'shrunk'→'shrank' + SP→PRES 'shrunk'→'shrank' (parallel data errors)",
+      "title": "fix(data): PP\u2192SP 'shrunk'\u2192'shrank' + SP\u2192PRES 'shrunk'\u2192'shrank' (parallel data errors)",
       "type": "pr",
       "url": "https://github.com/ether-btc/rust-cave-001/pull/11",
       "state": "closed",
@@ -1471,12 +1471,12 @@
       "local_branch": "fix/shrunk-pp-sp",
       "local_commit_sha": "d39480b6aeddc737b0e60b72085b18de06f7755e",
       "next_action": "Wait for maintainer review and merge. Tags: v0.4.4 (post-merge, paired with PR #10's audit fixes).",
-      "notes": "Out-of-scope follow-up to the 2026-06-05 3-cycle audit (PR #10). Found two parallel data errors in verb_maps.rs:\n\n1. Line 182: PAST_PARTICIPLE_TO_SIMPLE_PAST had (\"shrunk\", \"shrunk\") — a no-change self-map. Grammatically wrong: 'shrunk' is the PP, the simple past is 'shrank'. Flagged as out-of-scope finding #1 in the 2026-06-05 AUDIT.md.\n\n2. Line 455: SIMPLE_PAST_TO_PRESENT had (\"shrunk\", \"shrink\") — but 'shrunk' is a PP, not a SP. The SP is 'shrank'. The original entry produced the right answer (\"shrink\") for the wrong reason (lookup of a PP form) and silently masked the missing 'shrank' entry. Discovered while doing fix #1 — parallel data error.\n\n3. (Bonus) Stale header comments updated: 192/220 → 306/357 (verified by awk|grep -c). Self-review caught one I missed (line 348 in a third commit).\n\nPipeline round-trip after both fixes:\n  shrunk (PP) → shrank (SP) → shrink (present)\n  'The package was shrunk by the cold' → 'cold shrink package' (passive→active→present)\n  'I shrank the package' → 'I shrink package' (past→present)\n\n3 commits:\n  b2c7671: fix(data): PP→SP \"shrunk\" → \"shrank\" (out-of-scope audit finding #1)\n  6a795fb: fix(data): SP→PRES \"shrunk\" → \"shrank\" (parallel data error)\n  d39480b: fix(docs): correct SIMPLE_PAST_TO_PRESENT total count (220 → 357)\n\nTests:\n  - test_shrunk_pp_maps_to_shrank (verb_maps.rs: data-level, both positive + negative assertion)\n  - test_shrank_sp_maps_to_shrink (verb_maps.rs: data-level, asserts 'shrunk' is NOT in SP map)\n  - Extended test_verb_map_symmetry to include ('shrunk', 'shrank', 'shrink')\n  - test_transform_active_voice_shrunk_diagnostic (lib.rs: end-to-end, 'was shrunk by' → 'shrank')\n\nValidation: 34/34 Rust tests, 127/127 Python tests, clippy/fmt clean.\n\nBackwards compat: anyone relying on the bug gets 'shrank' (correct) instead of 'shrunk' (was no-change) — strictly a bug fix.",
+      "notes": "Out-of-scope follow-up to the 2026-06-05 3-cycle audit (PR #10). Found two parallel data errors in verb_maps.rs:\n\n1. Line 182: PAST_PARTICIPLE_TO_SIMPLE_PAST had (\"shrunk\", \"shrunk\") \u2014 a no-change self-map. Grammatically wrong: 'shrunk' is the PP, the simple past is 'shrank'. Flagged as out-of-scope finding #1 in the 2026-06-05 AUDIT.md.\n\n2. Line 455: SIMPLE_PAST_TO_PRESENT had (\"shrunk\", \"shrink\") \u2014 but 'shrunk' is a PP, not a SP. The SP is 'shrank'. The original entry produced the right answer (\"shrink\") for the wrong reason (lookup of a PP form) and silently masked the missing 'shrank' entry. Discovered while doing fix #1 \u2014 parallel data error.\n\n3. (Bonus) Stale header comments updated: 192/220 \u2192 306/357 (verified by awk|grep -c). Self-review caught one I missed (line 348 in a third commit).\n\nPipeline round-trip after both fixes:\n  shrunk (PP) \u2192 shrank (SP) \u2192 shrink (present)\n  'The package was shrunk by the cold' \u2192 'cold shrink package' (passive\u2192active\u2192present)\n  'I shrank the package' \u2192 'I shrink package' (past\u2192present)\n\n3 commits:\n  b2c7671: fix(data): PP\u2192SP \"shrunk\" \u2192 \"shrank\" (out-of-scope audit finding #1)\n  6a795fb: fix(data): SP\u2192PRES \"shrunk\" \u2192 \"shrank\" (parallel data error)\n  d39480b: fix(docs): correct SIMPLE_PAST_TO_PRESENT total count (220 \u2192 357)\n\nTests:\n  - test_shrunk_pp_maps_to_shrank (verb_maps.rs: data-level, both positive + negative assertion)\n  - test_shrank_sp_maps_to_shrink (verb_maps.rs: data-level, asserts 'shrunk' is NOT in SP map)\n  - Extended test_verb_map_symmetry to include ('shrunk', 'shrank', 'shrink')\n  - test_transform_active_voice_shrunk_diagnostic (lib.rs: end-to-end, 'was shrunk by' \u2192 'shrank')\n\nValidation: 34/34 Rust tests, 127/127 Python tests, clippy/fmt clean.\n\nBackwards compat: anyone relying on the bug gets 'shrank' (correct) instead of 'shrunk' (was no-change) \u2014 strictly a bug fix.",
       "actions_taken": [
         "2026-06-06: Branched fix/shrunk-pp-sp from master@1084aa6 (v0.4.3)",
-        "2026-06-06: b2c7671: fix(data) PP→SP shrunk→shrank (out-of-scope audit finding)",
-        "2026-06-06: 6a795fb: fix(data) SP→PRES shrunk→shrank (parallel data error)",
-        "2026-06-06: Self-review caught stale 'Total: 220' at line 348 — d39480b: fix(docs)",
+        "2026-06-06: b2c7671: fix(data) PP\u2192SP shrunk\u2192shrank (out-of-scope audit finding)",
+        "2026-06-06: 6a795fb: fix(data) SP\u2192PRES shrunk\u2192shrank (parallel data error)",
+        "2026-06-06: Self-review caught stale 'Total: 220' at line 348 \u2014 d39480b: fix(docs)",
         "2026-06-06: Pushed to origin: git push -u origin fix/shrunk-pp-sp",
         "2026-06-06: PR #11 opened via gh pr create (3 commits, full description)",
         "2026-06-06: Aeon entry filed (this entry)"
@@ -1501,7 +1501,7 @@
       "evidence_tier": "tier_1",
       "local_branch": "chore/gitignore-uv-lock",
       "local_commit_sha": "2e06d0c6af96823224eafe544e4bf15854247013",
-      "next_action": "Trivial merge — single-line gitignore change with explanation comment. Will auto-merge once a maintainer reviews.",
+      "next_action": "Trivial merge \u2014 single-line gitignore change with explanation comment. Will auto-merge once a maintainer reviews.",
       "notes": "The 134-byte uv.lock was a leftover from a 2026-06-05 `uv run pytest` invocation during the audit session. Standard practice for Python libraries (not applications) is to gitignore uv.lock because:\n\n- The editable install of rust-cave-001 produces a minimal lockfile that ties to the local Python version and absolute path of the checkout\n- Committing it would create spurious churn for every contributor\n- Library consumers don't benefit from this repo's lockfile (they have their own)\n\nThis is on a separate branch (chore/gitignore-uv-lock) to keep the main audit PR (#10) and the data-fix PR (#11) focused on their respective scopes. Per-claim atomicity beats bundling trivial changes with substantive ones.\n\n1 commit:\n  2e06d0c: chore: gitignore uv.lock (lockfile is per-machine for libraries)\n\nValidation: cargo test --lib still 34/34, clippy/fmt clean, uv run pytest 127/127.",
       "actions_taken": [
         "2026-06-06: Branched chore/gitignore-uv-lock from master@1084aa6",
@@ -1532,7 +1532,7 @@
       "local_branch": "fix/orphan-test-wiring",
       "local_commit_sha": "dd3cec21",
       "next_action": "MERGED into origin/master at 2026-06-07T19:43:09Z. All audit gates green. Issue #10 closed. No further action.",
-      "notes": "MERGED into origin/master at 2026-06-07T19:43:09Z (merge commit dd3cec21, by user via GitHub web UI).\n\nPR contained 3 commits:\n- 93b2bad: wire up 11 orphan tests in src/engine/validate_url_tests.rs (latent bug fix)\n- e2a82fc: 5 empirical probe tests in src/config/mod.rs::probe_tests\n- 87b3bcc: SECTION-LEVEL REPLACEMENT FIX for issue #10 (closes #10)\n\nLocal state cleanup: fix/orphan-test-wiring branch deleted (work is in master); 2 stale remote-tracking refs pruned (feature/request-caching-layer, fix/config-merge-coverage).\n\nFinal test count: 53 passed / 0 failed / 0 ignored. +23 tests vs pre-audit (30 → 53). 0 regressions.\n\nSenior-dev self-review posted as PR comment (https://github.com/ether-btc/stealth-core/pull/11#issuecomment-4643692089). GitHub blocks self-approval at API level, but the user delegated merge authority and merged via web UI.\n\nWiki: sessions/2026-06-07-post-merge-audit/ (10 files, 5 audit passes)"
+      "notes": "MERGED into origin/master at 2026-06-07T19:43:09Z (merge commit dd3cec21, by user via GitHub web UI).\n\nPR contained 3 commits:\n- 93b2bad: wire up 11 orphan tests in src/engine/validate_url_tests.rs (latent bug fix)\n- e2a82fc: 5 empirical probe tests in src/config/mod.rs::probe_tests\n- 87b3bcc: SECTION-LEVEL REPLACEMENT FIX for issue #10 (closes #10)\n\nLocal state cleanup: fix/orphan-test-wiring branch deleted (work is in master); 2 stale remote-tracking refs pruned (feature/request-caching-layer, fix/config-merge-coverage).\n\nFinal test count: 53 passed / 0 failed / 0 ignored. +23 tests vs pre-audit (30 \u2192 53). 0 regressions.\n\nSenior-dev self-review posted as PR comment (https://github.com/ether-btc/stealth-core/pull/11#issuecomment-4643692089). GitHub blocks self-approval at API level, but the user delegated merge authority and merged via web UI.\n\nWiki: sessions/2026-06-07-post-merge-audit/ (10 files, 5 audit passes)"
     },
     {
       "id": "ether-btc/stealth-core#9",
@@ -1550,7 +1550,7 @@
       "last_action": "2026-06-07T14:00:00Z",
       "local_commit_sha": "afc27db",
       "next_action": "Await review and merge into feature/platform-agnosticism. Once merged, rebase PR #8 onto updated base.",
-      "notes": "3 pre-existing config bugs fixed:\n- BUG-1: obscura YAML block silently dropped (PartialAppConfig parsed it but load_config() never called merge_obscura).\n- BUG-2: fingerprint block missing from PartialAppConfig entirely.\n- BUG-3 (caught by new test): duplicate FingerprintConfig structs with mismatched serde defaults for sidecar_mode (config:: uses #[serde(default)] giving '', fingerprint:: uses #[serde(default = 'default_sidecar_mode')] giving 'http'). Engine copies fields between them, so omitted sidecar_mode in YAML silently produced empty runtime sidecar mode. Fixed by adding default_fingerprint_sidecar_mode() in config/mod.rs and a cross-reference comment.\n\nNew functionality:\n- 6 new env-var overrides (STEALTH_CORE_OBSCURA_*, STEALTH_CORE_FINGERPRINT_*)\n- New merge_obscura and merge_fingerprint use section-level replacement (clone_from) — bool fields make field-level sentinel merging ambiguous\n- 8 new regression tests (7 for new behavior + 1 cross-module contract test pinning the duplicate-struct default)\n- Test infrastructure: process-global ENV_LOCK mutex + unique_tmp_config() helper (avoids tempfile crate)\n\nPre-existing bool-sentinel bug in 7 other merge functions (server, stealth, proxy, rate_limit, cache, prometheus) — section-replacement would fix it but is invasive. Filed as follow-up issue #10.\n\n3-cycle audit: 4 self-review findings (S1-S4), integration consistency check, independent reviewer (self-conducted after subagent timeout). 29/29 lib tests pass. 0 new clippy warnings. cargo fmt --check clean.\n\nPR base is feature/platform-agnosticism (NOT master) to avoid duplicating the cross-platform commit from PR #8. CI workflow only triggers on master/main, so this PR will not run CI automatically — relying on local validation.",
+      "notes": "3 pre-existing config bugs fixed:\n- BUG-1: obscura YAML block silently dropped (PartialAppConfig parsed it but load_config() never called merge_obscura).\n- BUG-2: fingerprint block missing from PartialAppConfig entirely.\n- BUG-3 (caught by new test): duplicate FingerprintConfig structs with mismatched serde defaults for sidecar_mode (config:: uses #[serde(default)] giving '', fingerprint:: uses #[serde(default = 'default_sidecar_mode')] giving 'http'). Engine copies fields between them, so omitted sidecar_mode in YAML silently produced empty runtime sidecar mode. Fixed by adding default_fingerprint_sidecar_mode() in config/mod.rs and a cross-reference comment.\n\nNew functionality:\n- 6 new env-var overrides (STEALTH_CORE_OBSCURA_*, STEALTH_CORE_FINGERPRINT_*)\n- New merge_obscura and merge_fingerprint use section-level replacement (clone_from) \u2014 bool fields make field-level sentinel merging ambiguous\n- 8 new regression tests (7 for new behavior + 1 cross-module contract test pinning the duplicate-struct default)\n- Test infrastructure: process-global ENV_LOCK mutex + unique_tmp_config() helper (avoids tempfile crate)\n\nPre-existing bool-sentinel bug in 7 other merge functions (server, stealth, proxy, rate_limit, cache, prometheus) \u2014 section-replacement would fix it but is invasive. Filed as follow-up issue #10.\n\n3-cycle audit: 4 self-review findings (S1-S4), integration consistency check, independent reviewer (self-conducted after subagent timeout). 29/29 lib tests pass. 0 new clippy warnings. cargo fmt --check clean.\n\nPR base is feature/platform-agnosticism (NOT master) to avoid duplicating the cross-platform commit from PR #8. CI workflow only triggers on master/main, so this PR will not run CI automatically \u2014 relying on local validation.",
       "actions_taken": [
         "2026-06-07: 3-cycle code audit (self-review + clippy + integration + independent reviewer) on the working tree",
         "2026-06-07: Created fix/config-merge-coverage branch from feature/platform-agnosticism (commit 5705379)",
@@ -1572,7 +1572,7 @@
       "local_commit_sha": "dbb1e1fe",
       "is_upstream": false,
       "next_action": "MERGED into master. Squash commit dbb1e1fe. All audit gates green.",
-      "notes": "Was CONFLICTING with master (4 commits behind). Resolved by taking audit's I-3 removal of 34 PP forms from SIMPLE_PAST_TO_PRESENT + re-adding 'shrank' in the alphabetically-correct v0.3.0 section. Preserved both PR #11's tests and the audit's tests (5 new tests total, 38 Rust + 127 Python pass).\n\nCycle 4 found I-8 (acronym guard broken with trailing comma) — added in commit 74a3016. The 'PRODUCTION-READY' verdict after cycle 3 was premature.\n\nAll audit gates green on the merged result: cargo test --lib (38 pass), clippy -D warnings clean, fmt clean, pytest 127 pass, CI: audit/test pass."
+      "notes": "Was CONFLICTING with master (4 commits behind). Resolved by taking audit's I-3 removal of 34 PP forms from SIMPLE_PAST_TO_PRESENT + re-adding 'shrank' in the alphabetically-correct v0.3.0 section. Preserved both PR #11's tests and the audit's tests (5 new tests total, 38 Rust + 127 Python pass).\n\nCycle 4 found I-8 (acronym guard broken with trailing comma) \u2014 added in commit 74a3016. The 'PRODUCTION-READY' verdict after cycle 3 was premature.\n\nAll audit gates green on the merged result: cargo test --lib (38 pass), clippy -D warnings clean, fmt clean, pytest 127 pass, CI: audit/test pass."
     },
     {
       "id": "ether-btc/stealth-core#12",
@@ -1583,7 +1583,7 @@
       "local_commit_sha": "5d20c16f",
       "is_upstream": false,
       "next_action": "MERGED into master at 2026-06-08T06:10:56Z (squash commit 5d20c16f). PR branch deleted. Local fix/env-lock-deduplication branch deleted. Master HEAD = 5d20c16f. 55/55 lib tests pass locally. Post-merge CI run 27119401268 in progress.",
-      "notes": "FIX for the dual-ENV_LOCK mutex bug that caused CI runs #27101158706 and #27102827375 to fail.\n\nROOT CAUSE: `mod tests` (line 567) and `mod probe_tests` (line 1228) each declared their own `static ENV_LOCK: Mutex<()>` on the same day (PR #11, 2026-06-07). The two locks did not coordinate. With `cargo test -- --test-threads=4` (CI default), cargo scheduled both modules' tests in parallel, and a `clear_all_config_env_vars()` in one module could wipe env vars another module's test had just set.\n\nTWO INDEPENDENT CI FAILURES, SAME BUG:\n  - Run #27101158706: probe_obscura_yaml_omits_binary_path saw a leaked STEALTH_CORE_OBSCURA_BINARY_PATH from a parallel test.\n  - Run #27102827375: load_config_env_overrides_fingerprint found STEALTH_CORE_FINGERPRINT_ENABLED cleared by a parallel probe test.\n\nFIX: One shared `pub(super) static ENV_LOCK` in new `#[cfg(test)] mod test_support` block. Both modules import via `use super::test_support::ENV_LOCK;`. The `use ...;` import also acts as a regression guard — any future re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n\nVALIDATION: 20/20 local runs of `cargo test --lib -- --test-threads=4` pass (was 5/10 pre-fix). 55 lib tests pass (53 original + 2 new). All 3 Test Suite jobs in CI (ubuntu/macos/windows) pass.\n\nNEW TESTS:\n  - env_lock_serializes_parallel_env_var_writers: 8 workers × 50 iterations each, 50µs sleep in critical section, verifies env var persists.\n  - env_lock_is_provided_by_test_support: compile-time regression guard against re-introducing a duplicate static.\n\nPOST-MERGE STATE (2026-06-08T06:10:56Z):\n- Squash-merged into master as 5d20c16f\n- PR branch fix/env-lock-deduplication auto-deleted on origin\n- Local branch deleted with `git branch -D fix/env-lock-deduplication`\n- Master HEAD: 5d20c16f\n- 55/55 lib tests pass on master (cargo test --lib -- --test-threads=4)\n- Triggered fresh CI on master (run 27119401268) via empty commit to validate post-merge stability.\n- 0 open PRs, 0 open issues in stealth-core.\n\nThe two historical CI failures (#27101158706 and #27102827375) can no longer recur because:\n  1. The dual-ENV_LOCK mutex bug is fixed.\n  2. The `use super::test_support::ENV_LOCK;` import in both test submodules acts as a compile-time guard: any re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n  3. The new `env_lock_serializes_parallel_env_var_writers` test stress-tests the lock with 8 workers × 50 iterations.\n  4. The new `env_lock_is_provided_by_test_support` test verifies the invariant that the lock comes from the shared module.\n\nPOST-MERGE FOLLOW-UP (commit 8af197c, 2026-06-08):\n- Subagent review caught that the stress test doc comment overclaimed what the test reproduces.\n- Tightened the doc to be honest: the test verifies the SHARED lock works, but the original cross-module bug is actually defended by the COMPILE-TIME GUARD (E0255 name collision on duplicate static declarations).\n- No code change; just doc clarity. clippy + fmt + 55/55 tests still pass."
+      "notes": "FIX for the dual-ENV_LOCK mutex bug that caused CI runs #27101158706 and #27102827375 to fail.\n\nROOT CAUSE: `mod tests` (line 567) and `mod probe_tests` (line 1228) each declared their own `static ENV_LOCK: Mutex<()>` on the same day (PR #11, 2026-06-07). The two locks did not coordinate. With `cargo test -- --test-threads=4` (CI default), cargo scheduled both modules' tests in parallel, and a `clear_all_config_env_vars()` in one module could wipe env vars another module's test had just set.\n\nTWO INDEPENDENT CI FAILURES, SAME BUG:\n  - Run #27101158706: probe_obscura_yaml_omits_binary_path saw a leaked STEALTH_CORE_OBSCURA_BINARY_PATH from a parallel test.\n  - Run #27102827375: load_config_env_overrides_fingerprint found STEALTH_CORE_FINGERPRINT_ENABLED cleared by a parallel probe test.\n\nFIX: One shared `pub(super) static ENV_LOCK` in new `#[cfg(test)] mod test_support` block. Both modules import via `use super::test_support::ENV_LOCK;`. The `use ...;` import also acts as a regression guard \u2014 any future re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n\nVALIDATION: 20/20 local runs of `cargo test --lib -- --test-threads=4` pass (was 5/10 pre-fix). 55 lib tests pass (53 original + 2 new). All 3 Test Suite jobs in CI (ubuntu/macos/windows) pass.\n\nNEW TESTS:\n  - env_lock_serializes_parallel_env_var_writers: 8 workers \u00d7 50 iterations each, 50\u00b5s sleep in critical section, verifies env var persists.\n  - env_lock_is_provided_by_test_support: compile-time regression guard against re-introducing a duplicate static.\n\nPOST-MERGE STATE (2026-06-08T06:10:56Z):\n- Squash-merged into master as 5d20c16f\n- PR branch fix/env-lock-deduplication auto-deleted on origin\n- Local branch deleted with `git branch -D fix/env-lock-deduplication`\n- Master HEAD: 5d20c16f\n- 55/55 lib tests pass on master (cargo test --lib -- --test-threads=4)\n- Triggered fresh CI on master (run 27119401268) via empty commit to validate post-merge stability.\n- 0 open PRs, 0 open issues in stealth-core.\n\nThe two historical CI failures (#27101158706 and #27102827375) can no longer recur because:\n  1. The dual-ENV_LOCK mutex bug is fixed.\n  2. The `use super::test_support::ENV_LOCK;` import in both test submodules acts as a compile-time guard: any re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n  3. The new `env_lock_serializes_parallel_env_var_writers` test stress-tests the lock with 8 workers \u00d7 50 iterations.\n  4. The new `env_lock_is_provided_by_test_support` test verifies the invariant that the lock comes from the shared module.\n\nPOST-MERGE FOLLOW-UP (commit 8af197c, 2026-06-08):\n- Subagent review caught that the stress test doc comment overclaimed what the test reproduces.\n- Tightened the doc to be honest: the test verifies the SHARED lock works, but the original cross-module bug is actually defended by the COMPILE-TIME GUARD (E0255 name collision on duplicate static declarations).\n- No code change; just doc clarity. clippy + fmt + 55/55 tests still pass."
     },
     {
       "id": "stephenschoettler/hermes-lcm#245",
@@ -1695,7 +1695,7 @@
         "security",
         "audit"
       ],
-      "notes": "Quarantine pattern in withLock is design-incompatible with the watchdog pattern in #31. Watchdog chosen for liveness — quarantine creates a permanent dead-end if no one re-invokes initEmbeddingEngine(). The atomicity fix in #30 was also incomplete (single-item path still swallows vector errors, see #33).",
+      "notes": "Quarantine pattern in withLock is design-incompatible with the watchdog pattern in #31. Watchdog chosen for liveness \u2014 quarantine creates a permanent dead-end if no one re-invokes initEmbeddingEngine(). The atomicity fix in #30 was also incomplete (single-item path still swallows vector errors, see #33).",
       "actions_taken": [
         "2026-06-10T05:16:30Z Closed via gh pr close 30 with comment explaining supersession by #31"
       ]
@@ -1705,13 +1705,13 @@
       "repo": "ether-btc/mpt-minimax",
       "type": "audit",
       "title": "3-cycle audit of feat(voice): implement MiMo TTS provider (771ae05)",
-      "notes": "3 audit cycles (OCR L1 + repomix + 2 parallel subagent reviewers + 1 cross-validator) on the new MiMo TTS provider. 14 findings (4 high, 5 medium, 5 low) — all addressed in two followup commits: 90e9e97 (cycle 1) and 2229e70 (cycle 3). Cycle 2 found 0 new bugs. Critical web-research finding: the original hardcoded voice catalogue was 4/5 made-up Chinese nicknames that would have caused every WebUI selection to 4xx in production. Replaced with the real 8-voice MiMo v2.5 TTS catalogue per the official MiMo-Skills docs. Test delta: 14 failed / 7 passed → 13 failed / 16 passed (the 13 remaining failures are pre-existing and unrelated to mimo_tts).",
+      "notes": "3 audit cycles (OCR L1 + repomix + 2 parallel subagent reviewers + 1 cross-validator) on the new MiMo TTS provider. 14 findings (4 high, 5 medium, 5 low) \u2014 all addressed in two followup commits: 90e9e97 (cycle 1) and 2229e70 (cycle 3). Cycle 2 found 0 new bugs. Critical web-research finding: the original hardcoded voice catalogue was 4/5 made-up Chinese nicknames that would have caused every WebUI selection to 4xx in production. Replaced with the real 8-voice MiMo v2.5 TTS catalogue per the official MiMo-Skills docs. Test delta: 14 failed / 7 passed \u2192 13 failed / 16 passed (the 13 remaining failures are pre-existing and unrelated to mimo_tts).",
       "evidence_tier": "high",
       "actions_taken": [
-        "Cycle 1: 2 parallel subagent reviewers + 3 empirical probes (cycle1-probes.py) — all 3 confirmed bugs",
+        "Cycle 1: 2 parallel subagent reviewers + 3 empirical probes (cycle1-probes.py) \u2014 all 3 confirmed bugs",
         "Cycle 1 fix commit 90e9e97: voice_name validation, timeout=60.0, retry loop, URL log sanitization, _safe_log_url, real 8-voice catalogue, docstring fix, 4 new tests",
-        "Cycle 2: 4 empirical probes (cycle2-probes.py) — 0 new bugs introduced by cycle 1 fixes",
-        "Cycle 3: cross-validator subagent — found 4 issues in cycle 1 fixes (X1 bare Exception, X2 IPv6 brackets, X3 empty audio, X4 client reconstruction) + 1 missed original bug (X5 empty style_prompt)",
+        "Cycle 2: 4 empirical probes (cycle2-probes.py) \u2014 0 new bugs introduced by cycle 1 fixes",
+        "Cycle 3: cross-validator subagent \u2014 found 4 issues in cycle 1 fixes (X1 bare Exception, X2 IPv6 brackets, X3 empty audio, X4 client reconstruction) + 1 missed original bug (X5 empty style_prompt)",
         "Cycle 3 fix commit 2229e70: narrowed except to openai transient errors, IPv6 brackets, empty-audio guard, client moved outside loop, empty style_prompt guard, 4 new tests (retry, no-retry, empty style, empty audio)",
         "Pushed 90e9e97 + 2229e70 to origin master",
         "Wiki session committed at ~/wiki/sessions/2026-06-10-mpt-minimax-mimo-audit/ with INDEX.md, audit-summary.md, cycle1-3 findings, evidence/, probes/",
@@ -1721,7 +1721,7 @@
       "next_action": "When operator is at keyboard: file SSRF followup as issue in ether-btc/mpt-minimax",
       "commits": [
         "90e9e97 fix(voice): cycle 1 audit fixes for MiMo TTS",
-        "2229e70 fix(voice): cycle 3 audit fixes — narrow retry, IPv6 logs, empty audio guard"
+        "2229e70 fix(voice): cycle 3 audit fixes \u2014 narrow retry, IPv6 logs, empty audio guard"
       ],
       "wiki_session": "~/wiki/sessions/2026-06-10-mpt-minimax-mimo-audit/",
       "state": "closed",
@@ -1733,6 +1733,33 @@
         "security",
         "quality"
       ]
+    },
+    {
+      "id": "ether-btc/rust-cave-001#13",
+      "repo": "ether-btc/rust-cave-001",
+      "number": 13,
+      "type": "pr",
+      "title": "v0.5.0: Clippy pedantic cleanup + pyo3 0.24\u21920.29 security upgrade",
+      "state": "closed",
+      "status": "merged",
+      "evidence": "tier_3",
+      "url": "https://github.com/ether-btc/rust-cave-001/pull/13",
+      "mergedAt": "2026-06-18T20:06:25.288744Z",
+      "local_commit_sha": "c759f6a",
+      "next_action": "MERGED: v0.5.0 release complete (PyPI secret needed)",
+      "actions_taken": [
+        "Multi-cycle audit (4 phases) completed",
+        "Fixed logger.error + sanitize_error_message type-safety",
+        "Merged via squash",
+        "Tagged v0.5.0",
+        "GitHub release created"
+      ],
+      "activity_log": [
+        "2026-06-18T20:06:25.288761Z - Created PR #13",
+        "2026-06-18T20:06:25.288764Z - Multi-cycle audit completed",
+        "2026-06-18T20:06:25.288765Z - Merged and released v0.5.0"
+      ],
+      "notes": "PyPI publish failed due to missing PYPI_PASSWORD secret. Manual publish needed or secret configuration required."
     }
   ],
   "issues": [
@@ -1762,11 +1789,11 @@
     },
     {
       "actions_taken": [
-        "Stage 1: Verb maps extracted to module (94→306 PP, 147→357 PRES)",
+        "Stage 1: Verb maps extracted to module (94\u2192306 PP, 147\u2192357 PRES)",
         "Stage 2: Contraction expansion (60+ forms) + copular be removal",
         "Stage 3: and/or conjunction reduction",
-        "5-model multi-expert review — 4 bugs fixed",
-        "OnceLock regex caching (63→1 compilation)",
+        "5-model multi-expert review \u2014 4 bugs fixed",
+        "OnceLock regex caching (63\u21921 compilation)",
         "Pushed 4d8136b, tagged v0.3.0, PyPI published",
         "Acronym protection, pipeline reorder, 13 new tests (108 total)",
         "crates.io published v0.3.0 (commit ea040a3)"
@@ -1778,7 +1805,7 @@
         "published",
         "crates.io"
       ],
-      "next_action": "None — released and published",
+      "next_action": "None \u2014 released and published",
       "notes": "48.7% avg token reduction (+0.3%). 108 tests, clippy clean. PyPI + crates.io published.",
       "number": 99999,
       "repo": "ether-btc/rust-cave-001",
@@ -1807,7 +1834,7 @@
       "repo": "profbernardoj/morpheus-skill",
       "state": "closed",
       "status": "closed",
-      "title": "[CRITICAL] Auto-renewal flow calls closeSession on expiry — MOR tokens on-chain hold",
+      "title": "[CRITICAL] Auto-renewal flow calls closeSession on expiry \u2014 MOR tokens on-chain hold",
       "type": "issue",
       "url": "https://github.com/profbernardoj/morpheus-skill/issues/3"
     },
@@ -1830,7 +1857,7 @@
       "repo": "profbernardoj/morpheus-skill",
       "state": "closed",
       "status": "closed",
-      "title": "[CRITICAL] Auto-renewal closes sessions as user (Type 0) — ~49.77 MOR locked",
+      "title": "[CRITICAL] Auto-renewal closes sessions as user (Type 0) \u2014 ~49.77 MOR locked",
       "type": "issue",
       "url": "https://github.com/profbernardoj/morpheus-skill/issues/2"
     },
@@ -1859,7 +1886,7 @@
     },
     {
       "actions_taken": [
-        "Note: On-chain bug — Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
+        "Note: On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
         "Registry updated: node decommissioned, MOR transferred. Issue remains open upstream but is moot for this agent."
       ],
       "evidence_tier": "tier_2",
@@ -1871,13 +1898,13 @@
         "on-chain"
       ],
       "last_action": "2026-05-26T11:49:42Z",
-      "next_action": "None — MOR transferred to external wallet, node no longer runs Morpheus infrastructure. Issue left open on GitHub as upstream reference.",
-      "notes": "On-chain bug — Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
+      "next_action": "None \u2014 MOR transferred to external wallet, node no longer runs Morpheus infrastructure. Issue left open on GitHub as upstream reference.",
+      "notes": "On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
       "number": 62,
       "repo": "MorpheusAIs/SmartContracts",
       "state": "open",
       "status": "closed",
-      "title": "BUG: withdrawUserStakes() selector not registered on MOR Diamond — ~49.77 MOR locked",
+      "title": "BUG: withdrawUserStakes() selector not registered on MOR Diamond \u2014 ~49.77 MOR locked",
       "type": "issue",
       "url": "https://github.com/MorpheusAIs/SmartContracts/issues/62"
     },
@@ -1923,7 +1950,7 @@
       "repo": "fajarhide/omni",
       "state": "closed",
       "status": "closed",
-      "title": "session/learn.rs:40 — unwrap() on TOML parse causes panic",
+      "title": "session/learn.rs:40 \u2014 unwrap() on TOML parse causes panic",
       "type": "issue",
       "url": "https://github.com/fajarhide/omni/issues/71"
     },
@@ -2040,7 +2067,7 @@
       "repo": "vectorize-io/hindsight",
       "state": "closed",
       "status": "closed",
-      "title": "Experience entries accumulate without consolidation — unbounded growth",
+      "title": "Experience entries accumulate without consolidation \u2014 unbounded growth",
       "type": "issue",
       "url": "https://github.com/vectorize-io/hindsight/issues/1284"
     },
@@ -2063,7 +2090,7 @@
       "repo": "moltlaunch/cashclaw",
       "state": "closed",
       "status": "closed",
-      "title": "Dynamic import at runtime to invalidate search index — error swallowed",
+      "title": "Dynamic import at runtime to invalidate search index \u2014 error swallowed",
       "type": "issue",
       "url": "https://github.com/moltlaunch/cashclaw/issues/82"
     },
@@ -2109,7 +2136,7 @@
       "repo": "moltlaunch/cashclaw",
       "state": "closed",
       "status": "closed",
-      "title": "CORS origin not validated — static string without Origin check",
+      "title": "CORS origin not validated \u2014 static string without Origin check",
       "type": "issue",
       "url": "https://github.com/moltlaunch/cashclaw/issues/80"
     },
@@ -2155,7 +2182,7 @@
       "repo": "moltlaunch/cashclaw",
       "state": "closed",
       "status": "closed",
-      "title": "LLM API calls have no timeout — hung connections stall agent loop",
+      "title": "LLM API calls have no timeout \u2014 hung connections stall agent loop",
       "type": "issue",
       "url": "https://github.com/moltlaunch/cashclaw/issues/77"
     },
@@ -2172,7 +2199,7 @@
         "high"
       ],
       "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Fix path traversal guard — use equals, not startsWith",
+      "next_action": "Fix path traversal guard \u2014 use equals, not startsWith",
       "notes": "Part of 17-issue security audit.",
       "number": 76,
       "repo": "moltlaunch/cashclaw",
@@ -2195,13 +2222,13 @@
         "financial-risk"
       ],
       "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Fix auto-renewal race condition — confirm new session before deleting old",
+      "next_action": "Fix auto-renewal race condition \u2014 confirm new session before deleting old",
       "notes": "Same root cause as profbernardoj/morpheus-skill #2 and #3. ~49.77 MOR locked.",
       "number": 3,
       "repo": "ether-btc/morpheus-proxy-router",
       "state": "closed",
       "status": "closed",
-      "title": "Auto-renewal deletes session before new confirmed — silent MOR lock",
+      "title": "Auto-renewal deletes session before new confirmed \u2014 silent MOR lock",
       "type": "issue",
       "url": "https://github.com/ether-btc/morpheus-proxy-router/issues/3"
     },
@@ -2240,7 +2267,7 @@
         "accounting"
       ],
       "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Audit stake tracking — find where 0.88 MOR is lost",
+      "next_action": "Audit stake tracking \u2014 find where 0.88 MOR is lost",
       "notes": "0.88 MOR unaccounted after 23 sessions. Correlates with MorpheusAIs/Morpheus-Lumerin-Node#717.",
       "number": 1,
       "repo": "ether-btc/morpheus-proxy-router",
@@ -2263,12 +2290,12 @@
       ],
       "last_action": "2026-05-03T08:32:23.756152+00:00",
       "next_action": "none",
-      "notes": "Owner correctly closed: stdio MCP has no network surface, OS permission model is the security boundary. No auth layer needed for local IPC. Our threat model assessment was incomplete — same-user process threat is outside application threat model.",
+      "notes": "Owner correctly closed: stdio MCP has no network surface, OS permission model is the security boundary. No auth layer needed for local IPC. Our threat model assessment was incomplete \u2014 same-user process threat is outside application threat model.",
       "number": 69,
       "repo": "fajarhide/omni",
       "state": "closed",
       "status": "closed",
-      "title": "MCP server has no authentication — all tools accessible to any local process",
+      "title": "MCP server has no authentication \u2014 all tools accessible to any local process",
       "type": "issue",
       "url": "https://github.com/fajarhide/omni/issues/69"
     },
@@ -2506,8 +2533,8 @@
       "actions_taken": [
         "Synced stale local master with origin/master (was 1 commit behind)",
         "Built v0.4.3 wheel locally: rust_cave_001-0.4.3-cp310-abi3-manylinux_2_34_aarch64.whl (900 KB)",
-        "Smoke-tested: 127/127 Python tests pass, 50% token reduction (10→5 tokens)",
-        "Discovered v0.4.3 already on PyPI (CI/prior process upload — hash collision rejected re-upload)",
+        "Smoke-tested: 127/127 Python tests pass, 50% token reduction (10\u21925 tokens)",
+        "Discovered v0.4.3 already on PyPI (CI/prior process upload \u2014 hash collision rejected re-upload)",
         "Added CHANGELOG entry for v0.4.3 (commit 45f7486)",
         "Created annotated tag v0.4.3 on commit 45f7486",
         "Pushed tag + GitHub release: https://github.com/ether-btc/rust-cave-001/releases/tag/v0.4.3",
@@ -2518,7 +2545,7 @@
       "id": "ether-btc/rust-cave-001#v043",
       "last_action": "2026-06-05T13:36:35Z",
       "local_commit_sha": "1084aa6",
-      "next_action": "None — released and published to PyPI",
+      "next_action": "None \u2014 released and published to PyPI",
       "number": 100000,
       "pypi_version": "0.4.3",
       "repo": "ether-btc/rust-cave-001",
@@ -2551,7 +2578,7 @@
       "id": "ether-btc/rust-cave-001#v043",
       "last_action": "2026-06-05T13:36:51Z",
       "local_commit_sha": "1084aa6",
-      "next_action": "None — released and published to PyPI",
+      "next_action": "None \u2014 released and published to PyPI",
       "number": 100000,
       "pypi_version": "0.4.3",
       "repo": "ether-btc/rust-cave-001",
@@ -2615,7 +2642,7 @@
       "number": 5,
       "repo": "ether-btc/correlation-relevance-plugin",
       "type": "issue",
-      "title": "LifecycleManager.evaluate() cyclomatic complexity 21 — refactor candidate",
+      "title": "LifecycleManager.evaluate() cyclomatic complexity 21 \u2014 refactor candidate",
       "url": "https://github.com/ether-btc/correlation-relevance-plugin/issues/5",
       "state": "{\r\n  \"message\": \"Bad credentials\",\r\n  \"documentation_url\": \"https://docs.github.com/rest\",\r\n  \"status\": \"401\"\r\n}unknown",
       "status": "closed",
@@ -2662,7 +2689,7 @@
       "number": 7,
       "repo": "ether-btc/correlation-relevance-plugin",
       "type": "issue",
-      "title": "O(n) rule lookup inside O(n) loop in evaluate_lifecycles — O(n²) per cycle",
+      "title": "O(n) rule lookup inside O(n) loop in evaluate_lifecycles \u2014 O(n\u00b2) per cycle",
       "url": "https://github.com/ether-btc/correlation-relevance-plugin/issues/7",
       "state": "{\r\n  \"message\": \"Bad credentials\",\r\n  \"documentation_url\": \"https://docs.github.com/rest\",\r\n  \"status\": \"401\"\r\n}unknown",
       "status": "closed",
@@ -2675,7 +2702,7 @@
       "timestamp": "2026-06-11T20:33:25Z",
       "next_action": "Either build a rule.id -> rule index once at the start of the loop, or change the inner mutation to mutate the rule object we already have a reference to (no lookup needed).",
       "actions_taken": [
-        "C3 cross-validation direct review flagged the O(n²) pattern at engine.py:107-110"
+        "C3 cross-validation direct review flagged the O(n\u00b2) pattern at engine.py:107-110"
       ],
       "notes": "Performance smell, not a bug. For typical ruleset sizes (<1000 rules) the cost is negligible. Will become noticeable past 10k rules. Filed 2026-06-11.",
       "is_upstream": false
@@ -2731,7 +2758,7 @@
         "Fixed 2026-06-12 in 66020eb: extracted pattern to compiled regex RULE_ID_PATTERN, added validation in load_rules_from_json with actionable error message that includes the pattern",
         "Probe B.4 re-run after fix: 3 invalid-ID probes reject with ValueError; 1 valid-ID probe accepts (regression guard)"
       ],
-      "notes": "Documentation/implementation mismatch. RULE_SCHEMA at line 108 documented the pattern; load_rules_from_json did not enforce it. Existing rules in the wild with non-conforming IDs will now fail to load — this is intentional (mismatched docs and code should resolve to whichever is correct, and the schema is the source of truth).",
+      "notes": "Documentation/implementation mismatch. RULE_SCHEMA at line 108 documented the pattern; load_rules_from_json did not enforce it. Existing rules in the wild with non-conforming IDs will now fail to load \u2014 this is intentional (mismatched docs and code should resolve to whichever is correct, and the schema is the source of truth).",
       "is_upstream": false
     },
     {
@@ -2758,7 +2785,7 @@
         "Fixed in 256d1a4: CorrelationEngine.evaluate_lifecycles now calls manager.last_reason_for() to preserve the specific reason in the SQLite lifecycle_log; falls back to the generic string if the manager didn't record a reason (defense-in-depth)",
         "Probe re-run after fix: 3 hard-demote sub-probes pass, each recording the correct 'hard demote' or 'step demote' reason"
       ],
-      "notes": "Observability bug, not a functional bug. The audit trail was working but lossy. Before fix, the lifecycle_log could not distinguish hard-demote, step-demote, and auto-promote transitions — all rows looked identical. After fix, the distinction is preserved for forensics ('why did this rule transition?').",
+      "notes": "Observability bug, not a functional bug. The audit trail was working but lossy. Before fix, the lifecycle_log could not distinguish hard-demote, step-demote, and auto-promote transitions \u2014 all rows looked identical. After fix, the distinction is preserved for forensics ('why did this rule transition?').",
       "is_upstream": false
     },
     {
@@ -2781,7 +2808,7 @@
       "actions_taken": [
         "Discovered 2026-06-12 during Phase C probes (finding C-F2)",
         "Probe TestHardDemote::test_c8_validated_hard_demote_overrides_step_demote failed: with VALIDATED rule + fires=100 + eff=0.10, lifecycle_log received 0 rows (manager returned None after can_transition_to rejected the override)",
-        "Root cause: LifecycleState.VALIDATED's allowed set was {PROMOTED, TESTING} — missing PROPOSAL. TESTING had {VALIDATED, PROPOSAL} and PROMOTED had {RETIRED, VALIDATED, PROPOSAL}; only VALIDATED was missing PROPOSAL.",
+        "Root cause: LifecycleState.VALIDATED's allowed set was {PROMOTED, TESTING} \u2014 missing PROPOSAL. TESTING had {VALIDATED, PROPOSAL} and PROMOTED had {RETIRED, VALIDATED, PROPOSAL}; only VALIDATED was missing PROPOSAL.",
         "Fixed in 66020eb: added PROPOSAL to VALIDATED's allowed set in LifecycleState.can_transition_to. Code comment documents why."
       ],
       "notes": "State-machine design bug. The hard-demote path was designed to override step-demote for any non-PROPOSAL state with bad stats, but the allowed map blocked the override for VALIDATED. The check at lifecycle.py:109-112 ('disallowed transition') returned None and logged a warning, so the bug was visible in logs but silent to callers. After fix, hard-demote works for all three non-terminal states (TESTING, VALIDATED, PROMOTED).",
@@ -2807,7 +2834,7 @@
       "actions_taken": [
         "Discovered 2026-06-12 during Phase B probes (issue #1, prior audit)",
         "Probe TestAdapterSilentInit::test_b1_silent_init_leaves_engine_none confirmed: provider._engine is None after forced init failure, error logged at ERROR, no programmatic visibility for caller",
-        "Filed as followup (not bug) — degraded mode is the original design intent; the gap is the lack of programmatic visibility for the caller"
+        "Filed as followup (not bug) \u2014 degraded mode is the original design intent; the gap is the lack of programmatic visibility for the caller"
       ],
       "notes": "Design decision, not a bug. Related to closed issue #1. Proposed fix: add self._last_init_error and is_healthy property to CorrelationMemoryProvider. Preserves degraded-mode behavior while exposing failure to caller.",
       "is_upstream": false
@@ -2838,7 +2865,7 @@
     }
   ],
   "version": "1.1",
-  "last_synced": "2026-06-18T13:30:24Z",
+  "last_synced": "2026-06-18T20:00:56Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -2907,7 +2934,7 @@
       "type": "filed"
     },
     {
-      "desc": "Filed: fix: security audit — config injection, ReDoS, confidence consistency, bounds",
+      "desc": "Filed: fix: security audit \u2014 config injection, ReDoS, confidence consistency, bounds",
       "ref": "ether-btc/openclaw-correlation-plugin#4",
       "ts": "2026-05-09T21:16:59Z",
       "type": "filed"
@@ -2919,7 +2946,7 @@
       "type": "filed"
     },
     {
-      "desc": "Filed: refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md",
+      "desc": "Filed: refactor: adopt Agent Skills spec \u2014 docs\u2192references, spec-compliant SKILL.md",
       "ref": "ether-btc/morpheus-proxy-router#4",
       "ts": "2026-05-09T21:17:01Z",
       "type": "filed"
@@ -3057,7 +3084,7 @@
       "type": "filed"
     },
     {
-      "desc": "Filed: feat(plugins): CompressionPlugin — replace hardcoded env-var compression in beam.py",
+      "desc": "Filed: feat(plugins): CompressionPlugin \u2014 replace hardcoded env-var compression in beam.py",
       "ref": "AxDSan/mnemosyne#129",
       "ts": "2026-05-14T06:01:36Z",
       "type": "filed"
@@ -3117,7 +3144,7 @@
       "type": "filed"
     },
     {
-      "desc": "Filed: cross-platform build (linux/macos/windows) — closes Linux/Unix-first gap in stealth-core",
+      "desc": "Filed: cross-platform build (linux/macos/windows) \u2014 closes Linux/Unix-first gap in stealth-core",
       "ref": "ether-btc/stealth-core#8",
       "ts": "2026-06-05T19:30:00Z",
       "type": "filed"
@@ -3126,13 +3153,13 @@
       "ts": "2026-06-06T13:00:00Z",
       "type": "filed",
       "ref": "ether-btc/rust-cave-001#11",
-      "desc": "Filed: fix(data) PP→SP \"shrunk\"→\"shrank\" + SP→PRES \"shrank\" (parallel data errors, 3 commits incl. self-review fix)"
+      "desc": "Filed: fix(data) PP\u2192SP \"shrunk\"\u2192\"shrank\" + SP\u2192PRES \"shrank\" (parallel data errors, 3 commits incl. self-review fix)"
     },
     {
       "ts": "2026-06-06T13:00:00Z",
       "type": "filed",
       "ref": "ether-btc/rust-cave-001#12",
-      "desc": "Filed: chore(gitignore) uv.lock — per-machine artifact for libraries (1 commit)"
+      "desc": "Filed: chore(gitignore) uv.lock \u2014 per-machine artifact for libraries (1 commit)"
     },
     {
       "ts": "2026-06-06T13:00:00Z",
@@ -3168,7 +3195,7 @@
       "timestamp": "2026-06-07T20:50:00Z",
       "action": "closed_issue",
       "id": "ether-btc/stealth-core#10",
-      "title": "Closed issue #10 — fix is in PR #11 (commit 87b3bcc). All audit gates green."
+      "title": "Closed issue #10 \u2014 fix is in PR #11 (commit 87b3bcc). All audit gates green."
     },
     {
       "timestamp": "2026-06-07T21:00:00Z",
@@ -3198,13 +3225,13 @@
       "timestamp": "2026-06-07T21:30:00Z",
       "action": "docstring_fix",
       "id": "ether-btc/stealth-core",
-      "title": "Committed fa60718 directly to master: corrected validate_url_tests.rs docstring (11 → 10 tests). Senior-dev discretion: 1-line comment fix doesn't need a PR."
+      "title": "Committed fa60718 directly to master: corrected validate_url_tests.rs docstring (11 \u2192 10 tests). Senior-dev discretion: 1-line comment fix doesn't need a PR."
     },
     {
       "timestamp": "2026-06-07T21:30:00Z",
       "action": "subagent_review",
       "id": "ether-btc/stealth-core#11",
-      "title": "Subagent review round 2: 7/7 verification points PASS. Found 1 real issue (11 vs 10 docstring) + 1 false positive (merge_obscura binary_path — same as cycle 3 F3.1, refuted by probe test). 1 pre-existing flake in after_interval_is_faster_than_within_interval (out of scope)."
+      "title": "Subagent review round 2: 7/7 verification points PASS. Found 1 real issue (11 vs 10 docstring) + 1 false positive (merge_obscura binary_path \u2014 same as cycle 3 F3.1, refuted by probe test). 1 pre-existing flake in after_interval_is_faster_than_within_interval (out of scope)."
     },
     {
       "timestamp": "2026-06-07T20:30:00Z",
@@ -3240,13 +3267,13 @@
       "timestamp": "2026-06-07T21:00:00Z",
       "action": "ci_pass",
       "id": "ether-btc/stealth-core#12",
-      "title": "CI run 27105446779: 12/13 checks pass, 0 failed. All 3 Test Suite jobs (ubuntu/macos/windows) PASS — bug confirmed fixed on all platforms. Awaiting arm64 Docker build (slow)."
+      "title": "CI run 27105446779: 12/13 checks pass, 0 failed. All 3 Test Suite jobs (ubuntu/macos/windows) PASS \u2014 bug confirmed fixed on all platforms. Awaiting arm64 Docker build (slow)."
     },
     {
       "timestamp": "2026-06-08T06:10:56Z",
       "action": "merged_pr",
       "id": "ether-btc/stealth-core#12",
-      "title": "MERGED PR #12 (squash commit 5d20c16f) — dual-ENV_LOCK mutex fix. 13/13 CI checks pass, mergeState=CLEAN. PR branch auto-deleted. Local branch fix/env-lock-deduplication deleted. Master HEAD = 5d20c16f."
+      "title": "MERGED PR #12 (squash commit 5d20c16f) \u2014 dual-ENV_LOCK mutex fix. 13/13 CI checks pass, mergeState=CLEAN. PR branch auto-deleted. Local branch fix/env-lock-deduplication deleted. Master HEAD = 5d20c16f."
     },
     {
       "timestamp": "2026-06-08T06:11:30Z",
@@ -3258,7 +3285,7 @@
       "timestamp": "2026-06-08T06:30:00Z",
       "action": "subagent_review",
       "id": "ether-btc/stealth-core#12",
-      "title": "Subagent review of PR #12 fix: VERDICT pass-with-concerns. Subagent caught that env_lock_serializes_parallel_env_var_writers doc comment OVERCLAIMED — the test doesn't actually reproduce the original cross-module bug (it only verifies the single shared lock works). The real defense is the compile-time guard (E0255 name collision). Tightened the doc comment to be honest."
+      "title": "Subagent review of PR #12 fix: VERDICT pass-with-concerns. Subagent caught that env_lock_serializes_parallel_env_var_writers doc comment OVERCLAIMED \u2014 the test doesn't actually reproduce the original cross-module bug (it only verifies the single shared lock works). The real defense is the compile-time guard (E0255 name collision). Tightened the doc comment to be honest."
     },
     {
       "timestamp": "2026-06-08T06:35:00Z",
@@ -3287,7 +3314,7 @@
       "timestamp": "2026-06-11T20:33:25Z",
       "action": "add_issue",
       "id": "ether-btc/correlation-relevance-plugin#5",
-      "title": "LifecycleManager.evaluate() cyclomatic complexity 21 — refactor candidate",
+      "title": "LifecycleManager.evaluate() cyclomatic complexity 21 \u2014 refactor candidate",
       "source": "audit-2026-06-11-correlation-relevance-plugin"
     },
     {
@@ -3301,7 +3328,7 @@
       "timestamp": "2026-06-11T20:33:25Z",
       "action": "add_issue",
       "id": "ether-btc/correlation-relevance-plugin#7",
-      "title": "O(n) rule lookup inside O(n) loop in evaluate_lifecycles — O(n²) per cycle",
+      "title": "O(n) rule lookup inside O(n) loop in evaluate_lifecycles \u2014 O(n\u00b2) per cycle",
       "source": "audit-2026-06-11-correlation-relevance-plugin"
     }
   ]
