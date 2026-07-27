@@ -297,10 +297,13 @@ cmd_sync() {
     repo=$(echo "$item_json" | jq -r '.repo')
 
     local gh_state
+    local gh_exit=0
     if [[ "$type" == "pr" ]]; then
-      gh_state=$(gh api "repos/$repo/pulls/$number" --jq '.state' 2>/dev/null || echo "unknown")
+      gh_state=$(gh api "repos/$repo/pulls/$number" --jq '.state' 2>/dev/null) || gh_exit=$?
+      [[ $gh_exit -ne 0 ]] && gh_state="unknown"
     else
-      gh_state=$(gh api "repos/$repo/issues/$number" --jq '.state' 2>/dev/null || echo "unknown")
+      gh_state=$(gh api "repos/$repo/issues/$number" --jq '.state' 2>/dev/null) || gh_exit=$?
+      [[ $gh_exit -ne 0 ]] && gh_state="unknown"
     fi
 
     local registry_state
