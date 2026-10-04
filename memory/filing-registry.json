@@ -1565,10 +1565,10 @@
       "title": "refactor: split gateway and CLI TUI mixins",
       "state": "open",
       "status": "pending_review",
-      "next_action": "Await upstream review",
+      "next_action": "NOT superseded, NOT merged (verified 2026-10-04 after I initially got this wrong). GitHub API: merged=false, merged_at=null. All 10 files the PR CREATES are absent from origin/main; facade classes still in the monoliths upstream (GatewayTurnMixin run_turn.py:168, GatewayInboundMixin run_inbound.py:108, CLITuiMixin cli_tui_mixin.py:132); run_turn.py GREW to 4372 lines. My earlier 'superseded' conclusion came from confirming cli_tui_mixin.py exists upstream - but it exists in both worlds, since the PR splits it further rather than creating it. A duplicate label points at sibling #108258 which is itself closed-UNMERGED; nothing landed. Status: OPEN, CONFLICTING, ~14800 commits behind. Rebase is high-risk against 170 commits of upstream drift in the same monoliths. Left untouched pending a decision.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-04T05:43:06Z",
-      "last_action": "2026-10-04T05:43:06Z",
+      "last_action": "2026-10-04T17:3xZ",
       "url": "https://github.com/NousResearch/hermes-agent/pull/108293",
       "actions_taken": [
         "Filed: refactor: split gateway and CLI TUI mixins"
@@ -1585,10 +1585,10 @@
       "title": "feat(skills): append-only evidence ledger for skill_manage (additive counters, concurrency-safe)",
       "state": "open",
       "status": "pending_review",
-      "next_action": "Await upstream review",
+      "next_action": "NOT superseded (verified 2026-10-04 by the created-artifact test). All three of its own artifacts absent from origin/main: tools/skill_evidence.py, tests/tools/test_skill_evidence_merge.py, scripts/evidence_e2e.py. GitHub: state=open merged=false merged_at=null, head 34d328367, 7 commits ahead. Status: OPEN, CONFLICTING, not yet worked on.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-04T05:43:07Z",
-      "last_action": "2026-10-04T05:43:07Z",
+      "last_action": "2026-10-04T17:3xZ",
       "url": "https://github.com/NousResearch/hermes-agent/pull/106080",
       "actions_taken": [
         "Filed: feat(skills): append-only evidence ledger for skill_manage (additive counters, concurrency-safe)"
