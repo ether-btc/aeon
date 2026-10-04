@@ -1,8 +1,13 @@
 ---
-name: Create Skill
+name: create-skill
 description: Generate a complete new skill from a one-line prompt and ship it as a PR
-var: ""
-tags: [dev, meta]
+metadata:
+  title: Create Skill
+  category: evolution
+  var: ""
+  tags:
+    - dev
+    - meta
 ---
 > **${var}** — A natural-language description of the skill to create. **Required.** Example: `"monitor Hacker News for AI papers and send a summary"` or `"track gas prices on Ethereum and alert when below 10 gwei"`.
 
@@ -65,16 +70,21 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
    - **Variable behavior** — what `${var}` controls; what happens when empty (sane default OR clean abort with notify).
    - **Steps** — 4-8 numbered, following the standard pattern: read context → fetch/search → process/analyze → write output → log → notify.
    - **Schedule suggestion** — choose a cron slot. Read existing schedules in `aeon.yml`; avoid co-scheduling at the same minute as heavy skills (article, repo-scanner, deep-research, telegram-digest) unless the new skill is lightweight (<30s expected). Prefer a `:30` minute offset if the natural hour is already crowded.
-   - **Model** — default `claude-opus-4-7`. Pick `claude-sonnet-4-6` if the skill is high-frequency aggregation/digestion (cost optimization). Document the choice in the PR body.
+   - **Model** - default `claude-sonnet-5-5`. Pick `claude-haiku-4-5-20251001` if the skill is high-frequency aggregation/digestion (cost optimization), or `claude-opus-5-5` if it needs the strongest reasoning. Document the choice in the PR body.
+   - **Category** - the pack the skill joins. Pick exactly one of `core` `evolution` `basics` `dev` `crypto` `productivity` (the set `scripts/check-skill-categories.sh` enforces; anything else, or a missing category, fails CI). For a new user-facing skill that is usually `basics`, `dev`, `crypto`, or `productivity`. See `docs/skill-packs.md`.
 
 6. **Write the SKILL.md draft** at `skills/{skill-name}/SKILL.md` with this exact structure:
 
    ```markdown
    ---
-   name: {Display Name}
+   name: {skill-name}
    description: {One-sentence description starting with a verb}
-   var: ""
-   tags: [{tags}]
+   metadata:
+     title: {Display Name}
+     category: {category}
+     var: ""
+     tags:
+       - {tag}
    ---
    > **${var}** — {What the variable controls}. {If-empty behavior}.
 
@@ -95,9 +105,9 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
    N. **Notify.** Send via `./notify`:
    {Output format template — specify ≤4000 chars, clickable URLs}
 
-   ## Sandbox note
+   ## Network note
 
-   {WebFetch fallback or pre-fetch/post-process pattern based on auth needs}
+   {How this skill reaches the network — ./secretcurl with an {ENV_NAME} placeholder for auth'd APIs, gh api for GitHub, curl + WebFetch fallback for public}
    ```
 
    Hard rules for the generated content:
@@ -108,18 +118,18 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
    - Fallback behavior defined for every optional secret.
    - Use only `${var}` and `${today}` template variables — no other invented variables.
    - No TODOs, no placeholders, no "fill in later".
-   - Mandatory `## Sandbox note` section.
+   - Mandatory `## Network note` section (accurate model — see the `## Network note` in this skill for the canonical wording; there is no network sandbox).
 
 7. **Quality enforcement (self-edit pass).** Score the draft 1-5 across:
 
    | Criterion | What to check |
    |-----------|---------------|
-   | Frontmatter complete | `name`, `description`, `var`, `tags` present and well-formed |
+   | Frontmatter complete | `name`, `category`, `description`, `var`, `tags` present and well-formed |
    | Var doc | Single `>` block-quote line; if-empty behavior defined |
    | API calls complete | Curl + headers + jq, not pseudo-code |
    | Fallback behavior | Graceful degradation for every optional secret |
    | Output spec | Char limits, clickable URLs, format template explicit |
-   | Sandbox note | Present and matches the auth pattern of the API used |
+   | Network note | Present and matches the auth pattern of the API used (`./secretcurl` for auth'd, `gh api` for GitHub, WebFetch fallback for public) |
 
    Any criterion <4 → rewrite that section once. Still <4 after one rewrite → exit `CREATE_SKILL_VALIDATION_FAILED` with a notify listing failed criteria. **Do not ship a low-quality skill.**
 
@@ -129,19 +139,36 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
    - Every `${...}` template variable resolves to `${var}` or `${today}`.
    - At least one `./notify` invocation appears in the body.
    - At least one `memory/logs/${today}.md` write appears.
-   - `## Sandbox note` section exists.
+   - `## Network note` section exists.
 
    Any failure → delete the partial file and any other writes, exit `CREATE_SKILL_VALIDATION_FAILED` with a notify listing the failed checks. No partial state.
 
 9. **Register in `aeon.yml`.** Insert the new skill in the appropriate time-slot section:
    - Format: `  {skill-name}: { enabled: false, schedule: "{suggested_cron}" }`
-   - Add `model: "claude-sonnet-4-6"` if chosen in step 5.
+   - Add `model: "claude-haiku-4-5-20251001"` (or `"claude-opus-5-5"`) if chosen in step 5.
    - Add `var: ""` if the skill takes a default var.
    - Add a brief trailing comment if the name doesn't make purpose obvious.
    - Place near related skills (crypto with crypto, content with content, etc.).
    - **Always** `enabled: false`. Operator decides when to turn it on.
 
    Verify YAML still parses after the edit. If parsing fails, revert the change and exit `CREATE_SKILL_VALIDATION_FAILED`.
+
+9b. **Dry-run gate (blocks a broken generated skill from auto-merge).** Before opening the PR, execute the new skill once with **synthetic** secrets, so a generated skill never reaches production having only ever run with real credentials:
+    ```bash
+    DRYRUN_VERDICT="output/.dry-run/$name.json" bash scripts/dry-run.sh run "$name" || true
+    ```
+    - The script self-checks the `SKILL_DRYRUN` repo variable (default on) and returns a `skipped` verdict when it is `0`.
+    - Read `output/.dry-run/$name.json`. `passed: true` (or `skipped: true`) means continue. `passed: false` means **delete `skills/$name/`, revert the `aeon.yml` edit, and exit `CREATE_SKILL_DRYRUN_FAILED`** with a notify listing the verdict `reasons[]`. Do not open the PR.
+    - Put the verdict JSON in the PR body under a `## Dry-run` section either way, so a reviewer sees the gate ran.
+    The gate is **structural** (exit 0, non-empty output, no write outside the declared `mode`, no secret outside `requires:`), and no real credential is ever placed in the run's environment. It does not re-score content; the Haiku scorer already does that.
+
+9c. **Registration checklist (a new skill trips four CI gates; a red one blocks the merge).** The PR must also carry:
+    - `bash scripts/check-skill-categories.sh` passing (category from step 5).
+    - `catalog/skills.json` + `catalog/packs.json` regenerated with `bin/generate-skills-json` and `bin/generate-packs-json`, in a **separate commit after** the SKILL.md commit (the catalog's `sha`/`updated` come from git history).
+    - An `eyebrowlock.json` entry for the new skill: `ci-skill-integrity` hard-fails any skill without one. Run `eyebrow scan` with the version pinned in `.github/workflows/ci-skill-integrity.yml` and splice **only** the new skill's artifact into the committed lockfile.
+    - `node scripts/validate-readme-catalog.mjs` passing (README and docs skill counts include the new skill).
+    - The disabled `aeon.yml` entry from step 9.
+    If this run can't execute a step (e.g. no `eyebrow` binary), list the missing steps under a `## Before merge` heading in the PR body instead of skipping them silently.
 
 10. **Open as a PR (never commit to `main`).**
     ```bash
@@ -184,7 +211,7 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
     | API calls | X/5 |
     | Fallback behavior | X/5 |
     | Output spec | X/5 |
-    | Sandbox note | X/5 |
+    | Network note | X/5 |
 
     ## Trigger manually
     Workflow dispatch with `skill={skill-name}` and `var={example-var}`.
@@ -200,7 +227,7 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
     - Created: skills/{skill-name}/SKILL.md
     - Registered in aeon.yml: schedule={cron}, model={model}
     - Required secrets: {list or "none"}
-    - Quality scores: F/V/A/Fb/O/S = X/X/X/X/X/X
+    - Quality scores: F/V/A/Fb/O/N = X/X/X/X/X/X
     - PR: {url}
     - Exit: CREATE_SKILL_OK (or CREATE_SKILL_NEW_SECRET_REQUIRED)
     ```
@@ -225,10 +252,11 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
 | `CREATE_SKILL_DUPLICATE` | Existing skill covers the request | Notify with existing-skill suggestion; stop |
 | `CREATE_SKILL_INSUFFICIENT_RESEARCH` | Couldn't confirm ≥1 working data source after WebSearch + WebFetch | Notify with what was tried; stop |
 | `CREATE_SKILL_VALIDATION_FAILED` | Quality enforcement or post-write checks failed | Delete partial files; revert aeon.yml; notify with failed criteria; stop |
+| `CREATE_SKILL_DRYRUN_FAILED` | The dry-run gate (step 9b) returned `passed: false` | Delete partial files; revert aeon.yml; notify with verdict reasons; do NOT open the PR; stop |
 
-## Sandbox note
+## Network note
 
-The sandbox may block outbound `curl`. Use **WebFetch** as a fallback for any URL fetch during research. For auth-required APIs the new skill will call, design pre-fetch (`scripts/prefetch-*.sh`) or post-process (`.pending-*/` + `scripts/postprocess-*.sh`) patterns into the generated SKILL.md (see CLAUDE.md).
+There is no network sandbox — `curl` works, with **WebFetch** as the fallback for a flaky public GET during research. For an auth'd API the new skill will call, route it through `./secretcurl` with a `{ENV_NAME}` placeholder (the key injected via the skill's `requires:`), and `gh api` for GitHub. **Irreversible side-effects** (email, spend, on-chain writes, deploys) run **in-run** via `./secretcurl` as the skill's final, fail-closed action — there is no deferred/postprocess step, and never defer a read (see CLAUDE.md).
 
 ## Constraints
 

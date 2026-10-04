@@ -9,7 +9,7 @@
 #   ./scripts/skill-runs --failures   # only show failed runs
 #
 # Output: skill run statistics — counts, pass/fail rates, duplicates, anomalies.
-# Used by: heartbeat, skill-health, cost-report, weekly-review, self-review.
+# Used by: skill-health (any skill may call it; it is in the read-only tool base).
 # Dependencies: gh (GitHub CLI), jq, date
 
 set -euo pipefail
@@ -164,7 +164,7 @@ fi
 
 # Success rate
 if [ "$COMPLETED" -gt 0 ]; then
-  RATE=$(echo "scale=0; $SUCCEEDED * 100 / $COMPLETED" | bc)
+  RATE=$(( SUCCEEDED * 100 / COMPLETED ))
   echo ""
   echo "Success rate: ${RATE}% (${SUCCEEDED}/${COMPLETED} completed)"
 fi

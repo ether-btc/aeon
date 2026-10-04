@@ -1,2 +1,2 @@
 # Watched Repos
-- aaronjmars/aeon
+- aeonfun/aeon

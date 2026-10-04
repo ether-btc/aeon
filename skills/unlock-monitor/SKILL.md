@@ -1,11 +1,14 @@
 ---
-name: Unlock Monitor
-description: Weekly token unlock and vesting tracker — quantify supply pressure via absorption ratio, classify cliff vs linear, deliver one-line market reads
-schedule: "0 10 * * 1"
-commits: true
-tags: [crypto]
-permissions:
-  - contents:write
+name: unlock-monitor
+description: Token unlock and vesting tracker - quantify supply pressure via absorption ratio, classify cliff vs linear, and deliver one-line market reads
+metadata:
+  title: Unlock Monitor
+  category: crypto
+  commits: true
+  tags:
+    - crypto
+  permissions:
+    - contents:write
 ---
 
 <!-- autoresearch: variation B — sharper output via Absorption Ratio (unlock $ / avg daily volume), Cliff vs Linear classification, and a one-line market-read verdict per unlock. Replaces qualitative HIGH/MED/LOW tiers with quantitative liquidity-strain thresholds backed by Keyrock's 16k-unlock study. Folds in source-status observability (from C) and CoinGecko volume enrichment (from A) as cheap wins. -->
@@ -149,9 +152,9 @@ Log to `memory/logs/${today}.md`:
 - A quiet week on supply is a signal too. Ship `UNLOCK_MONITOR_QUIET` with one sentence, don't pad.
 - Cross-reference active narratives in MEMORY.md — unlocks during a fading narrative hit harder; unlocks into a hot narrative get absorbed.
 
-## Sandbox note
+## Network note
 
-The sandbox may block outbound curl. Use **WebFetch** as a fallback for any URL fetch — all data sources here are public, no auth required. If WebFetch on a specific source also fails, mark it `fail` in the source-status line and proceed with whatever sources returned data. Only emit `UNLOCK_MONITOR_ERROR` if *all* sources failed.
+`curl` works — there is no network sandbox. Use **WebFetch** as a fallback for a flaky public GET — all data sources here are public, no auth required. If WebFetch on a specific source also fails, mark it `fail` in the source-status line and proceed with whatever sources returned data. Only emit `UNLOCK_MONITOR_ERROR` if *all* sources failed.
 
 ## Environment Variables Required
 
