@@ -2,6 +2,7 @@
 name: GitHub Filing Standards
 description: Evidence requirements and pre-filing verification gates for autonomous GitHub issue and PR submissions — prevents hallucinated bug reports from being filed.
 var: ""
+category: dev
 tags: [dev, github, quality-gates]
 depends_on: [github-filing-registry]
 ---

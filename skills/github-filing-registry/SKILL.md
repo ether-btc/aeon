@@ -2,6 +2,7 @@
 name: GitHub Filing Registry
 description: Track every issue and PR filed across upstream repositories — status, evidence, next_action, and history. Replaces standalone Python scripts with a pure shell + gh CLI interface.
 var: ""
+category: dev
 tags: [dev, github, memory]
 ---
 

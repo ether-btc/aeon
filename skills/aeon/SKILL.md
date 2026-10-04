@@ -6,6 +6,7 @@ author: ether-btc
 license: MIT
 metadata:
   hermes:
+  category: productivity
     tags: [github, monitoring, registry, triage, automation]
     related_skills: [github-auth, github-pr-workflow, github-code-review]
 ---

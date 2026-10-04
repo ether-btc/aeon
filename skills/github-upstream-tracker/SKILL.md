@@ -2,6 +2,7 @@
 name: GitHub Upstream Tracker
 description: Watch your filed PRs across upstream repositories — detect closures, merges, stale items, and needed follow-ups. Reconcile against memory/filing-registry.json every 30 minutes. Auto-discovers new filings you made via gh pr create and imports them automatically.
 var: ""
+category: dev
 tags: [dev, github, monitoring]
 depends_on: [github-filing-registry]
 ---
