@@ -1585,10 +1585,10 @@
       "title": "feat(skills): append-only evidence ledger for skill_manage (additive counters, concurrency-safe)",
       "state": "open",
       "status": "pending_review",
-      "next_action": "NOT superseded (verified 2026-10-04 by the created-artifact test). All three of its own artifacts absent from origin/main: tools/skill_evidence.py, tests/tools/test_skill_evidence_merge.py, scripts/evidence_e2e.py. GitHub: state=open merged=false merged_at=null, head 34d328367, 7 commits ahead. Status: OPEN, CONFLICTING, not yet worked on.",
+      "next_action": "RESOLVED 2026-10-04: was CONFLICTING, now MERGEABLE. Merged upstream main (af90026aa0, 3120 commits of drift) into the branch -> new head aab059c01c, pushed as a PLAIN fast-forward (old head 34d3283678 is an ancestor, so no force-push was needed or used). Only 2 content conflicts, both resolved by policy not recency: (1) skill_manager_tool.py - upstream had DELETED the debounced sync-push feature (present in merge base 989798cd, absent from up/main), so the debounce block was dropped and this PRs staging-token machinery kept; resurrecting a deliberately-removed feature would be the classic keep-both mistake. (2) write_approval.py - genuinely independent: upstream added _fold_patch (honest preview), this PR added evidence_merge; resolved as a union with evidence_merge taking priority. Verified: py_compile + ruff clean, 0 unresolved conflicts, anti-forgery property still wired end-to-end (_mint_staging_token at staging, _is_ours gating replay on _staged_by), and the PR own suite 22/22 passing. Remaining gate is the documented fork first-time-contributor approval.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-04T05:43:07Z",
-      "last_action": "2026-10-04T17:3xZ",
+      "last_action": "2026-10-04T18:0xZ",
       "url": "https://github.com/NousResearch/hermes-agent/pull/106080",
       "actions_taken": [
         "Filed: feat(skills): append-only evidence ledger for skill_manage (additive counters, concurrency-safe)"
