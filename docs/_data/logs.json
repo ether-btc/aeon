@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-08-13",
+    "content": "# 2026-08-13\n\n- Optimized `memory/MEMORY.md`: removed duplicated configuration snapshots, clarified source-of-truth boundaries, consolidated the memory map, and retained only durable operating conventions."
+  }
+,
+  {
+    "date": "2026-07-20",
+    "content": "# 2026-07-20\n\n## Memory Index Cleanup\n\n- Reorganized `memory/MEMORY.md` into a concise repository, memory-model, operating-conventions, configuration, and site-synchronization index.\n- Removed empty historical tables and stale first-run priorities.\n- Regenerated `docs/_data/memory.json` for the GitHub Pages memory view.\n- Verified JSON validity, line count, and `git diff --check`."
+  }
+,
+  {
+    "date": "2026-06-18",
+    "content": "# 2026-06-18\n\n## rust-cave-001 v0.5.0 Release\n\n### Completed\n- Multi-cycle audit (4 phases) on PR #13\n- Fixed findings: logger.error in expand_path, sanitize_error_message type-safety\n- Merged PR #13 via squash (commit c759f6a)\n- Tagged and pushed v0.5.0\n- Created GitHub release: https://github.com/ether-btc/rust-cave-001/releases/tag/v0.5.0\n- Added filing registry entry for PR #13\n\n### Pending\n- PyPI publish blocked: PYPI_PASSWORD secret not configured in GitHub repo\n- Action needed: Add secret or publish manually\n\n### CI Results\n- Run ID: 27785511969\n- audit: ✓ success\n- test: ✓ success  \n- publish: ✗ failure (credentials not found)"
+  }
+,
+  {
+    "date": "2026-06-14",
+    "content": "# 2026-06-14 Activity Log\n\n## MCP Authentication Remediation\n\n### Problem\nGitHub MCP (`github-mcp-server`) and OctoCode MCP (`octocode-mcp-linux-arm64`) both returned HTTP 401 \"Bad credentials\" despite valid tokens in gopass.\n\n### Root Cause\n`~/.hermes/config.yaml` contained literal shell variable references:\n- `GITHUB_PERSONAL_ACCESS_TOKEN: $GITHUB_TOKEN`\n- `GITHUB_TOKEN: $OCTOCODE_GITHUB_TOKEN`\n\nHermes does not expand shell variables in config.yaml.\n\n### Fix\nHardcoded actual PAT values (from gopass) into config.yaml via Python script:\n- GitHub: `ghp_xu...BUtC...`\n- OctoCode: `ghp_km...rufL...`\n\nRestarted `hermes-gateway.service` → both MCP servers authenticate.\n\n### Verification\n- `mcp_github_get_me`: ✅ `ether-btc` (ID: 33156212)\n- `mcp_octocode_githubSearchCode`: ✅ successful search\n- Gateway: active, 53 MCP tools available\n\n## Multi-Model Cross-Validation\n\nLaunched 2 parallel reviews via Venice AI (Qwen 3.7 Max + Plus).\n\n### Consensus Findings\n| Area | Finding | Action |\n|------|---------|--------|\n| Security | Hardcoding PATs bypasses `redact_secrets`, leaves plaintext on disk | Rotate PATs immediately |\n| Architecture | Hermes needs `${VAR}` expansion or secret injection in config.yaml | File feature request |\n| Operations | systemd + hardcoded config is anti-pattern | Use `EnvironmentFile` + gopass |\n| Verification | API tests don't prove secret containment | Check swap/core dumps/VCS |\n\n### Recommendations (Both Models)\n1. Revoke current PATs, generate new ones\n2. Create `~/.hermes/secrets.env` (chmod 600) populated by gopass\n3. Update systemd service: `EnvironmentFile=~/.hermes/secrets.env`\n4. Request Hermes `${VAR}` expansion support upstream\n\n## GitHub Work Verification\n\n| Item | Status |\n|------|--------|\n| hermes-lcm PR #245 | MERGED (config defaults) |\n| hermes-agent PR #42624 | OPEN (compressor fix, CI green, check-attribution fail expected) |\n| hermes-lcm Issue #246 | OPEN (lcm.db path doc mismatch) |\n| hermes-lcm Issue #253 | OPEN (manual /compress source metadata, by digitalscalvia) |\n| fix/dag-repair-script | On fork, 8 commits, deprioritized |\n| Aeon registry | 77 entries, updated |\n\n## Documentation\n- `wiki/continue/mcp-auth-remediation-2026-06-14.md` — full pickup reference\n- `wiki/log.md` — chronological entry\n- `wiki/CONTINUE_HERE.md` — updated pickup ref\n\n## Next Actions (Priority Order)\n1. [ ] Rotate both GitHub PATs\n2. [ ] Implement systemd EnvironmentFile pattern\n3. [ ] File Hermes `${VAR}` expansion feature request\n4. [ ] Monitor PR #42624 for maintainer review"
+  }
+,
+  {
+    "date": "2026-03-19",
+    "content": "# 2026-03-19\n\n## Changelog Skill\n- Created `memory/watched-repos.md` with `aaronjmars/aeon` (file didn't exist yet)\n- Fetched 51 commits from the last 7 days (2026-03-12 to 2026-03-19)\n- Grouped into: 12 features, 17 fixes, 5 docs, 10 chores\n- Saved full changelog to `articles/changelog-2026-03-19.md`\n- Sent abbreviated summary via `./notify`"
+  }
+]

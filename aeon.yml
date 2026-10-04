@@ -93,7 +93,7 @@ skills:
   schedule-ads: { enabled: false, schedule: "0 8 * * *", var: "" } # daily 08:00 UTC — paid ads via AdManage.ai. var: empty=schedule ad launches across Meta/TikTok/Snapchat/Pinterest/LinkedIn from config.yaml (PAUSED by default) | create=provision Meta campaigns/ad sets on-demand from config.create.yaml (PAUSED, IDs written back to state so the schedule branch can launch into them; folds in create-campaign)
 
   # --- GitHub filing workflow (upstream PR/issue tracking) ---
-  github-upstream-tracker: { enabled: true, schedule: "*/30 * * * *" } # sync filed upstream PRs against live GH state every 30min
+  github-upstream-tracker: { enabled: false, schedule: "workflow_dispatch" } # disabled: legacy tracker invokes mutating/fail-open sync; use manual immutable snapshot collector
   github-filing-registry: { enabled: false, schedule: "workflow_dispatch" } # on-demand — add/status/triage/sync/log filing registry
   gh-filing-standards:    { enabled: false, schedule: "workflow_dispatch" } # on-demand — pre-filing evidence gate (Tier 0-3)
 
@@ -167,6 +167,9 @@ skills:
   weekly-aeoncard: { enabled: false, schedule: "workflow_dispatch", var: "" } # weekly token-consumption recap card (SVG) from memory/token-usage.csv. var: window + delivery control
 
   # --- Fallback (must be last) ---
+  # 3x/day is deliberate and differs from upstream aaronjmars/aeon (1x/day): a
+  # conflict resolution that silently adopts upstream here cuts fleet-health
+  # checks by two thirds. Verified during the 2026-10-04 upstream merge.
   heartbeat: { enabled: true, schedule: "0 8,14,20 * * *", var: "" } # ambient fleet-health check (default) — surfaces anything worth attention. var: empty=ambient check | <area>=ambient focused on that area | brief[:<area>]=priority brief (3 things to focus on, why now, what moved; folds in priority-brief)
 
 # Reactive triggers — event-driven skill dispatch based on cron-state.json conditions.

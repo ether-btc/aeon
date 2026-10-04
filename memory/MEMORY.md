@@ -1,26 +1,31 @@
 # Long-term Memory
-*Last consolidated: never*
 
-## About This Repo
-- Autonomous agent running on GitHub Actions via a coding-agent harness (Claude Code by default)
-- Fork-only subsystem: `memory/filing-registry.json` + `skills/github-filing-registry/` track upstream PR/issue filing state. Upstream aaronjmars/aeon has NEITHER; do not resolve a conflict here by taking upstream.
-- Configuration lives in `aeon.yml`; verify schedule/enablement there before relying on it. `heartbeat` is deliberately 3x/day (`0 8,14,20 * * *`), differing from upstream's 1x/day default — preserved on purpose, not drift.
+*Reviewed: 2026-08-13*
 
-## Recent Articles
-| Date | Title | Topic |
-|------|-------|-------|
+## Purpose
 
-## Recent Digests
-| Date | Type | Key Topics |
-|------|------|------------|
+This file is a concise index of durable Aeon operating context. Put growing or time-sensitive detail in the files it points to, not here.
 
-## Skills Built
-| Skill | Date | Notes |
-|-------|------|-------|
+## Repository
 
-## Lessons Learned
-- (none yet - durable lessons from runs get promoted here by `memory-flush` / `reflect`)
+- `ether-btc/aeon` is an autonomous agent framework whose scheduled GitHub Actions run Claude Code skills.
+- `aeon.yml` is the source of truth for skill enablement, schedules, variables, and model overrides.
+- Generated memory/site artifacts should be committed before the run is recorded in `memory/logs/`.
 
-## Next Priorities
-- Configure notification channels (Telegram, Discord, or Slack)
-- Run a first skill (`heartbeat` is on by default), then enable a few more
+## Memory Map
+
+- `memory/topics/` — durable subject notes.
+- `memory/logs/` — append-only daily activity records.
+- `memory/issues/INDEX.md` — issue register; individual issues live beside it.
+- `memory/watched-repos.md` — repositories monitored by research and digest skills.
+- `memory/filing-registry.json` — upstream PR/issue filing state.
+- `memory/cron-state.json` — scheduler state; do not copy its contents here.
+- `memory/skill-health/` — per-skill health state.
+
+## Operating Conventions
+
+- Keep this index short; promote detail to a topic file when it outgrows a few lines.
+- Verify `aeon.yml` and the relevant state file before relying on schedules or enablement.
+- Use `./notify "message"` for outbound notifications so all configured channels are handled consistently.
+- Keep digest output Markdown with clickable links and below 4,000 characters.
+- Run `scripts/sync-site-data.sh` after memory, log, topic, or article changes intended for the site.
