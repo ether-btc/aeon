@@ -2476,7 +2476,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-05T10:42:17Z",
+  "last_synced": "2026-10-05T18:02:37Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -3164,6 +3164,18 @@
       "type": "review-publish",
       "ref": "ether-btc/hermes-agent@8ddc177e44 (PR #128240 head; F1 supersedes my b79d8a3f)",
       "desc": "FOLLOWUP: open PR #128240 already existed on the same fix (min=1, not my min=0). User's own F1 commit 16020dfd (locally authored, never pushed) was cherry-picked onto the PR head and force-with-lease pushed. New PR head 8ddc177e44 = 1374ad05b4 + F1 (2 files, 13 +/1 -). Oracle steer P(forkA)=0.998 / P(forkB_hold)=0.002 / P(forkC_open_competing_with_min0)=0.0001; matched-pair discrimination delta=0.986. Post-push gate 49 passed (reproducible). My local head b79d8a3f is now redundant. PR comment 5994608086. Wiki filing pushed as dcb7538."
+    },
+    {
+      "ts": "2026-10-05T18:02:37Z",
+      "type": "committed",
+      "ref": "ether-btc/mnemosyne-memory-optimization@4ff4de9",
+      "desc": "mnemosyne-memory-optimization: premise refuted + phases dispositioned + CORRECTION. Ground-truth measurement found the '~10K structured facts' premise FALSE (memoria_facts/memoria_kg/consolidated_facts/triples = extraction debris). P1 BUILT (check_canonical.py); P2 CLOSED NEGATIVE; P3 REFRAMED -> preflight_context.py session context card; P4 REFRAMED; P5 SUBSUMED. wip_hygiene.py retired 129 closed task:progress slots (345->216). CORRECTION filed: the memoria_* debris is written by the always-on REGEX extractor BeamMemory.extract_and_store_facts() (beam.py:7590), NOT the LLM flag \u2014 my earlier root cause was wrong. fast-forward on origin/master."
+    },
+    {
+      "ts": "2026-10-05T18:02:37Z",
+      "type": "committed",
+      "ref": "ether-btc/wiki@ccece74",
+      "desc": "mnemosyne-memory-optimization wiki page + log: filed premise-refuted disposition, then CORRECTED the root cause (regex extractor, not MNEMOSYNE_LLM_ENABLED). Page sha e4198e6d. fast-forward on origin/master."
     }
   ]
 }
