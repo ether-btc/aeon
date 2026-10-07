@@ -1,4 +1,1503 @@
 {
+  "account": "ether-btc",
+  "activity_log": [
+    {
+      "desc": "v5.0.0 refactor: strip to P2P staking-only. SKILL.md 501->~170 lines, 7 scripts added, hardcoded paths removed, dynamic balance/stake calc. Fixes issue #8 root cause. Wiki entity page created.",
+      "ref": "ether-btc/morpheus-proxy-router@5f938f1",
+      "ts": "2026-06-05T00:00:00Z",
+      "type": "refactor"
+    },
+    {
+      "desc": "Migrated from github-activity-registry: 30 PRs, 21 issues",
+      "ref": "system",
+      "ts": "2026-05-06T00:00:00Z",
+      "type": "migrated"
+    },
+    {
+      "desc": "Filed: fix: chunk memories before summarization in summarize_memories()",
+      "ref": "AxDSan/mnemosyne#57",
+      "ts": "2026-05-09T21:16:49Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: llm_used detection always False + remote fallback blocks local LLM + Llama token prompt",
+      "ref": "AxDSan/mnemosyne#35",
+      "ts": "2026-05-09T21:16:50Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: docs: Add example SKILL.md template for contributors",
+      "ref": "ether-btc/agent-skills#1",
+      "ts": "2026-05-09T21:16:51Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: Fix: onRestore prop was empty, now passes handleRestore function",
+      "ts": "2026-05-09T21:16:53Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: feat(circuit-breaker): add use_auxiliary_judgment option",
+      "ref": "NousResearch/hermes-agent#19616",
+      "ts": "2026-05-09T21:16:54Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(session-start): replace fragile sed YAML parser with robust bash",
+      "ref": "xD4O/praxis#1",
+      "ts": "2026-05-09T21:16:55Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: chore: absorb morpheus-p2p-playbook into morpheus-proxy-router (v4.3.0)",
+      "ref": "ether-btc/hermes-vault#1",
+      "ts": "2026-05-09T21:16:56Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: increase rewind hash from 8 to 16 hex chars (64-bit entropy)",
+      "ref": "fajarhide/omni#68",
+      "ts": "2026-05-09T21:16:57Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: entry point loading, exit code 3 handling, observability improvements",
+      "ref": "ogallotti/rtk-hermes#7",
+      "ts": "2026-05-09T21:16:58Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: security audit \u2014 config injection, ReDoS, confidence consistency, bounds",
+      "ref": "ether-btc/openclaw-correlation-plugin#4",
+      "ts": "2026-05-09T21:16:59Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: docs: update with live deployment findings (68 models, session economics, Node.js v24 fix)",
+      "ref": "ether-btc/morpheus-proxy-router#5",
+      "ts": "2026-05-09T21:17:00Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: refactor: adopt Agent Skills spec \u2014 docs\u2192references, spec-compliant SKILL.md",
+      "ref": "ether-btc/morpheus-proxy-router#4",
+      "ts": "2026-05-09T21:17:01Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(logs): add periodic runtime log rotation check",
+      "ref": "diegosouzapw/OmniRoute#1504",
+      "ts": "2026-05-09T21:17:03Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: handle client_stream errors and worker connection failures",
+      "ref": "h4ckf0r0day/obscura#9",
+      "ts": "2026-05-09T21:17:04Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: route /json WebSocket upgrades through load balancer",
+      "ref": "h4ckf0r0day/obscura#8",
+      "ts": "2026-05-09T21:17:05Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: v2.1.0: version sync + CHANGELOG",
+      "ref": "ether-btc/openclaw-correlation-plugin#3",
+      "ts": "2026-05-09T21:17:06Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: performance-weighted server selection + critical error handling",
+      "ref": "mfoud444/ollamafreeapi#11",
+      "ts": "2026-05-09T21:17:07Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: guard on settled status not array length (F1)",
+      "ref": "ether-btc/memory-lancedb-pro#1",
+      "ts": "2026-05-09T21:17:08Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: nonSpecialCount guard + deterministic generateSummaryId",
+      "ref": "win4r/lossless-claw-enhanced#16",
+      "ts": "2026-05-09T21:17:09Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: skip 75ms retry when store is empty (Bug 2)",
+      "ref": "CortexReach/memory-lancedb-pro#582",
+      "ts": "2026-05-09T21:17:10Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: hybrid retrieval graceful degradation with Promise.allSettled",
+      "ref": "CortexReach/memory-lancedb-pro#581",
+      "ts": "2026-05-09T21:17:11Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: remove duplicate summaryModel/summaryProvider type declarations",
+      "ref": "win4r/lossless-claw-enhanced#14",
+      "ts": "2026-05-09T21:17:12Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: Security hardening: SE-requested changes from RTK audit",
+      "ref": "rtk-ai/rtk#1024",
+      "ts": "2026-05-09T21:17:13Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: Security hardening: SE-requested changes from RTK audit",
+      "ref": "ether-btc/rtk#1",
+      "ts": "2026-05-09T21:17:14Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: resolve workspace path via ctx.workspaceDir",
+      "ref": "ether-btc/openclaw-correlation-plugin#2",
+      "ts": "2026-05-09T21:17:15Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: Add Claworc - multi-instance orchestration showcase",
+      "ref": "digitalknk/openclaw-runbook#19",
+      "ts": "2026-05-09T21:17:17Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: feat: add subagent compaction resilience docs",
+      "ref": "ether-btc/openclaw-delegation-patterns#2",
+      "ts": "2026-05-09T21:17:18Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix: update stale model references + add compaction resilience docs",
+      "ref": "ether-btc/openclaw-delegation-patterns#1",
+      "ts": "2026-05-09T21:17:19Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: test: test issue",
+      "ref": "test/repo#1",
+      "ts": "2026-05-11T10:07:00Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: feat: add opt-in path containment hardening via LCM_HERMES_BASE_DIR",
+      "ref": "stephenschoettler/hermes-lcm#161",
+      "ts": "2026-05-12T04:36:10Z",
+      "type": "filed"
+    },
+    {
+      "desc": "health_check.py: extended with Mnemosyne consolidation backlog check, LCM DAG compaction health, Caveman path fix (7e349a0)",
+      "ref": "ether-btc/hermes-vault:master",
+      "ts": "2026-05-13T14:35:15Z",
+      "type": "committed"
+    },
+    {
+      "desc": "CONTINUE_HERE.md: updated with Phase 1+2 session summary (79861eb)",
+      "ref": "ether-btc/hermes-vault:master",
+      "ts": "2026-05-13T14:35:15Z",
+      "type": "committed"
+    },
+    {
+      "action": "commit",
+      "desc": "Committed all changes: entity extraction stopwords, retrieval-time filter, test updates, cleanup script, CONTINUE_HERE.md. Pushed to fork/fix/mention-entity-extraction-quality. Awaiting upstream merge.",
+      "ref": "AxDSan/mnemosyne#120",
+      "ts": "2026-05-13T17:30:00Z"
+    },
+    {
+      "desc": "Filed: fix: auto-derive conversation_id when gateway omits or mirrors session_id",
+      "ref": "stephenschoettler/hermes-lcm#167",
+      "ts": "2026-05-13T15:02:03Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: feat(plugins): CompressionPlugin \u2014 replace hardcoded env-var compression in beam.py",
+      "ref": "AxDSan/mnemosyne#129",
+      "ts": "2026-05-14T06:01:36Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: CI: PermissionError in _build_service_path_dirs on fresh runner",
+      "ref": "ether-btc/hermes-agent#99999",
+      "ts": "2026-05-16T07:43:12Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Diagnosed CI failure: PermissionError in _build_service_path_dirs. 2/23182 tests fail. Issues disabled on repo. Registered in Aeon.",
+      "ref": "ether-btc/hermes-agent#99999",
+      "ts": "2026-05-16T07:43:55Z",
+      "type": "note"
+    },
+    {
+      "desc": "Filed: v0.2.1: code audit, deduplication, docs cleanup, test expansion",
+      "ref": "ether-btc/rust-cave-001#99998",
+      "ts": "2026-05-16T08:00:04Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: feat: input text classifier for adaptive compression strategy selection",
+      "ref": "ether-btc/rust-cave-001#99997",
+      "ts": "2026-05-16T08:11:58Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: Gap analysis: CI fix, classifier tests, GH Release, docs updated, wiki synced",
+      "ref": "ether-btc/rust-cave-001#99996",
+      "ts": "2026-05-16T08:25:16Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: v0.2.1 published to PyPI + CI fixes (clippy, cache@v5)",
+      "ref": "ether-btc/rust-cave-001#99995",
+      "ts": "2026-05-16T08:50:15Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: Self-learning framework MVP: compress_adaptive() + benchmark oracle",
+      "ref": "ether-btc/rust-cave-001#99994",
+      "ts": "2026-05-16T09:01:11Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(engine): auto-derive conversation_id when gateway omits or mirrors session_id",
+      "ref": "stephenschoettler/hermes-lcm#178",
+      "ts": "2026-05-22T15:42:44Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: Feature: auto-link sessions into conversations when gateway doesn't pass conversation_id",
+      "ref": "stephenschoettler/hermes-lcm#133",
+      "ts": "2026-05-22T15:42:45Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: cross-platform build (linux/macos/windows) \u2014 closes Linux/Unix-first gap in stealth-core",
+      "ref": "ether-btc/stealth-core#8",
+      "ts": "2026-06-05T19:30:00Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(data) PP\u2192SP \"shrunk\"\u2192\"shrank\" + SP\u2192PRES \"shrank\" (parallel data errors, 3 commits incl. self-review fix)",
+      "ref": "ether-btc/rust-cave-001#11",
+      "ts": "2026-06-06T13:00:00Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: chore(gitignore) uv.lock \u2014 per-machine artifact for libraries (1 commit)",
+      "ref": "ether-btc/rust-cave-001#12",
+      "ts": "2026-06-06T13:00:00Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Updated with 3 follow-up commits: Dockerfile TARGETPLATFORM (arm64), CI docker-build matrix job, Windows extension order fix + tests",
+      "ref": "ether-btc/stealth-core#8",
+      "ts": "2026-06-06T13:00:00Z",
+      "type": "updated"
+    },
+    {
+      "desc": "Added 7 CI fix-up commits after user reported 5 job failures: 4 pre-existing lint/fmt/test bugs in c385722 (avg_latency wiring) + 1 my-docker-build-matrix bug + 2 deeper pre-existing toolchain issues (rust image version, pre-warm fingerprint)",
+      "ref": "ether-btc/stealth-core#8",
+      "ts": "2026-06-06T14:30:00Z",
+      "type": "updated"
+    },
+    {
+      "action": "filed_pr",
+      "id": "ether-btc/stealth-core#11",
+      "timestamp": "2026-06-07T19:30:00Z",
+      "title": "test: wire up orphan tests + add empirical probes for issue #10"
+    },
+    {
+      "action": "updated_pr",
+      "id": "ether-btc/stealth-core#11",
+      "timestamp": "2026-06-07T20:30:00Z",
+      "title": "Added commit 87b3bcc: section-replacement fix for issue #10 (5 of 9 merge functions converted)"
+    },
+    {
+      "action": "self_review_pr",
+      "id": "ether-btc/stealth-core#11",
+      "timestamp": "2026-06-07T20:50:00Z",
+      "title": "Senior-dev self-review posted as review-of-record comment. GitHub blocks self-approval at API level; owner must click Approve."
+    },
+    {
+      "action": "closed_issue",
+      "id": "ether-btc/stealth-core#10",
+      "timestamp": "2026-06-07T20:50:00Z",
+      "title": "Closed issue #10 \u2014 fix is in PR #11 (commit 87b3bcc). All audit gates green."
+    },
+    {
+      "action": "discovered_merged",
+      "id": "ether-btc/stealth-core#11",
+      "timestamp": "2026-06-07T21:00:00Z",
+      "title": "Discovered PR #11 is already MERGED on origin/master (dd3cec21, 2026-06-07T19:43:09Z). User merged via web UI before 'approve yourself' request was acted on."
+    },
+    {
+      "action": "discovered_merged",
+      "id": "ether-btc/stealth-core#7",
+      "timestamp": "2026-06-07T21:00:00Z",
+      "title": "Discovered PR #7 is already MERGED on origin/master (edfc2c72, 2026-06-07T19:43:28Z)."
+    },
+    {
+      "action": "discovered_merged",
+      "id": "ether-btc/stealth-core#8",
+      "timestamp": "2026-06-07T21:00:00Z",
+      "title": "Discovered PR #8 is already MERGED on origin/master (62d82f5, 2026-06-07T19:43:10Z)."
+    },
+    {
+      "action": "local_cleanup",
+      "id": "ether-btc/stealth-core",
+      "timestamp": "2026-06-07T21:00:00Z",
+      "title": "Synced local master to origin/master (was 39 commits behind). Deleted merged branch fix/orphan-test-wiring. Pruned 2 stale remote-tracking refs. 53 lib tests + 6 integration tests pass on new master."
+    },
+    {
+      "action": "docstring_fix",
+      "id": "ether-btc/stealth-core",
+      "timestamp": "2026-06-07T21:30:00Z",
+      "title": "Committed fa60718 directly to master: corrected validate_url_tests.rs docstring (11 \u2192 10 tests). Senior-dev discretion: 1-line comment fix doesn't need a PR."
+    },
+    {
+      "action": "subagent_review",
+      "id": "ether-btc/stealth-core#11",
+      "timestamp": "2026-06-07T21:30:00Z",
+      "title": "Subagent review round 2: 7/7 verification points PASS. Found 1 real issue (11 vs 10 docstring) + 1 false positive (merge_obscura binary_path \u2014 same as cycle 3 F3.1, refuted by probe test). 1 pre-existing flake in after_interval_is_faster_than_within_interval (out of scope)."
+    },
+    {
+      "action": "discovered_conflict",
+      "id": "ether-btc/rust-cave-001#10",
+      "timestamp": "2026-06-07T20:30:00Z",
+      "title": "Discovered PR #10 (own audit PR) was OPEN with CONFLICTING. Master had 4 commits ahead."
+    },
+    {
+      "action": "merged_pr",
+      "id": "ether-btc/rust-cave-001#10",
+      "timestamp": "2026-06-07T20:43:31Z",
+      "title": "Resolved merge conflict (took audit I-3 removal + re-added 'shrank' entry). All gates green. Squash-merged into master at dbb1e1fe."
+    },
+    {
+      "action": "investigated_ci_failure",
+      "id": "ether-btc/stealth-core#12",
+      "timestamp": "2026-06-07T20:30:00Z",
+      "title": "Investigated CI run 27101158706: probe_obscura_yaml_omits_binary_path failed. Reproduced locally 5/10 with --test-threads=4."
+    },
+    {
+      "action": "identified_dual_env_lock_bug",
+      "id": "ether-btc/stealth-core#12",
+      "timestamp": "2026-06-07T20:32:00Z",
+      "title": "Found two independent `static ENV_LOCK` mutexes (mod tests line 567, mod probe_tests line 1228) that don't coordinate. Bug introduced by PR #11 same day."
+    },
+    {
+      "action": "filed_pr",
+      "id": "ether-btc/stealth-core#12",
+      "timestamp": "2026-06-07T20:50:00Z",
+      "title": "Opened PR #12: consolidate ENV_LOCK to one shared mutex in new `mod test_support`. Added 2 regression tests. 20/20 local stress runs pass."
+    },
+    {
+      "action": "ci_pass",
+      "id": "ether-btc/stealth-core#12",
+      "timestamp": "2026-06-07T21:00:00Z",
+      "title": "CI run 27105446779: 12/13 checks pass, 0 failed. All 3 Test Suite jobs (ubuntu/macos/windows) PASS \u2014 bug confirmed fixed on all platforms. Awaiting arm64 Docker build (slow)."
+    },
+    {
+      "action": "merged_pr",
+      "id": "ether-btc/stealth-core#12",
+      "timestamp": "2026-06-08T06:10:56Z",
+      "title": "MERGED PR #12 (squash commit 5d20c16f) \u2014 dual-ENV_LOCK mutex fix. 13/13 CI checks pass, mergeState=CLEAN. PR branch auto-deleted. Local branch fix/env-lock-deduplication deleted. Master HEAD = 5d20c16f."
+    },
+    {
+      "action": "local_validation_pass",
+      "id": "ether-btc/stealth-core#12",
+      "timestamp": "2026-06-08T06:11:30Z",
+      "title": "55/55 lib tests pass on master (cargo test --lib -- --test-threads=4). 0 open PRs, 0 open issues. Triggered fresh CI on master (run 27119401268) to confirm post-merge stability."
+    },
+    {
+      "action": "subagent_review",
+      "id": "ether-btc/stealth-core#12",
+      "timestamp": "2026-06-08T06:30:00Z",
+      "title": "Subagent review of PR #12 fix: VERDICT pass-with-concerns. Subagent caught that env_lock_serializes_parallel_env_var_writers doc comment OVERCLAIMED \u2014 the test doesn't actually reproduce the original cross-module bug (it only verifies the single shared lock works). The real defense is the compile-time guard (E0255 name collision). Tightened the doc comment to be honest."
+    },
+    {
+      "action": "followup_commit",
+      "id": "ether-btc/stealth-core#12",
+      "timestamp": "2026-06-08T06:35:00Z",
+      "title": "Post-merge commit 8af197c: tightened doc comment on env_lock_serializes_parallel_env_var_writers. No code change. clippy clean, fmt clean, 55/55 lib tests pass. Pushed to master."
+    },
+    {
+      "action": "subagent_review_q3",
+      "id": "ether-btc/stealth-core#12",
+      "timestamp": "2026-06-08T06:40:00Z",
+      "title": "Subagent confirmed: tests/engine_fetch.rs:369,372 mutates STEALTH_CORE_CONFIG without a mutex. Not a real race because: (a) lib tests and integration tests run in separate processes, (b) it's the only test in that file that mutates the var. Currently safe; latent concern if more env-mutating tests are added to engine_fetch.rs. Out of scope for PR #12."
+    },
+    {
+      "action": "audit-completed",
+      "commits": [
+        "90e9e97",
+        "2229e70"
+      ],
+      "repo": "ether-btc/mpt-minimax",
+      "summary": "3-cycle audit of MiMo TTS, 14 findings, all fixed",
+      "timestamp": "2026-06-10T15:30:00Z",
+      "wiki_session": "~/wiki/sessions/2026-06-10-mpt-minimax-mimo-audit/"
+    },
+    {
+      "action": "add_issue",
+      "id": "ether-btc/correlation-relevance-plugin#5",
+      "source": "audit-2026-06-11-correlation-relevance-plugin",
+      "timestamp": "2026-06-11T20:33:25Z",
+      "title": "LifecycleManager.evaluate() cyclomatic complexity 21 \u2014 refactor candidate"
+    },
+    {
+      "action": "add_issue",
+      "id": "ether-btc/correlation-relevance-plugin#6",
+      "source": "audit-2026-06-11-correlation-relevance-plugin",
+      "timestamp": "2026-06-11T20:33:25Z",
+      "title": "Leaky abstraction: engine.py reaches into _tracker._store"
+    },
+    {
+      "action": "add_issue",
+      "id": "ether-btc/correlation-relevance-plugin#7",
+      "source": "audit-2026-06-11-correlation-relevance-plugin",
+      "timestamp": "2026-06-11T20:33:25Z",
+      "title": "O(n) rule lookup inside O(n) loop in evaluate_lifecycles \u2014 O(n\u00b2) per cycle"
+    },
+    {
+      "action": "updated_pr",
+      "id": "mnemosyne-oss/mnemosyne#568",
+      "repo": "mnemosyne-oss/mnemosyne",
+      "timestamp": "2026-07-28T19:10:00Z",
+      "title": "Pushed round-4 fix f9a2c96 (process-substitution \u2192 temp-file+trap, set -e propagates git diff failures). CI 30390678112: lint/build/docs-check green; 7 pre-existing mcp test failures on test(3.11) out of scope."
+    },
+    {
+      "action": "opened_pr",
+      "id": "mnemosyne-oss/mnemosyne#571",
+      "repo": "mnemosyne-oss/mnemosyne",
+      "timestamp": "2026-07-28T20:35:00Z",
+      "title": "Opened PR #571 \u2014 mcp SDK 1.x->2.x migration. Resolves the test (3.11) failure lane flagged as out-of-scope by sibling PR #568. Head 9ec3f0b on branch fix/mcp-2x-upgrade. 96/96 mcp tests pass locally on mcp 2.0.0."
+    },
+    {
+      "action": "verified_pr",
+      "id": "mnemosyne-oss/mnemosyne#568",
+      "repo": "mnemosyne-oss/mnemosyne",
+      "timestamp": "2026-07-28T20:36:00Z",
+      "title": "Confirmed CodeRabbit round-5 re-review (run f9dafa6e) returned no actionable comments on f9a2c96. PR #568 is clean; awaiting upstream maintainer sign-off."
+    },
+    {
+      "action": "wiki_sync",
+      "id": "rtk-rust-cave-reconciliation-2026-07-28",
+      "repo": "ether-btc/wiki",
+      "timestamp": "2026-07-28T23:18:00Z",
+      "title": "RTK-Hermes + rust-cave-001 reconciliation: wiki drift fixed (entities/rust-cave-001.md dual-branch, project-registry.md v1.1.0+v0.6.1, plan + Stage 4 risk assessment). 3 wiki commits pushed (3c49e2e, 92b746f, ff5da30). Key finding: rust_cave_001 v0.4.3\u2192v0.6.1 upgrade is SAFE per E2E scratch-venv test (686\u2192246 chars, 64.1% reduction, 21.9ms)."
+    },
+    {
+      "action": "updated_pr",
+      "id": "mnemosyne-oss/mnemosyne#568",
+      "repo": "mnemosyne-oss/mnemosyne",
+      "timestamp": "2026-07-28T23:50:00Z",
+      "title": "Round 5 re-review clean \u2014 no actionable comments. PR MERGEABLE, awaiting maintainer merge."
+    },
+    {
+      "action": "updated_pr",
+      "id": "mnemosyne-oss/mnemosyne#571",
+      "repo": "mnemosyne-oss/mnemosyne",
+      "timestamp": "2026-07-28T23:50:00Z",
+      "title": "Round 2 fix pushed (152cd22): ListToolsResult wrapper + is_error=True + 3 regression tests. 96/96 MCP tests pass. Awaiting round 3 re-review."
+    },
+    {
+      "action": "triage",
+      "issue": "NousResearch/hermes-agent#26886",
+      "note": "Re-evaluated after GottZ AI triage comment. Surgical fix identified for PR #26907: change .strip() to exact-empty + add whitespace preservation test. 2-line change. Did not post (awaiting user approval).",
+      "timestamp": "2026-07-29T08:30:00Z"
+    },
+    {
+      "action": "sync",
+      "id": "stephenschoettler/hermes-lcm#246",
+      "repo": "stephenschoettler/hermes-lcm",
+      "timestamp": "2026-08-09T20:54:00Z",
+      "title": "Verified issue closed against live GitHub during save-progress filing."
+    },
+    {
+      "desc": "Filed: Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH \u2014 partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue",
+      "ref": "itsfatduck/optimizerDuck#67",
+      "ts": "2026-08-26T08:45:25Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: Investigation: rtk-rewrite rejects legitimate multi-line rewrites (quoted multi-line value) and fails open",
+      "ref": "ether-btc/rtk-hermes-consolidated#8",
+      "ts": "2026-09-25T22:04:36Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(update): make the parked-branch skip remedy non-destructive",
+      "ref": "NousResearch/hermes-agent#128461",
+      "ts": "2026-10-04T05:42:40Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(update): bound the parked-branch cherry check and fall back to a cheap count",
+      "ref": "NousResearch/hermes-agent#128335",
+      "ts": "2026-10-04T05:43:03Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(agent): wrap ALL untrusted tool output, not just output >=32 chars",
+      "ref": "NousResearch/hermes-agent#128240",
+      "ts": "2026-10-04T05:43:04Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(kanban): spawn workers via the published launcher, not bare sys.executable",
+      "ref": "NousResearch/hermes-agent#125506",
+      "ts": "2026-10-04T05:43:05Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(opencode): send x-opencode-client:hermes alongside session affinity",
+      "ref": "NousResearch/hermes-agent#117089",
+      "ts": "2026-10-04T05:43:05Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: refactor: split gateway and CLI TUI mixins",
+      "ref": "NousResearch/hermes-agent#108293",
+      "ts": "2026-10-04T05:43:06Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: feat(skills): append-only evidence ledger for skill_manage (additive counters, concurrency-safe)",
+      "ref": "NousResearch/hermes-agent#106080",
+      "ts": "2026-10-04T05:43:07Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(evals): harden compaction tripwire + align docs with single-call lean",
+      "ref": "NousResearch/hermes-agent#98821",
+      "ts": "2026-10-04T05:43:08Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: docs(web-dashboard): add LAN hardening and end-to-end verification sections",
+      "ref": "NousResearch/hermes-agent#97913",
+      "ts": "2026-10-04T05:43:08Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(delegate): cap sub-agent output at delegation.max_output_tokens",
+      "ref": "NousResearch/hermes-agent#91379",
+      "ts": "2026-10-04T05:43:09Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(cron/runtime): preserve user-installed packages during venv rebuild (issue #69889)",
+      "ref": "NousResearch/hermes-agent#77718",
+      "ts": "2026-10-04T05:43:10Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(sessions): add --self-snapshot to recover for live-source runs (issue #72291)",
+      "ref": "NousResearch/hermes-agent#74699",
+      "ts": "2026-10-04T05:43:11Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(mcp): drop only exact-empty args, preserve whitespace",
+      "ref": "NousResearch/hermes-agent#74016",
+      "ts": "2026-10-04T05:43:12Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(zai): add fetch_models override for GLM-5.2 + base_url fix",
+      "ref": "NousResearch/hermes-agent#46666",
+      "ts": "2026-10-04T05:43:12Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(compressor): preserve error indicators in _summarize_tool_result stubs",
+      "ref": "NousResearch/hermes-agent#42624",
+      "ts": "2026-10-04T05:43:13Z",
+      "type": "filed"
+    },
+    {
+      "desc": "closed at repo 30-PR cap, not for cause; head intact + preserved; recovery comment filed; reopen blocked by cap and missing CreatePullRequest",
+      "ref": "NousResearch/hermes-agent#106080",
+      "ts": "2026-10-05T05:50:46.593053+00:00",
+      "type": "pr"
+    },
+    {
+      "desc": "closed at repo 30-PR cap, not for cause; head intact + preserved; needs full-clone rebase (14828 behind); recovery comment filed",
+      "ref": "NousResearch/hermes-agent#108293",
+      "ts": "2026-10-05T05:50:46.593053+00:00",
+      "type": "pr"
+    },
+    {
+      "desc": "MERGEABLE but mergeStateStatus=BLOCKED: ruleset protect-main (14161644) requires synthetic check 'All required checks pass' (integration 15368); no workflow ever runs on fork branches and upstream CI sits action_required. Needs upstream maintainer.",
+      "ref": "hermes-agent#91379,#128240,#128461",
+      "ts": "2026-10-05T05:50:46.593053+00:00",
+      "type": "blocked"
+    },
+    {
+      "desc": "ponytail skill v4.10.0 sync filed: upstream e3ba2aa6 -> 3 homes x 4 skills, additive log entry; pushed fast-forward under 2026-10-02 wiki blanket authorization",
+      "ref": "ether-btc/wiki@801358b",
+      "ts": "2026-10-05T10:33:31Z",
+      "type": "committed"
+    },
+    {
+      "desc": "ponytail skill v4.12.0 re-sync filed: upstream e15862bb (material drift vs v4.10.0), 12 SKILL.md byte-identical across 3 homes, v4.10.0 backups preserved in scratch; additive log entry, fast-forward",
+      "ref": "ether-btc/wiki@64dcb78",
+      "ts": "2026-10-05T10:33:31Z",
+      "type": "committed"
+    },
+    {
+      "desc": "rtk-v7-audit closeout filed: stale gateway-restart gate (rust_cave_output compression) closed as already satisfied - 2026-10-04 update restarted gateway, Layer 1 inert by design, Layer 0 rtk live; fast-forward on origin/master",
+      "ref": "ether-btc/wiki@a5a85cc",
+      "ts": "2026-10-05T10:33:31Z",
+      "type": "committed"
+    },
+    {
+      "desc": "filing-registry repair: comments 5870792868 + 5871233151 PATCHED 2026-10-05 - no-pip wording corrected to 'exits 1 with No module named pip (stderr; stdout alone reads empty)', live re-verified on 4 generation venvs, byte-verified by read-back",
+      "ref": "mnemosyne-oss/mnemosyne#537",
+      "ts": "2026-10-05T10:36:31Z",
+      "type": "note"
+    },
+    {
+      "desc": "Filed: adapters: harness adapter packs, first pack hermes-bot-mode (rebased onto v1.0.2, head eb373bc)",
+      "ref": "MrTrenchTrucker/module-sop#1",
+      "ts": "2026-10-05T10:42:16Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: tools: gate robustness (rebased onto v1.0.2; + .pytest_cache non_module_dirs exemption, head bcb240d)",
+      "ref": "MrTrenchTrucker/module-sop#2",
+      "ts": "2026-10-05T10:42:17Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Trust-boundary fix 'harden(agent): wrap ALL untrusted tool output' \u2014 independent adversarial review complete (0 blocking; 7 Q's closed w/ runtime probes). Amended head b79d8a3f adds N1 regression test (short/empty-string = exact pre-fix bypass vector); gate 48 passed exact tree / 47 baseline, 0 new failures; ocr+bandit clean. Publication to NousResearch/hermes-agent:main = user hard gate, NOT executed. Evidence receipt + PR-desc at ~/projects/tb-3e11ee43-review/.",
+      "ref": "ether-btc/hermes-agent@b79d8a3f (was 3e11ee43d8)",
+      "ts": "2026-10-05T12:15:10Z",
+      "type": "review"
+    },
+    {
+      "desc": "FOLLOWUP: open PR #128240 already existed on the same fix (min=1, not my min=0). User's own F1 commit 16020dfd (locally authored, never pushed) was cherry-picked onto the PR head and force-with-lease pushed. New PR head 8ddc177e44 = 1374ad05b4 + F1 (2 files, 13 +/1 -). Oracle steer P(forkA)=0.998 / P(forkB_hold)=0.002 / P(forkC_open_competing_with_min0)=0.0001; matched-pair discrimination delta=0.986. Post-push gate 49 passed (reproducible). My local head b79d8a3f is now redundant. PR comment 5994608086. Wiki filing pushed as dcb7538.",
+      "ref": "ether-btc/hermes-agent@8ddc177e44 (PR #128240 head; F1 supersedes my b79d8a3f)",
+      "ts": "2026-10-05T12:40:58Z",
+      "type": "review-publish"
+    },
+    {
+      "desc": "mnemosyne-memory-optimization: premise refuted + phases dispositioned + CORRECTION. Ground-truth measurement found the '~10K structured facts' premise FALSE (memoria_facts/memoria_kg/consolidated_facts/triples = extraction debris). P1 BUILT (check_canonical.py); P2 CLOSED NEGATIVE; P3 REFRAMED -> preflight_context.py session context card; P4 REFRAMED; P5 SUBSUMED. wip_hygiene.py retired 129 closed task:progress slots (345->216). CORRECTION filed: the memoria_* debris is written by the always-on REGEX extractor BeamMemory.extract_and_store_facts() (beam.py:7590), NOT the LLM flag \u2014 my earlier root cause was wrong. fast-forward on origin/master.",
+      "ref": "ether-btc/mnemosyne-memory-optimization@4ff4de9",
+      "ts": "2026-10-05T18:02:37Z",
+      "type": "committed"
+    },
+    {
+      "desc": "mnemosyne-memory-optimization wiki page + log: filed premise-refuted disposition, then CORRECTED the root cause (regex extractor, not MNEMOSYNE_LLM_ENABLED). Page sha e4198e6d. fast-forward on origin/master.",
+      "ref": "ether-btc/wiki@ccece74",
+      "ts": "2026-10-05T18:02:37Z",
+      "type": "committed"
+    },
+    {
+      "desc": "Filed: Jev decider line: resurrect + semantic merge plan (13 contested wiring files)",
+      "ref": "ether-btc/prompro#77",
+      "ts": "2026-10-05T22:58:20Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: test(papertrade): cvEpoch per-call \u2014 fixes 3 cross-venue tests",
+      "ref": "78",
+      "ts": "2026-10-06T05:58:49Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: feat(custody/cow): RouteAwareExecutor for CoW Swap, inert at \u00a79",
+      "ref": "79",
+      "ts": "2026-10-06T05:58:49Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: feat(custody/oneinch): RouteAwareExecutor for 1inch Fusion, inert at \u00a79",
+      "ref": "80",
+      "ts": "2026-10-06T06:27:00Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: refactor(route): extract RouteID + RouteAwareExecutor to internal/route/ leaf",
+      "ref": "81",
+      "ts": "2026-10-06T06:27:01Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: feat(eip712): stdlib-only Keccak-256 + EIP-712 digest, verified against Mail spec",
+      "ref": "82",
+      "ts": "2026-10-06T06:27:01Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: feat(custody/bankr): liveexecutor adapter for RouteBankrPrimary (the actual critical path)",
+      "ref": "83",
+      "ts": "2026-10-06T06:55:50Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(custody): fillrpc.SwapResultClient cannot derive chain direction from cross-venue receipt",
+      "ref": "84",
+      "ts": "2026-10-06T08:36:03Z",
+      "type": "filed"
+    },
+    {
+      "desc": "Filed: fix(desktop): SSH payloads break on POSIX shells after v0.21.5+8607 (loginShellQuote backslash escaping)",
+      "ref": "ether-btc/hermes-agent#7",
+      "ts": "2026-10-07T08:49:47Z",
+      "type": "filed"
+    },
+    {
+      "desc": "2026-10-07 fork branch preserved/2026-10-07-skill-evidence-and-carries @ c3f60a63ccd3 (ether-btc/hermes-agent) ADDS universal evidence preservation on top of the carried evidence_merge feature: _preserve_evidence helper + 2 hooks in _edit_skill/_patch_skill + bypass+docstring in _act_evidence_merge + 7 probes (5 control + 2 regression) in tests/tools/test_skill_evidence_merge.py. Verified: 7/7 new + 57/57 existing tests pass; py_compile clean. 8 files / 832 insertions / 33 deletions. Closes the open MAJOR 'survives later edits is not enforced' on this PR. Not opened as a PR (still hits the cap); recover with  when a slot frees.",
+      "ref": "NousResearch/hermes-agent#106080",
+      "ts": "2026-10-07T17:14:35Z",
+      "type": "note"
+    },
+    {
+      "desc": "2026-10-07 fork extension preserved/2026-10-07-skill-evidence-and-carries @ c3f60a63ccd3 (universal evidence preservation, 8 files, closes open MAJOR; not opened as PR due to cap)",
+      "ref": "NousResearch/hermes-agent#106080",
+      "ts": "2026-10-07T17:15:02Z",
+      "type": "update"
+    }
+  ],
+  "issues": [
+    {
+      "actions_taken": [
+        "Stage 1: Verb maps extracted to module (94\u2192306 PP, 147\u2192357 PRES)",
+        "Stage 2: Contraction expansion (60+ forms) + copular be removal",
+        "Stage 3: and/or conjunction reduction",
+        "5-model multi-expert review \u2014 4 bugs fixed",
+        "OnceLock regex caching (63\u21921 compilation)",
+        "Pushed 4d8136b, tagged v0.3.0, PyPI published",
+        "Acronym protection, pipeline reorder, 13 new tests (108 total)",
+        "crates.io published v0.3.0 (commit ea040a3)"
+      ],
+      "id": "ether-btc/rust-cave-001#v030",
+      "labels": [
+        "v0.3.0",
+        "released",
+        "published",
+        "crates.io"
+      ],
+      "next_action": "None \u2014 released and published",
+      "notes": "48.7% avg token reduction (+0.3%). 108 tests, clippy clean. PyPI + crates.io published.",
+      "number": 99999,
+      "repo": "ether-btc/rust-cave-001",
+      "state": "closed",
+      "status": "merged",
+      "timestamp": "2026-05-16T10:51:31Z",
+      "title": "v0.3.0: verb maps (306pp/357pres), contraction expansion, be removal, conjunction reduction, 5-model review fixes",
+      "type": "issue"
+    },
+    {
+      "actions_taken": [
+        "Note: ~49.77 MOR locked. Type 0 sessions (user) affected. Auto-renewal race condition."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-15T00:00:00Z",
+      "id": "profbernardoj/morpheus-skill#3",
+      "is_upstream": true,
+      "labels": [
+        "critical",
+        "financial-risk"
+      ],
+      "last_action": "2026-04-15T00:00:00Z",
+      "next_action": "Push fixes as PR to upstream",
+      "notes": "~49.77 MOR locked. Type 0 sessions (user) affected. Auto-renewal race condition.",
+      "number": 3,
+      "repo": "profbernardoj/morpheus-skill",
+      "state": "closed",
+      "status": "closed",
+      "title": "[CRITICAL] Auto-renewal flow calls closeSession on expiry \u2014 MOR tokens on-chain hold",
+      "type": "issue",
+      "url": "https://github.com/profbernardoj/morpheus-skill/issues/3"
+    },
+    {
+      "actions_taken": [
+        "Note: ~49.77 MOR locked. Same root cause as #3."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-15T00:00:00Z",
+      "id": "profbernardoj/morpheus-skill#2",
+      "is_upstream": true,
+      "labels": [
+        "critical",
+        "financial-risk"
+      ],
+      "last_action": "2026-05-22T18:15:00Z",
+      "next_action": "Push fixes as PR to upstream profbernardoj/morpheus-skill",
+      "notes": "~49.77 MOR locked. Same root cause as #3.",
+      "number": 2,
+      "repo": "profbernardoj/morpheus-skill",
+      "state": "closed",
+      "status": "closed",
+      "title": "[CRITICAL] Auto-renewal closes sessions as user (Type 0) \u2014 ~49.77 MOR locked",
+      "type": "issue",
+      "url": "https://github.com/profbernardoj/morpheus-skill/issues/2"
+    },
+    {
+      "actions_taken": [
+        "Note: MOR stake accounting discrepancy on session close."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-15T00:00:00Z",
+      "id": "profbernardoj/morpheus-skill#1",
+      "is_upstream": true,
+      "labels": [
+        "high",
+        "accounting"
+      ],
+      "last_action": "2026-05-22T18:15:00Z",
+      "next_action": "Investigate stake return logic",
+      "notes": "MOR stake accounting discrepancy on session close.",
+      "number": 1,
+      "repo": "profbernardoj/morpheus-skill",
+      "state": "closed",
+      "status": "closed",
+      "title": "Session accounting discrepancy: MOR stake not fully returned on session close",
+      "type": "issue",
+      "url": "https://github.com/profbernardoj/morpheus-skill/issues/1"
+    },
+    {
+      "actions_taken": [
+        "Note: On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
+        "Registry updated: node decommissioned, MOR transferred. Issue remains open upstream but is moot for this agent."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-15T00:00:00Z",
+      "id": "MorpheusAIs/SmartContracts#62",
+      "is_upstream": true,
+      "labels": [
+        "critical",
+        "on-chain"
+      ],
+      "last_action": "2026-05-26T11:49:42Z",
+      "next_action": "None \u2014 MOR transferred to external wallet, node no longer runs Morpheus infrastructure. Issue left open on GitHub as upstream reference.",
+      "notes": "On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
+      "number": 62,
+      "repo": "MorpheusAIs/SmartContracts",
+      "state": "open",
+      "status": "closed",
+      "title": "BUG: withdrawUserStakes() selector not registered on MOR Diamond \u2014 ~49.77 MOR locked",
+      "type": "issue",
+      "url": "https://github.com/MorpheusAIs/SmartContracts/issues/62"
+    },
+    {
+      "actions_taken": [
+        "Note: 0.88 MOR unaccounted after 23 sessions (ether-btc fork). Correlates with #1 and #2."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-18T00:00:00Z",
+      "id": "MorpheusAIs/Morpheus-Lumerin-Node#717",
+      "is_upstream": true,
+      "labels": [
+        "high",
+        "accounting"
+      ],
+      "last_action": "2026-04-18T00:00:00Z",
+      "next_action": "Investigate stake return logic in Lumerin-Node",
+      "notes": "0.88 MOR unaccounted after 23 sessions (ether-btc fork). Correlates with #1 and #2.",
+      "number": 717,
+      "repo": "MorpheusAIs/Morpheus-Lumerin-Node",
+      "state": "closed",
+      "status": "closed",
+      "title": "Session accounting discrepancy: MOR stake not fully returned on session close",
+      "type": "issue",
+      "url": "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/issues/717"
+    },
+    {
+      "actions_taken": [
+        "Note: Closed on GitHub by ether-btc. Bug addressed."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-22T00:00:00Z",
+      "id": "fajarhide/omni#71",
+      "is_upstream": true,
+      "labels": [
+        "bug",
+        "panic"
+      ],
+      "last_action": "2026-04-22T00:00:00Z",
+      "next_action": "none",
+      "notes": "Closed on GitHub by ether-btc. Bug addressed.",
+      "number": 71,
+      "repo": "fajarhide/omni",
+      "state": "closed",
+      "status": "closed",
+      "title": "session/learn.rs:40 \u2014 unwrap() on TOML parse causes panic",
+      "type": "issue",
+      "url": "https://github.com/fajarhide/omni/issues/71"
+    },
+    {
+      "actions_taken": [
+        "Note: Closed 2026-05-03T08:43:59Z"
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-22T00:00:00Z",
+      "id": "fajarhide/omni#70",
+      "is_upstream": true,
+      "labels": [
+        "security",
+        "env"
+      ],
+      "last_action": "2026-04-22T00:00:00Z",
+      "next_action": "Extend env denylist in guard/env.rs",
+      "notes": "Closed 2026-05-03T08:43:59Z",
+      "number": 70,
+      "repo": "fajarhide/omni",
+      "state": "closed",
+      "status": "closed",
+      "title": "guard/env.rs: env denylist missing SSH, Perl, Awk, X11, Git hook variables",
+      "type": "issue",
+      "url": "https://github.com/fajarhide/omni/issues/70"
+    },
+    {
+      "actions_taken": [
+        "Note: Closed 2026-05-03T13:31:45Z"
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-20T00:00:00Z",
+      "id": "wysie/hermes-omni-plugin#2",
+      "is_upstream": true,
+      "labels": [
+        "bug",
+        "compatibility"
+      ],
+      "last_action": "2026-04-20T00:00:00Z",
+      "next_action": "Investigate hook registration conflict",
+      "notes": "Closed 2026-05-03T13:31:45Z",
+      "number": 2,
+      "repo": "wysie/hermes-omni-plugin",
+      "state": "closed",
+      "status": "closed",
+      "title": "coexistence conflict: hermes-rtk-optimizer both register transform_terminal_output hook",
+      "type": "issue",
+      "url": "https://github.com/wysie/hermes-omni-plugin/issues/2"
+    },
+    {
+      "actions_taken": [
+        "Note: Bug 1: head truncation (slice(-maxChars)). Bug 2+3: fixed. 4 hardening items remain."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-18T00:00:00Z",
+      "fix_pr_url": "https://github.com/CortexReach/memory-lancedb-pro/pull/738",
+      "id": "CortexReach/memory-lancedb-pro#574",
+      "is_upstream": true,
+      "labels": [
+        "bug"
+      ],
+      "last_action": "2026-04-18T00:00:00Z",
+      "next_action": "Watch PR #738 for merge; close after merge",
+      "notes": "Bug 1: head truncation (slice(-maxChars)). Bug 2+3: fixed. 4 hardening items remain.",
+      "number": 574,
+      "repo": "CortexReach/memory-lancedb-pro",
+      "state": "closed",
+      "status": "closed",
+      "title": "[4 bugs] Memory accumulation without consolidation (Bug 1 unfixed)",
+      "type": "issue",
+      "url": "https://github.com/CortexReach/memory-lancedb-pro/issues/574"
+    },
+    {
+      "actions_taken": [
+        "Note: CWE-22: path traversal via ../, /./, ../ in tar extraction. PR adds pre-extraction validation."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-16T00:00:00Z",
+      "fix_pr_url": "https://github.com/rtk-ai/rtk/pull/1686",
+      "id": "rtk-ai/rtk#1250",
+      "is_upstream": true,
+      "labels": [
+        "security",
+        "CWE-22"
+      ],
+      "last_action": "2026-04-16T00:00:00Z",
+      "next_action": "Watch PR #1686 for merge; close after merge",
+      "notes": "CWE-22: path traversal via ../, /./, ../ in tar extraction. PR adds pre-extraction validation.",
+      "number": 1250,
+      "repo": "rtk-ai/rtk",
+      "state": "closed",
+      "status": "closed",
+      "title": "Security: CWE-22 path traversal in install.sh tar extraction",
+      "type": "issue",
+      "url": "https://github.com/rtk-ai/rtk/issues/1250"
+    },
+    {
+      "actions_taken": [
+        "Note: Fix PR #1371 adds semantic deduplication."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-20T00:00:00Z",
+      "fix_pr_url": "https://github.com/vectorize-io/hindsight/pull/1371",
+      "id": "vectorize-io/hindsight#1284",
+      "is_upstream": true,
+      "labels": [
+        "bug",
+        "performance"
+      ],
+      "last_action": "2026-04-20T00:00:00Z",
+      "next_action": "Watch PR #1371 for merge; close issue after merge",
+      "notes": "Fix PR #1371 adds semantic deduplication.",
+      "number": 1284,
+      "repo": "vectorize-io/hindsight",
+      "state": "closed",
+      "status": "closed",
+      "title": "Experience entries accumulate without consolidation \u2014 unbounded growth",
+      "type": "issue",
+      "url": "https://github.com/vectorize-io/hindsight/issues/1284"
+    },
+    {
+      "actions_taken": [
+        "Note: Part of 17-issue security audit."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-20T00:00:00Z",
+      "id": "moltlaunch/cashclaw#82",
+      "is_upstream": true,
+      "labels": [
+        "bug",
+        "medium"
+      ],
+      "last_action": "2026-04-20T00:00:00Z",
+      "next_action": "Assess and file fix PR",
+      "notes": "Part of 17-issue security audit.",
+      "number": 82,
+      "repo": "moltlaunch/cashclaw",
+      "state": "closed",
+      "status": "closed",
+      "title": "Dynamic import at runtime to invalidate search index \u2014 error swallowed",
+      "type": "issue",
+      "url": "https://github.com/moltlaunch/cashclaw/issues/82"
+    },
+    {
+      "actions_taken": [
+        "Note: Part of 17-issue security audit."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-20T00:00:00Z",
+      "id": "moltlaunch/cashclaw#81",
+      "is_upstream": true,
+      "labels": [
+        "bug",
+        "medium"
+      ],
+      "last_action": "2026-04-20T00:00:00Z",
+      "next_action": "Standardize atomic write pattern",
+      "notes": "Part of 17-issue security audit.",
+      "number": 81,
+      "repo": "moltlaunch/cashclaw",
+      "state": "closed",
+      "status": "closed",
+      "title": "Inconsistent atomic write patterns across memory modules",
+      "type": "issue",
+      "url": "https://github.com/moltlaunch/cashclaw/issues/81"
+    },
+    {
+      "actions_taken": [
+        "Note: Part of 17-issue security audit."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-20T00:00:00Z",
+      "id": "moltlaunch/cashclaw#80",
+      "is_upstream": true,
+      "labels": [
+        "security",
+        "medium"
+      ],
+      "last_action": "2026-04-20T00:00:00Z",
+      "next_action": "Add Origin header validation",
+      "notes": "Part of 17-issue security audit.",
+      "number": 80,
+      "repo": "moltlaunch/cashclaw",
+      "state": "closed",
+      "status": "closed",
+      "title": "CORS origin not validated \u2014 static string without Origin check",
+      "type": "issue",
+      "url": "https://github.com/moltlaunch/cashclaw/issues/80"
+    },
+    {
+      "actions_taken": [
+        "Note: Part of 17-issue security audit."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-20T00:00:00Z",
+      "id": "moltlaunch/cashclaw#79",
+      "is_upstream": true,
+      "labels": [
+        "bug",
+        "high"
+      ],
+      "last_action": "2026-04-20T00:00:00Z",
+      "next_action": "Fix memoization cache invalidation",
+      "notes": "Part of 17-issue security audit.",
+      "number": 79,
+      "repo": "moltlaunch/cashclaw",
+      "state": "closed",
+      "status": "closed",
+      "title": "Tool registry memoization bug: stale tool map on config change",
+      "type": "issue",
+      "url": "https://github.com/moltlaunch/cashclaw/issues/79"
+    },
+    {
+      "actions_taken": [
+        "Note: Part of 17-issue security audit."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-20T00:00:00Z",
+      "id": "moltlaunch/cashclaw#77",
+      "is_upstream": true,
+      "labels": [
+        "bug",
+        "high"
+      ],
+      "last_action": "2026-04-20T00:00:00Z",
+      "next_action": "Add timeout to LLM API calls",
+      "notes": "Part of 17-issue security audit.",
+      "number": 77,
+      "repo": "moltlaunch/cashclaw",
+      "state": "closed",
+      "status": "closed",
+      "title": "LLM API calls have no timeout \u2014 hung connections stall agent loop",
+      "type": "issue",
+      "url": "https://github.com/moltlaunch/cashclaw/issues/77"
+    },
+    {
+      "actions_taken": [
+        "Note: Part of 17-issue security audit."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-20T00:00:00Z",
+      "id": "moltlaunch/cashclaw#76",
+      "is_upstream": true,
+      "labels": [
+        "security",
+        "high"
+      ],
+      "last_action": "2026-04-20T00:00:00Z",
+      "next_action": "Fix path traversal guard \u2014 use equals, not startsWith",
+      "notes": "Part of 17-issue security audit.",
+      "number": 76,
+      "repo": "moltlaunch/cashclaw",
+      "state": "closed",
+      "status": "closed",
+      "title": "Path traversal guard uses startsWith instead of equals",
+      "type": "issue",
+      "url": "https://github.com/moltlaunch/cashclaw/issues/76"
+    },
+    {
+      "actions_taken": [
+        "Note: Same root cause as profbernardoj/morpheus-skill #2 and #3. ~49.77 MOR locked."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-20T00:00:00Z",
+      "id": "ether-btc/morpheus-proxy-router#3",
+      "is_upstream": true,
+      "labels": [
+        "bug",
+        "financial-risk"
+      ],
+      "last_action": "2026-04-20T00:00:00Z",
+      "next_action": "Fix auto-renewal race condition \u2014 confirm new session before deleting old",
+      "notes": "Same root cause as profbernardoj/morpheus-skill #2 and #3. ~49.77 MOR locked.",
+      "number": 3,
+      "repo": "ether-btc/morpheus-proxy-router",
+      "state": "closed",
+      "status": "closed",
+      "title": "Auto-renewal deletes session before new confirmed \u2014 silent MOR lock",
+      "type": "issue",
+      "url": "https://github.com/ether-btc/morpheus-proxy-router/issues/3"
+    },
+    {
+      "actions_taken": [
+        "Filed: cmdFund() delegates to missing safe-transfer.mjs script"
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-20T00:00:00Z",
+      "id": "ether-btc/morpheus-proxy-router#2",
+      "is_upstream": true,
+      "labels": [
+        "bug"
+      ],
+      "last_action": "2026-04-20T00:00:00Z",
+      "next_action": "Implement cmdFund() or inline the transfer logic",
+      "notes": "",
+      "number": 2,
+      "repo": "ether-btc/morpheus-proxy-router",
+      "state": "closed",
+      "status": "closed",
+      "title": "cmdFund() delegates to missing safe-transfer.mjs script",
+      "type": "issue",
+      "url": "https://github.com/ether-btc/morpheus-proxy-router/issues/2"
+    },
+    {
+      "actions_taken": [
+        "Note: 0.88 MOR unaccounted after 23 sessions. Correlates with MorpheusAIs/Morpheus-Lumerin-Node#717."
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-04-20T00:00:00Z",
+      "id": "ether-btc/morpheus-proxy-router#1",
+      "is_upstream": true,
+      "labels": [
+        "bug",
+        "accounting"
+      ],
+      "last_action": "2026-04-20T00:00:00Z",
+      "next_action": "Audit stake tracking \u2014 find where 0.88 MOR is lost",
+      "notes": "0.88 MOR unaccounted after 23 sessions. Correlates with MorpheusAIs/Morpheus-Lumerin-Node#717.",
+      "number": 1,
+      "repo": "ether-btc/morpheus-proxy-router",
+      "state": "closed",
+      "status": "closed",
+      "title": "Session accounting discrepancy: 0.88 MOR permanently unaccounted after 23 sessions",
+      "type": "issue",
+      "url": "https://github.com/ether-btc/morpheus-proxy-router/issues/1"
+    },
+    {
+      "actions_taken": [
+        "Note: Owner correctly closed: stdio MCP has no network surface, OS permission model is the security bounda"
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-03T07:55:00Z",
+      "id": "fajarhide/omni#69",
+      "is_upstream": true,
+      "labels": [
+        "security"
+      ],
+      "last_action": "2026-05-03T08:32:23.756152+00:00",
+      "next_action": "none",
+      "notes": "Owner correctly closed: stdio MCP has no network surface, OS permission model is the security boundary. No auth layer needed for local IPC. Our threat model assessment was incomplete \u2014 same-user process threat is outside application threat model.",
+      "number": 69,
+      "repo": "fajarhide/omni",
+      "state": "closed",
+      "status": "closed",
+      "title": "MCP server has no authentication \u2014 all tools accessible to any local process",
+      "type": "issue",
+      "url": "https://github.com/fajarhide/omni/issues/69"
+    },
+    {
+      "evidence": "tier_1",
+      "filed_at": "2026-05-15T18:43:10.798267+00:00",
+      "id": "harry0703/MoneyPrinterTurbo#881",
+      "number": 881,
+      "repo": "harry0703/MoneyPrinterTurbo",
+      "state": "closed",
+      "status": "closed",
+      "title": "TLS certificate verification disabled on all outbound API requests",
+      "type": "issue",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/881"
+    },
+    {
+      "evidence": "tier_1",
+      "filed_at": "2026-05-15T18:43:10.798267+00:00",
+      "id": "harry0703/MoneyPrinterTurbo#882",
+      "number": 882,
+      "repo": "harry0703/MoneyPrinterTurbo",
+      "state": "closed",
+      "status": "closed",
+      "title": "API auth (verify_token) exists but is commented out in all routers",
+      "type": "issue",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/882"
+    },
+    {
+      "evidence": "tier_1",
+      "filed_at": "2026-05-15T18:43:10.798267+00:00",
+      "id": "harry0703/MoneyPrinterTurbo#883",
+      "number": 883,
+      "repo": "harry0703/MoneyPrinterTurbo",
+      "state": "closed",
+      "status": "closed",
+      "title": "g4f (gpt4free) dependency is a supply chain risk for production use",
+      "type": "issue",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/883"
+    },
+    {
+      "evidence": "tier_2",
+      "filed_at": "2026-05-15T18:43:10.798267+00:00",
+      "id": "harry0703/MoneyPrinterTurbo#884",
+      "number": 884,
+      "repo": "harry0703/MoneyPrinterTurbo",
+      "state": "open",
+      "status": "closed",
+      "title": "voice.py (2066 lines), llm.py complexity 57, silent exception swallowing, code quality issues",
+      "type": "issue",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/884"
+    },
+    {
+      "actions_taken": [
+        "Filed: Feature: auto-link sessions into conversations when gateway doesn't pass conversation_id"
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-22T15:42:45Z",
+      "id": "stephenschoettler/hermes-lcm#133",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-05-22T15:42:45Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 133,
+      "repo": "stephenschoettler/hermes-lcm",
+      "state": "closed",
+      "status": "closed",
+      "title": "Feature: auto-link sessions into conversations when gateway doesn't pass conversation_id",
+      "type": "issue",
+      "url": "https://github.com/stephenschoettler/hermes-lcm/issues/133"
+    },
+    {
+      "actions_taken": [
+        "Child issue of #133"
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-22T15:45:00Z",
+      "id": "stephenschoettler/hermes-lcm#171",
+      "is_upstream": true,
+      "labels": [
+        "enhancement"
+      ],
+      "last_action": "2026-05-22T15:45:00Z",
+      "next_action": "Replacement PR must address thread/topic scope for Telegram and Discord",
+      "notes": "Telegram topics and Discord threads need separate lifecycle bindings even in same parent chat",
+      "number": 171,
+      "repo": "stephenschoettler/hermes-lcm",
+      "state": "closed",
+      "status": "closed",
+      "title": "Feature: include thread/topic scope in host-provided conversation_id",
+      "type": "issue",
+      "url": "https://github.com/stephenschoettler/hermes-lcm/issues/171"
+    },
+    {
+      "actions_taken": [
+        "Filed by ether-btc on 2026-05-16 (fork issues disabled on ether-btc/hermes-agent)",
+        "Review recommendation posted 2026-05-22 (recommend merge of PR #26907)",
+        "Re-evaluated 2026-07-29 after GottZ AI triage comment; teknium1 review (2026-07-29) demands whitespace-only argv preservation"
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-16T10:58:38Z",
+      "id": "NousResearch/hermes-agent#26886",
+      "is_upstream": true,
+      "labels": [
+        "type/bug",
+        "comp/cli",
+        "tool/mcp",
+        "P2"
+      ],
+      "last_action": "2026-07-29T08:30:00Z",
+      "next_action": "Await LeonSGP43 to apply surgical fix to PR #26907 (change .strip() to exact-empty + add args=[\" \"] preservation test). Or open competing PR from ether-btc/hermes-agent.",
+      "notes": "Two PRs proposed: #26907 (OPEN, +43/-2, 15/16 CI checks pass, the 1 fail is unrelated) and #26920 (CLOSED as duplicate). PR #26907 helper uses text.strip() which drops whitespace-only args; teknium1's 2026-07-29 review explicitly demands exact-empty filter. Correct fix: 2-line change in #26907, no need to rebase #26920.",
+      "number": 26886,
+      "repo": "NousResearch/hermes-agent",
+      "state": "open",
+      "status": "open",
+      "title": "hermes mcp add corrupts empty args array to args: [\"\"]",
+      "type": "issue",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/26886"
+    },
+    {
+      "actions_taken": [
+        "Filed: Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH \u2014 partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue"
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-08-26T08:45:25Z",
+      "id": "itsfatduck/optimizerDuck#67",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-08-26T08:45:25Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 67,
+      "repo": "itsfatduck/optimizerDuck",
+      "state": "closed",
+      "status": "closed",
+      "title": "Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH \u2014 partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue",
+      "type": "issue",
+      "url": "https://github.com/itsfatduck/optimizerDuck/issues/67"
+    },
+    {
+      "actions_taken": [
+        "Filed: Investigation: rtk-rewrite rejects legitimate multi-line rewrites (quoted multi-line value) and fails open"
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-09-25T22:04:36Z",
+      "id": "ether-btc/rtk-hermes-consolidated#8",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-09-25T22:04:36Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 8,
+      "repo": "ether-btc/rtk-hermes-consolidated",
+      "state": "open",
+      "status": "pending_review",
+      "title": "Investigation: rtk-rewrite rejects legitimate multi-line rewrites (quoted multi-line value) and fails open",
+      "type": "issue",
+      "url": "https://github.com/ether-btc/rtk-hermes-consolidated/issues/8"
+    },
+    {
+      "actions_taken": [
+        "Filed: Jev decider line: resurrect + semantic merge plan (13 contested wiring files)"
+      ],
+      "evidence_tier": "Branch feat/jev-decider-line de06c7e pushed (63 files, +14158, unwired); kanban review t_aa779bae dispatched to reviewer; Codex dead (401 refresh revoked); merge hard-gated",
+      "filed_at": "2026-10-05T22:58:20Z",
+      "id": "ether-btc/prompro#77",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-10-05T22:58:20Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 77,
+      "repo": "ether-btc/prompro",
+      "state": "open",
+      "status": "pending_review",
+      "title": "Jev decider line: resurrect + semantic merge plan (13 contested wiring files)",
+      "type": "issue",
+      "url": "https://github.com/ether-btc/prompro/issues/77"
+    },
+    {
+      "actions_taken": [
+        "Filed: fix(custody): fillrpc.SwapResultClient cannot derive chain direction from cross-venue receipt"
+      ],
+      "evidence_tier": "",
+      "filed_at": "2026-10-06T08:36:03Z",
+      "id": "84",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-10-06T08:36:03Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 84,
+      "repo": "84",
+      "state": "open",
+      "status": "pending_review",
+      "title": "fix(custody): fillrpc.SwapResultClient cannot derive chain direction from cross-venue receipt",
+      "type": "issue",
+      "url": ""
+    },
+    {
+      "actions_taken": [
+        "Filed: fix(desktop): SSH payloads break on POSIX shells after v0.21.5+8607 (loginShellQuote backslash escaping)"
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-07T08:49:47Z",
+      "id": "ether-btc/hermes-agent#7",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-10-07T08:49:47Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 7,
+      "repo": "ether-btc/hermes-agent",
+      "state": "open",
+      "status": "pending_review",
+      "title": "fix(desktop): SSH payloads break on POSIX shells after v0.21.5+8607 (loginShellQuote backslash escaping)",
+      "type": "issue",
+      "url": "https://github.com/ether-btc/hermes-agent/issues/7"
+    }
+  ],
+  "last_synced": "2026-10-07T17:15:02Z",
   "pulls": [
     {
       "actions_taken": [
@@ -1119,31 +2618,6 @@
       "url": "https://github.com/ether-btc/hermes-lcm/pull/1"
     },
     {
-      "id": "ether-btc/stealth-core#8",
-      "number": 8,
-      "repo": "ether-btc/stealth-core",
-      "title": "fix: make stealth-core truly cross-platform (linux/macos/windows)",
-      "type": "pr",
-      "url": "https://github.com/ether-btc/stealth-core/pull/8",
-      "state": "closed",
-      "status": "merged",
-      "is_upstream": false,
-      "labels": [
-        "platform-agnosticism",
-        "cross-platform",
-        "rust",
-        "windows",
-        "macos",
-        "musl",
-        "docker"
-      ],
-      "filed_at": "2026-06-05T19:30:00Z",
-      "last_action": "2026-06-07T21:00:00Z",
-      "evidence_tier": "tier_1",
-      "local_branch": "feature/platform-agnosticism",
-      "local_commit_sha": "edfc2c72",
-      "next_action": "MERGED into origin/master at 2026-06-07T19:43:10Z. No further action.",
-      "notes": "MERGED into origin/master at 2026-06-07T19:43:10Z. Pre-merge CI: 13/13 jobs PASSED including macOS, Windows, Linux + cross-compile musl + Docker amd64/arm64. Cross-platform fixes: SIGTERM handler (tokio::signal::ctrl_c), PATH walk for executable lookup, PermissionsExt gating, CI matrix (3 OSes), multi-stage Dockerfile, distroless runtime. Note: GH API reports same mergeCommit as PR #9 (62d82f5) \u2014 likely an API quirk; actual PR #8 changes are in master via subsequent merges (PR #7, PR #11).",
       "actions_taken": [
         "2026-06-05: Picked up from previous session (in_progress rebase on fix/health-score-avg-latency)",
         "2026-06-05: Completed interactive rebase (rebased onto c385722)",
@@ -1171,32 +2645,35 @@
         "2026-06-06: All 7 commits pushed, CI run 27063788376 started",
         "2026-06-06: Aeon entry updated (this entry)"
       ],
+      "ci_run": "27065860257",
       "ci_status": "all_green",
-      "ci_run": "27065860257"
-    },
-    {
-      "id": "ether-btc/rust-cave-001#11",
-      "number": 11,
-      "repo": "ether-btc/rust-cave-001",
-      "title": "fix(data): PP\u2192SP 'shrunk'\u2192'shrank' + SP\u2192PRES 'shrunk'\u2192'shrank' (parallel data errors)",
-      "type": "pr",
-      "url": "https://github.com/ether-btc/rust-cave-001/pull/11",
-      "state": "closed",
-      "status": "merged",
+      "evidence_tier": "tier_1",
+      "filed_at": "2026-06-05T19:30:00Z",
+      "id": "ether-btc/stealth-core#8",
       "is_upstream": false,
       "labels": [
-        "bug",
-        "data-quality",
+        "platform-agnosticism",
+        "cross-platform",
         "rust",
-        "verb-conjugation"
+        "windows",
+        "macos",
+        "musl",
+        "docker"
       ],
-      "filed_at": "2026-06-06T13:00:00Z",
-      "last_action": "2026-06-06T13:00:00Z",
-      "evidence_tier": "tier_1",
-      "local_branch": "fix/shrunk-pp-sp",
-      "local_commit_sha": "d39480b6aeddc737b0e60b72085b18de06f7755e",
-      "next_action": "Wait for maintainer review and merge. Tags: v0.4.4 (post-merge, paired with PR #10's audit fixes).",
-      "notes": "Out-of-scope follow-up to the 2026-06-05 3-cycle audit (PR #10). Found two parallel data errors in verb_maps.rs:\n\n1. Line 182: PAST_PARTICIPLE_TO_SIMPLE_PAST had (\"shrunk\", \"shrunk\") \u2014 a no-change self-map. Grammatically wrong: 'shrunk' is the PP, the simple past is 'shrank'. Flagged as out-of-scope finding #1 in the 2026-06-05 AUDIT.md.\n\n2. Line 455: SIMPLE_PAST_TO_PRESENT had (\"shrunk\", \"shrink\") \u2014 but 'shrunk' is a PP, not a SP. The SP is 'shrank'. The original entry produced the right answer (\"shrink\") for the wrong reason (lookup of a PP form) and silently masked the missing 'shrank' entry. Discovered while doing fix #1 \u2014 parallel data error.\n\n3. (Bonus) Stale header comments updated: 192/220 \u2192 306/357 (verified by awk|grep -c). Self-review caught one I missed (line 348 in a third commit).\n\nPipeline round-trip after both fixes:\n  shrunk (PP) \u2192 shrank (SP) \u2192 shrink (present)\n  'The package was shrunk by the cold' \u2192 'cold shrink package' (passive\u2192active\u2192present)\n  'I shrank the package' \u2192 'I shrink package' (past\u2192present)\n\n3 commits:\n  b2c7671: fix(data): PP\u2192SP \"shrunk\" \u2192 \"shrank\" (out-of-scope audit finding #1)\n  6a795fb: fix(data): SP\u2192PRES \"shrunk\" \u2192 \"shrank\" (parallel data error)\n  d39480b: fix(docs): correct SIMPLE_PAST_TO_PRESENT total count (220 \u2192 357)\n\nTests:\n  - test_shrunk_pp_maps_to_shrank (verb_maps.rs: data-level, both positive + negative assertion)\n  - test_shrank_sp_maps_to_shrink (verb_maps.rs: data-level, asserts 'shrunk' is NOT in SP map)\n  - Extended test_verb_map_symmetry to include ('shrunk', 'shrank', 'shrink')\n  - test_transform_active_voice_shrunk_diagnostic (lib.rs: end-to-end, 'was shrunk by' \u2192 'shrank')\n\nValidation: 34/34 Rust tests, 127/127 Python tests, clippy/fmt clean.\n\nBackwards compat: anyone relying on the bug gets 'shrank' (correct) instead of 'shrunk' (was no-change) \u2014 strictly a bug fix.",
+      "last_action": "2026-06-07T21:00:00Z",
+      "local_branch": "feature/platform-agnosticism",
+      "local_commit_sha": "edfc2c72",
+      "next_action": "MERGED into origin/master at 2026-06-07T19:43:10Z. No further action.",
+      "notes": "MERGED into origin/master at 2026-06-07T19:43:10Z. Pre-merge CI: 13/13 jobs PASSED including macOS, Windows, Linux + cross-compile musl + Docker amd64/arm64. Cross-platform fixes: SIGTERM handler (tokio::signal::ctrl_c), PATH walk for executable lookup, PermissionsExt gating, CI matrix (3 OSes), multi-stage Dockerfile, distroless runtime. Note: GH API reports same mergeCommit as PR #9 (62d82f5) \u2014 likely an API quirk; actual PR #8 changes are in master via subsequent merges (PR #7, PR #11).",
+      "number": 8,
+      "repo": "ether-btc/stealth-core",
+      "state": "closed",
+      "status": "merged",
+      "title": "fix: make stealth-core truly cross-platform (linux/macos/windows)",
+      "type": "pr",
+      "url": "https://github.com/ether-btc/stealth-core/pull/8"
+    },
+    {
       "actions_taken": [
         "2026-06-06: Branched fix/shrunk-pp-sp from master@1084aa6 (v0.4.3)",
         "2026-06-06: b2c7671: fix(data) PP\u2192SP shrunk\u2192shrank (out-of-scope audit finding)",
@@ -1205,46 +2682,62 @@
         "2026-06-06: Pushed to origin: git push -u origin fix/shrunk-pp-sp",
         "2026-06-06: PR #11 opened via gh pr create (3 commits, full description)",
         "2026-06-06: Aeon entry filed (this entry)"
-      ]
-    },
-    {
-      "id": "ether-btc/rust-cave-001#12",
-      "number": 12,
-      "repo": "ether-btc/rust-cave-001",
-      "title": "chore: gitignore uv.lock (per-machine artifact for libraries)",
-      "type": "pr",
-      "url": "https://github.com/ether-btc/rust-cave-001/pull/12",
-      "state": "closed",
-      "status": "merged",
+      ],
+      "evidence_tier": "tier_1",
+      "filed_at": "2026-06-06T13:00:00Z",
+      "id": "ether-btc/rust-cave-001#11",
       "is_upstream": false,
       "labels": [
-        "housekeeping",
-        "gitignore"
+        "bug",
+        "data-quality",
+        "rust",
+        "verb-conjugation"
       ],
-      "filed_at": "2026-06-06T13:00:00Z",
       "last_action": "2026-06-06T13:00:00Z",
-      "evidence_tier": "tier_1",
-      "local_branch": "chore/gitignore-uv-lock",
-      "local_commit_sha": "2e06d0c6af96823224eafe544e4bf15854247013",
-      "next_action": "Trivial merge \u2014 single-line gitignore change with explanation comment. Will auto-merge once a maintainer reviews.",
-      "notes": "The 134-byte uv.lock was a leftover from a 2026-06-05 `uv run pytest` invocation during the audit session. Standard practice for Python libraries (not applications) is to gitignore uv.lock because:\n\n- The editable install of rust-cave-001 produces a minimal lockfile that ties to the local Python version and absolute path of the checkout\n- Committing it would create spurious churn for every contributor\n- Library consumers don't benefit from this repo's lockfile (they have their own)\n\nThis is on a separate branch (chore/gitignore-uv-lock) to keep the main audit PR (#10) and the data-fix PR (#11) focused on their respective scopes. Per-claim atomicity beats bundling trivial changes with substantive ones.\n\n1 commit:\n  2e06d0c: chore: gitignore uv.lock (lockfile is per-machine for libraries)\n\nValidation: cargo test --lib still 34/34, clippy/fmt clean, uv run pytest 127/127.",
+      "local_branch": "fix/shrunk-pp-sp",
+      "local_commit_sha": "d39480b6aeddc737b0e60b72085b18de06f7755e",
+      "next_action": "Wait for maintainer review and merge. Tags: v0.4.4 (post-merge, paired with PR #10's audit fixes).",
+      "notes": "Out-of-scope follow-up to the 2026-06-05 3-cycle audit (PR #10). Found two parallel data errors in verb_maps.rs:\n\n1. Line 182: PAST_PARTICIPLE_TO_SIMPLE_PAST had (\"shrunk\", \"shrunk\") \u2014 a no-change self-map. Grammatically wrong: 'shrunk' is the PP, the simple past is 'shrank'. Flagged as out-of-scope finding #1 in the 2026-06-05 AUDIT.md.\n\n2. Line 455: SIMPLE_PAST_TO_PRESENT had (\"shrunk\", \"shrink\") \u2014 but 'shrunk' is a PP, not a SP. The SP is 'shrank'. The original entry produced the right answer (\"shrink\") for the wrong reason (lookup of a PP form) and silently masked the missing 'shrank' entry. Discovered while doing fix #1 \u2014 parallel data error.\n\n3. (Bonus) Stale header comments updated: 192/220 \u2192 306/357 (verified by awk|grep -c). Self-review caught one I missed (line 348 in a third commit).\n\nPipeline round-trip after both fixes:\n  shrunk (PP) \u2192 shrank (SP) \u2192 shrink (present)\n  'The package was shrunk by the cold' \u2192 'cold shrink package' (passive\u2192active\u2192present)\n  'I shrank the package' \u2192 'I shrink package' (past\u2192present)\n\n3 commits:\n  b2c7671: fix(data): PP\u2192SP \"shrunk\" \u2192 \"shrank\" (out-of-scope audit finding #1)\n  6a795fb: fix(data): SP\u2192PRES \"shrunk\" \u2192 \"shrank\" (parallel data error)\n  d39480b: fix(docs): correct SIMPLE_PAST_TO_PRESENT total count (220 \u2192 357)\n\nTests:\n  - test_shrunk_pp_maps_to_shrank (verb_maps.rs: data-level, both positive + negative assertion)\n  - test_shrank_sp_maps_to_shrink (verb_maps.rs: data-level, asserts 'shrunk' is NOT in SP map)\n  - Extended test_verb_map_symmetry to include ('shrunk', 'shrank', 'shrink')\n  - test_transform_active_voice_shrunk_diagnostic (lib.rs: end-to-end, 'was shrunk by' \u2192 'shrank')\n\nValidation: 34/34 Rust tests, 127/127 Python tests, clippy/fmt clean.\n\nBackwards compat: anyone relying on the bug gets 'shrank' (correct) instead of 'shrunk' (was no-change) \u2014 strictly a bug fix.",
+      "number": 11,
+      "repo": "ether-btc/rust-cave-001",
+      "state": "closed",
+      "status": "merged",
+      "title": "fix(data): PP\u2192SP 'shrunk'\u2192'shrank' + SP\u2192PRES 'shrunk'\u2192'shrank' (parallel data errors)",
+      "type": "pr",
+      "url": "https://github.com/ether-btc/rust-cave-001/pull/11"
+    },
+    {
       "actions_taken": [
         "2026-06-06: Branched chore/gitignore-uv-lock from master@1084aa6",
         "2026-06-06: 2e06d0c: chore: gitignore uv.lock with explanatory comment",
         "2026-06-06: Pushed to origin: git push -u origin chore/gitignore-uv-lock",
         "2026-06-06: PR #12 opened via gh pr create",
         "2026-06-06: Aeon entry filed (this entry)"
-      ]
-    },
-    {
-      "id": "ether-btc/stealth-core#11",
-      "number": 11,
-      "repo": "ether-btc/stealth-core",
-      "title": "test: wire up orphan tests + add empirical probes for issue #10",
-      "type": "pr",
-      "url": "https://github.com/ether-btc/stealth-core/pull/11",
+      ],
+      "evidence_tier": "tier_1",
+      "filed_at": "2026-06-06T13:00:00Z",
+      "id": "ether-btc/rust-cave-001#12",
+      "is_upstream": false,
+      "labels": [
+        "housekeeping",
+        "gitignore"
+      ],
+      "last_action": "2026-06-06T13:00:00Z",
+      "local_branch": "chore/gitignore-uv-lock",
+      "local_commit_sha": "2e06d0c6af96823224eafe544e4bf15854247013",
+      "next_action": "Trivial merge \u2014 single-line gitignore change with explanation comment. Will auto-merge once a maintainer reviews.",
+      "notes": "The 134-byte uv.lock was a leftover from a 2026-06-05 `uv run pytest` invocation during the audit session. Standard practice for Python libraries (not applications) is to gitignore uv.lock because:\n\n- The editable install of rust-cave-001 produces a minimal lockfile that ties to the local Python version and absolute path of the checkout\n- Committing it would create spurious churn for every contributor\n- Library consumers don't benefit from this repo's lockfile (they have their own)\n\nThis is on a separate branch (chore/gitignore-uv-lock) to keep the main audit PR (#10) and the data-fix PR (#11) focused on their respective scopes. Per-claim atomicity beats bundling trivial changes with substantive ones.\n\n1 commit:\n  2e06d0c: chore: gitignore uv.lock (lockfile is per-machine for libraries)\n\nValidation: cargo test --lib still 34/34, clippy/fmt clean, uv run pytest 127/127.",
+      "number": 12,
+      "repo": "ether-btc/rust-cave-001",
       "state": "closed",
       "status": "merged",
+      "title": "chore: gitignore uv.lock (per-machine artifact for libraries)",
+      "type": "pr",
+      "url": "https://github.com/ether-btc/rust-cave-001/pull/12"
+    },
+    {
+      "filed_at": "2026-06-07T19:30:00Z",
+      "id": "ether-btc/stealth-core#11",
       "is_upstream": false,
       "labels": [
         "test",
@@ -1252,30 +2745,20 @@
         "post-merge",
         "issue-10"
       ],
-      "filed_at": "2026-06-07T19:30:00Z",
       "last_action": "2026-06-07T21:00:00Z",
       "local_branch": "fix/orphan-test-wiring",
       "local_commit_sha": "dd3cec21",
       "next_action": "MERGED into origin/master at 2026-06-07T19:43:09Z. All audit gates green. Issue #10 closed. No further action.",
-      "notes": "MERGED into origin/master at 2026-06-07T19:43:09Z (merge commit dd3cec21, by user via GitHub web UI).\n\nPR contained 3 commits:\n- 93b2bad: wire up 11 orphan tests in src/engine/validate_url_tests.rs (latent bug fix)\n- e2a82fc: 5 empirical probe tests in src/config/mod.rs::probe_tests\n- 87b3bcc: SECTION-LEVEL REPLACEMENT FIX for issue #10 (closes #10)\n\nLocal state cleanup: fix/orphan-test-wiring branch deleted (work is in master); 2 stale remote-tracking refs pruned (feature/request-caching-layer, fix/config-merge-coverage).\n\nFinal test count: 53 passed / 0 failed / 0 ignored. +23 tests vs pre-audit (30 \u2192 53). 0 regressions.\n\nSenior-dev self-review posted as PR comment (https://github.com/ether-btc/stealth-core/pull/11#issuecomment-4643692089). GitHub blocks self-approval at API level, but the user delegated merge authority and merged via web UI.\n\nWiki: sessions/2026-06-07-post-merge-audit/ (10 files, 5 audit passes)"
-    },
-    {
-      "id": "ether-btc/stealth-core#9",
-      "number": 9,
+      "notes": "MERGED into origin/master at 2026-06-07T19:43:09Z (merge commit dd3cec21, by user via GitHub web UI).\n\nPR contained 3 commits:\n- 93b2bad: wire up 11 orphan tests in src/engine/validate_url_tests.rs (latent bug fix)\n- e2a82fc: 5 empirical probe tests in src/config/mod.rs::probe_tests\n- 87b3bcc: SECTION-LEVEL REPLACEMENT FIX for issue #10 (closes #10)\n\nLocal state cleanup: fix/orphan-test-wiring branch deleted (work is in master); 2 stale remote-tracking refs pruned (feature/request-caching-layer, fix/config-merge-coverage).\n\nFinal test count: 53 passed / 0 failed / 0 ignored. +23 tests vs pre-audit (30 \u2192 53). 0 regressions.\n\nSenior-dev self-review posted as PR comment (https://github.com/ether-btc/stealth-core/pull/11#issuecomment-4643692089). GitHub blocks self-approval at API level, but the user delegated merge authority and merged via web UI.\n\nWiki: sessions/2026-06-07-post-merge-audit/ (10 files, 5 audit passes)",
+      "number": 11,
       "repo": "ether-btc/stealth-core",
-      "title": "fix(config): wire up obscura and fingerprint YAML merge + env-var overrides",
-      "type": "pr",
-      "url": "https://github.com/ether-btc/stealth-core/pull/9",
       "state": "closed",
       "status": "merged",
-      "is_upstream": false,
-      "labels": [],
-      "evidence_tier": "tier_1",
-      "filed_at": "2026-06-07T14:00:00Z",
-      "last_action": "2026-06-07T14:00:00Z",
-      "local_commit_sha": "afc27db",
-      "next_action": "Await review and merge into feature/platform-agnosticism. Once merged, rebase PR #8 onto updated base.",
-      "notes": "3 pre-existing config bugs fixed:\n- BUG-1: obscura YAML block silently dropped (PartialAppConfig parsed it but load_config() never called merge_obscura).\n- BUG-2: fingerprint block missing from PartialAppConfig entirely.\n- BUG-3 (caught by new test): duplicate FingerprintConfig structs with mismatched serde defaults for sidecar_mode (config:: uses #[serde(default)] giving '', fingerprint:: uses #[serde(default = 'default_sidecar_mode')] giving 'http'). Engine copies fields between them, so omitted sidecar_mode in YAML silently produced empty runtime sidecar mode. Fixed by adding default_fingerprint_sidecar_mode() in config/mod.rs and a cross-reference comment.\n\nNew functionality:\n- 6 new env-var overrides (STEALTH_CORE_OBSCURA_*, STEALTH_CORE_FINGERPRINT_*)\n- New merge_obscura and merge_fingerprint use section-level replacement (clone_from) \u2014 bool fields make field-level sentinel merging ambiguous\n- 8 new regression tests (7 for new behavior + 1 cross-module contract test pinning the duplicate-struct default)\n- Test infrastructure: process-global ENV_LOCK mutex + unique_tmp_config() helper (avoids tempfile crate)\n\nPre-existing bool-sentinel bug in 7 other merge functions (server, stealth, proxy, rate_limit, cache, prometheus) \u2014 section-replacement would fix it but is invasive. Filed as follow-up issue #10.\n\n3-cycle audit: 4 self-review findings (S1-S4), integration consistency check, independent reviewer (self-conducted after subagent timeout). 29/29 lib tests pass. 0 new clippy warnings. cargo fmt --check clean.\n\nPR base is feature/platform-agnosticism (NOT master) to avoid duplicating the cross-platform commit from PR #8. CI workflow only triggers on master/main, so this PR will not run CI automatically \u2014 relying on local validation.",
+      "title": "test: wire up orphan tests + add empirical probes for issue #10",
+      "type": "pr",
+      "url": "https://github.com/ether-btc/stealth-core/pull/11"
+    },
+    {
       "actions_taken": [
         "2026-06-07: 3-cycle code audit (self-review + clippy + integration + independent reviewer) on the working tree",
         "2026-06-07: Created fix/config-merge-coverage branch from feature/platform-agnosticism (commit 5705379)",
@@ -1286,76 +2769,86 @@
         "2026-06-07: Filed follow-up issue #10 for the bool-sentinel bug in 7 other merge functions",
         "2026-06-07: Wiki updated: audit doc (~/wiki/audits/stealth-core-config-merge-coverage-2026-06-07.md), entity page, project-registry, index, log, CONTINUE_HERE",
         "2026-06-07: Aeon entry filed (this entry)"
-      ]
-    },
-    {
-      "id": "ether-btc/rust-cave-001#10",
-      "title": "audit: 3-cycle code audit (I-2/I-3/I-4/I-6/I-7 fixed; I-1 false positive reverted)",
-      "state": "closed",
-      "filed_at": "2026-06-05T16:26:37Z",
-      "last_action": "2026-06-07T20:43:31Z",
-      "local_commit_sha": "dbb1e1fe",
+      ],
+      "evidence_tier": "tier_1",
+      "filed_at": "2026-06-07T14:00:00Z",
+      "id": "ether-btc/stealth-core#9",
       "is_upstream": false,
-      "next_action": "MERGED into master. Squash commit dbb1e1fe. All audit gates green.",
-      "notes": "Was CONFLICTING with master (4 commits behind). Resolved by taking audit's I-3 removal of 34 PP forms from SIMPLE_PAST_TO_PRESENT + re-adding 'shrank' in the alphabetically-correct v0.3.0 section. Preserved both PR #11's tests and the audit's tests (5 new tests total, 38 Rust + 127 Python pass).\n\nCycle 4 found I-8 (acronym guard broken with trailing comma) \u2014 added in commit 74a3016. The 'PRODUCTION-READY' verdict after cycle 3 was premature.\n\nAll audit gates green on the merged result: cargo test --lib (38 pass), clippy -D warnings clean, fmt clean, pytest 127 pass, CI: audit/test pass."
-    },
-    {
-      "id": "ether-btc/stealth-core#12",
-      "title": "fix(test): consolidate ENV_LOCK to one shared mutex (closes CI flake from 27101158706)",
-      "state": "closed",
-      "filed_at": "2026-06-07T20:50:00Z",
-      "last_action": "2026-06-08T06:10:56Z",
-      "local_commit_sha": "5d20c16f",
-      "is_upstream": false,
-      "next_action": "MERGED into master at 2026-06-08T06:10:56Z (squash commit 5d20c16f). PR branch deleted. Local fix/env-lock-deduplication branch deleted. Master HEAD = 5d20c16f. 55/55 lib tests pass locally. Post-merge CI run 27119401268 in progress.",
-      "notes": "FIX for the dual-ENV_LOCK mutex bug that caused CI runs #27101158706 and #27102827375 to fail.\n\nROOT CAUSE: `mod tests` (line 567) and `mod probe_tests` (line 1228) each declared their own `static ENV_LOCK: Mutex<()>` on the same day (PR #11, 2026-06-07). The two locks did not coordinate. With `cargo test -- --test-threads=4` (CI default), cargo scheduled both modules' tests in parallel, and a `clear_all_config_env_vars()` in one module could wipe env vars another module's test had just set.\n\nTWO INDEPENDENT CI FAILURES, SAME BUG:\n  - Run #27101158706: probe_obscura_yaml_omits_binary_path saw a leaked STEALTH_CORE_OBSCURA_BINARY_PATH from a parallel test.\n  - Run #27102827375: load_config_env_overrides_fingerprint found STEALTH_CORE_FINGERPRINT_ENABLED cleared by a parallel probe test.\n\nFIX: One shared `pub(super) static ENV_LOCK` in new `#[cfg(test)] mod test_support` block. Both modules import via `use super::test_support::ENV_LOCK;`. The `use ...;` import also acts as a regression guard \u2014 any future re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n\nVALIDATION: 20/20 local runs of `cargo test --lib -- --test-threads=4` pass (was 5/10 pre-fix). 55 lib tests pass (53 original + 2 new). All 3 Test Suite jobs in CI (ubuntu/macos/windows) pass.\n\nNEW TESTS:\n  - env_lock_serializes_parallel_env_var_writers: 8 workers \u00d7 50 iterations each, 50\u00b5s sleep in critical section, verifies env var persists.\n  - env_lock_is_provided_by_test_support: compile-time regression guard against re-introducing a duplicate static.\n\nPOST-MERGE STATE (2026-06-08T06:10:56Z):\n- Squash-merged into master as 5d20c16f\n- PR branch fix/env-lock-deduplication auto-deleted on origin\n- Local branch deleted with `git branch -D fix/env-lock-deduplication`\n- Master HEAD: 5d20c16f\n- 55/55 lib tests pass on master (cargo test --lib -- --test-threads=4)\n- Triggered fresh CI on master (run 27119401268) via empty commit to validate post-merge stability.\n- 0 open PRs, 0 open issues in stealth-core.\n\nThe two historical CI failures (#27101158706 and #27102827375) can no longer recur because:\n  1. The dual-ENV_LOCK mutex bug is fixed.\n  2. The `use super::test_support::ENV_LOCK;` import in both test submodules acts as a compile-time guard: any re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n  3. The new `env_lock_serializes_parallel_env_var_writers` test stress-tests the lock with 8 workers \u00d7 50 iterations.\n  4. The new `env_lock_is_provided_by_test_support` test verifies the invariant that the lock comes from the shared module.\n\nPOST-MERGE FOLLOW-UP (commit 8af197c, 2026-06-08):\n- Subagent review caught that the stress test doc comment overclaimed what the test reproduces.\n- Tightened the doc to be honest: the test verifies the SHARED lock works, but the original cross-module bug is actually defended by the COMPILE-TIME GUARD (E0255 name collision on duplicate static declarations).\n- No code change; just doc clarity. clippy + fmt + 55/55 tests still pass."
-    },
-    {
-      "id": "stephenschoettler/hermes-lcm#245",
-      "type": "pr",
-      "title": "fix(config): tune compaction defaults and add lcm.context_threshold config priority",
-      "repo": "stephenschoettler/hermes-lcm",
-      "number": 245,
+      "labels": [],
+      "last_action": "2026-06-07T14:00:00Z",
+      "local_commit_sha": "afc27db",
+      "next_action": "Await review and merge into feature/platform-agnosticism. Once merged, rebase PR #8 onto updated base.",
+      "notes": "3 pre-existing config bugs fixed:\n- BUG-1: obscura YAML block silently dropped (PartialAppConfig parsed it but load_config() never called merge_obscura).\n- BUG-2: fingerprint block missing from PartialAppConfig entirely.\n- BUG-3 (caught by new test): duplicate FingerprintConfig structs with mismatched serde defaults for sidecar_mode (config:: uses #[serde(default)] giving '', fingerprint:: uses #[serde(default = 'default_sidecar_mode')] giving 'http'). Engine copies fields between them, so omitted sidecar_mode in YAML silently produced empty runtime sidecar mode. Fixed by adding default_fingerprint_sidecar_mode() in config/mod.rs and a cross-reference comment.\n\nNew functionality:\n- 6 new env-var overrides (STEALTH_CORE_OBSCURA_*, STEALTH_CORE_FINGERPRINT_*)\n- New merge_obscura and merge_fingerprint use section-level replacement (clone_from) \u2014 bool fields make field-level sentinel merging ambiguous\n- 8 new regression tests (7 for new behavior + 1 cross-module contract test pinning the duplicate-struct default)\n- Test infrastructure: process-global ENV_LOCK mutex + unique_tmp_config() helper (avoids tempfile crate)\n\nPre-existing bool-sentinel bug in 7 other merge functions (server, stealth, proxy, rate_limit, cache, prometheus) \u2014 section-replacement would fix it but is invasive. Filed as follow-up issue #10.\n\n3-cycle audit: 4 self-review findings (S1-S4), integration consistency check, independent reviewer (self-conducted after subagent timeout). 29/29 lib tests pass. 0 new clippy warnings. cargo fmt --check clean.\n\nPR base is feature/platform-agnosticism (NOT master) to avoid duplicating the cross-platform commit from PR #8. CI workflow only triggers on master/main, so this PR will not run CI automatically \u2014 relying on local validation.",
+      "number": 9,
+      "repo": "ether-btc/stealth-core",
       "state": "closed",
       "status": "merged",
-      "evidence_tier": "tier_3",
-      "filed_at": "2026-06-09T05:52:13Z",
-      "last_action": "2026-06-09T05:52:13Z",
-      "next_action": "Await upstream review - test fix pushed",
-      "notes": "CI: 1 test failure (hardcoded old default) fixed and pushed. Awaiting re-run.",
-      "is_upstream": true,
-      "url": "https://github.com/stephenschoettler/hermes-lcm/pull/245",
+      "title": "fix(config): wire up obscura and fingerprint YAML merge + env-var overrides",
+      "type": "pr",
+      "url": "https://github.com/ether-btc/stealth-core/pull/9"
+    },
+    {
+      "filed_at": "2026-06-05T16:26:37Z",
+      "id": "ether-btc/rust-cave-001#10",
+      "is_upstream": false,
+      "last_action": "2026-06-07T20:43:31Z",
+      "local_commit_sha": "dbb1e1fe",
+      "next_action": "MERGED into master. Squash commit dbb1e1fe. All audit gates green.",
+      "notes": "Was CONFLICTING with master (4 commits behind). Resolved by taking audit's I-3 removal of 34 PP forms from SIMPLE_PAST_TO_PRESENT + re-adding 'shrank' in the alphabetically-correct v0.3.0 section. Preserved both PR #11's tests and the audit's tests (5 new tests total, 38 Rust + 127 Python pass).\n\nCycle 4 found I-8 (acronym guard broken with trailing comma) \u2014 added in commit 74a3016. The 'PRODUCTION-READY' verdict after cycle 3 was premature.\n\nAll audit gates green on the merged result: cargo test --lib (38 pass), clippy -D warnings clean, fmt clean, pytest 127 pass, CI: audit/test pass.",
+      "state": "closed",
+      "title": "audit: 3-cycle code audit (I-2/I-3/I-4/I-6/I-7 fixed; I-1 false positive reverted)"
+    },
+    {
+      "filed_at": "2026-06-07T20:50:00Z",
+      "id": "ether-btc/stealth-core#12",
+      "is_upstream": false,
+      "last_action": "2026-06-08T06:10:56Z",
+      "local_commit_sha": "5d20c16f",
+      "next_action": "MERGED into master at 2026-06-08T06:10:56Z (squash commit 5d20c16f). PR branch deleted. Local fix/env-lock-deduplication branch deleted. Master HEAD = 5d20c16f. 55/55 lib tests pass locally. Post-merge CI run 27119401268 in progress.",
+      "notes": "FIX for the dual-ENV_LOCK mutex bug that caused CI runs #27101158706 and #27102827375 to fail.\n\nROOT CAUSE: `mod tests` (line 567) and `mod probe_tests` (line 1228) each declared their own `static ENV_LOCK: Mutex<()>` on the same day (PR #11, 2026-06-07). The two locks did not coordinate. With `cargo test -- --test-threads=4` (CI default), cargo scheduled both modules' tests in parallel, and a `clear_all_config_env_vars()` in one module could wipe env vars another module's test had just set.\n\nTWO INDEPENDENT CI FAILURES, SAME BUG:\n  - Run #27101158706: probe_obscura_yaml_omits_binary_path saw a leaked STEALTH_CORE_OBSCURA_BINARY_PATH from a parallel test.\n  - Run #27102827375: load_config_env_overrides_fingerprint found STEALTH_CORE_FINGERPRINT_ENABLED cleared by a parallel probe test.\n\nFIX: One shared `pub(super) static ENV_LOCK` in new `#[cfg(test)] mod test_support` block. Both modules import via `use super::test_support::ENV_LOCK;`. The `use ...;` import also acts as a regression guard \u2014 any future re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n\nVALIDATION: 20/20 local runs of `cargo test --lib -- --test-threads=4` pass (was 5/10 pre-fix). 55 lib tests pass (53 original + 2 new). All 3 Test Suite jobs in CI (ubuntu/macos/windows) pass.\n\nNEW TESTS:\n  - env_lock_serializes_parallel_env_var_writers: 8 workers \u00d7 50 iterations each, 50\u00b5s sleep in critical section, verifies env var persists.\n  - env_lock_is_provided_by_test_support: compile-time regression guard against re-introducing a duplicate static.\n\nPOST-MERGE STATE (2026-06-08T06:10:56Z):\n- Squash-merged into master as 5d20c16f\n- PR branch fix/env-lock-deduplication auto-deleted on origin\n- Local branch deleted with `git branch -D fix/env-lock-deduplication`\n- Master HEAD: 5d20c16f\n- 55/55 lib tests pass on master (cargo test --lib -- --test-threads=4)\n- Triggered fresh CI on master (run 27119401268) via empty commit to validate post-merge stability.\n- 0 open PRs, 0 open issues in stealth-core.\n\nThe two historical CI failures (#27101158706 and #27102827375) can no longer recur because:\n  1. The dual-ENV_LOCK mutex bug is fixed.\n  2. The `use super::test_support::ENV_LOCK;` import in both test submodules acts as a compile-time guard: any re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n  3. The new `env_lock_serializes_parallel_env_var_writers` test stress-tests the lock with 8 workers \u00d7 50 iterations.\n  4. The new `env_lock_is_provided_by_test_support` test verifies the invariant that the lock comes from the shared module.\n\nPOST-MERGE FOLLOW-UP (commit 8af197c, 2026-06-08):\n- Subagent review caught that the stress test doc comment overclaimed what the test reproduces.\n- Tightened the doc to be honest: the test verifies the SHARED lock works, but the original cross-module bug is actually defended by the COMPILE-TIME GUARD (E0255 name collision on duplicate static declarations).\n- No code change; just doc clarity. clippy + fmt + 55/55 tests still pass.",
+      "state": "closed",
+      "title": "fix(test): consolidate ENV_LOCK to one shared mutex (closes CI flake from 27101158706)"
+    },
+    {
       "actions_taken": [
         "Filed PR #245 - config defaults + threshold priority",
         "Fixed test expecting fresh_tail_count=64 to 32"
-      ]
+      ],
+      "evidence_tier": "tier_3",
+      "filed_at": "2026-06-09T05:52:13Z",
+      "id": "stephenschoettler/hermes-lcm#245",
+      "is_upstream": true,
+      "last_action": "2026-06-09T05:52:13Z",
+      "next_action": "Await upstream review - test fix pushed",
+      "notes": "CI: 1 test failure (hardcoded old default) fixed and pushed. Awaiting re-run.",
+      "number": 245,
+      "repo": "stephenschoettler/hermes-lcm",
+      "state": "closed",
+      "status": "merged",
+      "title": "fix(config): tune compaction defaults and add lcm.context_threshold config priority",
+      "type": "pr",
+      "url": "https://github.com/stephenschoettler/hermes-lcm/pull/245"
     },
     {
-      "id": "stephenschoettler/hermes-lcm#246",
-      "type": "issue",
-      "title": "docs: database_path default comment says lcm.db but Hermes plugin uses hermes-lcm.db",
-      "repo": "stephenschoettler/hermes-lcm",
-      "number": 246,
-      "state": "closed",
-      "status": "closed",
+      "actions_taken": [
+        "Filed issue #246 - database_path default doc mismatch"
+      ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-06-09T05:52:13Z",
+      "id": "stephenschoettler/hermes-lcm#246",
+      "is_upstream": true,
       "last_action": "2026-08-09T20:54:00Z",
       "next_action": "No action \u2014 closed upstream",
       "notes": "Live GitHub state is closed; reconciled during save-progress filing.",
-      "is_upstream": true,
-      "url": "https://github.com/stephenschoettler/hermes-lcm/issues/246",
-      "actions_taken": [
-        "Filed issue #246 - database_path default doc mismatch"
-      ]
+      "number": 246,
+      "repo": "stephenschoettler/hermes-lcm",
+      "state": "closed",
+      "status": "closed",
+      "title": "docs: database_path default comment says lcm.db but Hermes plugin uses hermes-lcm.db",
+      "type": "issue",
+      "url": "https://github.com/stephenschoettler/hermes-lcm/issues/246"
     },
     {
-      "id": "mimo-tts-audit-2026-06-10",
-      "repo": "ether-btc/mpt-minimax",
-      "type": "audit",
-      "title": "3-cycle audit of feat(voice): implement MiMo TTS provider (771ae05)",
-      "notes": "3 audit cycles (OCR L1 + repomix + 2 parallel subagent reviewers + 1 cross-validator) on the new MiMo TTS provider. 14 findings (4 high, 5 medium, 5 low) \u2014 all addressed in two followup commits: 90e9e97 (cycle 1) and 2229e70 (cycle 3). Cycle 2 found 0 new bugs. Critical web-research finding: the original hardcoded voice catalogue was 4/5 made-up Chinese nicknames that would have caused every WebUI selection to 4xx in production. Replaced with the real 8-voice MiMo v2.5 TTS catalogue per the official MiMo-Skills docs. Test delta: 14 failed / 7 passed \u2192 13 failed / 16 passed (the 13 remaining failures are pre-existing and unrelated to mimo_tts).",
-      "evidence_tier": "high",
       "actions_taken": [
         "Cycle 1: 2 parallel subagent reviewers + 3 empirical probes (cycle1-probes.py) \u2014 all 3 confirmed bugs",
         "Cycle 1 fix commit 90e9e97: voice_name validation, timeout=60.0, retry loop, URL log sanitization, _safe_log_url, real 8-voice catalogue, docstring fix, 4 new tests",
@@ -1366,36 +2859,30 @@
         "Wiki session committed at ~/wiki/sessions/2026-06-10-mpt-minimax-mimo-audit/ with INDEX.md, audit-summary.md, cycle1-3 findings, evidence/, probes/",
         "Followup issues (NOT filed, gh CLI blocked by safety): project-wide SSRF gap in *_base_url keys; sibling locals() smelly fallback in siliconflow_tts/minimax_tts"
       ],
-      "last_action": "wiki committed with full audit trail",
-      "next_action": "When operator is at keyboard: file SSRF followup as issue in ether-btc/mpt-minimax",
       "commits": [
         "90e9e97 fix(voice): cycle 1 audit fixes for MiMo TTS",
         "2229e70 fix(voice): cycle 3 audit fixes \u2014 narrow retry, IPv6 logs, empty audio guard"
       ],
-      "wiki_session": "~/wiki/sessions/2026-06-10-mpt-minimax-mimo-audit/",
-      "state": "closed",
-      "status": "fixed",
-      "timestamp": "2026-06-10T15:30:00Z",
+      "evidence_tier": "high",
       "filed_at": "2026-06-10",
+      "id": "mimo-tts-audit-2026-06-10",
       "labels": [
         "audit",
         "security",
         "quality"
-      ]
+      ],
+      "last_action": "wiki committed with full audit trail",
+      "next_action": "When operator is at keyboard: file SSRF followup as issue in ether-btc/mpt-minimax",
+      "notes": "3 audit cycles (OCR L1 + repomix + 2 parallel subagent reviewers + 1 cross-validator) on the new MiMo TTS provider. 14 findings (4 high, 5 medium, 5 low) \u2014 all addressed in two followup commits: 90e9e97 (cycle 1) and 2229e70 (cycle 3). Cycle 2 found 0 new bugs. Critical web-research finding: the original hardcoded voice catalogue was 4/5 made-up Chinese nicknames that would have caused every WebUI selection to 4xx in production. Replaced with the real 8-voice MiMo v2.5 TTS catalogue per the official MiMo-Skills docs. Test delta: 14 failed / 7 passed \u2192 13 failed / 16 passed (the 13 remaining failures are pre-existing and unrelated to mimo_tts).",
+      "repo": "ether-btc/mpt-minimax",
+      "state": "closed",
+      "status": "fixed",
+      "timestamp": "2026-06-10T15:30:00Z",
+      "title": "3-cycle audit of feat(voice): implement MiMo TTS provider (771ae05)",
+      "type": "audit",
+      "wiki_session": "~/wiki/sessions/2026-06-10-mpt-minimax-mimo-audit/"
     },
     {
-      "id": "ether-btc/rust-cave-001#13",
-      "repo": "ether-btc/rust-cave-001",
-      "number": 13,
-      "type": "pr",
-      "title": "v0.5.0: Clippy pedantic cleanup + pyo3 0.24\u21920.29 security upgrade",
-      "state": "closed",
-      "status": "merged",
-      "evidence": "tier_3",
-      "url": "https://github.com/ether-btc/rust-cave-001/pull/13",
-      "mergedAt": "2026-06-18T20:06:25.288744Z",
-      "local_commit_sha": "c759f6a",
-      "next_action": "COMPLETED: v0.5.0 release gaps fixed (2026-06-19). Version sync'd, CI updated with validation + twine upload. Awaiting PYPI_TOKEN secret config to trigger final publish.",
       "actions_taken": [
         "Multi-cycle audit (4 phases) completed",
         "Fixed logger.error + sanitize_error_message type-safety",
@@ -1411,1771 +2898,531 @@
         "2026-06-19T00:00:00Z - Updated CI workflow (validate-versions + twine upload + verification)",
         "2026-06-19T00:00:00Z - Retagged v0.5.0 and pushed all changes"
       ],
-      "notes": "PyPI publish initially failed due to missing PYPI_PASSWORD secret.\n        \nFIXED 2026-06-19:\n- pyproject.toml version: 0.4.3 \u2192 0.5.0 (was mismatched with Cargo.toml)\n- Deleted and recreated v0.5.0 tag to point to version-sync'd code\n- CI workflow updated:\n  - Added validate-versions job (catches version mismatches before build)\n  - Migrated from deprecated 'maturin publish' to 'maturin build + twine upload'\n  - Added post-publish verification step (installs from PyPI, verifies __version__)\n  - Changed secret name: PYPI_PASSWORD \u2192 PYPI_TOKEN (standard convention)\n- CONTINUE_HERE_v0.5.0.md updated with full release checklist\n\nPENDING: User must configure PYPI_TOKEN secret in GitHub repo settings.\nOnce configured: CI will auto-deploy on tag push, or trigger manually via gh workflow run."
+      "evidence": "tier_3",
+      "id": "ether-btc/rust-cave-001#13",
+      "local_commit_sha": "c759f6a",
+      "mergedAt": "2026-06-18T20:06:25.288744Z",
+      "next_action": "COMPLETED: v0.5.0 release gaps fixed (2026-06-19). Version sync'd, CI updated with validation + twine upload. Awaiting PYPI_TOKEN secret config to trigger final publish.",
+      "notes": "PyPI publish initially failed due to missing PYPI_PASSWORD secret.\n        \nFIXED 2026-06-19:\n- pyproject.toml version: 0.4.3 \u2192 0.5.0 (was mismatched with Cargo.toml)\n- Deleted and recreated v0.5.0 tag to point to version-sync'd code\n- CI workflow updated:\n  - Added validate-versions job (catches version mismatches before build)\n  - Migrated from deprecated 'maturin publish' to 'maturin build + twine upload'\n  - Added post-publish verification step (installs from PyPI, verifies __version__)\n  - Changed secret name: PYPI_PASSWORD \u2192 PYPI_TOKEN (standard convention)\n- CONTINUE_HERE_v0.5.0.md updated with full release checklist\n\nPENDING: User must configure PYPI_TOKEN secret in GitHub repo settings.\nOnce configured: CI will auto-deploy on tag push, or trigger manually via gh workflow run.",
+      "number": 13,
+      "repo": "ether-btc/rust-cave-001",
+      "state": "closed",
+      "status": "merged",
+      "title": "v0.5.0: Clippy pedantic cleanup + pyo3 0.24\u21920.29 security upgrade",
+      "type": "pr",
+      "url": "https://github.com/ether-btc/rust-cave-001/pull/13"
     },
     {
-      "id": "NousResearch/hermes-agent#26907",
-      "type": "pr",
-      "title": "fix(mcp): ignore empty stdio args placeholder",
-      "repo": "NousResearch/hermes-agent",
-      "number": 26907,
-      "state": "open",
-      "status": "open",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-05-16T11:55:00Z",
-      "last_action": "2026-07-29T08:30:00Z",
-      "is_upstream": true,
-      "labels": [],
       "actions_taken": [
         "Reviewed by ether-btc 2026-05-22 (recommended merge \u2014 now stale)",
         "Reviewed by teknium1 (hermes-sweeper) 2026-07-29, verdict keep_open salvageability=high \u2014 demanded exact-empty filter + whitespace preservation test",
         "GottZ AI triage 2026-07-29 called this 'partial' fix (technically correct on whitespace, editorially slanted)"
       ],
-      "next_action": "Await LeonSGP43 to update _normalize_cli_args predicate from text.strip() to exact-empty and add test_add_stdio_server_preserves_whitespace_args. 2-line change. HEAD on leonsgp43/hermes/fix-26886-mcp-empty-args @ 978fd29b.",
-      "notes": "+43/-2. 15/16 CI checks pass; the 1 failing 'test' check has 6 unrelated failures (pyproject 0.13 vs 0.14 version drift, /root/.hermes permission errors, xai transcription env). The MCP regression test in tests/hermes_cli/test_mcp_config.py passes. Branch is on upstream NousResearch (contributor's fork); ether-btc cannot push to it directly.",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/26907",
-      "local_commit_sha": "978fd29b2611c8b966958ceeb0e5e68eb7901f8b"
-    },
-    {
-      "id": "NousResearch/hermes-agent#26920",
-      "type": "pr",
-      "title": "fix(mcp): narrow empty-arg filter (exact-empty only)",
-      "repo": "NousResearch/hermes-agent",
-      "number": 26920,
-      "state": "closed",
-      "status": "closed",
       "evidence_tier": "tier_2",
-      "filed_at": "2026-05-20T12:00:00Z",
-      "last_action": "2026-07-29T08:30:00Z",
+      "filed_at": "2026-05-16T11:55:00Z",
+      "id": "NousResearch/hermes-agent#26907",
       "is_upstream": true,
       "labels": [],
+      "last_action": "2026-07-29T08:30:00Z",
+      "local_commit_sha": "978fd29b2611c8b966958ceeb0e5e68eb7901f8b",
+      "next_action": "Await LeonSGP43 to update _normalize_cli_args predicate from text.strip() to exact-empty and add test_add_stdio_server_preserves_whitespace_args. 2-line change. HEAD on leonsgp43/hermes/fix-26886-mcp-empty-args @ 978fd29b.",
+      "notes": "+43/-2. 15/16 CI checks pass; the 1 failing 'test' check has 6 unrelated failures (pyproject 0.13 vs 0.14 version drift, /root/.hermes permission errors, xai transcription env). The MCP regression test in tests/hermes_cli/test_mcp_config.py passes. Branch is on upstream NousResearch (contributor's fork); ether-btc cannot push to it directly.",
+      "number": 26907,
+      "repo": "NousResearch/hermes-agent",
+      "state": "open",
+      "status": "open",
+      "title": "fix(mcp): ignore empty stdio args placeholder",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/26907"
+    },
+    {
       "actions_taken": [
         "Closed as duplicate of #26907 by maintainer",
         "GottZ AI triage 2026-07-29 called this 'best fix' (technically correct on semantics, misleading because it lacks tests)"
       ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-05-20T12:00:00Z",
+      "id": "NousResearch/hermes-agent#26920",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-07-29T08:30:00Z",
       "next_action": "No action \u2014 closed. Reference implementation for the exact-empty semantics that PR #26907 should adopt.",
       "notes": "+1/-1. Truthy filter [a for a in args if a] correctly preserves whitespace-only args, no tests, no helper. Superseded by surgical fix plan for PR #26907.",
+      "number": 26920,
+      "repo": "NousResearch/hermes-agent",
+      "state": "closed",
+      "status": "closed",
+      "title": "fix(mcp): narrow empty-arg filter (exact-empty only)",
+      "type": "pr",
       "url": "https://github.com/NousResearch/hermes-agent/pull/26920"
     },
     {
-      "id": "NousResearch/hermes-agent#128461",
-      "repo": "NousResearch/hermes-agent",
-      "number": 128461,
-      "type": "pr",
-      "title": "fix(update): make the parked-branch skip remedy non-destructive",
-      "state": "open",
-      "status": "pending_review",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_3",
-      "filed_at": "2026-10-04T05:42:40Z",
-      "last_action": "2026-10-04T05:42:40Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/128461",
       "actions_taken": [
         "Filed: fix(update): make the parked-branch skip remedy non-destructive"
       ],
-      "notes": "",
+      "evidence_tier": "tier_3",
+      "filed_at": "2026-10-04T05:42:40Z",
+      "id": "NousResearch/hermes-agent#128461",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
+      "last_action": "2026-10-04T05:42:40Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 128461,
+      "repo": "NousResearch/hermes-agent",
+      "state": "open",
+      "status": "pending_review",
+      "title": "fix(update): make the parked-branch skip remedy non-destructive",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/128461"
     },
     {
-      "id": "NousResearch/hermes-agent#128335",
-      "repo": "NousResearch/hermes-agent",
-      "number": 128335,
-      "type": "pr",
-      "title": "fix(update): bound the parked-branch cherry check and fall back to a cheap count",
-      "state": "closed",
-      "status": "closed",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-10-04T05:43:03Z",
-      "last_action": "2026-10-04T05:43:03Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/128335",
       "actions_taken": [
         "Filed: fix(update): bound the parked-branch cherry check and fall back to a cheap count"
       ],
-      "notes": "",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-04T05:43:03Z",
+      "id": "NousResearch/hermes-agent#128335",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
+      "last_action": "2026-10-04T05:43:03Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 128335,
+      "repo": "NousResearch/hermes-agent",
+      "state": "closed",
+      "status": "closed",
+      "title": "fix(update): bound the parked-branch cherry check and fall back to a cheap count",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/128335"
     },
     {
-      "id": "NousResearch/hermes-agent#128240",
-      "repo": "NousResearch/hermes-agent",
-      "number": 128240,
-      "type": "pr",
-      "title": "fix(agent): wrap ALL untrusted tool output, not just output >=32 chars",
-      "state": "open",
-      "status": "pending_review",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-10-04T05:43:04Z",
-      "last_action": "2026-10-04T05:43:04Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/128240",
       "actions_taken": [
         "Filed: fix(agent): wrap ALL untrusted tool output, not just output >=32 chars"
       ],
-      "notes": "",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-04T05:43:04Z",
+      "id": "NousResearch/hermes-agent#128240",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
+      "last_action": "2026-10-04T05:43:04Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 128240,
+      "repo": "NousResearch/hermes-agent",
+      "state": "open",
+      "status": "pending_review",
+      "title": "fix(agent): wrap ALL untrusted tool output, not just output >=32 chars",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/128240"
     },
     {
-      "id": "NousResearch/hermes-agent#125506",
-      "repo": "NousResearch/hermes-agent",
-      "number": 125506,
-      "type": "pr",
-      "title": "fix(kanban): spawn workers via the published launcher, not bare sys.executable",
-      "state": "closed",
-      "status": "closed",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-10-04T05:43:05Z",
-      "last_action": "2026-10-04T05:43:05Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/125506",
       "actions_taken": [
         "Filed: fix(kanban): spawn workers via the published launcher, not bare sys.executable"
       ],
-      "notes": "",
-      "labels": [],
-      "is_upstream": true
-    },
-    {
-      "id": "NousResearch/hermes-agent#117089",
-      "repo": "NousResearch/hermes-agent",
-      "number": 117089,
-      "type": "pr",
-      "title": "fix(opencode): send x-opencode-client:hermes alongside session affinity",
-      "state": "closed",
-      "status": "closed",
-      "next_action": "Await upstream review",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-04T05:43:05Z",
+      "id": "NousResearch/hermes-agent#125506",
+      "is_upstream": true,
+      "labels": [],
       "last_action": "2026-10-04T05:43:05Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/117089",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 125506,
+      "repo": "NousResearch/hermes-agent",
+      "state": "closed",
+      "status": "closed",
+      "title": "fix(kanban): spawn workers via the published launcher, not bare sys.executable",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/125506"
+    },
+    {
       "actions_taken": [
         "Filed: fix(opencode): send x-opencode-client:hermes alongside session affinity"
       ],
-      "notes": "",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-04T05:43:05Z",
+      "id": "NousResearch/hermes-agent#117089",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
-    },
-    {
-      "id": "NousResearch/hermes-agent#108293",
+      "last_action": "2026-10-04T05:43:05Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 117089,
       "repo": "NousResearch/hermes-agent",
-      "number": 108293,
-      "type": "pr",
-      "title": "refactor: split gateway and CLI TUI mixins",
       "state": "closed",
       "status": "closed",
-      "next_action": "CLOSED 2026-10-05 at the repo-wide 30-open-PR cap - NOT closed for cause. Head a85e77fe672 is INTACT on the fork (refs/heads/publication/run-turn-split-current); backup also at preserved/pr-108293-turn-split. Real delta vs merge-base 759024bdf = 22 files, +7410/-6802 (gateway/run_turn_exec.py, gateway/run_turn_hmwa.py, hermes_cli/cli_tui_*.py split). NOT merged: the 10 created files are absent from origin/main and run_turn.py still holds the facade classes. Branch is now 14828 commits behind main (bdef06de3), so re-filing needs a rebase in a FULL clone - never in the promisor/partial clone at ~/.hermes/hermes-agent (remote.origin.promisor=true, tree:0), where a wide rebase stalls. RECOVERY COMMENT FILED 2026-10-05 (issuecomment-5988869971). Reopen blocked by the same cap + missing CreatePullRequest. NEXT ACTION: rebase in a full clone, then re-file when a slot frees.",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-10-04T05:43:06Z",
-      "last_action": "2026-10-04T17:3xZ",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/108293",
+      "title": "fix(opencode): send x-opencode-client:hermes alongside session affinity",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/117089"
+    },
+    {
       "actions_taken": [
         "Filed: refactor: split gateway and CLI TUI mixins"
       ],
-      "notes": "",
-      "labels": [],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-04T05:43:06Z",
+      "id": "NousResearch/hermes-agent#108293",
       "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-10-04T17:3xZ",
       "metadata": {
         "recovery_2026_10_05": true
-      }
-    },
-    {
-      "id": "NousResearch/hermes-agent#106080",
+      },
+      "next_action": "CLOSED 2026-10-05 at the repo-wide 30-open-PR cap - NOT closed for cause. Head a85e77fe672 is INTACT on the fork (refs/heads/publication/run-turn-split-current); backup also at preserved/pr-108293-turn-split. Real delta vs merge-base 759024bdf = 22 files, +7410/-6802 (gateway/run_turn_exec.py, gateway/run_turn_hmwa.py, hermes_cli/cli_tui_*.py split). NOT merged: the 10 created files are absent from origin/main and run_turn.py still holds the facade classes. Branch is now 14828 commits behind main (bdef06de3), so re-filing needs a rebase in a FULL clone - never in the promisor/partial clone at ~/.hermes/hermes-agent (remote.origin.promisor=true, tree:0), where a wide rebase stalls. RECOVERY COMMENT FILED 2026-10-05 (issuecomment-5988869971). Reopen blocked by the same cap + missing CreatePullRequest. NEXT ACTION: rebase in a full clone, then re-file when a slot frees.",
+      "notes": "",
+      "number": 108293,
       "repo": "NousResearch/hermes-agent",
-      "number": 106080,
-      "type": "pr",
-      "title": "feat(skills): append-only evidence ledger for skill_manage (additive counters, concurrency-safe)",
       "state": "closed",
       "status": "closed",
-      "next_action": "CLOSED 2026-10-05 at the repo-wide 30-open-PR cap (3 of them mine) - NOT closed for cause. Head aab059c01c is INTACT on the fork (refs/heads/feat/skill-evidence-ledger) and 0 commits behind main; backup also at preserved/pr-106080-evidence-ledger. Real delta vs merge-base af90026aa = 1311 insertions / 6 files (tools/skill_evidence.py, tools/skill_manager_tool.py, tools/skill_manager_batch.py, tools/write_approval.py, scripts/evidence_e2e.py, tests/tools/test_skill_evidence_merge.py). NOT upstream: test_skill_evidence_merge.py is absent from origin/main. RECOVERY COMMENT FILED 2026-10-05 (issuecomment-5988868394). Reopen blocked: gh pr reopen -> open-PR cap error; gh pr create -> 'ether-btc does not have CreatePullRequest'. NEXT ACTION: re-file when a slot frees.",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-10-04T05:43:07Z",
-      "last_action": "2026-10-04T18:0xZ",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/106080",
+      "title": "refactor: split gateway and CLI TUI mixins",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/108293"
+    },
+    {
       "actions_taken": [
-        "Filed: feat(skills): append-only evidence ledger for skill_manage (additive counters, concurrency-safe)"
+        "Filed: feat(skills): append-only evidence ledger for skill_manage (additive counters, concurrency-safe)",
+        "2026-10-07: fork extension preserved/2026-10-07-skill-evidence-and-carries @ c3f60a63ccd3 (universal preservation; 8 files / +832 / -33; closes open MAJOR; not opened as PR due to cap)"
       ],
-      "notes": "",
-      "labels": [],
-      "is_upstream": true,
-      "metadata": {
-        "recovery_2026_10_05": true
-      }
-    },
-    {
-      "id": "NousResearch/hermes-agent#98821",
-      "repo": "NousResearch/hermes-agent",
-      "number": 98821,
-      "type": "pr",
-      "title": "fix(evals): harden compaction tripwire + align docs with single-call lean",
-      "state": "closed",
-      "status": "closed",
-      "next_action": "CLA blocker REPAIRED 2026-10-04: re-authored to ether-btc <33156212+ether-btc@users.noreply.github.com> as 1289b20b9553 (tree + parent unchanged); repo checker now reports all emails mapped. Closed deliberately to free a slot against the repo 14-open-PR cap so #128461 could be reopened. Work preserved on fork branch fix/compaction-test-coverage; reopen any time.",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-04T05:43:07Z",
-      "last_action": "2026-10-04T05:43:07Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/98821",
+      "id": "NousResearch/hermes-agent#106080",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-10-07T17:15:02Z",
+      "metadata": {
+        "recovery_2026_10_05": true
+      },
+      "next_action": "FORK EXTENSION 2026-10-07: branch preserved/2026-10-07-skill-evidence-and-carries @ c3f60a63ccd3 (ether-btc/hermes-agent) ADDS universal evidence preservation on top of this PR's evidence_merge feature. New: _preserve_evidence helper (re-injects current SKILL.md evidence into any content=/old_string=/new_string write, BOM-aware, returns content untouched when no evidence); _preserve_evidence_suspended ContextVar; hooks in _edit_skill and _patch_skill (only when file_path is None); bypass and docstring in _act_evidence_merge. New tests/tools/test_skill_evidence_merge.py: 7 probes (5 control + 2 regression) proving evidence survives ANY write path. Verification: 7/7 new + 57/57 existing tests pass; py_compile clean. 8 files / 832 insertions / 33 deletions. Closes the open MAJOR 'survives later edits is not enforced' from the previous PR review. Not opened as a new PR (repo-wide 30-open-PR cap; gh pr create rejected with 'ether-btc does not have CreatePullRequest' on this fork). RECOVERY: git fetch fork preserved/2026-10-07-skill-evidence-and-carries when an open-PR slot frees. The branch is on the fork only; do NOT force-push unless re-syncing on top of a new rebase of aab059c onto current main.",
+      "notes": "FORK EXTENSION 2026-10-07: branch preserved/2026-10-07-skill-evidence-and-carries @ c3f60a63ccd3 (ether-btc/hermes-agent) ADDS universal evidence preservation on top of this PR's evidence_merge feature. New: _preserve_evidence helper (re-injects current SKILL.md evidence into any content=/old_string=/new_string write, BOM-aware, returns content untouched when no evidence); _preserve_evidence_suspended ContextVar; hooks in _edit_skill and _patch_skill (only when file_path is None); bypass and docstring in _act_evidence_merge. New tests/tools/test_skill_evidence_merge.py: 7 probes (5 control + 2 regression) proving evidence survives ANY write path. Verification: 7/7 new + 57/57 existing tests pass; py_compile clean. 8 files / 832 insertions / 33 deletions. Closes the open MAJOR 'survives later edits is not enforced' from the previous PR review. Not opened as a new PR (repo-wide 30-open-PR cap; gh pr create rejected with 'ether-btc does not have CreatePullRequest' on this fork). RECOVERY: git fetch fork preserved/2026-10-07-skill-evidence-and-carries when an open-PR slot frees. The branch is on the fork only; do NOT force-push unless re-syncing on top of a new rebase of aab059c onto current main.",
+      "number": 106080,
+      "repo": "NousResearch/hermes-agent",
+      "state": "closed",
+      "status": "closed",
+      "title": "feat(skills): append-only evidence ledger for skill_manage (additive counters, concurrency-safe)",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/106080"
+    },
+    {
       "actions_taken": [
         "Filed: fix(evals): harden compaction tripwire + align docs with single-call lean"
       ],
-      "notes": "Closed, NOT merged (merged_at is null). The registry previously recorded this as \"merged\" because sync mapped every closed PR to merged; that mapping bug is fixed in skills/github-filing-registry/filing-registry by discriminating on merged_at. CI on head 1289b20b9553 shows 3 runs 'failure' (CI, Nix flake check, Docker Build) \u2014 NOT a code defect: all three have ZERO jobs created and run.updated_at 13:36:12, one second after the PR was closed at 13:36:11. The force-push unblocked CI that had been held at action_required, the runs began at 13:35:39-40, and closing the PR 31s later killed them before any job was created. No test executed. Do not read these as a failing build.",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-04T05:43:07Z",
+      "id": "NousResearch/hermes-agent#98821",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
-    },
-    {
-      "id": "NousResearch/hermes-agent#97913",
+      "last_action": "2026-10-04T05:43:07Z",
+      "next_action": "CLA blocker REPAIRED 2026-10-04: re-authored to ether-btc <33156212+ether-btc@users.noreply.github.com> as 1289b20b9553 (tree + parent unchanged); repo checker now reports all emails mapped. Closed deliberately to free a slot against the repo 14-open-PR cap so #128461 could be reopened. Work preserved on fork branch fix/compaction-test-coverage; reopen any time.",
+      "notes": "Closed, NOT merged (merged_at is null). The registry previously recorded this as \"merged\" because sync mapped every closed PR to merged; that mapping bug is fixed in skills/github-filing-registry/filing-registry by discriminating on merged_at. CI on head 1289b20b9553 shows 3 runs 'failure' (CI, Nix flake check, Docker Build) \u2014 NOT a code defect: all three have ZERO jobs created and run.updated_at 13:36:12, one second after the PR was closed at 13:36:11. The force-push unblocked CI that had been held at action_required, the runs began at 13:35:39-40, and closing the PR 31s later killed them before any job was created. No test executed. Do not read these as a failing build.",
+      "number": 98821,
       "repo": "NousResearch/hermes-agent",
-      "number": 97913,
-      "type": "pr",
-      "title": "docs(web-dashboard): add LAN hardening and end-to-end verification sections",
       "state": "closed",
       "status": "closed",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-10-04T05:43:08Z",
-      "last_action": "2026-10-04T05:43:08Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/97913",
+      "title": "fix(evals): harden compaction tripwire + align docs with single-call lean",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/98821"
+    },
+    {
       "actions_taken": [
         "Filed: docs(web-dashboard): add LAN hardening and end-to-end verification sections"
       ],
-      "notes": "",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-04T05:43:08Z",
+      "id": "NousResearch/hermes-agent#97913",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
+      "last_action": "2026-10-04T05:43:08Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 97913,
+      "repo": "NousResearch/hermes-agent",
+      "state": "closed",
+      "status": "closed",
+      "title": "docs(web-dashboard): add LAN hardening and end-to-end verification sections",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/97913"
     },
     {
-      "id": "NousResearch/hermes-agent#91379",
-      "repo": "NousResearch/hermes-agent",
-      "number": 91379,
-      "type": "pr",
-      "title": "fix(delegate): cap sub-agent output at delegation.max_output_tokens",
-      "state": "open",
-      "status": "pending_review",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-10-04T05:43:09Z",
-      "last_action": "2026-10-04T05:43:09Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/91379",
       "actions_taken": [
         "Filed: fix(delegate): cap sub-agent output at delegation.max_output_tokens"
       ],
-      "notes": "",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-04T05:43:09Z",
+      "id": "NousResearch/hermes-agent#91379",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
+      "last_action": "2026-10-04T05:43:09Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 91379,
+      "repo": "NousResearch/hermes-agent",
+      "state": "open",
+      "status": "pending_review",
+      "title": "fix(delegate): cap sub-agent output at delegation.max_output_tokens",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/91379"
     },
     {
-      "id": "NousResearch/hermes-agent#77718",
-      "repo": "NousResearch/hermes-agent",
-      "number": 77718,
-      "type": "pr",
-      "title": "fix(cron/runtime): preserve user-installed packages during venv rebuild (issue #69889)",
-      "state": "closed",
-      "status": "closed",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-10-04T05:43:10Z",
-      "last_action": "2026-10-04T05:43:10Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/77718",
       "actions_taken": [
         "Filed: fix(cron/runtime): preserve user-installed packages during venv rebuild (issue #69889)"
       ],
-      "notes": "",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-04T05:43:10Z",
+      "id": "NousResearch/hermes-agent#77718",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
-    },
-    {
-      "id": "NousResearch/hermes-agent#74699",
+      "last_action": "2026-10-04T05:43:10Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 77718,
       "repo": "NousResearch/hermes-agent",
-      "number": 74699,
-      "type": "pr",
-      "title": "fix(sessions): add --self-snapshot to recover for live-source runs (issue #72291)",
       "state": "closed",
       "status": "closed",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-10-04T05:43:11Z",
-      "last_action": "2026-10-04T05:43:11Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/74699",
+      "title": "fix(cron/runtime): preserve user-installed packages during venv rebuild (issue #69889)",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/77718"
+    },
+    {
       "actions_taken": [
         "Filed: fix(sessions): add --self-snapshot to recover for live-source runs (issue #72291)"
       ],
-      "notes": "",
-      "labels": [],
-      "is_upstream": true
-    },
-    {
-      "id": "NousResearch/hermes-agent#74016",
-      "repo": "NousResearch/hermes-agent",
-      "number": 74016,
-      "type": "pr",
-      "title": "fix(mcp): drop only exact-empty args, preserve whitespace",
-      "state": "closed",
-      "status": "closed",
-      "next_action": "Await upstream review",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-04T05:43:11Z",
+      "id": "NousResearch/hermes-agent#74699",
+      "is_upstream": true,
+      "labels": [],
       "last_action": "2026-10-04T05:43:11Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/74016",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 74699,
+      "repo": "NousResearch/hermes-agent",
+      "state": "closed",
+      "status": "closed",
+      "title": "fix(sessions): add --self-snapshot to recover for live-source runs (issue #72291)",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/74699"
+    },
+    {
       "actions_taken": [
         "Filed: fix(mcp): drop only exact-empty args, preserve whitespace"
       ],
-      "notes": "",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-04T05:43:11Z",
+      "id": "NousResearch/hermes-agent#74016",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
-    },
-    {
-      "id": "NousResearch/hermes-agent#46666",
+      "last_action": "2026-10-04T05:43:11Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 74016,
       "repo": "NousResearch/hermes-agent",
-      "number": 46666,
-      "type": "pr",
-      "title": "fix(zai): add fetch_models override for GLM-5.2 + base_url fix",
       "state": "closed",
       "status": "closed",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-10-04T05:43:12Z",
-      "last_action": "2026-10-04T05:43:12Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/46666",
+      "title": "fix(mcp): drop only exact-empty args, preserve whitespace",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/74016"
+    },
+    {
       "actions_taken": [
         "Filed: fix(zai): add fetch_models override for GLM-5.2 + base_url fix"
       ],
-      "notes": "",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-04T05:43:12Z",
+      "id": "NousResearch/hermes-agent#46666",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
-    },
-    {
-      "id": "NousResearch/hermes-agent#42624",
+      "last_action": "2026-10-04T05:43:12Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 46666,
       "repo": "NousResearch/hermes-agent",
-      "number": 42624,
-      "type": "pr",
-      "title": "fix(compressor): preserve error indicators in _summarize_tool_result stubs",
       "state": "closed",
       "status": "closed",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-10-04T05:43:13Z",
-      "last_action": "2026-10-04T05:43:13Z",
-      "url": "https://github.com/NousResearch/hermes-agent/pull/42624",
+      "title": "fix(zai): add fetch_models override for GLM-5.2 + base_url fix",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/46666"
+    },
+    {
       "actions_taken": [
         "Filed: fix(compressor): preserve error indicators in _summarize_tool_result stubs"
       ],
-      "notes": "",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-04T05:43:13Z",
+      "id": "NousResearch/hermes-agent#42624",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
+      "last_action": "2026-10-04T05:43:13Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 42624,
+      "repo": "NousResearch/hermes-agent",
+      "state": "closed",
+      "status": "closed",
+      "title": "fix(compressor): preserve error indicators in _summarize_tool_result stubs",
+      "type": "pr",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/42624"
     },
     {
-      "id": "MrTrenchTrucker/module-sop#1",
-      "repo": "MrTrenchTrucker/module-sop",
-      "number": 1,
-      "type": "pr",
-      "title": "adapters: harness adapter packs, first pack hermes-bot-mode (rebased onto v1.0.2, head eb373bc)",
-      "state": "open",
-      "status": "pending_review",
-      "next_action": "Await upstream review",
-      "evidence_tier": "scratch-clone gates PASS x4; push verified via ls-remote; daily watchdog module-sop-pr-watch",
-      "filed_at": "2026-10-05T10:42:16Z",
-      "last_action": "2026-10-05T10:42:16Z",
-      "url": "https://github.com/MrTrenchTrucker/module-sop/pull/1",
       "actions_taken": [
         "Filed: adapters: harness adapter packs, first pack hermes-bot-mode (rebased onto v1.0.2, head eb373bc)"
       ],
-      "notes": "",
+      "evidence_tier": "scratch-clone gates PASS x4; push verified via ls-remote; daily watchdog module-sop-pr-watch",
+      "filed_at": "2026-10-05T10:42:16Z",
+      "id": "MrTrenchTrucker/module-sop#1",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
-    },
-    {
-      "id": "MrTrenchTrucker/module-sop#2",
+      "last_action": "2026-10-05T10:42:16Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 1,
       "repo": "MrTrenchTrucker/module-sop",
-      "number": 2,
-      "type": "pr",
-      "title": "tools: gate robustness (rebased onto v1.0.2; + .pytest_cache non_module_dirs exemption, head bcb240d)",
       "state": "open",
       "status": "pending_review",
-      "next_action": "Await upstream review",
-      "evidence_tier": "74 tests OK incl new red-arm test_non_module_dirs_entry_is_exempt; push verified via ls-remote",
-      "filed_at": "2026-10-05T10:42:17Z",
-      "last_action": "2026-10-05T10:42:17Z",
-      "url": "https://github.com/MrTrenchTrucker/module-sop/pull/2",
+      "title": "adapters: harness adapter packs, first pack hermes-bot-mode (rebased onto v1.0.2, head eb373bc)",
+      "type": "pr",
+      "url": "https://github.com/MrTrenchTrucker/module-sop/pull/1"
+    },
+    {
       "actions_taken": [
         "Filed: tools: gate robustness (rebased onto v1.0.2; + .pytest_cache non_module_dirs exemption, head bcb240d)"
       ],
-      "notes": "",
-      "labels": [],
-      "is_upstream": true
-    }
-  ],
-  "issues": [
-    {
-      "actions_taken": [
-        "Stage 1: Verb maps extracted to module (94\u2192306 PP, 147\u2192357 PRES)",
-        "Stage 2: Contraction expansion (60+ forms) + copular be removal",
-        "Stage 3: and/or conjunction reduction",
-        "5-model multi-expert review \u2014 4 bugs fixed",
-        "OnceLock regex caching (63\u21921 compilation)",
-        "Pushed 4d8136b, tagged v0.3.0, PyPI published",
-        "Acronym protection, pipeline reorder, 13 new tests (108 total)",
-        "crates.io published v0.3.0 (commit ea040a3)"
-      ],
-      "id": "ether-btc/rust-cave-001#v030",
-      "labels": [
-        "v0.3.0",
-        "released",
-        "published",
-        "crates.io"
-      ],
-      "next_action": "None \u2014 released and published",
-      "notes": "48.7% avg token reduction (+0.3%). 108 tests, clippy clean. PyPI + crates.io published.",
-      "number": 99999,
-      "repo": "ether-btc/rust-cave-001",
-      "state": "closed",
-      "status": "merged",
-      "timestamp": "2026-05-16T10:51:31Z",
-      "title": "v0.3.0: verb maps (306pp/357pres), contraction expansion, be removal, conjunction reduction, 5-model review fixes",
-      "type": "issue"
-    },
-    {
-      "actions_taken": [
-        "Note: ~49.77 MOR locked. Type 0 sessions (user) affected. Auto-renewal race condition."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-15T00:00:00Z",
-      "id": "profbernardoj/morpheus-skill#3",
-      "is_upstream": true,
-      "labels": [
-        "critical",
-        "financial-risk"
-      ],
-      "last_action": "2026-04-15T00:00:00Z",
-      "next_action": "Push fixes as PR to upstream",
-      "notes": "~49.77 MOR locked. Type 0 sessions (user) affected. Auto-renewal race condition.",
-      "number": 3,
-      "repo": "profbernardoj/morpheus-skill",
-      "state": "closed",
-      "status": "closed",
-      "title": "[CRITICAL] Auto-renewal flow calls closeSession on expiry \u2014 MOR tokens on-chain hold",
-      "type": "issue",
-      "url": "https://github.com/profbernardoj/morpheus-skill/issues/3"
-    },
-    {
-      "actions_taken": [
-        "Note: ~49.77 MOR locked. Same root cause as #3."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-15T00:00:00Z",
-      "id": "profbernardoj/morpheus-skill#2",
-      "is_upstream": true,
-      "labels": [
-        "critical",
-        "financial-risk"
-      ],
-      "last_action": "2026-05-22T18:15:00Z",
-      "next_action": "Push fixes as PR to upstream profbernardoj/morpheus-skill",
-      "notes": "~49.77 MOR locked. Same root cause as #3.",
-      "number": 2,
-      "repo": "profbernardoj/morpheus-skill",
-      "state": "closed",
-      "status": "closed",
-      "title": "[CRITICAL] Auto-renewal closes sessions as user (Type 0) \u2014 ~49.77 MOR locked",
-      "type": "issue",
-      "url": "https://github.com/profbernardoj/morpheus-skill/issues/2"
-    },
-    {
-      "actions_taken": [
-        "Note: MOR stake accounting discrepancy on session close."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-15T00:00:00Z",
-      "id": "profbernardoj/morpheus-skill#1",
-      "is_upstream": true,
-      "labels": [
-        "high",
-        "accounting"
-      ],
-      "last_action": "2026-05-22T18:15:00Z",
-      "next_action": "Investigate stake return logic",
-      "notes": "MOR stake accounting discrepancy on session close.",
-      "number": 1,
-      "repo": "profbernardoj/morpheus-skill",
-      "state": "closed",
-      "status": "closed",
-      "title": "Session accounting discrepancy: MOR stake not fully returned on session close",
-      "type": "issue",
-      "url": "https://github.com/profbernardoj/morpheus-skill/issues/1"
-    },
-    {
-      "actions_taken": [
-        "Note: On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
-        "Registry updated: node decommissioned, MOR transferred. Issue remains open upstream but is moot for this agent."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-15T00:00:00Z",
-      "id": "MorpheusAIs/SmartContracts#62",
-      "is_upstream": true,
-      "labels": [
-        "critical",
-        "on-chain"
-      ],
-      "last_action": "2026-05-26T11:49:42Z",
-      "next_action": "None \u2014 MOR transferred to external wallet, node no longer runs Morpheus infrastructure. Issue left open on GitHub as upstream reference.",
-      "notes": "On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
-      "number": 62,
-      "repo": "MorpheusAIs/SmartContracts",
-      "state": "open",
-      "status": "closed",
-      "title": "BUG: withdrawUserStakes() selector not registered on MOR Diamond \u2014 ~49.77 MOR locked",
-      "type": "issue",
-      "url": "https://github.com/MorpheusAIs/SmartContracts/issues/62"
-    },
-    {
-      "actions_taken": [
-        "Note: 0.88 MOR unaccounted after 23 sessions (ether-btc fork). Correlates with #1 and #2."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-18T00:00:00Z",
-      "id": "MorpheusAIs/Morpheus-Lumerin-Node#717",
-      "is_upstream": true,
-      "labels": [
-        "high",
-        "accounting"
-      ],
-      "last_action": "2026-04-18T00:00:00Z",
-      "next_action": "Investigate stake return logic in Lumerin-Node",
-      "notes": "0.88 MOR unaccounted after 23 sessions (ether-btc fork). Correlates with #1 and #2.",
-      "number": 717,
-      "repo": "MorpheusAIs/Morpheus-Lumerin-Node",
-      "state": "closed",
-      "status": "closed",
-      "title": "Session accounting discrepancy: MOR stake not fully returned on session close",
-      "type": "issue",
-      "url": "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/issues/717"
-    },
-    {
-      "actions_taken": [
-        "Note: Closed on GitHub by ether-btc. Bug addressed."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-22T00:00:00Z",
-      "id": "fajarhide/omni#71",
-      "is_upstream": true,
-      "labels": [
-        "bug",
-        "panic"
-      ],
-      "last_action": "2026-04-22T00:00:00Z",
-      "next_action": "none",
-      "notes": "Closed on GitHub by ether-btc. Bug addressed.",
-      "number": 71,
-      "repo": "fajarhide/omni",
-      "state": "closed",
-      "status": "closed",
-      "title": "session/learn.rs:40 \u2014 unwrap() on TOML parse causes panic",
-      "type": "issue",
-      "url": "https://github.com/fajarhide/omni/issues/71"
-    },
-    {
-      "actions_taken": [
-        "Note: Closed 2026-05-03T08:43:59Z"
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-22T00:00:00Z",
-      "id": "fajarhide/omni#70",
-      "is_upstream": true,
-      "labels": [
-        "security",
-        "env"
-      ],
-      "last_action": "2026-04-22T00:00:00Z",
-      "next_action": "Extend env denylist in guard/env.rs",
-      "notes": "Closed 2026-05-03T08:43:59Z",
-      "number": 70,
-      "repo": "fajarhide/omni",
-      "state": "closed",
-      "status": "closed",
-      "title": "guard/env.rs: env denylist missing SSH, Perl, Awk, X11, Git hook variables",
-      "type": "issue",
-      "url": "https://github.com/fajarhide/omni/issues/70"
-    },
-    {
-      "actions_taken": [
-        "Note: Closed 2026-05-03T13:31:45Z"
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-20T00:00:00Z",
-      "id": "wysie/hermes-omni-plugin#2",
-      "is_upstream": true,
-      "labels": [
-        "bug",
-        "compatibility"
-      ],
-      "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Investigate hook registration conflict",
-      "notes": "Closed 2026-05-03T13:31:45Z",
-      "number": 2,
-      "repo": "wysie/hermes-omni-plugin",
-      "state": "closed",
-      "status": "closed",
-      "title": "coexistence conflict: hermes-rtk-optimizer both register transform_terminal_output hook",
-      "type": "issue",
-      "url": "https://github.com/wysie/hermes-omni-plugin/issues/2"
-    },
-    {
-      "actions_taken": [
-        "Note: Bug 1: head truncation (slice(-maxChars)). Bug 2+3: fixed. 4 hardening items remain."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-18T00:00:00Z",
-      "fix_pr_url": "https://github.com/CortexReach/memory-lancedb-pro/pull/738",
-      "id": "CortexReach/memory-lancedb-pro#574",
-      "is_upstream": true,
-      "labels": [
-        "bug"
-      ],
-      "last_action": "2026-04-18T00:00:00Z",
-      "next_action": "Watch PR #738 for merge; close after merge",
-      "notes": "Bug 1: head truncation (slice(-maxChars)). Bug 2+3: fixed. 4 hardening items remain.",
-      "number": 574,
-      "repo": "CortexReach/memory-lancedb-pro",
-      "state": "closed",
-      "status": "closed",
-      "title": "[4 bugs] Memory accumulation without consolidation (Bug 1 unfixed)",
-      "type": "issue",
-      "url": "https://github.com/CortexReach/memory-lancedb-pro/issues/574"
-    },
-    {
-      "actions_taken": [
-        "Note: CWE-22: path traversal via ../, /./, ../ in tar extraction. PR adds pre-extraction validation."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-16T00:00:00Z",
-      "fix_pr_url": "https://github.com/rtk-ai/rtk/pull/1686",
-      "id": "rtk-ai/rtk#1250",
-      "is_upstream": true,
-      "labels": [
-        "security",
-        "CWE-22"
-      ],
-      "last_action": "2026-04-16T00:00:00Z",
-      "next_action": "Watch PR #1686 for merge; close after merge",
-      "notes": "CWE-22: path traversal via ../, /./, ../ in tar extraction. PR adds pre-extraction validation.",
-      "number": 1250,
-      "repo": "rtk-ai/rtk",
-      "state": "closed",
-      "status": "closed",
-      "title": "Security: CWE-22 path traversal in install.sh tar extraction",
-      "type": "issue",
-      "url": "https://github.com/rtk-ai/rtk/issues/1250"
-    },
-    {
-      "actions_taken": [
-        "Note: Fix PR #1371 adds semantic deduplication."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-20T00:00:00Z",
-      "fix_pr_url": "https://github.com/vectorize-io/hindsight/pull/1371",
-      "id": "vectorize-io/hindsight#1284",
-      "is_upstream": true,
-      "labels": [
-        "bug",
-        "performance"
-      ],
-      "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Watch PR #1371 for merge; close issue after merge",
-      "notes": "Fix PR #1371 adds semantic deduplication.",
-      "number": 1284,
-      "repo": "vectorize-io/hindsight",
-      "state": "closed",
-      "status": "closed",
-      "title": "Experience entries accumulate without consolidation \u2014 unbounded growth",
-      "type": "issue",
-      "url": "https://github.com/vectorize-io/hindsight/issues/1284"
-    },
-    {
-      "actions_taken": [
-        "Note: Part of 17-issue security audit."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-20T00:00:00Z",
-      "id": "moltlaunch/cashclaw#82",
-      "is_upstream": true,
-      "labels": [
-        "bug",
-        "medium"
-      ],
-      "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Assess and file fix PR",
-      "notes": "Part of 17-issue security audit.",
-      "number": 82,
-      "repo": "moltlaunch/cashclaw",
-      "state": "closed",
-      "status": "closed",
-      "title": "Dynamic import at runtime to invalidate search index \u2014 error swallowed",
-      "type": "issue",
-      "url": "https://github.com/moltlaunch/cashclaw/issues/82"
-    },
-    {
-      "actions_taken": [
-        "Note: Part of 17-issue security audit."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-20T00:00:00Z",
-      "id": "moltlaunch/cashclaw#81",
-      "is_upstream": true,
-      "labels": [
-        "bug",
-        "medium"
-      ],
-      "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Standardize atomic write pattern",
-      "notes": "Part of 17-issue security audit.",
-      "number": 81,
-      "repo": "moltlaunch/cashclaw",
-      "state": "closed",
-      "status": "closed",
-      "title": "Inconsistent atomic write patterns across memory modules",
-      "type": "issue",
-      "url": "https://github.com/moltlaunch/cashclaw/issues/81"
-    },
-    {
-      "actions_taken": [
-        "Note: Part of 17-issue security audit."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-20T00:00:00Z",
-      "id": "moltlaunch/cashclaw#80",
-      "is_upstream": true,
-      "labels": [
-        "security",
-        "medium"
-      ],
-      "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Add Origin header validation",
-      "notes": "Part of 17-issue security audit.",
-      "number": 80,
-      "repo": "moltlaunch/cashclaw",
-      "state": "closed",
-      "status": "closed",
-      "title": "CORS origin not validated \u2014 static string without Origin check",
-      "type": "issue",
-      "url": "https://github.com/moltlaunch/cashclaw/issues/80"
-    },
-    {
-      "actions_taken": [
-        "Note: Part of 17-issue security audit."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-20T00:00:00Z",
-      "id": "moltlaunch/cashclaw#79",
-      "is_upstream": true,
-      "labels": [
-        "bug",
-        "high"
-      ],
-      "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Fix memoization cache invalidation",
-      "notes": "Part of 17-issue security audit.",
-      "number": 79,
-      "repo": "moltlaunch/cashclaw",
-      "state": "closed",
-      "status": "closed",
-      "title": "Tool registry memoization bug: stale tool map on config change",
-      "type": "issue",
-      "url": "https://github.com/moltlaunch/cashclaw/issues/79"
-    },
-    {
-      "actions_taken": [
-        "Note: Part of 17-issue security audit."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-20T00:00:00Z",
-      "id": "moltlaunch/cashclaw#77",
-      "is_upstream": true,
-      "labels": [
-        "bug",
-        "high"
-      ],
-      "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Add timeout to LLM API calls",
-      "notes": "Part of 17-issue security audit.",
-      "number": 77,
-      "repo": "moltlaunch/cashclaw",
-      "state": "closed",
-      "status": "closed",
-      "title": "LLM API calls have no timeout \u2014 hung connections stall agent loop",
-      "type": "issue",
-      "url": "https://github.com/moltlaunch/cashclaw/issues/77"
-    },
-    {
-      "actions_taken": [
-        "Note: Part of 17-issue security audit."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-20T00:00:00Z",
-      "id": "moltlaunch/cashclaw#76",
-      "is_upstream": true,
-      "labels": [
-        "security",
-        "high"
-      ],
-      "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Fix path traversal guard \u2014 use equals, not startsWith",
-      "notes": "Part of 17-issue security audit.",
-      "number": 76,
-      "repo": "moltlaunch/cashclaw",
-      "state": "closed",
-      "status": "closed",
-      "title": "Path traversal guard uses startsWith instead of equals",
-      "type": "issue",
-      "url": "https://github.com/moltlaunch/cashclaw/issues/76"
-    },
-    {
-      "actions_taken": [
-        "Note: Same root cause as profbernardoj/morpheus-skill #2 and #3. ~49.77 MOR locked."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-20T00:00:00Z",
-      "id": "ether-btc/morpheus-proxy-router#3",
-      "is_upstream": true,
-      "labels": [
-        "bug",
-        "financial-risk"
-      ],
-      "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Fix auto-renewal race condition \u2014 confirm new session before deleting old",
-      "notes": "Same root cause as profbernardoj/morpheus-skill #2 and #3. ~49.77 MOR locked.",
-      "number": 3,
-      "repo": "ether-btc/morpheus-proxy-router",
-      "state": "closed",
-      "status": "closed",
-      "title": "Auto-renewal deletes session before new confirmed \u2014 silent MOR lock",
-      "type": "issue",
-      "url": "https://github.com/ether-btc/morpheus-proxy-router/issues/3"
-    },
-    {
-      "actions_taken": [
-        "Filed: cmdFund() delegates to missing safe-transfer.mjs script"
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-20T00:00:00Z",
-      "id": "ether-btc/morpheus-proxy-router#2",
-      "is_upstream": true,
-      "labels": [
-        "bug"
-      ],
-      "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Implement cmdFund() or inline the transfer logic",
-      "notes": "",
-      "number": 2,
-      "repo": "ether-btc/morpheus-proxy-router",
-      "state": "closed",
-      "status": "closed",
-      "title": "cmdFund() delegates to missing safe-transfer.mjs script",
-      "type": "issue",
-      "url": "https://github.com/ether-btc/morpheus-proxy-router/issues/2"
-    },
-    {
-      "actions_taken": [
-        "Note: 0.88 MOR unaccounted after 23 sessions. Correlates with MorpheusAIs/Morpheus-Lumerin-Node#717."
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-04-20T00:00:00Z",
-      "id": "ether-btc/morpheus-proxy-router#1",
-      "is_upstream": true,
-      "labels": [
-        "bug",
-        "accounting"
-      ],
-      "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Audit stake tracking \u2014 find where 0.88 MOR is lost",
-      "notes": "0.88 MOR unaccounted after 23 sessions. Correlates with MorpheusAIs/Morpheus-Lumerin-Node#717.",
-      "number": 1,
-      "repo": "ether-btc/morpheus-proxy-router",
-      "state": "closed",
-      "status": "closed",
-      "title": "Session accounting discrepancy: 0.88 MOR permanently unaccounted after 23 sessions",
-      "type": "issue",
-      "url": "https://github.com/ether-btc/morpheus-proxy-router/issues/1"
-    },
-    {
-      "actions_taken": [
-        "Note: Owner correctly closed: stdio MCP has no network surface, OS permission model is the security bounda"
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-05-03T07:55:00Z",
-      "id": "fajarhide/omni#69",
-      "is_upstream": true,
-      "labels": [
-        "security"
-      ],
-      "last_action": "2026-05-03T08:32:23.756152+00:00",
-      "next_action": "none",
-      "notes": "Owner correctly closed: stdio MCP has no network surface, OS permission model is the security boundary. No auth layer needed for local IPC. Our threat model assessment was incomplete \u2014 same-user process threat is outside application threat model.",
-      "number": 69,
-      "repo": "fajarhide/omni",
-      "state": "closed",
-      "status": "closed",
-      "title": "MCP server has no authentication \u2014 all tools accessible to any local process",
-      "type": "issue",
-      "url": "https://github.com/fajarhide/omni/issues/69"
-    },
-    {
-      "evidence": "tier_1",
-      "filed_at": "2026-05-15T18:43:10.798267+00:00",
-      "id": "harry0703/MoneyPrinterTurbo#881",
-      "number": 881,
-      "repo": "harry0703/MoneyPrinterTurbo",
-      "state": "closed",
-      "status": "closed",
-      "title": "TLS certificate verification disabled on all outbound API requests",
-      "type": "issue",
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/881"
-    },
-    {
-      "evidence": "tier_1",
-      "filed_at": "2026-05-15T18:43:10.798267+00:00",
-      "id": "harry0703/MoneyPrinterTurbo#882",
-      "number": 882,
-      "repo": "harry0703/MoneyPrinterTurbo",
-      "state": "closed",
-      "status": "closed",
-      "title": "API auth (verify_token) exists but is commented out in all routers",
-      "type": "issue",
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/882"
-    },
-    {
-      "evidence": "tier_1",
-      "filed_at": "2026-05-15T18:43:10.798267+00:00",
-      "id": "harry0703/MoneyPrinterTurbo#883",
-      "number": 883,
-      "repo": "harry0703/MoneyPrinterTurbo",
-      "state": "closed",
-      "status": "closed",
-      "title": "g4f (gpt4free) dependency is a supply chain risk for production use",
-      "type": "issue",
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/883"
-    },
-    {
-      "evidence": "tier_2",
-      "filed_at": "2026-05-15T18:43:10.798267+00:00",
-      "id": "harry0703/MoneyPrinterTurbo#884",
-      "number": 884,
-      "repo": "harry0703/MoneyPrinterTurbo",
-      "state": "open",
-      "status": "closed",
-      "title": "voice.py (2066 lines), llm.py complexity 57, silent exception swallowing, code quality issues",
-      "type": "issue",
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo/issues/884"
-    },
-    {
-      "actions_taken": [
-        "Filed: Feature: auto-link sessions into conversations when gateway doesn't pass conversation_id"
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-05-22T15:42:45Z",
-      "id": "stephenschoettler/hermes-lcm#133",
+      "evidence_tier": "74 tests OK incl new red-arm test_non_module_dirs_entry_is_exempt; push verified via ls-remote",
+      "filed_at": "2026-10-05T10:42:17Z",
+      "id": "MrTrenchTrucker/module-sop#2",
       "is_upstream": true,
       "labels": [],
-      "last_action": "2026-05-22T15:42:45Z",
+      "last_action": "2026-10-05T10:42:17Z",
       "next_action": "Await upstream review",
       "notes": "",
-      "number": 133,
-      "repo": "stephenschoettler/hermes-lcm",
-      "state": "closed",
-      "status": "closed",
-      "title": "Feature: auto-link sessions into conversations when gateway doesn't pass conversation_id",
-      "type": "issue",
-      "url": "https://github.com/stephenschoettler/hermes-lcm/issues/133"
-    },
-    {
-      "actions_taken": [
-        "Child issue of #133"
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-05-22T15:45:00Z",
-      "id": "stephenschoettler/hermes-lcm#171",
-      "is_upstream": true,
-      "labels": [
-        "enhancement"
-      ],
-      "last_action": "2026-05-22T15:45:00Z",
-      "next_action": "Replacement PR must address thread/topic scope for Telegram and Discord",
-      "notes": "Telegram topics and Discord threads need separate lifecycle bindings even in same parent chat",
-      "number": 171,
-      "repo": "stephenschoettler/hermes-lcm",
-      "state": "closed",
-      "status": "closed",
-      "title": "Feature: include thread/topic scope in host-provided conversation_id",
-      "type": "issue",
-      "url": "https://github.com/stephenschoettler/hermes-lcm/issues/171"
-    },
-    {
-      "id": "NousResearch/hermes-agent#26886",
-      "type": "issue",
-      "title": "hermes mcp add corrupts empty args array to args: [\"\"]",
-      "repo": "NousResearch/hermes-agent",
-      "number": 26886,
-      "state": "open",
-      "status": "open",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-05-16T10:58:38Z",
-      "last_action": "2026-07-29T08:30:00Z",
-      "is_upstream": true,
-      "labels": [
-        "type/bug",
-        "comp/cli",
-        "tool/mcp",
-        "P2"
-      ],
-      "actions_taken": [
-        "Filed by ether-btc on 2026-05-16 (fork issues disabled on ether-btc/hermes-agent)",
-        "Review recommendation posted 2026-05-22 (recommend merge of PR #26907)",
-        "Re-evaluated 2026-07-29 after GottZ AI triage comment; teknium1 review (2026-07-29) demands whitespace-only argv preservation"
-      ],
-      "next_action": "Await LeonSGP43 to apply surgical fix to PR #26907 (change .strip() to exact-empty + add args=[\" \"] preservation test). Or open competing PR from ether-btc/hermes-agent.",
-      "notes": "Two PRs proposed: #26907 (OPEN, +43/-2, 15/16 CI checks pass, the 1 fail is unrelated) and #26920 (CLOSED as duplicate). PR #26907 helper uses text.strip() which drops whitespace-only args; teknium1's 2026-07-29 review explicitly demands exact-empty filter. Correct fix: 2-line change in #26907, no need to rebase #26920.",
-      "url": "https://github.com/NousResearch/hermes-agent/issues/26886"
-    },
-    {
-      "id": "itsfatduck/optimizerDuck#67",
-      "repo": "itsfatduck/optimizerDuck",
-      "number": 67,
-      "type": "issue",
-      "title": "Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH \u2014 partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue",
-      "state": "closed",
-      "status": "closed",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-08-26T08:45:25Z",
-      "last_action": "2026-08-26T08:45:25Z",
-      "url": "https://github.com/itsfatduck/optimizerDuck/issues/67",
-      "actions_taken": [
-        "Filed: Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH \u2014 partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue"
-      ],
-      "notes": "",
-      "labels": [],
-      "is_upstream": true
-    },
-    {
-      "id": "ether-btc/rtk-hermes-consolidated#8",
-      "repo": "ether-btc/rtk-hermes-consolidated",
-      "number": 8,
-      "type": "issue",
-      "title": "Investigation: rtk-rewrite rejects legitimate multi-line rewrites (quoted multi-line value) and fails open",
+      "number": 2,
+      "repo": "MrTrenchTrucker/module-sop",
       "state": "open",
       "status": "pending_review",
-      "next_action": "Await upstream review",
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-09-25T22:04:36Z",
-      "last_action": "2026-09-25T22:04:36Z",
-      "url": "https://github.com/ether-btc/rtk-hermes-consolidated/issues/8",
+      "title": "tools: gate robustness (rebased onto v1.0.2; + .pytest_cache non_module_dirs exemption, head bcb240d)",
+      "type": "pr",
+      "url": "https://github.com/MrTrenchTrucker/module-sop/pull/2"
+    },
+    {
       "actions_taken": [
-        "Filed: Investigation: rtk-rewrite rejects legitimate multi-line rewrites (quoted multi-line value) and fails open"
+        "Filed: test(papertrade): cvEpoch per-call \u2014 fixes 3 cross-venue tests"
       ],
-      "notes": "",
+      "evidence_tier": "",
+      "filed_at": "2026-10-06T05:58:49Z",
+      "id": "78",
+      "is_upstream": true,
       "labels": [],
-      "is_upstream": true
+      "last_action": "2026-10-06T05:58:49Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 78,
+      "repo": "78",
+      "state": "open",
+      "status": "pending_review",
+      "title": "test(papertrade): cvEpoch per-call \u2014 fixes 3 cross-venue tests",
+      "type": "pr",
+      "url": ""
+    },
+    {
+      "actions_taken": [
+        "Filed: feat(custody/cow): RouteAwareExecutor for CoW Swap, inert at \u00a79"
+      ],
+      "evidence_tier": "",
+      "filed_at": "2026-10-06T05:58:49Z",
+      "id": "79",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-10-06T05:58:49Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 79,
+      "repo": "79",
+      "state": "open",
+      "status": "pending_review",
+      "title": "feat(custody/cow): RouteAwareExecutor for CoW Swap, inert at \u00a79",
+      "type": "pr",
+      "url": ""
+    },
+    {
+      "actions_taken": [
+        "Filed: feat(custody/oneinch): RouteAwareExecutor for 1inch Fusion, inert at \u00a79"
+      ],
+      "evidence_tier": "",
+      "filed_at": "2026-10-06T06:27:00Z",
+      "id": "80",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-10-06T06:27:00Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 80,
+      "repo": "80",
+      "state": "open",
+      "status": "pending_review",
+      "title": "feat(custody/oneinch): RouteAwareExecutor for 1inch Fusion, inert at \u00a79",
+      "type": "pr",
+      "url": ""
+    },
+    {
+      "actions_taken": [
+        "Filed: refactor(route): extract RouteID + RouteAwareExecutor to internal/route/ leaf"
+      ],
+      "evidence_tier": "",
+      "filed_at": "2026-10-06T06:27:00Z",
+      "id": "81",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-10-06T06:27:00Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 81,
+      "repo": "81",
+      "state": "open",
+      "status": "pending_review",
+      "title": "refactor(route): extract RouteID + RouteAwareExecutor to internal/route/ leaf",
+      "type": "pr",
+      "url": ""
+    },
+    {
+      "actions_taken": [
+        "Filed: feat(eip712): stdlib-only Keccak-256 + EIP-712 digest, verified against Mail spec"
+      ],
+      "evidence_tier": "",
+      "filed_at": "2026-10-06T06:27:01Z",
+      "id": "82",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-10-06T06:27:01Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 82,
+      "repo": "82",
+      "state": "open",
+      "status": "pending_review",
+      "title": "feat(eip712): stdlib-only Keccak-256 + EIP-712 digest, verified against Mail spec",
+      "type": "pr",
+      "url": ""
+    },
+    {
+      "actions_taken": [
+        "Filed: feat(custody/bankr): liveexecutor adapter for RouteBankrPrimary (the actual critical path)"
+      ],
+      "evidence_tier": "",
+      "filed_at": "2026-10-06T06:55:50Z",
+      "id": "83",
+      "is_upstream": true,
+      "labels": [],
+      "last_action": "2026-10-06T06:55:50Z",
+      "next_action": "Await upstream review",
+      "notes": "",
+      "number": 83,
+      "repo": "83",
+      "state": "open",
+      "status": "pending_review",
+      "title": "feat(custody/bankr): liveexecutor adapter for RouteBankrPrimary (the actual critical path)",
+      "type": "pr",
+      "url": ""
     }
   ],
-  "version": "1.1.1",
-  "last_synced": "2026-10-05T18:02:37Z",
-  "account": "ether-btc",
-  "activity_log": [
-    {
-      "desc": "v5.0.0 refactor: strip to P2P staking-only. SKILL.md 501->~170 lines, 7 scripts added, hardcoded paths removed, dynamic balance/stake calc. Fixes issue #8 root cause. Wiki entity page created.",
-      "ref": "ether-btc/morpheus-proxy-router@5f938f1",
-      "ts": "2026-06-05T00:00:00Z",
-      "type": "refactor"
-    },
-    {
-      "desc": "Migrated from github-activity-registry: 30 PRs, 21 issues",
-      "ref": "system",
-      "ts": "2026-05-06T00:00:00Z",
-      "type": "migrated"
-    },
-    {
-      "desc": "Filed: fix: chunk memories before summarization in summarize_memories()",
-      "ref": "AxDSan/mnemosyne#57",
-      "ts": "2026-05-09T21:16:49Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: llm_used detection always False + remote fallback blocks local LLM + Llama token prompt",
-      "ref": "AxDSan/mnemosyne#35",
-      "ts": "2026-05-09T21:16:50Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: docs: Add example SKILL.md template for contributors",
-      "ref": "ether-btc/agent-skills#1",
-      "ts": "2026-05-09T21:16:51Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: Fix: onRestore prop was empty, now passes handleRestore function",
-      "ts": "2026-05-09T21:16:53Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: feat(circuit-breaker): add use_auxiliary_judgment option",
-      "ref": "NousResearch/hermes-agent#19616",
-      "ts": "2026-05-09T21:16:54Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix(session-start): replace fragile sed YAML parser with robust bash",
-      "ref": "xD4O/praxis#1",
-      "ts": "2026-05-09T21:16:55Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: chore: absorb morpheus-p2p-playbook into morpheus-proxy-router (v4.3.0)",
-      "ref": "ether-btc/hermes-vault#1",
-      "ts": "2026-05-09T21:16:56Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: increase rewind hash from 8 to 16 hex chars (64-bit entropy)",
-      "ref": "fajarhide/omni#68",
-      "ts": "2026-05-09T21:16:57Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: entry point loading, exit code 3 handling, observability improvements",
-      "ref": "ogallotti/rtk-hermes#7",
-      "ts": "2026-05-09T21:16:58Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: security audit \u2014 config injection, ReDoS, confidence consistency, bounds",
-      "ref": "ether-btc/openclaw-correlation-plugin#4",
-      "ts": "2026-05-09T21:16:59Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: docs: update with live deployment findings (68 models, session economics, Node.js v24 fix)",
-      "ref": "ether-btc/morpheus-proxy-router#5",
-      "ts": "2026-05-09T21:17:00Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: refactor: adopt Agent Skills spec \u2014 docs\u2192references, spec-compliant SKILL.md",
-      "ref": "ether-btc/morpheus-proxy-router#4",
-      "ts": "2026-05-09T21:17:01Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix(logs): add periodic runtime log rotation check",
-      "ref": "diegosouzapw/OmniRoute#1504",
-      "ts": "2026-05-09T21:17:03Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: handle client_stream errors and worker connection failures",
-      "ref": "h4ckf0r0day/obscura#9",
-      "ts": "2026-05-09T21:17:04Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: route /json WebSocket upgrades through load balancer",
-      "ref": "h4ckf0r0day/obscura#8",
-      "ts": "2026-05-09T21:17:05Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: v2.1.0: version sync + CHANGELOG",
-      "ref": "ether-btc/openclaw-correlation-plugin#3",
-      "ts": "2026-05-09T21:17:06Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: performance-weighted server selection + critical error handling",
-      "ref": "mfoud444/ollamafreeapi#11",
-      "ts": "2026-05-09T21:17:07Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: guard on settled status not array length (F1)",
-      "ref": "ether-btc/memory-lancedb-pro#1",
-      "ts": "2026-05-09T21:17:08Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: nonSpecialCount guard + deterministic generateSummaryId",
-      "ref": "win4r/lossless-claw-enhanced#16",
-      "ts": "2026-05-09T21:17:09Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: skip 75ms retry when store is empty (Bug 2)",
-      "ref": "CortexReach/memory-lancedb-pro#582",
-      "ts": "2026-05-09T21:17:10Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: hybrid retrieval graceful degradation with Promise.allSettled",
-      "ref": "CortexReach/memory-lancedb-pro#581",
-      "ts": "2026-05-09T21:17:11Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: remove duplicate summaryModel/summaryProvider type declarations",
-      "ref": "win4r/lossless-claw-enhanced#14",
-      "ts": "2026-05-09T21:17:12Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: Security hardening: SE-requested changes from RTK audit",
-      "ref": "rtk-ai/rtk#1024",
-      "ts": "2026-05-09T21:17:13Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: Security hardening: SE-requested changes from RTK audit",
-      "ref": "ether-btc/rtk#1",
-      "ts": "2026-05-09T21:17:14Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: resolve workspace path via ctx.workspaceDir",
-      "ref": "ether-btc/openclaw-correlation-plugin#2",
-      "ts": "2026-05-09T21:17:15Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: Add Claworc - multi-instance orchestration showcase",
-      "ref": "digitalknk/openclaw-runbook#19",
-      "ts": "2026-05-09T21:17:17Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: feat: add subagent compaction resilience docs",
-      "ref": "ether-btc/openclaw-delegation-patterns#2",
-      "ts": "2026-05-09T21:17:18Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix: update stale model references + add compaction resilience docs",
-      "ref": "ether-btc/openclaw-delegation-patterns#1",
-      "ts": "2026-05-09T21:17:19Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: test: test issue",
-      "ref": "test/repo#1",
-      "ts": "2026-05-11T10:07:00Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: feat: add opt-in path containment hardening via LCM_HERMES_BASE_DIR",
-      "ref": "stephenschoettler/hermes-lcm#161",
-      "ts": "2026-05-12T04:36:10Z",
-      "type": "filed"
-    },
-    {
-      "desc": "health_check.py: extended with Mnemosyne consolidation backlog check, LCM DAG compaction health, Caveman path fix (7e349a0)",
-      "ref": "ether-btc/hermes-vault:master",
-      "ts": "2026-05-13T14:35:15Z",
-      "type": "committed"
-    },
-    {
-      "desc": "CONTINUE_HERE.md: updated with Phase 1+2 session summary (79861eb)",
-      "ref": "ether-btc/hermes-vault:master",
-      "ts": "2026-05-13T14:35:15Z",
-      "type": "committed"
-    },
-    {
-      "action": "commit",
-      "desc": "Committed all changes: entity extraction stopwords, retrieval-time filter, test updates, cleanup script, CONTINUE_HERE.md. Pushed to fork/fix/mention-entity-extraction-quality. Awaiting upstream merge.",
-      "ref": "AxDSan/mnemosyne#120",
-      "ts": "2026-05-13T17:30:00Z"
-    },
-    {
-      "desc": "Filed: fix: auto-derive conversation_id when gateway omits or mirrors session_id",
-      "ref": "stephenschoettler/hermes-lcm#167",
-      "ts": "2026-05-13T15:02:03Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: feat(plugins): CompressionPlugin \u2014 replace hardcoded env-var compression in beam.py",
-      "ref": "AxDSan/mnemosyne#129",
-      "ts": "2026-05-14T06:01:36Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: CI: PermissionError in _build_service_path_dirs on fresh runner",
-      "ref": "ether-btc/hermes-agent#99999",
-      "ts": "2026-05-16T07:43:12Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Diagnosed CI failure: PermissionError in _build_service_path_dirs. 2/23182 tests fail. Issues disabled on repo. Registered in Aeon.",
-      "ref": "ether-btc/hermes-agent#99999",
-      "ts": "2026-05-16T07:43:55Z",
-      "type": "note"
-    },
-    {
-      "desc": "Filed: v0.2.1: code audit, deduplication, docs cleanup, test expansion",
-      "ref": "ether-btc/rust-cave-001#99998",
-      "ts": "2026-05-16T08:00:04Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: feat: input text classifier for adaptive compression strategy selection",
-      "ref": "ether-btc/rust-cave-001#99997",
-      "ts": "2026-05-16T08:11:58Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: Gap analysis: CI fix, classifier tests, GH Release, docs updated, wiki synced",
-      "ref": "ether-btc/rust-cave-001#99996",
-      "ts": "2026-05-16T08:25:16Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: v0.2.1 published to PyPI + CI fixes (clippy, cache@v5)",
-      "ref": "ether-btc/rust-cave-001#99995",
-      "ts": "2026-05-16T08:50:15Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: Self-learning framework MVP: compress_adaptive() + benchmark oracle",
-      "ref": "ether-btc/rust-cave-001#99994",
-      "ts": "2026-05-16T09:01:11Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: fix(engine): auto-derive conversation_id when gateway omits or mirrors session_id",
-      "ref": "stephenschoettler/hermes-lcm#178",
-      "ts": "2026-05-22T15:42:44Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: Feature: auto-link sessions into conversations when gateway doesn't pass conversation_id",
-      "ref": "stephenschoettler/hermes-lcm#133",
-      "ts": "2026-05-22T15:42:45Z",
-      "type": "filed"
-    },
-    {
-      "desc": "Filed: cross-platform build (linux/macos/windows) \u2014 closes Linux/Unix-first gap in stealth-core",
-      "ref": "ether-btc/stealth-core#8",
-      "ts": "2026-06-05T19:30:00Z",
-      "type": "filed"
-    },
-    {
-      "ts": "2026-06-06T13:00:00Z",
-      "type": "filed",
-      "ref": "ether-btc/rust-cave-001#11",
-      "desc": "Filed: fix(data) PP\u2192SP \"shrunk\"\u2192\"shrank\" + SP\u2192PRES \"shrank\" (parallel data errors, 3 commits incl. self-review fix)"
-    },
-    {
-      "ts": "2026-06-06T13:00:00Z",
-      "type": "filed",
-      "ref": "ether-btc/rust-cave-001#12",
-      "desc": "Filed: chore(gitignore) uv.lock \u2014 per-machine artifact for libraries (1 commit)"
-    },
-    {
-      "ts": "2026-06-06T13:00:00Z",
-      "type": "updated",
-      "ref": "ether-btc/stealth-core#8",
-      "desc": "Updated with 3 follow-up commits: Dockerfile TARGETPLATFORM (arm64), CI docker-build matrix job, Windows extension order fix + tests"
-    },
-    {
-      "ts": "2026-06-06T14:30:00Z",
-      "type": "updated",
-      "ref": "ether-btc/stealth-core#8",
-      "desc": "Added 7 CI fix-up commits after user reported 5 job failures: 4 pre-existing lint/fmt/test bugs in c385722 (avg_latency wiring) + 1 my-docker-build-matrix bug + 2 deeper pre-existing toolchain issues (rust image version, pre-warm fingerprint)"
-    },
-    {
-      "timestamp": "2026-06-07T19:30:00Z",
-      "action": "filed_pr",
-      "id": "ether-btc/stealth-core#11",
-      "title": "test: wire up orphan tests + add empirical probes for issue #10"
-    },
-    {
-      "timestamp": "2026-06-07T20:30:00Z",
-      "action": "updated_pr",
-      "id": "ether-btc/stealth-core#11",
-      "title": "Added commit 87b3bcc: section-replacement fix for issue #10 (5 of 9 merge functions converted)"
-    },
-    {
-      "timestamp": "2026-06-07T20:50:00Z",
-      "action": "self_review_pr",
-      "id": "ether-btc/stealth-core#11",
-      "title": "Senior-dev self-review posted as review-of-record comment. GitHub blocks self-approval at API level; owner must click Approve."
-    },
-    {
-      "timestamp": "2026-06-07T20:50:00Z",
-      "action": "closed_issue",
-      "id": "ether-btc/stealth-core#10",
-      "title": "Closed issue #10 \u2014 fix is in PR #11 (commit 87b3bcc). All audit gates green."
-    },
-    {
-      "timestamp": "2026-06-07T21:00:00Z",
-      "action": "discovered_merged",
-      "id": "ether-btc/stealth-core#11",
-      "title": "Discovered PR #11 is already MERGED on origin/master (dd3cec21, 2026-06-07T19:43:09Z). User merged via web UI before 'approve yourself' request was acted on."
-    },
-    {
-      "timestamp": "2026-06-07T21:00:00Z",
-      "action": "discovered_merged",
-      "id": "ether-btc/stealth-core#7",
-      "title": "Discovered PR #7 is already MERGED on origin/master (edfc2c72, 2026-06-07T19:43:28Z)."
-    },
-    {
-      "timestamp": "2026-06-07T21:00:00Z",
-      "action": "discovered_merged",
-      "id": "ether-btc/stealth-core#8",
-      "title": "Discovered PR #8 is already MERGED on origin/master (62d82f5, 2026-06-07T19:43:10Z)."
-    },
-    {
-      "timestamp": "2026-06-07T21:00:00Z",
-      "action": "local_cleanup",
-      "id": "ether-btc/stealth-core",
-      "title": "Synced local master to origin/master (was 39 commits behind). Deleted merged branch fix/orphan-test-wiring. Pruned 2 stale remote-tracking refs. 53 lib tests + 6 integration tests pass on new master."
-    },
-    {
-      "timestamp": "2026-06-07T21:30:00Z",
-      "action": "docstring_fix",
-      "id": "ether-btc/stealth-core",
-      "title": "Committed fa60718 directly to master: corrected validate_url_tests.rs docstring (11 \u2192 10 tests). Senior-dev discretion: 1-line comment fix doesn't need a PR."
-    },
-    {
-      "timestamp": "2026-06-07T21:30:00Z",
-      "action": "subagent_review",
-      "id": "ether-btc/stealth-core#11",
-      "title": "Subagent review round 2: 7/7 verification points PASS. Found 1 real issue (11 vs 10 docstring) + 1 false positive (merge_obscura binary_path \u2014 same as cycle 3 F3.1, refuted by probe test). 1 pre-existing flake in after_interval_is_faster_than_within_interval (out of scope)."
-    },
-    {
-      "timestamp": "2026-06-07T20:30:00Z",
-      "action": "discovered_conflict",
-      "id": "ether-btc/rust-cave-001#10",
-      "title": "Discovered PR #10 (own audit PR) was OPEN with CONFLICTING. Master had 4 commits ahead."
-    },
-    {
-      "timestamp": "2026-06-07T20:43:31Z",
-      "action": "merged_pr",
-      "id": "ether-btc/rust-cave-001#10",
-      "title": "Resolved merge conflict (took audit I-3 removal + re-added 'shrank' entry). All gates green. Squash-merged into master at dbb1e1fe."
-    },
-    {
-      "timestamp": "2026-06-07T20:30:00Z",
-      "action": "investigated_ci_failure",
-      "id": "ether-btc/stealth-core#12",
-      "title": "Investigated CI run 27101158706: probe_obscura_yaml_omits_binary_path failed. Reproduced locally 5/10 with --test-threads=4."
-    },
-    {
-      "timestamp": "2026-06-07T20:32:00Z",
-      "action": "identified_dual_env_lock_bug",
-      "id": "ether-btc/stealth-core#12",
-      "title": "Found two independent `static ENV_LOCK` mutexes (mod tests line 567, mod probe_tests line 1228) that don't coordinate. Bug introduced by PR #11 same day."
-    },
-    {
-      "timestamp": "2026-06-07T20:50:00Z",
-      "action": "filed_pr",
-      "id": "ether-btc/stealth-core#12",
-      "title": "Opened PR #12: consolidate ENV_LOCK to one shared mutex in new `mod test_support`. Added 2 regression tests. 20/20 local stress runs pass."
-    },
-    {
-      "timestamp": "2026-06-07T21:00:00Z",
-      "action": "ci_pass",
-      "id": "ether-btc/stealth-core#12",
-      "title": "CI run 27105446779: 12/13 checks pass, 0 failed. All 3 Test Suite jobs (ubuntu/macos/windows) PASS \u2014 bug confirmed fixed on all platforms. Awaiting arm64 Docker build (slow)."
-    },
-    {
-      "timestamp": "2026-06-08T06:10:56Z",
-      "action": "merged_pr",
-      "id": "ether-btc/stealth-core#12",
-      "title": "MERGED PR #12 (squash commit 5d20c16f) \u2014 dual-ENV_LOCK mutex fix. 13/13 CI checks pass, mergeState=CLEAN. PR branch auto-deleted. Local branch fix/env-lock-deduplication deleted. Master HEAD = 5d20c16f."
-    },
-    {
-      "timestamp": "2026-06-08T06:11:30Z",
-      "action": "local_validation_pass",
-      "id": "ether-btc/stealth-core#12",
-      "title": "55/55 lib tests pass on master (cargo test --lib -- --test-threads=4). 0 open PRs, 0 open issues. Triggered fresh CI on master (run 27119401268) to confirm post-merge stability."
-    },
-    {
-      "timestamp": "2026-06-08T06:30:00Z",
-      "action": "subagent_review",
-      "id": "ether-btc/stealth-core#12",
-      "title": "Subagent review of PR #12 fix: VERDICT pass-with-concerns. Subagent caught that env_lock_serializes_parallel_env_var_writers doc comment OVERCLAIMED \u2014 the test doesn't actually reproduce the original cross-module bug (it only verifies the single shared lock works). The real defense is the compile-time guard (E0255 name collision). Tightened the doc comment to be honest."
-    },
-    {
-      "timestamp": "2026-06-08T06:35:00Z",
-      "action": "followup_commit",
-      "id": "ether-btc/stealth-core#12",
-      "title": "Post-merge commit 8af197c: tightened doc comment on env_lock_serializes_parallel_env_var_writers. No code change. clippy clean, fmt clean, 55/55 lib tests pass. Pushed to master."
-    },
-    {
-      "timestamp": "2026-06-08T06:40:00Z",
-      "action": "subagent_review_q3",
-      "id": "ether-btc/stealth-core#12",
-      "title": "Subagent confirmed: tests/engine_fetch.rs:369,372 mutates STEALTH_CORE_CONFIG without a mutex. Not a real race because: (a) lib tests and integration tests run in separate processes, (b) it's the only test in that file that mutates the var. Currently safe; latent concern if more env-mutating tests are added to engine_fetch.rs. Out of scope for PR #12."
-    },
-    {
-      "timestamp": "2026-06-10T15:30:00Z",
-      "repo": "ether-btc/mpt-minimax",
-      "action": "audit-completed",
-      "commits": [
-        "90e9e97",
-        "2229e70"
-      ],
-      "wiki_session": "~/wiki/sessions/2026-06-10-mpt-minimax-mimo-audit/",
-      "summary": "3-cycle audit of MiMo TTS, 14 findings, all fixed"
-    },
-    {
-      "timestamp": "2026-06-11T20:33:25Z",
-      "action": "add_issue",
-      "id": "ether-btc/correlation-relevance-plugin#5",
-      "title": "LifecycleManager.evaluate() cyclomatic complexity 21 \u2014 refactor candidate",
-      "source": "audit-2026-06-11-correlation-relevance-plugin"
-    },
-    {
-      "timestamp": "2026-06-11T20:33:25Z",
-      "action": "add_issue",
-      "id": "ether-btc/correlation-relevance-plugin#6",
-      "title": "Leaky abstraction: engine.py reaches into _tracker._store",
-      "source": "audit-2026-06-11-correlation-relevance-plugin"
-    },
-    {
-      "timestamp": "2026-06-11T20:33:25Z",
-      "action": "add_issue",
-      "id": "ether-btc/correlation-relevance-plugin#7",
-      "title": "O(n) rule lookup inside O(n) loop in evaluate_lifecycles \u2014 O(n\u00b2) per cycle",
-      "source": "audit-2026-06-11-correlation-relevance-plugin"
-    },
-    {
-      "timestamp": "2026-07-28T19:10:00Z",
-      "action": "updated_pr",
-      "repo": "mnemosyne-oss/mnemosyne",
-      "id": "mnemosyne-oss/mnemosyne#568",
-      "title": "Pushed round-4 fix f9a2c96 (process-substitution \u2192 temp-file+trap, set -e propagates git diff failures). CI 30390678112: lint/build/docs-check green; 7 pre-existing mcp test failures on test(3.11) out of scope."
-    },
-    {
-      "timestamp": "2026-07-28T20:35:00Z",
-      "action": "opened_pr",
-      "repo": "mnemosyne-oss/mnemosyne",
-      "id": "mnemosyne-oss/mnemosyne#571",
-      "title": "Opened PR #571 \u2014 mcp SDK 1.x->2.x migration. Resolves the test (3.11) failure lane flagged as out-of-scope by sibling PR #568. Head 9ec3f0b on branch fix/mcp-2x-upgrade. 96/96 mcp tests pass locally on mcp 2.0.0."
-    },
-    {
-      "timestamp": "2026-07-28T20:36:00Z",
-      "action": "verified_pr",
-      "repo": "mnemosyne-oss/mnemosyne",
-      "id": "mnemosyne-oss/mnemosyne#568",
-      "title": "Confirmed CodeRabbit round-5 re-review (run f9dafa6e) returned no actionable comments on f9a2c96. PR #568 is clean; awaiting upstream maintainer sign-off."
-    },
-    {
-      "timestamp": "2026-07-28T23:18:00Z",
-      "action": "wiki_sync",
-      "repo": "ether-btc/wiki",
-      "id": "rtk-rust-cave-reconciliation-2026-07-28",
-      "title": "RTK-Hermes + rust-cave-001 reconciliation: wiki drift fixed (entities/rust-cave-001.md dual-branch, project-registry.md v1.1.0+v0.6.1, plan + Stage 4 risk assessment). 3 wiki commits pushed (3c49e2e, 92b746f, ff5da30). Key finding: rust_cave_001 v0.4.3\u2192v0.6.1 upgrade is SAFE per E2E scratch-venv test (686\u2192246 chars, 64.1% reduction, 21.9ms)."
-    },
-    {
-      "timestamp": "2026-07-28T23:50:00Z",
-      "action": "updated_pr",
-      "repo": "mnemosyne-oss/mnemosyne",
-      "id": "mnemosyne-oss/mnemosyne#568",
-      "title": "Round 5 re-review clean \u2014 no actionable comments. PR MERGEABLE, awaiting maintainer merge."
-    },
-    {
-      "timestamp": "2026-07-28T23:50:00Z",
-      "action": "updated_pr",
-      "repo": "mnemosyne-oss/mnemosyne",
-      "id": "mnemosyne-oss/mnemosyne#571",
-      "title": "Round 2 fix pushed (152cd22): ListToolsResult wrapper + is_error=True + 3 regression tests. 96/96 MCP tests pass. Awaiting round 3 re-review."
-    },
-    {
-      "timestamp": "2026-07-29T08:30:00Z",
-      "action": "triage",
-      "issue": "NousResearch/hermes-agent#26886",
-      "note": "Re-evaluated after GottZ AI triage comment. Surgical fix identified for PR #26907: change .strip() to exact-empty + add whitespace preservation test. 2-line change. Did not post (awaiting user approval)."
-    },
-    {
-      "timestamp": "2026-08-09T20:54:00Z",
-      "action": "sync",
-      "repo": "stephenschoettler/hermes-lcm",
-      "id": "stephenschoettler/hermes-lcm#246",
-      "title": "Verified issue closed against live GitHub during save-progress filing."
-    },
-    {
-      "ts": "2026-08-26T08:45:25Z",
-      "type": "filed",
-      "ref": "itsfatduck/optimizerDuck#67",
-      "desc": "Filed: Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH \u2014 partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue"
-    },
-    {
-      "ts": "2026-09-25T22:04:36Z",
-      "type": "filed",
-      "ref": "ether-btc/rtk-hermes-consolidated#8",
-      "desc": "Filed: Investigation: rtk-rewrite rejects legitimate multi-line rewrites (quoted multi-line value) and fails open"
-    },
-    {
-      "ts": "2026-10-04T05:42:40Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#128461",
-      "desc": "Filed: fix(update): make the parked-branch skip remedy non-destructive"
-    },
-    {
-      "ts": "2026-10-04T05:43:03Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#128335",
-      "desc": "Filed: fix(update): bound the parked-branch cherry check and fall back to a cheap count"
-    },
-    {
-      "ts": "2026-10-04T05:43:04Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#128240",
-      "desc": "Filed: fix(agent): wrap ALL untrusted tool output, not just output >=32 chars"
-    },
-    {
-      "ts": "2026-10-04T05:43:05Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#125506",
-      "desc": "Filed: fix(kanban): spawn workers via the published launcher, not bare sys.executable"
-    },
-    {
-      "ts": "2026-10-04T05:43:05Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#117089",
-      "desc": "Filed: fix(opencode): send x-opencode-client:hermes alongside session affinity"
-    },
-    {
-      "ts": "2026-10-04T05:43:06Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#108293",
-      "desc": "Filed: refactor: split gateway and CLI TUI mixins"
-    },
-    {
-      "ts": "2026-10-04T05:43:07Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#106080",
-      "desc": "Filed: feat(skills): append-only evidence ledger for skill_manage (additive counters, concurrency-safe)"
-    },
-    {
-      "ts": "2026-10-04T05:43:08Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#98821",
-      "desc": "Filed: fix(evals): harden compaction tripwire + align docs with single-call lean"
-    },
-    {
-      "ts": "2026-10-04T05:43:08Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#97913",
-      "desc": "Filed: docs(web-dashboard): add LAN hardening and end-to-end verification sections"
-    },
-    {
-      "ts": "2026-10-04T05:43:09Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#91379",
-      "desc": "Filed: fix(delegate): cap sub-agent output at delegation.max_output_tokens"
-    },
-    {
-      "ts": "2026-10-04T05:43:10Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#77718",
-      "desc": "Filed: fix(cron/runtime): preserve user-installed packages during venv rebuild (issue #69889)"
-    },
-    {
-      "ts": "2026-10-04T05:43:11Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#74699",
-      "desc": "Filed: fix(sessions): add --self-snapshot to recover for live-source runs (issue #72291)"
-    },
-    {
-      "ts": "2026-10-04T05:43:12Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#74016",
-      "desc": "Filed: fix(mcp): drop only exact-empty args, preserve whitespace"
-    },
-    {
-      "ts": "2026-10-04T05:43:12Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#46666",
-      "desc": "Filed: fix(zai): add fetch_models override for GLM-5.2 + base_url fix"
-    },
-    {
-      "ts": "2026-10-04T05:43:13Z",
-      "type": "filed",
-      "ref": "NousResearch/hermes-agent#42624",
-      "desc": "Filed: fix(compressor): preserve error indicators in _summarize_tool_result stubs"
-    },
-    {
-      "ts": "2026-10-05T05:50:46.593053+00:00",
-      "type": "pr",
-      "ref": "NousResearch/hermes-agent#106080",
-      "desc": "closed at repo 30-PR cap, not for cause; head intact + preserved; recovery comment filed; reopen blocked by cap and missing CreatePullRequest"
-    },
-    {
-      "ts": "2026-10-05T05:50:46.593053+00:00",
-      "type": "pr",
-      "ref": "NousResearch/hermes-agent#108293",
-      "desc": "closed at repo 30-PR cap, not for cause; head intact + preserved; needs full-clone rebase (14828 behind); recovery comment filed"
-    },
-    {
-      "ts": "2026-10-05T05:50:46.593053+00:00",
-      "type": "blocked",
-      "ref": "hermes-agent#91379,#128240,#128461",
-      "desc": "MERGEABLE but mergeStateStatus=BLOCKED: ruleset protect-main (14161644) requires synthetic check 'All required checks pass' (integration 15368); no workflow ever runs on fork branches and upstream CI sits action_required. Needs upstream maintainer."
-    },
-    {
-      "ts": "2026-10-05T10:33:31Z",
-      "type": "committed",
-      "ref": "ether-btc/wiki@801358b",
-      "desc": "ponytail skill v4.10.0 sync filed: upstream e3ba2aa6 -> 3 homes x 4 skills, additive log entry; pushed fast-forward under 2026-10-02 wiki blanket authorization"
-    },
-    {
-      "ts": "2026-10-05T10:33:31Z",
-      "type": "committed",
-      "ref": "ether-btc/wiki@64dcb78",
-      "desc": "ponytail skill v4.12.0 re-sync filed: upstream e15862bb (material drift vs v4.10.0), 12 SKILL.md byte-identical across 3 homes, v4.10.0 backups preserved in scratch; additive log entry, fast-forward"
-    },
-    {
-      "ts": "2026-10-05T10:33:31Z",
-      "type": "committed",
-      "ref": "ether-btc/wiki@a5a85cc",
-      "desc": "rtk-v7-audit closeout filed: stale gateway-restart gate (rust_cave_output compression) closed as already satisfied - 2026-10-04 update restarted gateway, Layer 1 inert by design, Layer 0 rtk live; fast-forward on origin/master"
-    },
-    {
-      "ts": "2026-10-05T10:36:31Z",
-      "type": "note",
-      "ref": "mnemosyne-oss/mnemosyne#537",
-      "desc": "filing-registry repair: comments 5870792868 + 5871233151 PATCHED 2026-10-05 - no-pip wording corrected to 'exits 1 with No module named pip (stderr; stdout alone reads empty)', live re-verified on 4 generation venvs, byte-verified by read-back"
-    },
-    {
-      "ts": "2026-10-05T10:42:16Z",
-      "type": "filed",
-      "ref": "MrTrenchTrucker/module-sop#1",
-      "desc": "Filed: adapters: harness adapter packs, first pack hermes-bot-mode (rebased onto v1.0.2, head eb373bc)"
-    },
-    {
-      "ts": "2026-10-05T10:42:17Z",
-      "type": "filed",
-      "ref": "MrTrenchTrucker/module-sop#2",
-      "desc": "Filed: tools: gate robustness (rebased onto v1.0.2; + .pytest_cache non_module_dirs exemption, head bcb240d)"
-    },
-    {
-      "ts": "2026-10-05T12:15:10Z",
-      "type": "review",
-      "ref": "ether-btc/hermes-agent@b79d8a3f (was 3e11ee43d8)",
-      "desc": "Trust-boundary fix 'harden(agent): wrap ALL untrusted tool output' \u2014 independent adversarial review complete (0 blocking; 7 Q's closed w/ runtime probes). Amended head b79d8a3f adds N1 regression test (short/empty-string = exact pre-fix bypass vector); gate 48 passed exact tree / 47 baseline, 0 new failures; ocr+bandit clean. Publication to NousResearch/hermes-agent:main = user hard gate, NOT executed. Evidence receipt + PR-desc at ~/projects/tb-3e11ee43-review/."
-    },
-    {
-      "ts": "2026-10-05T12:40:58Z",
-      "type": "review-publish",
-      "ref": "ether-btc/hermes-agent@8ddc177e44 (PR #128240 head; F1 supersedes my b79d8a3f)",
-      "desc": "FOLLOWUP: open PR #128240 already existed on the same fix (min=1, not my min=0). User's own F1 commit 16020dfd (locally authored, never pushed) was cherry-picked onto the PR head and force-with-lease pushed. New PR head 8ddc177e44 = 1374ad05b4 + F1 (2 files, 13 +/1 -). Oracle steer P(forkA)=0.998 / P(forkB_hold)=0.002 / P(forkC_open_competing_with_min0)=0.0001; matched-pair discrimination delta=0.986. Post-push gate 49 passed (reproducible). My local head b79d8a3f is now redundant. PR comment 5994608086. Wiki filing pushed as dcb7538."
-    },
-    {
-      "ts": "2026-10-05T18:02:37Z",
-      "type": "committed",
-      "ref": "ether-btc/mnemosyne-memory-optimization@4ff4de9",
-      "desc": "mnemosyne-memory-optimization: premise refuted + phases dispositioned + CORRECTION. Ground-truth measurement found the '~10K structured facts' premise FALSE (memoria_facts/memoria_kg/consolidated_facts/triples = extraction debris). P1 BUILT (check_canonical.py); P2 CLOSED NEGATIVE; P3 REFRAMED -> preflight_context.py session context card; P4 REFRAMED; P5 SUBSUMED. wip_hygiene.py retired 129 closed task:progress slots (345->216). CORRECTION filed: the memoria_* debris is written by the always-on REGEX extractor BeamMemory.extract_and_store_facts() (beam.py:7590), NOT the LLM flag \u2014 my earlier root cause was wrong. fast-forward on origin/master."
-    },
-    {
-      "ts": "2026-10-05T18:02:37Z",
-      "type": "committed",
-      "ref": "ether-btc/wiki@ccece74",
-      "desc": "mnemosyne-memory-optimization wiki page + log: filed premise-refuted disposition, then CORRECTED the root cause (regex extractor, not MNEMOSYNE_LLM_ENABLED). Page sha e4198e6d. fast-forward on origin/master."
-    }
-  ]
+  "version": "1.1.1"
 }
