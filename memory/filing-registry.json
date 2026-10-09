@@ -2895,10 +2895,71 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "zjunlp/SkillNet#40",
+      "repo": "zjunlp/SkillNet",
+      "number": 40,
+      "type": "issue",
+      "title": "/v1/search: expose a relevance score; default order ranks by repo popularity",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "",
+      "filed_at": "2026-10-09T16:44:34Z",
+      "last_action": "2026-10-09T16:44:34Z",
+      "url": "https://github.com/zjunlp/SkillNet/issues/40",
+      "actions_taken": [
+        "Filed: /v1/search: expose a relevance score; default order ranks by repo popularity"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#135729",
+      "repo": "NousResearch/hermes-agent",
+      "number": 135729,
+      "type": "issue",
+      "title": "[desktop] Remote session resumed locally on SSH blip, fake provider error",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "",
+      "filed_at": "2026-10-09T17:27:25Z",
+      "last_action": "2026-10-09T17:27:25Z",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/135729",
+      "actions_taken": [
+        "Filed: [desktop] Remote session resumed locally on SSH blip, fake provider error"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#132034",
+      "repo": "NousResearch/hermes-agent",
+      "number": 132034,
+      "type": "issue",
+      "title": "Desktop SSH reconnect-leak recurrence on a fix-containing POSIX build (fresh ownershipId per cycle not reaped)",
+      "state": "closed",
+      "status": "closed",
+      "next_action": "Await upstream response to residual-leak comment",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-09T18:41:29Z",
+      "last_action": "2026-10-09T18:41:30Z",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/132034#issuecomment-6087057476",
+      "actions_taken": [
+        "Filed: Desktop SSH reconnect-leak recurrence on a fix-containing POSIX build (fresh ownershipId per cycle not reaped)",
+        "Posted comment 6087057476: residual POSIX leak — retire watchdog is per-ownershipId, storm spawned fresh ownershipId per cycle"
+      ],
+      "notes": "Not our issue (author kshitijk4poor); engaged per user direction to share the finding",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-09T15:38:39Z",
+  "last_synced": "2026-10-09T18:41:31Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -3841,6 +3902,30 @@
       "type": "status_update",
       "ref": "NousResearch/hermes-agent#91379",
       "desc": "closed Closed 2026-10-09 to free a PR slot for #135677."
+    },
+    {
+      "ts": "2026-10-09T16:44:34Z",
+      "type": "filed",
+      "ref": "zjunlp/SkillNet#40",
+      "desc": "Filed: /v1/search: expose a relevance score; default order ranks by repo popularity"
+    },
+    {
+      "ts": "2026-10-09T17:27:25Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#135729",
+      "desc": "Filed: [desktop] Remote session resumed locally on SSH blip, fake provider error"
+    },
+    {
+      "ts": "2026-10-09T18:41:30Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#132034",
+      "desc": "Filed: Desktop SSH reconnect-leak recurrence on a fix-containing POSIX build (fresh ownershipId per cycle not reaped)"
+    },
+    {
+      "ts": "2026-10-09T18:41:30Z",
+      "type": "status_update",
+      "ref": "NousResearch/hermes-agent#132034",
+      "desc": "closed Posted comment 6087057476: residual POSIX leak — retire watchdog is per-ownershipId, storm spawned fresh ownershipId per cycle"
     }
   ]
 }
