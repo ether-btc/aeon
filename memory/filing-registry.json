@@ -2956,10 +2956,30 @@
       "notes": "Not our issue (author kshitijk4poor); engaged per user direction to share the finding",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "noahdunnagan/fsearch#10",
+      "repo": "noahdunnagan/fsearch",
+      "number": 10,
+      "type": "issue",
+      "title": "bench: content queries silently run a name search; \"first\" prints the max",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "Found while independently verifying PR #8 on aarch64; claims re-verified against main@76d612f (bench() byte-identical). Held back until operator approval, to avoid noise right after the maintainer policy-closed PR #8.",
+      "filed_at": "2026-10-09T20:00:07Z",
+      "last_action": "2026-10-09T20:00:07Z",
+      "url": "https://github.com/noahdunnagan/fsearch/issues/10",
+      "actions_taken": [
+        "Filed: bench: content queries silently run a name search; \"first\" prints the max"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-09T18:41:31Z",
+  "last_synced": "2026-10-09T20:00:07Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -3926,6 +3946,12 @@
       "type": "status_update",
       "ref": "NousResearch/hermes-agent#132034",
       "desc": "closed Posted comment 6087057476: residual POSIX leak — retire watchdog is per-ownershipId, storm spawned fresh ownershipId per cycle"
+    },
+    {
+      "ts": "2026-10-09T20:00:07Z",
+      "type": "filed",
+      "ref": "noahdunnagan/fsearch#10",
+      "desc": "Filed: bench: content queries silently run a name search; \"first\" prints the max"
     }
   ]
 }

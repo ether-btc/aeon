@@ -137,7 +137,7 @@ cmd_add() {
     --arg filed_at "$(now_str)" \
     --arg last_action "$(now_str)" \
     --arg url "$url" \
-    --argjson actions_taken "[\"Filed: $title\"]" \
+    --arg action_filed "Filed: $title" \
     --arg notes "" \
     --argjson labels "[]" \
     --arg is_upstream "true" \
@@ -147,7 +147,7 @@ cmd_add() {
       status: $status, next_action: $next_action,
       evidence_tier: $evidence, filed_at: $filed_at,
       last_action: $last_action, url: $url,
-      actions_taken: $actions_taken, notes: $notes,
+      actions_taken: [$action_filed], notes: $notes,
       labels: $labels, is_upstream: ($is_upstream == "true")
     }')
 
