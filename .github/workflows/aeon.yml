@@ -2321,12 +2321,21 @@ jobs:
           REC=$(jq -cn --arg s "$SKILL" --argjson sc "$SCORE" --argjson fl "$FLAGS" '{skill:$s,score:$sc,flags:$fl}')
           NEEDS=$(printf '%s' "$REC" | python3 -c "import sys,json; sys.path.insert(0,'scripts'); import health_triage as h; print('yes' if h.needs_comment(json.load(sys.stdin)) else 'no')" 2>/dev/null || echo no)
           if [ "$NEEDS" = "yes" ]; then
-            ISSUE=$(GH_REPO="$GITHUB_REPOSITORY" bash scripts/health_issue.sh ensure "$SKILL" 2>/dev/null || true)
+            # Capture the filer's stderr so a broken reporting path is LOUD instead of
+            # silently indistinguishable from "nothing to file". Still non-fatal: every
+            # failure ends in a ::warning::, never a non-zero step.
+            ERR=$(mktemp)
+            ISSUE=$(GH_REPO="$GITHUB_REPOSITORY" bash scripts/health_issue.sh ensure "$SKILL" 2>"$ERR" || true)
             if [ -n "$ISSUE" ]; then
               GH_REPO="$GITHUB_REPOSITORY" bash scripts/health_issue.sh comment "$ISSUE" \
                 "⚠️ Regression — score $SCORE, flags $FLAGS ($(date -u +%FT%TZ)). 👍/👎 to set repair priority." \
-                && echo "health regression -> issue #$ISSUE"
+                2>>"$ERR" \
+                && echo "health regression -> issue #$ISSUE" \
+                || echo "::warning::health regression comment failed for $SKILL (issue #$ISSUE): $(grep -m1 '[^[:space:]]' "$ERR" 2>/dev/null || true)"
+            else
+              echo "::warning::health regression for $SKILL could not be filed: $(grep -m1 '[^[:space:]]' "$ERR" 2>/dev/null || true)"
             fi
+            rm -f "$ERR"
           else
             echo "no regression for $SKILL; health issue silent"
           fi
