@@ -1,0 +1,59 @@
+{
+  "root": "card-heartbeat",
+  "state": {},
+  "elements": {
+    "card-heartbeat": {
+      "type": "Card",
+      "props": {
+        "title": "heartbeat"
+      },
+      "children": [
+        "stack-content"
+      ]
+    },
+    "stack-content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "alert-failed",
+        "stat-success",
+        "alert-api",
+        "text-memory"
+      ]
+    },
+    "alert-failed": {
+      "type": "Alert",
+      "props": {
+        "title": "FAILED",
+        "message": "Failed 16 runs ago, 16 consecutive failures",
+        "type": "error"
+      }
+    },
+    "stat-success": {
+      "type": "Stat",
+      "props": {
+        "label": "Success rate",
+        "value": "0%",
+        "trend": "down"
+      }
+    },
+    "alert-api": {
+      "type": "Alert",
+      "props": {
+        "title": "API degradation",
+        "message": "16 consecutive failures indicate external API issue (credits/max_tokens error)",
+        "type": "error"
+      }
+    },
+    "text-memory": {
+      "type": "Text",
+      "props": {
+        "text": "MEMORY: no flagged items",
+        "variant": "muted"
+      }
+    }
+  }
+}
