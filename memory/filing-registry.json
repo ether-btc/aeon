@@ -1596,19 +1596,21 @@
     {
       "actions_taken": [
         "Filed: feat(skills): append-only evidence ledger for skill_manage (additive counters, concurrency-safe)",
-        "2026-10-07: fork extension preserved/2026-10-07-skill-evidence-and-carries @ c3f60a63ccd3 (universal preservation; 8 files / +832 / -33; closes open MAJOR; not opened as PR due to cap)"
+        "2026-10-07: fork extension preserved/2026-10-07-skill-evidence-and-carries @ c3f60a63ccd3 (universal preservation; 8 files / +832 / -33; closes open MAJOR; not opened as PR due to cap)",
+        "2026-10-09 (today): PR superseded by rebase published on fork. Fork branch `fix/skill-guarded-write-concurrency` @ `391d59960884` (squashed 8 commits -> 1) is on `ether-btc/hermes-agent`, based on `af90026aa099`. Landing into Nous main is planned under the PRAXIS control plane `projects/skill-evidence-ledger-rebase-praxis/` and is GATED: execution NOT STARTED (operator said \"do not start it yet\"); merge on a protected branch requires explicit approval. `scripts/verify.sh` passes 24/24; wiki concept page filed locally (worktree 9e22e758; shared checkout 2cc8f9a8, NOT pushed). AEON record updated.",
+        "2026-10-09 (today): rebase and PRAXIS filing complete. Evidence tool branch `feat/skill-evidence-ledger` @ `aab059c01c` (`tools/skill_evidence.py` + `tests/tools/test_skill_evidence_merge.py`) on the fork; concurrency/rollback rebase `fix/skill-guarded-write-concurrency` @ `391d59960884`. Landing into Nous main gated. New skill authored: `~/.hermes/skills/skill-evidence-ledger/SKILL.md`; reference doc updated; wiki concept page corrected. Skill-evidence-ledger PRAXIS control plane filed at `projects/skill-evidence-ledger-rebase-praxis/`; execution NOT STARTED. AEON record updated."
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-04T05:43:07Z",
       "id": "NousResearch/hermes-agent#106080",
       "is_upstream": true,
       "labels": [],
-      "last_action": "2026-10-07T17:15:02Z",
+      "last_action": "2026-10-09T12:36:25Z",
       "metadata": {
         "recovery_2026_10_05": true
       },
       "next_action": "FORK EXTENSION 2026-10-07: branch preserved/2026-10-07-skill-evidence-and-carries @ c3f60a63ccd3 (ether-btc/hermes-agent) ADDS universal evidence preservation on top of this PR's evidence_merge feature. New: _preserve_evidence helper (re-injects current SKILL.md evidence into any content=/old_string=/new_string write, BOM-aware, returns content untouched when no evidence); _preserve_evidence_suspended ContextVar; hooks in _edit_skill and _patch_skill (only when file_path is None); bypass and docstring in _act_evidence_merge. New tests/tools/test_skill_evidence_merge.py: 7 probes (5 control + 2 regression) proving evidence survives ANY write path. Verification: 7/7 new + 57/57 existing tests pass; py_compile clean. 8 files / 832 insertions / 33 deletions. Closes the open MAJOR 'survives later edits is not enforced' from the previous PR review. Not opened as a new PR (repo-wide 30-open-PR cap; gh pr create rejected with 'ether-btc does not have CreatePullRequest' on this fork). RECOVERY: git fetch fork preserved/2026-10-07-skill-evidence-and-carries when an open-PR slot frees. The branch is on the fork only; do NOT force-push unless re-syncing on top of a new rebase of aab059c onto current main.",
-      "notes": "FORK EXTENSION 2026-10-07: branch preserved/2026-10-07-skill-evidence-and-carries @ c3f60a63ccd3 (ether-btc/hermes-agent) ADDS universal evidence preservation on top of this PR's evidence_merge feature. New: _preserve_evidence helper (re-injects current SKILL.md evidence into any content=/old_string=/new_string write, BOM-aware, returns content untouched when no evidence); _preserve_evidence_suspended ContextVar; hooks in _edit_skill and _patch_skill (only when file_path is None); bypass and docstring in _act_evidence_merge. New tests/tools/test_skill_evidence_merge.py: 7 probes (5 control + 2 regression) proving evidence survives ANY write path. Verification: 7/7 new + 57/57 existing tests pass; py_compile clean. 8 files / 832 insertions / 33 deletions. Closes the open MAJOR 'survives later edits is not enforced' from the previous PR review. Not opened as a new PR (repo-wide 30-open-PR cap; gh pr create rejected with 'ether-btc does not have CreatePullRequest' on this fork). RECOVERY: git fetch fork preserved/2026-10-07-skill-evidence-and-carries when an open-PR slot frees. The branch is on the fork only; do NOT force-push unless re-syncing on top of a new rebase of aab059c onto current main.",
+      "notes": "FORK EXTENSION 2026-10-07: branch preserved/2026-10-07-skill-evidence-and-carries @ c3f60a63ccd3 (ether-btc/hermes-agent) ADDS universal evidence preservation on top of this PR's evidence_merge feature. New: _preserve_evidence helper (re-injects current SKILL.md evidence into any content=/old_string=/new_string write, BOM-aware, returns content untouched when no evidence); _preserve_evidence_suspended ContextVar; hooks in _edit_skill and _patch_skill (only when file_path is None); bypass and docstring in _act_evidence_merge. New tests/tools/test_skill_evidence_merge.py: 7 probes (5 control + 2 regression) proving evidence survives ANY write path. Verification: 7/7 new + 57/57 existing tests pass; py_compile clean. 8 files / 832 insertions / 33 deletions. Closes the open MAJOR 'survives later edits is not enforced' from the previous PR review. Not opened as a new PR (repo-wide 30-open-PR cap; gh pr create rejected with 'ether-btc does not have CreatePullRequest' on this fork). RECOVERY: git fetch fork preserved/2026-10-07-skill-evidence-and-carries when an open-PR slot frees. The branch is on the fork only; do NOT force-push unless re-syncing on top of a new rebase of aab059c onto current main.\n\n2026-10-09 (today): PR superseded by rebase published on fork. Fork branch `fix/skill-guarded-write-concurrency` @ `391d59960884` (squashed 8 commits -> 1) is on `ether-btc/hermes-agent`, based on `af90026aa099`. Landing into Nous main is planned under the PRAXIS control plane `projects/skill-evidence-ledger-rebase-praxis/` and is GATED: execution NOT STARTED (operator said \"do not start it yet\"); merge on a protected branch requires explicit approval. `scripts/verify.sh` passes 24/24; wiki concept page filed locally (worktree 9e22e758; shared checkout 2cc8f9a8, NOT pushed). AEON record updated.\n\n2026-10-09 (today): rebase and PRAXIS filing complete. Evidence tool branch `feat/skill-evidence-ledger` @ `aab059c01c` (`tools/skill_evidence.py` + `tests/tools/test_skill_evidence_merge.py`) on the fork; concurrency/rollback rebase `fix/skill-guarded-write-concurrency` @ `391d59960884`. Landing into Nous main gated. New skill authored: `~/.hermes/skills/skill-evidence-ledger/SKILL.md`; reference doc updated; wiki concept page corrected. Skill-evidence-ledger PRAXIS control plane filed at `projects/skill-evidence-ledger-rebase-praxis/`; execution NOT STARTED. AEON record updated.",
       "number": 106080,
       "repo": "NousResearch/hermes-agent",
       "state": "closed",
@@ -1659,20 +1661,21 @@
     },
     {
       "actions_taken": [
-        "Filed: fix(delegate): cap sub-agent output at delegation.max_output_tokens"
+        "Filed: fix(delegate): cap sub-agent output at delegation.max_output_tokens",
+        "Closed 2026-10-09 to free a PR slot for #135677."
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-04T05:43:09Z",
       "id": "NousResearch/hermes-agent#91379",
       "is_upstream": true,
       "labels": [],
-      "last_action": "2026-10-04T05:43:09Z",
-      "next_action": "Await upstream review",
+      "last_action": "2026-10-09T15:38:38Z",
+      "next_action": "RE-PROPOSE on a fresh base when a PR slot frees (the gh-landing-watch job pings when open PRs by ether-btc fall below 3): re-create delegation.max_output_tokens + tests + docs. Not superseded; the branch was simply stale (2026-08-21, predates the delegate_tool to delegate_tool_dispatch split).",
       "notes": "",
       "number": 91379,
       "repo": "NousResearch/hermes-agent",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "title": "fix(delegate): cap sub-agent output at delegation.max_output_tokens",
       "type": "pr",
       "url": "https://github.com/NousResearch/hermes-agent/pull/91379"
@@ -2032,6 +2035,26 @@
       "url": "https://github.com/ether-btc/prompro/pull/96",
       "actions_taken": [
         "Filed: test: make two CI-flaky tests deterministic without weakening them"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#135677",
+      "repo": "NousResearch/hermes-agent",
+      "number": 135677,
+      "type": "pr",
+      "title": "feat(skills): append-only, machine-verifiable evidence ledger for SKILL.md",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-09T15:38:05Z",
+      "last_action": "2026-10-09T15:38:05Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/135677",
+      "actions_taken": [
+        "Filed: feat(skills): append-only, machine-verifiable evidence ledger for SKILL.md"
       ],
       "notes": "",
       "labels": [],
@@ -2875,7 +2898,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-09T08:09:00Z",
+  "last_synced": "2026-10-09T15:38:39Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -3806,6 +3829,18 @@
       "type": "status_update",
       "ref": "stephenschoettler/hermes-lcm#514",
       "desc": "open "
+    },
+    {
+      "ts": "2026-10-09T15:38:05Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#135677",
+      "desc": "Filed: feat(skills): append-only, machine-verifiable evidence ledger for SKILL.md"
+    },
+    {
+      "ts": "2026-10-09T15:38:39Z",
+      "type": "status_update",
+      "ref": "NousResearch/hermes-agent#91379",
+      "desc": "closed Closed 2026-10-09 to free a PR slot for #135677."
     }
   ]
 }
