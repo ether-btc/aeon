@@ -3061,10 +3061,30 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "rtk-ai/rtk#4351",
+      "repo": "rtk-ai/rtk",
+      "number": 4351,
+      "type": "issue",
+      "title": "rtk rewrite emits multi-line stdout for a single command, violating the one-command stdout contract",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "Filed by ether-btc 2026-09-29. KuSh extended the finding 2026-10-09 with a clap vector: rtk rewrite -h/--help prints help (11/21 lines) and exits 0. Verified on 0.42.4 2026-10-09 independently of his develop e12ca86 check. Added the exit-code inversion (no rules: \"ls -la\"->3 ask vs \"-h\"->0 allow) = least-privilege bypass of the #1155 guard, plus the precedent-backed one-line fix (Rewrite at main.rs:984 lacks disable_help_flag=true, unlike Psql main.rs:218 and Ctest main.rs:566). Reply posted: issuecomment-6091116926. Evidence: project rtk-4351-rewrite-stdout.",
+      "filed_at": "2026-10-09T23:39:15Z",
+      "last_action": "2026-10-09T23:39:15Z",
+      "url": "https://github.com/rtk-ai/rtk/issues/4351",
+      "actions_taken": [
+        "Filed: rtk rewrite emits multi-line stdout for a single command, violating the one-command stdout contract"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-09T22:52:46Z",
+  "last_synced": "2026-10-09T23:40:18Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4055,6 +4075,18 @@
       "type": "filed",
       "ref": "NousResearch/hermes-agent#125477",
       "desc": "Filed: goal continuation rows display_kind NULL — fix branch offered via compare-link (cap 3/3)"
+    },
+    {
+      "ts": "2026-10-09T23:39:15Z",
+      "type": "filed",
+      "ref": "rtk-ai/rtk#4351",
+      "desc": "Filed: rtk rewrite emits multi-line stdout for a single command, violating the one-command stdout contract"
+    },
+    {
+      "ts": "2026-10-09T23:40:18Z",
+      "type": "note",
+      "ref": "rtk-ai/rtk#4351",
+      "desc": "Replied to KuSh clap-vector comment — issuecomment-6091116926. Confirmed on 0.42.4, showed exit-code inversion bypasses the #1155 guard (no rules: ls -la->3 ask, -h->0 allow), gave precedent-backed fix: add disable_help_flag=true to Rewrite at main.rs:984 (Psql:218, Ctest:566 already have it)."
     }
   ]
 }
