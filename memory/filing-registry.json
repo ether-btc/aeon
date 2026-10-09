@@ -2079,6 +2079,51 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#135841",
+      "repo": "NousResearch/hermes-agent",
+      "number": 135841,
+      "type": "pr",
+      "title": "fix(mcp): drop only exact-empty --args placeholders, preserving whitespace-only args",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "Rebased onto main 46d7718a52ff. Branch: 42 passed / 1 failed. Control at same base: 40 passed / same single failure (environmental, tests/home_io_guard.py).",
+      "filed_at": "2026-10-09T22:04:56Z",
+      "last_action": "2026-10-09T22:04:56Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/135841",
+      "actions_taken": [
+        "Filed: fix(mcp): drop only exact-empty --args placeholders, preserving whitespace-only args"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "local/wp-flow-work-package-flow-skill-2026-10-10",
+      "repo": "local/wp-flow (Hermes project p_398a1516, board wp-flow)",
+      "number": null,
+      "type": "project_outcome",
+      "title": "work-package-flow skill v2.1.1 — kanban-SSoT compression-survival flow, measured P2–P5, pilot ACCEPTED MEDIUM-HIGH",
+      "state": "complete",
+      "status": "filed",
+      "next_action": "Optional: convert P4 fix compare-link to PR when a 3/3 slot frees (tracked under NousResearch/hermes-agent#125477, separate item from this filing).",
+      "evidence_tier": "tier_1 (measured receipts): P3 ledger /home/hermes-pi/.hermes/projects/wp-flow/measurements/p3-reentry-validation-2026-10-09.md (-60% re-entry payload at equal 3-call count, PARTIAL/MEDIUM); P4 ledger measurements/p4-pilot-ledger.md (real O(1) re-entry event, -80% payload, -97% P4-span, ACCEPTED MEDIUM-HIGH with honest BOUNDED lost-focus); skill at /home/hermes-pi/.hermes/skills/development/work-package-flow/ (SKILL.md v2.1.1 + references/measured-evidence.md); independent second-pass audit (deleg_67a40491, 14 findings) dispositioned on shipped v2.1.1",
+      "filed_at": "2026-10-10T01:30:00Z",
+      "last_action": "2026-10-10T01:30:00Z",
+      "url": "wiki filing: sessions/wp-flow-work-package-flow-2026-10-10/ (see wiki session entry)",
+      "actions_taken": [
+        "Filed: work-package-flow skill shipped + piloted (P2-P5); wiki article + this registry entry filed on operator approval with decider-steered surface choice (mercury: wiki 0.667 / wiki+AEON 0.867 plain, 0.995 fail-closed frame)"
+      ],
+      "notes": "Wiki article filed via isolated worktree off origin/master (convention). Registry entry appended by hand per fail-closed evidence_merge policy (counters reserved for the helper).",
+      "labels": [
+        "compression-survival",
+        "kanban-ssot",
+        "token-economics",
+        "skill"
+      ],
+      "is_upstream": false
     }
   ],
   "issues": [
@@ -2996,10 +3041,30 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#125477",
+      "repo": "NousResearch/hermes-agent",
+      "number": 125477,
+      "type": "issue",
+      "title": "goal continuation rows display_kind NULL — fix branch offered via compare-link (cap 3/3)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "issuecomment-6090613237 posted 2026-10-10: root-cause diagnosis + compare link ether-btc:hermes-agent fix/goal-continuation-displaykind @1232fccb89 (push verified ls-remote == tip); 4 invariants verified, 2 independent GO reviews, mutation kill-test RED→GREEN; no PR opened (per-contributor cap saturated 3/3 — pre-registered fallback per p4-pilot-ledger.md)",
+      "filed_at": "2026-10-09T22:52:46Z",
+      "last_action": "2026-10-09T22:52:46Z",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/125477",
+      "actions_taken": [
+        "Filed: goal continuation rows display_kind NULL — fix branch offered via compare-link (cap 3/3)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-09T21:46:22Z",
+  "last_synced": "2026-10-09T22:52:46Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -3978,6 +4043,18 @@
       "type": "filed",
       "ref": "ether-btc/prompro#97",
       "desc": "Filed: feat(papertrade): deterministic position-sizing seam (inert)"
+    },
+    {
+      "ts": "2026-10-09T22:04:56Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#135841",
+      "desc": "Filed: fix(mcp): drop only exact-empty --args placeholders, preserving whitespace-only args"
+    },
+    {
+      "ts": "2026-10-09T22:52:46Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#125477",
+      "desc": "Filed: goal continuation rows display_kind NULL — fix branch offered via compare-link (cap 3/3)"
     }
   ]
 }
