@@ -89,10 +89,39 @@ cmd_add() {
     exit 1
   fi
 
-  # Parse owner/repo from id
-  local repo number
-  repo=$(echo "$id" | cut -d'#' -f1)
-  number=$(echo "$id" | cut -d'#' -f2)
+  # Resolve owner/repo and number. A bare number id (no "owner/repo#N") is NOT enough:
+  # deriving repo from the id writes repo="78", a record `gh api repos/78/issues/78` can
+  # never resolve, so sync could never verify it. Fall back to --url, else refuse to write.
+  [[ "$type" == "pull" ]] && type="pr"
+  local repo="" number=""
+  if [[ "$id" == *"#"* ]]; then
+    repo="${id%%#*}"
+    number="${id##*#}"
+  elif [[ "$id" =~ ^[0-9]+$ ]]; then
+    # A bare number is a valid NUMBER but says nothing about the repo: the repo must come
+    # from --url, while the number stays what the id gave.
+    number="$id"
+  fi
+  if [[ ! "$repo" =~ ^[^/]+/[^/]+$ && -n "$url" ]]; then
+    if [[ "$url" =~ ^https?://[^/]+/([^/]+/[^/]+)/(pull|issues|discussions)/([0-9]+) ]]; then
+      repo="${BASH_REMATCH[1]}"
+      [[ -z "$number" ]] && number="${BASH_REMATCH[3]}"
+      if [[ -n "$number" && "${BASH_REMATCH[3]}" != "$number" ]]; then
+        echo "Error: id '$id' and --url disagree on the number ($number vs ${BASH_REMATCH[3]})." >&2
+        exit 1
+      fi
+    fi
+  fi
+  if [[ ! "$repo" =~ ^[^/]+/[^/]+$ || ! "$number" =~ ^[0-9]+$ ]]; then
+    echo "Error: cannot resolve owner/repo and number from id '$id'${url:+ (url: $url)}." >&2
+    echo "  Use --id owner/repo#N, or pass --url pointing at the PR/issue." >&2
+    exit 1
+  fi
+  if [[ -z "$url" ]]; then
+    local kind="issues"
+    [[ "$type" == "pr" ]] && kind="pull"
+    url="https://github.com/$repo/$kind/$number"
+  fi
 
   local entry
   entry=$(jq -n \
@@ -273,18 +302,38 @@ cmd_sync() {
   current=$(cat "$REGISTRY")
 
   local items
+  local notgithub=0
+  local malformed_ids=""
   if [[ -n "$target_item" ]]; then
     items=$(echo "$current" | jq --arg id "$target_item" \
       '.pulls + .issues | [map(select(.id == $id))] | .[0]')
   else
-    items=$(echo "$current" | jq '[.pulls[], .issues[]] | map(select(.status != "closed" and .status != "merged"))')
+    # Split the active set three ways: (1) records we can actually check, (2) records that
+    # are deliberately not GitHub items (audits / registry-only), and (3) records that CLAIM
+    # to be GitHub items but have no resolvable owner/repo or number. Group 3 is a defect,
+    # not a skip: silently ignoring it is how a corrupt record stays "verified" forever.
+    items=$(echo "$current" | jq '[.pulls[], .issues[]]
+      | map(select(.status != "closed" and .status != "merged"))
+      | map(select(((.type // "") != "audit") and (.github != false))
+      | select(((.repo // "") | test("^[^/]+/[^/]+$")) and (.number != null)))')
+    notgithub=$(echo "$current" | jq '[.pulls[], .issues[]]
+      | map(select(.status != "closed" and .status != "merged"))
+      | map(select(((.type // "") == "audit") or (.github == false))) | length')
+    malformed_ids=$(echo "$current" | jq -r '[.pulls[], .issues[]]
+      | map(select(.status != "closed" and .status != "merged"))
+      | map(select(((.type // "") != "audit") and (.github != false))
+      | select((((.repo // "") | test("^[^/]+/[^/]+$")) | not) or (.number == null)) | .id) | join(" ")')
   fi
 
   local total
   total=$(echo "$items" | jq 'length')
-  echo "SYNC: checking $total items against GitHub..."
+  local nmalformed=0
+  [[ -n "$malformed_ids" ]] && nmalformed=$(wc -w <<<"$malformed_ids")
+  echo "SYNC: checking $total items against GitHub... ($notgithub non-GitHub item(s) not checked)"
 
   local changes=0
+  local unknown=0
+  local unverified=""
   local updated_registry="$current"
 
   # For each item, fetch live state
@@ -319,7 +368,15 @@ cmd_sync() {
     local registry_state
     registry_state=$(echo "$item_json" | jq -r '.state')
 
-    if [[ "$gh_state" != "$registry_state" && "$gh_state" != "unknown" ]]; then
+    # A failed fetch is NOT agreement. An unreachable or rate-limited GitHub must never
+    # be reported as a clean bill of health: count it, name it, and fail the run below.
+    if [[ "$gh_state" == "unknown" ]]; then
+      unknown=$((unknown + 1))
+      unverified="${unverified}${id} "
+      continue
+    fi
+
+    if [[ "$gh_state" != "$registry_state" ]]; then
       changes=$((changes + 1))
       local new_status="closed"
       [[ "$type" == "pr" && "$gh_state" == "closed" && "$gh_merged" == "true" ]] && new_status="merged"
@@ -347,9 +404,20 @@ cmd_sync() {
   if [[ $changes -gt 0 ]]; then
     echo "$updated_registry" | jq '.last_synced = "'"$(now_str)"'"' > "$REGISTRY"
     echo "SYNC_DONE: $changes items updated"
-  else
-    echo "SYNC_OK: all $total items match GitHub state"
   fi
+
+  # Fail closed: an unverifiable run is not evidence of agreement and must not exit 0.
+  if [[ $unknown -gt 0 || $nmalformed -gt 0 ]]; then
+    [[ $nmalformed -gt 0 ]] && echo "SYNC_MALFORMED: $nmalformed item(s) cannot be verified at all (no resolvable owner/repo or number): $malformed_ids"
+    [[ $unknown -gt 0 ]] && echo "SYNC_INCOMPLETE: $unknown of $total item(s) could NOT be verified against GitHub (fetch failed): $unverified"
+    echo "The registry may be STALE for those items - this run is NOT proof of agreement."
+    return 1
+  fi
+
+  if [[ $changes -eq 0 ]]; then
+    echo "SYNC_OK: all $total GitHub-backed item(s) match GitHub state"
+  fi
+  return 0
 }
 
 cmd_log() {
