@@ -171,15 +171,14 @@ skills:
   # conflict resolution that silently adopts upstream here cuts fleet-health
   # checks by two thirds. Verified during the 2026-10-04 upstream merge.
   #
-  # DISABLED 2026-10-09 (hermes-pi), schedule + intent KEPT: the Skill Runner
-  # could never authenticate — this repo has ZERO Actions secrets (verified:
-  # 0 of 15 runs succeeded since the first run 2026-10-04; every dispatch died
-  # with `claude exited 1 … "Not logged in · Please run /login"` →
-  # "All gateway providers failed (direct)"), so it only produced 3 failed runs
-  # + 3 failure emails a day and never a health signal. To resume: configure a
-  # provider credential (FLEET_ENDPOINT + FLEET_TOKEN, or a native-auth key such
-  # as ANTHROPIC_API_KEY / OPENROUTER_API_KEY) and set enabled: true.
-  heartbeat: { enabled: false, schedule: "0 8,14,20 * * *", var: "" } # ambient fleet-health check (default) — surfaces anything worth attention. var: empty=ambient check | <area>=ambient focused on that area | brief[:<area>]=priority brief (3 things to focus on, why now, what moved; folds in priority-brief)
+  # RESOLVED 2026-10-09 (hermes-pi): disabled earlier the same day because this
+  # repo had ZERO Actions secrets and the runner could never authenticate (0 of
+  # 15 runs succeeded since its first run 2026-10-04; every dispatch died with
+  # `claude exited 1 … "Not logged in · Please run /login"`). Re-enabled with
+  # OPENROUTER_API_KEY configured as a repo secret — `gateway: auto` (below)
+  # picks it as the first present provider, so the harness has a credential.
+  # Revert to enabled: false if it starts failing again.
+  heartbeat: { enabled: true, schedule: "0 8,14,20 * * *", var: "" } # ambient fleet-health check (default) — surfaces anything worth attention. var: empty=ambient check | <area>=ambient focused on that area | brief[:<area>]=priority brief (3 things to focus on, why now, what moved; folds in priority-brief)
 
 # Reactive triggers — event-driven skill dispatch based on cron-state.json conditions.
 # Skills with schedule: "reactive" are never cron-matched. Instead, the scheduler
