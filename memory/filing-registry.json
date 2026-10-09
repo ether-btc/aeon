@@ -833,6 +833,12 @@
       "type": "filed",
       "ref": "NousResearch/hermes-agent#125537",
       "desc": "Filed: Field data: superseded generations accumulate on a 24/7 non-Docker host; collector silent on yield"
+    },
+    {
+      "desc": "Published: DM-JEPA 1.1 measured evaluation — REJECT / do-not-adopt (public repo created; sanitized, identifiers stripped, evidence byte-identical)",
+      "ref": "ether-btc/dm-jepa-evaluation@41ab449",
+      "ts": "2026-10-09T05:53:12Z",
+      "type": "published"
     }
   ],
   "issues": [
