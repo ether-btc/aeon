@@ -4087,6 +4087,12 @@
       "type": "note",
       "ref": "rtk-ai/rtk#4351",
       "desc": "Replied to KuSh clap-vector comment — issuecomment-6091116926. Confirmed on 0.42.4, showed exit-code inversion bypasses the #1155 guard (no rules: ls -la->3 ask, -h->0 allow), gave precedent-backed fix: add disable_help_flag=true to Rewrite at main.rs:984 (Psql:218, Ctest:566 already have it)."
+    },
+    {
+      "ts": "2026-10-10T00:25:00Z",
+      "type": "note",
+      "ref": "local/gh-landing-watch-p4-extension",
+      "desc": "Extended gh-landing-watch.sh (daily 09:00 cron, Telegram): slot-FREE ACTION names the P4 convert-to-PR (package at ~/projects/bot-chat-goal-loop-guard/PR-package-p4.md) alongside the #91379 re-proposal; new change-gated section 2b fingerprints latest #125477 comment + fork branch tip fix/goal-continuation-displaykind @ 1232fccb8974, state seeded (silent-run verified, second run clean, slot watch FULL:3 intact). Caught & fixed in-script: REST issues-comments ignores sort/direction (chronological-only; oldest-first trap — fixed client-side sort_by(.created_at)|last). Wiki session page filed ether-btc/wiki @ cf5f4ea. Codex review dispositioned not-needed (mechanical ~40-line extension, live-run-verified); hub listing for work-package-flow stays parked."
     }
   ]
 }
