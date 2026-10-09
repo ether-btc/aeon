@@ -358,7 +358,12 @@ cmd_sync() {
         gh_state="unknown"
       else
         gh_state=$(echo "$pr_json" | jq -r '.state')
-        gh_merged=$(echo "$pr_json" | jq -r 'if (.merged_at // .merged_at == null) then "false" else "true" end')
+        # jq's `//` is the ALTERNATIVE operator, not a null test: for a merged PR
+        # `.merged_at` is a truthy string, so `(.merged_at // (.merged_at == null))`
+        # evaluates to that STRING, and `if <string>` is TRUE -> the old expression
+        # returned "false" for merged PRs AND for unmerged ones, so gh_merged was
+        # always false and new_status="merged" could never fire. Test nullness directly.
+        gh_merged=$(echo "$pr_json" | jq -r 'if .merged_at then "true" else "false" end')
       fi
     else
       gh_state=$(gh api "repos/$repo/issues/$number" --jq '.state' 2>/dev/null) || gh_exit=$?
