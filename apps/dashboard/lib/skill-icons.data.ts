@@ -5,6 +5,7 @@
 // <svg viewBox='0 0 24 24'> with currentColor stroke (see components/ui/SkillGlyph).
 export const SKILL_ICONS: Record<string, string> = {
   "action-converter": "<rect x='3' y='5' width='6' height='6' rx='1'/><path d='M3 17l2 2 4-4'/><path d='M13 6h8M13 12h8M13 18h8'/>",
+  "aeon": "<path d='M3 8l2-4h14l2 4'/><rect x='3' y='8' width='18' height='12' rx='2'/><path d='M9 13h6'/>",
   "aeon-doctor": "<path d='M11 2v2M5 2v2'/><path d='M5 4H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V6a2 2 0 0 0-2-2h-1'/><path d='M8 16a6 6 0 0 0 12 0v-2'/><circle cx='20' cy='11' r='2'/>",
   "aeon-update": "<path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/><path d='M7 10l5 5 5-5'/><path d='M12 15V3'/>",
   "arc-studio": "<path d='M22 17a10 10 0 0 0-20 0'/><path d='M18 17a6 6 0 0 0-12 0'/><path d='M14 17a2 2 0 0 0-4 0'/>",
@@ -32,8 +33,11 @@ export const SKILL_ICONS: Record<string, string> = {
   "finance-district-mcp": "<path d='M3 22h18'/><path d='M6 18v-7M10 18v-7M14 18v-7M18 18v-7'/><path d='M12 2 20 7H4z'/>",
   "fleet-control": "<rect x='9' y='2' width='6' height='6' rx='1'/><rect x='2' y='16' width='6' height='6' rx='1'/><rect x='16' y='16' width='6' height='6' rx='1'/><path d='M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3'/><path d='M12 12V8'/>",
   "fork-fleet": "<circle cx='6' cy='6' r='3'/><circle cx='18' cy='6' r='3'/><circle cx='12' cy='18' r='3'/><path d='M18 9v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9'/><path d='M12 12v3'/>",
+  "gh-filing-standards": "<path d='M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z'/><path d='M9 12l2 2 4-4'/>",
+  "github-filing-registry": "<rect x='4' y='3' width='16' height='18' rx='2'/><path d='M8 8h8'/><path d='M8 12h8'/><path d='M8 16h5'/>",
   "github-monitor": "<path d='M2.1 12.3a1 1 0 0 1 0-.7 10.8 10.8 0 0 1 19.9 0 1 1 0 0 1 0 .7 10.8 10.8 0 0 1-19.9 0'/><circle cx='12' cy='12' r='3'/>",
   "github-trending": "<path d='M16 7h6v6'/><path d='M22 7l-8.5 8.5-5-5L2 17'/>",
+  "github-upstream-tracker": "<path d='M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z'/><circle cx='12' cy='12' r='2.5'/>",
   "glim-mcp": "<path d='M3 7V5a2 2 0 0 1 2-2h2'/><path d='M17 3h2a2 2 0 0 1 2 2v2'/><path d='M21 17v2a2 2 0 0 1-2 2h-2'/><path d='M7 21H5a2 2 0 0 1-2-2v-2'/><circle cx='12' cy='12' r='3'/><path d='M16 16l-1.9-1.9'/>",
   "heartbeat": "<path d='M22 12h-4l-3 9L9 3l-3 9H2'/>",
   "higgsfield": "<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='8.5' cy='9.5' r='1.5'/><path d='M3 16l5-4 4 3 3-2 6 4'/><path d='M18 3v3M16.5 4.5h3'/>",
