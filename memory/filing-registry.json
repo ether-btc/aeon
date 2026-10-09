@@ -2016,6 +2016,26 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#96",
+      "repo": "ether-btc/prompro",
+      "number": 96,
+      "type": "pr",
+      "title": "test: make two CI-flaky tests deterministic without weakening them",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "",
+      "filed_at": "2026-10-09T07:34:42Z",
+      "last_action": "2026-10-09T07:34:42Z",
+      "url": "https://github.com/ether-btc/prompro/pull/96",
+      "actions_taken": [
+        "Filed: test: make two CI-flaky tests deterministic without weakening them"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "issues": [
@@ -2831,10 +2851,31 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "stephenschoettler/hermes-lcm#514",
+      "repo": "stephenschoettler/hermes-lcm",
+      "number": 514,
+      "type": "issue",
+      "title": "AAAK compression provider — WITHDRAWN / DECLINED on measurement (0.9729x cl100k_base = net expansion; the ~30x claim was unverified)",
+      "state": "closed",
+      "status": "closed",
+      "next_action": "None - withdrawn. Reopen only as a NEW measurement on a DERIVED view with a NAMED consumer.",
+      "evidence_tier": "tier_3",
+      "filed_at": "2026-10-09T08:08:01Z",
+      "last_action": "2026-10-09T08:08:02Z",
+      "url": "https://github.com/stephenschoettler/hermes-lcm/issues/514",
+      "actions_taken": [
+        "Filed: AAAK compression provider — WITHDRAWN / DECLINED on measurement (0.9729x cl100k_base = net expansion; the ~30x claim was unverified)",
+        "Withdrawn + CLOSED as not-planned 2026-10-09. AAAK DECLINED on measurement: cl100k_base aggregate 0.9729x (215->221 tokens = net EXPANSION), 1 of 9 cases >1.00x, the '~30x' headline measured-rejected - matching the 2026-09-24 DEFER with four concurring reviews (Codex, opus-5.5, 2x glm-5.3-flash; 'no named consumer'), not contradicting them. Title + body marked measured-rejected; evidence comment 6077026178. Records: ether-btc/hermes-lcm-aak-contribution@5974205 (DECISIONS/STATUS/README/CONTRIBUTION/ROADMAP), wiki@0fc553f (audits/aaak-declined-2026-10-09), ether-btc/prompro@3d9a818 (README 'AAAK-compressed' claim dropped; engine already deleted in 66c910a; table name kept as historical/load-bearing). sentiment-classifier + mnemosyne#36: no action. No PR, no PyPI, no code deleted (the package is the record). Rule: a journal is an evidence artifact - cut volume (rollup/prune), compress only derived views, gated on a real measurement."
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-09T07:33:34Z",
+  "last_synced": "2026-10-09T08:09:00Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -3741,6 +3782,30 @@
       "type": "status_update",
       "ref": "NousResearch/hermes-agent#26886",
       "desc": "2026-10-09 CORRECTION: fix is ready on branch 7870b45219 (exact-empty filter + whitespace test, 42 passed); PR creation refused because the repo's 3-open-PRs-per-contributor cap is saturated by ether-btc's 3 open PRs — not a permission/org block as previously recorded. Delivered via the comment on #26907."
+    },
+    {
+      "ts": "2026-10-09T07:34:42Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#96",
+      "desc": "Filed: test: make two CI-flaky tests deterministic without weakening them"
+    },
+    {
+      "ts": "2026-10-09T08:08:02Z",
+      "type": "filed",
+      "ref": "stephenschoettler/hermes-lcm#514",
+      "desc": "Filed: AAAK compression provider — WITHDRAWN / DECLINED on measurement (0.9729x cl100k_base = net expansion; the ~30x claim was unverified)"
+    },
+    {
+      "ts": "2026-10-09T08:08:02Z",
+      "type": "status_update",
+      "ref": "stephenschoettler/hermes-lcm#514",
+      "desc": "closed Withdrawn + CLOSED as not-planned 2026-10-09. AAAK DECLINED on measurement: cl100k_base aggregate 0.9729x (215->221 tokens = net EXPANSION), 1 of 9 cases >1.00x, the '~30x' headline measured-rejected - matching the 2026-09-24 DEFER with four concurring reviews (Codex, opus-5.5, 2x glm-5.3-flash; 'no named consumer'), not contradicting them. Title + body marked measured-rejected; evidence comment 6077026178. Records: ether-btc/hermes-lcm-aak-contribution@5974205 (DECISIONS/STATUS/README/CONTRIBUTION/ROADMAP), wiki@0fc553f (audits/aaak-declined-2026-10-09), ether-btc/prompro@3d9a818 (README 'AAAK-compressed' claim dropped; engine already deleted in 66c910a; table name kept as historical/load-bearing). sentiment-classifier + mnemosyne#36: no action. No PR, no PyPI, no code deleted (the package is the record). Rule: a journal is an evidence artifact - cut volume (rollup/prune), compress only derived views, gated on a real measurement."
+    },
+    {
+      "ts": "2026-10-09T08:08:41Z",
+      "type": "status_update",
+      "ref": "stephenschoettler/hermes-lcm#514",
+      "desc": "open "
     }
   ]
 }
