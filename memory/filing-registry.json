@@ -1524,8 +1524,8 @@
       "notes": "",
       "number": 128240,
       "repo": "NousResearch/hermes-agent",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "title": "fix(agent): wrap ALL untrusted tool output, not just output >=32 chars",
       "type": "pr",
       "url": "https://github.com/NousResearch/hermes-agent/pull/128240"
@@ -2055,6 +2055,26 @@
       "url": "https://github.com/NousResearch/hermes-agent/pull/135677",
       "actions_taken": [
         "Filed: feat(skills): append-only, machine-verifiable evidence ledger for SKILL.md"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#97",
+      "repo": "ether-btc/prompro",
+      "number": 97,
+      "type": "pr",
+      "title": "feat(papertrade): deterministic position-sizing seam (inert)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-09T21:46:22Z",
+      "last_action": "2026-10-09T21:46:22Z",
+      "url": "https://github.com/ether-btc/prompro/pull/97",
+      "actions_taken": [
+        "Filed: feat(papertrade): deterministic position-sizing seam (inert)"
       ],
       "notes": "",
       "labels": [],
@@ -2979,7 +2999,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-09T20:00:07Z",
+  "last_synced": "2026-10-09T21:46:22Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -3952,6 +3972,12 @@
       "type": "filed",
       "ref": "noahdunnagan/fsearch#10",
       "desc": "Filed: bench: content queries silently run a name search; \"first\" prints the max"
+    },
+    {
+      "ts": "2026-10-09T21:46:22Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#97",
+      "desc": "Filed: feat(papertrade): deterministic position-sizing seam (inert)"
     }
   ]
 }
