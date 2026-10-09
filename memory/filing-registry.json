@@ -1427,16 +1427,17 @@
       "actions_taken": [
         "Reviewed by ether-btc 2026-05-22 (recommended merge — now stale)",
         "Reviewed by teknium1 (hermes-sweeper) 2026-07-29, verdict keep_open salvageability=high — demanded exact-empty filter + whitespace preservation test",
-        "GottZ AI triage 2026-07-29 called this 'partial' fix (technically correct on whitespace, editorially slanted)"
+        "GottZ AI triage 2026-07-29 called this 'partial' fix (technically correct on whitespace, editorially slanted)",
+        "2026-10-09: posted precise landing recipe on the PR — rebase + exact-empty filter at hermes_cli/mcp_config.py:624 (if a != \"\") + whitespace-preservation test. PR is mergeable_state=dirty, 3mo stale. Cannot push: head is LeonSGP43 fork. Verified bug still live on upstream/main 1744a19e0d."
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-16T11:55:00Z",
       "id": "NousResearch/hermes-agent#26907",
       "is_upstream": true,
       "labels": [],
-      "last_action": "2026-07-29T08:30:00Z",
+      "last_action": "2026-10-09T06:59:58Z",
       "local_commit_sha": "978fd29b2611c8b966958ceeb0e5e68eb7901f8b",
-      "next_action": "Await LeonSGP43 to update _normalize_cli_args predicate from text.strip() to exact-empty and add test_add_stdio_server_preserves_whitespace_args. 2-line change. HEAD on leonsgp43/hermes/fix-26886-mcp-empty-args @ 978fd29b.",
+      "next_action": "Await LeonSGP43 applying the surgical fix; if unresponsive, open competing PR from ether-btc/hermes-agent (maintainer review already specifies the required change).",
       "notes": "+43/-2. 15/16 CI checks pass; the 1 failing 'test' check has 6 unrelated failures (pyproject 0.13 vs 0.14 version drift, /root/.hermes permission errors, xai transcription env). The MCP regression test in tests/hermes_cli/test_mcp_config.py passes. Branch is on upstream NousResearch (contributor's fork); ether-btc cannot push to it directly.",
       "number": 26907,
       "repo": "NousResearch/hermes-agent",
@@ -1951,6 +1952,66 @@
         "Filed: fix(desktop): Windows SSH buffered transport, UTF-8 decoding, and owner paging"
       ],
       "notes": "THIRD-PARTY PR (not ours) - contributed a cross-reference comment 6054018615: a second, independent Windows-SSH command-corruption source (the MSYS2-linked Git usr\\bin\\ssh.exe selected by resolveSshBinary) plus test guidance (assert which client binary ran; pin it in the harness). Our related report: #134949. Queued behind our own 3 open PRs on this repo.",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#95",
+      "repo": "ether-btc/prompro",
+      "number": 95,
+      "type": "pr",
+      "title": "fix(cost): persist the real execution cost in execution_route.avg_slippage_bps",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "Independent review GO-WITH-CONDITIONS, 4 conditions closed; each fix tautology-checked (reverted, test watched to fail); build+vet+gofmt clean; papertrade 98.0s store 50.1s; head 8252aa2",
+      "filed_at": "2026-10-09T06:39:37Z",
+      "last_action": "2026-10-09T06:39:37Z",
+      "url": "https://github.com/ether-btc/prompro/pull/95",
+      "actions_taken": [
+        "Filed: fix(cost): persist the real execution cost in execution_route.avg_slippage_bps"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#94",
+      "repo": "ether-btc/prompro",
+      "number": 94,
+      "type": "pr",
+      "title": "feat(store): a supported clearing path for historical unverified receipts",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "Merged 2026-10-08 as 4ca27db after both reviewers returned MERGE-WITH-CONDITIONS 0 blockers; deployed c1-gate; gate cleared 157->0",
+      "filed_at": "2026-10-09T06:39:37Z",
+      "last_action": "2026-10-09T06:39:37Z",
+      "url": "https://github.com/ether-btc/prompro/pull/94",
+      "actions_taken": [
+        "Filed: feat(store): a supported clearing path for historical unverified receipts"
+      ],
+      "notes": "CORRECTED 2026-10-09: sync filed this MERGED pr as status=closed because of the jq `//` discriminator bug in filing-registry; fixed in the script, record corrected by hand. Merged as 4ca27db on 2026-10-08.",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#93",
+      "repo": "ether-btc/prompro",
+      "number": 93,
+      "type": "pr",
+      "title": "fix(cost): record the Bankr price impact instead of discarding it behind a '> 0' guard",
+      "state": "closed",
+      "status": "closed",
+      "next_action": "Await upstream review",
+      "evidence_tier": "CLOSED superseded 2026-10-09: patch targeted a call site that does not produce the live rows; superseded by PR #95",
+      "filed_at": "2026-10-09T06:39:37Z",
+      "last_action": "2026-10-09T06:39:37Z",
+      "url": "https://github.com/ether-btc/prompro/pull/93",
+      "actions_taken": [
+        "Filed: fix(cost): record the Bankr price impact instead of discarding it behind a '> 0' guard"
+      ],
+      "notes": "",
       "labels": [],
       "is_upstream": true
     }
@@ -2562,7 +2623,8 @@
       "actions_taken": [
         "Filed by ether-btc on 2026-05-16 (fork issues disabled on ether-btc/hermes-agent)",
         "Review recommendation posted 2026-05-22 (recommend merge of PR #26907)",
-        "Re-evaluated 2026-07-29 after GottZ AI triage comment; teknium1 review (2026-07-29) demands whitespace-only argv preservation"
+        "Re-evaluated 2026-07-29 after GottZ AI triage comment; teknium1 review (2026-07-29) demands whitespace-only argv preservation",
+        "2026-10-09: posted status update — bug reproduces as live on upstream/main 1744a19e0d; no empty-arg filter at hermes_cli/mcp_config.py:624. Kept open pending #26907."
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-16T10:58:38Z",
@@ -2574,7 +2636,7 @@
         "tool/mcp",
         "P2"
       ],
-      "last_action": "2026-07-29T08:30:00Z",
+      "last_action": "2026-10-09T06:59:58Z",
       "next_action": "Await LeonSGP43 to apply surgical fix to PR #26907 (change .strip() to exact-empty + add args=[\" \"] preservation test). Or open competing PR from ether-btc/hermes-agent.",
       "notes": "Two PRs proposed: #26907 (OPEN, +43/-2, 15/16 CI checks pass, the 1 fail is unrelated) and #26920 (CLOSED as duplicate). PR #26907 helper uses text.strip() which drops whitespace-only args; teknium1's 2026-07-29 review explicitly demands exact-empty filter. Correct fix: 2-line change in #26907, no need to rebase #26920.",
       "number": 26886,
@@ -2607,15 +2669,16 @@
     },
     {
       "actions_taken": [
-        "Filed: Investigation: rtk-rewrite rejects legitimate multi-line rewrites (quoted multi-line value) and fails open"
+        "Filed: Investigation: rtk-rewrite rejects legitimate multi-line rewrites (quoted multi-line value) and fails open",
+        "2026-10-09: posted parking note — HOLD STRICT decision stands, no action pending; recorded so future triage does not flag it as stale."
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-09-25T22:04:36Z",
       "id": "ether-btc/rtk-hermes-consolidated#8",
       "is_upstream": true,
       "labels": [],
-      "last_action": "2026-09-25T22:04:36Z",
-      "next_action": "Await upstream review",
+      "last_action": "2026-10-09T06:59:59Z",
+      "next_action": "none — parked by design per the 2026-09-25 decision record",
       "notes": "",
       "number": 8,
       "repo": "ether-btc/rtk-hermes-consolidated",
@@ -2767,7 +2830,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-09T06:15:54Z",
+  "last_synced": "2026-10-09T06:59:59Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -3614,6 +3677,42 @@
       "type": "note",
       "ref": "ether-btc/hermes-agent#7",
       "desc": "Withdrawn 2026-10-09: proposed loginShellQuote change is a REGRESSION (breaks fish login shells; byte-identical to upstream on bash/sh). Upstream left as-is; branch fix/… deleted, commit preserved as rejected/desktop-loginshellquote-fish-regression@11b848bf4e. Issue closed as not planned."
+    },
+    {
+      "ts": "2026-10-09T06:39:37Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#95",
+      "desc": "Filed: fix(cost): persist the real execution cost in execution_route.avg_slippage_bps"
+    },
+    {
+      "ts": "2026-10-09T06:39:37Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#94",
+      "desc": "Filed: feat(store): a supported clearing path for historical unverified receipts"
+    },
+    {
+      "ts": "2026-10-09T06:39:37Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#93",
+      "desc": "Filed: fix(cost): record the Bankr price impact instead of discarding it behind a '> 0' guard"
+    },
+    {
+      "ts": "2026-10-09T06:59:58Z",
+      "type": "status_update",
+      "ref": "NousResearch/hermes-agent#26907",
+      "desc": "2026-10-09: posted precise landing recipe on the PR — rebase + exact-empty filter at hermes_cli/mcp_config.py:624 (if a != \"\") + whitespace-preservation test. PR is mergeable_state=dirty, 3mo stale. Cannot push: head is LeonSGP43 fork. Verified bug still live on upstream/main 1744a19e0d."
+    },
+    {
+      "ts": "2026-10-09T06:59:58Z",
+      "type": "status_update",
+      "ref": "NousResearch/hermes-agent#26886",
+      "desc": "2026-10-09: posted status update — bug reproduces as live on upstream/main 1744a19e0d; no empty-arg filter at hermes_cli/mcp_config.py:624. Kept open pending #26907."
+    },
+    {
+      "ts": "2026-10-09T06:59:59Z",
+      "type": "status_update",
+      "ref": "ether-btc/rtk-hermes-consolidated#8",
+      "desc": "2026-10-09: posted parking note — HOLD STRICT decision stands, no action pending; recorded so future triage does not flag it as stale."
     }
   ]
 }
