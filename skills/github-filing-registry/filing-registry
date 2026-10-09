@@ -192,7 +192,7 @@ cmd_status() {
   local entry result_key
   entry=$(echo "$current" | jq --arg id "$id" \
     '.pulls + .issues | map(select(.id == $id)) | .[0] // null')
-  result_key=$(echo "$current" | jq --arg id "$id" \
+  result_key=$(echo "$current" | jq -r --arg id "$id" \
     'if (.pulls | map(select(.id == $id)) | length) > 0 then "pulls" else "issues" end')
 
   if [[ "$entry" == "null" ]]; then
@@ -220,7 +220,7 @@ cmd_status() {
     upd_json=$(echo "$upd_json" | jq --arg v "$notes" '.notes = $v')
   fi
   if [[ -n "$action" ]]; then
-    upd_json=$(echo "$upd_json" | jq --arg v "$action" '.actions_taken = [$v] | .last_action = "'"$(now_str)"'"')
+    upd_json=$(echo "$upd_json" | jq --arg v "$action" '.actions_add = [$v] | .last_action = "'"$(now_str)"'"')
   fi
   if [[ -n "$fix_pr" ]]; then
     upd_json=$(echo "$upd_json" | jq --arg v "$fix_pr" '.has_fix_pr = true | .fix_pr_url = $v')
@@ -233,7 +233,8 @@ cmd_status() {
       'reduce (.[$key] | to_entries)[] as $item
         (.;
         if $item.value.id == $id then
-          .[$key][$item.key] |= . + $upd
+          .[$key][$item.key] |= (. + ($upd | del(.actions_add))
+            | if ($upd | has("actions_add")) then .actions_taken = ((.actions_taken // []) + $upd.actions_add) else . end)
         else . end)
       | .last_synced = "'"$(now_str)"'"')
     echo "$new_registry" > "$REGISTRY"
