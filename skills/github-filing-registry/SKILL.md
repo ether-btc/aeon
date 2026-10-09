@@ -61,7 +61,7 @@ Activity log entry:
 ### add — Register a new filing
 
 ```bash
-./filing-registry add owner/repo#N \
+./filing-registry add --id owner/repo#N \
   --type pr|issue \
   --title "fix: add null check" \
   --evidence tier_0|tier_1|tier_2|tier_3 \
@@ -73,7 +73,7 @@ Creates a new entry. If the ID already exists, refuses with `FILING_EXISTS`.
 ### status — Update or inspect an entry
 
 ```bash
-./filing-registry status owner/repo#N \
+./filing-registry status --id owner/repo#N \
   --set needs_attention|pending_review|has_fix_pr|closed|merged|stale \
   --next "Await upstream review" \
   --action "Pinged maintainer" \
@@ -138,7 +138,7 @@ esac
 Before running `gh issue create` or `gh pr create`, call:
 
 ```bash
-./filing-registry check-duplicate owner/repo#N --title "..."
+./filing-registry check-duplicate --id owner/repo#N --title "..."
 ```
 
 If the ID or a near-matching title already exists in the registry, output a warning and the existing entry's URL instead of filing again.
