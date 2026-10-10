@@ -2066,8 +2066,8 @@
       "number": 97,
       "type": "pr",
       "title": "feat(papertrade): deterministic position-sizing seam (inert)",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-09T21:46:22Z",
@@ -2124,6 +2124,26 @@
         "skill"
       ],
       "is_upstream": false
+    },
+    {
+      "id": "rtk-ai/rtk#4501",
+      "repo": "rtk-ai/rtk",
+      "number": 4501,
+      "type": "pr",
+      "title": "fix(hook): keep rtk rewrite stdout to a single line so exit 0 stays a rewrite",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "Fixes rtk-ai/rtk#4351 (both vectors, one commit, 3 files +140/-0, base develop, MERGEABLE). Vector 1: single_line_only() gate in rewrite_cmd::run -> HookDecision::Defer. Vector 2: #[command(disable_help_flag = true)] on Rewrite in src/main.rs, precedent Psql/Ctest; rtk help rewrite preserves #4204 documentation. Verified: fmt/clippy clean, hook_decision_protocol_test 40/0, cargo test --all 4129 passed/2 pre-existing guard_integration_test failures (git 2.39.5). Runtime probe before->after on develop a4cddfc: -h 0/11 lines -> 1/empty; --help 0/33 -> 1/empty; multi-line 3/2 -> 1/empty; multi-line+allow-rule 0/2 (AUTO-ALLOW) -> 1/empty. Implemented by commandcode v1.79.2; orchestrator verified independently.",
+      "filed_at": "2026-10-10T00:25:24Z",
+      "last_action": "2026-10-10T00:25:24Z",
+      "url": "https://github.com/rtk-ai/rtk/pull/4501",
+      "actions_taken": [
+        "Filed: fix(hook): keep rtk rewrite stdout to a single line so exit 0 stays a rewrite"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "issues": [
@@ -3084,7 +3104,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-09T23:40:18Z",
+  "last_synced": "2026-10-10T00:25:25Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4093,6 +4113,18 @@
       "type": "note",
       "ref": "local/gh-landing-watch-p4-extension",
       "desc": "Extended gh-landing-watch.sh (daily 09:00 cron, Telegram): slot-FREE ACTION names the P4 convert-to-PR (package at ~/projects/bot-chat-goal-loop-guard/PR-package-p4.md) alongside the #91379 re-proposal; new change-gated section 2b fingerprints latest #125477 comment + fork branch tip fix/goal-continuation-displaykind @ 1232fccb8974, state seeded (silent-run verified, second run clean, slot watch FULL:3 intact). Caught & fixed in-script: REST issues-comments ignores sort/direction (chronological-only; oldest-first trap — fixed client-side sort_by(.created_at)|last). Wiki session page filed ether-btc/wiki @ cf5f4ea. Codex review dispositioned not-needed (mechanical ~40-line extension, live-run-verified); hub listing for work-package-flow stays parked."
+    },
+    {
+      "ts": "2026-10-10T00:25:25Z",
+      "type": "filed",
+      "ref": "rtk-ai/rtk#4501",
+      "desc": "Filed: fix(hook): keep rtk rewrite stdout to a single line so exit 0 stays a rewrite"
+    },
+    {
+      "ts": "2026-10-10T00:25:25Z",
+      "type": "note",
+      "ref": "rtk-ai/rtk#4351",
+      "desc": "Fix implemented and PR opened: rtk-ai/rtk#4501 (3 files +140/-0, base develop, MERGEABLE). Both vectors closed. Implemented by commandcode, verified independently by orchestrator."
     }
   ]
 }
