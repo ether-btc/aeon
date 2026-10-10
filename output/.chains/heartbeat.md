@@ -1,16 +1,22 @@
-The heartbeat skill execution is complete. Here's a final summary of the accomplished work:
+The heartbeat skill has been executed successfully. Here's a summary of the completed work:
 
-**Ambient heartbeat check** (2026-10-10, var = empty):
+**Ambient check performed** (${var} empty → default live scheduled path)
 
-- **P0**: No current failures or stuck skills; chronic failure history (success_rate 0.16, 3/19 runs) noted but excluded from page verdict per ladder convention; no API degradation actively occurring
-- **P1**: No stalled PRs; 1 non-urgent GitHub issue
-- **P2/P3**: No findings
-- **Overall status**: 🟢 OK (heartbeat's own row excluded from 🔴/🟡 ladder; no P1/P2/P3 flags)
-- **docs/status.md**: Regenerated with 🟢 OK verdict, skill health table, no token pulse (no report files)
-- **memory/logs/2026-10-10.md**: Appended `### heartbeat (mode: ambient)` entry with findings and `STATUS_PAGE=OK`
-- **Notification**: None sent (fleet healthy, last run succeeded — "nothing needs attention")
+**Key findings:**
+- Fleet is **warmed** — heartbeat has 20 completed runs (4 successes, 16 failures historically, success_rate 0.2)
+- Most recent run **succeeded** (`last_status: "success"`, `consecutive_failures: 0`, `last_success: 2026-10-10T13:14:39Z`)
+- Historical API 402 (insufficient credits) errors are **no longer actively degrading**
+- No failed/stalled skills, no stuck dispatches, no API degradation (`consecutive_failures: 0`)
+- No open PRs; 1 low-severity open issue ("health: heartbeat" — not labeled urgent/critical/high)
+- Only heartbeat is enabled in `aeon.yml` and has a cron-state entry → no P3 missing-skill flags
 
-**Final captured output:**
-```
-HEARTBEAT_OK · STATUS_PAGE=OK
-```
+**Status:** 🟢 **OK** — fleet has recovered from prior chronic failures
+
+**Files created/modified:**
+- `memory/logs/2026-10-10.md` — log entry under `### heartbeat (mode: ambient)` with `STATUS_PAGE=OK`
+- `docs/status.md` — regenerated status page with overall verdict 🟢 OK, skill health table updated, 1 open issue listed
+- `output/heartbeat-final.md` — full analysis output
+
+**No notification sent** — per the skill rule: "a clean or no-change run should send nothing, not an empty report"
+
+**Follow-up:** Monitor whether the API 402 credit issue resolves and track whether success_rate improves over future runs.
