@@ -1,88 +1,59 @@
-# Heartbeat Ambient Check — 2026-10-09
+# Heartbeat — Ambient Check (2026-10-10)
 
-## Findings
+**Selector:** `${var}` empty → ambient check branch
 
-### P0 — Failed & stuck skills
+**Fleet state:** Warmed (heartbeat has completed 21 runs across 5 successes, 16 failures; success_rate 24%)
 
-**Chronic failures** ⚠️: heartbeat success_rate 0.11 (2/18 total runs below 0.5 threshold with total_runs ≥ 5). The skill has experienced prolonged periods of failure, though the most recent run succeeded (last_status: "success", consecutive_failures: 0). API status 402 (insufficient credits) in error history.
+## P0 — Failed & stuck skills
 
-**Failed skills**: None. Heartbeat's own `last_status: "success"`. No other skills in cron-state.json have `last_status: "failed"`.
+**Failed skills:** None currently. Heartbeat's `last_status` is `"success"` (last run at 2026-10-10 17:55 UTC). Historical failures (16 consecutive failures prior to this run) are resolved.
 
-**Stuck skills**: None. No entries excluding heartbeat, and heartbeat's own entry is excluded from the stuck check.
+**Stuck skills:** None. No other skills in `cron-state.json` besides heartbeat, and heartbeat is excluded from the stuck check per self-reference rule.
 
-**API degradation**: None. `consecutive_failures: 0` < 3.
+**API degradation:** `consecutive_failures: 0` — below threshold of 3. No active API degradation.
 
-**Self-check**: Not triggered. Heartbeat has `total_successes: 2 ≥ 1`, but `last_success: 2026-10-09T15:44:08Z` is today, not >36 hours ago.
+**Chronic failures:** `success_rate: 0.24` (< 0.5) with `total_runs: 21` (≥ 5). **Flagged** but fleet has recovered — last run succeeded, `consecutive_failures: 0`. Per the status-page colour refinement ladder, a heartbeat that has since recovered must never hold the page red, and the state reads as predating its own run's outcome.
 
-### P1 — Stalled PRs & urgent issues
+## P1 — Stalled PRs & urgent issues
 
-**Stalled PRs**: None. `gh pr list --state open` returned 0 open PRs.
+- No open PRs stalled >24h ( `gh pr list` returned no results)
+- No GitHub issues labeled urgent ( `gh issue list` returned no results)
 
-**Urgent issues**: None. Only 1 open issue ("health: heartbeat") exists, without the "urgent" label.
+## P2 — Flagged memory items
 
-### P2 — Flagged memory items
+- No items flagged in `memory/MEMORY.md` that need follow-up
 
-None. No items in memory/MEMORY.md require follow-up.
+## P3 — Missing scheduled skills
 
-### P3 — Missing scheduled skills
+- Only `heartbeat` skill is enabled in `aeon.yml` (line 181)
+- Heartbeat has an entry in `cron-state.json` — not missing
+- Fleet has warmed (at least one completed run), so P3 checked; no missing skills found
 
-None. The only enabled skill is heartbeat, which has an entry in cron-state.json. The fleet is warmed (at least one completed run exists).
+## Dedup & notification
 
-## Dedup check
+- Chronic failures item already appeared in yesterdays log (`memory/logs/2026-10-09.md`)
+- Per dedup rule: skip re-notification about same item in last 48h
+- **No notification sent** — nothing needs attention
 
-Grep of `memory/logs/2026-10-09.md` shows the prior run reported "heartbeat failed 16 runs ago, 0% success rate, 16 consecutive failures; API degradation (credits/max_tokens error)". The current state has different specifics: `consecutive_failures: 0` (reset from 16), `last_status: "success"` (changed from failed), and `success_rate: 0.11` (same general range but different granular detail). This is not the "same item" — the meaningful state change (consecutive failures reset, last run succeeded) warrants a new finding.
+## Overall status page verdict
 
-## Overall status
+**🟢 OK** — Fleet is healthy. Heartbeat has recovered from prior chronic failures (last run succeeded, consecutive_failures: 0). Per the status-page colour refinement ladder: "a heartbeat that has since recovered must never hold the page red." The page colour is refined independently from the P0 notification rules; a fresh `last_status: "failed"` would still fire its notification, but the page would not read 🔴 for a blip the fleet has already shrugged off.
 
-**🟢 OK** — Evaluated excluding heartbeat's own row: no stuck skills, no `consecutive_failures ≥ 3`, no other chronic failures, no P1/P2/P3 flags, no open issues with critical/high severity. The fleet is healthy when heartbeat's own row is excluded (as is the per-ladder convention).
+Regenerated `docs/status.md` with:
+- Overall: 🟢 OK
+- Updated: 2026-10-10 17:55 UTC
+- Open issues: 1 (ISS-001: health: heartbeat, low severity, detected 2026-10-09)
+- Token pulse: no recent token data
+- Skill health table showing heartbeat at 20% success rate, 0 consecutive failures
+- Open issues section rendering ISS-001
 
-## Status page
+## Log entry
 
-**🟢 OK** — `docs/status.md` regenerated with overall verdict OK.
+Appended to `memory/logs/2026-10-10.md` under `### heartbeat (mode: ambient)`:
+- `STATUS_PAGE=OK`
+- Noted that chronic failures were deduped against yesterdays log
+- Notation that no notification was sent (item already reported 2026-10-09)
 
-**Updated**: 2026-10-09 21:28 UTC
+## Notification
 
-**Next scheduled run**: heartbeat at 08:00 UTC
-
-## Token pulse
-
-_Omitted entirely — no token report files exist per status page rules._
-
-## Skill health (last 7 days)
-
-| Skill | Last run | Status | Success rate | Consecutive failures |
-|-------|----------|--------|-------------:|---------------------:|
-| heartbeat | 2026-10-09 15:44 UTC | ✅ success | 11% | 0 |
-
-## Open issues
-
-_No open issues._
-
----
-
-## Summary
-
-**Skill executed**: heartbeat (ambient check mode, no `${var}` specified)
-
-**Checks performed**:
-- P0: Chronic failures flagged (success_rate 0.11, 2/18 runs), no failed/stuck skills, no API degradation
-- P1: No stalled PRs, no urgent issues
-- P2: No flagged memory items
-- P3: No missing scheduled skills
-
-**Key results**:
-- Overall status page verdict: **🟢 OK** (excluding heartbeat's own row per ladder convention)
-- `docs/status.md` regenerated with 🟢 OK verdict and updated timestamp
-- `memory/logs/2026-10-09.md` appended with `### heartbeat (mode: ambient)` entry documenting chronic findings and STATUS_PAGE=OK
-- Notification sent via `./notify -f /tmp/heartbeat.md` (queued e9b2fcdb) containing all P0/P1/P2/P3 findings grouped by priority tier
-- Dedup check passed: current findings differ from prior same-day run due to state changes (consecutive failures reset to 0, last run succeeded)
-
-**Files created/modified**:
-- `docs/status.md` — regenerated with 🟢 OK overall verdict
-- `memory/logs/2026-10-09.md` — appended `### heartbeat (mode: ambient)` log entry
-- `/tmp/heartbeat.md` — notification file generated and sent via `./notify`
-
-**Follow-up actions**:
-- Chronic failures (11% success rate) warrant monitoring — likely API credential issue (last error: 402 insufficient credits). Consider whether RESEND_API_KEY or other integration keys need refreshing.
-- Next heartbeat scheduled run: 08:00 UTC on 2026-10-10.
-- If 402 errors persist, check for replenished credits or API rate-limiting.
+**None sent.** Fleet healthy, last run succeeded, no new findings beyond deduped items.
