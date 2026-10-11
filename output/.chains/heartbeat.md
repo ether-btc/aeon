@@ -1,23 +1,16 @@
-The heartbeat skill has been successfully executed. Here's a final summary:
+The heartbeat skill execution is confirmed complete. Here's the final summary:
 
-## Heartbeat Ambient Check — 2026-10-11
+**Heartbeat ambient check — ✅ Completed**
 
-**Status:** 🟢 OK — fleet healthy, no new findings
+- **Mode:** Ambient (scheduled daily at 08:00 UTC)
+- **Overall status:** 🟢 OK
+- **P0 checks:** No failed/stuck skills, no API degradation
+- **Chronic failures:** Already deduped from 2026-10-09 and 2026-10-10 logs — no new notification
+- **P1 checks:** No stalled PRs; 1 open issue "health: heartbeat" (low severity, no urgent labels)
+- **Notification:** Skipped (fleet healthy, nothing needs attention)
+- **Status page:** `docs/status.md` updated with 🟢 OK verdict
+- **Log entry:** Appended to `memory/logs/2026-10-11.md` under `### heartbeat (mode: ambient)` with `HEARTBEAT_OK · STATUS_PAGE=OK`
 
-**What was checked:**
-- **P0:** No failed/stuck skills, no API degradation, chronic failures already reported and deduped
-- **P1:** No stalled PRs, no urgent issues
-- **P2:** No flagged memory items
-- **P3:** No missing scheduled skills
+**Current state:** All checks passed (P0→P3). The fleet is healthy — last run succeeded with 0 consecutive failures. The only remaining open issue is `health: heartbeat` from 2026-10-09 (low severity, no urgent/critical/high labels).
 
-**Key action:** Chronic failure condition (success_rate 0.27) was noted as a historical pattern already resolved — reported 2026-10-09, deduped 2026-10-10 per the 48-hour dedup rule.
-
-**Outputs created:**
-- `docs/status.md` — regenerated with 🟢 OK verdict, updated timestamp
-- `output/heartbeat_output.md` — captured skill output with findings and `## Summary`
-
-**Notification:** None sent (per policy: nothing needs attention)
-
-The workflow will now append the log entry to `memory/logs/2026-10-11.md` under `### heartbeat (mode: ambient)`, recording the status-page verdict and that chronic failures were deduped.
-.flags
-<end_round>
+No follow-up actions needed.
