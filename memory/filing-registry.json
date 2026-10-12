@@ -4224,6 +4224,12 @@
       "type": "note",
       "ref": "local/repo-consolidation-2026-10-12",
       "desc": "Repo portfolio consolidation: 36 ether-btc repos ARCHIVED (reversible, nothing deleted) via gh api -X PATCH repos/ether-btc/<name> -f archived=true, each read back. Tier A 27 superseded 2026-05 skill repos (23 verified already present under ~/hermes-vault/skills/), Tier B 2 closed Mnemosyne research (mnemosyne-operability, mnemosyne-memory-optimization), Tier C 1 empty skeleton (hermes-skills), Tier E 6 (project-restoration-blueprint, hermes-backup, hermes-lcm-audit, hermes-rtk-optimizer, octocode-mcp-pilot, gemma-4-challenge). Account archived total 41. KEEP/untouched verified archived=false: ram-first-context (live plugin), project-catalog, hermes-lcm-aak-contribution (active), rtk-hermes-consolidated (live-plugin provenance), Charon-Vault (operator-protected). Plan+receipts: ether-btc/wiki master 0e8f303 (projects/repo-consolidation-plan-2026-10-12.md). Skill: github/repo-portfolio-consolidation."
+    },
+    {
+      "ts": "2026-10-12T22:12:53Z",
+      "type": "note",
+      "ref": "ether-btc/support-router",
+      "desc": "Battery evidence filed to wiki (ether-btc/wiki @ 69d1b4a, ls-remote verified): first live recording 20/20 but pre-registered gate FAILED (agreement 9/20 vs floor 15/20, I1 b11, I2 b10/b12/b14; sentinel 0/20 PASS). Repo commit 931246a stays LOCAL - m1-reviewer returned NO-GO on pushing (failed gate + unfixed S1 detect_threat hole would obscure the lane missing its own bar). Alias-row price settled from live usage.cost receipt. Labels not edited to pass."
     }
   ]
 }
