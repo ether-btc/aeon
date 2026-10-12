@@ -4230,6 +4230,12 @@
       "type": "note",
       "ref": "ether-btc/support-router",
       "desc": "Battery evidence filed to wiki (ether-btc/wiki @ 69d1b4a, ls-remote verified): first live recording 20/20 but pre-registered gate FAILED (agreement 9/20 vs floor 15/20, I1 b11, I2 b10/b12/b14; sentinel 0/20 PASS). Repo commit 931246a stays LOCAL - m1-reviewer returned NO-GO on pushing (failed gate + unfixed S1 detect_threat hole would obscure the lane missing its own bar). Alias-row price settled from live usage.cost receipt. Labels not edited to pass."
+    },
+    {
+      "ts": "2026-10-12T22:24:03Z",
+      "type": "note",
+      "ref": "ether-btc/support-router",
+      "desc": "S1 safety hole FIXED on operator default: detect_threat now covers lawyer/court as a UNION (not a replacement - BATTERY_THREAT_RE needs refund.*now while the guard matches bare refund, so a swap would have NARROWED escalation). Commit 4528a7e, 77/77 tests, 3 new tests proven load-bearing (fail against reverted widening), b18 now human_handoff under all 5 categories, battery score unchanged at 9/20. Wiki 1d3a8b4. Both commits still HELD LOCAL pending owner push decision."
     }
   ]
 }
