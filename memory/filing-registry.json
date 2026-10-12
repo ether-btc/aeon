@@ -3167,7 +3167,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-12T07:42:46Z",
+  "last_synced": "2026-10-12T22:09:00Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4200,6 +4200,30 @@
       "type": "note",
       "ref": "ether-btc/support-router",
       "desc": "Filing: published repo ether-btc/support-router (private) — two-tier Jev+deepseek-flash router built from the 2026-10-12 K3/Jev cost-article assessment. 4 commits 1dcb681->69bd334, 74/74 tests, master pushed and verified (ls-remote == local HEAD). Assessment page: ether-btc/wiki @ cdb21e5 (Codex-reviewed NO-GO -> 1 MAJOR + 3 MINOR fixed, push verified)."
+    },
+    {
+      "ts": "2026-10-12T22:08:51Z",
+      "type": "note",
+      "ref": "NousResearch/hermes-agent#135841",
+      "desc": "Posted concise ready-to-review comment (issuecomment-6132346998) + @mentioned kshitijk4poor; MERGEABLE, held at action_required first-time-contributor CI gate (ether-btc perms push:false)."
+    },
+    {
+      "ts": "2026-10-12T22:08:51Z",
+      "type": "note",
+      "ref": "NousResearch/hermes-agent#135677",
+      "desc": "Posted concise ready-to-review comment (issuecomment-6132347327); MERGEABLE, held at action_required first-time-contributor CI gate."
+    },
+    {
+      "ts": "2026-10-12T22:08:51Z",
+      "type": "note",
+      "ref": "NousResearch/hermes-agent#128461",
+      "desc": "Posted concise ready-to-review comment (issuecomment-6132347638); MERGEABLE, held at action_required first-time-contributor CI gate."
+    },
+    {
+      "ts": "2026-10-12T22:09:00Z",
+      "type": "note",
+      "ref": "local/repo-consolidation-2026-10-12",
+      "desc": "Repo portfolio consolidation: 36 ether-btc repos ARCHIVED (reversible, nothing deleted) via gh api -X PATCH repos/ether-btc/<name> -f archived=true, each read back. Tier A 27 superseded 2026-05 skill repos (23 verified already present under ~/hermes-vault/skills/), Tier B 2 closed Mnemosyne research (mnemosyne-operability, mnemosyne-memory-optimization), Tier C 1 empty skeleton (hermes-skills), Tier E 6 (project-restoration-blueprint, hermes-backup, hermes-lcm-audit, hermes-rtk-optimizer, octocode-mcp-pilot, gemma-4-challenge). Account archived total 41. KEEP/untouched verified archived=false: ram-first-context (live plugin), project-catalog, hermes-lcm-aak-contribution (active), rtk-hermes-consolidated (live-plugin provenance), Charon-Vault (operator-protected). Plan+receipts: ether-btc/wiki master 0e8f303 (projects/repo-consolidation-plan-2026-10-12.md). Skill: github/repo-portfolio-consolidation."
     }
   ]
 }
