@@ -2123,7 +2123,8 @@
         "token-economics",
         "skill"
       ],
-      "is_upstream": false
+      "is_upstream": false,
+      "github": false
     },
     {
       "id": "rtk-ai/rtk#4501",
@@ -2144,6 +2145,48 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "local/compaction-continuity-skill-plugin-2026-10-10",
+      "type": "project_outcome",
+      "title": "compaction-continuity: advisory directive-set (skill) + user-space advisory plugin, to defeat context-compaction drift",
+      "repo": "local/compaction-continuity (~/.hermes/skills/development/compaction-continuity + ~/.hermes/plugins/compaction-continuity-advisory)",
+      "number": null,
+      "github": false,
+      "status": "filed",
+      "state": "filed",
+      "url": "wiki filing: audits/compaction-continuity-2026-10-10 (ether-btc/wiki 977b303)",
+      "evidence_tier": 2,
+      "is_upstream": false,
+      "filed_at": "2026-10-10T21:23:44Z",
+      "last_action": "filed 2026-10-10",
+      "next_action": "none — shipped; advisory (no user-space hook gates compaction)",
+      "labels": [
+        "local",
+        "skill",
+        "plugin",
+        "compaction"
+      ],
+      "actions_taken": [
+        "built skill compaction-continuity v1.0.0",
+        "built + enabled plugin compaction-continuity-advisory",
+        "verified 13/13 + kill-test + plugins doctor",
+        "live-fired true positive on a 9-marker session",
+        "filed wiki page + index + log"
+      ],
+      "notes": "Load-bearing finding: NO user-space mechanism gates compaction (/compress = slash command; auto-compaction not a tool call; shell hooks pre_tool_call only). Marker detection must be a session-scoped existence query (instr), never a recent-N window. Update-clean: all in ~/.hermes/skills|plugins|config.yaml."
+    },
+    {
+      "type": "pr",
+      "number": 98,
+      "repo": "ether-btc/prompro",
+      "title": "wiring: SizeDecider seam — inert by default, B3 fail-closed gate on live Kelly",
+      "status": "merged",
+      "merged_at": "2026-10-11T13:18:22Z",
+      "head_sha": "42a0f912a2",
+      "recorded": "2026-10-11",
+      "actor": "default profile, operator-authorized merge",
+      "notes": "size-decider wiring (inert default + B3 fail-closed live-Kelly gate). Distinguishing field: merged from mergedAt, not close-state."
     }
   ],
   "issues": [
@@ -3048,8 +3091,8 @@
       "number": 10,
       "type": "issue",
       "title": "bench: content queries silently run a name search; \"first\" prints the max",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "Found while independently verifying PR #8 on aarch64; claims re-verified against main@76d612f (bench() byte-identical). Held back until operator approval, to avoid noise right after the maintainer policy-closed PR #8.",
       "filed_at": "2026-10-09T20:00:07Z",
@@ -3101,10 +3144,30 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#126860",
+      "repo": "NousResearch/hermes-agent",
+      "number": 126860,
+      "type": "issue",
+      "title": "COMMENT filed: de-DE reproduction of elevated-install admin-owned tools (WinError 5) + retry_held discriminator + working repair",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "comment 6119890428: reproduced on a16 (de-DE Win11 26200, update to 8a7a5a90); icacls showed Administratoren-owned dirs w/ zero kranl ACEs; retry_held ~3.1s (pm/filesystem.py:136) distinguishes stuck-handle vs ACL-deny; repair takeown /D J + quoted icacls grant verified by unelevated rename round-trip; independent reviewer SHIP; PATCH-corrected for ACL inheritance wording",
+      "filed_at": "2026-10-12T07:42:46Z",
+      "last_action": "2026-10-12T07:42:46Z",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/126860",
+      "actions_taken": [
+        "Filed: COMMENT filed: de-DE reproduction of elevated-install admin-owned tools (WinError 5) + retry_held discriminator + working repair"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-10T00:25:25Z",
+  "last_synced": "2026-10-12T07:42:46Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4125,6 +4188,18 @@
       "type": "note",
       "ref": "rtk-ai/rtk#4351",
       "desc": "Fix implemented and PR opened: rtk-ai/rtk#4501 (3 files +140/-0, base develop, MERGEABLE). Both vectors closed. Implemented by commandcode, verified independently by orchestrator."
+    },
+    {
+      "ts": "2026-10-12T07:42:46Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#126860",
+      "desc": "Filed: COMMENT filed: de-DE reproduction of elevated-install admin-owned tools (WinError 5) + retry_held discriminator + working repair"
+    },
+    {
+      "ts": "2026-10-12T20:08:56Z",
+      "type": "note",
+      "ref": "ether-btc/support-router",
+      "desc": "Filing: published repo ether-btc/support-router (private) — two-tier Jev+deepseek-flash router built from the 2026-10-12 K3/Jev cost-article assessment. 4 commits 1dcb681->69bd334, 74/74 tests, master pushed and verified (ls-remote == local HEAD). Assessment page: ether-btc/wiki @ cdb21e5 (Codex-reviewed NO-GO -> 1 MAJOR + 3 MINOR fixed, push verified)."
     }
   ]
 }
