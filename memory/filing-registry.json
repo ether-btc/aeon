@@ -4236,6 +4236,12 @@
       "type": "note",
       "ref": "ether-btc/support-router",
       "desc": "S1 safety hole FIXED on operator default: detect_threat now covers lawyer/court as a UNION (not a replacement - BATTERY_THREAT_RE needs refund.*now while the guard matches bare refund, so a swap would have NARROWED escalation). Commit 4528a7e, 77/77 tests, 3 new tests proven load-bearing (fail against reverted widening), b18 now human_handoff under all 5 categories, battery score unchanged at 9/20. Wiki 1d3a8b4. Both commits still HELD LOCAL pending owner push decision."
+    },
+    {
+      "ts": "2026-10-12T22:32:53Z",
+      "type": "note",
+      "ref": "ether-btc/support-router",
+      "desc": "Per-item adjudication DONE (repo 2b11d44, wiki c8da6e2): of 11 disagreements, 4 STRUCTURALLY UNWINNABLE (rule label human is not in CATEGORY_PROMPT 5-label set), 3 ORACLE WRONG (B-777/A-12 plain order questions; b10 text itself says not-my-order-number while the model said other), 2 AMBIGUOUS (prompt defines no label semantics), <=2 model errors. Honest scores: 9/20=0.45 raw, reachable 9/16=0.56, model-attributable miss ceiling <=10%. Pre-registered floor >=15/20 unmeasurable as written; oracle repair precedes re-tuning."
     }
   ]
 }
