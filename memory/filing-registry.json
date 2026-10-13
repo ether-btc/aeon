@@ -3167,7 +3167,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-13T10:53:15Z",
+  "last_synced": "2026-10-13T11:40:17Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4272,6 +4272,12 @@
       "type": "note",
       "ref": "NousResearch/hermes-agent#135677",
       "desc": "Reworked in a Telegram session 2026-10-13 (3 commits 09:41-10:03Z: hermes_yaml instead of PyYAML import, local-env references stripped from shipped files, text-only newline gating so the binary write path works). Orchestrator re-verified its claims: e2e 25/25 PASS exit 0, unit 22/22 pass. Body already carries the Supersedes #106080 line, the import-level PyYAML claim, and the action_required note. No further change needed."
+    },
+    {
+      "ts": "2026-10-13T11:40:17Z",
+      "type": "note",
+      "ref": "local/hermes-agent-pr-queue-2026-10-13",
+      "desc": "Hermes-agent PR queue pre-work (no PRs opened; the 3-PR cap is saturated). TWO parked candidates brought to ready state. (1) fix/goal-continuation-displaykind: BLOCKER FOUND AND FIXED — the branch carried the house email z2vtxybr9q@snkmail.com on author AND committer, which maps to 0 GitHub accounts, so check-attribution would have rejected the PR and add_contributor.py could not repair it. Re-authored via filter-branch to 33156212+ether-btc@users.noreply.github.com; three proofs (tree 26b0c78d unchanged, both identity lines correct, parent 46d7718a52ff unchanged), commit count 1, force-with-lease, remote read back. Tip 1232fccb89 -> fefa19230919ed62af951ff08ac3f0448988585e. Backup backup/p4-pre-cla. Target suites 10 passed. Body swept house-neutral. (2) f8-dm-turn-timeout @ e4aec72218: identity already CLA-clean, 5 passed, body drafted + swept (it had no drafted body before). Both branches now pass the CI attribution gate. Packages + bodies at ~/projects/hermes-agent-pr-queue/. Merge remains a hard gate."
     }
   ]
 }
