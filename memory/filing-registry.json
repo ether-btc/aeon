@@ -3167,7 +3167,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-12T22:09:00Z",
+  "last_synced": "2026-10-13T10:53:15Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4254,6 +4254,24 @@
       "type": "note",
       "ref": "ether-btc/support-router",
       "desc": "Oracle repair + FRESH re-registration (operator-authorized, ling-implementer 4a971cd, orchestrator verified a51b6ba/046afc8, pushed 046afc8). Floor PRE-REGISTERED before any model output from labels only (do-nothing 6/16 -> floor 7/16), artifact evidence-floor-preregistration-20261013.txt. Rule fixes only, corpus immutable: order-id regex broadened + negation guard (3 labels changed b08/b09/b10, 17 unchanged), CATEGORY_PROMPT given routing-intent definitions (still 5 labels), human-labeled items excluded from denominator while I1 still evaluates them. Fresh recording 13/16 CLEARED floor 7 by 6. BATTERY STILL FAILS on I1(b11)/I2(b14). I1 is STRUCTURALLY UNSATISFIABLE (5-label prompt has no human, so a threat recorded as order always trips it) and production routing is safe: ZERO threat items reach a non-human route across the recording. I2/b14 is one genuine model error. I1 redefinition deliberately NOT applied - changing a gate after seeing its result is the post-hoc move the battery exists to prevent; left as an open owner decision. Caught+fixed a reproducibility hazard where re-running the prereg script printed 6 not the registered 7."
+    },
+    {
+      "ts": "2026-10-13T10:53:15Z",
+      "type": "note",
+      "ref": "NousResearch/hermes-agent#135841",
+      "desc": "Body corrected after re-running verification from a checkout OUTSIDE the Hermes home: 43 passed / 0 failed (control at merge-base 46d7718a52ff: 41 passed / 0 failed). The prior receipt's 1-failed claim was a home_io_guard artefact of a checkout nested under ~/.hermes, not a regression. Added the action_required CI note and the #26907 salvage credit. Comment issuecomment-6143937530. No code change."
+    },
+    {
+      "ts": "2026-10-13T10:53:15Z",
+      "type": "note",
+      "ref": "NousResearch/hermes-agent#128461",
+      "desc": "Body corrected: three fixes, no code change. (1) test receipt now base 7 failed/16 passed of 23 collected vs fix 7 failed/21 passed of 28 collected, introduced=empty accidentally-fixed=empty (was stale 11/16); (2) scope corrected to THREE files - it omitted hermes_cli/update_cmd.py where two sibling messages drop the same destructive tail; (3) five tests not four, plus a typo fix in the printed-remedy block. Added the Supersedes #128352 (closed unmerged) line and the action_required CI note. Comment issuecomment-6143937932. No code change."
+    },
+    {
+      "ts": "2026-10-13T10:53:15Z",
+      "type": "note",
+      "ref": "NousResearch/hermes-agent#135677",
+      "desc": "Reworked in a Telegram session 2026-10-13 (3 commits 09:41-10:03Z: hermes_yaml instead of PyYAML import, local-env references stripped from shipped files, text-only newline gating so the binary write path works). Orchestrator re-verified its claims: e2e 25/25 PASS exit 0, unit 22/22 pass. Body already carries the Supersedes #106080 line, the import-level PyYAML claim, and the action_required note. No further change needed."
     }
   ]
 }
