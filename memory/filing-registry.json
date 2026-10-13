@@ -4248,6 +4248,12 @@
       "type": "note",
       "ref": "ether-btc/support-router",
       "desc": "PUSHED to origin/master (69bd334..2b11d44), ls-remote verified SYNC OK, 0 unpushed. 3 commits: 931246a R1 reasoning-disabled fix, 4528a7e S1 detect_threat lawyer/court safety fix (union semantics + load-bearing tests), 2b11d44 adjudication docs. The earlier NO-GO blockers are both closed: S1 re-derived independently (60 threat x category x confidence combos, 0 non-human routes) and the failed gate is characterised as instrument/oracle failure with the floor code UNTOUCHED. Pre-push secret scan clean; fixture holds only id/reply/category. Private repo, no live service."
+    },
+    {
+      "ts": "2026-10-13T05:50:51Z",
+      "type": "note",
+      "ref": "ether-btc/support-router",
+      "desc": "Oracle repair + FRESH re-registration (operator-authorized, ling-implementer 4a971cd, orchestrator verified a51b6ba/046afc8, pushed 046afc8). Floor PRE-REGISTERED before any model output from labels only (do-nothing 6/16 -> floor 7/16), artifact evidence-floor-preregistration-20261013.txt. Rule fixes only, corpus immutable: order-id regex broadened + negation guard (3 labels changed b08/b09/b10, 17 unchanged), CATEGORY_PROMPT given routing-intent definitions (still 5 labels), human-labeled items excluded from denominator while I1 still evaluates them. Fresh recording 13/16 CLEARED floor 7 by 6. BATTERY STILL FAILS on I1(b11)/I2(b14). I1 is STRUCTURALLY UNSATISFIABLE (5-label prompt has no human, so a threat recorded as order always trips it) and production routing is safe: ZERO threat items reach a non-human route across the recording. I2/b14 is one genuine model error. I1 redefinition deliberately NOT applied - changing a gate after seeing its result is the post-hoc move the battery exists to prevent; left as an open owner decision. Caught+fixed a reproducibility hazard where re-running the prereg script printed 6 not the registered 7."
     }
   ]
 }
