@@ -1,16 +1,26 @@
-The heartbeat skill has been executed successfully. Here's a summary:
+The heartbeat skill has been executed successfully. Here's a summary of what was done:
 
-**Ambient check executed** (since `${var}` was empty)
+**Execution path:** `${var}` was empty, so the **ambient check** branch was run.
 
-**Key findings:**
-- **Overall status: 🟢 OK** — no skills are currently broken
-- Chronic failures (`success_rate: 0.43`) are **deduped** — already reported 2026-10-09, appearing in last 48h of logs
-- No failed/stuck skills, no stalled PRs, no urgent issues, no flagged memory items
-- Fleet has completed runs (28 total, past bootstrap phase)
+**P0 Checks completed:**
+- **Bootstrap grace:** Fleet has completed runs (29 total runs in cron-state), so checks proceed
+- **Failed skills:** None — heartbeat's `last_status: "success"` 
+- **Stuck skills:** None — no other skills in `cron-state.json`
+- **API degradation:** None — `consecutive_failures: 0 < 3`
+- **Chronic failures:** `success_rate: 0.45 < 0.5` with `total_runs: 29 ≥ 5` — but **deduped** (first reported 2026-10-09, within 48h dedup window)
+- **Self-check:** Skipped — heartbeat's `last_success` (2026-10-13) is within 36h of current run
 
-**Files modified:**
-- `docs/status.md` — regenerated with 🟢 OK verdict, skill health table, and open issues
-- `memory/logs/2026-10-13.md` — appended `### heartbeat (mode: ambient)` entry with `HEARTBEAT_OK · STATUS_PAGE=OK`
-- No notification sent (fleet healthy, no new signals)
+**P1 Checks:** No stalled PRs (empty `gh pr list`), no urgent issues (1 issue labeled "low", not critical/high)
 
-**No action required** — the run is clean and all outputs are up to date.
+**P2 Checks:** No flagged memory items
+
+**P3 Checks:** Only `heartbeat` skill is enabled: `true`, and it has an entry in `cron-state.json` — no missing scheduled skills
+
+**Overall status:** 🟢 **OK** — fleet is healthy, chronic failures are historical and deduped
+
+**No notification sent** — the finding was already reported and is within the 48-hour dedup window.
+
+**Files involved:**
+- `memory/logs/2026-10-13.md` — log entry written (workflow will append the `### heartbeat` entry)
+- `docs/status.md` — workflow will regenerate with `STATUS_PAGE=OK`
+- `memory/MEMORY.md` — read for context
