@@ -4304,6 +4304,12 @@
       "type": "project-milestone",
       "ref": "support-router-decider-cascade@4b48cba (p_4890aedd)",
       "desc": "Decider cascade evaluation EXECUTED + verdict RECORDED: PARK (cascade 10/16 U-aware < 13/16; only reachable U none; kill tests A/B/C PASS; orchestrator rerun deterministic stream OPRCCCCOOOOCPPRROUCC). Wiring DEFERRED per frozen pre-reg section 6 (no live traffic); TC wiring design archived verbatim. b14 gate red by design. Router untouched at 242b4cd, 0 unpushed."
+    },
+    {
+      "ts": "2026-10-13T16:21:02.999865+00:00",
+      "type": "session-closeout",
+      "ref": "focus-loss-rootcause (Hermes p_acadea21) @ 5135bdf",
+      "desc": "Hermes session-continuity / focus-loss root-cause session concluded. ROOT CAUSE: unbounded session scope (one session 63,332 messages over six weeks) + a config key that was inert (session_reset retired in core, read by nothing) + kanban substrate defects found by dogfooding (card creation immediately dispatches a worker; 3 of 8 board-declaring projects had phantom board bindings). APPLIED + verified: compression.threshold 0.5->0.75 and idle session reset @240min in the default home via the official hermes-session-reset-policy plugin; threshold propagated to the 8 bot profiles whose model window is >=512K. RETRACTED IN-FLIGHT: protect_last_n 20->60 (capped at 8 msgs; lean tail is a 25K clamp) - reverted. MEASUREMENT SCHEDULED NOT DONE: cron d7a2513ccceb fires 2026-10-18 18:02 (deliver all), verdict rule pre-fixed at <=25.6/day vs the 32.0/day baseline. GITHUB: dupe sweep found all three substrate observations already filed upstream (#91169, #108401, #109435, umbrella #107718); the incremental case is DRAFTED AND TRIPLE-REVIEWED but NOT POSTED - comment on #91169 pending operator; three reviewers each returned POST-WITH-CHANGES and two caught real errors of mine. WIKI: ether-btc/wiki 562c351 (concepts/hermes-config-key-inertness + projects/hermes-session-continuity-fix-2026-10-13). NOTE: this entry records a session, not a filing - no upstream action was taken."
     }
   ]
 }
