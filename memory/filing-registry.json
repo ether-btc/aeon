@@ -2048,14 +2048,15 @@
       "title": "feat(skills): append-only, machine-verifiable evidence ledger for SKILL.md",
       "state": "open",
       "status": "pending_review",
-      "next_action": "Await upstream review: CI action_required until a maintainer approves the fork PR run; nothing else outstanding",
+      "next_action": "await upstream maintainer review/CI approval",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-09T15:38:05Z",
-      "last_action": "2026-10-13T13:13:00Z",
+      "last_action": "2026-10-13",
       "url": "https://github.com/NousResearch/hermes-agent/pull/135677",
       "actions_taken": [
         "Filed: feat(skills): append-only, machine-verifiable evidence ledger for SKILL.md",
-        "2026-10-13: full rework for external-maintainer merge. Bot-team review rounds settled: BLOCKER (utils._atomic_write newline='' in binary mode -> ValueError) fixed as text-branch-only gate; MAJORs fixed: dead batch branch removed (write_approval.py), _STAGED_TOKENS switched to OrderedDict oldest-first eviction, batch evidence merge-fail fail-fast JSON error, host-specific references scrubbed from diff + body, process-agnostic replay trust (_trusted_replay() on _skill_gate_bypass) so approved batch evidence writes survive a process restart and stale flat replays are rejected (commit 774697e6cc). Schema-diet pinned test updated with a narrow documented exception + safety pin. Verified: 296 unit tests green (incl. 125 skill suites + 56 atomic-writer suites), e2e 25/25, ruff clean. Fast-forward push 3b084d5c1e..774697e6cc (no force-push). PR body replaced: template-conformant, leak-free, honest test accounting (full-suite collection left to CI: 509 pre-existing environmental errors, proven on a pristine base worktree)."
+        "2026-10-13: full rework for external-maintainer merge. Bot-team review rounds settled: BLOCKER (utils._atomic_write newline='' in binary mode -> ValueError) fixed as text-branch-only gate; MAJORs fixed: dead batch branch removed (write_approval.py), _STAGED_TOKENS switched to OrderedDict oldest-first eviction, batch evidence merge-fail fail-fast JSON error, host-specific references scrubbed from diff + body, process-agnostic replay trust (_trusted_replay() on _skill_gate_bypass) so approved batch evidence writes survive a process restart and stale flat replays are rejected (commit 774697e6cc). Schema-diet pinned test updated with a narrow documented exception + safety pin. Verified: 296 unit tests green (incl. 125 skill suites + 56 atomic-writer suites), e2e 25/25, ruff clean. Fast-forward push 3b084d5c1e..774697e6cc (no force-push). PR body replaced: template-conformant, leak-free, honest test accounting (full-suite collection left to CI: 509 pre-existing environmental errors, proven on a pristine base worktree).",
+        "2026-10-13 final: reviewer bot probe of rework tip 774697e6cc -> GO (0 blockers, 1 MINOR stale-docstrings, 3 INFORMATIONAL closed; non-vacuity of cross-process regression test empirically proven on parent tree). MINOR fixed as docstring-only follow-up commit 1dea37b707, fast-forward pushed, ls-remote verified, 102 tests green."
       ],
       "notes": "",
       "labels": [],
