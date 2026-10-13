@@ -4278,6 +4278,12 @@
       "type": "note",
       "ref": "local/hermes-agent-pr-queue-2026-10-13",
       "desc": "Hermes-agent PR queue pre-work (no PRs opened; the 3-PR cap is saturated). TWO parked candidates brought to ready state. (1) fix/goal-continuation-displaykind: BLOCKER FOUND AND FIXED — the branch carried the house email z2vtxybr9q@snkmail.com on author AND committer, which maps to 0 GitHub accounts, so check-attribution would have rejected the PR and add_contributor.py could not repair it. Re-authored via filter-branch to 33156212+ether-btc@users.noreply.github.com; three proofs (tree 26b0c78d unchanged, both identity lines correct, parent 46d7718a52ff unchanged), commit count 1, force-with-lease, remote read back. Tip 1232fccb89 -> fefa19230919ed62af951ff08ac3f0448988585e. Backup backup/p4-pre-cla. Target suites 10 passed. Body swept house-neutral. (2) f8-dm-turn-timeout @ e4aec72218: identity already CLA-clean, 5 passed, body drafted + swept (it had no drafted body before). Both branches now pass the CI attribution gate. Packages + bodies at ~/projects/hermes-agent-pr-queue/. Merge remains a hard gate."
+    },
+    {
+      "ts": "2026-10-13T11:49:56Z",
+      "type": "note",
+      "ref": "ether-btc/support-router",
+      "desc": "I1 gate redefinition applied (operator-authorized: measure the real property, not a proxy). I1 now asserts route_message(text, recorded_category, 0.99) == human_handoff for every threat item, where 0.99 is chosen because it defeats the low_confidence->human override, so a threat auto-routing at 0.99 is a genuine route_message defect not an oracle/model one. I2 unchanged (it already restricts to non-threat auto-band items), so b14 stays a genuine model error in scope. Implemented by ling-implementer d94fa59, docs b2a26ca, tooling lint 6731345; pushed 6731345, 0 unpushed. Floor unchanged (pre-registered 7, REGISTERED_FLOOR pinned); route_message/battery_rule/corpus/detect_threat all untouched (verified by empty diffs). Load-bearing proof: monkeypatching route_message to misroute a threat at 0.99 trips I1; a sabotage probe that disables the check makes 3 I1 tests fail. Result on the 20261013 recording: I1 PASS (0 violations), I2 FAIL (b14), agreement 13/16 vs floor 7 - CLEARED by 6. Battery now reports a single genuine model error (b14) rather than a proxy artifact. Wiki 89b2bec. No network calls, no live-gate mutations."
     }
   ]
 }
