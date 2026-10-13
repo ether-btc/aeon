@@ -4242,6 +4242,12 @@
       "type": "note",
       "ref": "ether-btc/support-router",
       "desc": "Per-item adjudication DONE (repo 2b11d44, wiki c8da6e2): of 11 disagreements, 4 STRUCTURALLY UNWINNABLE (rule label human is not in CATEGORY_PROMPT 5-label set), 3 ORACLE WRONG (B-777/A-12 plain order questions; b10 text itself says not-my-order-number while the model said other), 2 AMBIGUOUS (prompt defines no label semantics), <=2 model errors. Honest scores: 9/20=0.45 raw, reachable 9/16=0.56, model-attributable miss ceiling <=10%. Pre-registered floor >=15/20 unmeasurable as written; oracle repair precedes re-tuning."
+    },
+    {
+      "ts": "2026-10-13T04:48:16Z",
+      "type": "note",
+      "ref": "ether-btc/support-router",
+      "desc": "PUSHED to origin/master (69bd334..2b11d44), ls-remote verified SYNC OK, 0 unpushed. 3 commits: 931246a R1 reasoning-disabled fix, 4528a7e S1 detect_threat lawyer/court safety fix (union semantics + load-bearing tests), 2b11d44 adjudication docs. The earlier NO-GO blockers are both closed: S1 re-derived independently (60 threat x category x confidence combos, 0 non-human routes) and the failed gate is characterised as instrument/oracle failure with the floor code UNTOUCHED. Pre-push secret scan clean; fixture holds only id/reply/category. Private repo, no live service."
     }
   ]
 }
