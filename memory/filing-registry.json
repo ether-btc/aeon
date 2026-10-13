@@ -4298,6 +4298,12 @@
       "type": "note",
       "ref": "ether-btc/support-router",
       "desc": "b14 accepted as DOCUMENTED DEFECT (bot-team debate: m1-reviewer evidence-rigor + technical-cofounder build-reality, arbiter VERDICT c governing; operator refocused the session onto the article-architecture aim and explicitly kept the designated-model question out of scope). Two recordings show two DIFFERENT wrong answers (20261012 'order' -> 20261013 'other') = stable ambiguity; a third re-roll is optional stopping on a pre-registered gate. Implementation is DISCLOSURE-ONLY: BATTERY_KNOWN_DOCUMENTED_FAILURES (67d52d1) annotates the I2 line ('b14 [KNOWN DOCUMENTED]'); verdict banner + exit 1 byte-identical; the map can never suppress/weight/re-score - 83/83 tests pin that (known-id still FAIL, unknown-id still FAIL, no annotation when clean); empty diffs on all 8 protected symbols/fixtures (floor 7, battery_rule, route_message, detect_threat, CATEGORY_PROMPT, corpus, both recordings). Pushed origin/master @ 67d52d1, 0 unpushed; wiki 727ecc1 (battery-page Addendum 3 + log entry). Revisit triggers written into STATUS.md: (a) >=2 I2 violations in any future recording, (b) production evidence of a payment-question misroute, (c) any new pre-registered evaluation - the old gate is never re-run against a changed system. Co-founder dissent (one capped re-roll -> conditional prompt disambiguation under fresh pre-registration) recorded and overridden; its conditions absorbed. Scope guard stated verbatim: battery-only decision, NOT a model-designation decision. No network calls, no live-gate mutation, no secrets touched."
+    },
+    {
+      "ts": "2026-10-13T14:25:14.060401+00:00",
+      "type": "project-milestone",
+      "ref": "support-router-decider-cascade@4b48cba (p_4890aedd)",
+      "desc": "Decider cascade evaluation EXECUTED + verdict RECORDED: PARK (cascade 10/16 U-aware < 13/16; only reachable U none; kill tests A/B/C PASS; orchestrator rerun deterministic stream OPRCCCCOOOOCPPRROUCC). Wiring DEFERRED per frozen pre-reg section 6 (no live traffic); TC wiring design archived verbatim. b14 gate red by design. Router untouched at 242b4cd, 0 unpushed."
     }
   ]
 }
