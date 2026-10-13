@@ -34,10 +34,10 @@
     },
     {
       "actions_taken": [
-        "Round 1-3 (a0c48e7): SHA-pin fix, env-block base ref, NUL-delimited bash array with `--` separator, CLA re-signed (agent identity → ether-btc noreply)",
-        "Round 4 (f9a2c96): process substitution was silently swallowing git diff exit codes — replaced with temp file + trap pattern so set -e observes the failure",
+        "Round 1-3 (a0c48e7): SHA-pin fix, env-block base ref, NUL-delimited bash array with `--` separator, CLA re-signed (agent identity \u2192 ether-btc noreply)",
+        "Round 4 (f9a2c96): process substitution was silently swallowing git diff exit codes \u2014 replaced with temp file + trap pattern so set -e observes the failure",
         "PR comment posted (issue 5108625705): round-4 resolution + CI snapshot + flag pre-existing mcp-related test failures on main",
-        "Round 5 re-review (run f9dafa6e): no actionable comments — PR clean",
+        "Round 5 re-review (run f9dafa6e): no actionable comments \u2014 PR clean",
         "PR marked MERGEABLE, awaiting maintainer merge"
       ],
       "evidence_tier": "tier_2",
@@ -47,7 +47,7 @@
       "labels": [],
       "last_action": "2026-07-28T23:50:00Z",
       "next_action": "Await maintainer merge (round 5 clean, MERGEABLE)",
-      "notes": "Widen Mnemosyne CI Ruff lint to F/RUF022, PR-scoped to changed files (excludes ~423 historical violations on main). Pre-existing mcp 1.x→2.x test failures on test (3.11) flagged but out of scope.",
+      "notes": "Widen Mnemosyne CI Ruff lint to F/RUF022, PR-scoped to changed files (excludes ~423 historical violations on main). Pre-existing mcp 1.x\u21922.x test failures on test (3.11) flagged but out of scope.",
       "number": 568,
       "repo": "mnemosyne-oss/mnemosyne",
       "state": "closed",
@@ -192,7 +192,7 @@
       "repo": "CortexReach/memory-lancedb-pro",
       "state": "closed",
       "status": "merged",
-      "title": "fix: preserve early conversation context — slice(0, maxChars) not slice(-maxChars)",
+      "title": "fix: preserve early conversation context \u2014 slice(0, maxChars) not slice(-maxChars)",
       "type": "pr",
       "url": "https://github.com/CortexReach/memory-lancedb-pro/pull/738"
     },
@@ -274,7 +274,7 @@
       "repo": "NousResearch/hermes-agent",
       "state": "closed",
       "status": "closed",
-      "title": "[Decision] awesome-hermes-ecosystem repo location — Option B chosen",
+      "title": "[Decision] awesome-hermes-ecosystem repo location \u2014 Option B chosen",
       "type": "pr",
       "url": "https://github.com/NousResearch/hermes-agent/issues/16145"
     },
@@ -296,7 +296,7 @@
       "repo": "NousResearch/hermes-agent",
       "state": "closed",
       "status": "closed",
-      "title": "[Decision] awesome-hermes-ecosystem naming — voted and confirmed",
+      "title": "[Decision] awesome-hermes-ecosystem naming \u2014 voted and confirmed",
       "type": "pr",
       "url": "https://github.com/NousResearch/hermes-agent/issues/16146"
     },
@@ -365,7 +365,7 @@
       "repo": "NousResearch/hermes-agent",
       "state": "closed",
       "status": "merged",
-      "title": "feat: auto-context retrieval — automatic session search + system message injection",
+      "title": "feat: auto-context retrieval \u2014 automatic session search + system message injection",
       "type": "pr",
       "url": "https://github.com/NousResearch/hermes-agent/pull/19200"
     },
@@ -414,7 +414,7 @@
     },
     {
       "actions_taken": [
-        "Note: MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s→7s startup improvement."
+        "Note: MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s\u21927s startup improvement."
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-03T00:00:00Z",
@@ -423,7 +423,7 @@
       "labels": [],
       "last_action": "2026-05-03T00:00:00Z",
       "next_action": "Await upstream merge",
-      "notes": "MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s→7s startup improvement.",
+      "notes": "MED-HIGH OPERATIONAL VALUE. 6 files, +268/-30. 45s\u21927s startup improvement.",
       "number": 19326,
       "repo": "NousResearch/hermes-agent",
       "state": "closed",
@@ -632,7 +632,7 @@
     },
     {
       "actions_taken": [
-        "Filed: fix: security audit — config injection, ReDoS, confidence consistency, bounds"
+        "Filed: fix: security audit \u2014 config injection, ReDoS, confidence consistency, bounds"
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-09T21:16:59Z",
@@ -646,7 +646,7 @@
       "repo": "ether-btc/openclaw-correlation-plugin",
       "state": "closed",
       "status": "merged",
-      "title": "fix: security audit — config injection, ReDoS, confidence consistency, bounds",
+      "title": "fix: security audit \u2014 config injection, ReDoS, confidence consistency, bounds",
       "type": "pr",
       "url": "https://github.com/ether-btc/openclaw-correlation-plugin/pull/4"
     },
@@ -672,7 +672,7 @@
     },
     {
       "actions_taken": [
-        "Filed: refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md"
+        "Filed: refactor: adopt Agent Skills spec \u2014 docs\u2192references, spec-compliant SKILL.md"
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-09T21:17:01Z",
@@ -686,7 +686,7 @@
       "repo": "ether-btc/morpheus-proxy-router",
       "state": "closed",
       "status": "merged",
-      "title": "refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md",
+      "title": "refactor: adopt Agent Skills spec \u2014 docs\u2192references, spec-compliant SKILL.md",
       "type": "pr",
       "url": "https://github.com/ether-btc/morpheus-proxy-router/pull/4"
     },
@@ -1070,7 +1070,7 @@
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-05-13T15:04:00Z",
-      "next_action": "None — fix belongs in Hermes gateway, not LCM",
+      "next_action": "None \u2014 fix belongs in Hermes gateway, not LCM",
       "notes": "Tosko4 review correct on both points: (1) derivation in _status_text is display-only, never feeds lifecycle binding at on_session_start; (2) platform IDs (chat_id, guild_id) don't exist in runtime_identity. Root cause: gateway must compute conversation_id from its own metadata and pass it to LCM.",
       "number": 167,
       "repo": "stephenschoettler/hermes-lcm",
@@ -1082,7 +1082,7 @@
     },
     {
       "actions_taken": [
-        "Filed: feat(plugins): CompressionPlugin — replace hardcoded env-var compression in beam.py"
+        "Filed: feat(plugins): CompressionPlugin \u2014 replace hardcoded env-var compression in beam.py"
       ],
       "evidence_tier": "tier_3",
       "filed_at": "2026-05-14T06:01:36Z",
@@ -1096,7 +1096,7 @@
       "repo": "AxDSan/mnemosyne",
       "state": "closed",
       "status": "merged",
-      "title": "feat(plugins): CompressionPlugin — replace hardcoded env-var compression in beam.py",
+      "title": "feat(plugins): CompressionPlugin \u2014 replace hardcoded env-var compression in beam.py",
       "type": "pr",
       "url": "https://github.com/AxDSan/mnemosyne/pull/129"
     },
@@ -1108,7 +1108,7 @@
       "is_upstream": false,
       "labels": [],
       "last_action": "2026-05-22T18:30:00Z",
-      "next_action": "Config-only — does NOT address normalization ordering or rollover_session TypeError blockers from stephenschoettler/hermes-lcm#178",
+      "next_action": "Config-only \u2014 does NOT address normalization ordering or rollover_session TypeError blockers from stephenschoettler/hermes-lcm#178",
       "notes": "Config defaults only. Does not fix engine.py normalization ordering bug or rollover_session TypeError.",
       "number": 1,
       "repo": "ether-btc/hermes-lcm",
@@ -1137,11 +1137,11 @@
         "2026-06-06: Posted follow-up PR comment linking each commit to its review item",
         "2026-06-06: Aeon entry updated (this entry)",
         "2026-06-06: fac9eec chore(fmt) cargo fmt --all",
-        "2026-06-06: 5c6b397 fix(lint) manual_checked_ops → checked_div",
-        "2026-06-06: dc26568 fix(lint) useless_format → to_string",
-        "2026-06-06: a1e685d fix(test) concurrent_cas threshold 50ms → 500ms (Windows flake)",
-        "2026-06-06: 8725f41 fix(ci) docker-build matrix arch dim (tags reject /) — MY BUG",
-        "2026-06-06: 5fd8563 fix(dockerfile) rust image 1.83 → 1-slim-bookworm",
+        "2026-06-06: 5c6b397 fix(lint) manual_checked_ops \u2192 checked_div",
+        "2026-06-06: dc26568 fix(lint) useless_format \u2192 to_string",
+        "2026-06-06: a1e685d fix(test) concurrent_cas threshold 50ms \u2192 500ms (Windows flake)",
+        "2026-06-06: 8725f41 fix(ci) docker-build matrix arch dim (tags reject /) \u2014 MY BUG",
+        "2026-06-06: 5fd8563 fix(dockerfile) rust image 1.83 \u2192 1-slim-bookworm",
         "2026-06-06: 3029702 fix(dockerfile) clean .fingerprint/ after pre-warm (not just deps/)",
         "2026-06-06: All 7 commits pushed, CI run 27063788376 started",
         "2026-06-06: Aeon entry updated (this entry)"
@@ -1165,7 +1165,7 @@
       "local_branch": "feature/platform-agnosticism",
       "local_commit_sha": "edfc2c72",
       "next_action": "MERGED into origin/master at 2026-06-07T19:43:10Z. No further action.",
-      "notes": "MERGED into origin/master at 2026-06-07T19:43:10Z. Pre-merge CI: 13/13 jobs PASSED including macOS, Windows, Linux + cross-compile musl + Docker amd64/arm64. Cross-platform fixes: SIGTERM handler (tokio::signal::ctrl_c), PATH walk for executable lookup, PermissionsExt gating, CI matrix (3 OSes), multi-stage Dockerfile, distroless runtime. Note: GH API reports same mergeCommit as PR #9 (62d82f5) — likely an API quirk; actual PR #8 changes are in master via subsequent merges (PR #7, PR #11).",
+      "notes": "MERGED into origin/master at 2026-06-07T19:43:10Z. Pre-merge CI: 13/13 jobs PASSED including macOS, Windows, Linux + cross-compile musl + Docker amd64/arm64. Cross-platform fixes: SIGTERM handler (tokio::signal::ctrl_c), PATH walk for executable lookup, PermissionsExt gating, CI matrix (3 OSes), multi-stage Dockerfile, distroless runtime. Note: GH API reports same mergeCommit as PR #9 (62d82f5) \u2014 likely an API quirk; actual PR #8 changes are in master via subsequent merges (PR #7, PR #11).",
       "number": 8,
       "repo": "ether-btc/stealth-core",
       "state": "closed",
@@ -1177,9 +1177,9 @@
     {
       "actions_taken": [
         "2026-06-06: Branched fix/shrunk-pp-sp from master@1084aa6 (v0.4.3)",
-        "2026-06-06: b2c7671: fix(data) PP→SP shrunk→shrank (out-of-scope audit finding)",
-        "2026-06-06: 6a795fb: fix(data) SP→PRES shrunk→shrank (parallel data error)",
-        "2026-06-06: Self-review caught stale 'Total: 220' at line 348 — d39480b: fix(docs)",
+        "2026-06-06: b2c7671: fix(data) PP\u2192SP shrunk\u2192shrank (out-of-scope audit finding)",
+        "2026-06-06: 6a795fb: fix(data) SP\u2192PRES shrunk\u2192shrank (parallel data error)",
+        "2026-06-06: Self-review caught stale 'Total: 220' at line 348 \u2014 d39480b: fix(docs)",
         "2026-06-06: Pushed to origin: git push -u origin fix/shrunk-pp-sp",
         "2026-06-06: PR #11 opened via gh pr create (3 commits, full description)",
         "2026-06-06: Aeon entry filed (this entry)"
@@ -1198,12 +1198,12 @@
       "local_branch": "fix/shrunk-pp-sp",
       "local_commit_sha": "d39480b6aeddc737b0e60b72085b18de06f7755e",
       "next_action": "Wait for maintainer review and merge. Tags: v0.4.4 (post-merge, paired with PR #10's audit fixes).",
-      "notes": "Out-of-scope follow-up to the 2026-06-05 3-cycle audit (PR #10). Found two parallel data errors in verb_maps.rs:\n\n1. Line 182: PAST_PARTICIPLE_TO_SIMPLE_PAST had (\"shrunk\", \"shrunk\") — a no-change self-map. Grammatically wrong: 'shrunk' is the PP, the simple past is 'shrank'. Flagged as out-of-scope finding #1 in the 2026-06-05 AUDIT.md.\n\n2. Line 455: SIMPLE_PAST_TO_PRESENT had (\"shrunk\", \"shrink\") — but 'shrunk' is a PP, not a SP. The SP is 'shrank'. The original entry produced the right answer (\"shrink\") for the wrong reason (lookup of a PP form) and silently masked the missing 'shrank' entry. Discovered while doing fix #1 — parallel data error.\n\n3. (Bonus) Stale header comments updated: 192/220 → 306/357 (verified by awk|grep -c). Self-review caught one I missed (line 348 in a third commit).\n\nPipeline round-trip after both fixes:\n  shrunk (PP) → shrank (SP) → shrink (present)\n  'The package was shrunk by the cold' → 'cold shrink package' (passive→active→present)\n  'I shrank the package' → 'I shrink package' (past→present)\n\n3 commits:\n  b2c7671: fix(data): PP→SP \"shrunk\" → \"shrank\" (out-of-scope audit finding #1)\n  6a795fb: fix(data): SP→PRES \"shrunk\" → \"shrank\" (parallel data error)\n  d39480b: fix(docs): correct SIMPLE_PAST_TO_PRESENT total count (220 → 357)\n\nTests:\n  - test_shrunk_pp_maps_to_shrank (verb_maps.rs: data-level, both positive + negative assertion)\n  - test_shrank_sp_maps_to_shrink (verb_maps.rs: data-level, asserts 'shrunk' is NOT in SP map)\n  - Extended test_verb_map_symmetry to include ('shrunk', 'shrank', 'shrink')\n  - test_transform_active_voice_shrunk_diagnostic (lib.rs: end-to-end, 'was shrunk by' → 'shrank')\n\nValidation: 34/34 Rust tests, 127/127 Python tests, clippy/fmt clean.\n\nBackwards compat: anyone relying on the bug gets 'shrank' (correct) instead of 'shrunk' (was no-change) — strictly a bug fix.",
+      "notes": "Out-of-scope follow-up to the 2026-06-05 3-cycle audit (PR #10). Found two parallel data errors in verb_maps.rs:\n\n1. Line 182: PAST_PARTICIPLE_TO_SIMPLE_PAST had (\"shrunk\", \"shrunk\") \u2014 a no-change self-map. Grammatically wrong: 'shrunk' is the PP, the simple past is 'shrank'. Flagged as out-of-scope finding #1 in the 2026-06-05 AUDIT.md.\n\n2. Line 455: SIMPLE_PAST_TO_PRESENT had (\"shrunk\", \"shrink\") \u2014 but 'shrunk' is a PP, not a SP. The SP is 'shrank'. The original entry produced the right answer (\"shrink\") for the wrong reason (lookup of a PP form) and silently masked the missing 'shrank' entry. Discovered while doing fix #1 \u2014 parallel data error.\n\n3. (Bonus) Stale header comments updated: 192/220 \u2192 306/357 (verified by awk|grep -c). Self-review caught one I missed (line 348 in a third commit).\n\nPipeline round-trip after both fixes:\n  shrunk (PP) \u2192 shrank (SP) \u2192 shrink (present)\n  'The package was shrunk by the cold' \u2192 'cold shrink package' (passive\u2192active\u2192present)\n  'I shrank the package' \u2192 'I shrink package' (past\u2192present)\n\n3 commits:\n  b2c7671: fix(data): PP\u2192SP \"shrunk\" \u2192 \"shrank\" (out-of-scope audit finding #1)\n  6a795fb: fix(data): SP\u2192PRES \"shrunk\" \u2192 \"shrank\" (parallel data error)\n  d39480b: fix(docs): correct SIMPLE_PAST_TO_PRESENT total count (220 \u2192 357)\n\nTests:\n  - test_shrunk_pp_maps_to_shrank (verb_maps.rs: data-level, both positive + negative assertion)\n  - test_shrank_sp_maps_to_shrink (verb_maps.rs: data-level, asserts 'shrunk' is NOT in SP map)\n  - Extended test_verb_map_symmetry to include ('shrunk', 'shrank', 'shrink')\n  - test_transform_active_voice_shrunk_diagnostic (lib.rs: end-to-end, 'was shrunk by' \u2192 'shrank')\n\nValidation: 34/34 Rust tests, 127/127 Python tests, clippy/fmt clean.\n\nBackwards compat: anyone relying on the bug gets 'shrank' (correct) instead of 'shrunk' (was no-change) \u2014 strictly a bug fix.",
       "number": 11,
       "repo": "ether-btc/rust-cave-001",
       "state": "closed",
       "status": "merged",
-      "title": "fix(data): PP→SP 'shrunk'→'shrank' + SP→PRES 'shrunk'→'shrank' (parallel data errors)",
+      "title": "fix(data): PP\u2192SP 'shrunk'\u2192'shrank' + SP\u2192PRES 'shrunk'\u2192'shrank' (parallel data errors)",
       "type": "pr",
       "url": "https://github.com/ether-btc/rust-cave-001/pull/11"
     },
@@ -1226,7 +1226,7 @@
       "last_action": "2026-06-06T13:00:00Z",
       "local_branch": "chore/gitignore-uv-lock",
       "local_commit_sha": "2e06d0c6af96823224eafe544e4bf15854247013",
-      "next_action": "Trivial merge — single-line gitignore change with explanation comment. Will auto-merge once a maintainer reviews.",
+      "next_action": "Trivial merge \u2014 single-line gitignore change with explanation comment. Will auto-merge once a maintainer reviews.",
       "notes": "The 134-byte uv.lock was a leftover from a 2026-06-05 `uv run pytest` invocation during the audit session. Standard practice for Python libraries (not applications) is to gitignore uv.lock because:\n\n- The editable install of rust-cave-001 produces a minimal lockfile that ties to the local Python version and absolute path of the checkout\n- Committing it would create spurious churn for every contributor\n- Library consumers don't benefit from this repo's lockfile (they have their own)\n\nThis is on a separate branch (chore/gitignore-uv-lock) to keep the main audit PR (#10) and the data-fix PR (#11) focused on their respective scopes. Per-claim atomicity beats bundling trivial changes with substantive ones.\n\n1 commit:\n  2e06d0c: chore: gitignore uv.lock (lockfile is per-machine for libraries)\n\nValidation: cargo test --lib still 34/34, clippy/fmt clean, uv run pytest 127/127.",
       "number": 12,
       "repo": "ether-btc/rust-cave-001",
@@ -1250,7 +1250,7 @@
       "local_branch": "fix/orphan-test-wiring",
       "local_commit_sha": "dd3cec21",
       "next_action": "MERGED into origin/master at 2026-06-07T19:43:09Z. All audit gates green. Issue #10 closed. No further action.",
-      "notes": "MERGED into origin/master at 2026-06-07T19:43:09Z (merge commit dd3cec21, by user via GitHub web UI).\n\nPR contained 3 commits:\n- 93b2bad: wire up 11 orphan tests in src/engine/validate_url_tests.rs (latent bug fix)\n- e2a82fc: 5 empirical probe tests in src/config/mod.rs::probe_tests\n- 87b3bcc: SECTION-LEVEL REPLACEMENT FIX for issue #10 (closes #10)\n\nLocal state cleanup: fix/orphan-test-wiring branch deleted (work is in master); 2 stale remote-tracking refs pruned (feature/request-caching-layer, fix/config-merge-coverage).\n\nFinal test count: 53 passed / 0 failed / 0 ignored. +23 tests vs pre-audit (30 → 53). 0 regressions.\n\nSenior-dev self-review posted as PR comment (https://github.com/ether-btc/stealth-core/pull/11#issuecomment-4643692089). GitHub blocks self-approval at API level, but the user delegated merge authority and merged via web UI.\n\nWiki: sessions/2026-06-07-post-merge-audit/ (10 files, 5 audit passes)",
+      "notes": "MERGED into origin/master at 2026-06-07T19:43:09Z (merge commit dd3cec21, by user via GitHub web UI).\n\nPR contained 3 commits:\n- 93b2bad: wire up 11 orphan tests in src/engine/validate_url_tests.rs (latent bug fix)\n- e2a82fc: 5 empirical probe tests in src/config/mod.rs::probe_tests\n- 87b3bcc: SECTION-LEVEL REPLACEMENT FIX for issue #10 (closes #10)\n\nLocal state cleanup: fix/orphan-test-wiring branch deleted (work is in master); 2 stale remote-tracking refs pruned (feature/request-caching-layer, fix/config-merge-coverage).\n\nFinal test count: 53 passed / 0 failed / 0 ignored. +23 tests vs pre-audit (30 \u2192 53). 0 regressions.\n\nSenior-dev self-review posted as PR comment (https://github.com/ether-btc/stealth-core/pull/11#issuecomment-4643692089). GitHub blocks self-approval at API level, but the user delegated merge authority and merged via web UI.\n\nWiki: sessions/2026-06-07-post-merge-audit/ (10 files, 5 audit passes)",
       "number": 11,
       "repo": "ether-btc/stealth-core",
       "state": "closed",
@@ -1279,7 +1279,7 @@
       "last_action": "2026-06-07T14:00:00Z",
       "local_commit_sha": "afc27db",
       "next_action": "Await review and merge into feature/platform-agnosticism. Once merged, rebase PR #8 onto updated base.",
-      "notes": "3 pre-existing config bugs fixed:\n- BUG-1: obscura YAML block silently dropped (PartialAppConfig parsed it but load_config() never called merge_obscura).\n- BUG-2: fingerprint block missing from PartialAppConfig entirely.\n- BUG-3 (caught by new test): duplicate FingerprintConfig structs with mismatched serde defaults for sidecar_mode (config:: uses #[serde(default)] giving '', fingerprint:: uses #[serde(default = 'default_sidecar_mode')] giving 'http'). Engine copies fields between them, so omitted sidecar_mode in YAML silently produced empty runtime sidecar mode. Fixed by adding default_fingerprint_sidecar_mode() in config/mod.rs and a cross-reference comment.\n\nNew functionality:\n- 6 new env-var overrides (STEALTH_CORE_OBSCURA_*, STEALTH_CORE_FINGERPRINT_*)\n- New merge_obscura and merge_fingerprint use section-level replacement (clone_from) — bool fields make field-level sentinel merging ambiguous\n- 8 new regression tests (7 for new behavior + 1 cross-module contract test pinning the duplicate-struct default)\n- Test infrastructure: process-global ENV_LOCK mutex + unique_tmp_config() helper (avoids tempfile crate)\n\nPre-existing bool-sentinel bug in 7 other merge functions (server, stealth, proxy, rate_limit, cache, prometheus) — section-replacement would fix it but is invasive. Filed as follow-up issue #10.\n\n3-cycle audit: 4 self-review findings (S1-S4), integration consistency check, independent reviewer (self-conducted after subagent timeout). 29/29 lib tests pass. 0 new clippy warnings. cargo fmt --check clean.\n\nPR base is feature/platform-agnosticism (NOT master) to avoid duplicating the cross-platform commit from PR #8. CI workflow only triggers on master/main, so this PR will not run CI automatically — relying on local validation.",
+      "notes": "3 pre-existing config bugs fixed:\n- BUG-1: obscura YAML block silently dropped (PartialAppConfig parsed it but load_config() never called merge_obscura).\n- BUG-2: fingerprint block missing from PartialAppConfig entirely.\n- BUG-3 (caught by new test): duplicate FingerprintConfig structs with mismatched serde defaults for sidecar_mode (config:: uses #[serde(default)] giving '', fingerprint:: uses #[serde(default = 'default_sidecar_mode')] giving 'http'). Engine copies fields between them, so omitted sidecar_mode in YAML silently produced empty runtime sidecar mode. Fixed by adding default_fingerprint_sidecar_mode() in config/mod.rs and a cross-reference comment.\n\nNew functionality:\n- 6 new env-var overrides (STEALTH_CORE_OBSCURA_*, STEALTH_CORE_FINGERPRINT_*)\n- New merge_obscura and merge_fingerprint use section-level replacement (clone_from) \u2014 bool fields make field-level sentinel merging ambiguous\n- 8 new regression tests (7 for new behavior + 1 cross-module contract test pinning the duplicate-struct default)\n- Test infrastructure: process-global ENV_LOCK mutex + unique_tmp_config() helper (avoids tempfile crate)\n\nPre-existing bool-sentinel bug in 7 other merge functions (server, stealth, proxy, rate_limit, cache, prometheus) \u2014 section-replacement would fix it but is invasive. Filed as follow-up issue #10.\n\n3-cycle audit: 4 self-review findings (S1-S4), integration consistency check, independent reviewer (self-conducted after subagent timeout). 29/29 lib tests pass. 0 new clippy warnings. cargo fmt --check clean.\n\nPR base is feature/platform-agnosticism (NOT master) to avoid duplicating the cross-platform commit from PR #8. CI workflow only triggers on master/main, so this PR will not run CI automatically \u2014 relying on local validation.",
       "number": 9,
       "repo": "ether-btc/stealth-core",
       "state": "closed",
@@ -1295,7 +1295,7 @@
       "last_action": "2026-06-07T20:43:31Z",
       "local_commit_sha": "dbb1e1fe",
       "next_action": "MERGED into master. Squash commit dbb1e1fe. All audit gates green.",
-      "notes": "Was CONFLICTING with master (4 commits behind). Resolved by taking audit's I-3 removal of 34 PP forms from SIMPLE_PAST_TO_PRESENT + re-adding 'shrank' in the alphabetically-correct v0.3.0 section. Preserved both PR #11's tests and the audit's tests (5 new tests total, 38 Rust + 127 Python pass).\n\nCycle 4 found I-8 (acronym guard broken with trailing comma) — added in commit 74a3016. The 'PRODUCTION-READY' verdict after cycle 3 was premature.\n\nAll audit gates green on the merged result: cargo test --lib (38 pass), clippy -D warnings clean, fmt clean, pytest 127 pass, CI: audit/test pass.",
+      "notes": "Was CONFLICTING with master (4 commits behind). Resolved by taking audit's I-3 removal of 34 PP forms from SIMPLE_PAST_TO_PRESENT + re-adding 'shrank' in the alphabetically-correct v0.3.0 section. Preserved both PR #11's tests and the audit's tests (5 new tests total, 38 Rust + 127 Python pass).\n\nCycle 4 found I-8 (acronym guard broken with trailing comma) \u2014 added in commit 74a3016. The 'PRODUCTION-READY' verdict after cycle 3 was premature.\n\nAll audit gates green on the merged result: cargo test --lib (38 pass), clippy -D warnings clean, fmt clean, pytest 127 pass, CI: audit/test pass.",
       "state": "closed",
       "title": "audit: 3-cycle code audit (I-2/I-3/I-4/I-6/I-7 fixed; I-1 false positive reverted)",
       "repo": "ether-btc/rust-cave-001",
@@ -1311,7 +1311,7 @@
       "last_action": "2026-06-08T06:10:56Z",
       "local_commit_sha": "5d20c16f",
       "next_action": "MERGED into master at 2026-06-08T06:10:56Z (squash commit 5d20c16f). PR branch deleted. Local fix/env-lock-deduplication branch deleted. Master HEAD = 5d20c16f. 55/55 lib tests pass locally. Post-merge CI run 27119401268 in progress.",
-      "notes": "FIX for the dual-ENV_LOCK mutex bug that caused CI runs #27101158706 and #27102827375 to fail.\n\nROOT CAUSE: `mod tests` (line 567) and `mod probe_tests` (line 1228) each declared their own `static ENV_LOCK: Mutex<()>` on the same day (PR #11, 2026-06-07). The two locks did not coordinate. With `cargo test -- --test-threads=4` (CI default), cargo scheduled both modules' tests in parallel, and a `clear_all_config_env_vars()` in one module could wipe env vars another module's test had just set.\n\nTWO INDEPENDENT CI FAILURES, SAME BUG:\n  - Run #27101158706: probe_obscura_yaml_omits_binary_path saw a leaked STEALTH_CORE_OBSCURA_BINARY_PATH from a parallel test.\n  - Run #27102827375: load_config_env_overrides_fingerprint found STEALTH_CORE_FINGERPRINT_ENABLED cleared by a parallel probe test.\n\nFIX: One shared `pub(super) static ENV_LOCK` in new `#[cfg(test)] mod test_support` block. Both modules import via `use super::test_support::ENV_LOCK;`. The `use ...;` import also acts as a regression guard — any future re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n\nVALIDATION: 20/20 local runs of `cargo test --lib -- --test-threads=4` pass (was 5/10 pre-fix). 55 lib tests pass (53 original + 2 new). All 3 Test Suite jobs in CI (ubuntu/macos/windows) pass.\n\nNEW TESTS:\n  - env_lock_serializes_parallel_env_var_writers: 8 workers × 50 iterations each, 50µs sleep in critical section, verifies env var persists.\n  - env_lock_is_provided_by_test_support: compile-time regression guard against re-introducing a duplicate static.\n\nPOST-MERGE STATE (2026-06-08T06:10:56Z):\n- Squash-merged into master as 5d20c16f\n- PR branch fix/env-lock-deduplication auto-deleted on origin\n- Local branch deleted with `git branch -D fix/env-lock-deduplication`\n- Master HEAD: 5d20c16f\n- 55/55 lib tests pass on master (cargo test --lib -- --test-threads=4)\n- Triggered fresh CI on master (run 27119401268) via empty commit to validate post-merge stability.\n- 0 open PRs, 0 open issues in stealth-core.\n\nThe two historical CI failures (#27101158706 and #27102827375) can no longer recur because:\n  1. The dual-ENV_LOCK mutex bug is fixed.\n  2. The `use super::test_support::ENV_LOCK;` import in both test submodules acts as a compile-time guard: any re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n  3. The new `env_lock_serializes_parallel_env_var_writers` test stress-tests the lock with 8 workers × 50 iterations.\n  4. The new `env_lock_is_provided_by_test_support` test verifies the invariant that the lock comes from the shared module.\n\nPOST-MERGE FOLLOW-UP (commit 8af197c, 2026-06-08):\n- Subagent review caught that the stress test doc comment overclaimed what the test reproduces.\n- Tightened the doc to be honest: the test verifies the SHARED lock works, but the original cross-module bug is actually defended by the COMPILE-TIME GUARD (E0255 name collision on duplicate static declarations).\n- No code change; just doc clarity. clippy + fmt + 55/55 tests still pass.",
+      "notes": "FIX for the dual-ENV_LOCK mutex bug that caused CI runs #27101158706 and #27102827375 to fail.\n\nROOT CAUSE: `mod tests` (line 567) and `mod probe_tests` (line 1228) each declared their own `static ENV_LOCK: Mutex<()>` on the same day (PR #11, 2026-06-07). The two locks did not coordinate. With `cargo test -- --test-threads=4` (CI default), cargo scheduled both modules' tests in parallel, and a `clear_all_config_env_vars()` in one module could wipe env vars another module's test had just set.\n\nTWO INDEPENDENT CI FAILURES, SAME BUG:\n  - Run #27101158706: probe_obscura_yaml_omits_binary_path saw a leaked STEALTH_CORE_OBSCURA_BINARY_PATH from a parallel test.\n  - Run #27102827375: load_config_env_overrides_fingerprint found STEALTH_CORE_FINGERPRINT_ENABLED cleared by a parallel probe test.\n\nFIX: One shared `pub(super) static ENV_LOCK` in new `#[cfg(test)] mod test_support` block. Both modules import via `use super::test_support::ENV_LOCK;`. The `use ...;` import also acts as a regression guard \u2014 any future re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n\nVALIDATION: 20/20 local runs of `cargo test --lib -- --test-threads=4` pass (was 5/10 pre-fix). 55 lib tests pass (53 original + 2 new). All 3 Test Suite jobs in CI (ubuntu/macos/windows) pass.\n\nNEW TESTS:\n  - env_lock_serializes_parallel_env_var_writers: 8 workers \u00d7 50 iterations each, 50\u00b5s sleep in critical section, verifies env var persists.\n  - env_lock_is_provided_by_test_support: compile-time regression guard against re-introducing a duplicate static.\n\nPOST-MERGE STATE (2026-06-08T06:10:56Z):\n- Squash-merged into master as 5d20c16f\n- PR branch fix/env-lock-deduplication auto-deleted on origin\n- Local branch deleted with `git branch -D fix/env-lock-deduplication`\n- Master HEAD: 5d20c16f\n- 55/55 lib tests pass on master (cargo test --lib -- --test-threads=4)\n- Triggered fresh CI on master (run 27119401268) via empty commit to validate post-merge stability.\n- 0 open PRs, 0 open issues in stealth-core.\n\nThe two historical CI failures (#27101158706 and #27102827375) can no longer recur because:\n  1. The dual-ENV_LOCK mutex bug is fixed.\n  2. The `use super::test_support::ENV_LOCK;` import in both test submodules acts as a compile-time guard: any re-introduction of a duplicate `static ENV_LOCK` will fail to compile.\n  3. The new `env_lock_serializes_parallel_env_var_writers` test stress-tests the lock with 8 workers \u00d7 50 iterations.\n  4. The new `env_lock_is_provided_by_test_support` test verifies the invariant that the lock comes from the shared module.\n\nPOST-MERGE FOLLOW-UP (commit 8af197c, 2026-06-08):\n- Subagent review caught that the stress test doc comment overclaimed what the test reproduces.\n- Tightened the doc to be honest: the test verifies the SHARED lock works, but the original cross-module bug is actually defended by the COMPILE-TIME GUARD (E0255 name collision on duplicate static declarations).\n- No code change; just doc clarity. clippy + fmt + 55/55 tests still pass.",
       "state": "closed",
       "title": "fix(test): consolidate ENV_LOCK to one shared mutex (closes CI flake from 27101158706)",
       "repo": "ether-btc/stealth-core",
@@ -1349,7 +1349,7 @@
       "id": "stephenschoettler/hermes-lcm#246",
       "is_upstream": true,
       "last_action": "2026-08-09T20:54:00Z",
-      "next_action": "No action — closed upstream",
+      "next_action": "No action \u2014 closed upstream",
       "notes": "Live GitHub state is closed; reconciled during save-progress filing.",
       "number": 246,
       "repo": "stephenschoettler/hermes-lcm",
@@ -1361,10 +1361,10 @@
     },
     {
       "actions_taken": [
-        "Cycle 1: 2 parallel subagent reviewers + 3 empirical probes (cycle1-probes.py) — all 3 confirmed bugs",
+        "Cycle 1: 2 parallel subagent reviewers + 3 empirical probes (cycle1-probes.py) \u2014 all 3 confirmed bugs",
         "Cycle 1 fix commit 90e9e97: voice_name validation, timeout=60.0, retry loop, URL log sanitization, _safe_log_url, real 8-voice catalogue, docstring fix, 4 new tests",
-        "Cycle 2: 4 empirical probes (cycle2-probes.py) — 0 new bugs introduced by cycle 1 fixes",
-        "Cycle 3: cross-validator subagent — found 4 issues in cycle 1 fixes (X1 bare Exception, X2 IPv6 brackets, X3 empty audio, X4 client reconstruction) + 1 missed original bug (X5 empty style_prompt)",
+        "Cycle 2: 4 empirical probes (cycle2-probes.py) \u2014 0 new bugs introduced by cycle 1 fixes",
+        "Cycle 3: cross-validator subagent \u2014 found 4 issues in cycle 1 fixes (X1 bare Exception, X2 IPv6 brackets, X3 empty audio, X4 client reconstruction) + 1 missed original bug (X5 empty style_prompt)",
         "Cycle 3 fix commit 2229e70: narrowed except to openai transient errors, IPv6 brackets, empty-audio guard, client moved outside loop, empty style_prompt guard, 4 new tests (retry, no-retry, empty style, empty audio)",
         "Pushed 90e9e97 + 2229e70 to origin master",
         "Wiki session committed at ~/wiki/sessions/2026-06-10-mpt-minimax-mimo-audit/ with INDEX.md, audit-summary.md, cycle1-3 findings, evidence/, probes/",
@@ -1372,7 +1372,7 @@
       ],
       "commits": [
         "90e9e97 fix(voice): cycle 1 audit fixes for MiMo TTS",
-        "2229e70 fix(voice): cycle 3 audit fixes — narrow retry, IPv6 logs, empty audio guard"
+        "2229e70 fix(voice): cycle 3 audit fixes \u2014 narrow retry, IPv6 logs, empty audio guard"
       ],
       "evidence_tier": "high",
       "filed_at": "2026-06-10",
@@ -1384,7 +1384,7 @@
       ],
       "last_action": "wiki committed with full audit trail",
       "next_action": "When operator is at keyboard: file SSRF followup as issue in ether-btc/mpt-minimax",
-      "notes": "3 audit cycles (OCR L1 + repomix + 2 parallel subagent reviewers + 1 cross-validator) on the new MiMo TTS provider. 14 findings (4 high, 5 medium, 5 low) — all addressed in two followup commits: 90e9e97 (cycle 1) and 2229e70 (cycle 3). Cycle 2 found 0 new bugs. Critical web-research finding: the original hardcoded voice catalogue was 4/5 made-up Chinese nicknames that would have caused every WebUI selection to 4xx in production. Replaced with the real 8-voice MiMo v2.5 TTS catalogue per the official MiMo-Skills docs. Test delta: 14 failed / 7 passed → 13 failed / 16 passed (the 13 remaining failures are pre-existing and unrelated to mimo_tts).",
+      "notes": "3 audit cycles (OCR L1 + repomix + 2 parallel subagent reviewers + 1 cross-validator) on the new MiMo TTS provider. 14 findings (4 high, 5 medium, 5 low) \u2014 all addressed in two followup commits: 90e9e97 (cycle 1) and 2229e70 (cycle 3). Cycle 2 found 0 new bugs. Critical web-research finding: the original hardcoded voice catalogue was 4/5 made-up Chinese nicknames that would have caused every WebUI selection to 4xx in production. Replaced with the real 8-voice MiMo v2.5 TTS catalogue per the official MiMo-Skills docs. Test delta: 14 failed / 7 passed \u2192 13 failed / 16 passed (the 13 remaining failures are pre-existing and unrelated to mimo_tts).",
       "repo": "ether-btc/mpt-minimax",
       "state": "closed",
       "status": "fixed",
@@ -1405,7 +1405,7 @@
         "2026-06-18T20:06:25.288761Z - Created PR #13",
         "2026-06-18T20:06:25.288764Z - Multi-cycle audit completed",
         "2026-06-18T20:06:25.288765Z - Merged and released v0.5.0",
-        "2026-06-19T00:00:00Z - Fixed version mismatch (pyproject.toml 0.4.3→0.5.0)",
+        "2026-06-19T00:00:00Z - Fixed version mismatch (pyproject.toml 0.4.3\u21920.5.0)",
         "2026-06-19T00:00:00Z - Updated CI workflow (validate-versions + twine upload + verification)",
         "2026-06-19T00:00:00Z - Retagged v0.5.0 and pushed all changes"
       ],
@@ -1414,23 +1414,23 @@
       "local_commit_sha": "c759f6a",
       "mergedAt": "2026-06-18T20:06:25.288744Z",
       "next_action": "COMPLETED: v0.5.0 release gaps fixed (2026-06-19). Version sync'd, CI updated with validation + twine upload. Awaiting PYPI_TOKEN secret config to trigger final publish.",
-      "notes": "PyPI publish initially failed due to missing PYPI_PASSWORD secret.\n        \nFIXED 2026-06-19:\n- pyproject.toml version: 0.4.3 → 0.5.0 (was mismatched with Cargo.toml)\n- Deleted and recreated v0.5.0 tag to point to version-sync'd code\n- CI workflow updated:\n  - Added validate-versions job (catches version mismatches before build)\n  - Migrated from deprecated 'maturin publish' to 'maturin build + twine upload'\n  - Added post-publish verification step (installs from PyPI, verifies __version__)\n  - Changed secret name: PYPI_PASSWORD → PYPI_TOKEN (standard convention)\n- CONTINUE_HERE_v0.5.0.md updated with full release checklist\n\nPENDING: User must configure PYPI_TOKEN secret in GitHub repo settings.\nOnce configured: CI will auto-deploy on tag push, or trigger manually via gh workflow run.",
+      "notes": "PyPI publish initially failed due to missing PYPI_PASSWORD secret.\n        \nFIXED 2026-06-19:\n- pyproject.toml version: 0.4.3 \u2192 0.5.0 (was mismatched with Cargo.toml)\n- Deleted and recreated v0.5.0 tag to point to version-sync'd code\n- CI workflow updated:\n  - Added validate-versions job (catches version mismatches before build)\n  - Migrated from deprecated 'maturin publish' to 'maturin build + twine upload'\n  - Added post-publish verification step (installs from PyPI, verifies __version__)\n  - Changed secret name: PYPI_PASSWORD \u2192 PYPI_TOKEN (standard convention)\n- CONTINUE_HERE_v0.5.0.md updated with full release checklist\n\nPENDING: User must configure PYPI_TOKEN secret in GitHub repo settings.\nOnce configured: CI will auto-deploy on tag push, or trigger manually via gh workflow run.",
       "number": 13,
       "repo": "ether-btc/rust-cave-001",
       "state": "closed",
       "status": "merged",
-      "title": "v0.5.0: Clippy pedantic cleanup + pyo3 0.24→0.29 security upgrade",
+      "title": "v0.5.0: Clippy pedantic cleanup + pyo3 0.24\u21920.29 security upgrade",
       "type": "pr",
       "url": "https://github.com/ether-btc/rust-cave-001/pull/13"
     },
     {
       "actions_taken": [
-        "Reviewed by ether-btc 2026-05-22 (recommended merge — now stale)",
-        "Reviewed by teknium1 (hermes-sweeper) 2026-07-29, verdict keep_open salvageability=high — demanded exact-empty filter + whitespace preservation test",
+        "Reviewed by ether-btc 2026-05-22 (recommended merge \u2014 now stale)",
+        "Reviewed by teknium1 (hermes-sweeper) 2026-07-29, verdict keep_open salvageability=high \u2014 demanded exact-empty filter + whitespace preservation test",
         "GottZ AI triage 2026-07-29 called this 'partial' fix (technically correct on whitespace, editorially slanted)",
-        "2026-10-09: posted precise landing recipe on the PR — rebase + exact-empty filter at hermes_cli/mcp_config.py:624 (if a != \"\") + whitespace-preservation test. PR is mergeable_state=dirty, 3mo stale. Cannot push: head is LeonSGP43 fork. Verified bug still live on upstream/main 1744a19e0d.",
-        "2026-10-09: salvage branch ready — ether-btc/hermes-agent fix/26886-mcp-empty-args-exact @ 7870b45219 (based on main 1744a19e0d): exact-empty filter + whitespace-preservation test; file verified 42 passed. PR CREATION BLOCKED: GitHub refuses CreatePullRequest for ether-btc on this repo (GraphQL permission error; REST POST /pulls -> 404 even for an invalid head, while the same call to stephenschoettler/hermes-lcm -> 422 — repo-side restriction, not a bad branch or token). Branch URL + compare link posted as a follow-up comment on the PR.",
-        "2026-10-09 CORRECTION: the earlier note in this entry calling the PR-creation refusal a 'repo-side restriction' was wrong. Cause verified by count: this repo caps open PRs at 3 per contributor and ether-btc holds exactly 3 (#128461 CONFLICTING, #128240 MERGEABLE, #91379 CONFLICTING), so a 4th create is refused — with a permissions error / 404, not the limit wording the reopen path uses. Retracted. No slot burned: this PR is itself the open slot-holder for this fix; branch 7870b45219 + compare link are offered in the comment above."
+        "2026-10-09: posted precise landing recipe on the PR \u2014 rebase + exact-empty filter at hermes_cli/mcp_config.py:624 (if a != \"\") + whitespace-preservation test. PR is mergeable_state=dirty, 3mo stale. Cannot push: head is LeonSGP43 fork. Verified bug still live on upstream/main 1744a19e0d.",
+        "2026-10-09: salvage branch ready \u2014 ether-btc/hermes-agent fix/26886-mcp-empty-args-exact @ 7870b45219 (based on main 1744a19e0d): exact-empty filter + whitespace-preservation test; file verified 42 passed. PR CREATION BLOCKED: GitHub refuses CreatePullRequest for ether-btc on this repo (GraphQL permission error; REST POST /pulls -> 404 even for an invalid head, while the same call to stephenschoettler/hermes-lcm -> 422 \u2014 repo-side restriction, not a bad branch or token). Branch URL + compare link posted as a follow-up comment on the PR.",
+        "2026-10-09 CORRECTION: the earlier note in this entry calling the PR-creation refusal a 'repo-side restriction' was wrong. Cause verified by count: this repo caps open PRs at 3 per contributor and ether-btc holds exactly 3 (#128461 CONFLICTING, #128240 MERGEABLE, #91379 CONFLICTING), so a 4th create is refused \u2014 with a permissions error / 404, not the limit wording the reopen path uses. Retracted. No slot burned: this PR is itself the open slot-holder for this fix; branch 7870b45219 + compare link are offered in the comment above."
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-16T11:55:00Z",
@@ -1460,7 +1460,7 @@
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-07-29T08:30:00Z",
-      "next_action": "No action — closed. Reference implementation for the exact-empty semantics that PR #26907 should adopt.",
+      "next_action": "No action \u2014 closed. Reference implementation for the exact-empty semantics that PR #26907 should adopt.",
       "notes": "+1/-1. Truthy filter [a for a in args if a] correctly preserves whitespace-only args, no tests, no helper. Superseded by surgical fix plan for PR #26907.",
       "number": 26920,
       "repo": "NousResearch/hermes-agent",
@@ -1630,7 +1630,7 @@
       "labels": [],
       "last_action": "2026-10-04T05:43:07Z",
       "next_action": "CLA blocker REPAIRED 2026-10-04: re-authored to ether-btc <33156212+ether-btc@users.noreply.github.com> as 1289b20b9553 (tree + parent unchanged); repo checker now reports all emails mapped. Closed deliberately to free a slot against the repo 14-open-PR cap so #128461 could be reopened. Work preserved on fork branch fix/compaction-test-coverage; reopen any time.",
-      "notes": "Closed, NOT merged (merged_at is null). The registry previously recorded this as \"merged\" because sync mapped every closed PR to merged; that mapping bug is fixed in skills/github-filing-registry/filing-registry by discriminating on merged_at. CI on head 1289b20b9553 shows 3 runs 'failure' (CI, Nix flake check, Docker Build) — NOT a code defect: all three have ZERO jobs created and run.updated_at 13:36:12, one second after the PR was closed at 13:36:11. The force-push unblocked CI that had been held at action_required, the runs began at 13:35:39-40, and closing the PR 31s later killed them before any job was created. No test executed. Do not read these as a failing build.",
+      "notes": "Closed, NOT merged (merged_at is null). The registry previously recorded this as \"merged\" because sync mapped every closed PR to merged; that mapping bug is fixed in skills/github-filing-registry/filing-registry by discriminating on merged_at. CI on head 1289b20b9553 shows 3 runs 'failure' (CI, Nix flake check, Docker Build) \u2014 NOT a code defect: all three have ZERO jobs created and run.updated_at 13:36:12, one second after the PR was closed at 13:36:11. The force-push unblocked CI that had been held at action_required, the runs began at 13:35:39-40, and closing the PR 31s later killed them before any job was created. No test executed. Do not read these as a failing build.",
       "number": 98821,
       "repo": "NousResearch/hermes-agent",
       "state": "closed",
@@ -1822,7 +1822,7 @@
     },
     {
       "actions_taken": [
-        "Filed: test(papertrade): cvEpoch per-call — fixes 3 cross-venue tests"
+        "Filed: test(papertrade): cvEpoch per-call \u2014 fixes 3 cross-venue tests"
       ],
       "evidence_tier": "",
       "filed_at": "2026-10-06T05:58:49Z",
@@ -1836,13 +1836,13 @@
       "repo": "ether-btc/prompro",
       "state": "closed",
       "status": "closed",
-      "title": "test(papertrade): cvEpoch per-call — fixes 3 cross-venue tests",
+      "title": "test(papertrade): cvEpoch per-call \u2014 fixes 3 cross-venue tests",
       "type": "pr",
       "url": "https://github.com/ether-btc/prompro/pull/78"
     },
     {
       "actions_taken": [
-        "Filed: feat(custody/cow): RouteAwareExecutor for CoW Swap, inert at §9"
+        "Filed: feat(custody/cow): RouteAwareExecutor for CoW Swap, inert at \u00a79"
       ],
       "evidence_tier": "",
       "filed_at": "2026-10-06T05:58:49Z",
@@ -1856,13 +1856,13 @@
       "repo": "ether-btc/prompro",
       "state": "closed",
       "status": "closed",
-      "title": "feat(custody/cow): RouteAwareExecutor for CoW Swap, inert at §9",
+      "title": "feat(custody/cow): RouteAwareExecutor for CoW Swap, inert at \u00a79",
       "type": "pr",
       "url": "https://github.com/ether-btc/prompro/pull/79"
     },
     {
       "actions_taken": [
-        "Filed: feat(custody/oneinch): RouteAwareExecutor for 1inch Fusion, inert at §9"
+        "Filed: feat(custody/oneinch): RouteAwareExecutor for 1inch Fusion, inert at \u00a79"
       ],
       "evidence_tier": "",
       "filed_at": "2026-10-06T06:27:00Z",
@@ -1876,7 +1876,7 @@
       "repo": "ether-btc/prompro",
       "state": "closed",
       "status": "merged",
-      "title": "feat(custody/oneinch): RouteAwareExecutor for 1inch Fusion, inert at §9",
+      "title": "feat(custody/oneinch): RouteAwareExecutor for 1inch Fusion, inert at \u00a79",
       "type": "pr",
       "url": "https://github.com/ether-btc/prompro/pull/80"
     },
@@ -2048,13 +2048,14 @@
       "title": "feat(skills): append-only, machine-verifiable evidence ledger for SKILL.md",
       "state": "open",
       "status": "pending_review",
-      "next_action": "Await upstream review",
+      "next_action": "Await upstream review: CI action_required until a maintainer approves the fork PR run; nothing else outstanding",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-09T15:38:05Z",
-      "last_action": "2026-10-09T15:38:05Z",
+      "last_action": "2026-10-13T13:13:00Z",
       "url": "https://github.com/NousResearch/hermes-agent/pull/135677",
       "actions_taken": [
-        "Filed: feat(skills): append-only, machine-verifiable evidence ledger for SKILL.md"
+        "Filed: feat(skills): append-only, machine-verifiable evidence ledger for SKILL.md",
+        "2026-10-13: full rework for external-maintainer merge. Bot-team review rounds settled: BLOCKER (utils._atomic_write newline='' in binary mode -> ValueError) fixed as text-branch-only gate; MAJORs fixed: dead batch branch removed (write_approval.py), _STAGED_TOKENS switched to OrderedDict oldest-first eviction, batch evidence merge-fail fail-fast JSON error, host-specific references scrubbed from diff + body, process-agnostic replay trust (_trusted_replay() on _skill_gate_bypass) so approved batch evidence writes survive a process restart and stale flat replays are rejected (commit 774697e6cc). Schema-diet pinned test updated with a narrow documented exception + safety pin. Verified: 296 unit tests green (incl. 125 skill suites + 56 atomic-writer suites), e2e 25/25, ruff clean. Fast-forward push 3b084d5c1e..774697e6cc (no force-push). PR body replaced: template-conformant, leak-free, honest test accounting (full-suite collection left to CI: 509 pre-existing environmental errors, proven on a pristine base worktree)."
       ],
       "notes": "",
       "labels": [],
@@ -2105,7 +2106,7 @@
       "repo": "local/wp-flow (Hermes project p_398a1516, board wp-flow)",
       "number": null,
       "type": "project_outcome",
-      "title": "work-package-flow skill v2.1.1 — kanban-SSoT compression-survival flow, measured P2–P5, pilot ACCEPTED MEDIUM-HIGH",
+      "title": "work-package-flow skill v2.1.1 \u2014 kanban-SSoT compression-survival flow, measured P2\u2013P5, pilot ACCEPTED MEDIUM-HIGH",
       "state": "complete",
       "status": "filed",
       "next_action": "Optional: convert P4 fix compare-link to PR when a 3/3 slot frees (tracked under NousResearch/hermes-agent#125477, separate item from this filing).",
@@ -2160,7 +2161,7 @@
       "is_upstream": false,
       "filed_at": "2026-10-10T21:23:44Z",
       "last_action": "filed 2026-10-10",
-      "next_action": "none — shipped; advisory (no user-space hook gates compaction)",
+      "next_action": "none \u2014 shipped; advisory (no user-space hook gates compaction)",
       "labels": [
         "local",
         "skill",
@@ -2180,7 +2181,7 @@
       "type": "pr",
       "number": 98,
       "repo": "ether-btc/prompro",
-      "title": "wiring: SizeDecider seam — inert by default, B3 fail-closed gate on live Kelly",
+      "title": "wiring: SizeDecider seam \u2014 inert by default, B3 fail-closed gate on live Kelly",
       "status": "merged",
       "merged_at": "2026-10-11T13:18:22Z",
       "head_sha": "42a0f912a2",
@@ -2192,11 +2193,11 @@
   "issues": [
     {
       "actions_taken": [
-        "Stage 1: Verb maps extracted to module (94→306 PP, 147→357 PRES)",
+        "Stage 1: Verb maps extracted to module (94\u2192306 PP, 147\u2192357 PRES)",
         "Stage 2: Contraction expansion (60+ forms) + copular be removal",
         "Stage 3: and/or conjunction reduction",
-        "5-model multi-expert review — 4 bugs fixed",
-        "OnceLock regex caching (63→1 compilation)",
+        "5-model multi-expert review \u2014 4 bugs fixed",
+        "OnceLock regex caching (63\u21921 compilation)",
         "Pushed 4d8136b, tagged v0.3.0, PyPI published",
         "Acronym protection, pipeline reorder, 13 new tests (108 total)",
         "crates.io published v0.3.0 (commit ea040a3)"
@@ -2208,7 +2209,7 @@
         "published",
         "crates.io"
       ],
-      "next_action": "None — released and published",
+      "next_action": "None \u2014 released and published",
       "notes": "48.7% avg token reduction (+0.3%). 108 tests, clippy clean. PyPI + crates.io published.",
       "number": 99999,
       "repo": "ether-btc/rust-cave-001",
@@ -2237,7 +2238,7 @@
       "repo": "profbernardoj/morpheus-skill",
       "state": "closed",
       "status": "closed",
-      "title": "[CRITICAL] Auto-renewal flow calls closeSession on expiry — MOR tokens on-chain hold",
+      "title": "[CRITICAL] Auto-renewal flow calls closeSession on expiry \u2014 MOR tokens on-chain hold",
       "type": "issue",
       "url": "https://github.com/profbernardoj/morpheus-skill/issues/3"
     },
@@ -2260,7 +2261,7 @@
       "repo": "profbernardoj/morpheus-skill",
       "state": "closed",
       "status": "closed",
-      "title": "[CRITICAL] Auto-renewal closes sessions as user (Type 0) — ~49.77 MOR locked",
+      "title": "[CRITICAL] Auto-renewal closes sessions as user (Type 0) \u2014 ~49.77 MOR locked",
       "type": "issue",
       "url": "https://github.com/profbernardoj/morpheus-skill/issues/2"
     },
@@ -2289,7 +2290,7 @@
     },
     {
       "actions_taken": [
-        "Note: On-chain bug — Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
+        "Note: On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
         "Registry updated: node decommissioned, MOR transferred. Issue remains open upstream but is moot for this agent."
       ],
       "evidence_tier": "tier_2",
@@ -2301,13 +2302,13 @@
         "on-chain"
       ],
       "last_action": "2026-05-26T11:49:42Z",
-      "next_action": "None — MOR transferred to external wallet, node no longer runs Morpheus infrastructure. Issue left open on GitHub as upstream reference.",
-      "notes": "On-chain bug — Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
+      "next_action": "None \u2014 MOR transferred to external wallet, node no longer runs Morpheus infrastructure. Issue left open on GitHub as upstream reference.",
+      "notes": "On-chain bug \u2014 Diamond proxy selector not registered. ~49.77 MOR permanently locked.",
       "number": 62,
       "repo": "MorpheusAIs/SmartContracts",
       "state": "open",
       "status": "closed",
-      "title": "BUG: withdrawUserStakes() selector not registered on MOR Diamond — ~49.77 MOR locked",
+      "title": "BUG: withdrawUserStakes() selector not registered on MOR Diamond \u2014 ~49.77 MOR locked",
       "type": "issue",
       "url": "https://github.com/MorpheusAIs/SmartContracts/issues/62"
     },
@@ -2353,7 +2354,7 @@
       "repo": "fajarhide/omni",
       "state": "closed",
       "status": "closed",
-      "title": "session/learn.rs:40 — unwrap() on TOML parse causes panic",
+      "title": "session/learn.rs:40 \u2014 unwrap() on TOML parse causes panic",
       "type": "issue",
       "url": "https://github.com/fajarhide/omni/issues/71"
     },
@@ -2470,7 +2471,7 @@
       "repo": "vectorize-io/hindsight",
       "state": "closed",
       "status": "closed",
-      "title": "Experience entries accumulate without consolidation — unbounded growth",
+      "title": "Experience entries accumulate without consolidation \u2014 unbounded growth",
       "type": "issue",
       "url": "https://github.com/vectorize-io/hindsight/issues/1284"
     },
@@ -2493,7 +2494,7 @@
       "repo": "moltlaunch/cashclaw",
       "state": "closed",
       "status": "closed",
-      "title": "Dynamic import at runtime to invalidate search index — error swallowed",
+      "title": "Dynamic import at runtime to invalidate search index \u2014 error swallowed",
       "type": "issue",
       "url": "https://github.com/moltlaunch/cashclaw/issues/82"
     },
@@ -2539,7 +2540,7 @@
       "repo": "moltlaunch/cashclaw",
       "state": "closed",
       "status": "closed",
-      "title": "CORS origin not validated — static string without Origin check",
+      "title": "CORS origin not validated \u2014 static string without Origin check",
       "type": "issue",
       "url": "https://github.com/moltlaunch/cashclaw/issues/80"
     },
@@ -2585,7 +2586,7 @@
       "repo": "moltlaunch/cashclaw",
       "state": "closed",
       "status": "closed",
-      "title": "LLM API calls have no timeout — hung connections stall agent loop",
+      "title": "LLM API calls have no timeout \u2014 hung connections stall agent loop",
       "type": "issue",
       "url": "https://github.com/moltlaunch/cashclaw/issues/77"
     },
@@ -2602,7 +2603,7 @@
         "high"
       ],
       "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Fix path traversal guard — use equals, not startsWith",
+      "next_action": "Fix path traversal guard \u2014 use equals, not startsWith",
       "notes": "Part of 17-issue security audit.",
       "number": 76,
       "repo": "moltlaunch/cashclaw",
@@ -2625,13 +2626,13 @@
         "financial-risk"
       ],
       "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Fix auto-renewal race condition — confirm new session before deleting old",
+      "next_action": "Fix auto-renewal race condition \u2014 confirm new session before deleting old",
       "notes": "Same root cause as profbernardoj/morpheus-skill #2 and #3. ~49.77 MOR locked.",
       "number": 3,
       "repo": "ether-btc/morpheus-proxy-router",
       "state": "closed",
       "status": "closed",
-      "title": "Auto-renewal deletes session before new confirmed — silent MOR lock",
+      "title": "Auto-renewal deletes session before new confirmed \u2014 silent MOR lock",
       "type": "issue",
       "url": "https://github.com/ether-btc/morpheus-proxy-router/issues/3"
     },
@@ -2670,7 +2671,7 @@
         "accounting"
       ],
       "last_action": "2026-04-20T00:00:00Z",
-      "next_action": "Audit stake tracking — find where 0.88 MOR is lost",
+      "next_action": "Audit stake tracking \u2014 find where 0.88 MOR is lost",
       "notes": "0.88 MOR unaccounted after 23 sessions. Correlates with MorpheusAIs/Morpheus-Lumerin-Node#717.",
       "number": 1,
       "repo": "ether-btc/morpheus-proxy-router",
@@ -2693,12 +2694,12 @@
       ],
       "last_action": "2026-05-03T08:32:23.756152+00:00",
       "next_action": "none",
-      "notes": "Owner correctly closed: stdio MCP has no network surface, OS permission model is the security boundary. No auth layer needed for local IPC. Our threat model assessment was incomplete — same-user process threat is outside application threat model.",
+      "notes": "Owner correctly closed: stdio MCP has no network surface, OS permission model is the security boundary. No auth layer needed for local IPC. Our threat model assessment was incomplete \u2014 same-user process threat is outside application threat model.",
       "number": 69,
       "repo": "fajarhide/omni",
       "state": "closed",
       "status": "closed",
-      "title": "MCP server has no authentication — all tools accessible to any local process",
+      "title": "MCP server has no authentication \u2014 all tools accessible to any local process",
       "type": "issue",
       "url": "https://github.com/fajarhide/omni/issues/69"
     },
@@ -2797,9 +2798,9 @@
         "Filed by ether-btc on 2026-05-16 (fork issues disabled on ether-btc/hermes-agent)",
         "Review recommendation posted 2026-05-22 (recommend merge of PR #26907)",
         "Re-evaluated 2026-07-29 after GottZ AI triage comment; teknium1 review (2026-07-29) demands whitespace-only argv preservation",
-        "2026-10-09: posted status update — bug reproduces as live on upstream/main 1744a19e0d; no empty-arg filter at hermes_cli/mcp_config.py:624. Kept open pending #26907.",
+        "2026-10-09: posted status update \u2014 bug reproduces as live on upstream/main 1744a19e0d; no empty-arg filter at hermes_cli/mcp_config.py:624. Kept open pending #26907.",
         "2026-10-09: fix ready on branch 7870b45219 (exact-empty filter + whitespace test, 42 passed) but PR creation is blocked repo-side for this account; see #26907 for evidence and the compare link.",
-        "2026-10-09 CORRECTION: fix is ready on branch 7870b45219 (exact-empty filter + whitespace test, 42 passed); PR creation refused because the repo's 3-open-PRs-per-contributor cap is saturated by ether-btc's 3 open PRs — not a permission/org block as previously recorded. Delivered via the comment on #26907."
+        "2026-10-09 CORRECTION: fix is ready on branch 7870b45219 (exact-empty filter + whitespace test, 42 passed); PR creation refused because the repo's 3-open-PRs-per-contributor cap is saturated by ether-btc's 3 open PRs \u2014 not a permission/org block as previously recorded. Delivered via the comment on #26907."
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-16T10:58:38Z",
@@ -2824,7 +2825,7 @@
     },
     {
       "actions_taken": [
-        "Filed: Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH — partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue"
+        "Filed: Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH \u2014 partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue"
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-08-26T08:45:25Z",
@@ -2838,14 +2839,14 @@
       "repo": "itsfatduck/optimizerDuck",
       "state": "closed",
       "status": "closed",
-      "title": "Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH — partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue",
+      "title": "Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH \u2014 partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue",
       "type": "issue",
       "url": "https://github.com/itsfatduck/optimizerDuck/issues/67"
     },
     {
       "actions_taken": [
         "Filed: Investigation: rtk-rewrite rejects legitimate multi-line rewrites (quoted multi-line value) and fails open",
-        "2026-10-09: posted parking note — HOLD STRICT decision stands, no action pending; recorded so future triage does not flag it as stale."
+        "2026-10-09: posted parking note \u2014 HOLD STRICT decision stands, no action pending; recorded so future triage does not flag it as stale."
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-09-25T22:04:36Z",
@@ -2853,7 +2854,7 @@
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-10-09T06:59:59Z",
-      "next_action": "none — parked by design per the 2026-09-25 decision record",
+      "next_action": "none \u2014 parked by design per the 2026-09-25 decision record",
       "notes": "",
       "number": 8,
       "repo": "ether-btc/rtk-hermes-consolidated",
@@ -3008,7 +3009,7 @@
       "repo": "stephenschoettler/hermes-lcm",
       "number": 514,
       "type": "issue",
-      "title": "AAAK compression provider — WITHDRAWN / DECLINED on measurement (0.9729x cl100k_base = net expansion; the ~30x claim was unverified)",
+      "title": "AAAK compression provider \u2014 WITHDRAWN / DECLINED on measurement (0.9729x cl100k_base = net expansion; the ~30x claim was unverified)",
       "state": "closed",
       "status": "closed",
       "next_action": "None - withdrawn. Reopen only as a NEW measurement on a DERIVED view with a NAMED consumer.",
@@ -3017,7 +3018,7 @@
       "last_action": "2026-10-09T08:08:02Z",
       "url": "https://github.com/stephenschoettler/hermes-lcm/issues/514",
       "actions_taken": [
-        "Filed: AAAK compression provider — WITHDRAWN / DECLINED on measurement (0.9729x cl100k_base = net expansion; the ~30x claim was unverified)",
+        "Filed: AAAK compression provider \u2014 WITHDRAWN / DECLINED on measurement (0.9729x cl100k_base = net expansion; the ~30x claim was unverified)",
         "Withdrawn + CLOSED as not-planned 2026-10-09. AAAK DECLINED on measurement: cl100k_base aggregate 0.9729x (215->221 tokens = net EXPANSION), 1 of 9 cases >1.00x, the '~30x' headline measured-rejected - matching the 2026-09-24 DEFER with four concurring reviews (Codex, opus-5.5, 2x glm-5.3-flash; 'no named consumer'), not contradicting them. Title + body marked measured-rejected; evidence comment 6077026178. Records: ether-btc/hermes-lcm-aak-contribution@5974205 (DECISIONS/STATUS/README/CONTRIBUTION/ROADMAP), wiki@0fc553f (audits/aaak-declined-2026-10-09), ether-btc/prompro@3d9a818 (README 'AAAK-compressed' claim dropped; engine already deleted in 66c910a; table name kept as historical/load-bearing). sentiment-classifier + mnemosyne#36: no action. No PR, no PyPI, no code deleted (the package is the record). Rule: a journal is an evidence artifact - cut volume (rollup/prune), compress only derived views, gated on a real measurement."
       ],
       "notes": "",
@@ -3079,7 +3080,7 @@
       "url": "https://github.com/NousResearch/hermes-agent/issues/132034#issuecomment-6087057476",
       "actions_taken": [
         "Filed: Desktop SSH reconnect-leak recurrence on a fix-containing POSIX build (fresh ownershipId per cycle not reaped)",
-        "Posted comment 6087057476: residual POSIX leak — retire watchdog is per-ownershipId, storm spawned fresh ownershipId per cycle"
+        "Posted comment 6087057476: residual POSIX leak \u2014 retire watchdog is per-ownershipId, storm spawned fresh ownershipId per cycle"
       ],
       "notes": "Not our issue (author kshitijk4poor); engaged per user direction to share the finding",
       "labels": [],
@@ -3110,16 +3111,16 @@
       "repo": "NousResearch/hermes-agent",
       "number": 125477,
       "type": "issue",
-      "title": "goal continuation rows display_kind NULL — fix branch offered via compare-link (cap 3/3)",
+      "title": "goal continuation rows display_kind NULL \u2014 fix branch offered via compare-link (cap 3/3)",
       "state": "open",
       "status": "pending_review",
       "next_action": "Await upstream review",
-      "evidence_tier": "issuecomment-6090613237 posted 2026-10-10: root-cause diagnosis + compare link ether-btc:hermes-agent fix/goal-continuation-displaykind @1232fccb89 (push verified ls-remote == tip); 4 invariants verified, 2 independent GO reviews, mutation kill-test RED→GREEN; no PR opened (per-contributor cap saturated 3/3 — pre-registered fallback per p4-pilot-ledger.md)",
+      "evidence_tier": "issuecomment-6090613237 posted 2026-10-10: root-cause diagnosis + compare link ether-btc:hermes-agent fix/goal-continuation-displaykind @1232fccb89 (push verified ls-remote == tip); 4 invariants verified, 2 independent GO reviews, mutation kill-test RED\u2192GREEN; no PR opened (per-contributor cap saturated 3/3 \u2014 pre-registered fallback per p4-pilot-ledger.md)",
       "filed_at": "2026-10-09T22:52:46Z",
       "last_action": "2026-10-09T22:52:46Z",
       "url": "https://github.com/NousResearch/hermes-agent/issues/125477",
       "actions_taken": [
-        "Filed: goal continuation rows display_kind NULL — fix branch offered via compare-link (cap 3/3)"
+        "Filed: goal continuation rows display_kind NULL \u2014 fix branch offered via compare-link (cap 3/3)"
       ],
       "notes": "",
       "labels": [],
@@ -3236,7 +3237,7 @@
       "type": "filed"
     },
     {
-      "desc": "Filed: fix: security audit — config injection, ReDoS, confidence consistency, bounds",
+      "desc": "Filed: fix: security audit \u2014 config injection, ReDoS, confidence consistency, bounds",
       "ref": "ether-btc/openclaw-correlation-plugin#4",
       "ts": "2026-05-09T21:16:59Z",
       "type": "filed"
@@ -3248,7 +3249,7 @@
       "type": "filed"
     },
     {
-      "desc": "Filed: refactor: adopt Agent Skills spec — docs→references, spec-compliant SKILL.md",
+      "desc": "Filed: refactor: adopt Agent Skills spec \u2014 docs\u2192references, spec-compliant SKILL.md",
       "ref": "ether-btc/morpheus-proxy-router#4",
       "ts": "2026-05-09T21:17:01Z",
       "type": "filed"
@@ -3386,7 +3387,7 @@
       "type": "filed"
     },
     {
-      "desc": "Filed: feat(plugins): CompressionPlugin — replace hardcoded env-var compression in beam.py",
+      "desc": "Filed: feat(plugins): CompressionPlugin \u2014 replace hardcoded env-var compression in beam.py",
       "ref": "AxDSan/mnemosyne#129",
       "ts": "2026-05-14T06:01:36Z",
       "type": "filed"
@@ -3446,19 +3447,19 @@
       "type": "filed"
     },
     {
-      "desc": "Filed: cross-platform build (linux/macos/windows) — closes Linux/Unix-first gap in stealth-core",
+      "desc": "Filed: cross-platform build (linux/macos/windows) \u2014 closes Linux/Unix-first gap in stealth-core",
       "ref": "ether-btc/stealth-core#8",
       "ts": "2026-06-05T19:30:00Z",
       "type": "filed"
     },
     {
-      "desc": "Filed: fix(data) PP→SP \"shrunk\"→\"shrank\" + SP→PRES \"shrank\" (parallel data errors, 3 commits incl. self-review fix)",
+      "desc": "Filed: fix(data) PP\u2192SP \"shrunk\"\u2192\"shrank\" + SP\u2192PRES \"shrank\" (parallel data errors, 3 commits incl. self-review fix)",
       "ref": "ether-btc/rust-cave-001#11",
       "ts": "2026-06-06T13:00:00Z",
       "type": "filed"
     },
     {
-      "desc": "Filed: chore(gitignore) uv.lock — per-machine artifact for libraries (1 commit)",
+      "desc": "Filed: chore(gitignore) uv.lock \u2014 per-machine artifact for libraries (1 commit)",
       "ref": "ether-btc/rust-cave-001#12",
       "ts": "2026-06-06T13:00:00Z",
       "type": "filed"
@@ -3497,7 +3498,7 @@
       "action": "closed_issue",
       "id": "ether-btc/stealth-core#10",
       "timestamp": "2026-06-07T20:50:00Z",
-      "title": "Closed issue #10 — fix is in PR #11 (commit 87b3bcc). All audit gates green."
+      "title": "Closed issue #10 \u2014 fix is in PR #11 (commit 87b3bcc). All audit gates green."
     },
     {
       "action": "discovered_merged",
@@ -3527,13 +3528,13 @@
       "action": "docstring_fix",
       "id": "ether-btc/stealth-core",
       "timestamp": "2026-06-07T21:30:00Z",
-      "title": "Committed fa60718 directly to master: corrected validate_url_tests.rs docstring (11 → 10 tests). Senior-dev discretion: 1-line comment fix doesn't need a PR."
+      "title": "Committed fa60718 directly to master: corrected validate_url_tests.rs docstring (11 \u2192 10 tests). Senior-dev discretion: 1-line comment fix doesn't need a PR."
     },
     {
       "action": "subagent_review",
       "id": "ether-btc/stealth-core#11",
       "timestamp": "2026-06-07T21:30:00Z",
-      "title": "Subagent review round 2: 7/7 verification points PASS. Found 1 real issue (11 vs 10 docstring) + 1 false positive (merge_obscura binary_path — same as cycle 3 F3.1, refuted by probe test). 1 pre-existing flake in after_interval_is_faster_than_within_interval (out of scope)."
+      "title": "Subagent review round 2: 7/7 verification points PASS. Found 1 real issue (11 vs 10 docstring) + 1 false positive (merge_obscura binary_path \u2014 same as cycle 3 F3.1, refuted by probe test). 1 pre-existing flake in after_interval_is_faster_than_within_interval (out of scope)."
     },
     {
       "action": "discovered_conflict",
@@ -3569,13 +3570,13 @@
       "action": "ci_pass",
       "id": "ether-btc/stealth-core#12",
       "timestamp": "2026-06-07T21:00:00Z",
-      "title": "CI run 27105446779: 12/13 checks pass, 0 failed. All 3 Test Suite jobs (ubuntu/macos/windows) PASS — bug confirmed fixed on all platforms. Awaiting arm64 Docker build (slow)."
+      "title": "CI run 27105446779: 12/13 checks pass, 0 failed. All 3 Test Suite jobs (ubuntu/macos/windows) PASS \u2014 bug confirmed fixed on all platforms. Awaiting arm64 Docker build (slow)."
     },
     {
       "action": "merged_pr",
       "id": "ether-btc/stealth-core#12",
       "timestamp": "2026-06-08T06:10:56Z",
-      "title": "MERGED PR #12 (squash commit 5d20c16f) — dual-ENV_LOCK mutex fix. 13/13 CI checks pass, mergeState=CLEAN. PR branch auto-deleted. Local branch fix/env-lock-deduplication deleted. Master HEAD = 5d20c16f."
+      "title": "MERGED PR #12 (squash commit 5d20c16f) \u2014 dual-ENV_LOCK mutex fix. 13/13 CI checks pass, mergeState=CLEAN. PR branch auto-deleted. Local branch fix/env-lock-deduplication deleted. Master HEAD = 5d20c16f."
     },
     {
       "action": "local_validation_pass",
@@ -3587,7 +3588,7 @@
       "action": "subagent_review",
       "id": "ether-btc/stealth-core#12",
       "timestamp": "2026-06-08T06:30:00Z",
-      "title": "Subagent review of PR #12 fix: VERDICT pass-with-concerns. Subagent caught that env_lock_serializes_parallel_env_var_writers doc comment OVERCLAIMED — the test doesn't actually reproduce the original cross-module bug (it only verifies the single shared lock works). The real defense is the compile-time guard (E0255 name collision). Tightened the doc comment to be honest."
+      "title": "Subagent review of PR #12 fix: VERDICT pass-with-concerns. Subagent caught that env_lock_serializes_parallel_env_var_writers doc comment OVERCLAIMED \u2014 the test doesn't actually reproduce the original cross-module bug (it only verifies the single shared lock works). The real defense is the compile-time guard (E0255 name collision). Tightened the doc comment to be honest."
     },
     {
       "action": "followup_commit",
@@ -3617,7 +3618,7 @@
       "id": "ether-btc/correlation-relevance-plugin#5",
       "source": "audit-2026-06-11-correlation-relevance-plugin",
       "timestamp": "2026-06-11T20:33:25Z",
-      "title": "LifecycleManager.evaluate() cyclomatic complexity 21 — refactor candidate"
+      "title": "LifecycleManager.evaluate() cyclomatic complexity 21 \u2014 refactor candidate"
     },
     {
       "action": "add_issue",
@@ -3631,21 +3632,21 @@
       "id": "ether-btc/correlation-relevance-plugin#7",
       "source": "audit-2026-06-11-correlation-relevance-plugin",
       "timestamp": "2026-06-11T20:33:25Z",
-      "title": "O(n) rule lookup inside O(n) loop in evaluate_lifecycles — O(n²) per cycle"
+      "title": "O(n) rule lookup inside O(n) loop in evaluate_lifecycles \u2014 O(n\u00b2) per cycle"
     },
     {
       "action": "updated_pr",
       "id": "mnemosyne-oss/mnemosyne#568",
       "repo": "mnemosyne-oss/mnemosyne",
       "timestamp": "2026-07-28T19:10:00Z",
-      "title": "Pushed round-4 fix f9a2c96 (process-substitution → temp-file+trap, set -e propagates git diff failures). CI 30390678112: lint/build/docs-check green; 7 pre-existing mcp test failures on test(3.11) out of scope."
+      "title": "Pushed round-4 fix f9a2c96 (process-substitution \u2192 temp-file+trap, set -e propagates git diff failures). CI 30390678112: lint/build/docs-check green; 7 pre-existing mcp test failures on test(3.11) out of scope."
     },
     {
       "action": "opened_pr",
       "id": "mnemosyne-oss/mnemosyne#571",
       "repo": "mnemosyne-oss/mnemosyne",
       "timestamp": "2026-07-28T20:35:00Z",
-      "title": "Opened PR #571 — mcp SDK 1.x->2.x migration. Resolves the test (3.11) failure lane flagged as out-of-scope by sibling PR #568. Head 9ec3f0b on branch fix/mcp-2x-upgrade. 96/96 mcp tests pass locally on mcp 2.0.0."
+      "title": "Opened PR #571 \u2014 mcp SDK 1.x->2.x migration. Resolves the test (3.11) failure lane flagged as out-of-scope by sibling PR #568. Head 9ec3f0b on branch fix/mcp-2x-upgrade. 96/96 mcp tests pass locally on mcp 2.0.0."
     },
     {
       "action": "verified_pr",
@@ -3659,14 +3660,14 @@
       "id": "rtk-rust-cave-reconciliation-2026-07-28",
       "repo": "ether-btc/wiki",
       "timestamp": "2026-07-28T23:18:00Z",
-      "title": "RTK-Hermes + rust-cave-001 reconciliation: wiki drift fixed (entities/rust-cave-001.md dual-branch, project-registry.md v1.1.0+v0.6.1, plan + Stage 4 risk assessment). 3 wiki commits pushed (3c49e2e, 92b746f, ff5da30). Key finding: rust_cave_001 v0.4.3→v0.6.1 upgrade is SAFE per E2E scratch-venv test (686→246 chars, 64.1% reduction, 21.9ms)."
+      "title": "RTK-Hermes + rust-cave-001 reconciliation: wiki drift fixed (entities/rust-cave-001.md dual-branch, project-registry.md v1.1.0+v0.6.1, plan + Stage 4 risk assessment). 3 wiki commits pushed (3c49e2e, 92b746f, ff5da30). Key finding: rust_cave_001 v0.4.3\u2192v0.6.1 upgrade is SAFE per E2E scratch-venv test (686\u2192246 chars, 64.1% reduction, 21.9ms)."
     },
     {
       "action": "updated_pr",
       "id": "mnemosyne-oss/mnemosyne#568",
       "repo": "mnemosyne-oss/mnemosyne",
       "timestamp": "2026-07-28T23:50:00Z",
-      "title": "Round 5 re-review clean — no actionable comments. PR MERGEABLE, awaiting maintainer merge."
+      "title": "Round 5 re-review clean \u2014 no actionable comments. PR MERGEABLE, awaiting maintainer merge."
     },
     {
       "action": "updated_pr",
@@ -3689,7 +3690,7 @@
       "title": "Verified issue closed against live GitHub during save-progress filing."
     },
     {
-      "desc": "Filed: Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH — partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue",
+      "desc": "Filed: Revert system + Disk Cleanup: 2 CRITICAL + 4 HIGH \u2014 partial-failure data loss, bypassable path-traversal guard, inverted .net filter, AppX warn-and-continue",
       "ref": "itsfatduck/optimizerDuck#67",
       "ts": "2026-08-26T08:45:25Z",
       "type": "filed"
@@ -3845,7 +3846,7 @@
       "type": "filed"
     },
     {
-      "desc": "Trust-boundary fix 'harden(agent): wrap ALL untrusted tool output' — independent adversarial review complete (0 blocking; 7 Q's closed w/ runtime probes). Amended head b79d8a3f adds N1 regression test (short/empty-string = exact pre-fix bypass vector); gate 48 passed exact tree / 47 baseline, 0 new failures; ocr+bandit clean. Publication to NousResearch/hermes-agent:main = user hard gate, NOT executed. Evidence receipt + PR-desc at ~/projects/tb-3e11ee43-review/.",
+      "desc": "Trust-boundary fix 'harden(agent): wrap ALL untrusted tool output' \u2014 independent adversarial review complete (0 blocking; 7 Q's closed w/ runtime probes). Amended head b79d8a3f adds N1 regression test (short/empty-string = exact pre-fix bypass vector); gate 48 passed exact tree / 47 baseline, 0 new failures; ocr+bandit clean. Publication to NousResearch/hermes-agent:main = user hard gate, NOT executed. Evidence receipt + PR-desc at ~/projects/tb-3e11ee43-review/.",
       "ref": "ether-btc/hermes-agent@b79d8a3f (was 3e11ee43d8)",
       "ts": "2026-10-05T12:15:10Z",
       "type": "review"
@@ -3857,7 +3858,7 @@
       "type": "review-publish"
     },
     {
-      "desc": "mnemosyne-memory-optimization: premise refuted + phases dispositioned + CORRECTION. Ground-truth measurement found the '~10K structured facts' premise FALSE (memoria_facts/memoria_kg/consolidated_facts/triples = extraction debris). P1 BUILT (check_canonical.py); P2 CLOSED NEGATIVE; P3 REFRAMED -> preflight_context.py session context card; P4 REFRAMED; P5 SUBSUMED. wip_hygiene.py retired 129 closed task:progress slots (345->216). CORRECTION filed: the memoria_* debris is written by the always-on REGEX extractor BeamMemory.extract_and_store_facts() (beam.py:7590), NOT the LLM flag — my earlier root cause was wrong. fast-forward on origin/master.",
+      "desc": "mnemosyne-memory-optimization: premise refuted + phases dispositioned + CORRECTION. Ground-truth measurement found the '~10K structured facts' premise FALSE (memoria_facts/memoria_kg/consolidated_facts/triples = extraction debris). P1 BUILT (check_canonical.py); P2 CLOSED NEGATIVE; P3 REFRAMED -> preflight_context.py session context card; P4 REFRAMED; P5 SUBSUMED. wip_hygiene.py retired 129 closed task:progress slots (345->216). CORRECTION filed: the memoria_* debris is written by the always-on REGEX extractor BeamMemory.extract_and_store_facts() (beam.py:7590), NOT the LLM flag \u2014 my earlier root cause was wrong. fast-forward on origin/master.",
       "ref": "ether-btc/mnemosyne-memory-optimization@4ff4de9",
       "ts": "2026-10-05T18:02:37Z",
       "type": "committed"
@@ -3875,19 +3876,19 @@
       "type": "filed"
     },
     {
-      "desc": "Filed: test(papertrade): cvEpoch per-call — fixes 3 cross-venue tests",
+      "desc": "Filed: test(papertrade): cvEpoch per-call \u2014 fixes 3 cross-venue tests",
       "ref": "78",
       "ts": "2026-10-06T05:58:49Z",
       "type": "filed"
     },
     {
-      "desc": "Filed: feat(custody/cow): RouteAwareExecutor for CoW Swap, inert at §9",
+      "desc": "Filed: feat(custody/cow): RouteAwareExecutor for CoW Swap, inert at \u00a79",
       "ref": "79",
       "ts": "2026-10-06T05:58:49Z",
       "type": "filed"
     },
     {
-      "desc": "Filed: feat(custody/oneinch): RouteAwareExecutor for 1inch Fusion, inert at §9",
+      "desc": "Filed: feat(custody/oneinch): RouteAwareExecutor for 1inch Fusion, inert at \u00a79",
       "ref": "80",
       "ts": "2026-10-06T06:27:00Z",
       "type": "filed"
@@ -4004,7 +4005,7 @@
       "desc": "Filed: Field data: superseded generations accumulate on a 24/7 non-Docker host; collector silent on yield"
     },
     {
-      "desc": "Published: DM-JEPA 1.1 measured evaluation — REJECT / do-not-adopt (public repo created; sanitized, identifiers stripped, evidence byte-identical)",
+      "desc": "Published: DM-JEPA 1.1 measured evaluation \u2014 REJECT / do-not-adopt (public repo created; sanitized, identifiers stripped, evidence byte-identical)",
       "ref": "ether-btc/dm-jepa-evaluation@41ab449",
       "ts": "2026-10-09T05:53:12Z",
       "type": "published"
@@ -4013,7 +4014,7 @@
       "ts": "2026-10-09T06:15:54Z",
       "type": "note",
       "ref": "ether-btc/hermes-agent#7",
-      "desc": "Withdrawn 2026-10-09: proposed loginShellQuote change is a REGRESSION (breaks fish login shells; byte-identical to upstream on bash/sh). Upstream left as-is; branch fix/… deleted, commit preserved as rejected/desktop-loginshellquote-fish-regression@11b848bf4e. Issue closed as not planned."
+      "desc": "Withdrawn 2026-10-09: proposed loginShellQuote change is a REGRESSION (breaks fish login shells; byte-identical to upstream on bash/sh). Upstream left as-is; branch fix/\u2026 deleted, commit preserved as rejected/desktop-loginshellquote-fish-regression@11b848bf4e. Issue closed as not planned."
     },
     {
       "ts": "2026-10-09T06:39:37Z",
@@ -4037,25 +4038,25 @@
       "ts": "2026-10-09T06:59:58Z",
       "type": "status_update",
       "ref": "NousResearch/hermes-agent#26907",
-      "desc": "2026-10-09: posted precise landing recipe on the PR — rebase + exact-empty filter at hermes_cli/mcp_config.py:624 (if a != \"\") + whitespace-preservation test. PR is mergeable_state=dirty, 3mo stale. Cannot push: head is LeonSGP43 fork. Verified bug still live on upstream/main 1744a19e0d."
+      "desc": "2026-10-09: posted precise landing recipe on the PR \u2014 rebase + exact-empty filter at hermes_cli/mcp_config.py:624 (if a != \"\") + whitespace-preservation test. PR is mergeable_state=dirty, 3mo stale. Cannot push: head is LeonSGP43 fork. Verified bug still live on upstream/main 1744a19e0d."
     },
     {
       "ts": "2026-10-09T06:59:58Z",
       "type": "status_update",
       "ref": "NousResearch/hermes-agent#26886",
-      "desc": "2026-10-09: posted status update — bug reproduces as live on upstream/main 1744a19e0d; no empty-arg filter at hermes_cli/mcp_config.py:624. Kept open pending #26907."
+      "desc": "2026-10-09: posted status update \u2014 bug reproduces as live on upstream/main 1744a19e0d; no empty-arg filter at hermes_cli/mcp_config.py:624. Kept open pending #26907."
     },
     {
       "ts": "2026-10-09T06:59:59Z",
       "type": "status_update",
       "ref": "ether-btc/rtk-hermes-consolidated#8",
-      "desc": "2026-10-09: posted parking note — HOLD STRICT decision stands, no action pending; recorded so future triage does not flag it as stale."
+      "desc": "2026-10-09: posted parking note \u2014 HOLD STRICT decision stands, no action pending; recorded so future triage does not flag it as stale."
     },
     {
       "ts": "2026-10-09T07:16:20Z",
       "type": "status_update",
       "ref": "NousResearch/hermes-agent#26907",
-      "desc": "2026-10-09: salvage branch ready — ether-btc/hermes-agent fix/26886-mcp-empty-args-exact @ 7870b45219 (based on main 1744a19e0d): exact-empty filter + whitespace-preservation test; file verified 42 passed. PR CREATION BLOCKED: GitHub refuses CreatePullRequest for ether-btc on this repo (GraphQL permission error; REST POST /pulls -> 404 even for an invalid head, while the same call to stephenschoettler/hermes-lcm -> 422 — repo-side restriction, not a bad branch or token). Branch URL + compare link posted as a follow-up comment on the PR."
+      "desc": "2026-10-09: salvage branch ready \u2014 ether-btc/hermes-agent fix/26886-mcp-empty-args-exact @ 7870b45219 (based on main 1744a19e0d): exact-empty filter + whitespace-preservation test; file verified 42 passed. PR CREATION BLOCKED: GitHub refuses CreatePullRequest for ether-btc on this repo (GraphQL permission error; REST POST /pulls -> 404 even for an invalid head, while the same call to stephenschoettler/hermes-lcm -> 422 \u2014 repo-side restriction, not a bad branch or token). Branch URL + compare link posted as a follow-up comment on the PR."
     },
     {
       "ts": "2026-10-09T07:16:21Z",
@@ -4067,13 +4068,13 @@
       "ts": "2026-10-09T07:33:33Z",
       "type": "status_update",
       "ref": "NousResearch/hermes-agent#26907",
-      "desc": "2026-10-09 CORRECTION: the earlier note in this entry calling the PR-creation refusal a 'repo-side restriction' was wrong. Cause verified by count: this repo caps open PRs at 3 per contributor and ether-btc holds exactly 3 (#128461 CONFLICTING, #128240 MERGEABLE, #91379 CONFLICTING), so a 4th create is refused — with a permissions error / 404, not the limit wording the reopen path uses. Retracted. No slot burned: this PR is itself the open slot-holder for this fix; branch 7870b45219 + compare link are offered in the comment above."
+      "desc": "2026-10-09 CORRECTION: the earlier note in this entry calling the PR-creation refusal a 'repo-side restriction' was wrong. Cause verified by count: this repo caps open PRs at 3 per contributor and ether-btc holds exactly 3 (#128461 CONFLICTING, #128240 MERGEABLE, #91379 CONFLICTING), so a 4th create is refused \u2014 with a permissions error / 404, not the limit wording the reopen path uses. Retracted. No slot burned: this PR is itself the open slot-holder for this fix; branch 7870b45219 + compare link are offered in the comment above."
     },
     {
       "ts": "2026-10-09T07:33:34Z",
       "type": "status_update",
       "ref": "NousResearch/hermes-agent#26886",
-      "desc": "2026-10-09 CORRECTION: fix is ready on branch 7870b45219 (exact-empty filter + whitespace test, 42 passed); PR creation refused because the repo's 3-open-PRs-per-contributor cap is saturated by ether-btc's 3 open PRs — not a permission/org block as previously recorded. Delivered via the comment on #26907."
+      "desc": "2026-10-09 CORRECTION: fix is ready on branch 7870b45219 (exact-empty filter + whitespace test, 42 passed); PR creation refused because the repo's 3-open-PRs-per-contributor cap is saturated by ether-btc's 3 open PRs \u2014 not a permission/org block as previously recorded. Delivered via the comment on #26907."
     },
     {
       "ts": "2026-10-09T07:34:42Z",
@@ -4085,7 +4086,7 @@
       "ts": "2026-10-09T08:08:02Z",
       "type": "filed",
       "ref": "stephenschoettler/hermes-lcm#514",
-      "desc": "Filed: AAAK compression provider — WITHDRAWN / DECLINED on measurement (0.9729x cl100k_base = net expansion; the ~30x claim was unverified)"
+      "desc": "Filed: AAAK compression provider \u2014 WITHDRAWN / DECLINED on measurement (0.9729x cl100k_base = net expansion; the ~30x claim was unverified)"
     },
     {
       "ts": "2026-10-09T08:08:02Z",
@@ -4133,7 +4134,7 @@
       "ts": "2026-10-09T18:41:30Z",
       "type": "status_update",
       "ref": "NousResearch/hermes-agent#132034",
-      "desc": "closed Posted comment 6087057476: residual POSIX leak — retire watchdog is per-ownershipId, storm spawned fresh ownershipId per cycle"
+      "desc": "closed Posted comment 6087057476: residual POSIX leak \u2014 retire watchdog is per-ownershipId, storm spawned fresh ownershipId per cycle"
     },
     {
       "ts": "2026-10-09T20:00:07Z",
@@ -4157,7 +4158,7 @@
       "ts": "2026-10-09T22:52:46Z",
       "type": "filed",
       "ref": "NousResearch/hermes-agent#125477",
-      "desc": "Filed: goal continuation rows display_kind NULL — fix branch offered via compare-link (cap 3/3)"
+      "desc": "Filed: goal continuation rows display_kind NULL \u2014 fix branch offered via compare-link (cap 3/3)"
     },
     {
       "ts": "2026-10-09T23:39:15Z",
@@ -4169,13 +4170,13 @@
       "ts": "2026-10-09T23:40:18Z",
       "type": "note",
       "ref": "rtk-ai/rtk#4351",
-      "desc": "Replied to KuSh clap-vector comment — issuecomment-6091116926. Confirmed on 0.42.4, showed exit-code inversion bypasses the #1155 guard (no rules: ls -la->3 ask, -h->0 allow), gave precedent-backed fix: add disable_help_flag=true to Rewrite at main.rs:984 (Psql:218, Ctest:566 already have it)."
+      "desc": "Replied to KuSh clap-vector comment \u2014 issuecomment-6091116926. Confirmed on 0.42.4, showed exit-code inversion bypasses the #1155 guard (no rules: ls -la->3 ask, -h->0 allow), gave precedent-backed fix: add disable_help_flag=true to Rewrite at main.rs:984 (Psql:218, Ctest:566 already have it)."
     },
     {
       "ts": "2026-10-10T00:25:00Z",
       "type": "note",
       "ref": "local/gh-landing-watch-p4-extension",
-      "desc": "Extended gh-landing-watch.sh (daily 09:00 cron, Telegram): slot-FREE ACTION names the P4 convert-to-PR (package at ~/projects/bot-chat-goal-loop-guard/PR-package-p4.md) alongside the #91379 re-proposal; new change-gated section 2b fingerprints latest #125477 comment + fork branch tip fix/goal-continuation-displaykind @ 1232fccb8974, state seeded (silent-run verified, second run clean, slot watch FULL:3 intact). Caught & fixed in-script: REST issues-comments ignores sort/direction (chronological-only; oldest-first trap — fixed client-side sort_by(.created_at)|last). Wiki session page filed ether-btc/wiki @ cf5f4ea. Codex review dispositioned not-needed (mechanical ~40-line extension, live-run-verified); hub listing for work-package-flow stays parked."
+      "desc": "Extended gh-landing-watch.sh (daily 09:00 cron, Telegram): slot-FREE ACTION names the P4 convert-to-PR (package at ~/projects/bot-chat-goal-loop-guard/PR-package-p4.md) alongside the #91379 re-proposal; new change-gated section 2b fingerprints latest #125477 comment + fork branch tip fix/goal-continuation-displaykind @ 1232fccb8974, state seeded (silent-run verified, second run clean, slot watch FULL:3 intact). Caught & fixed in-script: REST issues-comments ignores sort/direction (chronological-only; oldest-first trap \u2014 fixed client-side sort_by(.created_at)|last). Wiki session page filed ether-btc/wiki @ cf5f4ea. Codex review dispositioned not-needed (mechanical ~40-line extension, live-run-verified); hub listing for work-package-flow stays parked."
     },
     {
       "ts": "2026-10-10T00:25:25Z",
@@ -4199,7 +4200,7 @@
       "ts": "2026-10-12T20:08:56Z",
       "type": "note",
       "ref": "ether-btc/support-router",
-      "desc": "Filing: published repo ether-btc/support-router (private) — two-tier Jev+deepseek-flash router built from the 2026-10-12 K3/Jev cost-article assessment. 4 commits 1dcb681->69bd334, 74/74 tests, master pushed and verified (ls-remote == local HEAD). Assessment page: ether-btc/wiki @ cdb21e5 (Codex-reviewed NO-GO -> 1 MAJOR + 3 MINOR fixed, push verified)."
+      "desc": "Filing: published repo ether-btc/support-router (private) \u2014 two-tier Jev+deepseek-flash router built from the 2026-10-12 K3/Jev cost-article assessment. 4 commits 1dcb681->69bd334, 74/74 tests, master pushed and verified (ls-remote == local HEAD). Assessment page: ether-btc/wiki @ cdb21e5 (Codex-reviewed NO-GO -> 1 MAJOR + 3 MINOR fixed, push verified)."
     },
     {
       "ts": "2026-10-12T22:08:51Z",
@@ -4277,7 +4278,7 @@
       "ts": "2026-10-13T11:40:17Z",
       "type": "note",
       "ref": "local/hermes-agent-pr-queue-2026-10-13",
-      "desc": "Hermes-agent PR queue pre-work (no PRs opened; the 3-PR cap is saturated). TWO parked candidates brought to ready state. (1) fix/goal-continuation-displaykind: BLOCKER FOUND AND FIXED — the branch carried the house email z2vtxybr9q@snkmail.com on author AND committer, which maps to 0 GitHub accounts, so check-attribution would have rejected the PR and add_contributor.py could not repair it. Re-authored via filter-branch to 33156212+ether-btc@users.noreply.github.com; three proofs (tree 26b0c78d unchanged, both identity lines correct, parent 46d7718a52ff unchanged), commit count 1, force-with-lease, remote read back. Tip 1232fccb89 -> fefa19230919ed62af951ff08ac3f0448988585e. Backup backup/p4-pre-cla. Target suites 10 passed. Body swept house-neutral. (2) f8-dm-turn-timeout @ e4aec72218: identity already CLA-clean, 5 passed, body drafted + swept (it had no drafted body before). Both branches now pass the CI attribution gate. Packages + bodies at ~/projects/hermes-agent-pr-queue/. Merge remains a hard gate."
+      "desc": "Hermes-agent PR queue pre-work (no PRs opened; the 3-PR cap is saturated). TWO parked candidates brought to ready state. (1) fix/goal-continuation-displaykind: BLOCKER FOUND AND FIXED \u2014 the branch carried the house email z2vtxybr9q@snkmail.com on author AND committer, which maps to 0 GitHub accounts, so check-attribution would have rejected the PR and add_contributor.py could not repair it. Re-authored via filter-branch to 33156212+ether-btc@users.noreply.github.com; three proofs (tree 26b0c78d unchanged, both identity lines correct, parent 46d7718a52ff unchanged), commit count 1, force-with-lease, remote read back. Tip 1232fccb89 -> fefa19230919ed62af951ff08ac3f0448988585e. Backup backup/p4-pre-cla. Target suites 10 passed. Body swept house-neutral. (2) f8-dm-turn-timeout @ e4aec72218: identity already CLA-clean, 5 passed, body drafted + swept (it had no drafted body before). Both branches now pass the CI attribution gate. Packages + bodies at ~/projects/hermes-agent-pr-queue/. Merge remains a hard gate."
     },
     {
       "ts": "2026-10-13T11:49:56Z",
