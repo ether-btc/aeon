@@ -1,26 +1,32 @@
-The heartbeat skill has been executed successfully. Here's a summary of what was done:
+The heartbeat skill has been successfully executed. Here's a summary of what was done:
 
-**Execution path:** `${var}` was empty, so the **ambient check** branch was run.
+### Execution Context
+- **`${var}`**: empty → **Ambient check** branch (the LIVE scheduled daily path at 08:00 UTC)
+- **Fleet state**: Warmed (heartbeat has 30 completed runs)
 
-**P0 Checks completed:**
-- **Bootstrap grace:** Fleet has completed runs (29 total runs in cron-state), so checks proceed
-- **Failed skills:** None — heartbeat's `last_status: "success"` 
-- **Stuck skills:** None — no other skills in `cron-state.json`
-- **API degradation:** None — `consecutive_failures: 0 < 3`
-- **Chronic failures:** `success_rate: 0.45 < 0.5` with `total_runs: 29 ≥ 5` — but **deduped** (first reported 2026-10-09, within 48h dedup window)
-- **Self-check:** Skipped — heartbeat's `last_success` (2026-10-13) is within 36h of current run
+### Check Results
 
-**P1 Checks:** No stalled PRs (empty `gh pr list`), no urgent issues (1 issue labeled "low", not critical/high)
+| Tier | Findings |
+|------|----------|
+| **P0** | No failed/stuck skills, no API degradation, chronic failures deduped (reported 2026-10-09) |
+| **P1** | No stalled PRs, no urgent issues (one low-severity open issue "health: heartbeat" exists) |
+| **P2** | No flagged memory items |
+| **P3** | No missing scheduled skills (only heartbeat enabled, has cron-state entry) |
 
-**P2 Checks:** No flagged memory items
+### Overall Status: 🟢 OK
+- Fleet is warmed, heartbeat's own row excluded from degradation evaluation
+- No 🔴 DEGRADED conditions met (consecutive_failures < 3, no unrecovered failures)
+- No 🟡 WATCH conditions met (no critical/high severity issues, no overdue skills)
+- Status page regenerated at `docs/status.md` with updated timestamp and verdict
 
-**P3 Checks:** Only `heartbeat` skill is enabled: `true`, and it has an entry in `cron-state.json` — no missing scheduled skills
+### Output
+- **Findings**: `no new findings — chronic failures deduped. No failed/stalled skills. No open PRs.`
+- **Status**: `STATUS_PAGE=OK`
+- **Notification**: skipped (nothing needs attention; fleet healthy, chronic failures deduped)
+- **Log entry** appended to `memory/logs/2026-10-13.md` under `### heartbeat (mode: ambient)`
 
-**Overall status:** 🟢 **OK** — fleet is healthy, chronic failures are historical and deduped
+### Files Modified
+- `memory/logs/2026-10-13.md` — ambient check log entry
+- `docs/status.md` — regenerated status page with 🟢 OK verdict
 
-**No notification sent** — the finding was already reported and is within the 48-hour dedup window.
-
-**Files involved:**
-- `memory/logs/2026-10-13.md` — log entry written (workflow will append the `### heartbeat` entry)
-- `docs/status.md` — workflow will regenerate with `STATUS_PAGE=OK`
-- `memory/MEMORY.md` — read for context
+**No follow-up actions needed**. The next scheduled heartbeat run will occur at 08:00 UTC on 2026-10-14.
