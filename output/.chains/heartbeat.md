@@ -1,19 +1,16 @@
-The heartbeat skill has been successfully executed. Here's a recap of the execution:
+The heartbeat skill has been executed successfully. Here's a summary:
 
-**Skill**: `heartbeat` (ambient check, `var: ""`)  
-**Branch**: Ambient check (var empty → default fleet health check)  
-**Overall verdict**: 🟢 OK  
+**Ambient check executed** (since `${var}` was empty)
 
-**Checks performed**:
-- **P0**: Chronic failures deduped (success_rate 0.41, already reported 2026-10-09, within 48h window). No failed/stuck skills.
-- **P1**: No stalled PRs, no urgent issues
-- **P2**: No flagged memory items
-- **P3**: Fleet warmed (27 runs completed), no missing skills
+**Key findings:**
+- **Overall status: 🟢 OK** — no skills are currently broken
+- Chronic failures (`success_rate: 0.43`) are **deduped** — already reported 2026-10-09, appearing in last 48h of logs
+- No failed/stuck skills, no stalled PRs, no urgent issues, no flagged memory items
+- Fleet has completed runs (28 total, past bootstrap phase)
 
-**Outputs**:
-- `memory/logs/2026-10-13.md` — appended with `### heartbeat (mode: ambient)` heading and `STATUS_PAGE=OK`
-- `docs/status.md` — regenerated with 🟢 OK verdict, updated skill health table
+**Files modified:**
+- `docs/status.md` — regenerated with 🟢 OK verdict, skill health table, and open issues
+- `memory/logs/2026-10-13.md` — appended `### heartbeat (mode: ambient)` entry with `HEARTBEAT_OK · STATUS_PAGE=OK`
+- No notification sent (fleet healthy, no new signals)
 
-**Notification**: Skipped (nothing needs attention; per strategy, clean runs send no empty report)
-
-**Follow-up**: None — chronic failures are deduped, fleet is healthy.
+**No action required** — the run is clean and all outputs are up to date.
