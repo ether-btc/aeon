@@ -1,18 +1,19 @@
-The heartbeat skill execution is complete. Here's a summary of the key outcomes:
+The heartbeat skill has been successfully executed. Here's a recap of the execution:
 
-**Skill Branch**: Ambient check (`var: empty` → default daily fleet-health path)
+**Skill**: `heartbeat` (ambient check, `var: ""`)  
+**Branch**: Ambient check (var empty → default fleet health check)  
+**Overall verdict**: 🟢 OK  
 
-**Fleet-Health Assessment (P0–P3)**:
-- **P0**: No failed/stuck skills, no API degradation, chronic failures deduped (reported 2026-10-09 & 2026-10-10)
-- **P1**: No stalled PRs >24h, no urgent GitHub issues
+**Checks performed**:
+- **P0**: Chronic failures deduped (success_rate 0.41, already reported 2026-10-09, within 48h window). No failed/stuck skills.
+- **P1**: No stalled PRs, no urgent issues
 - **P2**: No flagged memory items
-- **P3**: Skills warming up (fleet has warmed via heartbeat's 26 completed runs)
+- **P3**: Fleet warmed (27 runs completed), no missing skills
 
-**Overall Status**: 🟢 **OK** — no conditions for DEGRADED or WATCH are met
+**Outputs**:
+- `memory/logs/2026-10-13.md` — appended with `### heartbeat (mode: ambient)` heading and `STATUS_PAGE=OK`
+- `docs/status.md` — regenerated with 🟢 OK verdict, updated skill health table
 
-**Deliverables**:
-- `docs/status.md` — regenerated with overall 🟢 OK, skill health table, open issue ISS-001
-- `memory/logs/2026-10-12.md` — heartbeat log entry with `mode: ambient` discriminator and `HEARTBEAT_OK · STATUS_PAGE=OK`
-- Notification: **skipped** (no findings meet the threshold)
+**Notification**: Skipped (nothing needs attention; per strategy, clean runs send no empty report)
 
-**No follow-up actions needed**. The fleet is healthy, chronic failures are tracked and deduped, and the next scheduled heartbeat run will continue the daily ambient check cycle at 14:00 UTC today.
+**Follow-up**: None — chronic failures are deduped, fleet is healthy.
