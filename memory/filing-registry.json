@@ -2196,8 +2196,8 @@
       "number": 103,
       "type": "pr",
       "title": "audit(store): explain the §3d FAIL — read-only consistency tool + findings (definitional, not corruption)",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Await upstream review",
       "evidence_tier": "branch audit/store-consistency-20261013 @ 56a35a3; go build/vet rc0, package tests ok; independent reviewer gate GO-WITH-CONDITIONS (6 conditions landed); kill tests re-run by orchestrator (both detection classes bound); read-only proven positively against the live store (db size+mtime identical, no -wal/-shm)",
       "filed_at": "2026-10-13T23:14:23Z",
@@ -3189,7 +3189,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-13T23:14:23Z",
+  "last_synced": "2026-10-13T23:16:40Z",
   "account": "ether-btc",
   "activity_log": [
     {
