@@ -3209,7 +3209,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-14T06:36:08Z",
+  "last_synced": "2026-10-14T08:32:41Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4362,6 +4362,12 @@
       "type": "filed",
       "ref": "ether-btc/prompro#104",
       "desc": "Filed: p1eval: A10-bis — §3d becomes a per-row cross-table identity (it can now pass)"
+    },
+    {
+      "ts": "2026-10-14T08:32:41Z",
+      "type": "note",
+      "ref": "NousResearch/hermes-agent#135677",
+      "desc": "RE-VERIFIED at the new 9-commit head 1dea37b707 (a concurrent session pushed 3 more commits today after my earlier check: 7903c0b3 per-op staging fails fast for batch ops, 774697e6 process-agnostic replay trust, 1dea37b7 docstring refresh). Decider battery (mercury choice x2 frames, 0.965/0.959 frame-invariant) steered to this re-verification. EVERY body claim re-derived at the new head and EXACT: 24/24 unit (test_skill_evidence_merge.py), e2e 'E2E PASS - 25 checks' exit 0, 125 passed across the 3 skill suites, 56 passed + 11 skipped across the 7 atomic-writer suites, 10 files +1480/-45, marker sweep CLEAN (control-probed), no PyYAML import anywhere in the diff (import-level claim holds), CI attribution gate passes (only the auto-resolved noreply identity in range). NO DEFECT FOUND. Then dispatched deleg_7744d452, a read-only adversarial review of the two bodies I corrected earlier (#135841, #128461)."
     }
   ]
 }
