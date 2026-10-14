@@ -2229,6 +2229,26 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#107",
+      "repo": "ether-btc/prompro",
+      "number": 107,
+      "type": "pr",
+      "title": "feat(papertrade): configurable concurrent-position cap (max_open_positions, default 1)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "6 bound kill tests re-run by orchestrator; independent bind spot-check; vet rc=0; merge/deploy excluded as live capital mutation",
+      "filed_at": "2026-10-14T12:02:00Z",
+      "last_action": "2026-10-14T12:02:00Z",
+      "url": "https://github.com/ether-btc/prompro/pull/107",
+      "actions_taken": [
+        "Filed: feat(papertrade): configurable concurrent-position cap (max_open_positions, default 1)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "issues": [
@@ -3230,7 +3250,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-14T09:59:07Z",
+  "last_synced": "2026-10-14T12:02:01Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4437,6 +4457,12 @@
       "type": "note",
       "ref": "local/hermes-agent-pr-audit-2026-10-14",
       "desc": "CORRECTION to my own earlier note in this registry (my 'worktree artefact' hypothesis is REFUTED). I stated that the 7 failures in tests/hermes_cli/test_update_parked_branch_guard.py were a git-worktree artefact and that CI would not reproduce them. That is WRONG. Controlled measurements: worktree @ merge-base 26610b09a5 -> 7 failed/16 passed; worktree @ current main 0e427d788d -> 7 failed/16 passed; worktree @ a50406d9b7 -> 7 failed/16 passed; NORMAL git clone of the PR branch 3fc8f5d8 -> 7 failed/21 passed; shared live-install checkout @ a50406d9b7 -> 23 passed/0 failed. So the failures reproduce in BOTH a worktree AND a normal clone; the odd one out is the shared LIVE INSTALL, not the worktree. Two further hypotheses were tested and REFUTED: PyYAML absence (both the dev venv and the shared checkout's venv lack yaml) and the CI extras set (uv sync --locked --extra all --group dev still yields 7 failed). CAUSE REMAINS UNESTABLISHED and is recorded as an open question, NOT a PR defect. CONSEQUENCE: NO body change is warranted - #128461's existing wording ('pre-existing and environmental ... identical in both runs') is accurate and appropriately unexplained, and its no-regression comparison remains valid because branch and control both ran in the SAME container. The audit's 'no defects in any of the 3 open PRs' conclusion STANDS. LESSON folded into skill hermes-upstream-pr: test an explanation across container types before publishing it; a hypothesis fitting 3 of 4 data points is not the mechanism."
+    },
+    {
+      "ts": "2026-10-14T12:02:01Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#107",
+      "desc": "Filed: feat(papertrade): configurable concurrent-position cap (max_open_positions, default 1)"
     }
   ]
 }
