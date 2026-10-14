@@ -1,51 +1,23 @@
-## Heartbeat Ambient Check — 2026-10-13
+## Summary
 
-**Selector**: `${var}` is empty → **Ambient check** branch
+**Skill**: heartbeat (ambient check branch, `${var}` empty)
 
-### Overall Status: 🟢 OK
+**What I did**:
+1. Read `memory/MEMORY.md` and the last 2 days of `memory/logs/` for context
+2. Parsed `${var}` — empty → ran the **Ambient check** branch
+3. Executed all priority checks (P0 through P3) per the heartbeat SKILL.md:
+   - **P0**: Chronic failures detected (success_rate 0.48 < 0.5 with total_runs 31 ≥ 5), but already deduped from prior runs (reported 2026-10-09, appearing in recent logs). No failed/stalled skills. No stuck skills.
+   - **P1**: No open PRs stalled > 24h. No GitHub issues labeled urgent.
+   - **P2**: No flagged memory items in `memory/MEMORY.md`.
+   - **P3**: Only heartbeat is enabled in `aeon.yml` and has a cron-state entry — no missing skills.
+4. Completed the **self-check**: heartbeat's own entry has `total_successes ≥ 1` and `last_success` is ~22h old (not > 36h), so no self-check alert.
+5. Computed **overall status**: 🟢 OK (no 🔴 DEGRADED or 🟡 WATCH conditions met, excluding heartbeat's own row per the status page rules).
+6. Regenerated `docs/status.md` with current fleet health.
+7. Created `memory/logs/2026-10-14.md` with `mode: ambient` discriminator and `HEARTBEAT_OK · STATUS_PAGE=OK` log entry.
 
-The fleet has completed runs (heartbeat: 30 runs, 14 successes, 16 failures, success_rate 47%, 0 consecutive failures). No skills are in a failing or stuck state that requires immediate attention.
+**Files created/modified**:
+- `docs/status.md` — regenerated with overall 🟢 OK, skill health table (heartbeat: ✅ success, 48% success rate, 0 consecutive failures), no open issues, token pulse omitted (no token-report files)
+- `memory/logs/2026-10-14.md` — new log entry with `mode: ambient` branch, findings, STATUS_PAGE=OK, and `HEARTBEAT_OK · STATUS_PAGE=OK`
+- No notification sent (clean run with no new findings; chronic failures already deduped)
 
-### Priority Checks
-
-**P0 — Failed & stuck skills:**
-- No failed skills: heartbeat's `last_status` is "success"; no other skills in cron-state have `last_status: "failed"`
-- No stuck skills: no entries with `last_status: "dispatched"` >45min old that have completed ≥1 run before
-- No API degradation: `consecutive_failures: 0` across the fleet
-- Chronic failures: heartbeat has `success_rate: 0.47` with `total_runs: 30 ≥ 5`, but these findings were already reported 2026-10-09 and are deduped per the 48-hour rule
-
-**P1 — Stalled PRs & urgent issues:**
-- No open PRs stalled >24h (gh pr list returned no results)
-- No GitHub issues labeled urgent (one open issue "health: heartbeat" exists but with "low" severity, not urgent)
-
-**P2 — Flagged memory items:**
-- No items flagged in memory/MEMORY.md requiring follow-up
-
-**P3 — Missing scheduled skills:**
-- Only `heartbeat` is enabled in aeon.yml and it has an entry in cron-state.json → no missing skills
-- Fleet is warmed, so P3 is not skipped
-
-### Overall Status Page Verdict: 🟢 OK
-
-Per the status page ladder:
-- Fleet is warmed (bootstrapping clause does not apply)
-- No skills meet the 🔴 DEGRADED criteria (heartbeat's own row excluded from chronic failure/consecutive failures evaluation; no stuck skills; consecutive_failures < 3)
-- No skills meet the 🟡 WATCH criteria (open issue has low severity, not critical/high; no P1/P2/P3 flags)
-- Therefore: 🟢 OK
-
-### Token Pulse
-
-No `output/articles/token-report-*.md` file exists, so the Token pulse section is omitted per the rules.
-
-### Output (ambient)
-
-Since nothing new needs attention:
-- **Findings**: no new findings — chronic failures deduped (already reported 2026-10-09). No failed/stalled skills. No open PRs.
-- **Status page**: STATUS_PAGE=OK
-- **Notification**: skipped (nothing needs attention; fleet healthy, chronic failures deduped)
-
-**HEARTBEAT_OK · STATUS_PAGE=OK**
-
-### Log entry
-
-Appended to `memory/logs/2026-10-13.md` under `### heartbeat (mode: ambient)` with discriminator line and status-page verdict.
+**Follow-up**: None. The fleet is healthy. Chronic failures condition (success_rate 0.48) remains but is deduped per the 48-hour window and was last explicitly reported on 2026-10-09. The next scheduled heartbeat run is at 08:00 UTC.
