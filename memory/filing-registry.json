@@ -3230,7 +3230,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-14T09:42:10Z",
+  "last_synced": "2026-10-14T09:53:01Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4425,6 +4425,12 @@
       "type": "note",
       "ref": "local/hermes-agent-pr-audit-2026-10-14",
       "desc": "hermes-agent OPEN-PR AUDIT (operator: make the 3 open PRs perfect so they can merge and free a slot). RESULT: ALL THREE ARE VERIFIED MERGE-READY, NO DEFECTS FOUND, NOTHING CHANGED. #135841 head 1d0f3caa: 1 commit, CLA-clean, MERGEABLE, merge-tree into CURRENT main clean, body+diff marker sweeps 0/0, receipt reproduces (43 passed; control at merge-base 46d7718a52ff = 41 passed). #135677 head 1dea37b7 (9 commits, 10 files, +1480-45): CLA-clean on all 9, MERGEABLE, merge-tree clean, sweeps 0/0, ALL FOUR body claims reproduce (24/24 unit, e2e 25/25 PASS, 125 passed on the three touched suites, 56 passed+11 skipped on the seven atomic-writer suites). #128461 head 3fc8f5d8: 2 commits, CLA-clean, MERGEABLE, merge-tree clean, sweeps 0/0, receipt reproduces (branch 7 failed/21 passed of 28 collected; control at merge-base 26610b09a5c4 = 7 failed/16 passed of 23 collected) with comm on the sorted FAILED sets showing introduced EMPTY and accidentally-fixed EMPTY = no regressions. NO REBASE PERFORMED and none needed: all three are ~1300 commits behind main but MERGEABLE, a real merge-tree against current main is clean, and CI tests the merge commit; rebasing would only invalidate #135841's review which binds head 1d0f3caa. Only defect found was in MY OWN sweep harness (grep|head && echo HITS fires unconditionally because head exits 0) - fixed to grep -c + branch, control-probed, and folded into skill hermes-upstream-pr."
+    },
+    {
+      "ts": "2026-10-14T09:53:01Z",
+      "type": "note",
+      "ref": "local/hermes-agent-pr-audit-2026-10-14",
+      "desc": "INDEPENDENT VERIFICATION of the 2026-10-14 open-PR audit (deleg_d0535904, read-only, 20 API calls, 256s, hit its iteration cap BEFORE summarizing - judged from its transcript, not its report). VERDICT: the audit's central claim SURVIVES. The verifier independently confirmed C1 (3 PRs at the expected heads, each head == its fork branch tip), C2 (CI-range author email is ONLY 33156212+ether-btc@users.noreply.github.com on all three), and C3 (git merge-tree --write-tree upstream/main <head> returned EXIT_CODE 0 for all three). C4/C5/C6 were closed by the orchestrator: C4 receipts already re-derived earlier (43/41, 24/24+25/25+125+56-11, 7f/21p vs 7f/16p); C5 - the review on #135841 (ehz0ah, state COMMENTED) binds commit 1d0f3caa, confirming a rebase would invalidate it (reviewDecision is EMPTY, so it does not count for branch protection); C6 - the buggy sweep shape prints HITS on a zero-match file while the corrected grep -c form prints CLEAN. FINDING ABOUT THE VERIFIER ITSELF: it ran its pytest commands in the SHARED checkout (cwd /home/hermes-pi/hermes-agent, on main), not in a PR worktree, so its C4 numbers are MAIN baselines (41 passed, 23 passed) and not PR receipts - a pinned cwd belongs in any verification brief. It also ran 'git checkout HEAD -- <file>' in the shared checkout; verified harmless (tree was clean, HEAD unchanged a50406d9b7). NEW OPEN QUESTION being tested: the same test file gives 7 failures in a fresh WORKTREE but 0 in the shared checkout - a controlled worktree-vs-checkout experiment at the merge-base AND at main is running (proc_9115a0f401d3) to decide whether the PR body's '7 pre-existing environmental failures' is a worktree artefact, which would predict green CI."
     }
   ]
 }
