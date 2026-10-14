@@ -3206,10 +3206,31 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#91169",
+      "repo": "NousResearch/hermes-agent",
+      "number": 91169,
+      "type": "issue",
+      "title": "project bind-board leaves board project_id unset",
+      "state": "open",
+      "status": "open",
+      "next_action": "PR only when welcomed AND a slot frees (cap 3/3 verified today); branch fix/board-binding-honest @0403e5f977 ready",
+      "evidence_tier": "distinct sibling case posted as comment 6165160639 (2026-10-14): the bound board need not EXIST at all - projects_cmd.py:137 (create) has no existence check; :213 bind writes board_slug unconditionally; :221 board_exists guards only the board-side metadata inside a bare except-pass. Population on this host: 3/8 declared boards missing. Tested patch ready on fix/board-binding-honest @0403e5f977 (kill-proven).",
+      "filed_at": "2026-10-14T09:27:33Z",
+      "last_action": "2026-10-14T09:27:34Z",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/91169",
+      "actions_taken": [
+        "Filed: project bind-board leaves board project_id unset",
+        "posted evidence comment incl. tested-patch offer (verified kill test)"
+      ],
+      "notes": "comment body read back from the API; author ether-btc; all load-bearing facts verified present",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-14T09:27:33Z",
+  "last_synced": "2026-10-14T09:27:34Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4386,6 +4407,18 @@
       "type": "note",
       "ref": "local/hermes-agent-pr-queue-2026-10-13",
       "desc": "hermes-agent PR queue gate pass ROUND 2 (2026-10-14; no PRs opened; cap 3/3). P4 fix/goal-continuation-displaykind @ fefa192309: independent review APPROVE 0 BLOCKERS / 0 MAJORS / 0 MINORS (deleg_a08a4aea) - it RECOMPUTED the tree hash (26b0c78d identical across the identity rewrite), both identity lines, 10 passed, imports resolve, no I/O primitives, both sweeps zero-hit with a fired control, every body claim, and ran its OWN mutation kill test. GATE COMPLETE. F8 f8-dm-turn-timeout: review APPROVE-WITH-CONDITIONS 0/1/2 (deleg_113c35ab); ALL THREE findings re-verified by me as VALID and closed at the root - MAJOR: the body claimed non-numeric coverage that no test had; MINOR 1: zero/negative/absent tests asserted rc==0 against a 0.1s sleeper so could not detect a bound-disabling mutation; MINOR 2: the body's '82 existing tests green' was STALE (measured 77+1 alone, 83+1 then). Fix delegated to ling-implementer (proc_b112db1fb850), test-only: commit 4bd9dd7d, +66-1, CLA-clean, 8 tests now incl. non_numeric + negative_config_observes_fallback_bound. Orchestrator INDEPENDENTLY verified: 8 passed; removing the try/except fallback makes non_numeric AND missing_config FAIL with ValueError; restore byte-clean. F8 tip 5a22db248c -> 4bd9dd7df7 (pushed, remote read back == local). Body + package updated to 8 tests / +279-2 / tip 4bd9dd7d, with the exact affected-suite commands (77+1, 85+1). DECIDER NOTE: span-01-lite read 'verifiable' 0.061 on a plan that DOES state receipts; a control pair (present 0.9523 / absent 0.0446, delta 0.91) proved the meter discriminates and the subject read 0.5414 in isolation - the low number was the span artefact, not a gap. Both parked candidates now gate-complete."
+    },
+    {
+      "ts": "2026-10-14T09:27:33Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#91169",
+      "desc": "Filed: project bind-board leaves board project_id unset"
+    },
+    {
+      "ts": "2026-10-14T09:27:34Z",
+      "type": "status_update",
+      "ref": "NousResearch/hermes-agent#91169",
+      "desc": "open posted evidence comment incl. tested-patch offer (verified kill test)"
     }
   ]
 }
