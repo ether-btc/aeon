@@ -3209,7 +3209,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-14T08:40:56Z",
+  "last_synced": "2026-10-14T09:11:40Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4374,6 +4374,12 @@
       "type": "note",
       "ref": "NousResearch/hermes-agent#128461",
       "desc": "Independent review deleg_7744d452 (read-only, 20 API calls, ran real pytest at both heads and both merge-bases in a clone OUTSIDE ~/.hermes) returned APPROVE: 0 BLOCKERS, 0 MAJORS, 1 MINOR. It reproduced every claim in both corrected bodies — #135841 (2 files, 6 changed lines, exactly 2 new tests, 43 passed at head vs 41 at base 46d7718a52ff, 8 held action_required runs, and #26907 differs by strip-vs-exact-empty) and #128461 (Supersedes #128352 CLOSED/mergedAt=null, 3 files, 5 new tests, no <target} typo, 7f/16p vs 7f/21p with identical FAILED sets, ruff clean, and the code-behaviour narration: reset --hard on same-branch non-ancestor, rescue ref, 30-day constant, git cherry). Jargon clean in both. MINOR (reproducibility gap only, numbers true): #128461's headline counts named no test file and gave no invocation, unlike #135841. FIXED — the body now carries 'uv run pytest tests/hermes_cli/test_update_parked_branch_guard.py -q' plus both counts and the control merge-base 26610b09a5c4; swept clean. Reviewer's secondary note (the '> Correction (2026-10-04)' blockquote reading older than today's rewrite) left as-is: it is a dated, honest record of a withdrawn claim, and it says 'an earlier revision of this description'."
+    },
+    {
+      "ts": "2026-10-14T09:11:40Z",
+      "type": "note",
+      "ref": "local/hermes-agent-pr-queue-2026-10-13",
+      "desc": "hermes-agent PR queue gate pass (no PRs opened; cap 3/3). Deciders: mercury choice x2 frames -> 'complete the hermes-upstream-pr gate on the two parked candidates' 0.9991/0.9979 FRAME-INVARIANT (runners-up <=0.0015); span-01-lite corroborated reversible 0.95 and on_goal 0.73 after a CONTROL PAIR proved the meter discriminates (present 0.9157 / absent 0.0810, delta 0.83) - the initial 0.43 read was the span artefact the wire warns about, not a real gap. GATE RESULT: P4 fix/goal-continuation-displaykind - imports none changed, variant coverage complete (positive + all_unset negative), sweep clean, review dispatched. F8 f8-dm-turn-timeout - REAL GAP FOUND AND FIXED: the math.isfinite guard (the fix for its own review finding 3) had NO test while the body claimed it, and none of the 5 existing tests could detect a wrong bound (all asserted rc==0 against a 0.1s sleeper). Dispatched to ling-implementer per operator instruction: test-only change, commit 5a22db248c, +37 lines, identity CLA-correct, 1 file. Orchestrator INDEPENDENTLY verified: 6 passed; kill test (deleting math.isfinite(secs)) makes the new test FAIL with OverflowError from the unbounded wait; restore byte-clean + green. F8 tip e4aec72218 -> 5a22db248c (pushed, remote read back == local, gh api shows correct identity). Body + package updated to 6 tests / +214-2 / tip 5a22db24. Both bodies swept clean (control-probed). Reviews in flight: P4 deleg_a08a4aea, F8 deleg_113c35ab."
     }
   ]
 }
