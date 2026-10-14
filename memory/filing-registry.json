@@ -2209,6 +2209,26 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#104",
+      "repo": "ether-btc/prompro",
+      "number": 104,
+      "type": "pr",
+      "title": "p1eval: A10-bis — §3d becomes a per-row cross-table identity (it can now pass)",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "commit b7a0ef3; real-store run 58 costed rows / 0 skipped / 2 violations named (open-1790097774496882540, open-1790192837816850620) matching two independent derivations; kill test proven (identity neutered -> test FAILS); CI green; MERGED 1902401",
+      "filed_at": "2026-10-14T06:35:45Z",
+      "last_action": "2026-10-14T06:35:45Z",
+      "url": "https://github.com/ether-btc/prompro/pull/104",
+      "actions_taken": [
+        "Filed: p1eval: A10-bis — §3d becomes a per-row cross-table identity (it can now pass)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "issues": [
@@ -3189,7 +3209,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-13T23:16:40Z",
+  "last_synced": "2026-10-14T06:36:08Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4336,6 +4356,12 @@
       "type": "filed",
       "ref": "ether-btc/prompro#103",
       "desc": "Filed: audit(store): explain the §3d FAIL — read-only consistency tool + findings (definitional, not corruption)"
+    },
+    {
+      "ts": "2026-10-14T06:35:45Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#104",
+      "desc": "Filed: p1eval: A10-bis — §3d becomes a per-row cross-table identity (it can now pass)"
     }
   ]
 }
