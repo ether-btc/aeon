@@ -2236,8 +2236,8 @@
       "number": 107,
       "type": "pr",
       "title": "feat(papertrade): configurable concurrent-position cap (max_open_positions, default 1)",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Await upstream review",
       "evidence_tier": "6 bound kill tests re-run by orchestrator; independent bind spot-check; vet rc=0; merge/deploy excluded as live capital mutation",
       "filed_at": "2026-10-14T12:02:00Z",
@@ -2245,6 +2245,186 @@
       "url": "https://github.com/ether-btc/prompro/pull/107",
       "actions_taken": [
         "Filed: feat(papertrade): configurable concurrent-position cap (max_open_positions, default 1)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#108",
+      "repo": "ether-btc/prompro",
+      "number": 108,
+      "type": "pr",
+      "title": "fix(papertrade): scope TP/SL guard and post-fill true-up to the resolved slot",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "multi-slot exit-gap fix; 2 bound kill tests + neutrality; orchestrator re-welded defect A to prove the bind",
+      "filed_at": "2026-10-14T13:55:00Z",
+      "last_action": "2026-10-14T13:55:00Z",
+      "url": "https://github.com/ether-btc/prompro/pull/108",
+      "actions_taken": [
+        "Filed: fix(papertrade): scope TP/SL guard and post-fill true-up to the resolved slot"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#109",
+      "repo": "ether-btc/prompro",
+      "number": 109,
+      "type": "pr",
+      "title": "audit(store+sizing): correct the reciprocal-fill_price remedy, refute the unfiled cost triple, flag PR landing hazards",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "3 read-only audit notes + 2 fail-closed read-only checkers; independent review verdict SHIP 0 blockers/0 majors/3 minors (2 substantive minors confirmed by probe and applied); head 28aa9f9",
+      "filed_at": "2026-10-14T16:45:54Z",
+      "last_action": "2026-10-14T16:45:54Z",
+      "url": "https://github.com/ether-btc/prompro/pull/109",
+      "actions_taken": [
+        "Filed: audit(store+sizing): correct the reciprocal-fill_price remedy, refute the unfiled cost triple, flag PR landing hazards"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#110",
+      "repo": "ether-btc/prompro",
+      "number": 110,
+      "type": "pr",
+      "title": "fix(config): assert the EFFECTIVE live config, and pin the bound that actually binds",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "guard reads env-merged config via real applyEnvOverrides; aggregate per-cycle bound asserted; 4 kill tests; runbook + ADR-0011 amendment; head f42b8bd",
+      "filed_at": "2026-10-14T17:17:33Z",
+      "last_action": "2026-10-14T17:17:33Z",
+      "url": "https://github.com/ether-btc/prompro/pull/110",
+      "actions_taken": [
+        "Filed: fix(config): assert the EFFECTIVE live config, and pin the bound that actually binds"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#111",
+      "repo": "ether-btc/prompro",
+      "number": 111,
+      "type": "pr",
+      "title": "docs(config): correct three stale comments that claimed the sizing config is unconsumed",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "comment-only (0 non-comment changed lines); build/vet/config tests green; head a0ff81f",
+      "filed_at": "2026-10-14T17:29:56Z",
+      "last_action": "2026-10-14T17:29:56Z",
+      "url": "https://github.com/ether-btc/prompro/pull/111",
+      "actions_taken": [
+        "Filed: docs(config): correct three stale comments that claimed the sizing config is unconsumed"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#112",
+      "repo": "ether-btc/prompro",
+      "number": 112,
+      "type": "pr",
+      "title": "audit(sizing): evaluate the pre-registered boost gate",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "read-only gate evaluation; n=22<25 tail fails; bucket inversion; $100 cost 4.1x off model; head 98efd5e",
+      "filed_at": "2026-10-14T17:48:55Z",
+      "last_action": "2026-10-14T17:48:55Z",
+      "url": "https://github.com/ether-btc/prompro/pull/112",
+      "actions_taken": [
+        "Filed: audit(sizing): evaluate the pre-registered boost gate"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#113",
+      "repo": "ether-btc/prompro",
+      "number": 113,
+      "type": "pr",
+      "title": "docs(agents): standing rule §9 — codify so a contextless model can run it",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "standing codification rule; docs/agent-operating-instructions.md §9 + AGENTS.md pointer; head db497d4",
+      "filed_at": "2026-10-14T17:55:43Z",
+      "last_action": "2026-10-14T17:55:43Z",
+      "url": "https://github.com/ether-btc/prompro/pull/113",
+      "actions_taken": [
+        "Filed: docs(agents): standing rule §9 — codify so a contextless model can run it"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#114",
+      "repo": "ether-btc/prompro",
+      "number": 114,
+      "type": "pr",
+      "title": "audit(live): localise the write-path 401/403 behind all four ambiguous-write halts",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "root cause captured from the volatile journal: bankr API key rejected 401/403 on the write path; 4 occurrences; rotation ruled out; fix split operator vs code; head 1077503",
+      "filed_at": "2026-10-14T18:10:47Z",
+      "last_action": "2026-10-14T18:10:47Z",
+      "url": "https://github.com/ether-btc/prompro/pull/114",
+      "actions_taken": [
+        "Filed: audit(live): localise the write-path 401/403 behind all four ambiguous-write halts"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#117",
+      "repo": "ether-btc/prompro",
+      "number": 117,
+      "type": "pr",
+      "title": "audit(write-path): 7 findings, one class",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "adversarial write-path sweep; F1 double daily-loss feed confirmed; F1-F7 with class + fix design",
+      "filed_at": "2026-10-14T18:58:46Z",
+      "last_action": "2026-10-14T18:58:46Z",
+      "url": "https://github.com/ether-btc/prompro/pull/117",
+      "actions_taken": [
+        "Filed: audit(write-path): 7 findings, one class"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#118",
+      "repo": "ether-btc/prompro",
+      "number": 118,
+      "type": "pr",
+      "title": "feat(papertrade): persist venue fee bps per fill (sign-agnostic)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_3",
+      "filed_at": "2026-10-15T14:05:03Z",
+      "last_action": "2026-10-15T14:05:03Z",
+      "url": "https://github.com/ether-btc/prompro/pull/118",
+      "actions_taken": [
+        "Filed: feat(papertrade): persist venue fee bps per fill (sign-agnostic)"
       ],
       "notes": "",
       "labels": [],
@@ -3247,10 +3427,50 @@
       "notes": "comment body read back from the API; author ether-btc; all load-bearing facts verified present",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "lightpanda-io/browser#3852",
+      "repo": "lightpanda-io/browser",
+      "number": 3852,
+      "type": "issue",
+      "title": "aarch64 build needs GLIBC_2.38, x86_64 only 2.35 — please use the same glibc for both",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "Commented 2026-10-14 (id 6179712615): aarch64 release bisect — 0.3.6=GLIBC_2.34 runs, 0.3.7 through nightly=GLIBC_2.38 blocked on Debian 12/glibc 2.36; break bound by commit 34aae91f (2026-08-14, runner ubuntu-22.04-arm -> ubuntu-24.04-arm); README's suggested base image debian:bookworm-slim is glibc 2.36 and cannot start the aarch64 binary; verified container workaround 1.1.0-nightly.10552+dd2cd5d7f",
+      "filed_at": "2026-10-14T22:16:49Z",
+      "last_action": "2026-10-14T22:16:49Z",
+      "url": "https://github.com/lightpanda-io/browser/issues/3852#issuecomment-6179712615",
+      "actions_taken": [
+        "Filed: aarch64 build needs GLIBC_2.38, x86_64 only 2.35 — please use the same glibc for both"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#63248",
+      "repo": "NousResearch/hermes-agent",
+      "number": 63248,
+      "type": "issue",
+      "title": "Kanban check_respawn_guard mis-fires blocker_auth on slug words in workspace errors (no expiry, breaker unreachable)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "Independent repro @ upstream 5575a085 on arm64 rpi5: slug '...-provider-quota-zai' in git-worktree error matched \\bquota\\b post-#117567; 6993 respawn_guarded/4.96d, consecutive_failures=0 throughout; docstring :1556-1566 contradicts guard path (breaker unreachable); comment #issuecomment-6180189931",
+      "filed_at": "2026-10-14T22:48:02Z",
+      "last_action": "2026-10-14T22:48:02Z",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/63248#issuecomment-6180189931",
+      "actions_taken": [
+        "Filed: Kanban check_respawn_guard mis-fires blocker_auth on slug words in workspace errors (no expiry, breaker unreachable)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-14T12:02:01Z",
+  "last_synced": "2026-10-15T14:05:03Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4463,6 +4683,72 @@
       "type": "filed",
       "ref": "ether-btc/prompro#107",
       "desc": "Filed: feat(papertrade): configurable concurrent-position cap (max_open_positions, default 1)"
+    },
+    {
+      "ts": "2026-10-14T13:55:00Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#108",
+      "desc": "Filed: fix(papertrade): scope TP/SL guard and post-fill true-up to the resolved slot"
+    },
+    {
+      "ts": "2026-10-14T16:45:54Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#109",
+      "desc": "Filed: audit(store+sizing): correct the reciprocal-fill_price remedy, refute the unfiled cost triple, flag PR landing hazards"
+    },
+    {
+      "ts": "2026-10-14T17:17:34Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#110",
+      "desc": "Filed: fix(config): assert the EFFECTIVE live config, and pin the bound that actually binds"
+    },
+    {
+      "ts": "2026-10-14T17:29:56Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#111",
+      "desc": "Filed: docs(config): correct three stale comments that claimed the sizing config is unconsumed"
+    },
+    {
+      "ts": "2026-10-14T17:48:55Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#112",
+      "desc": "Filed: audit(sizing): evaluate the pre-registered boost gate"
+    },
+    {
+      "ts": "2026-10-14T17:55:43Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#113",
+      "desc": "Filed: docs(agents): standing rule §9 — codify so a contextless model can run it"
+    },
+    {
+      "ts": "2026-10-14T18:10:47Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#114",
+      "desc": "Filed: audit(live): localise the write-path 401/403 behind all four ambiguous-write halts"
+    },
+    {
+      "ts": "2026-10-14T18:58:46Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#117",
+      "desc": "Filed: audit(write-path): 7 findings, one class"
+    },
+    {
+      "ts": "2026-10-14T22:16:49Z",
+      "type": "filed",
+      "ref": "lightpanda-io/browser#3852",
+      "desc": "Filed: aarch64 build needs GLIBC_2.38, x86_64 only 2.35 — please use the same glibc for both"
+    },
+    {
+      "ts": "2026-10-14T22:48:02Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#63248",
+      "desc": "Filed: Kanban check_respawn_guard mis-fires blocker_auth on slug words in workspace errors (no expiry, breaker unreachable)"
+    },
+    {
+      "ts": "2026-10-15T14:05:03Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#118",
+      "desc": "Filed: feat(papertrade): persist venue fee bps per fill (sign-agnostic)"
     }
   ]
 }
