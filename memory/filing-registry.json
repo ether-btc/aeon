@@ -3467,10 +3467,30 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#139283",
+      "repo": "NousResearch/hermes-agent",
+      "number": 139283,
+      "type": "issue",
+      "title": "[Bug]: Topic heal trusts a rowless session id and re-attaches its old transcript",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-15T16:55:17Z",
+      "last_action": "2026-10-15T16:55:17Z",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/139283",
+      "actions_taken": [
+        "Filed: [Bug]: Topic heal trusts a rowless session id and re-attaches its old transcript"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-15T14:05:03Z",
+  "last_synced": "2026-10-15T16:55:17Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -4749,6 +4769,12 @@
       "type": "filed",
       "ref": "ether-btc/prompro#118",
       "desc": "Filed: feat(papertrade): persist venue fee bps per fill (sign-agnostic)"
+    },
+    {
+      "ts": "2026-10-15T16:55:17Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#139283",
+      "desc": "Filed: [Bug]: Topic heal trusts a rowless session id and re-attaches its old transcript"
     }
   ]
 }
