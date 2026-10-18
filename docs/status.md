@@ -7,7 +7,7 @@ permalink: /status/
 # Agent Status
 
 **Overall:** 🟢 OK
-**Updated:** 2026-10-17 17:00 UTC
+**Updated:** 2026-10-18 17:24 UTC
 **Open issues:** 0
 **Next scheduled run:** heartbeat at 20:00 UTC
 
@@ -21,7 +21,7 @@ No token data available.
 
 | Skill | Last run | Status | Success rate | Consecutive failures |
 |-------|----------|--------|-------------:|---------------------:|
-| heartbeat | 2026-10-17 16:29 UTC | ❌ failed | 49% | 6 |
+| heartbeat | 2026-10-18 16:54 UTC | ❌ failed | 47% | 3 |
 
 ## Open issues
 
