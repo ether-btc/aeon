@@ -2662,6 +2662,52 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#141224",
+      "repo": "NousResearch/hermes-agent",
+      "number": 141224,
+      "type": "pr",
+      "title": "feat(optional-skills): add memory-hygiene skill",
+      "state": "closed",
+      "status": "closed",
+      "next_action": "None \u2014 skill remains local-only in ~/.hermes/skills/hermes/memory-hygiene/",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-18T19:30:57Z",
+      "last_action": "2026-10-18T19:31:02Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/141224",
+      "actions_taken": [
+        "Filed: feat(optional-skills): add memory-hygiene skill",
+        "Closed per operator directive: zero upstream PRs to NousResearch/hermes-agent"
+      ],
+      "notes": "Zero upstream PRs directive honored; memory-hygiene skill added then closed per user directive. Skill remains usable locally. Framework at ~/projects/lesson-retention/ (LESSONS.md, INTEGRATION-MAP.md, ledger.json vendored, commit 1d72a03).",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/inventory-reminder#publication",
+      "repo": "ether-btc/inventory-reminder",
+      "number": 0,
+      "type": "pr",
+      "title": "Publish inventory-reminder as standalone open-source repo",
+      "state": "open",
+      "status": "published",
+      "next_action": "Third-party contributions via PR (see CONTRIBUTING.md)",
+      "actions_taken": [
+        "Created ether-btc/inventory-reminder as private repo",
+        "Pushed 10 commits (Conventional Commits, hermes-agent standard)",
+        "CI green: pytest 21/21 + AST stdlib guard + no-config smoke test",
+        "Flipped repository to public",
+        "Wiki filing: entities/inventory-reminder-20261020.md + index.md + log.md",
+        "repo-inventory --note: note set in repos-notes.json"
+      ],
+      "notes": "Inventory Reminder System \u2014 stdlib-only host capability scanners (repos, skills, MCP, CLIs, models, services) with where <term> [--json], drift gate, Hermes plugin adapter, host wiring (setup-host.sh + rollback-host.sh). Published per NousResearch/hermes-agent standalone-extension policy. No secrets in repo. Independent review APPROVE.",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-20T10:42:33Z",
+      "last_action": "2026-10-20T10:42:33Z",
+      "labels": [],
+      "url": "https://github.com/ether-btc/inventory-reminder",
+      "is_upstream": false
     }
   ],
   "issues": [
@@ -3803,7 +3849,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-18T06:24:23Z",
+  "last_synced": "2026-10-20T10:42:33Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -5184,6 +5230,18 @@
       "type": "filed",
       "ref": "135",
       "desc": "Hermes-agent PR pickup push: merge-commit verification x3 (#135841 43p/0f, #135677 126p + E2E 25/25, #128461 introduced=empty); #135677 RUF100 merge-blocker fixed (10 unused noqa removed, 506ae92311) + upstream/main merged in (head 6b529af6a9); ruff check . clean on all merge commits; attribution proven; maintainer comments 6247199804/6247199984/6247200142; review-request API 404 for fork author (no permission) \u2014 @mentions are the mechanism"
+    },
+    {
+      "ts": "2026-10-18T19:30:57Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#141224",
+      "desc": "Filed: feat(optional-skills): add memory-hygiene skill"
+    },
+    {
+      "ts": "2026-10-18T19:31:02Z",
+      "type": "status_update",
+      "ref": "NousResearch/hermes-agent#141224",
+      "desc": "closed Closed per operator directive: zero upstream PRs to NousResearch/hermes-agent"
     }
   ]
 }
