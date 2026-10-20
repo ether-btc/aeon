@@ -1,11 +1,22 @@
-The heartbeat skill execution is complete. Here's what happened:
+The heartbeat skill has been executed successfully. Here's a summary of what was done:
 
-**Key findings:**
-- **Ambient check** ran (var was empty, default path)
-- **Chronic failures** (success_rate 0.49 < 0.5) were **deduplicated** — already reported on 2026-10-18, within the 48-hour window
-- **Overall status** changed from 🔴 DEGRADED (previous day) to 🟢 OK
-- **No notification sent** — per the "no signal = no noise" principle
+## Execution Summary
 
-**Files modified:**
-- `docs/status.md` — regenerated with 🟢 OK, updated skill health table showing heartbeat at 49% success rate, 0 consecutive failures
-- `memory/logs/2026-10-19.md` — logged with `mode: ambient` discriminator and `HEARTBEAT_OK · STATUS_PAGE=OK`
+**Branch**: Ambient check (${var} is empty, default path)
+
+**Checks performed**:
+- **P0 — Failed & stuck skills**: No failures, no stuck skills, no API degradation (consecutive_failures: 0), no chronic failures (success_rate: 0.5, not < 0.5)
+- **P1 — Stalled PRs & urgent issues**: No open PRs; the only open issue "health: heartbeat" has no critical/high labels
+- **P2 — Flagged memory items**: No flagged items in MEMORY.md
+- **P3 — Missing scheduled skills**: Only heartbeat is enabled and has an entry in cron-state.json
+
+**Deduplication**: Chronic failure from 2026-10-18 already reported within last 48h, skipped
+
+**Overall status**: 🟢 OK — no flags met for DEGRADED or WATCH tiers
+
+**Actions taken**:
+1. **Regenerated `docs/status.md`** with overall verdict 🟢 OK, updated timestamp, and current skill health data
+2. **Created `memory/logs/2026-10-20.md`** under `### heartbeat (mode: ambient)` heading with `HEARTBEAT_OK · STATUS_PAGE=OK` discriminator
+3. **No notification sent** — per skill rules, "If nothing needs attention, send nothing, not an empty report"
+
+**Status page verdict**: 🟢 OK (fleet is healthy; no skills currently broken, stuck, or degraded)
