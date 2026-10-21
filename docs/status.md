@@ -6,8 +6,8 @@ permalink: /status/
 
 # Agent Status
 
-**Overall:** 🔴 DEGRADED
-**Updated:** 2026-10-21 17:59 UTC
+**Overall:** 🟢 OK
+**Updated:** 2026-10-21 19:00 UTC
 **Open issues:** 1
 **Next scheduled run:** heartbeat at 20:00 UTC
 
@@ -21,7 +21,7 @@ No token data available.
 
 | Skill | Last run | Status | Success rate | Consecutive failures |
 |-------|----------|--------|-------------:|---------------------:|
-| heartbeat | 2026-10-21 13:10 UTC | ✅ success | 49% | 0 |
+| heartbeat | 2026-10-21 18:05 UTC | ✅ success | 50% | 0 |
 
 ## Open issues
 
