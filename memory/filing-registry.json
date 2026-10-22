@@ -2748,6 +2748,25 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "ether-btc/rtk-hermes-consolidated@91e39d0",
+      "repo": "ether-btc/rtk-hermes-consolidated",
+      "number": null,
+      "state": "pushed",
+      "status": "landed",
+      "is_upstream": false,
+      "labels": [],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-22T16:35:00Z",
+      "last_action": "2026-10-22T16:33:00Z",
+      "next_action": "None (closed). Follow-ups: align researcher-profile rtk-observability copy v1.1.0->v1.2.0; #4351 remains documented do-not-refile (rtk-ai/rtk, upstream of the ether-btc/rtk fork)",
+      "actions_taken": [
+        "WP3 (kanban t_ee81653d, ling-implementer): argv pre-check in hermes/rtk-rewrite/__init__.py routing find commands with unsupported predicates/actions (-not, -path, -ipath, -exec, 23 flags mirroring find_cmd.rs:67-71) to native find; 11 kill tests KT1-KT6+F2_1-F2_5; 14/14 verify.sh gates, 25/25 adapter tests",
+        "WP4 run 705: F1 reconciliation of deployed WP-2/WP-7 bytes into the tree (md5 receipts in docs/F1-reconciliation-receipt-20261022.md), full-file-set deploy to ~/.hermes/plugins at 17:50:57 (rollback backup ~/.hermes/backups/*/20261022_175057 verified byte-exact), control-socket hot-reload (reloaded=true, adapters_rewired=1, no gateway restart), differential dispatch proof C1 (compound find -> native rc=0) + F1(c) fidelity-guard positive, P2 filing: skill devops/scoped-search-discipline (measured 38-tree hot-tree map) + reviewer-profile skill alignment + F6 fixes + shared-surface memory sf_37abd1a7b33205da555f1a66",
+        "Pushed single commit 91e39d0 (e782541..91e39d0 fast-forward) to master, operator-approved 2026-10-22 ~18:32 CEST (clarify gate P3); post-verified via git ls-remote: origin/master = 91e39d0c7ffec20a38dc5d6b30de9c21de572040"
+      ],
+      "notes": "Hard gate logged: operator approval via plan-gate clarify at 2026-10-22 18:32 CEST (approve push+AEON+closeout exactly as scoped). Known non-harmful #4351 malformed-rewrite warning fires during test runs (documented, do-not-refile). WP3 commandcode lane degraded -> nvidia/nemotron-3-ultra-550b-a55b:free chat + direct patch (gates unaffected). Live-host effect: compound/silent -path finds now pass through natively; plain find/grep rewrites unchanged."
     }
   ],
   "issues": [
