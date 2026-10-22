@@ -1,20 +1,37 @@
-# Heartbeat Ambient Check — 2026-10-15
+# Heartbeat Ambient Check — 2026-10-22
 
-**Overall Status:** 🟢 OK
+**Overall status:** 🟢 OK
 
-**Findings:** No new findings — fleet healthy. No failed/stalled skills. No open PRs.
+## Checks performed
 
-**Status page:** STATUS_PAGE=OK
+### P0 — Failed & stuck skills
+- **Failed skills:** None. The only skill with an entry in `cron-state.json` (heartbeat) has `last_status: "success"`.
+- **Stuck skills:** None (heartbeat's own entry is excluded; no other skills have entries).
+- **API degradation:** None (`consecutive_failures: 0 < 3`).
+- **Chronic failures:** None (`success_rate: 0.53 >= 0.5`).
 
-The ambient fleet-health check ran across all enabled skills and PRs. The heartbeat skill's cron-state shows 36 total runs with a 56% success rate and 0 consecutive failures. No skills are currently stuck, experiencing API degradation, or have chronic failures. The fleet is healthy with no degrading conditions.
+### P1 — Stalled PRs & urgent issues
+- **Stalled PRs > 24h:** None ( `gh pr list` returns no open PRs).
+- **Urgent issues:** None (only one open issue, not labeled urgent).
 
-**HEARTBEAT_OK · STATUS_PAGE=OK**
+### P2 — Flagged memory items
+- No flagged items in `memory/MEMORY.md`.
+
+### P3 — Missing scheduled skills
+- Only `heartbeat` is enabled in `aeon.yml`, and it has an entry in `cron-state.json`. No missing skills.
+
+### Token pulse
+- No `output/articles/token-report-*.md` files exist — section omitted per rules.
+
+### Public status page
+- Regenerated `docs/status.md` with overall verdict 🟢 OK.
 
 ## Summary
 
-- Completed ambient fleet-health check across all enabled skills
-- No failed or stuck skills detected
-- No API degradation or chronic failures flagged
-- Status page regenerated at `docs/status.md` with 🟢 OK verdict
-- No notification sent (fleet healthy, nothing needs attention)
-- Memory log updated at `memory/logs/2026-10-15.md` with ambient mode entry
+- Executed `heartbeat` skill (ambient check, `var: ""`)
+- Ran P0–P3 fleet health checks: no findings
+- Updated `docs/status.md` with overall verdict 🟢 OK, skill health table, and next scheduled run at 08:00 UTC
+- No notifications sent (nothing needs attention)
+- Log entry: `HEARTBEAT_OK · STATUS_PAGE=OK`
+
+**HEARTBEAT_OK · STATUS_PAGE=OK**
