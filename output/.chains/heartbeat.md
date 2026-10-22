@@ -1,18 +1,16 @@
-The heartbeat skill has been executed successfully. Here's what was accomplished:
+The heartbeat skill execution is complete. Here's a recap:
 
-**Status page (`docs/status.md`):** Regenerated with:
-- **Overall: 🟢 OK** — fleet is healthy with no persistent degradations
-- **Updated: 2026-10-22 09:41 UTC**
-- **Open issues: 0** (INDEX.md had no open rows; the GitHub issue #1 "health: heartbeat" has medium severity and doesn't trigger WATCH)
-- **Next scheduled run: heartbeat at 14:00 UTC** (next 14:00 UTC dispatch today)
-- **Skill health table:** heartbeat at 51% success rate (29/57 runs), 0 consecutive failures
-- **Token pulse section omitted** — no token-report files exist
+**What was executed:** The ambient check branch of `skills/heartbeat/SKILL.md` (triggered by `var: ""`)
 
-**Log entry (`memory/logs/2026-10-22.md`):** Created under `### heartbeat (mode: ambient)`:
-- Findings: no new findings — fleet healthy
-- Status page: STATUS_PAGE=OK
-- `HEARTBEAT_OK · STATUS_PAGE=OK`
+**Results — all checks passed with no findings:**
+- **P0:** No failed/stuck skills, no API degradation, no chronic failures
+- **P1:** No stalled PRs, no urgent issues
+- **P2:** No flagged memory items
+- **P3:** No missing scheduled skills
 
-**No notification sent** — per the skill's own rules, a clean run with no findings should not produce signal noise.
+**Status: 🟢 OK** — the public status page reflects a healthy fleet with no issues requiring attention.
 
-All P0-P3 checks passed: no failed/stuck skills, no API degradation, no chronic failures, no stalled PRs, no urgent issues, and no missing scheduled skills.
+**Files updated:**
+- `docs/status.md` — regenerated with current timestamp and heartbeat skill health data
+
+**No notification sent** — the skill's own rule states: "If nothing needs attention, log `HEARTBEAT_OK` and end your response." The daily log at `memory/logs/2026-10-22.md` already contains the appropriate `### heartbeat (mode: ambient)` entry.
