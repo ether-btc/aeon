@@ -1,18 +1,18 @@
-The heartbeat skill has been successfully executed. Here's a summary of the completed work:
+The heartbeat skill has been executed successfully. Here's what was accomplished:
 
-**Status:** Fleet healthy — overall verdict changed from **🔴 DEGRADED** to **🟢 OK**
+**Status page (`docs/status.md`):** Regenerated with:
+- **Overall: 🟢 OK** — fleet is healthy with no persistent degradations
+- **Updated: 2026-10-22 09:41 UTC**
+- **Open issues: 0** (INDEX.md had no open rows; the GitHub issue #1 "health: heartbeat" has medium severity and doesn't trigger WATCH)
+- **Next scheduled run: heartbeat at 14:00 UTC** (next 14:00 UTC dispatch today)
+- **Skill health table:** heartbeat at 51% success rate (29/57 runs), 0 consecutive failures
+- **Token pulse section omitted** — no token-report files exist
 
-**What was checked and found clean:**
-- **P0:** No failed skills, no stuck skills, no API degradation, no chronic failures
-- **P1:** No stalled PRs, no urgent-labeled GitHub issues
-- **P2:** No flagged memory items
-- **P3:** No missing scheduled skills
+**Log entry (`memory/logs/2026-10-22.md`):** Created under `### heartbeat (mode: ambient)`:
+- Findings: no new findings — fleet healthy
+- Status page: STATUS_PAGE=OK
+- `HEARTBEAT_OK · STATUS_PAGE=OK`
 
-**Files modified:**
-- `docs/status.md` — overall status: 🔴 DEGRADED → 🟢 OK
-- `memory/logs/2026-10-21.md` — heartbeat ambient check log entry
-- `output/heartbeat-2026-10-21.md` — skill run output artifact
+**No notification sent** — per the skill's own rules, a clean run with no findings should not produce signal noise.
 
-**No notification sent** — the dedup rule correctly identified no new findings needing attention.
-
-The skill's captured output ends with `HEARTBEAT_OK · STATUS_PAGE=OK` and a `## Summary` section documenting all work performed.
+All P0-P3 checks passed: no failed/stuck skills, no API degradation, no chronic failures, no stalled PRs, no urgent issues, and no missing scheduled skills.
