@@ -486,8 +486,9 @@ cmd_check_duplicate() {
     local fuzzy
     fuzzy=$(echo "$current" | jq --arg t "$clean_title" \
       '[.pulls[], .issues[]] | map(select(
-        (.title | gsub("[^a-z0-9]"; ""; "i") | gsub("^[a-z0-9_-]*: *"; "")) | contains($t) or
-        ($t | contains(.title | gsub("[^a-z0-9]"; ""; "i") | gsub("^[a-z0-9_-]*: *"; ""))
+        (.title // "" | ascii_downcase | gsub("^[a-z0-9_-]*: *"; "") | gsub("[^a-z0-9]"; "")) as $n
+        | ($t // "" | ascii_downcase | gsub("^[a-z0-9_-]*: *"; "") | gsub("[^a-z0-9]"; "")) as $q
+        | ($n != "" and $q != "" and (($n | contains($q)) or ($q | contains($n))))
       )) | .[0] // null')
 
     if [[ "$fuzzy" != "null" ]]; then
