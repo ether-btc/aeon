@@ -1,3 +1,6 @@
 memory/*.bak-*
 *.bak-*
 node_modules/
+__pycache__/
+*.pyc
+memory/*.pre-*

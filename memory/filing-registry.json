@@ -2049,8 +2049,8 @@
       "number": 135677,
       "type": "pr",
       "title": "feat(skills): append-only, machine-verifiable evidence ledger for SKILL.md",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Maintainer approval of the fork workflow run (action_required, first-time-contributor gate); lint/tests/attribution verified green on the exact PR head 6b529af6a9",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-09T15:38:05Z",
@@ -2788,6 +2788,48 @@
       ],
       "source_card": "t_ecf79426",
       "review_card": "t_97e270be"
+    },
+    {
+      "id": "aeonfun/aeon#1267",
+      "repo": "aeonfun/aeon",
+      "number": 1267,
+      "type": "pr",
+      "title": "[skills] Add github-filing-registry — persistent GitHub filing ledger",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await re-review of 9e420e7d (all findings addressed; 5 checks await maintainer approval)",
+      "evidence_tier": "local-repro",
+      "filed_at": "2026-10-24T18:49:09Z",
+      "last_action": "2026-10-24T18:56:38Z",
+      "url": "https://github.com/aeonfun/aeon/pull/1267",
+      "actions_taken": [
+        "Filed: [skills] Add github-filing-registry — persistent GitHub filing ledger",
+        "upstream review 5639294296 CHANGES_REQUESTED (Svector-anu): concurrent read-modify-write lost updates (8 parallel adds -> 1 entry) + url-resolved --id stored verbatim breaking exact dedup. Both reproduced, fixed in 52977a07 (flock sidecar lock across add/status/sync/log_activity, atomic_save wired in, id canonicalized). 18/18 verification green; reply issuecomment-6388143078; review re-requested.",
+        "consolidated disposition comment posted (final reply, @-mention); review round 1 fully addressed: both defects fixed+verified 23/23, triage --filter doc gap fixed; checks action_required = first-time-contributor gate"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#144599",
+      "repo": "NousResearch/hermes-agent",
+      "number": 144599,
+      "type": "pr",
+      "title": "fix(bot-mode-dm): bound the peer-transport delivery turn so a wedged child can't hold the lock forever (F8 carry; supersedes local patch ~/.hermes/local-patches/bot-dm-turn-timeout-20261011.patch)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "head 43136b777c pushed to ether-btc fork; 105 passed/1 skipped scoped suites in clean uv dev venv; kill test RED on unfixed source; ruff clean; marker sweep 0 hits diff+body. F8 handoff GO recorded 2026-10-25.",
+      "filed_at": "2026-10-25T17:53:42Z",
+      "last_action": "2026-10-25T17:53:42Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/144599",
+      "actions_taken": [
+        "Filed: fix(bot-mode-dm): bound the peer-transport delivery turn so a wedged child can't hold the lock forever (F8 carry; supersedes local patch ~/.hermes/local-patches/bot-dm-turn-timeout-20261011.patch)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "issues": [
@@ -3949,7 +3991,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-24T06:24:24Z",
+  "last_synced": "2026-10-25T17:54:36Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -5366,6 +5408,36 @@
       "type": "note",
       "ref": "NousResearch/hermes-agent#80731",
       "desc": "Posted an evidence comment naming three loose (.git).exists() call sites not in this PR's file list: hermes_cli/web_routers/files.py:231, hermes_cli/profiles.py:2085, apps/desktop/electron/git-root.ts:11 (upstream main 4d04303). Comment https://github.com/NousResearch/hermes-agent/pull/80731#issuecomment-6322284213"
+    },
+    {
+      "ts": "2026-10-24T18:49:09Z",
+      "type": "filed",
+      "ref": "aeonfun/aeon#1267",
+      "desc": "Filed: [skills] Add github-filing-registry — persistent GitHub filing ledger"
+    },
+    {
+      "ts": "2026-10-24T18:49:10Z",
+      "type": "status_update",
+      "ref": "aeonfun/aeon#1267",
+      "desc": "pending_review upstream review 5639294296 CHANGES_REQUESTED (Svector-anu): concurrent read-modify-write lost updates (8 parallel adds -> 1 entry) + url-resolved --id stored verbatim breaking exact dedup. Both reproduced, fixed in 52977a07 (flock sidecar lock across add/status/sync/log_activity, atomic_save wired in, id canonicalized). 18/18 verification green; reply issuecomment-6388143078; review re-requested."
+    },
+    {
+      "ts": "2026-10-24T18:53:23Z",
+      "type": "note",
+      "ref": "aeonfun/aeon#1267",
+      "desc": "follow-up commit 9e420e7d: lint gate cleanup - honour documented triage --filter (was ignored), drop dead TODAY; battery 23/23, shellcheck clean"
+    },
+    {
+      "ts": "2026-10-24T18:56:38Z",
+      "type": "status_update",
+      "ref": "aeonfun/aeon#1267",
+      "desc": "consolidated disposition comment posted (final reply, @-mention); review round 1 fully addressed: both defects fixed+verified 23/23, triage --filter doc gap fixed; checks action_required = first-time-contributor gate"
+    },
+    {
+      "ts": "2026-10-25T17:53:42Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#144599",
+      "desc": "Filed: fix(bot-mode-dm): bound the peer-transport delivery turn so a wedged child can't hold the lock forever (F8 carry; supersedes local patch ~/.hermes/local-patches/bot-dm-turn-timeout-20261011.patch)"
     }
   ]
 }
