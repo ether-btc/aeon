@@ -1,37 +1,24 @@
-# Heartbeat Ambient Check — 2026-10-22
-
-**Overall status:** 🟢 OK
-
-## Checks performed
-
-### P0 — Failed & stuck skills
-- **Failed skills:** None. The only skill with an entry in `cron-state.json` (heartbeat) has `last_status: "success"`.
-- **Stuck skills:** None (heartbeat's own entry is excluded; no other skills have entries).
-- **API degradation:** None (`consecutive_failures: 0 < 3`).
-- **Chronic failures:** None (`success_rate: 0.53 >= 0.5`).
-
-### P1 — Stalled PRs & urgent issues
-- **Stalled PRs > 24h:** None ( `gh pr list` returns no open PRs).
-- **Urgent issues:** None (only one open issue, not labeled urgent).
-
-### P2 — Flagged memory items
-- No flagged items in `memory/MEMORY.md`.
-
-### P3 — Missing scheduled skills
-- Only `heartbeat` is enabled in `aeon.yml`, and it has an entry in `cron-state.json`. No missing skills.
-
-### Token pulse
-- No `output/articles/token-report-*.md` files exist — section omitted per rules.
-
-### Public status page
-- Regenerated `docs/status.md` with overall verdict 🟢 OK.
-
 ## Summary
 
-- Executed `heartbeat` skill (ambient check, `var: ""`)
-- Ran P0–P3 fleet health checks: no findings
-- Updated `docs/status.md` with overall verdict 🟢 OK, skill health table, and next scheduled run at 08:00 UTC
-- No notifications sent (nothing needs attention)
-- Log entry: `HEARTBEAT_OK · STATUS_PAGE=OK`
+**Heartbeat skill executed** — ambient check branch (no `${var}` set, default fleet health check).
 
-**HEARTBEAT_OK · STATUS_PAGE=OK**
+**Checks performed:**
+
+- **P0:** No failed skills, no stuck skills, no API degradation (consecutive_failures: 0), no chronic failures (success_rate: 0.61 ≥ 0.5), self-check passed (last_success ~24h ago, not >36h).
+- **P1:** No open PRs stalled >24h; no GitHub issues labeled urgent (the one open issue "health: heartbeat" has no labels).
+- **P2:** No flagged memory items.
+- **P3:** Only heartbeat is enabled in aeon.yml; it has an entry in cron-state.json and is not overdue.
+
+**Findings:** No findings across any priority tier.
+
+**Actions taken:**
+1. Regenerated `docs/status.md` — overall status 🟢 OK, skill health table updated with heartbeat data (61% success rate, 0 consecutive failures).
+2. Created `memory/logs/2026-10-27.md` under `### heartbeat (mode: ambient)` heading with `HEARTBEAT_OK · STATUS_PAGE=OK` log entry.
+
+**Output:** Since nothing needs attention, no notification was sent. The run logs `HEARTBEAT_OK · STATUS_PAGE=OK` and the status page is 🟢 OK.
+
+**Files modified:**
+- `docs/status.md` — regenerated with current fleet health
+- `memory/logs/2026-10-27.md` — created heartbeat log entry
+
+**Follow-up:** None. The next scheduled heartbeat run will occur at 08:00 UTC per the `aeon.yml` schedule `0 8,14,20 * * *`.

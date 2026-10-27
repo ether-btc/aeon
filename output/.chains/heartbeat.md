@@ -1,25 +1,18 @@
-The heartbeat ambient check is complete. Here is the summary of what was done:
+The heartbeat skill execution is complete. 
 
-**Overall Status: 🟢 OK** — The fleet is healthy with no findings requiring attention.
+**Summary of what was done:**
 
-**Key checks performed:**
-- **P0 (Failed & stuck skills)**: No failed skills, no stuck skills (excluding heartbeat's own entry), no API degradation (consecutive_failures=0), no chronic failures (success_rate=0.6 ≥ 0.5)
-- **P1 (Stalled PRs & urgent issues)**: 0 open PRs, no urgent-labeled issues
-- **P2 (Flagged memory items)**: No flagged items in MEMORY.md
-- **P3 (Missing scheduled skills)**: heartbeat is the only enabled skill with a schedule, and it has an entry in cron-state.json
+1. **Read and executed** the `skills/heartbeat/SKILL.md` skill
+2. **Ran the ambient check branch** (default, since no `${var}` was set)
+3. **Executed all priority checks** (P0 through P3) — all passed with no findings
+4. **Regenerated `docs/status.md`** with overall status **🟢 OK** and updated skill health table
+5. **Created `memory/logs/2026-10-27.md`** under `### heartbeat (mode: ambient)` with `HEARTBEAT_OK · STATUS_PAGE=OK` log entry
+6. **No notification sent** — per the rule that clean runs should send nothing
 
-**Actions taken:**
-- Regenerated `docs/status.md` with 🟢 OK verdict, updated timestamp (2026-10-26 14:15 UTC), and skill health table
-- Appended heartbeat log entry to `memory/logs/2026-10-26.md` under `### heartbeat (mode: ambient)` with STATUS_PAGE=OK verdict
-- **No notification sent** — clean run with no findings per the rule that "a clean or no-change run should send nothing, not an empty report"
+**Key findings:**
+- Fleet is healthy with no failures, stuck skills, or degradation
+- Heartbeat success_rate: 61% (43/71 runs), 0 consecutive failures
+- No other skills are enabled in `aeon.yml` besides heartbeat
+- The status page now reflects current fleet health across all tiers
 
-## Summary
-
-- **Ran**: `heartbeat` skill with default `var` (empty), ambient check branch
-- **Findings**: No failed/stalled skills, no stalled PRs, no urgent issues, no missing scheduled skills
-- **Status page**: Regenerated `docs/status.md` with 🟢 OK verdict
-- **Log**: Appended entry to `memory/logs/2026-10-26.md` under `### heartbeat (mode: ambient)`
-- **Notification**: None sent (clean run, no signal)
-- **Files modified**:
-  - `memory/logs/2026-10-26.md` — appended new heartbeat entry
-  - `docs/status.md` — updated overall status, skill health table, and timestamp
+The task is complete.
