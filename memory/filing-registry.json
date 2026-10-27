@@ -2830,6 +2830,29 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#69763",
+      "repo": "NousResearch/hermes-agent",
+      "number": 69763,
+      "type": "pr",
+      "title": "fix(cli): only remove .env-sourced keys from os.environ on reload — upstream; our review note flags the unhandled empty-placeholder case",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Re-read diff at new head if it moves; build the re-assert branch if invited",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-27T15:36:38Z",
+      "last_action": "2026-10-27T15:36:48Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/69763",
+      "actions_taken": [
+        "Filed: fix(cli): only remove .env-sourced keys from os.environ on reload — upstream; our review note flags the unhandled empty-placeholder case",
+        "Posted review note 2026-10-27 flagging the uncovered load-loop clobber and env_loader.py:525-529 re-assert; offered to build a branch — read-back verified"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true,
+      "has_fix_pr": true,
+      "fix_pr_url": "https://github.com/NousResearch/hermes-agent/pull/69763"
     }
   ],
   "issues": [
@@ -3988,10 +4011,33 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#69738",
+      "repo": "NousResearch/hermes-agent",
+      "number": 69738,
+      "type": "issue",
+      "title": "[Bug] /reload deletes container-supplied env config — upstream; our increment reports the empty-placeholder clobber case",
+      "state": "open",
+      "status": "has_fix_pr",
+      "next_action": "Watch PR #69763 for re-assert coverage; answer if maintainer asks for a branch",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-10-27T15:36:38Z",
+      "last_action": "2026-10-27T15:36:48Z",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/69738",
+      "actions_taken": [
+        "Filed: [Bug] /reload deletes container-supplied env config — upstream; our increment reports the empty-placeholder clobber case",
+        "Posted increment comment 2026-10-27 (independent v0.22.2 repro; empty-placeholder clobber at reload_env:2858-2861; existing env_loader re-assert primitive) — read-back verified"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true,
+      "has_fix_pr": true,
+      "fix_pr_url": "https://github.com/NousResearch/hermes-agent/pull/69763"
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-25T17:54:36Z",
+  "last_synced": "2026-10-27T15:36:49Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -5438,6 +5484,30 @@
       "type": "filed",
       "ref": "NousResearch/hermes-agent#144599",
       "desc": "Filed: fix(bot-mode-dm): bound the peer-transport delivery turn so a wedged child can't hold the lock forever (F8 carry; supersedes local patch ~/.hermes/local-patches/bot-dm-turn-timeout-20261011.patch)"
+    },
+    {
+      "ts": "2026-10-27T15:36:38Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#69738",
+      "desc": "Filed: [Bug] /reload deletes container-supplied env config — upstream; our increment reports the empty-placeholder clobber case"
+    },
+    {
+      "ts": "2026-10-27T15:36:38Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#69763",
+      "desc": "Filed: fix(cli): only remove .env-sourced keys from os.environ on reload — upstream; our review note flags the unhandled empty-placeholder case"
+    },
+    {
+      "ts": "2026-10-27T15:36:48Z",
+      "type": "status_update",
+      "ref": "NousResearch/hermes-agent#69738",
+      "desc": "has_fix_pr Posted increment comment 2026-10-27 (independent v0.22.2 repro; empty-placeholder clobber at reload_env:2858-2861; existing env_loader re-assert primitive) — read-back verified"
+    },
+    {
+      "ts": "2026-10-27T15:36:49Z",
+      "type": "status_update",
+      "ref": "NousResearch/hermes-agent#69763",
+      "desc": "pending_review Posted review note 2026-10-27 flagging the uncovered load-loop clobber and env_loader.py:525-529 re-assert; offered to build a branch — read-back verified"
     }
   ]
 }
