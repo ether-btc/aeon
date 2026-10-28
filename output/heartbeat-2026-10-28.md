@@ -1,42 +1,33 @@
-## Heartbeat Ambient Check — 2026-10-28
+# Heartbeat Ambient Check — 2026-10-28
 
-**Selector:** `${var}` is empty → ambient check branch
+**Overall Status: 🟢 OK**
 
-### P0 — Failed & stuck skills
-- **Failed skills:** No findings. Heartbeat's own entry excluded from stuck check per self-reference rule. Fleet has completed runs (total_runs=74), so bootstrap grace does not apply. consecutive_failures=1 < 3 (API degradation threshold); success_rate=0.61 > 0.5 (chronic failure threshold). Self-check: last_success (2026-10-27T14:41:23Z) is ~13.5h old, < 36h threshold, so no alert.
-- **Stuck skills:** No other skills have entries in cron-state.json; heartbeat excluded from stuck check.
-- **API degradation:** consecutive_failures=1 < 3, no skills share error signatures.
-- **Chronic failures:** success_rate=0.61 > 0.5, and total_runs=74 ≥ 5, but rate exceeds the 0.5 threshold.
-- **Self-check:** heartbeat has total_successes≥1, but last_success is ~13.5h old (< 36h), so no alert.
+## P0 — Failed & Stuck Skills
+- **Failed skills:** None. Heartbeat's `last_status` is "success"; no entries have `last_status: "failed"`.
+- **Stuck skills:** None. No other skills in `cron-state.json` besides heartbeat (excluded from stuck check), and heartbeat's own entry is excluded.
+- **API degradation:** None. `consecutive_failures: 0 < 3`.
+- **Chronic failures:** None. `success_rate: 0.61 ≥ 0.5` (requires `< 0.5` with `total_runs ≥ 5`).
+- **Self-check:** Not triggered. Heartbeat has `total_successes: 46 ≥ 1`, but `last_success: 2026-10-28T02:20:49Z` is the same day, not >36 hours ago.
 
-### P1 — Stalled PRs & urgent issues
-- No open PRs (gh pr list returned empty).
-- No GitHub issues labeled urgent (one open issue "health: heartbeat" exists but has no urgent label).
+## P1 — Stalled PRs & Urgent Issues
+- **Stalled PRs >24h:** None. `gh pr list` returned no open PRs.
+- **Urgent issues:** None. `gh issue list` showed one open issue ("health: heartbeat") without the "urgent" label.
 
-### P2 — Flagged memory items
-- MEMORY.md short index reviewed; no items flagged for follow-up.
+## P2 — Flagged Memory Items
+- No items flagged in `memory/MEMORY.md` that need follow-up.
 
-### P3 — Missing scheduled skills
-- Only heartbeat is enabled in aeon.yml with a cron-state entry. last_success (2026-10-27 14:41 UTC) is within 48h of 2x daily schedule interval. No P3 flags.
+## P3 — Missing Scheduled Skills
+- Only `heartbeat` is enabled: true in `aeon.yml`, and it has an entry in `cron-state.json`. No missing skills.
 
-### Dedup & notification
-- No new findings to report; all would be within the 48h dedup window from prior runs.
-- **No notification sent** (nothing needs attention).
+## Overall Status Determination
+- **Bootstrap check:** Fleet has completed runs (75 total), not bootstrapping.
+- **🔴 DEGRADED conditions:** Not met. No stuck skills, `consecutive_failures < 3`, `success_rate ≥ 0.5`, self-check not stale, no unrecovered failed skills.
+- **🟡 WATCH conditions:** Not met. No recovered `last_status: "failed"` skills, no warming-up skills >24h old, no P1/P2/P3 flags, no open issues with critical/high severity.
+- **Verdict:** 🟢 OK — fleet is healthy.
 
-### Public status page
-- **Overall:** 🟢 OK (no flags trigger 🔴 DEGRADED or 🟡 WATCH ladder; heartbeat's own row excluded from all DEGRADED/WATCH clauses).
-- **Regenerated:** docs/status.md reflects current fleet health.
+## Actions Taken
+- Regenerated `docs/status.md` with current fleet health status.
 
----
-
-## Summary
-
-**Action completed:** Heartbeat ambient check for 2026-10-28.
-
-**Files created/modified:**
-- `docs/status.md` — regenerated with 🟢 OK overall status, skill health table, and fleet summary
-- `memory/logs/2026-10-28.md` — appended `### heartbeat (mode: ambient)` entry with `HEARTBEAT_OK · STATUS_PAGE=OK` verdict
-
-**Follow-up:** None. Fleet is healthy; next scheduled heartbeat run at 08:00 UTC (cron: `0 8,14,20 * * *`).
-
-**Verdict:** `HEARTBEAT_OK · STATUS_PAGE=OK`
+## Log
+- **mode: ambient** — findings: no new findings — fleet healthy. Status page: STATUS_PAGE=OK.
+- **HEARTBEAT_OK · STATUS_PAGE=OK** — no notification sent (clean run, no signal).
