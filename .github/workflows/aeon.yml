@@ -201,7 +201,12 @@ jobs:
           fi
 
       - name: Checkout repo
-        if: steps.work.outputs.mode != ''
+        # Same condition as the skill-run step: validate-config's checkout-
+        # ordering invariant accepts only an unconditional or exactly matching
+        # preceding checkout. At evaluation time (before the quota preflight
+        # step has run) the quota output is null, so the atom is true and the
+        # step behaves exactly as before (issue #1 operator lane).
+        if: steps.work.outputs.mode != '' && steps.quota.outputs.skip != 'yes'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           token: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
