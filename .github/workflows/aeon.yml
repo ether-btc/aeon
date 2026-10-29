@@ -730,9 +730,93 @@ jobs:
       # Chain context is env-bound and restricted to output/.chains/ so an input
       # cannot splice an arbitrary runner file into the prompt. Every harness then
       # uses the adapter's normalized result/usage/session_id envelope.
+      # Quota-window preflight (issue #1 operator lane): the account's daily
+      # FREE-model pool is shared with outside consumers and trips mid-day some
+      # days — `429 free-models-per-day-high-balance` for hours until the UTC
+      # reset. An agent attempt launched into a drained pool burns its whole
+      # retry budget on the same 429 and ends run_failed, which the health
+      # scorer reads as a regression; a drained pool carries no health signal.
+      # This preflight asks the gateway's first claude candidate ONE ~$0
+      # 1-token turn with the same setup the cascade uses: a 429 carrying the
+      # free-cap signature skips the run BEFORE the agent loop (skip=yes,
+      # surfaced to cron-state and §7 below); any other answer proceeds
+      # exactly as before. Free-cap family only: the slot id must be `:free`.
+      - name: Quota window preflight
+        id: quota
+        if: steps.work.outputs.mode != '' && steps.harness.outputs.HARNESS == 'claude'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
+          OPENROUTER_MODEL_SONNET: ${{ vars.OPENROUTER_MODEL_SONNET }}
+          OPENROUTER_MODEL_HAIKU: ${{ vars.OPENROUTER_MODEL_HAIKU }}
+          SKILL_NAME: ${{ steps.skill.outputs.name }}
+          INPUT_MODEL: ${{ inputs.model }}
+        run: |
+          # Mirror the Run step's 3-tier model resolution (same precedence).
+          SKIP=no
+          CONFIG_MODEL=$(grep -E '^model:' aeon.yml | sed 's/^model: *//' | tr -d ' ' || true)
+          SKILL_MODEL=$(bash scripts/skill_entry.sh "$SKILL_NAME" 2>/dev/null | sed -n 's/.*model:[[:space:]]*"\([^"]*\)".*/\1/p' | head -1 || true)
+          if [ -n "$INPUT_MODEL" ] && [ "$INPUT_MODEL" != "(config default)" ]; then
+            PROBE_MODEL="$INPUT_MODEL"
+          elif [ -n "$SKILL_MODEL" ]; then
+            PROBE_MODEL="$SKILL_MODEL"
+          else
+            PROBE_MODEL="${CONFIG_MODEL:-claude-sonnet-5-5}"
+          fi
+          # Then mirror the gateway's openrouter-arm tier mapping (scripts/
+          # llm-gateway.sh ~line 264): the run never posts the native claude id —
+          # it posts the SLOT this tier is pinned to, and the free-cap family
+          # applies to that slot, not the config id.
+          case "$PROBE_MODEL" in
+            *opus*)  PROBE_MODEL="${OPENROUTER_MODEL:-anthropic/claude-opus-5.5}" ;;
+            *haiku*) PROBE_MODEL="${OPENROUTER_MODEL_HAIKU:-anthropic/claude-haiku-4.5}" ;;
+            *)       PROBE_MODEL="${OPENROUTER_MODEL_SONNET:-anthropic/claude-sonnet-5.5}" ;;
+          esac
+          case "$PROBE_MODEL" in
+            *':free') : ;;
+            *) echo "::notice::quota preflight: resolved run model '$PROBE_MODEL' is not a :free id — not subject to the free-cap pool; proceeding"
+               echo "skip=no" >> "$GITHUB_OUTPUT"; exit 0 ;;
+          esac
+          [ -n "$OPENROUTER_API_KEY" ] || { echo "::notice::quota preflight: OPENROUTER_API_KEY unset; preflight not applicable"; echo "skip=no" >> "$GITHUB_OUTPUT"; exit 0; }
+          # Gateway setup, hermetic subshell — export only what the probe needs.
+          # The gw_notice line (and any other chatter) is filtered out; only the
+          # three assignment lines pass, and %q never emits a bare newline, so
+          # the line filter is exact.
+          ENVF=$(mktemp "$RUNNER_TEMP/qp-env.XXXXXX")
+          GATEWAY=openrouter \
+          AEON_GATEWAY_QUIET=1 \
+          bash -c 'source scripts/llm-gateway.sh
+                   printf "base=%q\n" "${ANTHROPIC_BASE_URL:-}"
+                   printf "auth=%q\n" "${ANTHROPIC_AUTH_TOKEN:-}"
+                   printf "model=%q\n" "${MODEL:-}"' 2>/dev/null \
+            | grep -E '^(base|auth|model)=' > "$ENVF" || true
+          eval "$(sed 's/^/PROBE_/' "$ENVF")"
+          rm -f "$ENVF"
+          if [ -n "${PROBE_base:-}" ] && [ -n "${PROBE_model:-}" ]; then
+            # One ~$0 turn: a full success would have answered the pool question
+            # the hard way, after a minutes-long 429 retry loop, run-failed.
+            HTTP_CODE=$(curl -sS -m 30 -o "$RUNNER_TEMP/qp-resp.json" -w '%{http_code}' \
+              -X POST "${PROBE_base%/}/v1/messages" \
+              --header "Authorization: Bearer ${PROBE_auth}" \
+              --header "Content-Type: application/json" \
+              --data "$(jq -cn --arg m "$PROBE_model" '{model:$m,max_tokens:1,messages:[{role:"user",content:"ping"}]}')") \
+              || HTTP_CODE=${HTTP_CODE:-000}
+            RESP=$(head -c 400 "$RUNNER_TEMP/qp-resp.json" 2>/dev/null || true)
+            rm -f "$RUNNER_TEMP/qp-resp.json"
+            if [ "${HTTP_CODE:-000}" = "429" ] && printf '%s' "$RESP" | grep -q 'free-models'; then
+              echo "::notice::quota window: account daily free-model pool is drained (429 free-models-per-day) — skipping this run before the agent loop"
+              SKIP=yes
+            else
+              echo "::notice::quota preflight: HTTP ${HTTP_CODE:-000} — proceeding as normal"
+            fi
+          else
+            echo "::notice::quota preflight: could not resolve the openrouter probe env — proceeding as normal"
+          fi
+          echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
+
       - name: Run
         id: run
-        if: steps.work.outputs.mode != ''
+        if: steps.work.outputs.mode != '' && steps.quota.outputs.skip != 'yes'
         env:
           # Secrets available to .mcp.json ${NAME} refs + per-skill `requires:`
           # injection. Built from an explicit allowlist of named secrets rather
@@ -2092,7 +2176,7 @@ jobs:
         # unconditionally would risk committing a partial/broken mid-edit state
         # from a genuinely failed write-mode run.)
         # proof runs must not move the immutable branch head they attest.
-        if: steps.work.outputs.mode != '' && steps.skill.outputs.name != 'create-prove' && !startsWith(inputs.dispatch_id, 'prove-')
+        if: steps.work.outputs.mode != '' && steps.quota.outputs.skip != 'yes' && steps.skill.outputs.name != 'create-prove' && !startsWith(inputs.dispatch_id, 'prove-')
         env:
           STATE_BACKEND: ${{ vars.STATE_BACKEND }}
         run: |
@@ -2124,10 +2208,18 @@ jobs:
         env:
           STATE_BACKEND: ${{ vars.STATE_BACKEND }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          QUOTA_SKIPPED: ${{ steps.quota.outputs.skip }}
         run: |
           SKILL="${{ steps.skill.outputs.name }}"
           RUN_OUTCOME="${{ steps.run.outcome }}"
           NOW_ISO=$(date -u +%FT%TZ)
+          # Quota-window preflight (issue #1 lane): the run never started its
+          # agent — with `skip: yes` in the preflight, leave the skill's
+          # whole state row untouched (doesn't even count total_runs).
+          if [ "${QUOTA_SKIPPED:-}" = "yes" ]; then
+            echo "run was quota-skipped before the agent ran: cron state untouched"
+            exit 0
+          fi
           STATE_FILE="memory/cron-state.json"
           QUALITY_SCORE="${{ steps.analyze.outputs.QUALITY_SCORE }}"
 
@@ -2304,6 +2396,7 @@ jobs:
           SCORE_IN: ${{ steps.analyze.outputs.QUALITY_SCORE }}
           FLAGS_IN: ${{ steps.analyze.outputs.FLAGS }}
           RUN_OUTCOME: ${{ steps.run.outcome }}
+          QUOTA_SKIPPED: ${{ steps.quota.outputs.skip }}
         run: |
           # §7 is default-ON; disable only with repo var HEALTH_ISSUES=0. The toggle is
           # checked HERE in bash, NOT in the step `if:`. A GitHub Actions `if:` comparison
@@ -2311,6 +2404,14 @@ jobs:
           # coerces to 0 — so `!= '0'` is FALSE when unset, silently skipping the step by
           # default (the opposite of "default-on"). Bash string comparison has no such trap.
           if [ "$HEALTH_ISSUES" = "0" ]; then echo "votable health disabled (HEALTH_ISSUES=0)"; exit 0; fi
+          # A quota-skipped run never started its agent (issue #1 lane): no
+          # health signal to file, and `skipped != success` would otherwise
+          # flag a bogus `[\"run_failed\"]`. Stay silent, exactly like the
+          # signal from a run that never happened.
+          if [ "${QUOTA_SKIPPED:-}" = "yes" ]; then
+            echo "run was quota-skipped before the agent ran: no health signal to file"
+            exit 0
+          fi
           SCORE="$SCORE_IN"; [[ "$SCORE" =~ ^[0-9]+$ ]] || SCORE=0
           # Accept FLAGS only as a JSON array of strings; anything else is dropped.
           FLAGS='[]'
