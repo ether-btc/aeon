@@ -1,18 +1,25 @@
+Heartbeat ambient check for 2026-10-29.
+
+**P0 — Failed & stuck skills:** No failures detected. Heartbeat's own entry shows `last_status: "success"` with 82 total runs (success_rate 0.62, 0 consecutive failures). No other skills in cron-state.json to evaluate for stuck conditions. No API degradation (consecutive_failures = 0). No chronic failures (success_rate 0.62 > 0.5 threshold).
+
+**P1 — Stalled PRs & urgent issues:** No open PRs (gh pr list returned empty). No urgent GitHub issues (gh issue list returned empty).
+
+**P2 — Flagged memory items:** No flagged items in memory/MEMORY.md.
+
+**P3 — Missing scheduled skills:** Only heartbeat is enabled; it has a current entry in cron-state.json with recent runs. No missing skills to flag.
+
+**Overall status:** 🟢 OK — no flags meet 🔴 DEGRADED or 🟡 WATCH criteria. Fleet is fully warmed (82 completed runs).
+
+**Public status page:** `docs/status.md` regenerated with overall verdict 🟢 OK.
+
+**Notification:** None sent — no findings need attention. Signal already reported in memory/logs/2026-10-29.md.
+
 ## Summary
 
-**Heartbeat ambient check** — completed successfully.
-
-**Checks performed (P0→P3):**
-- **P0:** No failed skills, no stuck skills (heartbeat's own entry excluded), no API degradation. Chronic failures (success_rate 0.3, total_runs 23) already deduped from prior runs (2026-10-09, 2026-10-10).
-- **P1:** No stalled PRs (no open PRs). No urgent issues (1 open issue "health: heartbeat" lacks urgent/critical/high labels).
-- **P2:** No flagged memory items.
-- **P3:** All other skills disabled; no missing scheduled skills.
-
-**Overall status:** 🟢 OK — heartbeat has recovered (last run succeeded, consecutive_failures: 0).
-
-**Actions taken:**
-- Regenerated `docs/status.md` with overall verdict 🟢 OK
-- Appended `### heartbeat (mode: ambient)` log entry to `memory/logs/2026-10-11.md` with `HEARTBEAT_OK · STATUS_PAGE=OK`
-- No notification sent (chronic failures deduped; fleet healthy)
-
-**No follow-up actions needed.** Fleet is healthy and operating normally.
+- Completed heartbeat ambient check for 2026-10-29
+- Evaluated P0-P3 priority tiers per skill grammar
+- No findings — fleet healthy
+- Regenerated `docs/status.md` with 🟢 OK verdict
+- Appended `### heartbeat (mode: ambient)` log entry to `memory/logs/2026-10-29.md`
+- No notification sent (nothing needs attention)
+- Next heartbeat scheduled at 20:00 UTC
