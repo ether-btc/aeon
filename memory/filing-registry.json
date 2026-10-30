@@ -2687,8 +2687,8 @@
     {
       "id": "ether-btc/inventory-reminder#publication",
       "repo": "ether-btc/inventory-reminder",
-      "number": 0,
-      "type": "pr",
+      "number": null,
+      "type": "project_outcome",
       "title": "Publish inventory-reminder as standalone open-source repo",
       "state": "open",
       "status": "published",
@@ -2707,7 +2707,8 @@
       "last_action": "2026-10-20T10:42:33Z",
       "labels": [],
       "url": "https://github.com/ether-btc/inventory-reminder",
-      "is_upstream": false
+      "is_upstream": false,
+      "github": false
     },
     {
       "id": "BkashJEE/hermes-footprint#2",
@@ -2766,7 +2767,9 @@
         "WP4 run 705: F1 reconciliation of deployed WP-2/WP-7 bytes into the tree (md5 receipts in docs/F1-reconciliation-receipt-20261022.md), full-file-set deploy to ~/.hermes/plugins at 17:50:57 (rollback backup ~/.hermes/backups/*/20261022_175057 verified byte-exact), control-socket hot-reload (reloaded=true, adapters_rewired=1, no gateway restart), differential dispatch proof C1 (compound find -> native rc=0) + F1(c) fidelity-guard positive, P2 filing: skill devops/scoped-search-discipline (measured 38-tree hot-tree map) + reviewer-profile skill alignment + F6 fixes + shared-surface memory sf_37abd1a7b33205da555f1a66",
         "Pushed single commit 91e39d0 (e782541..91e39d0 fast-forward) to master, operator-approved 2026-10-22 ~18:32 CEST (clarify gate P3); post-verified via git ls-remote: origin/master = 91e39d0c7ffec20a38dc5d6b30de9c21de572040"
       ],
-      "notes": "Hard gate logged: operator approval via plan-gate clarify at 2026-10-22 18:32 CEST (approve push+AEON+closeout exactly as scoped). Known non-harmful #4351 malformed-rewrite warning fires during test runs (documented, do-not-refile). WP3 commandcode lane degraded -> nvidia/nemotron-3-ultra-550b-a55b:free chat + direct patch (gates unaffected). Live-host effect: compound/silent -path finds now pass through natively; plain find/grep rewrites unchanged."
+      "notes": "Hard gate logged: operator approval via plan-gate clarify at 2026-10-22 18:32 CEST (approve push+AEON+closeout exactly as scoped). Known non-harmful #4351 malformed-rewrite warning fires during test runs (documented, do-not-refile). WP3 commandcode lane degraded -> nvidia/nemotron-3-ultra-550b-a55b:free chat + direct patch (gates unaffected). Live-host effect: compound/silent -path finds now pass through natively; plain find/grep rewrites unchanged.",
+      "github": false,
+      "type": "project_outcome"
     },
     {
       "id": "ether-btc/rtk-hermes-consolidated@66e57ce",
@@ -2787,7 +2790,9 @@
         "Pushed 91e39d0..66e57ce to origin master (git ls-remote verified 66e57cef28c66ae745b3ddf97ee582442d5bb996)."
       ],
       "source_card": "t_ecf79426",
-      "review_card": "t_97e270be"
+      "review_card": "t_97e270be",
+      "github": false,
+      "type": "project_outcome"
     },
     {
       "id": "aeonfun/aeon#1267",
@@ -2795,8 +2800,8 @@
       "number": 1267,
       "type": "pr",
       "title": "[skills] Add github-filing-registry — persistent GitHub filing ledger",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await re-review of 9e420e7d (all findings addressed; 5 checks await maintainer approval)",
       "evidence_tier": "local-repro",
       "filed_at": "2026-10-24T18:49:09Z",
@@ -4057,7 +4062,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-27T18:56:31Z",
+  "last_synced": "2026-10-30T07:30:00Z",
   "account": "ether-btc",
   "activity_log": [
     {
