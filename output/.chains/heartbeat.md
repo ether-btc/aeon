@@ -1,20 +1,18 @@
-The heartbeat ambient check is complete. Here's a summary of what was accomplished:
+The heartbeat skill has been executed successfully. Here's what was done:
 
-**Results of the ambient check (${var} = empty):**
+**What was checked:**
+- Read `skills/heartbeat/SKILL.md` and the project context (MEMORY.md, cron-state.json, aeon.yml, recent logs)
+- Determined the `${var}` is empty → ran the **Ambient check** branch
+- P0: No failed/stuck skills, no API degradation, no chronic failures
+- P1: No stalled PRs, no urgent issues
+- P2: No flagged memory items
+- P3: Only heartbeat is enabled, no other skills to check
+- Public status page regeneration
 
-- **P0 — Failed & stuck skills**: No failures detected. Heartbeat's own entry shows `last_status: "success"` with 82 total runs (success_rate 0.62, 0 consecutive failures). No other skills in cron-state.json to evaluate. No API degradation (consecutive_failures = 0). No chronic failures (success_rate 0.62 > 0.5).
-- **P1 — Stalled PRs & urgent issues**: No open PRs or urgent GitHub issues.
-- **P2 — Flagged memory items**: No flagged items.
-- **P3 — Missing scheduled skills**: Only heartbeat is enabled; it's up-to-date in cron-state.json.
+**Results:** Fleet is healthy — no findings at any priority tier.
 
-**Overall status: 🟢 OK** — no flags meet 🔴 DEGRADED or 🟡 WATCH criteria. The fleet is fully warmed (82 completed runs).
+**Files modified:**
+- `docs/status.md` — regenerated with 🟢 OK status
+- `memory/logs/2026-10-30.md` — log entry with `### heartbeat (mode: ambient)` and `HEARTBEAT_OK · STATUS_PAGE=OK`
 
-**Actions taken:**
-- Regenerated `docs/status.md` with overall verdict 🟢 OK
-- Appended `### heartbeat (mode: ambient)` log entry to `memory/logs/2026-10-29.md` with `STATUS_PAGE=OK` and `HEARTBEAT_OK · STATUS_PAGE=OK`
-- No notification sent (clean run with no findings should send nothing)
-
-**Next scheduled run:** 20:00 UTC (per `aeon.yml` schedule `0 8,14,20 * * *`)
-
----
-HEARTBEAT_OK · STATUS_PAGE=OK
+**No notification was sent**, as per the heartbeat skill rule: "If nothing needs attention, log `HEARTBEAT_OK` and end your response."
