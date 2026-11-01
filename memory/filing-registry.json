@@ -2878,6 +2878,26 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "lightpanda-io/browser#4333",
+      "repo": "lightpanda-io/browser",
+      "number": 4333,
+      "type": "pr",
+      "title": "docs: state the per-arch glibc floors in the musl base-image note",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "1-line README.md diff vs 97c67d4b; 1.0.2 arm64 asset sha256 ac546dfc exec-tested in 5 envs (host glibc 2.36 FAIL, bookworm-slim 2.36 FAIL, ubuntu24.04 2.39 / trixie 2.41 / forky 2.43 OK); x86_64 floor 2.35 = amd64 deb Depends; arm64 deb declares 2.35 vs payload floor 2.38",
+      "filed_at": "2026-10-31T15:46:25Z",
+      "last_action": "2026-10-31T15:46:25Z",
+      "url": "https://github.com/lightpanda-io/browser/pull/4333",
+      "actions_taken": [
+        "Filed: docs: state the per-arch glibc floors in the musl base-image note"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "issues": [
@@ -3883,8 +3903,8 @@
       "number": 3852,
       "type": "issue",
       "title": "aarch64 build needs GLIBC_2.38, x86_64 only 2.35 — please use the same glibc for both",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "Commented 2026-10-14 (id 6179712615): aarch64 release bisect — 0.3.6=GLIBC_2.34 runs, 0.3.7 through nightly=GLIBC_2.38 blocked on Debian 12/glibc 2.36; break bound by commit 34aae91f (2026-08-14, runner ubuntu-22.04-arm -> ubuntu-24.04-arm); README's suggested base image debian:bookworm-slim is glibc 2.36 and cannot start the aarch64 binary; verified container workaround 1.1.0-nightly.10552+dd2cd5d7f",
       "filed_at": "2026-10-14T22:16:49Z",
@@ -4062,7 +4082,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-10-30T07:30:00Z",
+  "last_synced": "2026-11-01T07:24:55Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -5551,6 +5571,12 @@
       "type": "status_update",
       "ref": "NousResearch/hermes-agent#128461",
       "desc": "closed "
+    },
+    {
+      "ts": "2026-10-31T15:46:25Z",
+      "type": "filed",
+      "ref": "lightpanda-io/browser#4333",
+      "desc": "Filed: docs: state the per-arch glibc floors in the musl base-image note"
     }
   ]
 }
