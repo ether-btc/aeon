@@ -1,24 +1,25 @@
-The heartbeat skill execution is complete. Here's the verification status:
+The heartbeat skill has been executed successfully. Here's a summary of what was done:
 
-**Verified Files:**
+**Ambient check branch** ( `${var}` empty — the default LIVE scheduled path):
 
-1. **`memory/logs/2026-10-31.md`** — Contains the correct log entry under `### heartbeat (mode: ambient)` with `HEARTBEAT_OK · STATUS_PAGE=OK` verdict. Records that all P0-P3 checks passed with no findings requiring attention.
+- **P0 checks**: No failed/stuck skills, no API degradation (consecutive_failures: 0), no chronic failures (success_rate: 0.65 ≥ 0.5), self-check skipped (last_success ~15h ago, not >36h)
+- **P1 checks**: No open PRs stalled >24h, no GitHub issues labeled urgent
+- **P2 checks**: No flagged memory items needing follow-up
+- **P3 checks**: Only heartbeat is enabled: true in aeon.yml; it has an entry in cron-state.json, so no missing skills
 
-2. **`docs/status.md`** — Regenerated with current fleet health status:
-   - **Overall:** 🟢 OK
-   - **Updated:** 2026-10-31 22:37 UTC  
-   - **Open issues:** 0
-   - Skill health: heartbeat ✅ success, 65% success rate, 0 consecutive failures
-   - Next scheduled run: heartbeat at 08:00 UTC
+**Result**: Fleet is healthy and warmed (89 completed runs). Public status page regenerated at `docs/status.md` with **🟢 OK** verdict.
 
-**Summary of heartbeat skill execution:**
-- Ran ambient check (empty `${var}` — default daily path)
-- All P0-P3 checks passed (no failed/stuck skills, no stalled PRs, no urgent issues, no missing scheduled skills)
-- Overall status determined: 🟢 OK
-- Regenerated `docs/status.md` with updated skill health table
-- Appended ambient check log entry to `memory/logs/2026-10-31.md`
-- No notification sent (nothing needs attention)
+**Log written** to `memory/logs/2026-11-01.md` under `### heartbeat (mode: ambient)` with discriminator `HEARTBEAT_OK · STATUS_PAGE=OK`.
 
-**Git status:** Main branch up to date. Modified files are expected artifacts from the heartbeat run.
+**No notification sent** — per rule: "If nothing needs attention, log HEARTBEAT_OK and end your response."
 
-**No follow-up actions needed.** The fleet is healthy and all checks passed.
+**Files modified:**
+- `docs/status.md` — regenerated with 🟢 OK status
+- `memory/logs/2026-11-01.md` — new ambient-mode log entry
+- `output/heartbeat-2026-11-01.md` — detailed check output
+- `output/final-output.md` — this summary file
+
+**Follow-up**: None required until the next scheduled heartbeat run (next at 20:00 UTC today, then 08:00 UTC tomorrow).
+
+---
+🟢 OK — no findings, fleet healthy
