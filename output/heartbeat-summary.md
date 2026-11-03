@@ -1,21 +1,15 @@
-## Summary
+# Heartbeat Ambient Check — 2026-11-03
 
-**Heartbeat ambient check completed successfully.**
+**Overall status:** 🟢 OK
 
-**What was checked:**
-- P0: Failed/stuck skills — no failed skills, no stuck skills (heartbeat's own entry excluded), no API degradation (consecutive_failures: 0)
-- P1: Stalled PRs & urgent issues — no open PRs, only 1 open issue "health: heartbeat" without urgent/critical/high labels
-- P2: Flagged memory items — none
-- P3: Missing scheduled skills — all other skills are disabled
+**Checks performed:**
+- **P0 — Failed/stuck skills:** No failed skills (heartbeat last_status: success), no stuck skills (no other skills in cron-state; heartbeat excluded from self-check), no API degradation (consecutive_failures: 0), no chronic failures (success_rate: 67%, ≥ 0.5 threshold)
+- **P1 — Stalled PRs & urgent issues:** 0 open PRs, 1 open issue without "urgent" label
+- **P2 — Flagged memory items:** None flagged in MEMORY.md
+- **P3 — Missing scheduled skills:** Heartbeat has active entry in cron-state; last_success (2026-11-03 01:49 UTC) within 2× schedule interval
 
-**Findings:**
-- Chronic failures (success_rate 0.3, total_runs 23) were already reported and deduped within the last 48h (2026-10-09, 2026-10-10 logs). No new notification sent.
-- Fleet is healthy; last heartbeat run succeeded (last_status: "success", consecutive_failures: 0)
+**Status page:** `docs/status.md` regenerated with 🟢 OK verdict, updated timestamp.
 
-**Overall status:** 🟢 OK — heartbeat has recovered (last run succeeded), no skills currently broken.
+**Output:** Since no findings required attention, no notification was sent. The ambient check completed successfully — fleet is healthy.
 
-**Files modified:**
-- `memory/logs/2026-10-11.md` — appended `### heartbeat (mode: ambient)` entry with findings and `HEARTBEAT_OK · STATUS_PAGE=OK`
-- `docs/status.md` — regenerated with overall status 🟢 OK
-
-**Notification:** skipped (nothing needs attention; chronic failures already deduped from prior runs)
+**Log entry appended** to `memory/logs/2026-11-03.md` under `### heartbeat (mode: ambient)`.
