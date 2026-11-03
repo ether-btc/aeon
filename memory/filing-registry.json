@@ -2865,8 +2865,8 @@
       "number": 145672,
       "type": "pr",
       "title": "Add ram-first-context to the plugin catalog",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Await upstream review",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-27T18:56:03Z",
@@ -4082,7 +4082,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-01T07:24:55Z",
+  "last_synced": "2026-11-03T07:25:10Z",
   "account": "ether-btc",
   "activity_log": [
     {
