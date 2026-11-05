@@ -1,36 +1,24 @@
-HEARTBEAT_OK · STATUS_PAGE=OK
-
 ## Summary
 
-**Branch:** Ambient check (${var} empty = default fleet health check)
+**Heartbeat ambient check completed for 2026-11-05.**
 
-**P0 — Failed & stuck skills:** No findings identified.
-- No skills with `last_status: "failed"` in cron-state.json
-- No stuck skills (no skills with `last_status: "dispatched"` >45min old that completed ≥1 run before)
-- No API degradation (consecutive_failures = 0 < 3)
-- No chronic failures (success_rate = 0.59, total_runs = 68; 0.59 > 0.5 threshold)
-- Self-check: not triggered (heartbeat's last_success = 2026-10-25T16:41:12Z, same day, not >36h ago)
+**What was done:**
+- Read `memory/MEMORY.md` and the last 2 days of `memory/logs/` for context
+- Parsed `${var}` — empty value, so ran the **ambient check** branch
+- Checked `memory/cron-state.json` — fleet has completed runs (heartbeat: `total_runs: 95`, `success_rate: 66%`)
+- **P0 checks:** No failed skills, no stuck skills (excluding self), no API degradation (`consecutive_failures: 0`), no chronic failures (`success_rate: 66% ≥ 50%`), self-check not triggered (last_success within 36h)
+- **P1 checks:** No open PRs stalled >24h (`gh pr list` returned none), no urgent issues (`gh issue list` returned none)
+- **P2 check:** No flagged memory items
+- **P3 check:** Only heartbeat is enabled skill; has entry in cron-state.json, so no missing skills
+- **Dedup:** Verified no duplicate findings in last 48h of logs
+- **Regenerated `docs/status.md`** with overall status 🟢 OK, updated skill health table, and next scheduled run
 
-**P1 — Stalled PRs & urgent issues:**
-- No open PRs (gh pr list returned no results)
-- No GitHub issues labeled urgent (gh issue list found 1 open issue "health: heartbeat" with no labels)
+**Files created/modified:**
+- `docs/status.md` — regenerated with current fleet health (🟢 OK)
+- `memory/logs/2026-11-05.md` — heartbeat log entry with `mode: ambient` discriminator
 
-**P2 — Flagged memory items:**
-- No flagged items in memory/MEMORY.md
+**Findings:** No findings — fleet healthy.
 
-**P3 — Missing scheduled skills:**
-- Only heartbeat is enabled in aeon.yml (enabled: true, schedule: "0 8,14,20 * * *")
-- heartbeat has an entry in cron-state.json → no missing scheduled skills
-- Fleet has warmed (heartbeat has completed 68 runs), so P3 is applicable and finds no issues
+**Status page verdict:** 🟢 OK
 
-**Overall status:** 🟢 OK
-- Bootstrap clause does not apply (fleet has completed runs)
-- No skills are DEGRADED (no persistent breakage)
-- No skills are WATCH (no transient blips requiring attention)
-- Status page updated to reflect 🟢 OK
-
-**Files modified:**
-- `docs/status.md` — regenerated wholesale with 🟢 OK verdict, skill health table updated (heartbeat: 59% success rate, 0 consecutive failures, last run 2026-10-25 16:41 UTC)
-- `memory/logs/2026-10-25.md` — appended `### heartbeat (mode: ambient)` entry with findings and STATUS_PAGE=OK
-
-**Follow-up actions:** None. Fleet is healthy. Next scheduled run: heartbeat at 20:00 UTC (tri-daily at 08:00, 14:00, 20:00 UTC).
+**HEARTBEAT_OK · STATUS_PAGE=OK**

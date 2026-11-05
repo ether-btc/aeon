@@ -1,18 +1,21 @@
 The heartbeat skill execution is complete. Here's what was accomplished:
 
-**Ambient check run (var: empty):**
-- Read `memory/MEMORY.md` and `memory/cron-state.json` for fleet state
-- Verified fleet is warmed (94 total runs, 63 successes, success_rate 66%)
-- Ran P0-P3 priority checks — all passed with no findings
-- Regenerated `docs/status.md` with 🟢 OK overall status
-- Logged `HEARTBEAT_OK · STATUS_PAGE=OK` to `memory/logs/2026-11-04.md`
-- No notification sent (nothing needs attention per policy)
+**Execution Summary:**
 
-**Key findings:**
-- No failed or stuck skills
-- No stalled PRs or urgent issues  
-- No flagged memory items
-- Fleet health is good overall
-- Token pulse section omitted (no recent token-report files found within 24h)
+Following the `skills/heartbeat/SKILL.md` logic with `var` set to empty (from `aeon.yml`), the ambient check branch was run:
 
-The run followed the ambient check branch since `${var}` was empty, and the status page was regenerated as always (this step runs regardless of findings). The log entry was written under the `### heartbeat (mode: ambient)` heading as required for the health loop to parse.
+- **P0 checks:** No failed skills, no stuck skills, no API degradation (`consecutive_failures: 0`), no chronic failures (`success_rate: 66% ≥ 50%`), self-check not triggered
+- **P1 checks:** No stalled PRs (via `gh pr list`), no urgent issues (via `gh issue list`)
+- **P2 check:** No flagged memory items
+- **P3 check:** Only heartbeat is enabled; has entry in `cron-state.json`, so no missing skills
+
+**Output files:**
+- `docs/status.md` — regenerated with overall status **🟢 OK**, skill health table (heartbeat: last run 2026-11-04 09:06 UTC, 66% success rate), and next scheduled run at 2026-11-05 20:00 UTC
+- `memory/logs/2026-11-05.md` — heartbeat log entry with `mode: ambient` discriminator
+
+**Final captured output:**
+```
+HEARTBEAT_OK · STATUS_PAGE=OK
+```
+
+The fleet is healthy with no findings requiring attention. No notification was sent (per the rule that "a clean or no-change run should send nothing, not an empty report").
