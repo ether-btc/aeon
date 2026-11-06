@@ -1,36 +1,41 @@
+# Heartbeat — Ambient Fleet Health Check
+
+**Date:** 2026-11-06
+
+## Overall Status: 🟢 OK
+
+The ambient fleet-health check found no conditions requiring attention across any priority tier.
+
+### P0 — Failed & Stuck Skills
+- **Failed skills**: None. Heartbeat's own entry shows `last_status: "success"` with `total_runs: 99`, `success_rate: 0.69`, `consecutive_failures: 0`.
+- **Stuck skills**: None. No other skills exist in `cron-state.json` besides heartbeat; heartbeat is excluded from the stuck check.
+- **API degradation**: None. `consecutive_failures: 0 < 3`.
+- **Chronic failures**: None. `success_rate: 0.69 ≥ 0.5` (and `total_runs: 99 ≥ 5`).
+- **Self-check**: Not triggered. Heartbeat has `total_successes: 68 ≥ 1`, but `last_success: 2026-11-06T11:12:15Z` is the same day, not >36 hours old.
+
+### P1 — Stalled PRs & Urgent Issues
+- **Stalled PRs (>24h)**: None. `gh pr list --state open --limit 10` returned 0 open PRs.
+- **Urgent issues**: None. `gh issue list --state open --limit 10` returned 1 open issue (#1 "health: heartbeat", from 2026-10-28, not labeled urgent).
+
+### P2 — Flagged Memory Items
+- None. No items flagged in `memory/MEMORY.md` require follow-up.
+
+### P3 — Missing Scheduled Skills
+- None. Only `heartbeat` is enabled in `aeon.yml`, and it has an entry in `cron-state.json`.
+
+### Public Status Page
+- Regenerated `docs/status.md` with verdict `🟢 OK`, updated timestamp, and next scheduled run at 2026-11-06 14:00 UTC.
+
+### Dedup Check
+- Grepped `memory/logs/` for the last 48h. The finding "no new findings — fleet healthy" already appears in today's log (earlier run), so no duplicate notification is sent.
+
 ## Summary
 
-**Heartbeat skill executed** (ambient check mode, `${var}` empty).
-
-### What was done
-
-1. **Read context**: Read `memory/MEMORY.md`, `memory/logs/` (last 2 days), `memory/cron-state.json`, and `aeon.yml`
-2. **Bootstrap grace**: Fleet has completed runs (heartbeat: 65 total runs, 37 successes, 28 failures, success_rate 57%), so checks proceeded past the bootstrap phase
-3. **P0 checks** (Failed & stuck skills):
-   - No failed skills (heartbeat's `last_status: "success"`; no other skills in cron-state with `last_status: "failed"`)
-   - No stuck skills (only heartbeat in cron-state, excluded from self-check)
-   - No API degradation (consecutive_failures: 0 < 3)
-   - No chronic failures (success_rate: 0.57 ≥ 0.5, total_runs: 65 ≥ 5)
-4. **P1 checks** (Stalled PRs & urgent issues):
-   - No open PRs stalled >24h (`gh pr list` returned no open PRs)
-   - No urgent GitHub issues (`gh issue list` returned no matching issues)
-5. **P2 checks** (Flagged memory items): No flagged items in MEMORY.md requiring follow-up
-6. **P3 checks** (Missing scheduled skills): Only heartbeat is enabled in aeon.yml, and it has an entry in cron-state.json — no missing skills
-7. **Overall status**: 🟢 OK (no flags meet the 🔴 DEGRADED or 🟡 WATCH criteria)
-
-### Files created/modified
-
-- `docs/status.md` — regenerated with 🟢 OK verdict, skill health table showing heartbeat status
-- `memory/logs/2026-10-24.md` — appended `### heartbeat (mode: ambient) — third run 2026-10-24` entry with findings and `HEARTBEAT_OK · STATUS_PAGE=OK`
-- `memory/topics/index.md` — no changes
-
-### Notification
-
-No notification sent. The finding (fleet healthy, no issues) already appears in the last 48h of `memory/logs/` (two previous heartbeat runs on 2026-10-24), so the dedup rule would suppress it anyway. Per the ambient check output rule: "If nothing needs attention, log `HEARTBEAT_OK` and end your response" — no `./notify` call required.
-
-### Status page verdict
-
-`STATUS_PAGE=OK`
-
----
-**HEARTBEAT_OK · STATUS_PAGE=OK**
+- **Completed**: Ambient fleet-health check (heartbeat skill) for 2026-11-06
+- **Findings**: No failed/stuck skills, no stalled PRs, no urgent issues, no flagged memory items, no missing scheduled skills
+- **Overall status**: 🟢 OK
+- **Files modified**:
+  - `docs/status.md` — regenerated with current fleet status
+  - `memory/logs/2026-11-06.md` — log entry appended under `### heartbeat (mode: ambient)`
+- **No notification sent**: Fleet is healthy; no signal to deliver
+- **Follow-up**: Next scheduled heartbeat runs at 14:00 UTC and 20:00 UTC today per cron schedule `0 8,14,20 * * *`
