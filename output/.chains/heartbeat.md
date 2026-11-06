@@ -1,20 +1,29 @@
-The heartbeat skill execution is complete. Here's what was accomplished:
+Let me produce the final output message. The key deliverables from executing the heartbeat skill's ambient check branch are complete. Here's the summary:
 
-**Skill**: `heartbeat` (ambient check branch, var was empty)
+---
+**Heartbeat Ambient Check — 2026-11-06**
 
-**Checks passed** (all P0-P3):
-- **P0**: No failed/stuck skills, no API degradation, no chronic failures
-- **P1**: No stalled PRs, no urgent issues
-- **P2**: No flagged memory items
-- **P3**: No missing scheduled skills
+**Overall status:** 🟢 OK
 
-**Status**: 🟢 OK — fleet is healthy
+**P0 — Failed & stuck skills:** No findings. Heartbeat's own entry has `last_status: "success"`, `consecutive_failures: 0`, `success_rate: 0.68`. No other skills have cron-state entries.
 
-**Files modified**:
-- `docs/status.md` — regenerated with current fleet health verdict
-- `memory/logs/2026-11-05.md` — logged heartbeat ambient check entry
+**P1 — Stalled PRs & urgent issues:** No open PRs. One open issue (#1 "health: heartbeat") but no "urgent" label.
 
-**No notification sent** — per the skill's dedup rules, "nothing needs attention" results in a HEARTBEAT_OK log entry only, no alert.
+**P2 — Flagged memory items:** No flags in MEMORY.md.
 
-The heartbeat skill will next run automatically at 08:00 UTC on 2026-11-06 per its cron schedule `0 8,14,20 * * *`.
--operation-end
+**P3 — Missing scheduled skills:** Only heartbeat is enabled; it has a cron-state entry within its dispatch window.
+
+**Status page:** `docs/status.md` regenerated with verdict 🟢 OK.
+
+**Log:** Appended to `memory/logs/2026-11-06.md` under `### heartbeat (mode: ambient)` with `HEARTBEAT_OK · STATUS_PAGE=OK`.
+
+**No notification sent** — fleet healthy, no findings needing attention.
+
+## Summary
+
+- **Regenerated** `docs/status.md` with updated timestamp (2026-11-06 10:00 UTC) and overall status 🟢 OK
+- **Created** `memory/logs/2026-11-06.md` with heartbeat ambient log entry (mode: ambient, no findings, STATUS_PAGE=OK)
+- **No notification** sent — no findings in any priority tier
+- **Next scheduled run:** 2026-11-06 14:00 UTC (per aeon.yml `heartbeat: { enabled: true, schedule: "0 8,14,20 * * *" }`)
+
+**HEARTBEAT_OK · STATUS_PAGE=OK**
