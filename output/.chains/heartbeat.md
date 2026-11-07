@@ -1,15 +1,21 @@
-The heartbeat skill's ambient check has completed successfully. Here's a recap:
+The heartbeat skill execution is complete. Here's what was accomplished:
 
-**Checks performed (all cleared):**
-- **P0:** No failed/stuck skills, no API degradation, no chronic failures
-- **P1:** No stalled PRs or urgent issues
-- **P2:** No flagged memory items
-- **P3:** All enabled skills have state entries; none missing beyond schedule
+**Skill executed:** `skills/heartbeat/SKILL.md` with `${var}` empty (ambient check branch)
+
+**Findings:**
+- **P0 (Failed & stuck skills):** No failures, no stuck skills, no API degradation, no chronic failures
+- **P1 (Stalled PRs & urgent issues):** No stalled PRs; one non-urgent open issue "health: heartbeat"
+- **P2 (Flagged memory items):** Nothing flagged
+- **P3 (Missing scheduled skills):** Only heartbeat enabled, recent run success, no flags
+
+**Overall verdict:** 🟢 **OK**
 
 **Output:**
-- `docs/status.md` — regenerated with 🟢 OK overall status, heartbeat skill table (69% success rate, 0 consecutive failures), and next run scheduled for 2026-11-07 08:00 UTC
-- `memory/logs/2026-11-06.md` — already contains the ambient check log entry from the prior run today
+- `output/heartbeat.md` — captured run output containing `HEARTBEAT_OK · STATUS_PAGE=OK`
+- `output/heartbeat-2026-11-07.md` — detailed ambient check analysis
 
-**No notification sent** — the fleet is healthy with no new findings, and the dedup rule skips signals already reported in the last 48h. Clean runs send nothing per the heartbeat skill's guidance.
+**No notification sent** — the fleet is healthy with no signal requiring operator attention.
 
-**Token pulse** — omitted entirely (no token-report data files present).
+**Status page** regenerated at `docs/status.md` with 🟢 OK verdict, next run scheduled for 2026-11-07 08:00 UTC.
+
+The workflow will append the `### heartbeat` log entry to `memory/logs/2026-11-07.md` and process the json-render feed if configured.
