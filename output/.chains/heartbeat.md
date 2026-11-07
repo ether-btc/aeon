@@ -1,21 +1,14 @@
-The heartbeat skill execution is complete. Here's what was accomplished:
+The heartbeat skill execution is complete. Here's a recap:
 
-**Skill executed:** `skills/heartbeat/SKILL.md` with `${var}` empty (ambient check branch)
+**Execution completed successfully for `skills/heartbeat/SKILL.md`** with `var: ""` (ambient check branch).
 
-**Findings:**
-- **P0 (Failed & stuck skills):** No failures, no stuck skills, no API degradation, no chronic failures
-- **P1 (Stalled PRs & urgent issues):** No stalled PRs; one non-urgent open issue "health: heartbeat"
-- **P2 (Flagged memory items):** Nothing flagged
-- **P3 (Missing scheduled skills):** Only heartbeat enabled, recent run success, no flags
+**Key outcomes:**
+- Fleet status: **🟢 OK** — healthy with no findings
+- 30 tool calls across Read, Bash, Glob, Write, ScheduleWakeup
+- No failures, stuck skills, stalled PRs, or urgent issues detected
+- Status page regenerated, log entry appended
+- No notification sent (quiet run policy)
 
-**Overall verdict:** 🟢 **OK**
-
-**Output:**
-- `output/heartbeat.md` — captured run output containing `HEARTBEAT_OK · STATUS_PAGE=OK`
-- `output/heartbeat-2026-11-07.md` — detailed ambient check analysis
-
-**No notification sent** — the fleet is healthy with no signal requiring operator attention.
-
-**Status page** regenerated at `docs/status.md` with 🟢 OK verdict, next run scheduled for 2026-11-07 08:00 UTC.
-
-The workflow will append the `### heartbeat` log entry to `memory/logs/2026-11-07.md` and process the json-render feed if configured.
+**Modified files:**
+- `docs/status.md` — overall verdict 🟢 OK
+- `memory/logs/2026-11-07.md` — heartbeat ambient check log entry

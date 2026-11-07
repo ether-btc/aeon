@@ -1,32 +1,53 @@
-# Heartbeat — 2026-11-07
+## Heartbeat Ambient Check — 2026-11-07
 
-## Ambient Check
+**Overall status: 🟢 OK** — fleet healthy, no findings
 
-### P0 — Failed & Stuck Skills
-- **Failed skills**: None detected. All enabled skills have `last_status: "success"` or are warming up.
-- **Stuck skills**: None. No skills (excluding heartbeat) have `last_status: "dispatched"` >45min ago with completed prior runs.
-- **API degradation**: None. `consecutive_failures: 0` across the fleet.
-- **Chronic failures**: None. `success_rate: 0.69 >= 0.5` with `total_runs: 101`.
+### Checks performed
 
-### P1 — Stalled PRs & Urgent Issues
-- **Stalled PRs**: None. No open PRs found.
-- **Urgent issues**: One open issue "health: heartbeat" (2026-10-28) but it has no "urgent" label.
+**P0 — Failed & stuck skills:**
+- No skills with `last_status: "failed"` (heartbeat: success, 102 runs; 71 successes, 31 failures)
+- No stuck skills (only heartbeat in cron-state, excluded from self-check)
+- No API degradation (consecutive_failures: 0)
+- No chronic failures (success_rate: 0.7 ≥ 0.5, total_runs: 102 ≥ 5)
+- Self-check: heartbeat's last_success not >36h stale
 
-### P2 — Flagged Memory Items
-- No items flagged in `memory/MEMORY.md` requiring follow-up.
+**P1 — Stalled PRs & urgent issues:**
+- No open PRs in repo
+- No urgent-labeled issues (1 open issue: "health: heartbeat" without urgent label)
 
-### P3 — Missing Scheduled Skills
-- Only `heartbeat` is enabled in `aeon.yml`. It has an entry in `cron-state.json` with a recent `last_success` (2026-11-06T22:57:02Z). No missing-skill flags.
+**P2 — Flagged memory items:**
+- MEMORY.md clean, no flagged items
 
-### Overall Status
-🟢 **OK** — Fleet is healthy. No 🔴 DEGRADED conditions met (no currently broken skills, no consecutive_failures ≥ 3, no chronic failures, no stale self-check). No 🟡 WATCH items triggered (no stalled PRs, no urgent issues, no flagged memory items, no skills >2× schedule interval old).
+**P3 — Missing scheduled skills:**
+- Only heartbeat is enabled with a schedule; it has an entry in cron-state.json
 
-### Token Pulse
-No `output/articles/token-report-*.md` files found — Token Pulse section omitted.
+**Dedup:** No findings in last 48h memory/logs to dedup against
 
-### Public Status Page
-Regenerating `docs/status.md` with verdict 🟢 OK.
+### Status page
 
-## Log
+Regenerated `docs/status.md` with verdict 🟢 OK, updated 2026-11-07 14:00 UTC.
 
-**HEARTBEAT_OK · STATUS_PAGE=OK**
+### Log entry
+
+Appended to `memory/logs/2026-11-07.md` under `### heartbeat (mode: ambient)`:
+- Findings: no new findings — fleet healthy
+- Status page: STATUS_PAGE=OK
+- Verdict: HEARTBEAT_OK · STATUS_PAGE=OK
+
+### No notification sent
+
+Per policy: ambient check with nothing needing attention sends no notification; a fresh/warmed fleet should be quiet, not a red alert.
+
+---
+
+## Summary
+
+- **Regenerated** `docs/status.md` with overall status 🟢 OK, updated timestamp 2026-11-07 14:00 UTC
+- **Appended** log entry to `memory/logs/2026-11-07.md` under `### heartbeat (mode: ambient)` with STATUS_PAGE=OK verdict
+- **No notification** sent — ambient check found no failures, stuck skills, stalled PRs, urgent issues, or other findings requiring attention
+
+**Files modified:**
+- `docs/status.md` — overall verdict 🟢 OK, updated timestamp
+- `memory/logs/2026-11-07.md` — appended heartbeat ambient check log with mode discriminator and status verdict
+
+**Follow-up:** None. Next scheduled heartbeat run at 2026-11-07 20:00 UTC.
