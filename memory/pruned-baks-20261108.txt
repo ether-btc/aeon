@@ -1,0 +1,50 @@
+# pruned-baks manifest
+# purpose: records filing-registry backup files pruned during sync retention
+# keep rules: all filing-registry.json.bak-20261030* (audit evidence); 7 most recent exact daily baks (filing-registry.json.bak-YYYYMMDD)
+# timestamp: 2026-11-08T13:17:46Z
+# pruned count: 45
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261009-184421
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261009-232105
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261009-aaak
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261009-capcorr
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261009-prblocked
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261009-preappend
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261009T063838Z
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261009T215445
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261009T215913
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261009T233854Z
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261010-000336
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261010-000413
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261010-000456
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261010T002524Z
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261012-194945
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261012-repoconsol
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261013-065039
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261013-124546
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261013-135677v2
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261013-f8gate
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261013-pre-sync
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261013-prqueue
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261013-prrework
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261013-reviewerGO
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261014-140030
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261014-155500
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261014-corr
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261014-f8r2
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261014-pr-audit
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261014-review
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261014T184537
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261014T191733
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261014-verify
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261015-precomment
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261016-142814
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261017T063550Z
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261018T213034Z
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261024-review
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-20261025T185240Z
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-flr-pre91169comment
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-mergedfix-20261009T064038Z
+/home/hermes-pi/aeon/memory/filing-registry.json.bak-pre-prompro-fix-20261019
+/home/hermes-pi/aeon/memory/filing-registry.json.pre-66e57ce.bak
+/home/hermes-pi/aeon/memory/filing-registry.json.pre-sync-20261025T185401Z
+/home/hermes-pi/aeon/memory/filing-registry.pre-footprint-20261020T2204.json
