@@ -1,28 +1,22 @@
-The heartbeat skill execution is complete. Here's what was accomplished:
+The heartbeat skill has been executed successfully. Here's a summary:
 
-## Heartbeat Ambient Check — 2026-11-07
+## Summary
 
-**Result:** 🟢 OK — Fleet healthy, no findings
+**Executed skill**: `heartbeat` with `var: ""` (ambient check branch)
 
-### What was checked and verified:
+**Checks performed**:
+- **P0** — Failed & stuck skills: No failures, no stuck skills (excluding self), no API degradation (consecutive_failures=0), no chronic failures (success_rate=0.7 ≥ 0.5), self-check not triggered (last_success ~24h old, not >36h)
+- **P1** — Stalled PRs & urgent issues: No open PRs, no issues labeled urgent (one open issue #1 "health: heartbeat" has no severity label)
+- **P2** — Flagged memory items: Nothing flagged in MEMORY.md
+- **P3** — Missing scheduled skills: Fleet is warmed (heartbeat has 104 completed runs), P3 skipped per bootstrap grace
 
-| Tier | Check | Outcome |
-|------|-------|---------|
-| **P0** | Failed/stuck skills, API degradation, chronic failures | All clear |
-| **P1** | Stalled PRs (>24h), urgent issues | None found |
-| **P2** | Flagged memory items | None |
-| **P3** | Missing scheduled skills | None |
+**Overall status**: 🟢 OK
 
-### Files Modified
-- `docs/status.md` — Regenerated with 🟢 OK verdict
-- `memory/logs/2026-11-07.md` — Appended ambient check log entry
-- `output/final-output.md` — Full analysis with `## Summary`
-- `output/heartbeat-result.md` — Detailed results
-- `output/heartbeat-summary.md` — Condensed summary
+**Actions taken**:
+- Regenerated `docs/status.md` with updated verdict (🟢 OK) and timestamps
+- Created `memory/logs/2026-11-08.md` with ambient mode log entry (`HEARTBEAT_OK · STATUS_PAGE=OK`)
+- No notification sent (fleet healthy, no findings)
 
-### Key Output
-```
-HEARTBEAT_OK · STATUS_PAGE=OK
-```
-
-No notification was sent (healthy fleet = no signal). The next scheduled heartbeat run is at 08:00 UTC on 2026-11-08.
+**Files modified**:
+- `docs/status.md` — updated Overall, Updated timestamp, skill health table, next scheduled run
+- `memory/logs/2026-11-08.md` — new file with heartbeat ambient mode log entry
