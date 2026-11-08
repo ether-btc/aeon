@@ -339,8 +339,8 @@ test_g() {
   # pruned
   [[ ! -e "$D/filing-registry.json.bak-20261010T002524Z" ]] && pass "G: timestamped bak pruned" || bad "G: timestamped bak still present"
   [[ ! -e "$D/filing-registry.json.bak-20261011-123456" ]] && pass "G: suffixed bak pruned" || bad "G: suffixed bak still present"
-  [[ ! -e "$D/filing-registry.json.pre-foo" ]] && pass "G: .pre-foo pruned" || bad "G: .pre-foo still present"
-  [[ ! -e "$D/filing-registry.pre-bar" ]] && pass "G: .pre-bar pruned" || bad "G: .pre-bar still present"
+  [[ -e "$D/filing-registry.json.pre-foo" ]] && pass "G: .pre-foo kept" || bad "G: .pre-foo missing"
+  [[ -e "$D/filing-registry.pre-bar" ]] && pass "G: .pre-bar kept" || bad "G: .pre-bar missing"
 
   local today manifest
   today=$(date -u +%Y%m%d)
@@ -349,12 +349,12 @@ test_g() {
   if [[ -f "$manifest" ]]; then
     assert_contains "$(cat "$manifest")" "filing-registry.json.bak-20261010T002524Z" "G: manifest lists timestamped"
     assert_contains "$(cat "$manifest")" "filing-registry.json.bak-20261011-123456" "G: manifest lists suffixed"
-    assert_contains "$(cat "$manifest")" "filing-registry.json.pre-foo" "G: manifest lists .pre-foo"
+    assert_not_contains "$(cat "$manifest")" "filing-registry.json.pre-foo" "G: manifest does not list .pre-foo"
   fi
 
   local bak_count
   bak_count=$(ls "$D"/*.bak* "$D"/*.pre-* 2>/dev/null | wc -l | tr -d ' ' || true)
-  assert_eq "$bak_count" "8" "G: bak/pre count == 8"
+  assert_eq "$bak_count" "10" "G: bak/pre count == 10"
 
   rm -rf "$T"
 }
