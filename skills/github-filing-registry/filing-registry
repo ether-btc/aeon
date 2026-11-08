@@ -61,46 +61,43 @@ atomic_save() {
 # ─── Commands ────────────────────────────────────────────────────────────────
 
 cmd_add() {
-  local id="" type="" title="" evidence="" url=""
+  local id="" type="" title="" evidence="" url="" repo="" filed_at=""
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      --id)      id="$2";  shift 2 ;;
-      --type)    type="$2"; shift 2 ;;
-      --title)   title="$2"; shift 2 ;;
+      --id)       id="$2";       shift 2 ;;
+      --type)     type="$2";     shift 2 ;;
+      --title)    title="$2";    shift 2 ;;
       --evidence) evidence="$2"; shift 2 ;;
-      --url)     url="$2"; shift 2 ;;
-      *)         echo "Unknown flag: $1" >&2; exit 1 ;;
+      --url)      url="$2";      shift 2 ;;
+      --repo)     repo="$2";     shift 2 ;;
+      --filed_at) filed_at="$2"; shift 2 ;;
+      *)          echo "Unknown flag: $1" >&2; exit 1 ;;
     esac
   done
 
+  # Bare numeric id: reject FIRST, before --repo/--url resolution.
+  if [[ "$id" =~ ^[0-9]+$ ]]; then
+    echo "BARE_NUMERIC_ID: --id '$id' is a bare number; registry ids must be canonical owner/repo#N" >&2
+    exit 2
+  fi
+  if [[ -z "$id" ]]; then
+    echo "MISSING_ID: --id required" >&2
+    exit 2
+  fi
+
   init_registry
 
-  if [[ -z "$id" || -z "$type" || -z "$title" ]]; then
+  # Keep existing required-field behavior (exit 1) for --type/--title.
+  if [[ -z "$type" || -z "$title" ]]; then
     echo "Error: --id, --type, --title required" >&2; exit 1
   fi
 
-  # Check duplicate
-  local existing
-  existing=$(cat "$REGISTRY" | jq --arg id "$id" \
-    '.pulls + .issues | map(select(.id == $id)) | .[0] // null')
-  if [[ "$existing" != "null" ]]; then
-    echo "FILING_EXISTS: $id already registered" >&2
-    echo "$existing" | jq '.url, .status, .next_action'
-    exit 1
-  fi
-
-  # Resolve owner/repo and number. A bare number id (no "owner/repo#N") is NOT enough:
-  # deriving repo from the id writes repo="78", a record `gh api repos/78/issues/78` can
-  # never resolve, so sync could never verify it. Fall back to --url, else refuse to write.
+  # Canonicalize type, then resolve owner/repo and number.
   [[ "$type" == "pull" ]] && type="pr"
-  local repo="" number=""
+  local number=""
   if [[ "$id" == *"#"* ]]; then
     repo="${id%%#*}"
     number="${id##*#}"
-  elif [[ "$id" =~ ^[0-9]+$ ]]; then
-    # A bare number is a valid NUMBER but says nothing about the repo: the repo must come
-    # from --url, while the number stays what the id gave.
-    number="$id"
   fi
   if [[ ! "$repo" =~ ^[^/]+/[^/]+$ && -n "$url" ]]; then
     if [[ "$url" =~ ^https?://[^/]+/([^/]+/[^/]+)/(pull|issues|discussions)/([0-9]+) ]]; then
@@ -113,14 +110,38 @@ cmd_add() {
     fi
   fi
   if [[ ! "$repo" =~ ^[^/]+/[^/]+$ || ! "$number" =~ ^[0-9]+$ ]]; then
-    echo "Error: cannot resolve owner/repo and number from id '$id'${url:+ (url: $url)}." >&2
-    echo "  Use --id owner/repo#N, or pass --url pointing at the PR/issue." >&2
+    echo "MISSING_REPO: cannot resolve owner/repo and number from id '$id'${url:+ (url: $url)}" >&2
+    exit 2
+  fi
+
+  # Canonicalize the accepted id to owner/repo#N.
+  id="$repo#$number"
+
+  # Check duplicate (after canonicalization).
+  local existing
+  existing=$(cat "$REGISTRY" | jq --arg id "$id" \
+    '.pulls + .issues | map(select(.id == $id)) | .[0] // null')
+  if [[ "$existing" != "null" ]]; then
+    echo "FILING_EXISTS: $id already registered" >&2
+    echo "$existing" | jq '.url, .status, .next_action'
     exit 1
   fi
+
   if [[ -z "$url" ]]; then
     local kind="issues"
     [[ "$type" == "pr" ]] && kind="pull"
     url="https://github.com/$repo/$kind/$number"
+  fi
+  if [[ -z "$url" ]]; then
+    echo "MISSING_URL: --url required (could not default a url for id '$id')" >&2
+    exit 2
+  fi
+  if [[ -z "$filed_at" ]]; then
+    filed_at="$(now_str)"
+  fi
+  if [[ -z "$filed_at" ]]; then
+    echo "MISSING_FILED_AT: --filed_at required (could not determine filed_at for id '$id')" >&2
+    exit 2
   fi
 
   local entry
@@ -134,8 +155,8 @@ cmd_add() {
     --arg status "pending_review" \
     --arg next_action "Await upstream review" \
     --arg evidence "$evidence" \
-    --arg filed_at "$(now_str)" \
-    --arg last_action "$(now_str)" \
+    --arg filed_at "$filed_at" \
+    --arg last_action "$filed_at" \
     --arg url "$url" \
     --arg action_filed "Filed: $title" \
     --arg notes "" \
@@ -307,21 +328,28 @@ cmd_sync() {
   local malformed_ids=""
   if [[ -n "$target_item" ]]; then
     items=$(echo "$current" | jq --arg id "$target_item" \
-      '.pulls + .issues | [map(select(.id == $id))] | .[0]')
+      '[ (.pulls[] | . + {_bucket:"pulls"}),
+         (.issues[] | . + {_bucket:"issues"}) ]
+       | map(select(.id == $id))')
   else
     # Split the active set three ways: (1) records we can actually check, (2) records that
     # are deliberately not GitHub items (audits / registry-only), and (3) records that CLAIM
     # to be GitHub items but have no resolvable owner/repo or number. Group 3 is a defect,
     # not a skip: silently ignoring it is how a corrupt record stays "verified" forever.
-    items=$(echo "$current" | jq '[.pulls[], .issues[]]
-      | map(select(.status != "closed" and .status != "merged"))
+    # Include rows where status is not closed/merged OR state is still open (so frozen
+    # state=open/status=closed rows are re-fetched and can be unfrozen).
+    items=$(echo "$current" | jq '[ (.pulls[] | . + {_bucket:"pulls"}),
+                                     (.issues[] | . + {_bucket:"issues"}) ]
+      | map(select(((.status // "") | IN("closed","merged") | not) or (.state == "open")))
       | map(select(((.type // "") != "audit") and (.github != false))
       | select(((.repo // "") | test("^[^/]+/[^/]+$")) and (.number != null)))')
-    notgithub=$(echo "$current" | jq '[.pulls[], .issues[]]
-      | map(select(.status != "closed" and .status != "merged"))
+    notgithub=$(echo "$current" | jq '[ (.pulls[] | . + {_bucket:"pulls"}),
+                                        (.issues[] | . + {_bucket:"issues"}) ]
+      | map(select(((.status // "") | IN("closed","merged") | not) or (.state == "open")))
       | map(select(((.type // "") == "audit") or (.github == false))) | length')
-    malformed_ids=$(echo "$current" | jq -r '[.pulls[], .issues[]]
-      | map(select(.status != "closed" and .status != "merged"))
+    malformed_ids=$(echo "$current" | jq -r '[ (.pulls[] | . + {_bucket:"pulls"}),
+                                               (.issues[] | . + {_bucket:"issues"}) ]
+      | map(select(((.status // "") | IN("closed","merged") | not) or (.state == "open")))
       | map(select(((.type // "") != "audit") and (.github != false))
       | select((((.repo // "") | test("^[^/]+/[^/]+$")) | not) or (.number == null)) | .id) | join(" ")')
   fi
@@ -333,6 +361,7 @@ cmd_sync() {
   echo "SYNC: checking $total items against GitHub... ($notgithub non-GitHub item(s) not checked)"
 
   local changes=0
+  local skipped_mismatch=0
   local unknown=0
   local unverified=""
   local updated_registry="$current"
@@ -340,11 +369,19 @@ cmd_sync() {
   # For each item, fetch live state
   while IFS= read -r item_json; do
     [[ -z "$item_json" || "$item_json" == "null" ]] && continue
-    local id type number repo
+    local id type number repo bucket
     id=$(echo "$item_json" | jq -r '.id')
     type=$(echo "$item_json" | jq -r '.type')
     number=$(echo "$item_json" | jq -r '.number')
     repo=$(echo "$item_json" | jq -r '.repo')
+    bucket=$(echo "$item_json" | jq -r '._bucket')
+
+    # Never apply a state/status write to a row whose type contradicts its bucket.
+    if [[ ( "$bucket" == "pulls" && "$type" == "issue" ) || ( "$bucket" == "issues" && "$type" == "pr" ) ]]; then
+      echo "SKIP: $id type=$type in $bucket (type/bucket mismatch — not written)"
+      skipped_mismatch=$((skipped_mismatch + 1))
+      continue
+    fi
 
     local gh_state
     local gh_merged="false"
@@ -359,11 +396,6 @@ cmd_sync() {
         gh_state="unknown"
       else
         gh_state=$(echo "$pr_json" | jq -r '.state')
-        # jq's `//` is the ALTERNATIVE operator, not a null test: for a merged PR
-        # `.merged_at` is a truthy string, so `(.merged_at // (.merged_at == null))`
-        # evaluates to that STRING, and `if <string>` is TRUE -> the old expression
-        # returned "false" for merged PRs AND for unmerged ones, so gh_merged was
-        # always false and new_status="merged" could never fire. Test nullness directly.
         gh_merged=$(echo "$pr_json" | jq -r 'if .merged_at then "true" else "false" end')
       fi
     else
@@ -373,6 +405,8 @@ cmd_sync() {
 
     local registry_state
     registry_state=$(echo "$item_json" | jq -r '.state')
+    local registry_status
+    registry_status=$(echo "$item_json" | jq -r '.status // ""')
 
     # A failed fetch is NOT agreement. An unreachable or rate-limited GitHub must never
     # be reported as a clean bill of health: count it, name it, and fail the run below.
@@ -387,7 +421,7 @@ cmd_sync() {
       local new_status="closed"
       [[ "$type" == "pr" && "$gh_state" == "closed" && "$gh_merged" == "true" ]] && new_status="merged"
       local updated
-      if [[ "$type" == "pr" ]]; then
+      if [[ "$bucket" == "pulls" ]]; then
         updated=$(echo "$updated_registry" | jq \
           --arg id "$id" \
           --arg gh_state "$gh_state" \
@@ -404,6 +438,23 @@ cmd_sync() {
       fi
       updated_registry="${updated:-$updated_registry}"
       echo "  CHANGED: $id $registry_state → $gh_state (status → $new_status)"
+    elif [[ "$gh_state" == "open" && "$registry_state" == "open" && "$registry_status" == "closed" ]]; then
+      # Unfreeze: live state agrees it's open, but the recorded status is stale-closed.
+      changes=$((changes + 1))
+      local updated
+      if [[ "$bucket" == "pulls" ]]; then
+        updated=$(echo "$updated_registry" | jq \
+          --arg id "$id" \
+          '(.pulls | map(if .id == $id then .status = "open" else . end)) as $new_pulls |
+          {pulls: $new_pulls, issues: .issues, version: .version, last_synced: .last_synced, account: .account, activity_log: .activity_log}')
+      else
+        updated=$(echo "$updated_registry" | jq \
+          --arg id "$id" \
+          '(.issues | map(if .id == $id then .status = "open" else . end)) as $new_issues |
+          {pulls: .pulls, issues: $new_issues, version: .version, last_synced: .last_synced, account: .account, activity_log: .activity_log}')
+      fi
+      updated_registry="${updated:-$updated_registry}"
+      echo "UNFROZE: $id status closed -> open (gh state open)"
     fi
   done < <(echo "$items" | jq -c '.[]' 2>/dev/null)
 
@@ -421,7 +472,7 @@ cmd_sync() {
   fi
 
   if [[ $changes -eq 0 ]]; then
-    echo "SYNC_OK: all $total GitHub-backed item(s) match GitHub state"
+    echo "SYNC_OK: all $total GitHub-backed item(s) match GitHub state ($skipped_mismatch type/bucket mismatch(es) skipped)"
   fi
   return 0
 }
@@ -501,6 +552,52 @@ cmd_check_duplicate() {
   echo "NO_DUPLICATE: $id is clear to file"
 }
 
+
+cmd_validate() {
+  init_registry
+
+  local current
+  current=$(cat "$REGISTRY")
+
+  local any=0
+  while IFS= read -r line; do
+    [[ -z "$line" ]] && continue
+    printf '%s\n' "$line"
+    any=1
+  done < <(echo "$current" | jq -r '
+    def norm: if . == null then "-" else (. | tostring | if . == "" then "-" else . end) end;
+    [ (range(.pulls|length) as $i | .pulls[$i] | . + {__bucket:"pulls", __idx:$i}),
+      (range(.issues|length) as $i | .issues[$i] | . + {__bucket:"issues", __idx:$i}) ]
+    | .[]
+    | . as $r
+    | ($r.__bucket) as $b
+    | ($r.__idx) as $idx
+    | ($r.repo | norm) as $repo
+    | ($r.id | norm) as $id
+    | ($r.type // "") as $type
+    | ($r.state // "") as $state
+    | ($r.status // "") as $status
+    | ([
+        (if ($id | test("^[0-9]+$")) then "BARE_NUMERIC_ID" else empty end),
+        (if ($id == "-" and $repo == "-") then "MISSING_ID,REPO"
+         elif ($id == "-") then "MISSING_ID"
+         elif ($repo == "-") then "MISSING_REPO"
+         else empty end),
+        (if (($b == "pulls" and $type == "issue") or ($b == "issues" and $type == "pr"))
+         then "BUCKET_MISMATCH type=\($type) in \($b)" else empty end),
+        (if ($state == "open" and $status == "closed")
+         then "FROZEN state=open status=closed" else empty end)
+      ]) as $probs
+    | $probs[] | "\($b)#\($idx) \($repo) \($id) \(.)"
+  ')
+
+  if [[ $any -eq 0 ]]; then
+    echo "VALIDATE_OK: 0 malformed rows"
+    return 0
+  fi
+  return 1
+}
+
 # ─── Dispatch ─────────────────────────────────────────────────────────────────
 
 CMD="${1:-}"; shift || true
@@ -509,11 +606,12 @@ case "$CMD" in
   status)         cmd_status "$@" ;;
   triage)         cmd_triage "$@" ;;
   sync)           cmd_sync "$@" ;;
+  validate)       cmd_validate "$@" ;;
   log)            cmd_log "$@" ;;
   check-duplicate) cmd_check_duplicate "$@" ;;
   "")
     echo "filing-registry: GitHub filing tracker"
-    echo "Commands: add, status, triage, sync, log, check-duplicate"
+    echo "Commands: add, status, triage, sync, validate, log, check-duplicate"
     echo "Run with --help on any subcommand for usage"
     ;;
   *) echo "Unknown command: $CMD" >&2; exit 1 ;;
