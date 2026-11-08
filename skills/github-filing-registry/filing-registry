@@ -52,6 +52,116 @@ log_activity() {
   echo "$updated" > "$REGISTRY"
 }
 
+sync_branch_preflight() {
+  local branch
+  branch=$(git -C "$AEON_ROOT" rev-parse --abbrev-ref HEAD 2>/dev/null) || return 0
+  [[ "${AEON_ALLOW_BRANCH:-}" == "1" ]] && return 0
+  if [[ "$branch" != "main" ]]; then
+    echo "SYNC_BRANCH_MISMATCH: checkout is on '$branch', sync requires 'main' (set AEON_ALLOW_BRANCH=1 to override)" >&2
+    return 2
+  fi
+  return 0
+}
+
+sync_overwrite_guard() {
+  local old_json="$1"
+  local new_json="$2"
+  local old_count new_count
+  old_count=$(echo "$old_json" | jq '([.pulls//[], .issues//[]] | add | length)')
+  new_count=$(echo "$new_json" | jq '([.pulls//[], .issues//[]] | add | length)')
+  if [[ "$old_count" -gt 50 && "$new_count" -eq 0 ]]; then
+    echo "SYNC_OVERWRITE_GUARD: refusing to replace $old_count item(s) with 0 items; registry unchanged" >&2
+    return 4
+  fi
+  return 0
+}
+
+retention_prune() {
+  local registry="$1"
+  local dir today manifest
+  dir=$(dirname "$registry")
+  today=$(date -u +%Y%m%d)
+  manifest="$dir/pruned-baks-$today.txt"
+
+  local candidates=()
+  local f
+  for f in "$dir"/filing-registry.json.bak-* "$dir"/filing-registry.json.pre-* "$dir"/filing-registry.pre-*; do
+    [[ -e "$f" ]] || continue
+    candidates+=("$f")
+  done
+
+  # Keep set: audit-evidence (bak-20261030*) + 7 most recent exact daily baks
+  # (basename exactly filing-registry.json.bak-YYYYMMDD, 8 digits and nothing after)
+  local daily_baks=()
+  local c base
+  for c in "${candidates[@]+"${candidates[@]}"}"; do
+    base=$(basename "$c")
+    if [[ "$base" =~ ^filing-registry\.json\.bak-[0-9]{8}$ ]]; then
+      daily_baks+=("$base")
+    fi
+  done
+
+  local keep_dailies=()
+  if [[ ${#daily_baks[@]} -gt 0 ]]; then
+    local sorted
+    sorted=$(printf '%s\n' "${daily_baks[@]}" | sort -r)
+    local i=0
+    while IFS= read -r base; do
+      [[ -z "$base" ]] && continue
+      i=$((i + 1))
+      [[ $i -le 7 ]] || break
+      keep_dailies+=("$base")
+    done <<< "$sorted"
+  fi
+
+  local prune_list=()
+  local keep_it
+  for c in "${candidates[@]+"${candidates[@]}"}"; do
+    base=$(basename "$c")
+    keep_it=false
+    # audit evidence: bak-20261030*
+    if [[ "$base" == filing-registry.json.bak-20261030* ]]; then
+      keep_it=true
+    fi
+    # 7 most recent exact daily baks
+    if [[ "$keep_it" == "false" && ${#keep_dailies[@]} -gt 0 ]]; then
+      local kd
+      for kd in "${keep_dailies[@]}"; do
+        if [[ "$base" == "$kd" ]]; then
+          keep_it=true
+          break
+        fi
+      done
+    fi
+    if [[ "$keep_it" == "false" ]]; then
+      prune_list+=("$c")
+    fi
+  done
+
+  # Write manifest BEFORE deleting
+  {
+    echo "# pruned-baks manifest"
+    echo "# purpose: records filing-registry backup files pruned during sync retention"
+    echo "# keep rules: all filing-registry.json.bak-20261030* (audit evidence); 7 most recent exact daily baks (filing-registry.json.bak-YYYYMMDD)"
+    echo "# timestamp: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+    echo "# pruned count: ${#prune_list[@]}"
+    if [[ ${#prune_list[@]} -eq 0 ]]; then
+      echo "# nothing pruned"
+    else
+      printf '%s\n' "${prune_list[@]}"
+    fi
+  } > "$manifest"
+
+  local p
+  for p in "${prune_list[@]+"${prune_list[@]}"}"; do
+    if ! rm -- "$p"; then
+      echo "retention_prune: failed to remove $p" >&2
+      return 1
+    fi
+  done
+  return 0
+}
+
 atomic_save() {
   local tmp="$REGISTRY.tmp.$$"
   jq '.' > "$tmp"
@@ -310,6 +420,8 @@ cmd_sync() {
     esac
   done
 
+  sync_branch_preflight || return $?
+
   init_registry
 
   local current
@@ -451,7 +563,11 @@ cmd_sync() {
   done < <(echo "$items" | jq -c '.[]' 2>/dev/null)
 
   if [[ $changes -gt 0 ]]; then
-    echo "$updated_registry" | jq '.last_synced = "'"$(now_str)"'"' > "$REGISTRY"
+    local synced
+    synced=$(echo "$updated_registry" | jq --arg ts "$(now_str)" '.last_synced = $ts')
+    sync_overwrite_guard "$current" "$synced" || return $?
+    cp -p "$REGISTRY" "$REGISTRY.bak-$(date -u +%Y%m%dT%H%M%SZ)"
+    echo "$synced" > "$REGISTRY"
     echo "SYNC_DONE: $changes items updated"
   fi
 
@@ -466,6 +582,7 @@ cmd_sync() {
   if [[ $changes -eq 0 ]]; then
     echo "SYNC_OK: all $total GitHub-backed item(s) match GitHub state ($skipped_mismatch type/bucket mismatch(es) skipped)"
   fi
+  retention_prune "$REGISTRY" || return 1
   return 0
 }
 
