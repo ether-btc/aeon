@@ -52,6 +52,18 @@ log_activity() {
   echo "$updated" > "$REGISTRY"
 }
 
+# Run a command under exclusive flock on $REGISTRY.lock (fd 9).
+# Lock is non-blocking (-n): if it cannot be acquired immediately ->
+# stderr REGISTRY_BUSY, exit 3. Never hangs; the acquisition is bounded
+# (well within the 10s cap) and always ends in success or exit 3.
+# The 9>$REGISTRY.lock redirect creates the lock artifact.
+with_registry_lock() {
+  (
+    flock -x -n 9 || { echo "REGISTRY_BUSY: could not acquire registry lock immediately" >&2; exit 3; }
+    "$@"
+  ) 9>"$REGISTRY.lock"
+}
+
 sync_branch_preflight() {
   local branch
   branch=$(git -C "$AEON_ROOT" rev-parse --abbrev-ref HEAD 2>/dev/null) || return 0
@@ -170,62 +182,10 @@ atomic_save() {
 
 # ─── Commands ────────────────────────────────────────────────────────────────
 
-cmd_add() {
-  local id="" type="" title="" evidence="" url="" repo="" filed_at=""
-  while [[ $# -gt 0 ]]; do
-    case "$1" in
-      --id)       id="$2";       shift 2 ;;
-      --type)     type="$2";     shift 2 ;;
-      --title)    title="$2";    shift 2 ;;
-      --evidence) evidence="$2"; shift 2 ;;
-      --url)      url="$2";      shift 2 ;;
-      --repo)     repo="$2";     shift 2 ;;
-      --filed_at) filed_at="$2"; shift 2 ;;
-      *)          echo "Unknown flag: $1" >&2; exit 1 ;;
-    esac
-  done
-
-  # Bare numeric id: reject FIRST, before --repo/--url resolution.
-  if [[ "$id" =~ ^[0-9]+$ ]]; then
-    echo "BARE_NUMERIC_ID: --id '$id' is a bare number; registry ids must be canonical owner/repo#N" >&2
-    exit 2
-  fi
-  if [[ -z "$id" ]]; then
-    echo "MISSING_ID: --id required" >&2
-    exit 2
-  fi
+_cmd_add_locked() {
+  local id="$1" type="$2" title="$3" evidence="$4" url="$5" repo="$6" filed_at="$7" number="$8"
 
   init_registry
-
-  # Keep existing required-field behavior (exit 1) for --type/--title.
-  if [[ -z "$type" || -z "$title" ]]; then
-    echo "Error: --id, --type, --title required" >&2; exit 1
-  fi
-
-  # Canonicalize type, then resolve owner/repo and number.
-  [[ "$type" == "pull" ]] && type="pr"
-  local number=""
-  if [[ "$id" == *"#"* ]]; then
-    repo="${id%%#*}"
-    number="${id##*#}"
-  fi
-  if [[ ! "$repo" =~ ^[^/]+/[^/]+$ && -n "$url" ]]; then
-    if [[ "$url" =~ ^https?://[^/]+/([^/]+/[^/]+)/(pull|issues|discussions)/([0-9]+) ]]; then
-      repo="${BASH_REMATCH[1]}"
-      [[ -z "$number" ]] && number="${BASH_REMATCH[3]}"
-      if [[ -n "$number" && "${BASH_REMATCH[3]}" != "$number" ]]; then
-        echo "Error: id '$id' and --url disagree on the number ($number vs ${BASH_REMATCH[3]})." >&2
-        exit 1
-      fi
-    fi
-  fi
-  if [[ ! "$repo" =~ ^[^/]+/[^/]+$ || ! "$number" =~ ^[0-9]+$ ]]; then
-    echo "MISSING_REPO: cannot resolve owner/repo and number from id '$id'${url:+ (url: $url)}" >&2
-    exit 2
-  fi
-
-  # Canonicalize the accepted id to owner/repo#N.
-  id="$repo#$number"
 
   # Check duplicate (after canonicalization).
   local existing
@@ -235,15 +195,6 @@ cmd_add() {
     echo "FILING_EXISTS: $id already registered" >&2
     echo "$existing" | jq '.url, .status, .next_action'
     exit 1
-  fi
-
-  if [[ -z "$url" ]]; then
-    echo "MISSING_URL: --url required (could not default a url for id '$id')" >&2
-    exit 2
-  fi
-  if [[ -z "$filed_at" ]]; then
-    echo "MISSING_FILED_AT: --filed_at required (could not determine filed_at for id '$id')" >&2
-    exit 2
   fi
 
   local entry
@@ -287,26 +238,78 @@ cmd_add() {
   echo "ADDED: $id — $title"
 }
 
-cmd_status() {
-  local id="" log_only=false set_status="" next_action="" action="" notes="" fix_pr=""
+cmd_add() {
+  local id="" type="" title="" evidence="" url="" repo="" filed_at=""
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      --id)          id="$2";  shift 2 ;;
-      --set)         set_status="$2"; shift 2 ;;
-      --next)        next_action="$2"; shift 2 ;;
-      --action)      action="$2"; shift 2 ;;
-      --notes)       notes="$2"; shift 2 ;;
-      --fix-pr)      fix_pr="$2"; shift 2 ;;
-      --log-only)    log_only=true; shift ;;
-      *)             echo "Unknown flag: $1" >&2; exit 1 ;;
+      --id)       id="$2";       shift 2 ;;
+      --type)     type="$2";     shift 2 ;;
+      --title)    title="$2";    shift 2 ;;
+      --evidence) evidence="$2"; shift 2 ;;
+      --url)      url="$2";      shift 2 ;;
+      --repo)     repo="$2";     shift 2 ;;
+      --filed_at) filed_at="$2"; shift 2 ;;
+      *)          echo "Unknown flag: $1" >&2; exit 1 ;;
     esac
   done
 
-  init_registry
-
-  if [[ -z "$id" ]]; then
-    echo "Error: --id required" >&2; exit 1
+  # Bare numeric id: reject FIRST, before --repo/--url resolution.
+  if [[ "$id" =~ ^[0-9]+$ ]]; then
+    echo "BARE_NUMERIC_ID: --id '$id' is a bare number; registry ids must be canonical owner/repo#N" >&2
+    exit 2
   fi
+  if [[ -z "$id" ]]; then
+    echo "MISSING_ID: --id required" >&2
+    exit 2
+  fi
+
+  # Keep existing required-field behavior (exit 1) for --type/--title.
+  if [[ -z "$type" || -z "$title" ]]; then
+    echo "Error: --id, --type, --title required" >&2; exit 1
+  fi
+
+  # Canonicalize type, then resolve owner/repo and number.
+  [[ "$type" == "pull" ]] && type="pr"
+  local number=""
+  if [[ "$id" == *"#"* ]]; then
+    repo="${id%%#*}"
+    number="${id##*#}"
+  fi
+  if [[ ! "$repo" =~ ^[^/]+/[^/]+$ && -n "$url" ]]; then
+    if [[ "$url" =~ ^https?://[^/]+/([^/]+/[^/]+)/(pull|issues|discussions)/([0-9]+) ]]; then
+      repo="${BASH_REMATCH[1]}"
+      [[ -z "$number" ]] && number="${BASH_REMATCH[3]}"
+      if [[ -n "$number" && "${BASH_REMATCH[3]}" != "$number" ]]; then
+        echo "Error: id '$id' and --url disagree on the number ($number vs ${BASH_REMATCH[3]})." >&2
+        exit 1
+      fi
+    fi
+  fi
+  if [[ ! "$repo" =~ ^[^/]+/[^/]+$ || ! "$number" =~ ^[0-9]+$ ]]; then
+    echo "MISSING_REPO: cannot resolve owner/repo and number from id '$id'${url:+ (url: $url)}" >&2
+    exit 2
+  fi
+
+  # Canonicalize the accepted id to owner/repo#N.
+  id="$repo#$number"
+
+  if [[ -z "$url" ]]; then
+    echo "MISSING_URL: --url required (could not default a url for id '$id')" >&2
+    exit 2
+  fi
+  if [[ -z "$filed_at" ]]; then
+    echo "MISSING_FILED_AT: --filed_at required (could not determine filed_at for id '$id')" >&2
+    exit 2
+  fi
+
+  local rc=0
+  with_registry_lock _cmd_add_locked "$id" "$type" "$title" "$evidence" "$url" "$repo" "$filed_at" "$number" || { rc=$?; return $rc; }
+}
+
+_cmd_status_locked() {
+  local id="$1" log_only="$2" set_status="$3" next_action="$4" action="$5" notes="$6" fix_pr="$7"
+
+  init_registry
 
   local current
   current=$(cat "$REGISTRY")
@@ -319,7 +322,8 @@ cmd_status() {
     'if (.pulls | map(select(.id == $id)) | length) > 0 then "pulls" else "issues" end')
 
   if [[ "$entry" == "null" ]]; then
-    echo "NOT_FOUND: $id not in registry" >&2; exit 1
+    echo "NOT_FOUND: $id not in registry" >&2
+    exit 1
   fi
 
   echo "Found: [$id]"
@@ -368,6 +372,29 @@ cmd_status() {
   fi
 }
 
+cmd_status() {
+  local id="" log_only=false set_status="" next_action="" action="" notes="" fix_pr=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --id)          id="$2";  shift 2 ;;
+      --set)         set_status="$2"; shift 2 ;;
+      --next)        next_action="$2"; shift 2 ;;
+      --action)      action="$2"; shift 2 ;;
+      --notes)       notes="$2"; shift 2 ;;
+      --fix-pr)      fix_pr="$2"; shift 2 ;;
+      --log-only)    log_only=true; shift ;;
+      *)             echo "Unknown flag: $1" >&2; exit 1 ;;
+    esac
+  done
+
+  if [[ -z "$id" ]]; then
+    echo "Error: --id required" >&2; exit 1
+  fi
+
+  local rc=0
+  with_registry_lock _cmd_status_locked "$id" "$log_only" "$set_status" "$next_action" "$action" "$notes" "$fix_pr" || { rc=$?; return $rc; }
+}
+
 cmd_triage() {
   local filter="${1:-all}"
   init_registry
@@ -411,16 +438,8 @@ cmd_triage() {
   fi
 }
 
-cmd_sync() {
-  local target_item=""
-  while [[ $# -gt 0 ]]; do
-    case "$1" in
-      --item) target_item="$2"; shift 2 ;;
-      *)      echo "Unknown flag: $1" >&2; exit 1 ;;
-    esac
-  done
-
-  sync_branch_preflight || return $?
+_cmd_sync_locked() {
+  local target_item="$1"
 
   init_registry
 
@@ -582,8 +601,23 @@ cmd_sync() {
   if [[ $changes -eq 0 ]]; then
     echo "SYNC_OK: all $total GitHub-backed item(s) match GitHub state ($skipped_mismatch type/bucket mismatch(es) skipped)"
   fi
-  retention_prune "$REGISTRY" || return 1
+  retention_prune "$REGISTRY" || exit 1
   return 0
+}
+
+cmd_sync() {
+  local target_item=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --item) target_item="$2"; shift 2 ;;
+      *)      echo "Unknown flag: $1" >&2; exit 1 ;;
+    esac
+  done
+
+  sync_branch_preflight || return $?
+
+  local rc=0
+  with_registry_lock _cmd_sync_locked "$target_item" || { rc=$?; return $rc; }
 }
 
 cmd_log() {

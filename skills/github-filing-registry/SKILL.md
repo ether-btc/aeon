@@ -125,6 +125,8 @@ Prints activity log entries, newest first.
 
 All state lives in `memory/filing-registry.json`. The `./filing-registry` script is a shell dispatcher that reads/writes JSON with `jq`. No Python needed.
 
+Every read-modify-write in `add`, `status`, and `sync` runs under a non-blocking exclusive `flock -x -n` on `memory/filing-registry.json.lock` (fd 9; the redirect creates the lock artifact). `sync`'s `sync_branch_preflight` remains outside the lock as a read-only gate; the lock covers `init_registry` through the final write/retention work. Lock acquisition never hangs: if the lock is held, the command prints `REGISTRY_BUSY: <short reason>` to stderr and exits 3 immediately (bounded, well within a 10s cap; the only new failure mode; existing exit codes are preserved).
+
 ### `./filing-registry` shell script
 
 ```bash
