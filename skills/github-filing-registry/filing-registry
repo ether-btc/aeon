@@ -178,6 +178,35 @@ retention_prune() {
   return 0
 }
 
+gh_api_with_retry() {
+  local url="$1" out_file="$2"
+  local attempt=1 max=3 delay=2
+  local stderr_tmp
+  while (( attempt <= max )); do
+    stderr_tmp=$(mktemp)
+    if gh api "$url" >"$out_file" 2>"$stderr_tmp"; then
+      rm -f "$stderr_tmp"
+      return 0
+    fi
+    local err
+    err=$(cat "$stderr_tmp")
+    rm -f "$stderr_tmp"
+    if (( attempt == max )); then
+      return 1
+    fi
+    # Retry ONLY on secondary-rate-limit / HTTP 403/429 class failures.
+    if printf '%s' "$err" | grep -Eqi '403|429|rate[ -]?limit|secondary'; then
+      sleep "$delay"
+      delay=$(( delay * 2 ))
+      attempt=$(( attempt + 1 ))
+      continue
+    fi
+    # Any other failure (404, auth, etc.) fails fast with NO retry.
+    return 1
+  done
+  return 1
+}
+
 atomic_save() {
   local tmp="$REGISTRY.tmp.$$"
   jq '.' > "$tmp"
@@ -465,20 +494,12 @@ _cmd_sync_locked() {
     # not a skip: silently ignoring it is how a corrupt record stays "verified" forever.
     # Include rows where status is not closed/merged OR state is still open (so frozen
     # state=open/status=closed rows are re-fetched and can be unfrozen).
-    items=$(echo "$current" | jq '[ (.pulls[] | . + {_bucket:"pulls"}),
-                                     (.issues[] | . + {_bucket:"issues"}) ]
-      | map(select(((.status // "") | IN("closed","merged") | not) or (.state == "open")))
-      | map(select(((.type // "") != "audit") and (.github != false))
-      | select(((.repo // "") | test("^[^/]+/[^/]+$")) and (.number != null)))')
+    items=$(echo "$current" | jq '[ (.pulls[] | . + {_bucket:"pulls"}), (.issues[] | . + {_bucket:"issues"}) ] | map(select(((.status // "") | IN("closed","merged") | not) or (.state == "open"))) | map(select(((.type // "") != "audit") and (.github != false))) | map(select(((.repo // "") | test("^[^/]+/[^/]+$")) and (.number != null)))')
     notgithub=$(echo "$current" | jq '[ (.pulls[] | . + {_bucket:"pulls"}),
                                         (.issues[] | . + {_bucket:"issues"}) ]
       | map(select(((.status // "") | IN("closed","merged") | not) or (.state == "open")))
       | map(select(((.type // "") == "audit") or (.github == false))) | length')
-    malformed_ids=$(echo "$current" | jq -r '[ (.pulls[] | . + {_bucket:"pulls"}),
-                                               (.issues[] | . + {_bucket:"issues"}) ]
-      | map(select(((.status // "") | IN("closed","merged") | not) or (.state == "open")))
-      | map(select(((.type // "") != "audit") and (.github != false))
-      | select((((.repo // "") | test("^[^/]+/[^/]+$")) | not) or (.number == null)) | .id) | join(" ")')
+    malformed_ids=$(echo "$current" | jq -r '[ (.pulls[] | . + {_bucket:"pulls"}), (.issues[] | . + {_bucket:"issues"}) ] | map(select(((.status // "") | IN("closed","merged") | not) or (.state == "open"))) | map(select(((.type // "") != "audit") and (.github != false))) | map(select((((.repo // "") | test("^[^/]+/[^/]+$")) | not) or (.number == null))) | map(.id) | join(" ")')
   fi
 
   local total
@@ -512,23 +533,26 @@ _cmd_sync_locked() {
 
     local gh_state
     local gh_merged="false"
-    local gh_exit=0
+    local gh_out
+    gh_out=$(mktemp)
     if [[ "$type" == "pr" ]]; then
       # `state` is "closed" for BOTH a merged PR and an abandoned one, so it cannot
       # distinguish them. Consult merged_at as the discriminator: an abandoned or
       # superseded PR has merged_at == null and must NOT be recorded as "merged".
-      local pr_json
-      pr_json=$(gh api "repos/$repo/pulls/$number" 2>/dev/null) || gh_exit=$?
-      if [[ $gh_exit -ne 0 ]]; then
-        gh_state="unknown"
+      if gh_api_with_retry "repos/$repo/pulls/$number" "$gh_out"; then
+        gh_state=$(jq -r '.state' "$gh_out")
+        gh_merged=$(jq -r 'if .merged_at then "true" else "false" end' "$gh_out")
       else
-        gh_state=$(echo "$pr_json" | jq -r '.state')
-        gh_merged=$(echo "$pr_json" | jq -r 'if .merged_at then "true" else "false" end')
+        gh_state="unknown"
       fi
     else
-      gh_state=$(gh api "repos/$repo/issues/$number" --jq '.state' 2>/dev/null) || gh_exit=$?
-      [[ $gh_exit -ne 0 ]] && gh_state="unknown"
+      if gh_api_with_retry "repos/$repo/issues/$number" "$gh_out"; then
+        gh_state=$(jq -r '.state' "$gh_out")
+      else
+        gh_state="unknown"
+      fi
     fi
+    rm -f "$gh_out"
 
     local registry_state
     registry_state=$(echo "$item_json" | jq -r '.state')
