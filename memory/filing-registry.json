@@ -2429,17 +2429,18 @@
       "number": 118,
       "type": "pr",
       "title": "feat(papertrade): persist venue fee bps per fill (sign-agnostic)",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "tier_3",
       "filed_at": "2026-10-15T14:05:03Z",
-      "last_action": "2026-10-15T14:05:03Z",
+      "last_action": "2026-11-08T13:37:56Z",
       "url": "https://github.com/ether-btc/prompro/pull/118",
       "actions_taken": [
-        "Filed: feat(papertrade): persist venue fee bps per fill (sign-agnostic)"
+        "Filed: feat(papertrade): persist venue fee bps per fill (sign-agnostic)",
+        "Closed: repo retired 2026-11-02"
       ],
-      "notes": "",
+      "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
       "labels": [],
       "is_upstream": true
     },
@@ -2822,8 +2823,8 @@
       "number": 144599,
       "type": "pr",
       "title": "fix(bot-mode-dm): bound the peer-transport delivery turn so a wedged child can't hold the lock forever (F8 carry; supersedes local patch ~/.hermes/local-patches/bot-dm-turn-timeout-20261011.patch)",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "head 43136b777c pushed to ether-btc fork; 105 passed/1 skipped scoped suites in clean uv dev venv; kill test RED on unfixed source; ruff clean; marker sweep 0 hits diff+body. F8 handoff GO recorded 2026-10-25.",
       "filed_at": "2026-10-25T17:53:42Z",
@@ -2896,6 +2897,650 @@
         "Filed: docs: state the per-arch glibc floors in the musl base-image note"
       ],
       "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#150027",
+      "repo": "NousResearch/hermes-agent",
+      "number": 150027,
+      "type": "pr",
+      "title": "ram-first-context: bump to 0.2.0 (reads the active profile's Mnemosyne bank)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-11-06T12:09:31Z",
+      "last_action": "2026-11-06T12:09:31Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/150027",
+      "actions_taken": [
+        "Filed: ram-first-context: bump to 0.2.0 (reads the active profile's Mnemosyne bank)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#150026",
+      "repo": "NousResearch/hermes-agent",
+      "number": 150026,
+      "type": "pr",
+      "title": "Add inventory-reminder to the plugin catalog",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-11-06T12:07:48Z",
+      "last_action": "2026-11-06T12:07:48Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/150026",
+      "actions_taken": [
+        "Filed: Add inventory-reminder to the plugin catalog"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#149683",
+      "repo": "NousResearch/hermes-agent",
+      "number": 149683,
+      "type": "pr",
+      "title": "fix(agent): a .git entry that merely exists is not a repository root",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-11-05T20:10:16Z",
+      "last_action": "2026-11-05T20:10:16Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/149683",
+      "actions_taken": [
+        "Filed: fix(agent): a .git entry that merely exists is not a repository root"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "mnemosyne-oss/mnemosyne#1305",
+      "repo": "mnemosyne-oss/mnemosyne",
+      "number": 1305,
+      "type": "pr",
+      "title": "fix(beam): reindex_vectors works with a bare sqlite3.connect connection",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-10-31T06:50:10Z",
+      "last_action": "2026-10-31T06:50:10Z",
+      "url": "https://github.com/mnemosyne-oss/mnemosyne/pull/1305",
+      "actions_taken": [
+        "Filed: fix(beam): reindex_vectors works with a bare sqlite3.connect connection"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "mnemosyne-oss/mnemosyne#1304",
+      "repo": "mnemosyne-oss/mnemosyne",
+      "number": 1304,
+      "type": "pr",
+      "title": "fix(recovery): read-only source connections + fail-closed restore replay",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-10-31T06:49:46Z",
+      "last_action": "2026-10-31T06:49:46Z",
+      "url": "https://github.com/mnemosyne-oss/mnemosyne/pull/1304",
+      "actions_taken": [
+        "Filed: fix(recovery): read-only source connections + fail-closed restore replay"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/hermes-agent#9",
+      "repo": "ether-btc/hermes-agent",
+      "number": 9,
+      "type": "pr",
+      "title": "fix: resolve merge conflicts for PR #75194 orphaned FK self-heal",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-10-28T13:41:23Z",
+      "last_action": "2026-10-28T13:41:23Z",
+      "url": "https://github.com/ether-btc/hermes-agent/pull/9",
+      "actions_taken": [
+        "Filed: fix: resolve merge conflicts for PR #75194 orphaned FK self-heal"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#136",
+      "repo": "ether-btc/prompro",
+      "number": 136,
+      "type": "pr",
+      "title": "fix: per-lane fill verification, cash-basis P&L, and close sizing from held base",
+      "state": "open",
+      "status": "stale",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-10-21T14:59:27Z",
+      "last_action": "2026-11-08T13:37:58Z",
+      "url": "https://github.com/ether-btc/prompro/pull/136",
+      "actions_taken": [
+        "Filed: fix: per-lane fill verification, cash-basis P&L, and close sizing from held base",
+        "Marked stale: repo retired 2026-11-02"
+      ],
+      "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#102",
+      "repo": "ether-btc/prompro",
+      "number": 102,
+      "type": "pr",
+      "title": "Adopted-row peak-track exit: paper replay tool (PAPER-ONLY)",
+      "state": "open",
+      "status": "stale",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-10-11T19:53:18Z",
+      "last_action": "2026-11-08T13:37:57Z",
+      "url": "https://github.com/ether-btc/prompro/pull/102",
+      "actions_taken": [
+        "Filed: Adopted-row peak-track exit: paper replay tool (PAPER-ONLY)",
+        "Marked stale: repo retired 2026-11-02"
+      ],
+      "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#101",
+      "repo": "ether-btc/prompro",
+      "number": 101,
+      "type": "pr",
+      "title": "B6: Signal-decay exit (paper trial arm, env-gated, default-inert)",
+      "state": "open",
+      "status": "stale",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-10-11T19:52:37Z",
+      "last_action": "2026-11-08T13:37:57Z",
+      "url": "https://github.com/ether-btc/prompro/pull/101",
+      "actions_taken": [
+        "Filed: B6: Signal-decay exit (paper trial arm, env-gated, default-inert)",
+        "Marked stale: repo retired 2026-11-02"
+      ],
+      "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/cerberus#6",
+      "repo": "ether-btc/cerberus",
+      "number": 6,
+      "type": "pr",
+      "title": "fix: four live defects (audit-drop, timeout fail-open, /readyz over-claim, false pin docs) + loud audit-write failure",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-10-01T05:45:01Z",
+      "last_action": "2026-10-01T05:45:01Z",
+      "url": "https://github.com/ether-btc/cerberus/pull/6",
+      "actions_taken": [
+        "Filed: fix: four live defects (audit-drop, timeout fail-open, /readyz over-claim, false pin docs) + loud audit-write failure"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/cerberus#5",
+      "repo": "ether-btc/cerberus",
+      "number": 5,
+      "type": "pr",
+      "title": "docs: no-substitute decision for the Ouroboros worker",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-09-28T16:33:57Z",
+      "last_action": "2026-09-28T16:33:57Z",
+      "url": "https://github.com/ether-btc/cerberus/pull/5",
+      "actions_taken": [
+        "Filed: docs: no-substitute decision for the Ouroboros worker"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/wiki#6",
+      "repo": "ether-btc/wiki",
+      "number": 6,
+      "type": "pr",
+      "title": "audit: default profile missing from desktop selector — investigation",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-09-27T09:16:13Z",
+      "last_action": "2026-09-27T09:16:13Z",
+      "url": "https://github.com/ether-btc/wiki/pull/6",
+      "actions_taken": [
+        "Filed: audit: default profile missing from desktop selector — investigation"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "Bodila51/muse-jev-playbook#2",
+      "repo": "Bodila51/muse-jev-playbook",
+      "number": 2,
+      "type": "pr",
+      "title": "docs(prompting): measured evidence that an explicit rubric in the question matters",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-09-26T05:49:36Z",
+      "last_action": "2026-09-26T05:49:36Z",
+      "url": "https://github.com/Bodila51/muse-jev-playbook/pull/2",
+      "actions_taken": [
+        "Filed: docs(prompting): measured evidence that an explicit rubric in the question matters"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "TheEpTic/hermes-plugins#38",
+      "repo": "TheEpTic/hermes-plugins",
+      "number": 38,
+      "type": "pr",
+      "title": "fix(jev-compact): thread-local bypass guard, update_model knob refresh, secret-source logging",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-09-25T14:30:09Z",
+      "last_action": "2026-09-25T14:30:09Z",
+      "url": "https://github.com/TheEpTic/hermes-plugins/pull/38",
+      "actions_taken": [
+        "Filed: fix(jev-compact): thread-local bypass guard, update_model knob refresh, secret-source logging"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "Bodila51/muse-jev-playbook#1",
+      "repo": "Bodila51/muse-jev-playbook",
+      "number": 1,
+      "type": "pr",
+      "title": "fix: harden offline Jev router safety",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-09-25T01:07:46Z",
+      "last_action": "2026-09-25T01:07:46Z",
+      "url": "https://github.com/Bodila51/muse-jev-playbook/pull/1",
+      "actions_taken": [
+        "Filed: fix: harden offline Jev router safety"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/wiki#5",
+      "repo": "ether-btc/wiki",
+      "number": 5,
+      "type": "pr",
+      "title": "docs: file PROMPRO Alchemy canary",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-09-24T06:03:38Z",
+      "last_action": "2026-09-24T06:03:38Z",
+      "url": "https://github.com/ether-btc/wiki/pull/5",
+      "actions_taken": [
+        "Filed: docs: file PROMPRO Alchemy canary"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/wiki#4",
+      "repo": "ether-btc/wiki",
+      "number": 4,
+      "type": "pr",
+      "title": "docs: file Understand Anything Hermes PRAXIS assessment",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-09-12T19:29:39Z",
+      "last_action": "2026-09-12T19:29:39Z",
+      "url": "https://github.com/ether-btc/wiki/pull/4",
+      "actions_taken": [
+        "Filed: docs: file Understand Anything Hermes PRAXIS assessment"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/wiki#3",
+      "repo": "ether-btc/wiki",
+      "number": 3,
+      "type": "pr",
+      "title": "audit(prompro): PR #35 attestation remediation checkpoint — locally verified, review-gated",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-09-12T18:57:06Z",
+      "last_action": "2026-09-12T18:57:06Z",
+      "url": "https://github.com/ether-btc/wiki/pull/3",
+      "actions_taken": [
+        "Filed: audit(prompro): PR #35 attestation remediation checkpoint — locally verified, review-gated"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "zcaceres/markdownify-mcp#135",
+      "repo": "zcaceres/markdownify-mcp",
+      "number": 135,
+      "type": "pr",
+      "title": "fix(security): three input-validation bugs in get/isWithinDirectory/validateRepoUrl",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-08-29T18:01:47Z",
+      "last_action": "2026-08-29T18:01:47Z",
+      "url": "https://github.com/zcaceres/markdownify-mcp/pull/135",
+      "actions_taken": [
+        "Filed: fix(security): three input-validation bugs in get/isWithinDirectory/validateRepoUrl"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/hermes-agent#4",
+      "repo": "ether-btc/hermes-agent",
+      "number": 4,
+      "type": "pr",
+      "title": "feat(model): add /model <name> --chat for per-chat sticky model selection",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-08-25T12:19:03Z",
+      "last_action": "2026-08-25T12:19:03Z",
+      "url": "https://github.com/ether-btc/hermes-agent/pull/4",
+      "actions_taken": [
+        "Filed: feat(model): add /model <name> --chat for per-chat sticky model selection"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/cerberus#3",
+      "repo": "ether-btc/cerberus",
+      "number": 3,
+      "type": "pr",
+      "title": "feat(cerberus): R5a wrapper + OpenBot Lifts #2/#4/#6 + S1 secrets (audited) + S2 hardening plan (gated) — Phase 7 pre-pilot stack",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-08-20T14:54:48Z",
+      "last_action": "2026-08-20T14:54:48Z",
+      "url": "https://github.com/ether-btc/cerberus/pull/3",
+      "actions_taken": [
+        "Filed: feat(cerberus): R5a wrapper + OpenBot Lifts #2/#4/#6 + S1 secrets (audited) + S2 hardening plan (gated) — Phase 7 pre-pilot stack"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/rust-cave-001#15",
+      "repo": "ether-btc/rust-cave-001",
+      "number": 15,
+      "type": "pr",
+      "title": "rebuild/v0.6.1: bring local master in sync with origin/master + ship v0.6.1",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-08-09T18:12:46Z",
+      "last_action": "2026-08-09T18:12:46Z",
+      "url": "https://github.com/ether-btc/rust-cave-001/pull/15",
+      "actions_taken": [
+        "Filed: rebuild/v0.6.1: bring local master in sync with origin/master + ship v0.6.1"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "stephenschoettler/hermes-lcm#518",
+      "repo": "stephenschoettler/hermes-lcm",
+      "number": 518,
+      "type": "pr",
+      "title": "fix: tolerate None tool_calls in _serialize_messages",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-08-09T10:14:26Z",
+      "last_action": "2026-08-09T10:14:26Z",
+      "url": "https://github.com/stephenschoettler/hermes-lcm/pull/518",
+      "actions_taken": [
+        "Filed: fix: tolerate None tool_calls in _serialize_messages"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "stephenschoettler/hermes-lcm#515",
+      "repo": "stephenschoettler/hermes-lcm",
+      "number": 515,
+      "type": "pr",
+      "title": "fix: log hermes_cli import failure instead of silently swallowing it",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-08-07T12:31:27Z",
+      "last_action": "2026-08-07T12:31:27Z",
+      "url": "https://github.com/stephenschoettler/hermes-lcm/pull/515",
+      "actions_taken": [
+        "Filed: fix: log hermes_cli import failure instead of silently swallowing it"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/stealth-core#22",
+      "repo": "ether-btc/stealth-core",
+      "number": 22,
+      "type": "pr",
+      "title": "feat(transport): port copilot/useragent.py UA constants to Rust",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-07-30T17:36:09Z",
+      "last_action": "2026-07-30T17:36:09Z",
+      "url": "https://github.com/ether-btc/stealth-core/pull/22",
+      "actions_taken": [
+        "Filed: feat(transport): port copilot/useragent.py UA constants to Rust"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/hermes-agent#3",
+      "repo": "ether-btc/hermes-agent",
+      "number": 3,
+      "type": "pr",
+      "title": "fix: preserve user-installed packages during runtime repair (mnemosyne-oss/mnemosyne#537)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-07-27T17:30:51Z",
+      "last_action": "2026-07-27T17:30:51Z",
+      "url": "https://github.com/ether-btc/hermes-agent/pull/3",
+      "actions_taken": [
+        "Filed: fix: preserve user-installed packages during runtime repair (mnemosyne-oss/mnemosyne#537)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ohtokaah-sys/hermes-plugin-conclusion-anchor#1",
+      "repo": "ohtokaah-sys/hermes-plugin-conclusion-anchor",
+      "number": 1,
+      "type": "pr",
+      "title": "v1.1.0-nim: provider swap to NVIDIA NIM + multi-cycle audit hardening",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-07-23T13:48:59Z",
+      "last_action": "2026-07-23T13:48:59Z",
+      "url": "https://github.com/ohtokaah-sys/hermes-plugin-conclusion-anchor/pull/1",
+      "actions_taken": [
+        "Filed: v1.1.0-nim: provider swap to NVIDIA NIM + multi-cycle audit hardening"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "AxDSan/planforge-hermes#5",
+      "repo": "AxDSan/planforge-hermes",
+      "number": 5,
+      "type": "pr",
+      "title": "fix(status): resolve Python 3.11 SyntaxError in nested f-string",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-07-14T21:43:28Z",
+      "last_action": "2026-07-14T21:43:28Z",
+      "url": "https://github.com/AxDSan/planforge-hermes/pull/5",
+      "actions_taken": [
+        "Filed: fix(status): resolve Python 3.11 SyntaxError in nested f-string"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "LVT382009/noxem#31",
+      "repo": "LVT382009/noxem",
+      "number": 31,
+      "type": "pr",
+      "title": "fix(audit): 3-cycle security, race, and data-integrity hardening",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-06-10T05:01:34Z",
+      "last_action": "2026-06-10T05:01:34Z",
+      "url": "https://github.com/LVT382009/noxem/pull/31",
+      "actions_taken": [
+        "Filed: fix(audit): 3-cycle security, race, and data-integrity hardening"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "ether-btc/noxem#2",
+      "repo": "ether-btc/noxem",
+      "number": 2,
+      "type": "pr",
+      "title": "fix: 3 critical bug fixes from security audit",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-06-05T04:46:38Z",
+      "last_action": "2026-06-05T04:46:38Z",
+      "url": "https://github.com/ether-btc/noxem/pull/2",
+      "actions_taken": [
+        "Filed: fix: 3 critical bug fixes from security audit"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "LVT382009/noxem#16",
+      "repo": "LVT382009/noxem",
+      "number": 16,
+      "type": "pr",
+      "title": "security: audit fixes — CORS, auth, SSE validation, DDG URI scheme, lock timeout, JSON parse, install error handling",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
+      "filed_at": "2026-05-28T16:15:51Z",
+      "last_action": "2026-05-28T16:15:51Z",
+      "url": "https://github.com/LVT382009/noxem/pull/16",
+      "actions_taken": [
+        "Filed: security: audit fixes — CORS, auth, SSE validation, DDG URI scheme, lock timeout, JSON parse, install error handling"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "mnemosyne-oss/mnemosyne#1294",
+      "repo": "mnemosyne-oss/mnemosyne",
+      "number": 1294,
+      "type": "pr",
+      "title": "fix(embeddings): re-attempt dense-stack import in available() and _get_model()",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "backfill 2026-11-08: state MERGED verified live via gh pr view (mergedAt 2026-10-31T15:12:41Z)",
+      "filed_at": "2026-10-30T18:31:52Z",
+      "last_action": "2026-11-08T13:37:58Z",
+      "url": "https://github.com/mnemosyne-oss/mnemosyne/pull/1294",
+      "actions_taken": [
+        "Filed: fix(embeddings): re-attempt dense-stack import in available() and _get_model()",
+        "Merged upstream 2026-10-31T15:12:41Z"
+      ],
+      "notes": "Merged 2026-10-31T15:12:41Z (verified live via gh pr view 2026-11-08)",
       "labels": [],
       "is_upstream": true
     }
@@ -3017,7 +3662,7 @@
       "number": 62,
       "repo": "MorpheusAIs/SmartContracts",
       "state": "open",
-      "status": "closed",
+      "status": "open",
       "title": "BUG: withdrawUserStakes() selector not registered on MOR Diamond — ~49.77 MOR locked",
       "type": "issue",
       "url": "https://github.com/MorpheusAIs/SmartContracts/issues/62"
@@ -3455,7 +4100,7 @@
       "id": "harry0703/MoneyPrinterTurbo#884",
       "number": 884,
       "repo": "harry0703/MoneyPrinterTurbo",
-      "state": "open",
+      "state": "closed",
       "status": "closed",
       "title": "voice.py (2066 lines), llm.py complexity 57, silent exception swallowing, code quality issues",
       "type": "issue",
@@ -3576,40 +4221,42 @@
     },
     {
       "actions_taken": [
-        "Filed: Jev decider line: resurrect + semantic merge plan (13 contested wiring files)"
+        "Filed: Jev decider line: resurrect + semantic merge plan (13 contested wiring files)",
+        "Closed: repo retired 2026-11-02"
       ],
       "evidence_tier": "Branch feat/jev-decider-line de06c7e pushed (63 files, +14158, unwired); kanban review t_aa779bae dispatched to reviewer; Codex dead (401 refresh revoked); merge hard-gated",
       "filed_at": "2026-10-05T22:58:20Z",
       "id": "ether-btc/prompro#77",
       "is_upstream": true,
       "labels": [],
-      "last_action": "2026-10-05T22:58:20Z",
+      "last_action": "2026-11-08T13:37:53Z",
       "next_action": "Await upstream review",
-      "notes": "",
+      "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
       "number": 77,
       "repo": "ether-btc/prompro",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "title": "Jev decider line: resurrect + semantic merge plan (13 contested wiring files)",
       "type": "issue",
       "url": "https://github.com/ether-btc/prompro/issues/77"
     },
     {
       "actions_taken": [
-        "Filed: fix(custody): fillrpc.SwapResultClient cannot derive chain direction from cross-venue receipt"
+        "Filed: fix(custody): fillrpc.SwapResultClient cannot derive chain direction from cross-venue receipt",
+        "Closed: repo retired 2026-11-02"
       ],
       "evidence_tier": "",
       "filed_at": "2026-10-06T08:36:03Z",
       "id": "84",
       "is_upstream": true,
       "labels": [],
-      "last_action": "2026-10-06T08:36:03Z",
+      "last_action": "2026-11-08T13:37:54Z",
       "next_action": "Await upstream review",
-      "notes": "",
+      "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
       "number": 84,
       "repo": "ether-btc/prompro",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "title": "fix(custody): fillrpc.SwapResultClient cannot derive chain direction from cross-venue receipt",
       "type": "issue",
       "url": "https://github.com/ether-btc/prompro/issues/84"
@@ -3963,17 +4610,18 @@
       "number": 126,
       "type": "issue",
       "title": "fix(papertrade): graceful shutdown cancels an in-flight swap submit and manufactures a critical halt",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "Filed from a real incident: stopping the unit during a deploy canceled an in-flight POST /wallet/swap (executor.go:365 binds the dispatched submit to the signal-canceled ctx; :367 re-derives err from it). Journal: AMBIGUOUS_WRITE 'call /wallet/swap: context canceled' -> halt 01M538VFQ45X13H5ZW59YCYRGE (critical, 21:10:56.99656868Z), which then blocked the restart. Classification is correct; shutdown cancelling a dispatched submit is the defect. Needs bounded drain + persist-outcome-before-exit + kill-test.",
       "filed_at": "2026-10-16T21:16:07Z",
-      "last_action": "2026-10-16T21:16:07Z",
+      "last_action": "2026-11-08T13:37:54Z",
       "url": "https://github.com/ether-btc/prompro/issues/126",
       "actions_taken": [
-        "Filed: fix(papertrade): graceful shutdown cancels an in-flight swap submit and manufactures a critical halt"
+        "Filed: fix(papertrade): graceful shutdown cancels an in-flight swap submit and manufactures a critical halt",
+        "Closed: repo retired 2026-11-02"
       ],
-      "notes": "",
+      "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
       "labels": [],
       "is_upstream": true
     },
@@ -3983,17 +4631,18 @@
       "number": 127,
       "type": "issue",
       "title": "fix(papertrade): a refused exit retries every tick with no backoff - 860 refused POSTs to Bankr in 18 min",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "Measured on the live lane 2026-10-16: 860 POSTs to /wallet/swap in ~18 min, all refused HTTP 400 transaction_reverted, because [risk] max_hold_duration=4h force-closed a position that was in the red and each tick re-issued the same deterministic intent. The storm ended only when one attempt hit a client timeout and latched critical halt 01M53A20VZHDYW6KT3DEW03PCB; the in-RAM latch then stopped the calls. Immediate cause fixed operationally (max_hold_duration set to empty = guard disabled; exit is take-profit driven via take_profit_bps=400; verified 0 POSTs / 0 refusals / 0 halts over 100s after restart). The mechanism - no backoff on a deterministic refusal - remains.",
       "filed_at": "2026-10-16T21:38:41Z",
-      "last_action": "2026-10-16T21:38:41Z",
+      "last_action": "2026-11-08T13:37:55Z",
       "url": "https://github.com/ether-btc/prompro/issues/127",
       "actions_taken": [
-        "Filed: fix(papertrade): a refused exit retries every tick with no backoff - 860 refused POSTs to Bankr in 18 min"
+        "Filed: fix(papertrade): a refused exit retries every tick with no backoff - 860 refused POSTs to Bankr in 18 min",
+        "Closed: repo retired 2026-11-02"
       ],
-      "notes": "",
+      "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
       "labels": [],
       "is_upstream": true
     },
@@ -4003,17 +4652,18 @@
       "number": 134,
       "type": "issue",
       "title": "Startup: a cancelled wallet/me check exits 1 and can exhaust StartLimitBurst",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "3 consecutive exit-1 startups at 08:31:52 CEST during the RuntimeMaxSec=2h recycle, wallet/me context canceled",
       "filed_at": "2026-10-17T06:35:51Z",
-      "last_action": "2026-10-17T06:35:51Z",
+      "last_action": "2026-11-08T13:37:55Z",
       "url": "https://github.com/ether-btc/prompro/issues/134",
       "actions_taken": [
-        "Filed: Startup: a cancelled wallet/me check exits 1 and can exhaust StartLimitBurst"
+        "Filed: Startup: a cancelled wallet/me check exits 1 and can exhaust StartLimitBurst",
+        "Closed: repo retired 2026-11-02"
       ],
-      "notes": "",
+      "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
       "labels": [],
       "is_upstream": true
     },
@@ -4023,17 +4673,18 @@
       "number": 135,
       "type": "issue",
       "title": "403 refusals are still recorded as auth failures, and the body is discarded",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "36 refusals 10-15, 26 on 10-16, all labelled auth rejected (403); /wallet/me returns 200 with the lane's own address on 10-17, so the key is valid",
       "filed_at": "2026-10-17T17:44:43Z",
-      "last_action": "2026-10-17T17:44:43Z",
+      "last_action": "2026-11-08T13:37:56Z",
       "url": "https://github.com/ether-btc/prompro/issues/135",
       "actions_taken": [
-        "Filed: 403 refusals are still recorded as auth failures, and the body is discarded"
+        "Filed: 403 refusals are still recorded as auth failures, and the body is discarded",
+        "Closed: repo retired 2026-11-02"
       ],
-      "notes": "",
+      "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
       "labels": [],
       "is_upstream": true
     },
@@ -4082,7 +4733,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-03T07:25:10Z",
+  "last_synced": "2026-11-08T13:40:19Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -5577,6 +6228,264 @@
       "type": "filed",
       "ref": "lightpanda-io/browser#4333",
       "desc": "Filed: docs: state the per-arch glibc floors in the musl base-image note"
+    },
+    {
+      "ts": "2026-11-08T13:36:22Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#150027",
+      "desc": "Filed: ram-first-context: bump to 0.2.0 (reads the active profile's Mnemosyne bank)"
+    },
+    {
+      "ts": "2026-11-08T13:36:22Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#150026",
+      "desc": "Filed: Add inventory-reminder to the plugin catalog"
+    },
+    {
+      "ts": "2026-11-08T13:36:22Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#149683",
+      "desc": "Filed: fix(agent): a .git entry that merely exists is not a repository root"
+    },
+    {
+      "ts": "2026-11-08T13:36:23Z",
+      "type": "filed",
+      "ref": "mnemosyne-oss/mnemosyne#1305",
+      "desc": "Filed: fix(beam): reindex_vectors works with a bare sqlite3.connect connection"
+    },
+    {
+      "ts": "2026-11-08T13:36:23Z",
+      "type": "filed",
+      "ref": "mnemosyne-oss/mnemosyne#1304",
+      "desc": "Filed: fix(recovery): read-only source connections + fail-closed restore replay"
+    },
+    {
+      "ts": "2026-11-08T13:36:23Z",
+      "type": "filed",
+      "ref": "ether-btc/hermes-agent#9",
+      "desc": "Filed: fix: resolve merge conflicts for PR #75194 orphaned FK self-heal"
+    },
+    {
+      "ts": "2026-11-08T13:36:24Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#136",
+      "desc": "Filed: fix: per-lane fill verification, cash-basis P&L, and close sizing from held base"
+    },
+    {
+      "ts": "2026-11-08T13:36:24Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#102",
+      "desc": "Filed: Adopted-row peak-track exit: paper replay tool (PAPER-ONLY)"
+    },
+    {
+      "ts": "2026-11-08T13:36:24Z",
+      "type": "filed",
+      "ref": "ether-btc/prompro#101",
+      "desc": "Filed: B6: Signal-decay exit (paper trial arm, env-gated, default-inert)"
+    },
+    {
+      "ts": "2026-11-08T13:36:25Z",
+      "type": "filed",
+      "ref": "ether-btc/cerberus#6",
+      "desc": "Filed: fix: four live defects (audit-drop, timeout fail-open, /readyz over-claim, false pin docs) + loud audit-write failure"
+    },
+    {
+      "ts": "2026-11-08T13:36:25Z",
+      "type": "filed",
+      "ref": "ether-btc/cerberus#5",
+      "desc": "Filed: docs: no-substitute decision for the Ouroboros worker"
+    },
+    {
+      "ts": "2026-11-08T13:36:25Z",
+      "type": "filed",
+      "ref": "ether-btc/wiki#6",
+      "desc": "Filed: audit: default profile missing from desktop selector — investigation"
+    },
+    {
+      "ts": "2026-11-08T13:36:26Z",
+      "type": "filed",
+      "ref": "Bodila51/muse-jev-playbook#2",
+      "desc": "Filed: docs(prompting): measured evidence that an explicit rubric in the question matters"
+    },
+    {
+      "ts": "2026-11-08T13:36:26Z",
+      "type": "filed",
+      "ref": "TheEpTic/hermes-plugins#38",
+      "desc": "Filed: fix(jev-compact): thread-local bypass guard, update_model knob refresh, secret-source logging"
+    },
+    {
+      "ts": "2026-11-08T13:36:26Z",
+      "type": "filed",
+      "ref": "Bodila51/muse-jev-playbook#1",
+      "desc": "Filed: fix: harden offline Jev router safety"
+    },
+    {
+      "ts": "2026-11-08T13:36:27Z",
+      "type": "filed",
+      "ref": "ether-btc/wiki#5",
+      "desc": "Filed: docs: file PROMPRO Alchemy canary"
+    },
+    {
+      "ts": "2026-11-08T13:36:27Z",
+      "type": "filed",
+      "ref": "ether-btc/wiki#4",
+      "desc": "Filed: docs: file Understand Anything Hermes PRAXIS assessment"
+    },
+    {
+      "ts": "2026-11-08T13:36:28Z",
+      "type": "filed",
+      "ref": "ether-btc/wiki#3",
+      "desc": "Filed: audit(prompro): PR #35 attestation remediation checkpoint — locally verified, review-gated"
+    },
+    {
+      "ts": "2026-11-08T13:36:28Z",
+      "type": "filed",
+      "ref": "zcaceres/markdownify-mcp#135",
+      "desc": "Filed: fix(security): three input-validation bugs in get/isWithinDirectory/validateRepoUrl"
+    },
+    {
+      "ts": "2026-11-08T13:36:28Z",
+      "type": "filed",
+      "ref": "ether-btc/hermes-agent#4",
+      "desc": "Filed: feat(model): add /model <name> --chat for per-chat sticky model selection"
+    },
+    {
+      "ts": "2026-11-08T13:36:29Z",
+      "type": "filed",
+      "ref": "ether-btc/cerberus#3",
+      "desc": "Filed: feat(cerberus): R5a wrapper + OpenBot Lifts #2/#4/#6 + S1 secrets (audited) + S2 hardening plan (gated) — Phase 7 pre-pilot stack"
+    },
+    {
+      "ts": "2026-11-08T13:36:29Z",
+      "type": "filed",
+      "ref": "ether-btc/rust-cave-001#15",
+      "desc": "Filed: rebuild/v0.6.1: bring local master in sync with origin/master + ship v0.6.1"
+    },
+    {
+      "ts": "2026-11-08T13:36:29Z",
+      "type": "filed",
+      "ref": "stephenschoettler/hermes-lcm#518",
+      "desc": "Filed: fix: tolerate None tool_calls in _serialize_messages"
+    },
+    {
+      "ts": "2026-11-08T13:36:30Z",
+      "type": "filed",
+      "ref": "stephenschoettler/hermes-lcm#515",
+      "desc": "Filed: fix: log hermes_cli import failure instead of silently swallowing it"
+    },
+    {
+      "ts": "2026-11-08T13:36:30Z",
+      "type": "filed",
+      "ref": "ether-btc/stealth-core#22",
+      "desc": "Filed: feat(transport): port copilot/useragent.py UA constants to Rust"
+    },
+    {
+      "ts": "2026-11-08T13:36:30Z",
+      "type": "filed",
+      "ref": "ether-btc/hermes-agent#3",
+      "desc": "Filed: fix: preserve user-installed packages during runtime repair (mnemosyne-oss/mnemosyne#537)"
+    },
+    {
+      "ts": "2026-11-08T13:36:31Z",
+      "type": "filed",
+      "ref": "ohtokaah-sys/hermes-plugin-conclusion-anchor#1",
+      "desc": "Filed: v1.1.0-nim: provider swap to NVIDIA NIM + multi-cycle audit hardening"
+    },
+    {
+      "ts": "2026-11-08T13:36:31Z",
+      "type": "filed",
+      "ref": "AxDSan/planforge-hermes#5",
+      "desc": "Filed: fix(status): resolve Python 3.11 SyntaxError in nested f-string"
+    },
+    {
+      "ts": "2026-11-08T13:36:31Z",
+      "type": "filed",
+      "ref": "LVT382009/noxem#31",
+      "desc": "Filed: fix(audit): 3-cycle security, race, and data-integrity hardening"
+    },
+    {
+      "ts": "2026-11-08T13:36:32Z",
+      "type": "filed",
+      "ref": "ether-btc/noxem#2",
+      "desc": "Filed: fix: 3 critical bug fixes from security audit"
+    },
+    {
+      "ts": "2026-11-08T13:36:32Z",
+      "type": "filed",
+      "ref": "LVT382009/noxem#16",
+      "desc": "Filed: security: audit fixes — CORS, auth, SSE validation, DDG URI scheme, lock timeout, JSON parse, install error handling"
+    },
+    {
+      "ts": "2026-11-08T13:36:32Z",
+      "type": "filed",
+      "ref": "mnemosyne-oss/mnemosyne#1294",
+      "desc": "Filed: fix(embeddings): re-attempt dense-stack import in available() and _get_model()"
+    },
+    {
+      "ts": "2026-11-08T13:37:53Z",
+      "type": "status_update",
+      "ref": "ether-btc/prompro#77",
+      "desc": "closed Closed: repo retired 2026-11-02"
+    },
+    {
+      "ts": "2026-11-08T13:37:54Z",
+      "type": "status_update",
+      "ref": "84",
+      "desc": "closed Closed: repo retired 2026-11-02"
+    },
+    {
+      "ts": "2026-11-08T13:37:54Z",
+      "type": "status_update",
+      "ref": "ether-btc/prompro#126",
+      "desc": "closed Closed: repo retired 2026-11-02"
+    },
+    {
+      "ts": "2026-11-08T13:37:55Z",
+      "type": "status_update",
+      "ref": "ether-btc/prompro#127",
+      "desc": "closed Closed: repo retired 2026-11-02"
+    },
+    {
+      "ts": "2026-11-08T13:37:55Z",
+      "type": "status_update",
+      "ref": "134",
+      "desc": "closed Closed: repo retired 2026-11-02"
+    },
+    {
+      "ts": "2026-11-08T13:37:56Z",
+      "type": "status_update",
+      "ref": "135",
+      "desc": "closed Closed: repo retired 2026-11-02"
+    },
+    {
+      "ts": "2026-11-08T13:37:56Z",
+      "type": "status_update",
+      "ref": "ether-btc/prompro#118",
+      "desc": "closed Closed: repo retired 2026-11-02"
+    },
+    {
+      "ts": "2026-11-08T13:37:57Z",
+      "type": "status_update",
+      "ref": "ether-btc/prompro#101",
+      "desc": "stale Marked stale: repo retired 2026-11-02"
+    },
+    {
+      "ts": "2026-11-08T13:37:57Z",
+      "type": "status_update",
+      "ref": "ether-btc/prompro#102",
+      "desc": "stale Marked stale: repo retired 2026-11-02"
+    },
+    {
+      "ts": "2026-11-08T13:37:58Z",
+      "type": "status_update",
+      "ref": "ether-btc/prompro#136",
+      "desc": "stale Marked stale: repo retired 2026-11-02"
+    },
+    {
+      "ts": "2026-11-08T13:37:58Z",
+      "type": "status_update",
+      "ref": "mnemosyne-oss/mnemosyne#1294",
+      "desc": "merged Merged upstream 2026-10-31T15:12:41Z"
     }
   ]
 }
