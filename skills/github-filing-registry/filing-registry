@@ -128,16 +128,8 @@ cmd_add() {
   fi
 
   if [[ -z "$url" ]]; then
-    local kind="issues"
-    [[ "$type" == "pr" ]] && kind="pull"
-    url="https://github.com/$repo/$kind/$number"
-  fi
-  if [[ -z "$url" ]]; then
     echo "MISSING_URL: --url required (could not default a url for id '$id')" >&2
     exit 2
-  fi
-  if [[ -z "$filed_at" ]]; then
-    filed_at="$(now_str)"
   fi
   if [[ -z "$filed_at" ]]; then
     echo "MISSING_FILED_AT: --filed_at required (could not determine filed_at for id '$id')" >&2

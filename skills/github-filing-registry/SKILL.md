@@ -6,7 +6,7 @@ category: dev
 tags: [dev, github, memory]
 ---
 
-> **${var}** — Optional. Accepts `owner/repo#N` for single-item ops, or a subcommand (`add`, `status`, `triage`, `sync`, `log`). Empty = run triage.
+> **${var}** — Optional. Accepts `owner/repo#N` for single-item ops, or a subcommand (`add`, `status`, `triage`, `sync`, `validate`, `log`, `check-duplicate`). Empty = run triage.
 
 The filing registry is a structured JSON log at `memory/filing-registry.json`. Every issue or PR you file against an upstream repo gets an entry so you never file the same thing twice, lose track of what you filed, or forget what happened next.
 
@@ -65,10 +65,11 @@ Activity log entry:
   --type pr|issue \
   --title "fix: add null check" \
   --evidence tier_0|tier_1|tier_2|tier_3 \
-  --url https://github.com/owner/repo/pull/123
+  --url https://github.com/owner/repo/pull/123 \
+  --filed_at 2026-05-02T00:00:00Z
 ```
 
-Creates a new entry. If the ID already exists, refuses with `FILING_EXISTS`.
+Creates a new entry. `--id`, `--type`, `--title`, `--url` and `--filed_at` are required; `--id` must be canonical `owner/repo#N` (bare-numeric ids are rejected). Rejects with exit 2 and a named reason (`BARE_NUMERIC_ID`, `MISSING_ID`, `MISSING_REPO`, `MISSING_URL`, `MISSING_FILED_AT`) for malformed input. If the ID already exists, refuses with `FILING_EXISTS`.
 
 ### status — Update or inspect an entry
 
@@ -99,7 +100,18 @@ Sorts by `repo`, then `last_action` age. Shows:
 ./filing-registry sync [--item owner/repo#N]
 ```
 
-For each entry (or the specified one), calls GitHub API to get current `state` (`open`/`closed`). Updates `state` field if it changed. Sets `status` to `merged` if PR was merged, `closed` if issue/PR was closed.
+For each entry (or the specified one), calls GitHub API to get current `state` (`open`/`closed`). Updates `state` field if it changed. Sets `status` to `merged` if PR was merged, `closed` if issue/PR was closed. Rows whose `state` is still `open` are always re-fetched (this unfreezes stale `state=open`/`status=closed` rows); rows whose `type` contradicts their bucket (`type=issue` in `pulls`, `type=pr` in `issues`) are skipped and named, never written.
+
+### validate — Audit registry schema and bucket invariants
+
+```bash
+./filing-registry validate
+```
+
+Read-only (no writes to the registry). Prints every malformed row as
+`bucket#row-index repo id problem` — problems: bare id, missing id/repo,
+type/bucket mismatch, frozen `state=open`+`status=closed`. One line per
+(row, problem); exits 1 if any malformed row exists, 0 otherwise.
 
 ### log — Show activity history
 
@@ -129,7 +141,7 @@ case "$cmd" in
   sync)       filing_sync "$@" ;;
   log)        filing_log "$@" ;;
   "")         filing_triage ;;
-  *)          echo "Usage: filing-registry {add|status|triage|sync|log}" >&2; exit 1 ;;
+  *)          echo "Usage: filing-registry {add|status|triage|sync|validate|log|check-duplicate}" >&2; exit 1 ;;
 esac
 ```
 
