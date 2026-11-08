@@ -1,0 +1,535 @@
+#!/usr/bin/env bash
+# ledger-reconcile — read-only reconciliation of github-filing-registry vs live GitHub state
+# Usage: ledger-reconcile [--selftest]
+# Reads the filing registry, the CARRY-BRIDGE wiki page, the patch manifest and REPOS.md,
+# checks them against live GitHub state using gh API GET / gh search / gh pr list only,
+# and writes a single report. Never mutates the registry or GitHub.
+set -euo pipefail
+
+# ─── Startup self-check: this file itself must contain no mutating literals ───
+# (The literals are assembled at runtime so the file text stays clean of them;
+#  grep "$0" below must never find them verbatim in this script.)
+g='gh'; i='issue'; p='pr'; c='close'; m='merge'; t='git'; u='push'; f='filing-registry'; a='add'
+if grep -n -e "$g $i $c" -e "$p $c" -e "$p $m" -e "$t $u" -e "$f $a" "$0" >/dev/null 2>&1; then
+  printf 'SELF_CHECK_FAILED: %s contains a forbidden mutating literal\n' "$0" >&2
+  exit 2
+fi
+
+# ─── Paths (env-overridable for selftest) ───
+AEON_ROOT="${AEON_ROOT:-$(cd "$(dirname "$0")/../.." && pwd)}"
+REGISTRY="${REGISTRY:-$AEON_ROOT/memory/filing-registry.json}"
+MANIFEST="${MANIFEST:-$HOME/.hermes/local-patches/patches.manifest.json}"
+WIKI_PAGE="${WIKI_PAGE:-$HOME/wiki/entities/hermes-clean-upstream-20261105.md}"
+REPOS_MD="${REPOS_MD:-$HOME/.hermes/REPOS.md}"
+REPORT_DIR="${REPORT_DIR:-$HOME/reports}"
+TODAY=$(date -u +%Y%m%d)
+REPORT="${REPORT:-$REPORT_DIR/ledger-reconcile-$TODAY.md}"
+
+command -v gh >/dev/null 2>&1 || { echo "ledger-reconcile: gh not found on PATH" >&2; exit 2; }
+command -v jq >/dev/null 2>&1 || { echo "ledger-reconcile: jq not found on PATH" >&2; exit 2; }
+
+if [[ ! -r "$REGISTRY" ]]; then
+  echo "ledger-reconcile: cannot read registry $REGISTRY" >&2
+  exit 2
+fi
+
+# ─── Report accumulators ───
+REPORT_LINES=()
+CONFLICT_LINES=()
+INFO_LINES=()
+SEC_A_CHECKED=0; SEC_A_CONFLICT=0; SEC_A_SKIP=0
+SEC_B_CHECKED=0; SEC_B_CONFLICT=0; SEC_B_SKIP=0
+SEC_C_CHECKED=0; SEC_C_CONFLICT=0; SEC_C_SKIP=0
+SEC_D_CHECKED=0; SEC_D_CONFLICT=0; SEC_D_SKIP=0
+SECTION_A_IDS=""
+SECTION_B_IDS=""
+LIVE_STATE=""
+LIVE_MERGED_AT=""
+
+note()   { INFO_LINES+=("$*"); }
+conflict() { CONFLICT_LINES+=("$*"); }
+
+trim() {
+  local s="$1"
+  s="${s#"${s%%[![:space:]]*}"}"
+  s="${s%"${s##*[![:space:]]}"}"
+  printf '%s' "$s"
+}
+
+# parse_pr_live <json> → sets LIVE_STATE (open|closed|merged) LIVE_MERGED_AT
+parse_pr_live() {
+  local json="$1"
+  LIVE_STATE=$(printf '%s' "$json" | jq -r '.state // ""')
+  LIVE_MERGED_AT=$(printf '%s' "$json" | jq -r '.merged_at // empty')
+  if [[ "$LIVE_STATE" == "closed" && -n "$LIVE_MERGED_AT" && "$LIVE_MERGED_AT" != "null" ]]; then
+    LIVE_STATE="merged"
+  fi
+}
+
+# ─── Section (a): registry rows vs live GitHub state ───
+run_section_a() {
+  local registry_json="$1"
+  local rows checked=0 conflict=0 skip=0 api_used=0 api_budget=60
+
+  rows=$(printf '%s' "$registry_json" | jq -c '[.pulls[], .issues[]] | map(select(.state != "closed")) | .[]')
+
+  while IFS= read -r row; do
+    [[ -z "$row" || "$row" == "null" ]] && continue
+    local id type repo number state status
+    id=$(printf '%s' "$row" | jq -r '.id // ""')
+    type=$(printf '%s' "$row" | jq -r '.type // ""')
+    repo=$(printf '%s' "$row" | jq -r '.repo // ""')
+    number=$(printf '%s' "$row" | jq -r '.number // ""')
+    state=$(printf '%s' "$row" | jq -r '.state // ""')
+    status=$(printf '%s' "$row" | jq -r '.status // "unknown"')
+
+    # Rows without resolvable owner/repo#number are not GitHub-checkable.
+    if [[ -z "$id" ]]; then
+      note "SKIP-MALFORMED: $repo#$number — registry row has no id (state=$state status=$status), not compared against live state"
+      skip=$((skip + 1))
+      continue
+    fi
+    if [[ ! "$repo" =~ ^[^/]+/[^/]+$ || ! "$number" =~ ^[0-9]+$ ]]; then
+      note "SKIP-NONGITHUB: $id"
+      skip=$((skip + 1))
+      continue
+    fi
+
+    SECTION_A_IDS="${SECTION_A_IDS} $id"
+
+    # API budget: max 60 gh api calls in section (a).
+    if [[ $api_used -ge $api_budget ]]; then
+      note "SKIP-API-BUDGET: $id (section (a) api budget 60 exhausted; remaining rows unchecked)"
+      skip=$((skip + 1))
+      continue
+    fi
+
+    local out="" call_rc=0
+    if [[ "$type" == "pr" ]]; then
+      out=$(gh api "repos/$repo/pulls/$number" --jq '{state, merged_at}' 2>/dev/null) || call_rc=$?
+    else
+      out=$(gh api "repos/$repo/issues/$number" --jq '{state}' 2>/dev/null) || call_rc=$?
+    fi
+    api_used=$((api_used + 1))
+    checked=$((checked + 1))
+
+    if [[ $call_rc -ne 0 || -z "$out" ]]; then
+      note "SKIP-API-FAIL: $id — gh api repos/$repo/${type}s/$number exited $call_rc"
+      skip=$((skip + 1))
+      continue
+    fi
+
+    parse_pr_live "$out"
+
+    local mismatched=0
+    if [[ "$LIVE_STATE" != "$state" ]]; then mismatched=1; fi
+    if [[ "$type" == "pr" && "$LIVE_STATE" == "merged" && "$status" != "merged" ]]; then mismatched=1; fi
+
+    if [[ $mismatched -eq 1 ]]; then
+      conflict=$((conflict + 1))
+      if [[ "$type" == "pr" ]]; then
+        conflict "CONFLICT-(a): $id — registry state=$state status=$status | live state=$LIVE_STATE merged_at=$LIVE_MERGED_AT | receipt: gh api repos/$repo/pulls/$number (exit=$call_rc)"
+      else
+        conflict "CONFLICT-(a): $id — registry state=$state status=$status | live state=$LIVE_STATE | receipt: gh api repos/$repo/issues/$number (exit=$call_rc)"
+      fi
+    fi
+  done <<< "$rows"
+
+  SEC_A_CHECKED=$checked; SEC_A_CONFLICT=$conflict; SEC_A_SKIP=$skip
+}
+
+# ─── Section (b): wiki CARRY-BRIDGE upstream PRs vs live state ───
+run_section_b() {
+  local checked=0 conflict=0 skip=0 claim patch pr_num claim_open claim_closed
+
+  if [[ ! -r "$WIKI_PAGE" ]]; then
+    note "SKIP-WIKI: $WIKI_PAGE not readable"
+    SEC_B_CHECKED=0; SEC_B_CONFLICT=0; SEC_B_SKIP=0
+    return
+  fi
+
+  while IFS= read -r line; do
+    [[ "$line" == \|* ]] || continue
+    [[ "$line" == *CARRY-BRIDGE* ]] || continue
+    [[ "$line" =~ upstream\ PR\ #([0-9]+) ]] || continue
+    pr_num="${BASH_REMATCH[1]}"
+
+    # Dedupe vs section (a) results and within section (b).
+    if [[ " $SECTION_A_IDS " == *" NousResearch/hermes-agent#$pr_num "* ]]; then
+      skip=$((skip + 1)); continue
+    fi
+    if [[ " $SECTION_B_IDS " == *" $pr_num "* ]]; then skip=$((skip + 1)); continue; fi
+    SECTION_B_IDS="${SECTION_B_IDS} $pr_num"
+
+    local cells
+    IFS='|' read -ra cells <<< "$line"
+    patch=$(trim "${cells[1]:-}")
+    anchor=$(trim "${cells[3]:-}")
+
+    shopt -s nocasematch
+    claim_open=0; claim_closed=0
+    [[ "$anchor" == *until*merge* || "$anchor" == *open* || "$anchor" == *mergeable* || "$anchor" == *reopen* ]] && claim_open=1
+    [[ "$anchor" == *closed* || "$anchor" == *merged* || "$anchor" == *abandoned* ]] && claim_closed=1
+    # Reported claim = the stance text after "upstream PR #N" (e.g. "OPEN (2026-10-25)").
+    claim="$anchor"
+    claim="${claim#upstream PR #* }"
+    if [[ $claim_open -eq 0 && $claim_closed -eq 0 ]]; then
+      note "SKIP-STANCE: $patch upstream PR #$pr_num — wiki claim stance undetermined"
+      skip=$((skip + 1)); continue
+    fi
+
+    local out="" call_rc=0
+    out=$(gh api "repos/NousResearch/hermes-agent/pulls/$pr_num" --jq '{state, merged_at}' 2>/dev/null) || call_rc=$?
+    checked=$((checked + 1))
+    if [[ $call_rc -ne 0 || -z "$out" ]]; then
+      note "SKIP-API-FAIL: NousResearch/hermes-agent#$pr_num — gh api repos/NousResearch/hermes-agent/pulls/$pr_num exited $call_rc"
+      skip=$((skip + 1)); continue
+    fi
+
+    parse_pr_live "$out"
+
+    local conflicted=0
+    if [[ $claim_open -eq 1 && "$LIVE_STATE" != "open" ]]; then conflicted=1; fi
+    if [[ $claim_closed -eq 1 && "$LIVE_STATE" == "open" ]]; then conflicted=1; fi
+
+    if [[ $conflicted -eq 1 ]]; then
+      conflict=$((conflict + 1))
+      conflict "CONFLICT-(b): $patch upstream PR #$pr_num — wiki claims \"$claim\" | live state=$LIVE_STATE merged_at=$LIVE_MERGED_AT | receipt: gh api repos/NousResearch/hermes-agent/pulls/$pr_num (exit=$call_rc)"
+    fi
+  done < "$WIKI_PAGE"
+
+  # Manifest '#<digits>' tokens → info receipts only.
+  if [[ -r "$MANIFEST" ]]; then
+    local token
+    while IFS= read -r token; do
+      [[ -z "$token" ]] && continue
+      note "INFO-MANIFEST: #$token referenced in $MANIFEST"
+    done < <(grep -oE '#[0-9]+' "$MANIFEST" | sed 's/#//' | sort -u)
+  fi
+
+  SEC_B_CHECKED=$checked; SEC_B_CONFLICT=$conflict; SEC_B_SKIP=$skip
+}
+
+# ─── Section (c): open author PRs vs registry ───
+run_section_c() {
+  local pr_list="" call_rc=0
+  pr_list=$(gh search prs --author ether-btc --state open --limit 100 --json repository,number,author,title,url 2>/dev/null) || call_rc=$?
+
+  local checked=0 conflict=0 skip=0
+  if [[ $call_rc -ne 0 || -z "$pr_list" ]]; then
+    note "SKIP-API-FAIL: section (c) gh search prs --author ether-btc --state open exited $call_rc"
+    SEC_C_CHECKED=0; SEC_C_CONFLICT=0; SEC_C_SKIP=1
+    return
+  fi
+
+  while IFS= read -r pr; do
+    [[ -z "$pr" || "$pr" == "null" ]] && continue
+    local number owner name url lid
+    number=$(printf '%s' "$pr" | jq -r '.number // empty')
+    owner=$(printf '%s' "$pr" | jq -r '.repository.nameWithOwner // ""')
+    url=$(printf '%s' "$pr" | jq -r '.url // ""')
+    [[ -z "$number" || -z "$owner" ]] && continue
+    lid="$owner#$number"
+    checked=$((checked + 1))
+    if [[ ! " $REGISTRY_IDS " == *" $lid "* ]]; then
+      conflict=$((conflict + 1))
+      conflict "CONFLICT-(c): UNFILED: $lid — open author PR not in registry | receipt: gh search prs --author ether-btc --state open (url $url)"
+    fi
+  done < <(printf '%s' "$pr_list" | jq -c '.[] // empty')
+
+  SEC_C_CHECKED=$checked; SEC_C_CONFLICT=$conflict; SEC_C_SKIP=$skip
+}
+
+# ─── Section (d): live-archived ether-btc repos vs REPOS.md archived markers ───
+run_section_d() {
+  local search_out="" call_rc=0
+  search_out=$(gh search repos --owner ether-btc --archived --limit 100 --json fullName 2>/dev/null) || call_rc=$?
+
+  local checked=0 conflict=0 skip=0
+  if [[ $call_rc -ne 0 || -z "$search_out" ]]; then
+    note "SKIP-API-FAIL: section (d) gh search repos --owner ether-btc --archived exited $call_rc"
+    SEC_D_CHECKED=0; SEC_D_CONFLICT=0; SEC_D_SKIP=1
+    return
+  fi
+
+  local live_names="" name
+  while IFS= read -r name; do
+    [[ -z "$name" ]] && continue
+    name="${name#*/}"        # ether-btc/repo → repo
+    live_names="${live_names} $name"
+    checked=$((checked + 1))
+  done < <(printf '%s' "$search_out" | jq -r '.[].fullName // empty')
+
+  local markers="" marker cell1
+  if [[ -r "$REPOS_MD" ]]; then
+    while IFS= read -r line; do
+      [[ "$line" == \|* ]] || continue
+      [[ "$line" =~ [Aa]rchived ]] || continue
+      cell1="${line#|}"; cell1="${cell1%%|*}"
+      cell1=$(trim "$cell1")
+      marker=""
+      local rx_github='\[([^]]+)\]\(https://github.com/ether-btc/([^)]+)\)'
+      local rx_any='\[([^]]+)\]\(([^)]*)\)'
+      if [[ "$cell1" =~ $rx_github ]]; then
+        marker="${BASH_REMATCH[2]}"
+      elif [[ "$cell1" =~ $rx_any ]]; then
+        marker="${BASH_REMATCH[1]}"
+      else
+        marker="$cell1"
+      fi
+      [[ -z "$marker" ]] && continue
+      markers="${markers} $marker"
+      checked=$((checked + 1))
+      # Marked-but-not-archived → reverse conflict.
+      if [[ ! " $live_names " == *" $marker "* ]]; then
+        conflict=$((conflict + 1))
+        conflict "CONFLICT-(d): ether-btc/$marker — REPOS.md marks archived but live repo is not archived | receipt: gh search repos --owner ether-btc --archived"
+      fi
+    done < "$REPOS_MD"
+  fi
+
+  # Live-archived repo with no marker → conflict.
+  local lname
+  for lname in $live_names; do
+    if [[ ! " $markers " == *" $lname "* ]]; then
+      conflict=$((conflict + 1))
+      conflict "CONFLICT-(d): ether-btc/$lname — live-archived but REPOS.md has no archived marker | receipt: gh search repos --owner ether-btc --archived"
+    fi
+  done
+
+  SEC_D_CHECKED=$checked; SEC_D_CONFLICT=$conflict; SEC_D_SKIP=$skip
+}
+
+# ─── Report (single write, only to $REPORT) ───
+write_report() {
+  local total_conflict last_synced
+  total_conflict=$((SEC_A_CONFLICT + SEC_B_CONFLICT + SEC_C_CONFLICT + SEC_D_CONFLICT))
+  last_synced=$(printf '%s' "$REGISTRY_JSON" | jq -r '.last_synced // "never"')
+
+  {
+    echo "# ledger-reconcile — $TODAY (UTC)"
+    echo ""
+    echo "Purpose: read-only reconciliation of github-filing-registry against live GitHub state (GET-only, no mutations)."
+    echo "Registry: $REGISTRY (last_synced: $last_synced)"
+    echo "Manifest: $MANIFEST"
+    echo "Wiki page: $WIKI_PAGE"
+    echo "REPOS.md: $REPOS_MD"
+    echo "Report: $REPORT"
+    echo ""
+    echo "## Section counts"
+    echo "(a) registry rows vs live GitHub: checked=$SEC_A_CHECKED conflict=$SEC_A_CONFLICT skip=$SEC_A_SKIP"
+    echo "(b) wiki CARRY-BRIDGE upstream PRs vs live state: checked=$SEC_B_CHECKED conflict=$SEC_B_CONFLICT skip=$SEC_B_SKIP"
+    echo "(c) open author PRs vs registry: checked=$SEC_C_CHECKED conflict=$SEC_C_CONFLICT skip=$SEC_C_SKIP"
+    echo "(d) live-archived repos vs REPOS.md archived markers: checked=$SEC_D_CHECKED conflict=$SEC_D_CONFLICT skip=$SEC_D_SKIP"
+    echo ""
+    echo "## CONFLICTS"
+    if [[ ${#CONFLICT_LINES[@]} -eq 0 ]]; then
+      echo "(none)"
+    else
+      printf '%s\n' "${CONFLICT_LINES[@]}"
+    fi
+    echo ""
+    echo "## Notes"
+    if [[ ${#INFO_LINES[@]} -eq 0 ]]; then
+      echo "(none)"
+    else
+      printf '%s\n' "${INFO_LINES[@]}"
+    fi
+    echo ""
+    echo "## CLEAN"
+    echo "(a) $([ $SEC_A_CONFLICT -eq 0 ] && echo 'clean' || echo "$SEC_A_CONFLICT conflict(s)")"
+    echo "(b) $([ $SEC_B_CONFLICT -eq 0 ] && echo 'clean' || echo "$SEC_B_CONFLICT conflict(s)")"
+    echo "(c) $([ $SEC_C_CONFLICT -eq 0 ] && echo 'clean' || echo "$SEC_C_CONFLICT conflict(s)")"
+    echo "(d) $([ $SEC_D_CONFLICT -eq 0 ] && echo 'clean' || echo "$SEC_D_CONFLICT conflict(s)")"
+    echo ""
+    if [[ $total_conflict -eq 0 ]]; then
+      echo "CLEAN: OK — 0 conflicts"
+    else
+      echo "CLEAN: FAILED — $total_conflict conflict(s)"
+    fi
+  } > "$REPORT"
+}
+
+REGISTRY_JSON=""
+REGISTRY_IDS=""
+
+main() {
+  REGISTRY_JSON=$(cat "$REGISTRY")
+  REGISTRY_IDS=$(printf '%s' "$REGISTRY_JSON" | jq -r '(.pulls // []), (.issues // []) | .[] | select(.id != null) | .id | select(test("^[^/]+/[^/]+#[0-9]+$"))' | tr '\n' ' ')
+
+  run_section_a "$REGISTRY_JSON"
+  run_section_b
+  run_section_c
+  run_section_d
+
+  mkdir -p "$REPORT_DIR"
+  write_report
+
+  local total_conflict
+  total_conflict=$((SEC_A_CONFLICT + SEC_B_CONFLICT + SEC_C_CONFLICT + SEC_D_CONFLICT))
+  if [[ $total_conflict -gt 0 ]]; then exit 1; fi
+  exit 0
+}
+
+# ─── --selftest: fixture-based, stubs gh, writes only inside the fixture ───
+cmd_selftest() {
+   local real_script pass=1
+  real_script=$(readlink -f "$0" 2>/dev/null || printf '%s' "$0")
+  fixture=$(mktemp -d) || { echo "selftest: mktemp -d failed" >&2; exit 2; }
+  cleanup_selftest() { [[ -n "${fixture:-}" ]] && rm -rf "$fixture"; }
+  trap cleanup_selftest EXIT
+
+  mkdir -p "$fixture/home/.hermes/local-patches" \
+           "$fixture/home/wiki/entities" \
+           "$fixture/home/reports" \
+           "$fixture/bin"
+
+  # Stub gh: GET-only. Anything mutating or unsupported exits 1.
+  cat > "$fixture/bin/gh" <<'GH_EOF'
+#!/usr/bin/env bash
+case "$*" in
+  *issue\ close*|*pr\ close*|*pr\ merge*|*push*)
+    echo "stub-gh: refusing mutating call: $*" >&2
+    exit 1 ;;
+esac
+case "$*" in
+  *repos/alpha/prj/pulls/1*)
+    echo '{"state":"closed","merged_at":"2026-01-01T00:00:00Z"}' ;;
+  *repos/alpha/prj/pulls/2*)
+    echo '{"state":"open","merged_at":null}' ;;
+  *repos/alpha/prj/issues/4*)
+    echo '{"state":"open"}' ;;
+  *repos/NousResearch/hermes-agent/pulls/128240*)
+    echo '{"state":"closed","merged_at":"2026-05-01T00:00:00Z"}' ;;
+  *repos/NousResearch/hermes-agent/pulls/144599*)
+    echo '{"state":"closed","merged_at":null}' ;;
+  "search prs --author ether-btc --state open")
+    if [[ "${SELFTEST_CASE:-}" == "clean" ]]; then echo '[]'; else
+      echo '[{"repository":{"nameWithOwner":"alpha/prj"},"number":9,"author":{"login":"alpha"},"url":"https://github.com/alpha/prj/9","title":"unfiled pr"}]'; fi ;;
+  "search repos --owner ether-btc --archived")
+    echo '[{"fullName":"ether-btc/old-repo"},{"fullName":"ether-btc/ghost-repo"}]' ;;
+  *)
+    echo "stub-gh: unsupported call: $*" >&2
+    exit 1 ;;
+esac
+GH_EOF
+  chmod +x "$fixture/bin/gh"
+
+  run_case() {
+    local case_name="$1" expect_rc="$2"
+    local reg="$fixture/memory/filing-registry.json"
+    mkdir -p "$fixture/memory"
+    local report="$fixture/home/reports/ledger-reconcile-$TODAY.md"
+    local ok=1 has_conflict=0 has_clean=0
+
+    if [[ "$case_name" == "mismatch" ]]; then
+      cat > "$reg" <<'REG_EOF'
+{"version":"1.0","last_synced":"2026-01-01T00:00:00Z","account":"tester",
+"pulls":[
+ {"id":"alpha/prj#1","repo":"alpha/prj","number":1,"type":"pr","title":"t1","state":"open","status":"pending_review","next_action":"Await review","actions_taken":["filed"],"notes":"","evidence_tier":"tier_2","filed_at":"2026-01-01T00:00:00Z","last_action":"2026-01-01T00:00:00Z","labels":[],"url":"https://github.com/alpha/prj/pull/1","is_upstream":true},
+ {"id":"alpha/prj#2","repo":"alpha/prj","number":2,"type":"pr","title":"t2","state":"open","status":"pending_review","next_action":"Await review","actions_taken":["filed"],"notes":"","evidence_tier":"tier_2","filed_at":"2026-01-01T00:00:00Z","last_action":"2026-01-01T00:00:00Z","labels":[],"url":"https://github.com/alpha/prj/pull/2","is_upstream":true},
+ {"id":"alpha/prj#3","repo":"alpha/prj","number":3,"type":"pr","title":"t3","state":"closed","status":"merged","next_action":"","actions_taken":[],"notes":"","evidence_tier":"tier_2","filed_at":"2026-01-01T00:00:00Z","last_action":"2026-01-01T00:00:00Z","labels":[],"url":"https://github.com/alpha/prj/pull/3","is_upstream":true}
+],
+"issues":[
+ {"id":"alpha/prj#4","repo":"alpha/prj","number":4,"type":"issue","title":"i4","state":"open","status":"triage","next_action":"","actions_taken":[],"notes":"","evidence_tier":"tier_2","filed_at":"2026-01-01T00:00:00Z","last_action":"2026-01-01T00:00:00Z","labels":[],"url":"https://github.com/alpha/prj/issues/4","is_upstream":true},
+ {"id":"#9","number":9,"type":"issue","title":"orphan","state":"open","status":"triage"}
+]}
+REG_EOF
+      cat > "$fixture/home/.hermes/local-patches/patches.manifest.json" <<'MF_EOF'
+{"patches":[{"name":"x","note":"see upstream PR #777"}]}
+MF_EOF
+      cat > "$fixture/home/wiki/entities/hermes-clean-upstream-20261105.md" <<'WK_EOF'
+| Patch | Route | Anchor |
+|---|---|---|
+| m3-short-external-wrap | CARRY-BRIDGE permanent (security divergence) | upstream PR #128240 CLOSED |
+| bot-dm-turn-timeout | CARRY-BRIDGE until merge | upstream PR #144599 OPEN (2026-10-25) |
+| copilot-home-cwd-guard | CARRY-BRIDGE deferred | never filed; no upstream PR |
+WK_EOF
+      cat > "$fixture/home/.hermes/REPOS.md" <<'RP_EOF'
+| repo | note |
+|---|---|
+| [old-repo](https://github.com/ether-btc/old-repo) | archived 2026-01-01 |
+| [marked-repo](https://github.com/ether-btc/marked-repo) | archived marker only |
+RP_EOF
+    else
+      cat > "$reg" <<'REG_EOF'
+{"version":"1.0","last_synced":"2026-01-01T00:00:00Z","account":"tester",
+"pulls":[
+ {"id":"alpha/prj#1","repo":"alpha/prj","number":1,"type":"pr","title":"t1","state":"closed","status":"merged","next_action":"","actions_taken":[],"notes":"","evidence_tier":"tier_2","filed_at":"2026-01-01T00:00:00Z","last_action":"2026-01-01T00:00:00Z","labels":[],"url":"https://github.com/alpha/prj/pull/1","is_upstream":true},
+ {"id":"alpha/prj#2","repo":"alpha/prj","number":2,"type":"pr","title":"t2","state":"open","status":"pending_review","next_action":"Await review","actions_taken":["filed"],"notes":"","evidence_tier":"tier_2","filed_at":"2026-01-01T00:00:00Z","last_action":"2026-01-01T00:00:00Z","labels":[],"url":"https://github.com/alpha/prj/pull/2","is_upstream":true}
+],
+"issues":[
+ {"id":"alpha/prj#4","repo":"alpha/prj","number":4,"type":"issue","title":"i4","state":"open","status":"triage","next_action":"","actions_taken":[],"notes":"","evidence_tier":"tier_2","filed_at":"2026-01-01T00:00:00Z","last_action":"2026-01-01T00:00:00Z","labels":[],"url":"https://github.com/alpha/prj/issues/4","is_upstream":true},
+ {"id":"#9","number":9,"type":"issue","title":"orphan","state":"open","status":"triage"}
+]}
+REG_EOF
+      cat > "$fixture/home/.hermes/local-patches/patches.manifest.json" <<'MF_EOF'
+{"patches":[{"name":"y"}]}
+MF_EOF
+      cat > "$fixture/home/wiki/entities/hermes-clean-upstream-20261105.md" <<'WK_EOF'
+| Patch | Route | Anchor |
+|---|---|---|
+| copilot-home-cwd-guard | CARRY-BRIDGE deferred | never filed; no upstream PR |
+WK_EOF
+      cat > "$fixture/home/.hermes/REPOS.md" <<'RP_EOF'
+| repo | note |
+|---|---|
+| [old-repo](https://github.com/ether-btc/old-repo) | archived 2026-01-01 |
+| [ghost-repo](https://github.com/ether-btc/ghost-repo) | archived 2026-02-01 |
+RP_EOF
+    fi
+
+    local rc=0
+    SELFTEST_CASE="$case_name" \
+    HOME="$fixture/home" \
+    AEON_ROOT="$fixture/aeon-wt" \
+    REGISTRY="$reg" \
+    MANIFEST="$fixture/home/.hermes/local-patches/patches.manifest.json" \
+    WIKI_PAGE="$fixture/home/wiki/entities/hermes-clean-upstream-20261105.md" \
+    REPOS_MD="$fixture/home/.hermes/REPOS.md" \
+    REPORT_DIR="$fixture/home/reports" \
+    PATH="$fixture/bin:$PATH" \
+    "$real_script" >"$fixture/run.log" 2>&1 || rc=$?
+
+    if [[ $rc -ne $expect_rc ]]; then
+      echo "selftest[$case_name]: expected exit $expect_rc, got $rc" >&2
+      cat "$fixture/run.log" >&2
+      ok=0
+    fi
+    if [[ -f "$report" ]]; then
+      if grep -q '^CONFLICT-' "$report"; then has_conflict=1; fi
+      if grep -q '^## CLEAN' "$report"; then has_clean=1; fi
+    else
+      echo "selftest[$case_name]: report missing at $report" >&2
+      ok=0
+    fi
+    if [[ "$case_name" == "mismatch" ]]; then
+      [[ $has_conflict -eq 1 ]] || { echo "selftest[mismatch]: report has no CONFLICT line" >&2; ok=0; }
+      [[ $has_clean -eq 1 ]] || { echo "selftest[mismatch]: report has no CLEAN section" >&2; ok=0; }
+    fi
+    if [[ $ok -eq 1 ]]; then
+      echo "selftest[$case_name]: OK (exit=$rc)"
+    else
+      pass=0
+    fi
+  }
+
+  run_case mismatch 1
+  run_case clean 0
+
+  if [[ $pass -eq 1 ]]; then
+    echo "SELFTEST_PASS"
+    return 0
+  else
+    echo "SELFTEST_FAIL" >&2
+    return 1
+  fi
+}
+
+# ─── Dispatch ───
+if [[ "${1:-}" == "--selftest" ]]; then
+  cmd_selftest
+  exit $?
+fi
+
+main
