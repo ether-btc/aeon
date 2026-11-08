@@ -131,8 +131,12 @@ retention_prune() {
   for c in "${candidates[@]+"${candidates[@]}"}"; do
     base=$(basename "$c")
     keep_it=false
+    # rollback anchors: .pre-* backups are never pruned (P2 spec)
+    if [[ "$base" == filing-registry.json.pre-* || "$base" == filing-registry.pre-* ]]; then
+      keep_it=true
+    fi
     # audit evidence: bak-20261030*
-    if [[ "$base" == filing-registry.json.bak-20261030* ]]; then
+    if [[ "$keep_it" == "false" && "$base" == filing-registry.json.bak-20261030* ]]; then
       keep_it=true
     fi
     # 7 most recent exact daily baks
@@ -154,7 +158,7 @@ retention_prune() {
   {
     echo "# pruned-baks manifest"
     echo "# purpose: records filing-registry backup files pruned during sync retention"
-    echo "# keep rules: all filing-registry.json.bak-20261030* (audit evidence); 7 most recent exact daily baks (filing-registry.json.bak-YYYYMMDD)"
+    echo "# keep rules: all filing-registry.json.bak-20261030* (audit evidence); 7 most recent exact daily baks (filing-registry.json.bak-YYYYMMDD); filing-registry.json.pre-* / filing-registry.pre-* rollback anchors never pruned"
     echo "# timestamp: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
     echo "# pruned count: ${#prune_list[@]}"
     if [[ ${#prune_list[@]} -eq 0 ]]; then

@@ -147,6 +147,10 @@ case "$cmd" in
 esac
 ```
 
+## Retention keep rules
+
+`sync` retention pruning keeps: all `filing-registry.json.bak-20261030*` audit evidence; the 7 most recent exact daily baks (`filing-registry.json.bak-YYYYMMDD`); and `filing-registry.json.pre-*` / `filing-registry.pre-*` rollback anchors are never pruned. A pruned-baks manifest is written before deletions.
+
 ## Pre-filing check
 
 Before running `gh issue create` or `gh pr create`, call:
