@@ -7,7 +7,7 @@ permalink: /status/
 # Agent Status
 
 **Overall:** 🟢 OK
-**Updated:** 2026-11-09 09:00 UTC
+**Updated:** 2026-11-09 12:05 UTC
 **Open issues:** 0
 **Next scheduled run:** heartbeat at 08:00 UTC
 
@@ -21,7 +21,7 @@ _Source: no recent token data · verdict: SLIDING_ (illustrative — symbol/figu
 
 | Skill | Last run | Status | Success rate | Consecutive failures |
 |-------|----------|--------|-------------:|---------------------:|
-| heartbeat | 2026-11-08 20:25 UTC | ✅ success | 100% | 0 |
+| heartbeat | 2026-11-09 12:05 UTC | ✅ success | 71% | 0 |
 
 ## Open issues
 
