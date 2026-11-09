@@ -1,0 +1,6 @@
+# pruned-baks manifest
+# purpose: records filing-registry backup files pruned during sync retention
+# keep rules: all filing-registry.json.bak-20261030* (audit evidence); 7 most recent exact daily baks (filing-registry.json.bak-YYYYMMDD); filing-registry.json.pre-* / filing-registry.pre-* rollback anchors never pruned
+# timestamp: 2026-11-09T00:13:03Z
+# pruned count: 0
+# nothing pruned

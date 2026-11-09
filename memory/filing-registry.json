@@ -2426,14 +2426,15 @@
       "title": "feat(papertrade): persist venue fee bps per fill (sign-agnostic)",
       "state": "closed",
       "status": "closed",
-      "next_action": "Await upstream review",
+      "next_action": "none - repo retired 2026-11-02 (online-only, abandoned); do not reopen",
       "evidence_tier": "tier_3",
       "filed_at": "2026-10-15T14:05:03Z",
-      "last_action": "2026-11-08T13:37:56Z",
+      "last_action": "2026-11-09T03:04:18Z",
       "url": "https://github.com/ether-btc/prompro/pull/118",
       "actions_taken": [
         "Filed: feat(papertrade): persist venue fee bps per fill (sign-agnostic)",
-        "Closed: repo retired 2026-11-02"
+        "Closed: repo retired 2026-11-02",
+        "gone from monitor; gh: state=CLOSED mergedAt=null closedAt=2026-11-08T13:37:42Z; thread comment states repo retired, reopening reopens a retired project"
       ],
       "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
       "labels": [],
@@ -2922,14 +2923,15 @@
       "type": "pr",
       "title": "Add inventory-reminder to the plugin catalog",
       "state": "open",
-      "status": "pending_review",
-      "next_action": "Await upstream review",
+      "status": "needs_attention",
+      "next_action": "push the 3 asked fixes (wrap tool schemas as name/description/parameters + reject empty term; resolve data paths via get_hermes_home/plugin_data_dir and move env switches to ctx.get_config; make scripts a package, drop sys.path front-loading), re-pin sha:, comment; teknium1 re-reviews delta from f52d7c06",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-11-06T12:07:48Z",
-      "last_action": "2026-11-06T12:07:48Z",
+      "last_action": "2026-11-09T03:04:19Z",
       "url": "https://github.com/NousResearch/hermes-agent/pull/150026",
       "actions_taken": [
-        "Filed: Add inventory-reminder to the plugin catalog"
+        "Filed: Add inventory-reminder to the plugin catalog",
+        "review=CHANGES_REQUESTED by teknium1 (reviewed at f52d7c06, head now 4e01dce); head also moved ca5a22f->4e01dce"
       ],
       "notes": "",
       "labels": [],
@@ -2963,13 +2965,14 @@
       "title": "fix(beam): reindex_vectors works with a bare sqlite3.connect connection",
       "state": "open",
       "status": "pending_review",
-      "next_action": "Await upstream review",
+      "next_action": "await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-10-31T06:50:10Z",
-      "last_action": "2026-10-31T06:50:10Z",
+      "last_action": "2026-11-09T03:04:30Z",
       "url": "https://github.com/mnemosyne-oss/mnemosyne/pull/1305",
       "actions_taken": [
-        "Filed: fix(beam): reindex_vectors works with a bare sqlite3.connect connection"
+        "Filed: fix(beam): reindex_vectors works with a bare sqlite3.connect connection",
+        "head-only move 6b9a09d->12b986f (rebase/force-push, no review-state change)"
       ],
       "notes": "",
       "labels": [],
@@ -2983,13 +2986,14 @@
       "title": "fix(recovery): read-only source connections + fail-closed restore replay",
       "state": "open",
       "status": "pending_review",
-      "next_action": "Await upstream review",
+      "next_action": "await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-10-31T06:49:46Z",
-      "last_action": "2026-10-31T06:49:46Z",
+      "last_action": "2026-11-09T03:04:30Z",
       "url": "https://github.com/mnemosyne-oss/mnemosyne/pull/1304",
       "actions_taken": [
-        "Filed: fix(recovery): read-only source connections + fail-closed restore replay"
+        "Filed: fix(recovery): read-only source connections + fail-closed restore replay",
+        "head-only move b7f9215->7a0f39f (rebase/force-push, no review-state change)"
       ],
       "notes": "",
       "labels": [],
@@ -4747,7 +4751,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-08T13:40:19Z",
+  "last_synced": "2026-11-09T03:04:30Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -6614,6 +6618,30 @@
       "type": "f1_repair",
       "ref": "LeventeNagy/hermes-prompt-vault#9",
       "desc": "F1 repair: identified repo+url via gh search (title-exact match, state=merged); id/repo/url filled"
+    },
+    {
+      "ts": "2026-11-09T03:04:18Z",
+      "type": "status_update",
+      "ref": "ether-btc/prompro#118",
+      "desc": "closed gone from monitor; gh: state=CLOSED mergedAt=null closedAt=2026-11-08T13:37:42Z; thread comment states repo retired, reopening reopens a retired project"
+    },
+    {
+      "ts": "2026-11-09T03:04:19Z",
+      "type": "status_update",
+      "ref": "NousResearch/hermes-agent#150026",
+      "desc": "needs_attention review=CHANGES_REQUESTED by teknium1 (reviewed at f52d7c06, head now 4e01dce); head also moved ca5a22f->4e01dce"
+    },
+    {
+      "ts": "2026-11-09T03:04:30Z",
+      "type": "status_update",
+      "ref": "mnemosyne-oss/mnemosyne#1304",
+      "desc": "pending_review head-only move b7f9215->7a0f39f (rebase/force-push, no review-state change)"
+    },
+    {
+      "ts": "2026-11-09T03:04:30Z",
+      "type": "status_update",
+      "ref": "mnemosyne-oss/mnemosyne#1305",
+      "desc": "pending_review head-only move 6b9a09d->12b986f (rebase/force-push, no review-state change)"
     }
   ]
 }
