@@ -2922,8 +2922,8 @@
       "number": 150026,
       "type": "pr",
       "title": "Add inventory-reminder to the plugin catalog",
-      "state": "open",
-      "status": "needs_attention",
+      "state": "closed",
+      "status": "merged",
       "next_action": "push the 3 asked fixes (wrap tool schemas as name/description/parameters + reject empty term; resolve data paths via get_hermes_home/plugin_data_dir and move env switches to ctx.get_config; make scripts a package, drop sys.path front-loading), re-pin sha:, comment; teknium1 re-reviews delta from f52d7c06",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-11-06T12:07:48Z",
@@ -2963,8 +2963,8 @@
       "number": 1305,
       "type": "pr",
       "title": "fix(beam): reindex_vectors works with a bare sqlite3.connect connection",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "merged",
       "next_action": "await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-10-31T06:50:10Z",
@@ -3558,6 +3558,26 @@
       "url": "https://github.com/ether-btc/prompro/pull/85",
       "actions_taken": [
         "Filed: feat(multi-pair): wETH/USDC + wETH/cbBTC paper lanes (pair-generic, Bankr-free)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#151924",
+      "repo": "NousResearch/hermes-agent",
+      "number": 151924,
+      "type": "pr",
+      "title": "Add catalog entry: turn-completion-nudge (ether-btc)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-11-09T12:41:25Z",
+      "last_action": "2026-11-09T12:41:25Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/151924",
+      "actions_taken": [
+        "Filed: Add catalog entry: turn-completion-nudge (ether-btc)"
       ],
       "notes": "",
       "labels": [],
@@ -4751,7 +4771,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-09T07:25:47Z",
+  "last_synced": "2026-11-09T13:11:09Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -6642,6 +6662,12 @@
       "type": "status_update",
       "ref": "mnemosyne-oss/mnemosyne#1305",
       "desc": "pending_review head-only move 6b9a09d->12b986f (rebase/force-push, no review-state change)"
+    },
+    {
+      "ts": "2026-11-09T13:10:06Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#151924",
+      "desc": "Filed: Add catalog entry: turn-completion-nudge (ether-btc)"
     }
   ]
 }
