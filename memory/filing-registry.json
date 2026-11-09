@@ -4589,8 +4589,8 @@
       "number": 139283,
       "type": "issue",
       "title": "[Bug]: Topic heal trusts a rowless session id and re-attaches its old transcript",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "tier_2",
       "filed_at": "2026-10-15T16:55:17Z",
@@ -4751,7 +4751,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-09T03:04:30Z",
+  "last_synced": "2026-11-09T07:25:47Z",
   "account": "ether-btc",
   "activity_log": [
     {
