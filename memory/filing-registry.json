@@ -518,7 +518,7 @@
       ],
       "evidence_tier": "tier_2",
       "filed_at": "2026-05-09T21:16:53Z",
-      "id": "#9",
+      "id": "LeventeNagy/hermes-prompt-vault#9",
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-05-09T21:16:53Z",
@@ -528,7 +528,9 @@
       "state": "closed",
       "status": "merged",
       "title": "Fix: onRestore prop was empty, now passes handleRestore function",
-      "type": "pr"
+      "type": "pr",
+      "repo": "LeventeNagy/hermes-prompt-vault",
+      "url": "https://github.com/LeventeNagy/hermes-prompt-vault/pull/9"
     },
     {
       "actions_taken": [
@@ -1342,25 +1344,6 @@
     },
     {
       "actions_taken": [
-        "Filed issue #246 - database_path default doc mismatch"
-      ],
-      "evidence_tier": "tier_2",
-      "filed_at": "2026-06-09T05:52:13Z",
-      "id": "stephenschoettler/hermes-lcm#246",
-      "is_upstream": true,
-      "last_action": "2026-08-09T20:54:00Z",
-      "next_action": "No action — closed upstream",
-      "notes": "Live GitHub state is closed; reconciled during save-progress filing.",
-      "number": 246,
-      "repo": "stephenschoettler/hermes-lcm",
-      "state": "closed",
-      "status": "closed",
-      "title": "docs: database_path default comment says lcm.db but Hermes plugin uses hermes-lcm.db",
-      "type": "issue",
-      "url": "https://github.com/stephenschoettler/hermes-lcm/issues/246"
-    },
-    {
-      "actions_taken": [
         "Cycle 1: 2 parallel subagent reviewers + 3 empirical probes (cycle1-probes.py) — all 3 confirmed bugs",
         "Cycle 1 fix commit 90e9e97: voice_name validation, timeout=60.0, retry loop, URL log sanitization, _safe_log_url, real 8-voice catalogue, docstring fix, 4 new tests",
         "Cycle 2: 4 empirical probes (cycle2-probes.py) — 0 new bugs introduced by cycle 1 fixes",
@@ -1829,7 +1812,7 @@
       ],
       "evidence_tier": "",
       "filed_at": "2026-10-06T05:58:49Z",
-      "id": "78",
+      "id": "ether-btc/prompro#78",
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-10-06T05:58:49Z",
@@ -1849,7 +1832,7 @@
       ],
       "evidence_tier": "",
       "filed_at": "2026-10-06T05:58:49Z",
-      "id": "79",
+      "id": "ether-btc/prompro#79",
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-10-06T05:58:49Z",
@@ -1869,7 +1852,7 @@
       ],
       "evidence_tier": "",
       "filed_at": "2026-10-06T06:27:00Z",
-      "id": "80",
+      "id": "ether-btc/prompro#80",
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-10-06T06:27:00Z",
@@ -1889,7 +1872,7 @@
       ],
       "evidence_tier": "",
       "filed_at": "2026-10-06T06:27:00Z",
-      "id": "81",
+      "id": "ether-btc/prompro#81",
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-10-06T06:27:00Z",
@@ -1909,7 +1892,7 @@
       ],
       "evidence_tier": "",
       "filed_at": "2026-10-06T06:27:01Z",
-      "id": "82",
+      "id": "ether-btc/prompro#82",
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-10-06T06:27:01Z",
@@ -1929,7 +1912,7 @@
       ],
       "evidence_tier": "",
       "filed_at": "2026-10-06T06:55:50Z",
-      "id": "83",
+      "id": "ether-btc/prompro#83",
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-10-06T06:55:50Z",
@@ -2201,7 +2184,19 @@
       "head_sha": "42a0f912a2",
       "recorded": "2026-10-11",
       "actor": "default profile, operator-authorized merge",
-      "notes": "size-decider wiring (inert default + B3 fail-closed live-Kelly gate). Distinguishing field: merged from mergedAt, not close-state."
+      "notes": "size-decider wiring (inert default + B3 fail-closed live-Kelly gate). Distinguishing field: merged from mergedAt, not close-state.",
+      "id": "ether-btc/prompro#98",
+      "url": "https://github.com/ether-btc/prompro/pull/98",
+      "state": "closed",
+      "filed_at": "2026-10-11T12:54:35Z",
+      "last_action": "2026-10-11T13:18:22Z",
+      "is_upstream": true,
+      "labels": [],
+      "evidence_tier": "",
+      "actions_taken": [
+        "Filed: wiring: SizeDecider seam — inert by default, B3 fail-closed gate on live Kelly",
+        "Merged upstream 2026-10-11T13:18:22Z (head 42a0f912a2; live-verified 2026-11-09)"
+      ]
     },
     {
       "id": "ether-btc/prompro#103",
@@ -2445,7 +2440,7 @@
       "is_upstream": true
     },
     {
-      "id": "121",
+      "id": "ether-btc/prompro#121",
       "repo": "ether-btc/prompro",
       "number": 121,
       "type": "pr",
@@ -2465,7 +2460,7 @@
       "is_upstream": true
     },
     {
-      "id": "119",
+      "id": "ether-btc/prompro#119",
       "repo": "ether-btc/prompro",
       "number": 119,
       "type": "pr",
@@ -2485,7 +2480,7 @@
       "is_upstream": true
     },
     {
-      "id": "120",
+      "id": "ether-btc/prompro#120",
       "repo": "ether-btc/prompro",
       "number": 120,
       "type": "pr",
@@ -2505,7 +2500,7 @@
       "is_upstream": true
     },
     {
-      "id": "122",
+      "id": "ether-btc/prompro#122",
       "repo": "ether-btc/prompro",
       "number": 122,
       "type": "pr",
@@ -2645,7 +2640,7 @@
       "is_upstream": true
     },
     {
-      "id": "133",
+      "id": "ether-btc/prompro#133",
       "repo": "ether-btc/prompro",
       "number": 133,
       "type": "pr",
@@ -3543,6 +3538,26 @@
       "notes": "Merged 2026-10-31T15:12:41Z (verified live via gh pr view 2026-11-08)",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "ether-btc/prompro#85",
+      "repo": "ether-btc/prompro",
+      "number": 85,
+      "type": "pr",
+      "title": "feat(multi-pair): wETH/USDC + wETH/cbBTC paper lanes (pair-generic, Bankr-free)",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "Await upstream review",
+      "evidence_tier": "4 commits 0596a50->a341b6c->0a8816b->40b690f; build/vet/suite green; sign fixtures A+5.0/B-10.0/C0.0; real-data smoke Bankr-free 0 API; wiki ether-btc/wiki@9760845; stopped at live-arm gate",
+      "filed_at": "2026-10-08T05:45:14Z",
+      "last_action": "2026-10-08T05:45:14Z",
+      "url": "https://github.com/ether-btc/prompro/pull/85",
+      "actions_taken": [
+        "Filed: feat(multi-pair): wETH/USDC + wETH/cbBTC paper lanes (pair-generic, Bankr-free)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "issues": [
@@ -4247,7 +4262,7 @@
       ],
       "evidence_tier": "",
       "filed_at": "2026-10-06T08:36:03Z",
-      "id": "84",
+      "id": "ether-btc/prompro#84",
       "is_upstream": true,
       "labels": [],
       "last_action": "2026-11-08T13:37:54Z",
@@ -4282,7 +4297,7 @@
       "url": "https://github.com/ether-btc/hermes-agent/issues/7"
     },
     {
-      "id": "134725",
+      "id": "NousResearch/hermes-agent#134725",
       "repo": "NousResearch/hermes-agent",
       "number": 134725,
       "type": "issue",
@@ -4296,26 +4311,6 @@
       "url": "https://github.com/NousResearch/hermes-agent/issues/134725",
       "actions_taken": [
         "Filed: RFC: opt-in systemd-timer scheduling layer for scheduled agent jobs (NousResearch/hermes-agent; cross-refs #20302 + #134725 comment)"
-      ],
-      "notes": "",
-      "labels": [],
-      "is_upstream": true
-    },
-    {
-      "id": "85",
-      "repo": "ether-btc/prompro",
-      "number": 85,
-      "type": "pr",
-      "title": "feat(multi-pair): wETH/USDC + wETH/cbBTC paper lanes (pair-generic, Bankr-free)",
-      "state": "closed",
-      "status": "merged",
-      "next_action": "Await upstream review",
-      "evidence_tier": "4 commits 0596a50->a341b6c->0a8816b->40b690f; build/vet/suite green; sign fixtures A+5.0/B-10.0/C0.0; real-data smoke Bankr-free 0 API; wiki ether-btc/wiki@9760845; stopped at live-arm gate",
-      "filed_at": "2026-10-08T05:45:14Z",
-      "last_action": "2026-10-08T05:45:14Z",
-      "url": "https://github.com/ether-btc/prompro/pull/85",
-      "actions_taken": [
-        "Filed: feat(multi-pair): wETH/USDC + wETH/cbBTC paper lanes (pair-generic, Bankr-free)"
       ],
       "notes": "",
       "labels": [],
@@ -4647,7 +4642,7 @@
       "is_upstream": true
     },
     {
-      "id": "134",
+      "id": "ether-btc/prompro#134",
       "repo": "ether-btc/prompro",
       "number": 134,
       "type": "issue",
@@ -4668,7 +4663,7 @@
       "is_upstream": true
     },
     {
-      "id": "135",
+      "id": "ether-btc/prompro#135",
       "repo": "ether-btc/prompro",
       "number": 135,
       "type": "issue",
@@ -4730,6 +4725,25 @@
       "is_upstream": true,
       "has_fix_pr": true,
       "fix_pr_url": "https://github.com/NousResearch/hermes-agent/pull/69763"
+    },
+    {
+      "actions_taken": [
+        "Filed issue #246 - database_path default doc mismatch"
+      ],
+      "evidence_tier": "tier_2",
+      "filed_at": "2026-06-09T05:52:13Z",
+      "id": "stephenschoettler/hermes-lcm#246",
+      "is_upstream": true,
+      "last_action": "2026-08-09T20:54:00Z",
+      "next_action": "No action — closed upstream",
+      "notes": "Live GitHub state is closed; reconciled during save-progress filing.",
+      "number": 246,
+      "repo": "stephenschoettler/hermes-lcm",
+      "state": "closed",
+      "status": "closed",
+      "title": "docs: database_path default comment says lcm.db but Hermes plugin uses hermes-lcm.db",
+      "type": "issue",
+      "url": "https://github.com/stephenschoettler/hermes-lcm/issues/246"
     }
   ],
   "version": "1.1.1",
@@ -6486,6 +6500,120 @@
       "type": "status_update",
       "ref": "mnemosyne-oss/mnemosyne#1294",
       "desc": "merged Merged upstream 2026-10-31T15:12:41Z"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#78",
+      "desc": "F1 repair: canonicalized bare id '78' -> 'ether-btc/prompro#78' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#79",
+      "desc": "F1 repair: canonicalized bare id '79' -> 'ether-btc/prompro#79' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#80",
+      "desc": "F1 repair: canonicalized bare id '80' -> 'ether-btc/prompro#80' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#81",
+      "desc": "F1 repair: canonicalized bare id '81' -> 'ether-btc/prompro#81' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#82",
+      "desc": "F1 repair: canonicalized bare id '82' -> 'ether-btc/prompro#82' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#83",
+      "desc": "F1 repair: canonicalized bare id '83' -> 'ether-btc/prompro#83' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#121",
+      "desc": "F1 repair: canonicalized bare id '121' -> 'ether-btc/prompro#121' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#119",
+      "desc": "F1 repair: canonicalized bare id '119' -> 'ether-btc/prompro#119' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#120",
+      "desc": "F1 repair: canonicalized bare id '120' -> 'ether-btc/prompro#120' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#122",
+      "desc": "F1 repair: canonicalized bare id '122' -> 'ether-btc/prompro#122' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#133",
+      "desc": "F1 repair: canonicalized bare id '133' -> 'ether-btc/prompro#133' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#84",
+      "desc": "F1 repair: canonicalized bare id '84' -> 'ether-btc/prompro#84' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "NousResearch/hermes-agent#134725",
+      "desc": "F1 repair: canonicalized bare id '134725' -> 'NousResearch/hermes-agent#134725' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#134",
+      "desc": "F1 repair: canonicalized bare id '134' -> 'ether-btc/prompro#134' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#135",
+      "desc": "F1 repair: canonicalized bare id '135' -> 'ether-btc/prompro#135' (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#85",
+      "desc": "F1 repair: canonicalized bare id '85' -> 'ether-btc/prompro#85' (+ bucket move to pulls) (live-verified 2026-11-09)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "stephenschoettler/hermes-lcm#246",
+      "desc": "F1 repair: bucket move pulls->issues (row is type=issue; fields untouched)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "ether-btc/prompro#98",
+      "desc": "F1 repair: schema completion — id/url/state/filed_at/actions filled from live PR data (state=closed, merged 2026-10-11T13:18:22Z)"
+    },
+    {
+      "ts": "2026-11-09T01:20:00Z",
+      "type": "f1_repair",
+      "ref": "LeventeNagy/hermes-prompt-vault#9",
+      "desc": "F1 repair: identified repo+url via gh search (title-exact match, state=merged); id/repo/url filled"
     }
   ]
 }
