@@ -109,6 +109,8 @@ jobs:
         run: bash scripts/tests/test_validate_readme_catalog.sh
       - name: community skill install catalog tests
         run: bash scripts/tests/test_community_skill_install.sh
+      - name: filing-registry sync/flock tests
+        run: bash scripts/tests/test_filing_registry_sync.sh
       - name: grok setup/auth tests
         run: bash scripts/tests/test_run_grok.sh
       - name: harness-adapter grok tests

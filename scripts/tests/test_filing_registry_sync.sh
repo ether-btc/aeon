@@ -359,12 +359,55 @@ test_g() {
   rm -rf "$T"
 }
 
+test_h() {
+  # H: the flock contention branch — a second holder keeps $REGISTRY.lock
+  # exclusively while a registry command runs; the non-blocking acquisition
+  # must fail fast with REGISTRY_BUSY on stderr and exit 3, and behavior
+  # must return to the uncontended control outcome once the lock releases.
+  echo "--- H: flock contention -> REGISTRY_BUSY, exit 3 ---"
+  local T D out rc rc0 holder
+  T=$(mktemp -d)
+  D="$T/memory"
+  mkdir -p "$D" "$T/bin"
+  echo '{"pulls":[],"issues":[],"activity_log":[]}' > "$D/filing-registry.json"
+
+  # control: the same command without contention (unknown id may exit
+  # nonzero — the fixture only asserts it is not the contention exit)
+  set +e
+  out=$(AEON_ROOT="$T" REGISTRY="$D/filing-registry.json" PATH="$T/bin:$PATH" \
+    bash "$FR" status --id absent-item 2>&1); rc0=$?
+  set -e
+  if [[ "$rc0" -ne 3 ]]; then pass "H: control rc $rc0 (not the contention exit)"; else bad "H: control already exits 3 — fixture meaningless"; fi
+
+  # hold the lock for 2s; the contended run lands well inside that window
+  flock -x "$D/filing-registry.json.lock" sleep 2 &
+  holder=$!
+  sleep 0.3
+  set +e
+  out=$(AEON_ROOT="$T" REGISTRY="$D/filing-registry.json" PATH="$T/bin:$PATH" \
+    bash "$FR" status --id absent-item 2>&1); rc=$?
+  set -e
+  wait "$holder"
+
+  assert_eq "$rc" "3" "H: contended status exits 3"
+  assert_contains "$out" "REGISTRY_BUSY" "H: contended status prints REGISTRY_BUSY"
+
+  # after release, behavior returns to the control outcome
+  set +e
+  out=$(AEON_ROOT="$T" REGISTRY="$D/filing-registry.json" PATH="$T/bin:$PATH" \
+    bash "$FR" status --id absent-item 2>&1); rc=$?
+  set -e
+  assert_eq "$rc" "$rc0" "H: after release rc returns to control ($rc0)"
+  rm -rf "$T"
+}
+
 test_a
 test_c
 test_d
 test_e
 test_f
 test_g
+test_h
 
 echo
 if [[ "$fail" -eq 0 ]]; then
