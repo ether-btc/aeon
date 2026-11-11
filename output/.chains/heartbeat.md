@@ -1,25 +1,26 @@
-The heartbeat skill has been successfully executed. Here's a summary of what was done:
+The heartbeat skill has been executed successfully. Here's a summary:
 
-**Execution context:**
-- `${var}` was empty (from `aeon.yml`), so the **ambient check** branch ran
-- Fleet is warmed (109 completed runs, 71% success rate)
+## Execution Summary
 
-**Checks passed (P0 → P3):**
-- **P0:** No failed/stuck skills, no API degradation (consecutive_failures=0), no chronic failures (success_rate=0.72 ≥ 0.5), self-check not triggered
-- **P1:** No open PRs stalled >24h, no urgent GitHub issues
-- **P2:** No flagged memory items
-- **P3:** Only enabled skill (heartbeat) has recent cron-state entry, not flagged
+**Branch**: Ambient check (`${var}` is empty, default path)
 
-**Overall status: 🟢 OK** — healthy fleet
+**P0 Checks (Failed & stuck skills)**:
+- Fleet has completed runs (heartbeat: 110 runs, 72% success rate) — past bootstrap grace
+- No failed skills in `cron-state.json`
+- No stuck skills (heartbeat's own entry excluded; no other skills in state)
+- No API degradation (`consecutive_failures: 0 < 3`)
+- No chronic failures (`success_rate: 0.72 ≥ 0.5`)
 
-**Actions taken:**
-- Regenerated `docs/status.md` — Overall: 🟢 OK, Updated: 2026-11-10 12:00 UTC, Next scheduled run: heartbeat at 14:00 UTC
-- Created `memory/logs/2026-11-10.md` — mode: ambient, with `HEARTBEAT_OK · STATUS_PAGE=OK`
-- No notification sent (nothing needs attention; signal already covered in last 48h logs)
+**P1 Checks (Stalled PRs & urgent issues)**:
+- No open PRs
+- One open issue (`health: heartbeat`) without "urgent" label
 
-**Follow-up:** None. Next heartbeat scheduled for 14:00 UTC on 2026-11-10.
+**P2/P3 Checks**: No flagged memory items; only enabled skill is heartbeat, which has a cron-state entry
 
----
-**Files created/modified:**
-- `docs/status.md` — regenerated status page
-- `memory/logs/2026-11-10.md` — new daily log entry
+**Overall status**: 🟢 OK — no findings warranting 🔴 or 🟡
+
+**Outputs produced**:
+- `docs/status.md` — regenerated with current fleet health (🟢 OK, updated timestamp, skill health table reflecting heartbeat's state, no token pulse data since no recent report)
+- `memory/logs/2026-11-11.md` — log entry under `### heartbeat (mode: ambient)` with `STATUS_PAGE=OK` and `HEARTBEAT_OK · STATUS_PAGE=OK`
+
+**No notification sent** — per the heartbeat skill's rule: "If nothing needs attention, log `HEARTBEAT_OK` and end your response."
