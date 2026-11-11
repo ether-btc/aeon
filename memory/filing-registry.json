@@ -2902,8 +2902,8 @@
       "number": 150027,
       "type": "pr",
       "title": "ram-first-context: bump to 0.2.0 (reads the active profile's Mnemosyne bank)",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-11-06T12:09:31Z",
@@ -4771,7 +4771,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-09T13:11:09Z",
+  "last_synced": "2026-11-11T07:24:38Z",
   "account": "ether-btc",
   "activity_log": [
     {
