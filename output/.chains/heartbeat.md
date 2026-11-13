@@ -1,26 +1,16 @@
-**HEARTBEAT_OK · STATUS_PAGE=OK**
+The heartbeat skill execution is complete. Here's a summary of what was accomplished:
 
-**P0 — Failed & stuck skills:** No failed skills; no stuck skills (only heartbeat in cron-state, self-excluded); no API degradation (consecutive_failures=0); no chronic failures (success_rate=0.73 ≥ 0.5, total_runs=114 ≥ 5).
+**Ambient check completed successfully with all signals green:**
 
-**P1 — Stalled PRs & urgent issues:** No open PRs (gh pr list returns empty); issue #1 "health: heartbeat" has no "urgent" label.
+- **P0:** No failed/stuck skills, no API degradation (consecutive_failures=0), no chronic failures (success_rate=73%)
+- **P1:** No stalled open PRs, no urgent-labeled GitHub issues
+- **P2:** No flagged memory items
+- **P3:** Only heartbeat skill is enabled; it has a cron-state entry; fleet has warmed (115+ runs) → no missing-skill flags
 
-**P2 — Flagged memory items:** No flagged items in memory/MEMORY.md or memory/issues/INDEX.md (no open rows).
+**Overall verdict: 🟢 OK** — regenerated `docs/status.md` reflecting healthy fleet status.
 
-**P3 — Missing scheduled skills:** Only heartbeat skill is enabled in aeon.yml; fleet has warmed (total_runs=114); no missing skills.
+**Log updated:** `memory/logs/2026-11-13.md` appended with `### heartbeat (mode: ambient)` heading and `HEARTBEAT_OK · STATUS_PAGE=OK`.
 
-**Token pulse:** No token-report-*.md files in output/articles/; renders as "_No recent token data (latest report 2026-04-11)._
+**No notification sent** — per the skill's rules, a clean run with no findings sends nothing.
 
-**Public status page (docs/status.md):** Overall 🟢 OK, updated open issues from 1 to 0 (issue #1 has no critical/high severity).
-
----
-## Summary
-
-- Executed `heartbeat` skill in ambient check mode (${var} empty)
-- Read `memory/MEMORY.md`, last 2 days of `memory/logs/`, and `memory/cron-state.json`
-- Ran all priority-tier checks (P0–P3) per the heartbeat skill grammar
-- Regenerated `docs/status.md` with 🟢 OK verdict, updated open issues count from 1 to 0
-- Updated `memory/logs/2026-11-13.md` under `### heartbeat (mode: ambient)` with findings and `HEARTBEAT_OK · STATUS_PAGE=OK`
-- No notification sent (fleet healthy, no findings requiring attention)
-- Next scheduled run: 08:00 UTC daily
-
-**HEARTBEAT_OK · STATUS_PAGE=OK**
+**No action required** until the next scheduled heartbeat run at 08:00/14:00/20:00 UTC daily.
