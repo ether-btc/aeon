@@ -3569,8 +3569,8 @@
       "number": 151924,
       "type": "pr",
       "title": "Add catalog entry: turn-completion-nudge (ether-btc)",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "merged",
       "next_action": "Await upstream review",
       "evidence_tier": "tier_2",
       "filed_at": "2026-11-09T12:41:25Z",
@@ -4771,7 +4771,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-11T07:24:38Z",
+  "last_synced": "2026-11-12T07:24:58Z",
   "account": "ether-btc",
   "activity_log": [
     {
