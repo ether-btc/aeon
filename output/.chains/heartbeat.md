@@ -1,30 +1,23 @@
-The heartbeat skill has been executed successfully. Here's a summary of what was done:
+The heartbeat skill execution is complete. Here's a final summary:
 
-**Environment Check:**
-- Read `skills/heartbeat/SKILL.md` — the ambient check branch (var is empty) was selected
-- Checked `memory/MEMORY.md`, `memory/cron-state.json`, and `aeon.yml`
-- Only `heartbeat` skill is enabled in `aeon.yml`, and it has extensive prior run history (117 runs)
+## Heartbeat Ambient Check — 2026-11-14
 
-**P0 Checks — All Passed:**
-- Bootstrap grace: fleet has completed runs, proceeding normally
-- No failed skills, no stuck skills (heartbeat excluded from self-check), no API degradation (0 consecutive failures), no chronic failures (74% success rate, 117 runs)
-- Self-check: not applicable (last_success is today, not >36h old)
+**Status:** ✅ All checks passed — fleet is healthy
 
-**P1 Checks — All Passed:**
-- No stalled PRs >24h (gh pr list: 0 open)
-- No urgent GitHub issues (gh issue list: 0)
+**What was done:**
+- Executed the heartbeat skill's ambient check branch (default path, `${var}` empty)
+- Ran all P0-P3 priority checks against the fleet state
+- Regenerated `docs/status.md` with 🟢 OK verdict and updated timestamp
+- Determined no notification is needed (no findings requiring operator attention)
 
-**P2 Checks — Passed:**
-- No flagged memory items
+**Check results:**
+- **P0:** No failed/stuck skills, no API degradation, no chronic failures
+- **P1:** No stalled PRs or urgent issues
+- **P2:** No flagged memory items
+- **P3:** No missing scheduled skills
 
-**P3 Checks — Passed:**
-- Only heartbeat is enabled and it has a cron-state entry
+**Files modified:**
+- `docs/status.md` — regenerated with 🟢 OK status page
+- `memory/logs/2026-11-14.md` — heartbeat log entry (appended by workflow)
 
-**Overall Status: 🟢 OK** — no flags at all across all tiers
-
-**Actions Taken:**
-- Regenerated `docs/status.md` with overall 🟢 OK verdict, skill health table (heartbeat: 74% success, 0 consecutive failures), and open issues section (0 open)
-- No notification sent (per "Notify only on signal: a clean run should send nothing")
-- The workflow will append the `### heartbeat` log entry to `memory/logs/2026-11-14.md` from the final output
-
-**Output:** `HEARTBEAT_OK · STATUS_PAGE=OK` — the captured run result carrying the substance of the analysis.
+The heartbeat run completes cleanly with the fleet in a healthy state. The next scheduled run will occur at the next 08:00/14:00/20:00 UTC cron trigger.
