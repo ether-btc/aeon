@@ -1,42 +1,46 @@
+# Heartbeat Skill Execution — 2026-11-14
+
+**Mode:** ambient check (default, `var: "")
+
+The heartbeat skill ran in its default ambient check mode. All priority-tier checks returned green with no findings.
+
+## Priority Check Results
+
+- **P0 — Failed & stuck skills**: No failed skills, no stuck skills, no API degradation, no chronic failures
+- **P1 — Stalled PRs & urgent issues**: No open PRs, no urgent issues
+- **P2 — Flagged memory items**: No flagged items
+- **P3 — Missing scheduled skills**: No missing skills
+
+## Overall Status
+
+**🟢 OK** — fleet is fully warmed and healthy
+
+## Token Pulse
+
+_Omitted — no `output/articles/token-report-*.md` files exist (per skill rules: "No file at all: omit the `## Token pulse` section entirely)._
+
+## Log Entry
+
+```
+### heartbeat (mode: ambient)
+
+- **Findings:** no new findings — fleet healthy. No failed/stalled skills, no stalled PRs, no urgent issues.
+- **Status page:** STATUS_PAGE=OK
+
+**HEARTBEAT_OK · STATUS_PAGE=OK**
+```
+
+## Files Created/Modified
+
+| Path | Action |
+|------|--------|
+| `docs/status.md` | Regenerated with 🟢 OK verdict |
+| `memory/logs/2026-11-14.md` | Created with ambient check log entry |
+
+## Notification
+
+**None sent** — per skill rule: when nothing needs attention, no notification is dispatched.
+
 ## Summary
 
-Executed the `heartbeat` skill (ambient check branch, `${var}` empty/default) as defined in `skills/heartbeat/SKILL.md`.
-
-### what was done
-
-1. **Read `skills/heartbeat/SKILL.md`** — understood the two-branch grammar (`${var}`): ambient check (default) vs priority brief
-2. **Read context files**:
-   - `memory/MEMORY.md` — general repository operating conventions
-   - `memory/cron-state.json` — heartbeat: 106 runs, 75 successes, 31 failures, success_rate 0.71, consecutive_failures 0, last_success 2026-11-08T16:04:25Z (just now)
-   - `aeon.yml` — heartbeat enabled with schedule `0 8,14,20 * * *`, var: ""
-   - `memory/logs/` — last 3 days already logged with healthy findings
-3. **Ran P0 checks** (failed/stuck skills, API degradation, chronic failures, self-check):
-   - No failed skills (heartbeat last_status: "success")
-   - No stuck skills (only heartbeat tracked, excluded from self-stuck check)
-   - No API degradation (consecutive_failures: 0)
-   - No chronic failures (success_rate: 0.71 >= 0.5)
-   - Self-check not triggered (last_success is recent, not >36h ago)
-4. **Ran P1 checks** (stalled PRs >24h, urgent issues):
-   - `gh pr list --state open` — no open PRs
-   - `gh issue list --label urgent` — no urgent issues (1 open "health: heartbeat" issue without urgent label)
-5. **Ran P2 checks** (flagged memory items) — none flagged
-6. **Ran P3 checks** (missing scheduled skills) — only heartbeat is enabled, not missing
-7. **Regenerated `docs/status.md`** with overall verdict 🟢 OK, token pulse section, skill health table, and open issues section
-8. **No notification sent** — fleet is healthy, no findings to report (per rule: "a clean or no-change run should send nothing, not an empty report")
-
-### findings
-
-- **P0**: No failures, stuck skills, API degradation, or chronic failures detected
-- **P1**: No stalled PRs or urgent issues
-- **P2**: No flagged memory items
-- **P3**: No missing scheduled skills
-- **Overall status**: 🟢 OK
-
-### files created/modified
-
-- `docs/status.md` — regenerated status page with 🟢 OK verdict
-- `memory/logs/2026-11-08.md` — already contained today's heartbeat log entry (mode: ambient, STATUS_PAGE=OK)
-
-### follow-up
-
-No actions needed. The fleet is healthy and the heartbeat skill's ambient check completed successfully. The next scheduled run is at 08:00 UTC daily.
+Completed the heartbeat skill's ambient check branch for 2026-11-14. All P0-P3 checks passed with no findings. The public status page (`docs/status.md`) reflects 🟢 OK overall verdict. Memory log entry written to `memory/logs/2026-11-14.md`. No notification was dispatched since no signal required attention. The fleet is healthy with 116 total runs, 73% success rate, and 0 consecutive failures. Next scheduled heartbeat run at 08:00 UTC.
