@@ -1,18 +1,20 @@
 ## Summary
 
-**What I did:** Executed the `heartbeat` skill in ambient check mode (${var} empty, the LIVE scheduled path). Completed the full P0-P3 check suite:
+**Heartbeat ambient check completed** for 2026-11-15.
 
-- **P0:** No failed/stuck skills, no API degradation, no chronic failures
-- **P1:** No stalled PRs, no urgent issues
-- **P2:** No flagged memory items
-- **P3:** No missing scheduled skills
+**Checks performed:**
+- **P0 (Failed & stuck skills):** heartbeat success (89/120 runs, 0 consecutive failures). No other enabled skills.
+- **P1 (Stalled PRs & urgent issues):** No open PRs; one open issue without "urgent" label.
+- **P2 (Flagged memory items):** No flagged items in memory/MEMORY.md.
+- **P3 (Missing scheduled skills):** heartbeat has cron-state entry, not missing.
+- **Overall status:** 🟢 OK
 
-**Files created/modified:**
-- `docs/status.md` — regenerated with 🟢 OK verdict, updated timestamp 2026-11-07 23:01 UTC, next scheduled run 2026-11-08 08:00 UTC; token pulse omitted (no report files)
-- `memory/logs/2026-11-07.md` — appended `### heartbeat (mode: ambient)` entry with `STATUS_PAGE=OK` and `HEARTBEAT_OK · STATUS_PAGE=OK`
-- `output/heartbeat-result.md` — detailed heartbeat analysis
-- `output/heartbeat-summary.md` — this summary
+**Status page:** `docs/status.md` regenerated with 🟢 OK verdict.
 
-**Follow-up actions needed:** None — fleet is healthy, all checks passed.
+**Log entry:** appended to `memory/logs/2026-11-15.md` under `### heartbeat (mode: ambient)`.
 
-**Status:** HEARTBEAT_OK · STATUS_PAGE=OK
+**No notification sent** — fleet is healthy, no findings to report.
+
+**Files modified:**
+- `docs/status.md` — regenerated with current fleet health
+- `memory/logs/2026-11-15.md` — heartbeat log entry added

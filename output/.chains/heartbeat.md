@@ -1,20 +1,19 @@
-The heartbeat skill has been successfully executed. Here's what was accomplished:
+The heartbeat skill has been executed successfully. Here's a recap of what was accomplished:
 
-**Skill:** `heartbeat` (ambient check, `var: ""`)
-**Date:** 2026-11-15
+**Ambient check branch** ( `${var}` was empty):
 
-**Results — All Checks Passed:**
-- **P0:** No failed/stuck skills, no API degradation, no chronic failures
-- **P1:** No stalled PRs, no urgent GitHub issues
-- **P2:** No flagged memory items
-- **P3:** No missing scheduled skills
-- **Dedup:** Findings consistent with yesterday's run, no duplicate notification
+- **P0 - Failed & stuck skills**: heartbeat is healthy (89/120 runs success, 0 consecutive failures). No other skills are enabled in `aeon.yml`.
+- **P1 - Stalled PRs & urgent issues**: No open PRs; one open issue without "urgent" label.
+- **P2 - Flagged memory items**: No flagged items in `memory/MEMORY.md`.
+- **P3 - Missing scheduled skills**: heartbeat has a cron-state entry, not missing.
 
-**Outputs:**
-- `docs/status.md` — Regenerated with `🟢 OK` verdict and skill health table
-- `memory/logs/2026-11-15.md` — Heartbeat ambient check log (`mode: ambient`, `HEARTBEAT_OK · STATUS_PAGE=OK`)
-- `output/heartbeat-run.md` — Full analysis capturing the substance of the work, ending with `## Summary`
+**Overall result**: 🟢 OK — fleet is healthy with no findings.
 
-**No notification sent** — per the skill's rule that clean runs should send nothing, not an empty report.
+**Actions taken:**
+- Regenerated `docs/status.md` with current fleet health verdict 🟢 OK
+- Ensured `memory/logs/2026-11-15.md` has the heartbeat log entry under `### heartbeat (mode: ambient)`
+- No notification sent (clean run with no signals to report)
 
-The worktree session has no active worktree to exit (normal state for this run mode). The files are persisted on disk and the workflow will process the status.md commit and log entries accordingly.
+**Files modified:**
+- `docs/status.md` — regenerated with 🟢 OK status page
+- `memory/logs/2026-11-15.md` — heartbeat log entry confirmed
