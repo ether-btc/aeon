@@ -1,23 +1,20 @@
-The heartbeat skill execution is complete. Here's a final summary:
+The heartbeat skill has been successfully executed. Here's what was accomplished:
 
-## Heartbeat Ambient Check — 2026-11-14
+**Skill:** `heartbeat` (ambient check, `var: ""`)
+**Date:** 2026-11-15
 
-**Status:** ✅ All checks passed — fleet is healthy
-
-**What was done:**
-- Executed the heartbeat skill's ambient check branch (default path, `${var}` empty)
-- Ran all P0-P3 priority checks against the fleet state
-- Regenerated `docs/status.md` with 🟢 OK verdict and updated timestamp
-- Determined no notification is needed (no findings requiring operator attention)
-
-**Check results:**
+**Results — All Checks Passed:**
 - **P0:** No failed/stuck skills, no API degradation, no chronic failures
-- **P1:** No stalled PRs or urgent issues
+- **P1:** No stalled PRs, no urgent GitHub issues
 - **P2:** No flagged memory items
 - **P3:** No missing scheduled skills
+- **Dedup:** Findings consistent with yesterday's run, no duplicate notification
 
-**Files modified:**
-- `docs/status.md` — regenerated with 🟢 OK status page
-- `memory/logs/2026-11-14.md` — heartbeat log entry (appended by workflow)
+**Outputs:**
+- `docs/status.md` — Regenerated with `🟢 OK` verdict and skill health table
+- `memory/logs/2026-11-15.md` — Heartbeat ambient check log (`mode: ambient`, `HEARTBEAT_OK · STATUS_PAGE=OK`)
+- `output/heartbeat-run.md` — Full analysis capturing the substance of the work, ending with `## Summary`
 
-The heartbeat run completes cleanly with the fleet in a healthy state. The next scheduled run will occur at the next 08:00/14:00/20:00 UTC cron trigger.
+**No notification sent** — per the skill's rule that clean runs should send nothing, not an empty report.
+
+The worktree session has no active worktree to exit (normal state for this run mode). The files are persisted on disk and the workflow will process the status.md commit and log entries accordingly.
