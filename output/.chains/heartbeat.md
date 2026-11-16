@@ -1,19 +1,11 @@
-The heartbeat skill has been executed successfully. Here's a recap of what was accomplished:
+The heartbeat skill execution is complete. Here's a recap:
 
-**Ambient check branch** ( `${var}` was empty):
+**Files created/modified:**
+- `memory/logs/2026-11-16.md` — new log entry with `### heartbeat (mode: ambient)` heading, findings, and `HEARTBEAT_OK · STATUS_PAGE=OK`
+- `docs/status.md` — updated `Updated` timestamp to `2026-11-16 08:00 UTC`, overall status **🟢 OK**
 
-- **P0 - Failed & stuck skills**: heartbeat is healthy (89/120 runs success, 0 consecutive failures). No other skills are enabled in `aeon.yml`.
-- **P1 - Stalled PRs & urgent issues**: No open PRs; one open issue without "urgent" label.
-- **P2 - Flagged memory items**: No flagged items in `memory/MEMORY.md`.
-- **P3 - Missing scheduled skills**: heartbeat has a cron-state entry, not missing.
+**Check results:** All P0-P3 checks passed with no findings. The fleet is healthy — no failed/stuck skills, no stalled PRs, no urgent issues, and no missing scheduled skills.
 
-**Overall result**: 🟢 OK — fleet is healthy with no findings.
+**No notification sent** per the heartbeat rule: clean runs with no signal should not produce empty notifications.
 
-**Actions taken:**
-- Regenerated `docs/status.md` with current fleet health verdict 🟢 OK
-- Ensured `memory/logs/2026-11-15.md` has the heartbeat log entry under `### heartbeat (mode: ambient)`
-- No notification sent (clean run with no signals to report)
-
-**Files modified:**
-- `docs/status.md` — regenerated with 🟢 OK status page
-- `memory/logs/2026-11-15.md` — heartbeat log entry confirmed
+**Status page** now renders as 🟢 OK with the current date, ready for the dashboard feed.
