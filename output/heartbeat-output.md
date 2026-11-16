@@ -1,28 +1,50 @@
-Heartbeat Ambient Check — 2026-11-13
+## Ambient Check Results
 
-Selector: ${var} empty → Ambient check branch.
+**Overall Status**: 🟢 OK — fleet is healthy, no flags at any priority tier
 
-P0: No failed/stuck skills, no API degradation, no chronic failures.
-P1: No stalled PRs, no urgent issues.
-P2: No flagged memory items.
-P3: Only heartbeat enabled; has cron-state entry; fleet warmed → no flags.
+**P0 (Failed & stuck skills)**: 
+- No failed skills (only heartbeat in cron-state.json, last_status: "success")
+- No stuck skills (no other entries in cron-state.json excluding heartbeat)
+- No API degradation (consecutive_failures: 0 < 3)
+- No chronic failures (success_rate: 0.75 ≥ 0.5, total_runs: 122 ≥ 5)
 
-Overall: 🟢 OK. docs/status.md regenerated. Token pulse omitted (no token-report files). Open issues: "No open issues."
+**P1 (Stalled PRs & urgent issues)**: 
+- No open PRs stalled >24h (gh pr list returned no open PRs)
+- No GitHub issues labeled urgent (only "health: heartbeat" issue exists but is not labeled urgent)
 
-Log: memory/logs/2026-11-13.md updated with HEARTBEAT_OK · STATUS_PAGE=OK. No notification sent.
+**P2 (Flagged memory items)**: 
+- No flagged items in memory/MEMORY.md
+
+**P3 (Missing scheduled skills)**: 
+- Only heartbeat is enabled: true in aeon.yml, and it has an entry in cron-state.json
+- No enabled skills missing from state file
+
+**Dedup**: Finding "no new findings — fleet healthy" already appears in memory/logs/2026-11-16.md (within last 48h). Notification skipped per dedup rule.
+
+**Status Page**: 🟢 OK — regenerated docs/status.md with current fleet health data
+
+**Notification**: Skipped — same finding already reported in last 48h
+
+---
+
+## Log Entry (mode: ambient)
+
+mode: ambient
+- **Findings:** no new findings — fleet healthy. No failed/stalled skills, no stalled PRs, no urgent issues.
+- **Status page:** STATUS_PAGE=OK
+
+**HEARTBEAT_OK · STATUS_PAGE=OK**
+
+---
 
 ## Summary
 
-**What was done:**
-- Executed the heartbeat skill's ambient check branch (${var} empty)
-- Checked all priority tiers (P0-P3): all green, no findings
-- Regenerated docs/status.md with overall verdict 🟢 OK
-- Updated memory/logs/2026-11-13.md with ambient check log entry
-- No notifications sent (nothing needs attention)
+- Executed heartbeat skill in ambient check mode (var: empty, default fleet health check)
+- Ran full P0-P3 priority tier checks against cron-state.json, aeon.yml, and GitHub API
+- Found no failed/stuck skills, no API degradation, no chronic failures, no stalled PRs, no urgent issues, no flagged memory items, no missing scheduled skills
+- Regenerated docs/status.md with 🟢 OK verdict and updated timestamp
+- Skipped notification per dedup rule (same finding in last 48h logs)
+- No skills flagged, no actions needed
+- Files modified: docs/status.md (regenerated), memory/logs/2026-11-16.md (log entry written)
 
-**Files created/modified:**
-- `docs/status.md` — regenerated with skill health table, open issues section, and 🟢 OK status
-- `memory/logs/2026-11-13.md` — appended ambient check log entry with HEARTBEAT_OK · STATUS_PAGE=OK
-
-**Follow-up actions:**
-- None — fleet is healthy, no action required until next scheduled run
+**Final Status**: HEARTBEAT_OK · STATUS_PAGE=OK
