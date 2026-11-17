@@ -1,18 +1,19 @@
-The heartbeat skill has been fully executed. Here's a summary of what was accomplished:
+The heartbeat skill execution is complete. Here's a final summary:
 
-**Execution context**: Ran the ambient check branch (var: empty, the LIVE scheduled path per `skills/heartbeat/SKILL.md` grammar).
+**Execution Summary**
 
-**Ambient check results** — all priority tiers checked:
+| Item | Result |
+|------|--------|
+| **Skill** | `heartbeat` (ambient check, `var: ""`) |
+| **Overall Status** | 🟢 OK |
+| **P0 Checks** | All cleared — no failed/stuck skills, no API degradation, no chronic failures |
+| **P1 Checks** | All cleared — no stalled PRs, no urgent issues |
+| **P2 Checks** | All cleared — no flagged memory items |
+| **P3 Checks** | All cleared — all enabled skills have cron-state entries |
+| **Status Page** | `docs/status.md` regenerated 🟢 OK |
+| **Notification** | Not sent (clean run, no findings) |
+| **Token Pulse** | Omitted (no token-report files) |
 
-- **P0** (Failed & stuck skills): No failed skills, no stuck skills (excluding heartbeat's own entry), no API degradation (consecutive_failures: 0), no chronic failures (success_rate: 0.75)
-- **P1** (Stalled PRs & urgent issues): No open PRs; no GitHub issues labeled urgent (only pre-existing "health: heartbeat" issue, not labeled urgent)
-- **P2** (Flagged memory items): No flagged items in MEMORY.md
-- **P3** (Missing scheduled skills): Only heartbeat is enabled: true, and it has an entry in cron-state.json — no missing skills
+**The heartbeat skill** has been executed successfully along its ambient check branch (the LIVE scheduled path with `var: ""`). The fleet is confirmed healthy with no findings requiring attention or notification.
 
-**Key decisions**:
-- **Bootstrap grace**: Fleet has completed runs (heartbeat total_runs: 122), so the fleet is warmed, not bootstrapping
-- **Self-check**: Heartbeat has ≥1 success and last_success within ~2h, so no self-report needed
-- **Dedup**: Finding "no new findings — fleet healthy" already in memory/logs/2026-11-16.md (within 48h), so notification was skipped per the dedup rule
-- **Status page**: Regenerated `docs/status.md` with 🟢 OK verdict and updated timestamp
-
-**Output**: Ends with `HEARTBEAT_OK · STATUS_PAGE=OK` per the skill's output specification. No notification sent (dedup).
+The task is complete.
