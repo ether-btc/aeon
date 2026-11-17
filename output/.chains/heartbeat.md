@@ -1,19 +1,18 @@
-The heartbeat skill execution is complete. Here's a final summary:
+The heartbeat skill execution is complete. Here's what was accomplished:
 
-**Execution Summary**
+**Execution context:** `var: ""` → ambient check branch (the LIVE scheduled path that runs daily at 08:00 UTC)
 
-| Item | Result |
-|------|--------|
-| **Skill** | `heartbeat` (ambient check, `var: ""`) |
-| **Overall Status** | 🟢 OK |
-| **P0 Checks** | All cleared — no failed/stuck skills, no API degradation, no chronic failures |
-| **P1 Checks** | All cleared — no stalled PRs, no urgent issues |
-| **P2 Checks** | All cleared — no flagged memory items |
-| **P3 Checks** | All cleared — all enabled skills have cron-state entries |
-| **Status Page** | `docs/status.md` regenerated 🟢 OK |
-| **Notification** | Not sent (clean run, no findings) |
-| **Token Pulse** | Omitted (no token-report files) |
+**Priority checks — all clean:**
+- **P0:** No failed/stuck skills, no API degradation (0 consecutive failures), no chronic failures (75% success rate), no stale self-check (last success today, not >36h old)
+- **P1:** 0 open PRs, no urgent GitHub issues
+- **P2:** No flagged memory items
+- **P3:** No missing scheduled skills (fleet warmed; only heartbeat enabled with cron-state entry)
 
-**The heartbeat skill** has been executed successfully along its ambient check branch (the LIVE scheduled path with `var: ""`). The fleet is confirmed healthy with no findings requiring attention or notification.
+**Overall verdict:** 🟢 OK — no flags at any priority tier
 
-The task is complete.
+**Artifacts:**
+- `memory/logs/2026-11-17.md` — appended `### heartbeat (mode: ambient)` entry with `mode: ambient` discriminator and `STATUS_PAGE=OK`
+- `docs/status.md` — regenerated with 🟢 OK verdict, skill health table, and no open issues
+- No notifications sent (clean run per skill rules)
+
+**Fleet health snapshot:** 124 total runs, 93 successes, 31 failures, 75% success rate, 0 consecutive failures.
