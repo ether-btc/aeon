@@ -3585,6 +3585,27 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "ether-btc/hermes-agent#11",
+      "repo": "ether-btc/hermes-agent",
+      "number": 11,
+      "type": "pr",
+      "title": "test(install-e2e): bound pre-PM browser downloads so v2026.5.7 legs stop hanging",
+      "state": "open",
+      "status": "parked",
+      "next_action": "Operator decision: merge PR #11 (then delete branch ci/install-e2e-hang-probe + close issue #10); CI was green-running at park time",
+      "evidence_tier": "Tier 3: probe run #89 confirmed oopDownloadBrowserMain ep_poll stall; fix verified run #90 both legs green 5-7min; PARKED by operator 2026-11-17",
+      "filed_at": "2026-11-16T20:12:38Z",
+      "last_action": "2026-11-17T10:17:40Z",
+      "url": "https://github.com/ether-btc/hermes-agent/pull/11",
+      "actions_taken": [
+        "Filed: test(install-e2e): bound pre-PM browser downloads so v2026.5.7 legs stop hanging",
+        "Parked by operator 2026-11-17 on request"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "issues": [
@@ -4771,10 +4792,31 @@
       "title": "docs: database_path default comment says lcm.db but Hermes plugin uses hermes-lcm.db",
       "type": "issue",
       "url": "https://github.com/stephenschoettler/hermes-lcm/issues/246"
+    },
+    {
+      "id": "ether-btc/hermes-agent#10",
+      "repo": "ether-btc/hermes-agent",
+      "number": 10,
+      "type": "issue",
+      "title": "install-e2e v2026.5.7 legs hang at 60-min timeout since Nov 12 (run 78-88)",
+      "state": "open",
+      "status": "parked",
+      "next_action": "Close after PR #11 merges",
+      "evidence_tier": "Root cause: CDN stream never closes after 100% of 170.4MiB CFT-147; closed-by PR #11 when merged; PARKED by operator 2026-11-17",
+      "filed_at": "2026-11-16T19:29:00Z",
+      "last_action": "2026-11-17T10:17:40Z",
+      "url": "https://github.com/ether-btc/hermes-agent/issues/10",
+      "actions_taken": [
+        "Filed: install-e2e v2026.5.7 legs hang at 60-min timeout since Nov 12 (run 78-88)",
+        "Parked by operator 2026-11-17 on request"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-16T03:02:21Z",
+  "last_synced": "2026-11-17T10:17:41Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -6689,6 +6731,30 @@
       "type": "status_update",
       "ref": "NousResearch/hermes-agent#150027",
       "desc": "merged gone from OPEN list; gh pr view: state=MERGED mergedAt=2026-11-10T09:58:23Z (ram-first-context bump 0.2.0, reads active profile's Mnemosyne bank)"
+    },
+    {
+      "ts": "2026-11-17T10:17:19Z",
+      "type": "filed",
+      "ref": "ether-btc/hermes-agent#11",
+      "desc": "Filed: test(install-e2e): bound pre-PM browser downloads so v2026.5.7 legs stop hanging"
+    },
+    {
+      "ts": "2026-11-17T10:17:20Z",
+      "type": "filed",
+      "ref": "ether-btc/hermes-agent#10",
+      "desc": "Filed: install-e2e v2026.5.7 legs hang at 60-min timeout since Nov 12 (run 78-88)"
+    },
+    {
+      "ts": "2026-11-17T10:17:40Z",
+      "type": "status_update",
+      "ref": "ether-btc/hermes-agent#11",
+      "desc": "parked Parked by operator 2026-11-17 on request"
+    },
+    {
+      "ts": "2026-11-17T10:17:41Z",
+      "type": "status_update",
+      "ref": "ether-btc/hermes-agent#10",
+      "desc": "parked Parked by operator 2026-11-17 on request"
     }
   ]
 }
