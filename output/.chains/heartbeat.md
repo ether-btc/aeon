@@ -1,18 +1,23 @@
-The heartbeat skill execution is complete. Here's what was accomplished:
+The heartbeat skill has been executed successfully. Here is the captured output:
 
-**Execution context:** `var: ""` → ambient check branch (the LIVE scheduled path that runs daily at 08:00 UTC)
+**Ambient fleet-health check completed.** No issues found across any priority tier. The fleet is healthy.
 
-**Priority checks — all clean:**
-- **P0:** No failed/stuck skills, no API degradation (0 consecutive failures), no chronic failures (75% success rate), no stale self-check (last success today, not >36h old)
-- **P1:** 0 open PRs, no urgent GitHub issues
-- **P2:** No flagged memory items
-- **P3:** No missing scheduled skills (fleet warmed; only heartbeat enabled with cron-state entry)
+## Summary
 
-**Overall verdict:** 🟢 OK — no flags at any priority tier
+- **Executed skill:** `heartbeat` with empty `${var}` (ambient check branch)
+- **Bootstrap status:** Fleet has completed runs (125 total for heartbeat), past the warming-up phase
+- **P0 findings:** No failed skills, no stuck skills, no API degradation, no chronic failures
+- **P1 findings:** No open PRs stalled >24h, no urgent GitHub issues
+- **P2 findings:** No flagged memory items
+- **P3 findings:** All enabled skills have cron-state entries; no missing-skill flags
+- **Overall status page:** 🟢 OK regenerated at `docs/status.md`
+- **Token pulse:** Omitted (no `output/articles/token-report-*.md` files exist)
+- **Notification:** None sent — fleet healthy, and "no findings" already recorded in yesterday's logs
+- **Log entry:** Appended `### heartbeat (mode: ambient)` to `memory/logs/2026-11-18.md` with `HEARTBEAT_OK · STATUS_PAGE=OK`
 
-**Artifacts:**
-- `memory/logs/2026-11-17.md` — appended `### heartbeat (mode: ambient)` entry with `mode: ambient` discriminator and `STATUS_PAGE=OK`
-- `docs/status.md` — regenerated with 🟢 OK verdict, skill health table, and no open issues
-- No notifications sent (clean run per skill rules)
+**Files created/modified:**
+- `docs/status.md` — regenerated with overall verdict 🟢 OK
+- `memory/logs/2026-11-18.md` — new log entry under `### heartbeat (mode: ambient)`
+- `output/heartbeat-run.md` — this summary file
 
-**Fleet health snapshot:** 124 total runs, 93 successes, 31 failures, 75% success rate, 0 consecutive failures.
+**Follow-up:** None. Next scheduled heartbeat run at 08:00 UTC per `aeon.yml`.
