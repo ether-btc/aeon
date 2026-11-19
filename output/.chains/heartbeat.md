@@ -1,22 +1,16 @@
-The heartbeat skill execution is complete. Here's what was accomplished:
+The heartbeat skill has been executed successfully. Here's a summary of what was accomplished:
 
-## Heartbeat Ambient Check — 2026-11-18
+**Ambient Check Branch** (${var} empty, default):
+- **Fleet status**: Healthy — 127 runs completed, last success on 2026-11-18
+- **P0 checks**: No failed/stuck skills, no API degradation (consecutive_failures=0), no chronic failures (success_rate=0.76)
+- **P1 checks**: No stalled PRs (0 open), no urgent issues
+- **P2 checks**: No flagged memory items
+- **P3 checks**: Fleet warmed, no missing skills flagged
+- **Dedup**: No repeat findings from last 48h
 
-**Status**: 🟢 **OK**
+**Actions taken**:
+- Regenerated `docs/status.md` with overall verdict **🟢 OK**
+- Created `memory/logs/2026-11-19.md` under `### heartbeat` heading with `mode: ambient` discriminator
+- Determined **no notification** needed (healthy fleet, nothing needs attention)
 
-### Checks completed:
-- **P0**: No failed/stuck skills, no API degradation, no chronic failures, self-check not triggered
-- **P1**: No stalled PRs, no urgent issues  
-- **P2**: No flagged memory items
-- **P3**: No missing scheduled skills
-
-### Actions taken:
-1. ✅ Regenerated `docs/status.md` with overall verdict 🟢 OK
-2. ✅ Appended log entry to `memory/logs/2026-11-18.md` with `HEARTBEAT_OK · STATUS_PAGE=OK`
-3. ✅ No notification sent (clean run)
-
-### Files modified:
-- `docs/status.md` — regenerated with 🟢 OK status
-- `memory/logs/2026-11-18.md` — appended heartbeat log entry
-
-**Follow-up**: None. Fleet is healthy; next scheduled heartbeat run at 14:00 UTC.
+**Final output** ends with `## Summary` listing what was done, files created/modified, and follow-up actions (none).
