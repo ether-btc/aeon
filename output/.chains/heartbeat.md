@@ -1,17 +1,28 @@
-The heartbeat skill execution is complete. Here's what was accomplished:
+## Summary
 
-| Aspect | Result |
-|--------|--------|
-| **Mode** | Ambient check (`${var}` empty, default) |
-| **Fleet status** | Healthy — no failures, no stuck skills |
-| **P0 findings** | None (no failed/stuck skills, no API degradation, no chronic failures) |
-| **P1 findings** | None (no stalled PRs, no urgent issues) |
-| **P2 findings** | None (no flagged memory items) |
-| **P3 findings** | None (only heartbeat enabled, has cron-state entry) |
-| **Dedup** | Notification skipped — same findings in last 48h |
-| **Status page** | Regenerated `docs/status.md` → `🟢 OK` |
-| **Log entry** | Appended to `memory/logs/2026-11-20.md` (mode: ambient) |
-| **Notification** | Skipped (dedup applied) |
-| **Next run** | 20:00 UTC (cron: `0 8,14,20 * * *`) |
+The heartbeat skill executed the **ambient check** branch ( `${var}` was empty). Here's what was verified:
 
-The skill was executed per the `skills/heartbeat/SKILL.md` definition, following the ambient check branch, running all priority checks (P0–P3), applying the dedup rule, regenerating the status page, and logging the result — with no notification sent due to the deduplication guard.
+**P0 Checks (Failed & stuck skills):**
+- No failed skills — heartbeat's `last_status: "success"`, no other skills in `cron-state.json` with failures
+- No stuck skills — no other entries in `cron-state.json`; heartbeat's own entry excluded from self-check
+- No API degradation — `consecutive_failures: 0`
+- No chronic failures — `success_rate: 0.77` (not < 0.5), `total_runs: 133` (≥ 5)
+- Self-check — heartbeat has `total_successes: 102` (≥ 1), `last_success: 2026-11-20T23:13:42Z` within 36h, so no trigger
+
+**P1 Checks (Stalled PRs & urgent issues):**
+- No open PRs (`gh pr list --state open --limit 10` returned no results)
+- No open issues (`gh issue list` returned no results; `memory/issues/INDEX.md` empty)
+
+**P2 Checks (Flagged memory items):** None in `memory/MEMORY.md`
+
+**P3 Checks (Missing scheduled skills):** heartbeat has an entry in `cron-state.json` (past bootstrapping phase); other skills in `aeon.yml` are `enabled: false`
+
+**Overall status:** 🟢 OK — no degradation flags met
+
+**Files created/modified:**
+- `docs/status.md` — regenerated with fleet health (🟢 OK, skill table updated, token pulse with "no recent data", no open issues)
+- `memory/logs/2026-11-21.md` — created under `### heartbeat` heading with `mode: ambient` discriminator and `HEARTBEAT_OK · STATUS_PAGE=OK`
+
+**No notification sent** — nothing needs attention. Fleet is healthy and all checks pass.
+
+**Follow-up actions needed:** None.
