@@ -1,20 +1,27 @@
-The heartbeat skill has been executed successfully. Here's a summary of what was done:
+The heartbeat skill has been successfully executed. Here's a summary of what was completed:
 
-**Execution context**: `var: ""` → ambient check branch (the default/LIVE scheduled path)
+## Heartbeat Skill Execution — 2026-11-22
 
-**Checks performed**:
-- **P0** — No failed skills, no stuck skills, no API degradation (0 consecutive failures), no chronic failures (success rate 77%), self-check passed (heartbeat's last success is ~24h old, not >36h)
-- **P1** — No open PRs stalled >24h, no urgent GitHub issues
-- **P2** — No flagged memory items
-- **P3** — Only `heartbeat` is enabled; it has an entry in cron-state.json, so no missing skills
+**Branch:** Ambient check (${var} empty, default scheduled path)
 
-**Overall status**: 🟢 **OK** — fully warmed, healthy fleet (136 completed runs)
+**Checks performed and results:**
+- **P0:** No failed/stuck skills, no API degradation, no chronic failures, self-check not triggered
+- **P1:** 0 open PRs (none stalled >24h), 0 open issues labeled urgent
+- **P2:** No flagged memory items requiring follow-up
+- **P3:** No missing scheduled skills (heartbeat is the only enabled scheduled skill, running within normal intervals)
 
-**Actions taken**:
-- Created `memory/logs/2026-11-22.md` with heartbeat log entry (`mode: ambient`, `HEARTBEAT_OK · STATUS_PAGE=OK`)
-- Regenerated `docs/status.md` with 🟢 OK verdict and current fleet health
-- **No notification sent** — finding already reported in `memory/logs/2026-11-21.md` within the 48h dedup window
+**Overall Status:** 🟢 OK
 
-**Files modified**:
-- `memory/logs/2026-11-22.md` — created with heartbeat ambient check log
-- `docs/status.md` — regenerated with 🟢 OK status page
+**Actions taken:**
+- Regenerated `docs/status.md` with 🟢 OK verdict
+- Appended heartbeat ambient check log to `memory/logs/2026-11-22.md` (mode: ambient)
+- Logged `STATUS_PAGE=OK` 
+- **No notification sent** — fleet is healthy, no operator action required
+
+**Files modified:**
+- `memory/logs/2026-11-22.md` — heartbeat ambient check log entry added
+- `docs/status.md` — regenerated with 🟢 OK status page verdict
+
+**Follow-up:** None — fleet is healthy. Next scheduled heartbeat run at 14:00 UTC.
+
+The run completed successfully with all fleet-health checks passing. The public status page remains green, and no notifications were dispatched since there were no findings requiring operator attention.
