@@ -1,33 +1,25 @@
-The heartbeat skill has been executed successfully. Here's a summary of what was done and the results:
+The heartbeat skill execution is complete. Here's a final recap:
 
-## Execution Summary
+**Execution Context:**
+- `${var}` was empty → ambient check branch (LIVE scheduled path)
+- Fleet status: Warmed (139 completed runs, 78% success rate)
+- All priority tiers (P0-P3) cleared with no findings
 
-**Branch**: Ambient check (`var` is empty)
+**Results:**
+- **Overall status:** 🟢 OK — fully healthy fleet
+- **No failed skills** detected
+- **No stuck skills** detected  
+- **No API degradation** (consecutive_failures: 0)
+- **No chronic failures** (success_rate: 0.78)
+- **No stalled PRs** or urgent issues
+- **No flagged memory items**
+- **Token pulse** omitted (no recent token-report articles)
 
-### P0 Checks — Failed & stuck skills
-- **Failed skills**: None (heartbeat's `last_status: "success"`)
-- **Stuck skills**: None (no other skills in `cron-state.json`; heartbeat excluded per self-reference rule)
-- **API degradation**: None (`consecutive_failures: 0`, well below threshold of 3)
-- **Chronic failures**: None (`success_rate: 0.78 ≥ 0.5`)
-- **Self-check**: Not triggered (`last_success: 2026-11-22 20:29 UTC` is < 36h old)
+**Outputs Created:**
+- `memory/logs/2026-11-23.md` — heartbeat log with `mode: ambient` and `HEARTBEAT_OK · STATUS_PAGE=OK`
+- `docs/status.md` — regenerated status page with 🟢 OK verdict
+- `output/final-output.md` — comprehensive skill output with `## Summary`
 
-### P1 Checks — Stalled PRs & urgent issues
-- No open PRs stalled >24h ( `gh pr list` returned empty)
-- No GitHub issues labeled urgent ( `gh issue list` returned empty)
+**No notification sent** — per the skill's own rules: "If nothing needs attention, log `HEARTBEAT_OK` and end your response."
 
-### P2 Checks — Flagged memory items
-- No items flagged in `memory/MEMORY.md`
-
-### P3 Checks — Missing scheduled skills
-- Only `heartbeat` is enabled in `aeon.yml`
-- `heartbeat` has a recent entry in `cron-state.json`
-- `last_success` is not >2x schedule interval old → no flag
-
-### Overall status: 🟢 OK
-
-### Outputs created
-- **`docs/status.md`** — Regenerated with overall verdict `🟢 OK`, skill health table populated from `cron-state.json` (heartbeat: last run 2026-11-22 20:29 UTC, ✅ success, 78% success rate, 0 consecutive failures)
-- **`memory/logs/2026-11-23.md`** — Log entry under `### heartbeat` heading with `mode: ambient`, findings: "no new findings — fleet healthy", and `STATUS_PAGE=OK`
-
-### No notification sent
-Per the skill's rule: "If nothing needs attention, log `HEARTBEAT_OK` and end your response." No notification was dispatched since there are no findings to report.
+The run is complete with the required `## Summary` section listing what was done, files created/modified, and follow-up actions needed (none).

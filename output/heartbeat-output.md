@@ -1,59 +1,39 @@
-# Heartbeat Ambient Check — 2026-11-22
+Heartbeat Ambient Check - 2026-11-23
 
-**Overall Status: 🟢 OK**
+=======================================
 
-## Findings
+var is empty → ambient check branch
 
-The ambient fleet-health check ran across all enabled skills and fleet items. All checks passed:
+Fleet status: Warmed (heartbeat: 139 runs, 78% success rate, 0 consecutive failures)
 
-### P0 — Failed & Stuck Skills
-- **Failed skills**: None recorded. Heartbeat's own entry shows `last_status: "success"` with 106 successes out of 137 runs (success_rate: 77%).
-- **Stuck skills**: No other skills in cron-state.json with `last_status: "dispatched"` beyond the 45-minute threshold.
-- **API degradation**: None (consecutive_failures: 0).
-- **Chronic failures**: None (success_rate 0.77 ≥ 0.5 threshold; total_runs 137 ≥ 5).
-- **Self-check**: Not triggered — heartbeat's `last_success` (2026-11-22 13:33 UTC) is recent, not >36 hours stale.
+P0 — Failed & stuck skills:
+- No failed skills (only heartbeat in cron-state, last_status: success)
+- No stuck skills (excluding heartbeat; no other skills have dispatched entries in cron-state.json)
+- No API degradation (consecutive_failures: 0)
+- No chronic failures (success_rate: 0.78, total_runs: 139 ≥ 5)
+- Self-check: not triggered (last_success within 36h of run time)
 
-### P1 — Stalled PRs & Urgent Issues
-- No open PRs found (`gh pr list --state open` returned 0 results).
-- No open issues labeled urgent found (`gh issue list` returned 0 results).
+P1 — Stalled PRs & urgent issues:
+- No open PRs stalled >24h (gh pr list returns no open PRs)
+- No GitHub issues labeled urgent
 
-### P2 — Flagged Memory Items
-- No items flagged in `memory/MEMORY.md` requiring follow-up.
+P2 — Flagged memory items:
+- No items flagged in memory/MEMORY.md
 
-### P3 — Missing Scheduled Skills
-- Only `heartbeat` is enabled among scheduled skills.
-- Heartbeat's `last_success` (today) is within normal schedule intervals (daily at 08:00/14:00/20:00 UTC).
-- No missing or overdue scheduled skills.
+P3 — Missing scheduled skills:
+- Only heartbeat has enabled: true in aeon.yml; all other skills have enabled: false
+- No missing skills to flag
 
-### Public Status Page
-- Regenerated `docs/status.md` with overall verdict **🟢 OK**.
-- No token data available (latest token-report missing, omitted per rules).
-- No open issues to display.
+Dedup check: No findings in last 48h of memory/logs/ to skip
 
-### Dedup Check
-- No findings from the last 48 hours repeated in notification (today's log is fresh with no prior findings).
+Overall status: 🟢 OK
 
-## Log
-- Appended to `memory/logs/2026-11-22.md` under `### heartbeat` heading with `mode: ambient` discriminator.
-- Status-page verdict: `STATUS_PAGE=OK`
+Public status page: docs/status.md regenerated with 🟢 OK verdict
+Token pulse: omitted (no output/articles/token-report-*.md files exist)
 
-## Notification
-- **No notification sent** — fleet is healthy, no signal requires operator attention.
+Output: Since nothing needs attention, no notification sent
 
----
+HEARTBEAT_OK · STATUS_PAGE=OK
 
 ## Summary
-
-- Executed the `heartbeat` skill in ambient check mode (`${var}` empty)
-- Read `memory/MEMORY.md`, `memory/cron-state.json`, and the last 2 days of `memory/logs/`
-- Ran P0-P3 checks across the fleet: no failed/stuck skills, no stalled PRs/issues, no flagged memory items, no missing scheduled skills
-- Regenerated `docs/status.md` with 🟢 OK verdict (content unchanged, reaffirmed)
-- Committed status page; logged `HEARTBEAT_OK · STATUS_PAGE=OK` to `memory/logs/2026-11-22.md`
-- No notification sent — fleet is healthy, no action required
-- No findings to report; run completed successfully
-
-**Files modified:**
-- `memory/logs/2026-11-22.md` — appended heartbeat ambient check log
-- `docs/status.md` — regenerated with 🟢 OK verdict (content unchanged, reaffirmed)
-
-**Follow-up:** None — fleet is healthy. Next scheduled heartbeat run at 14:00 UTC.
+Completed ambient heartbeat check across the fleet. All priority tiers (P0-P3) cleared with no findings. Regenerated docs/status.md with 🟢 OK verdict. No notifications sent. Log entry HEARTBEAT_OK · STATUS_PAGE=OK recorded in memory/logs/2026-11-23.md. No follow-up actions needed.
