@@ -2989,14 +2989,15 @@
       "title": "fix(recovery): read-only source connections + fail-closed restore replay",
       "state": "closed",
       "status": "merged",
-      "next_action": "await upstream review",
+      "next_action": "Landed upstream 2026-11-18 (read-only source connections + fail-closed restore replay); fold into next Mnemosyne wheel update (both local trees: wt-sync provider + ~/mnemosyne CLI/cron)",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-10-31T06:49:46Z",
-      "last_action": "2026-11-09T03:04:30Z",
+      "last_action": "2026-11-23T03:03:21Z",
       "url": "https://github.com/mnemosyne-oss/mnemosyne/pull/1304",
       "actions_taken": [
         "Filed: fix(recovery): read-only source connections + fail-closed restore replay",
-        "head-only move b7f9215->7a0f39f (rebase/force-push, no review-state change)"
+        "head-only move b7f9215->7a0f39f (rebase/force-push, no review-state change)",
+        "Monitor: dropped from open-PR list; gh pr view confirms state=MERGED, mergedAt=2026-11-18T01:59:08Z"
       ],
       "notes": "",
       "labels": [],
@@ -3152,14 +3153,15 @@
       "type": "pr",
       "title": "docs(prompting): measured evidence that an explicit rubric in the question matters",
       "state": "open",
-      "status": "pending_review",
-      "next_action": "Await upstream review",
+      "status": "needs_attention",
+      "next_action": "Upstream account Bodila51 no longer resolves (user+repo 404 as of 2026-11-23); PR state UNKNOWN - recheck periodically for a renamed account before closing out",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-09-26T05:49:36Z",
-      "last_action": "2026-09-26T05:49:36Z",
+      "last_action": "2026-11-23T03:03:20Z",
       "url": "https://github.com/Bodila51/muse-jev-playbook/pull/2",
       "actions_taken": [
-        "Filed: docs(prompting): measured evidence that an explicit rubric in the question matters"
+        "Filed: docs(prompting): measured evidence that an explicit rubric in the question matters",
+        "Monitor: dropped from open-PR list; gh pr view + API: repo and user Bodila51 both 404 - state UNKNOWN, not confirmed closed/merged"
       ],
       "notes": "",
       "labels": [],
@@ -3192,14 +3194,15 @@
       "type": "pr",
       "title": "fix: harden offline Jev router safety",
       "state": "open",
-      "status": "pending_review",
-      "next_action": "Await upstream review",
+      "status": "needs_attention",
+      "next_action": "Upstream account Bodila51 no longer resolves (user+repo 404 as of 2026-11-23); PR state UNKNOWN - recheck periodically for a renamed account before closing out",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-09-25T01:07:46Z",
-      "last_action": "2026-09-25T01:07:46Z",
+      "last_action": "2026-11-23T03:03:20Z",
       "url": "https://github.com/Bodila51/muse-jev-playbook/pull/1",
       "actions_taken": [
-        "Filed: fix: harden offline Jev router safety"
+        "Filed: fix: harden offline Jev router safety",
+        "Monitor: dropped from open-PR list; gh pr view + API: repo and user Bodila51 both 404 - state UNKNOWN, not confirmed closed/merged"
       ],
       "notes": "",
       "labels": [],
@@ -3602,6 +3605,27 @@
       "actions_taken": [
         "Filed: test(install-e2e): bound pre-PM browser downloads so v2026.5.7 legs stop hanging",
         "Parked by operator 2026-11-17 on request"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#157540",
+      "repo": "NousResearch/hermes-agent",
+      "number": 157540,
+      "type": "pr",
+      "title": "catalog: re-pin inventory-reminder to v1.1.0",
+      "state": "open",
+      "status": "needs_attention",
+      "next_action": "Fix literal-key leak per teknium1 2026-11-22 review: scripts/system-inventory.py L543 _safe_val('api_key_env', model.api_key) passes a literal key verbatim into inventory.json/INVENTORY.md; redact unless value matches _KEY_REF_RE (\\${VAR}), add test, push fix, re-pin sha, comment",
+      "evidence_tier": "tier_3",
+      "filed_at": "2026-11-18T20:12:26Z",
+      "last_action": "2026-11-23T03:03:19Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/157540",
+      "actions_taken": [
+        "Filed: catalog: re-pin inventory-reminder to v1.1.0",
+        "Monitor: new PR on my list, not in registry; filed it (created 2026-11-18); CHANGES_REQUESTED by teknium1 2026-11-22 (earlier .env-read and description asks fixed; new issue is the literal model.api_key leak)"
       ],
       "notes": "",
       "labels": [],
@@ -4816,7 +4840,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-17T10:17:41Z",
+  "last_synced": "2026-11-23T03:03:21Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -6755,6 +6779,36 @@
       "type": "status_update",
       "ref": "ether-btc/hermes-agent#10",
       "desc": "parked Parked by operator 2026-11-17 on request"
+    },
+    {
+      "ts": "2026-11-23T03:03:14Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#157540",
+      "desc": "Filed: catalog: re-pin inventory-reminder to v1.1.0"
+    },
+    {
+      "ts": "2026-11-23T03:03:19Z",
+      "type": "status_update",
+      "ref": "NousResearch/hermes-agent#157540",
+      "desc": "needs_attention Monitor: new PR on my list, not in registry; filed it (created 2026-11-18); CHANGES_REQUESTED by teknium1 2026-11-22 (earlier .env-read and description asks fixed; new issue is the literal model.api_key leak)"
+    },
+    {
+      "ts": "2026-11-23T03:03:20Z",
+      "type": "status_update",
+      "ref": "Bodila51/muse-jev-playbook#1",
+      "desc": "needs_attention Monitor: dropped from open-PR list; gh pr view + API: repo and user Bodila51 both 404 - state UNKNOWN, not confirmed closed/merged"
+    },
+    {
+      "ts": "2026-11-23T03:03:20Z",
+      "type": "status_update",
+      "ref": "Bodila51/muse-jev-playbook#2",
+      "desc": "needs_attention Monitor: dropped from open-PR list; gh pr view + API: repo and user Bodila51 both 404 - state UNKNOWN, not confirmed closed/merged"
+    },
+    {
+      "ts": "2026-11-23T03:03:21Z",
+      "type": "status_update",
+      "ref": "mnemosyne-oss/mnemosyne#1304",
+      "desc": "merged Monitor: dropped from open-PR list; gh pr view confirms state=MERGED, mergedAt=2026-11-18T01:59:08Z"
     }
   ]
 }
