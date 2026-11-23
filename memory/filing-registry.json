@@ -3153,8 +3153,8 @@
       "type": "pr",
       "title": "docs(prompting): measured evidence that an explicit rubric in the question matters",
       "state": "open",
-      "status": "needs_attention",
-      "next_action": "Upstream account Bodila51 no longer resolves (user+repo 404 as of 2026-11-23); PR state UNKNOWN - recheck periodically for a renamed account before closing out",
+      "status": "unresolvable",
+      "next_action": "DISPOSED 2026-11-23: upstream user AND repo both confirmed 404 via gh api (verified twice). Nothing to re-review; treat as dead upstream; recheck only if the Bodila51 account reappears.",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-09-26T05:49:36Z",
       "last_action": "2026-11-23T03:03:20Z",
@@ -3194,8 +3194,8 @@
       "type": "pr",
       "title": "fix: harden offline Jev router safety",
       "state": "open",
-      "status": "needs_attention",
-      "next_action": "Upstream account Bodila51 no longer resolves (user+repo 404 as of 2026-11-23); PR state UNKNOWN - recheck periodically for a renamed account before closing out",
+      "status": "unresolvable",
+      "next_action": "DISPOSED 2026-11-23: upstream user AND repo both confirmed 404 via gh api (verified twice). Nothing to re-review; treat as dead upstream; recheck only if the Bodila51 account reappears.",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-09-25T01:07:46Z",
       "last_action": "2026-11-23T03:03:20Z",
@@ -3617,8 +3617,8 @@
       "type": "pr",
       "title": "catalog: re-pin inventory-reminder to v1.1.0",
       "state": "open",
-      "status": "needs_attention",
-      "next_action": "Fix literal-key leak per teknium1 2026-11-22 review: scripts/system-inventory.py L543 _safe_val('api_key_env', model.api_key) passes a literal key verbatim into inventory.json/INVENTORY.md; redact unless value matches _KEY_REF_RE (\\${VAR}), add test, push fix, re-pin sha, comment",
+      "status": "pending_review",
+      "next_action": "Fix landed upstream (inventory-reminder@5ec3879, 2026-11-22); PR head 7efb8c6 re-pins it (ls-remote verified 2026-11-23); ether-btc reply posted 2026-11-23T04:35Z addressing teknium1 round-2 ask; awaiting maintainer re-review of delta from 3a3b6052.",
       "evidence_tier": "tier_3",
       "filed_at": "2026-11-18T20:12:26Z",
       "last_action": "2026-11-23T03:03:19Z",
@@ -6809,6 +6809,24 @@
       "type": "status_update",
       "ref": "mnemosyne-oss/mnemosyne#1304",
       "desc": "merged Monitor: dropped from open-PR list; gh pr view confirms state=MERGED, mergedAt=2026-11-18T01:59:08Z"
+    },
+    {
+      "ts": "2026-11-23T04:40:00Z",
+      "type": "status_update",
+      "ref": "NousResearch/hermes-agent#157540",
+      "desc": "pending_review Fix landed upstream 5ec3879 (2026-11-22), PR head 7efb8c6 re-pins it, reply posted 2026-11-23T04:35Z; awaiting maintainer delta review"
+    },
+    {
+      "ts": "2026-11-23T04:40:00Z",
+      "type": "status_update",
+      "ref": "Bodila51/muse-jev-playbook#1",
+      "desc": "unresolvable user+repo both 404 (gh api verified twice 2026-11-23); disposed as dead upstream"
+    },
+    {
+      "ts": "2026-11-23T04:40:00Z",
+      "type": "status_update",
+      "ref": "Bodila51/muse-jev-playbook#2",
+      "desc": "unresolvable user+repo both 404 (gh api verified twice 2026-11-23); disposed as dead upstream"
     }
   ]
 }
