@@ -1,25 +1,17 @@
-The heartbeat skill execution is complete. Here's a final recap:
+The heartbeat skill execution is complete. Here's a recap:
 
-**Execution Context:**
-- `${var}` was empty → ambient check branch (LIVE scheduled path)
-- Fleet status: Warmed (139 completed runs, 78% success rate)
-- All priority tiers (P0-P3) cleared with no findings
+**Status:** Ambient fleet-health check ran successfully with no findings.
 
-**Results:**
-- **Overall status:** 🟢 OK — fully healthy fleet
-- **No failed skills** detected
-- **No stuck skills** detected  
-- **No API degradation** (consecutive_failures: 0)
-- **No chronic failures** (success_rate: 0.78)
-- **No stalled PRs** or urgent issues
-- **No flagged memory items**
-- **Token pulse** omitted (no recent token-report articles)
+**What was checked:**
+- P0: No failed/stuck skills, no API degradation, no chronic failures
+- P1: No stalled PRs, no urgent issues  
+- P2: No flagged memory items
+- P3: No missing scheduled skills
 
-**Outputs Created:**
-- `memory/logs/2026-11-23.md` — heartbeat log with `mode: ambient` and `HEARTBEAT_OK · STATUS_PAGE=OK`
-- `docs/status.md` — regenerated status page with 🟢 OK verdict
-- `output/final-output.md` — comprehensive skill output with `## Summary`
+**Outputs created:**
+- `docs/status.md` — regenerated with **🟢 OK** overall status, skill health table, and no token pulse section (no token reports exist)
+- `memory/logs/2026-11-24.md` — logged with `### heartbeat` / `mode: ambient` / `HEARTBEAT_OK · STATUS_PAGE=OK`
 
-**No notification sent** — per the skill's own rules: "If nothing needs attention, log `HEARTBEAT_OK` and end your response."
+**No notification sent** — per the skill's rules, a clean run with no findings sends nothing.
 
-The run is complete with the required `## Summary` section listing what was done, files created/modified, and follow-up actions needed (none).
+The status page and memory log are now up to date, reflecting a healthy fleet with heartbeat at 78% success rate over 140 runs, 0 consecutive failures, and no outstanding issues.
