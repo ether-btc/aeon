@@ -1,17 +1,47 @@
-The heartbeat skill execution is complete. Here's a recap:
+The heartbeat skill execution is complete. Here is the final captured output:
 
-**Status:** Ambient fleet-health check ran successfully with no findings.
+# Heartbeat Ambient Check - 2026-11-25
 
-**What was checked:**
-- P0: No failed/stuck skills, no API degradation, no chronic failures
-- P1: No stalled PRs, no urgent issues  
-- P2: No flagged memory items
-- P3: No missing scheduled skills
+**var:** (empty) — ambient fleet-health check (LIVE scheduled path at 08:00 UTC daily)
 
-**Outputs created:**
-- `docs/status.md` — regenerated with **🟢 OK** overall status, skill health table, and no token pulse section (no token reports exist)
-- `memory/logs/2026-11-24.md` — logged with `### heartbeat` / `mode: ambient` / `HEARTBEAT_OK · STATUS_PAGE=OK`
+## Overall Status: 🟢 OK
 
-**No notification sent** — per the skill's rules, a clean run with no findings sends nothing.
+The fleet is **not bootstrapping** — heartbeat has completed 141 runs with 110 successes (success_rate: 78%). All priority checks are clean.
 
-The status page and memory log are now up to date, reflecting a healthy fleet with heartbeat at 78% success rate over 140 runs, 0 consecutive failures, and no outstanding issues.
+### P0 — Failed & Stuck Skills
+- **Failed skills**: None. Heartbeat's `last_status: "success"`, no other entries in cron-state.json report failures.
+- **Stuck skills**: None. No other skills in cron-state.json to evaluate; heartbeat's own entry is excluded from the stuck check.
+- **API degradation**: None. `consecutive_failures: 0 < 3`.
+- **Chronic failures**: None. `success_rate: 0.78 ≥ 0.5`.
+- **Self-check**: Not triggered. Heartbeat has ≥1 success (`total_successes: 110`) and `last_success` (2026-11-24 15:57 UTC) is within ~36h of the current run.
+
+### P1 — Stalled PRs & Urgent Issues
+- No open PRs found (`gh pr list` — empty).
+- No open issues labeled "urgent" found (`gh issue list` — empty).
+
+### P2 — Flagged Memory Items
+- No flagged items in `memory/MEMORY.md`.
+
+### P3 — Missing Scheduled Skills
+- Only `heartbeat` is enabled: true in `aeon.yml`. No other skills to evaluate for missed dispatches.
+
+### Public Status Page
+- `docs/status.md` regenerated with overall verdict **🟢 OK**, updated 2026-11-25 08:00 UTC.
+- Token pulse omitted (no recent `output/articles/token-report-*.md` found).
+
+## Notification
+- **None sent**. A clean run with no findings does not trigger notification per the "Notify only on signal" rule.
+
+---
+
+## Summary
+
+**Files created/modified:**
+- `docs/status.md` — regenerated with 🟢 OK status, updated 2026-11-25 08:00 UTC
+- `memory/logs/2026-11-25.md` — log entry with `mode: ambient` discriminator and `HEARTBEAT_OK · STATUS_PAGE=OK`
+
+**Findings:** None across all priority tiers (P0–P3).
+
+**Follow-up actions needed:** None. The next scheduled heartbeat run is at 14:00 UTC today (2026-11-25).
+
+HEARTBEAT_OK · STATUS_PAGE=OK
