@@ -1,19 +1,51 @@
-The heartbeat skill execution is complete. Here's a recap of what was accomplished:
+The heartbeat skill has been fully executed. Here is the summary of what was done:
 
-**Skill executed**: `skills/heartbeat/SKILL.md` in ambient check mode (${var} empty)
+**Ambient check completed for 2026-11-26.**
 
-**Checks performed**:
-- **P0**: No failed/stuck skills, no API degradation (0 consecutive failures), no chronic failures (success_rate 0.79), self-check passed
-- **P1**: No open PRs stalled >24h, no urgent GitHub issues
-- **P2**: No flagged memory items
-- **P3**: Only heartbeat enabled in aeon.yml, has cron-state entry, last_success today
+**Status: 🟢 OK** — the fleet is healthy with no findings across any priority tier.
 
-**Results**: Fleet healthy — 🟢 **OK** across all tiers
+**Checks performed:**
+- **P0:** No failed skills, no stuck skills, no API degradation (consecutive_failures=0), no chronic failures (success_rate=79% ≥ 0.5)
+- **P1:** No open PRs stalled >24h, no GitHub issues labeled urgent
+- **P2:** No flagged memory items
+- **P3:** No enabled skills with overdue schedules (only heartbeat is enabled)
 
-**Files modified**:
-- `docs/status.md` — regenerated with updated skill health (79% success rate, 0 consecutive failures, last run 2026-11-26 02:09 UTC); Token pulse omitted (no token-report files)
-- `memory/logs/2026-11-26.md` — logged `### heartbeat` entry with `mode: ambient` and `HEARTBEAT_OK · STATUS_PAGE=OK`
+**Overall verdict:** 🟢 OK — fully warmed, healthy fleet. No signal to surface.
 
-**No notification sent** — fleet healthy; last similar log entry within 48h would be a duplicate.
+**Actions taken:**
+1. Regenerated `docs/status.md` with updated timestamp (2026-11-26 19:54 UTC), next scheduled run at 20:00 UTC, and skill health table reflecting heartbeat: ✅ success, 79% success rate, 0 consecutive failures
+2. Appended ambient-mode log entry to `memory/logs/2026-11-26.md` under `### heartbeat` heading with `mode: ambient` discriminator and `HEARTBEAT_OK · STATUS_PAGE=OK` verdict
+3. No notification sent (per policy: clean/no-change run sends nothing)
 
-**Follow-up**: None required. Next scheduled heartbeat run at 08:00 UTC daily.
+**Files modified:**
+- `docs/status.md` — regenerated status page wholesale
+- `memory/logs/2026-11-26.md` — appended heartbeat ambient check log entry (two entries now: prior run + this run)
+
+**No follow-up actions needed.** Fleet is healthy and operating normally.
+
+---
+
+## Summary
+
+**Heartbeat ambient check completed for 2026-11-26.**
+
+**Status:** 🟢 OK — fleet healthy, no findings.
+
+**Checks performed:**
+- P0: No failed skills, no stuck skills, no API degradation, no chronic failures
+- P1: No open PRs stalled >24h, no urgent issues
+- P2: No flagged memory items
+- P3: No other enabled skills with overdue schedules
+
+**Overall verdict:** 🟢 OK (no flags — fully warmed, healthy fleet)
+
+**Actions taken:**
+1. Regenerated `docs/status.md` with updated timestamp (2026-11-26 19:54 UTC), next scheduled run at 20:00 UTC, and skill health table reflecting heartbeat: ✅ success, 79% success rate, 0 consecutive failures
+2. Appended ambient-mode log entry to `memory/logs/2026-11-26.md` under `### heartbeat` heading with `mode: ambient` discriminator and `HEARTBEAT_OK · STATUS_PAGE=OK` verdict
+3. No notification sent (fleet healthy — clean run sends nothing)
+
+**Files modified:**
+- `docs/status.md` — regenerated status page
+- `memory/logs/2026-11-26.md` — appended heartbeat ambient check log entry
+
+**No follow-up actions needed.** Fleet is healthy and operating normally.
