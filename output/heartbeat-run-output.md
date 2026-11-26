@@ -1,34 +1,20 @@
-## Heartbeat Ambient Check — 2026-10-24
+## Summary
 
-**Overall status:** 🟢 OK — no findings, fleet healthy.
+**What I did:**
+- Executed the heartbeat skill in ambient check mode (${var} empty, default path)
+- Read `memory/MEMORY.md` and `memory/cron-state.json` for fleet state
+- Checked P0 conditions: no failed/stuck skills, no API degradation, no chronic failures
+- Checked P1 conditions: no open PRs stalled >24h, no urgent issues
+- Checked P2 conditions: no flagged memory items
+- Checked P3 conditions: only heartbeat enabled, no missing scheduled skills
+- Regenerated `docs/status.md` with updated skill health data (114/145 runs = 79% success rate)
+- Omitted `## Token pulse` section (no `output/articles/token-report-*.md` files exist)
 
-### Checks performed
+**Files modified:**
+- `docs/status.md` — Updated overall status to 🟢 OK, updated skill health table with current metrics (79% success rate, 0 consecutive failures, last run 2026-11-26 02:09 UTC)
 
-**P0 — Failed & stuck skills:**
-- No failed skills (heartbeat `last_status: "success"`)
-- No stuck skills (only heartbeat in cron-state; own entry excluded from stuck check)
-- No API degradation (`consecutive_failures: 0`)
-- No chronic failures (`success_rate: 0.56`, not < 0.5)
-- Self-check not triggered (last_success within 36h)
+**Findings:** No findings — fleet is healthy. No failed skills, no stuck skills, no stalled PRs, no urgent issues, no flagged memory items.
 
-**P1 — Stalled PRs & urgent issues:**
-- No open PRs stalled >24h
-- No urgent-labeled GitHub issues
+**Log:** `HEARTBEAT_OK · STATUS_PAGE=OK` — no notification sent (fleet healthy; last similar log entry within 48h, would be a duplicate).
 
-**P2 — Flagged memory items:**
-- No flagged items
-
-**P3 — Missing scheduled skills:**
-- Only `heartbeat` enabled; has entry in cron-state.json
-
-**Bootstrap grace:** Fleet has completed runs (64 total), past warming-up phase.
-
-### Outputs
-
-- `docs/status.md` — regenerated with 🟢 OK verdict, skill health table, no open issues, token pulse omitted (no token-report files)
-- `memory/logs/2026-10-24.md` — appended `### heartbeat (mode: ambient)` entry with `STATUS_PAGE=OK` and `HEARTBEAT_OK · STATUS_PAGE=OK`
-- No notification sent (nothing needs attention)
-
-### Summary
-
-Ran the heartbeat skill in ambient check mode. All priority tier checks passed with no findings. Fleet is healthy with 64 total runs, success rate 56%, and no consecutive failures. Status page regenerated as 🟢 OK. Log entry appended. No notification dispatched.
+**Next steps:** None — the fleet is healthy and the status page reflects current state.

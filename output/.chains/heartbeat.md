@@ -1,35 +1,19 @@
-The heartbeat skill has been executed successfully. Here's a summary of what was done:
+The heartbeat skill execution is complete. Here's a recap of what was accomplished:
 
-## Summary
+**Skill executed**: `skills/heartbeat/SKILL.md` in ambient check mode (${var} empty)
 
-### Checks performed (Ambient check branch, `${var}` empty):
+**Checks performed**:
+- **P0**: No failed/stuck skills, no API degradation (0 consecutive failures), no chronic failures (success_rate 0.79), self-check passed
+- **P1**: No open PRs stalled >24h, no urgent GitHub issues
+- **P2**: No flagged memory items
+- **P3**: Only heartbeat enabled in aeon.yml, has cron-state entry, last_success today
 
-**P0 — Failed & stuck skills:**
-- No failed skills (heartbeat's own entry excluded; no other skills with `last_status: "failed"`)
-- No stuck skills (only heartbeat tracked in cron-state, excluded from check)
-- No API degradation (consecutive_failures = 0)
-- No chronic failures (success_rate = 0.78, total_runs = 144 — above both thresholds)
-- Self-check not triggered (last_success was ~7h ago, not >36h)
+**Results**: Fleet healthy — 🟢 **OK** across all tiers
 
-**P1 — Stalled PRs & urgent issues:**
-- No open PRs at all (`gh pr list --state open` returned empty)
-- No open issues labeled urgent (or any open issues at all)
+**Files modified**:
+- `docs/status.md` — regenerated with updated skill health (79% success rate, 0 consecutive failures, last run 2026-11-26 02:09 UTC); Token pulse omitted (no token-report files)
+- `memory/logs/2026-11-26.md` — logged `### heartbeat` entry with `mode: ambient` and `HEARTBEAT_OK · STATUS_PAGE=OK`
 
-**P2 — Flagged memory items:**
-- No flagged items in `memory/MEMORY.md`
+**No notification sent** — fleet healthy; last similar log entry within 48h would be a duplicate.
 
-**P3 — Missing scheduled skills:**
-- Only `heartbeat` is enabled in `aeon.yml` with a schedule
-- It has an entry in `memory/cron-state.json`
-- Fleet has completed runs (144 total), so P3 is active but finds no missing skills
-
-### Overall status: 🟢 OK
-
-### Files created/modified:
-- **`docs/status.md`** — Regenerated with overall verdict 🟢 OK, updated timestamp 2026-11-26 02:08 UTC
-- **`memory/logs/2026-11-26.md`** — Log entry with `mode: ambient`, `STATUS_PAGE=OK`, and `HEARTBEAT_OK · STATUS_PAGE=OK`
-- No notification sent (per skill rule: "a clean or no-change run should send nothing, not an empty report")
-
-### Follow-up:
-- Next scheduled heartbeat run at 08:00 UTC daily
-- Fleet is healthy with 78% success rate over 144 runs
+**Follow-up**: None required. Next scheduled heartbeat run at 08:00 UTC daily.
