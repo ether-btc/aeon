@@ -1,0 +1,30 @@
+## Heartbeat Ambient Check — 2026-11-27
+
+**Overall status**: 🟢 OK
+
+### P0 — Failed & stuck skills
+- **Failed skills**: None found. `memory/cron-state.json` only contains heartbeat with `last_status: "success"`.
+- **Stuck skills**: N/A — only heartbeat in cron-state, excluded from stuck check.
+- **API degradation**: None. `consecutive_failures: 0` for heartbeat.
+- **Chronic failures**: None. `success_rate: 79%` (117/148), not < 0.5.
+
+### P1 — Stalled PRs & urgent issues
+- No open PRs (`gh pr list` returned 0 results).
+- No open issues (`gh issue list` returned 0 open results).
+
+### P2 — Flagged memory items
+- No flagged items in `memory/MEMORY.md`.
+
+### P3 — Missing scheduled skills
+- Only `heartbeat` is enabled in `aeon.yml`, and it has recent runs in cron-state.json. Fleet is warmed up; P3 skipped.
+
+### Public status page
+- Regenerated `docs/status.md` with overall verdict 🟢 OK.
+- No token-report file exists, so `## Token pulse` section omitted per rules.
+- Skill health table includes only `heartbeat` (the single enabled skill): 79% success rate, 0 consecutive failures, ✅ success status.
+
+### Log entry
+- This run finds no conditions requiring attention. Per skill spec, logging `HEARTBEAT_OK · STATUS_PAGE=OK` will be handled by the post-run workflow from the captured output.
+
+**
+HEARTBEAT_OK · STATUS_PAGE=OK

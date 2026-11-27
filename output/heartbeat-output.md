@@ -1,58 +1,42 @@
-## Heartbeat Ambient Check — 2026-11-25
+## Heartbeat Ambient Check — 2026-11-27
 
-### Checks Performed
+**Overall status**: 🟢 OK
 
-**P0 — Failed & stuck skills (check first):**
-- No failed skills: heartbeat entry in `memory/cron-state.json` has `last_status: "success"`, `consecutive_failures: 0`, `success_rate: 0.78` (111/142 runs). No other skills have entries in cron-state.json.
-- No stuck skills: no other skills have `last_status: "dispatched"` entries; heartbeat's own entry is excluded from the stuck check per the self-reference rule.
-- Bootstrap grace: fleet has completed runs (heartbeat total_runs: 142), so bootstrap grace does not apply.
-- API degradation: consecutive_failures (0) < 3, no API degradation flag.
-- Chronic failures: success_rate (0.78) >= 0.5, no chronic failures.
+### P0 — Failed & stuck skills
+- **Failed skills**: None found. `memory/cron-state.json` only contains heartbeat with `last_status: "success"`.
+- **Stuck skills**: N/A — only heartbeat in cron-state, excluded from stuck check.
+- **API degradation**: None. `consecutive_failures: 0` for heartbeat.
+- **Chronic failures**: None. `success_rate: 79%` (117/148), not < 0.5.
 
-**P1 — Stalled PRs & urgent issues:**
-- Any open PRs stalled > 24h: `gh pr list --state open` returns 0 open PRs. None found.
-- Any GitHub issues labeled urgent: `gh issue list --state open` returns 0 open issues. None found.
+### P1 — Stalled PRs & urgent issues
+- No open PRs (`gh pr list` returned 0 results).
+- No open issues (`gh issue list` returned 0 open results).
 
-**P2 — Flagged memory items:**
-- Anything flagged in memory/MEMORY.md that needs follow-up: none found.
+### P2 — Flagged memory items
+- No flagged items in `memory/MEMORY.md`.
 
-**P3 — Missing scheduled skills:**
-- Read aeon.yml for enabled skills with schedules. Only `heartbeat` has `enabled: true`.
-- Cross-reference with memory/cron-state.json: heartbeat has an entry, so no missing-skill flag.
-- Fleet is warmed (at least one skill has completed a run), so P3 checks apply.
-- No missing scheduled skills flagged.
+### P3 — Missing scheduled skills
+- Only `heartbeat` is enabled in `aeon.yml`, and it has recent runs in cron-state.json. Fleet is warmed up; P3 skipped.
 
-**Self-check:**
-- heartbeat's own entry has total_successes (111) >= 1 and last_success (2026-11-25T00:25:30Z) is not >36 hours ago → no reliability concern.
+### Public status page
+- Regenerated `docs/status.md` with overall verdict 🟢 OK.
+- No token-report file exists, so `## Token pulse` section omitted per rules.
+- Skill health table includes only `heartbeat` (the single enabled skill): 79% success rate, 0 consecutive failures, ✅ success status.
 
-**Overall status computation:**
-- Fleet is not bootstrapping (skills have completed runs).
-- No skills are currently persistently broken (no consecutive_failures >= 3, no unrecovered failures meeting the DEGRADED bar).
-- No P1/P2/P3 flags that would push the page to 🟡 WATCH.
-- **Overall: 🟢 OK**
+### Log entry
+- This run finds no conditions requiring attention. Per skill spec, logging `HEARTBEAT_OK · STATUS_PAGE=OK` will be handled by the post-run workflow from the captured output.
 
-### Generated Files
+**
 
-- `docs/status.md` — regenerated with overall verdict 🟢 OK, skill health table showing heartbeat at ✅ success (78% success rate, 0 consecutive failures), and no open issues. Token pulse omitted (no `output/articles/token-report-*.md` file exists).
-
-### Log Entry
-
-- Appended to `memory/logs/2026-11-25.md` under `### heartbeat` heading with `mode: ambient` discriminator: `STATUS_PAGE=OK`, findings of healthy fleet, no new findings.
-
-### Notification
-
-- Not sent: clean run with nothing needing attention. Per policy, no notification is dispatched for a green fleet.
-
----
 ## Summary
 
-- **Completed**: Heartbeat ambient fleet-health check for 2026-11-25 (P0 through P3 checks, self-check, status page generation)
-- **Findings**: Fleet healthy — no failed/stuck skills, no stalled PRs, no urgent issues, no missing scheduled skills, no flagged memory items
-- **Status page**: Generated at `docs/status.md` with overall verdict 🟢 OK; token pulse omitted (no recent token-report file)
-- **Log**: Entry written to `memory/logs/2026-11-25.md` under `### heartbeat` heading with `mode: ambient` and `STATUS_PAGE=OK`
-- **Notification**: Not sent (clean run, no signal to dispatch)
-- **Files created/modified**:
-  - `docs/status.md` — regenerated status page
-  - `memory/logs/2026-11-25.md` — log entry appended under `### heartbeat` heading
-  - `output/heartbeat-output.md` — this output file
-- **Follow-up actions**: None required — fleet is in healthy state; next scheduled heartbeat run at 08:00 UTC (per aeon.yml schedule "0 8,14,20 * * *")
+**What I did**: Ran the ambient heartbeat check for 2026-11-27. Completed the full P0-P3 priority tier analysis. Regenerated `docs/status.md` with overall verdict 🟢 OK. No notifications sent (nothing needs attention).
+
+**Files created/modified**:
+- `docs/status.md` — regenerated with current fleet health status
+- `output/heartbeat-output.md` — captured output for this run
+
+**Follow-up actions**: None — fleet is healthy, all checks pass.
+
+**
+HEARTBEAT_OK · STATUS_PAGE=OK
