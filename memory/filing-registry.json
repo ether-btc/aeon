@@ -3274,8 +3274,8 @@
       "number": 135,
       "type": "pr",
       "title": "fix(security): three input-validation bugs in get/isWithinDirectory/validateRepoUrl",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-08-29T18:01:47Z",
@@ -4837,10 +4837,30 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "jooray/droneboard#3",
+      "repo": "jooray/droneboard",
+      "number": 3,
+      "type": "issue",
+      "title": "Crafted .dict file can trigger out-of-bounds reads in the DKPD v2 parser; import path skips size/type checks",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "tier_2 (source-verified at file:line: kp_dictionary.cpp load_v2_buffer per-entry offsets unchecked; SettingsActivity.kt:177-183 no size/type check; independent reviewer corroborated)",
+      "filed_at": "2026-11-27T05:57:55Z",
+      "last_action": "2026-11-27T05:57:55Z",
+      "url": "https://github.com/jooray/droneboard/issues/3",
+      "actions_taken": [
+        "Filed: Crafted .dict file can trigger out-of-bounds reads in the DKPD v2 parser; import path skips size/type checks"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-25T07:24:56Z",
+  "last_synced": "2026-11-27T06:06:01Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -6827,6 +6847,12 @@
       "type": "status_update",
       "ref": "Bodila51/muse-jev-playbook#2",
       "desc": "unresolvable user+repo both 404 (gh api verified twice 2026-11-23); disposed as dead upstream"
+    },
+    {
+      "ts": "2026-11-27T06:04:20Z",
+      "type": "filed",
+      "ref": "jooray/droneboard#3",
+      "desc": "Filed: Crafted .dict file can trigger out-of-bounds reads in the DKPD v2 parser; import path skips size/type checks"
     }
   ]
 }
