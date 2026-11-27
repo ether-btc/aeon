@@ -3616,12 +3616,12 @@
       "number": 157540,
       "type": "pr",
       "title": "catalog: re-pin inventory-reminder to v1.1.0",
-      "state": "open",
-      "status": "pending_review",
-      "next_action": "Fix landed upstream (inventory-reminder@5ec3879, 2026-11-22); PR head 7efb8c6 re-pins it (ls-remote verified 2026-11-23); ether-btc reply posted 2026-11-23T04:35Z addressing teknium1 round-2 ask; awaiting maintainer re-review of delta from 3a3b6052.",
+      "state": "closed",
+      "status": "merged",
+      "next_action": "MERGED upstream 2026-11-24T10:16:48Z (gh-verified 2026-11-27) - inventory-reminder@5ec3879 landed, PR head 7efb8c6 re-pinned it, ether-btc reply 2026-11-23T04:35Z answered teknium1's round-2 ask. No further action.",
       "evidence_tier": "tier_3",
       "filed_at": "2026-11-18T20:12:26Z",
-      "last_action": "2026-11-23T03:03:19Z",
+      "last_action": "2026-11-27T04:00:00Z",
       "url": "https://github.com/NousResearch/hermes-agent/pull/157540",
       "actions_taken": [
         "Filed: catalog: re-pin inventory-reminder to v1.1.0",
@@ -4840,7 +4840,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-23T03:03:21Z",
+  "last_synced": "2026-11-25T07:24:56Z",
   "account": "ether-btc",
   "activity_log": [
     {
