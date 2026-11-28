@@ -3152,18 +3152,19 @@
       "number": 2,
       "type": "pr",
       "title": "docs(prompting): measured evidence that an explicit rubric in the question matters",
-      "state": "open",
-      "status": "unresolvable",
-      "next_action": "DISPOSED 2026-11-23: upstream user AND repo both confirmed 404 via gh api (verified twice). Nothing to re-review; treat as dead upstream; recheck only if the Bodila51 account reappears.",
+      "state": "closed",
+      "status": "closed",
+      "next_action": "TERMINAL 2026-11-28: upstream repo AND user AND PR all 404 (gh api, re-verified 2026-11-28) - upstream deleted, no live state obtainable. Marked terminal so sync stops selecting an unverifiable row (it froze EVERY sync receipt since 2026-11-23). Nothing to re-review unless the Bodila51 account reappears.",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-09-26T05:49:36Z",
-      "last_action": "2026-11-23T03:03:20Z",
+      "last_action": "2026-11-28T09:55:00Z",
       "url": "https://github.com/Bodila51/muse-jev-playbook/pull/2",
       "actions_taken": [
         "Filed: docs(prompting): measured evidence that an explicit rubric in the question matters",
-        "Monitor: dropped from open-PR list; gh pr view + API: repo and user Bodila51 both 404 - state UNKNOWN, not confirmed closed/merged"
+        "Monitor: dropped from open-PR list; gh pr view + API: repo and user Bodila51 both 404 - state UNKNOWN, not confirmed closed/merged",
+        "Retire 2026-11-28: gh api repos/Bodila51/muse-jev-playbook -> 404, gh api users/Bodila51 -> 404, gh api repos/Bodila51/muse-jev-playbook/pulls/N -> 404; row marked terminal (closed/closed) so sync can complete and write receipts again"
       ],
-      "notes": "",
+      "notes": " | Retired 2026-11-28 (hand-edit, disclosed): repo+user+PR 404 via gh api; state/status set to closed/closed as a TERMINAL marker, not a live-verified GitHub state. 2026-11-23 disposition already decided 'treat as dead upstream'; this applied the missing encoding.",
       "labels": [],
       "is_upstream": true
     },
@@ -3193,18 +3194,19 @@
       "number": 1,
       "type": "pr",
       "title": "fix: harden offline Jev router safety",
-      "state": "open",
-      "status": "unresolvable",
-      "next_action": "DISPOSED 2026-11-23: upstream user AND repo both confirmed 404 via gh api (verified twice). Nothing to re-review; treat as dead upstream; recheck only if the Bodila51 account reappears.",
+      "state": "closed",
+      "status": "closed",
+      "next_action": "TERMINAL 2026-11-28: upstream repo AND user AND PR all 404 (gh api, re-verified 2026-11-28) - upstream deleted, no live state obtainable. Marked terminal so sync stops selecting an unverifiable row (it froze EVERY sync receipt since 2026-11-23). Nothing to re-review unless the Bodila51 account reappears.",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-09-25T01:07:46Z",
-      "last_action": "2026-11-23T03:03:20Z",
+      "last_action": "2026-11-28T09:55:00Z",
       "url": "https://github.com/Bodila51/muse-jev-playbook/pull/1",
       "actions_taken": [
         "Filed: fix: harden offline Jev router safety",
-        "Monitor: dropped from open-PR list; gh pr view + API: repo and user Bodila51 both 404 - state UNKNOWN, not confirmed closed/merged"
+        "Monitor: dropped from open-PR list; gh pr view + API: repo and user Bodila51 both 404 - state UNKNOWN, not confirmed closed/merged",
+        "Retire 2026-11-28: gh api repos/Bodila51/muse-jev-playbook -> 404, gh api users/Bodila51 -> 404, gh api repos/Bodila51/muse-jev-playbook/pulls/N -> 404; row marked terminal (closed/closed) so sync can complete and write receipts again"
       ],
-      "notes": "",
+      "notes": " | Retired 2026-11-28 (hand-edit, disclosed): repo+user+PR 404 via gh api; state/status set to closed/closed as a TERMINAL marker, not a live-verified GitHub state. 2026-11-23 disposition already decided 'treat as dead upstream'; this applied the missing encoding.",
       "labels": [],
       "is_upstream": true
     },
@@ -6853,6 +6855,18 @@
       "type": "filed",
       "ref": "jooray/droneboard#3",
       "desc": "Filed: Crafted .dict file can trigger out-of-bounds reads in the DKPD v2 parser; import path skips size/type checks"
+    },
+    {
+      "ts": "2026-11-28T09:55:00Z",
+      "type": "status_update",
+      "ref": "Bodila51/muse-jev-playbook#1",
+      "desc": "Retired (hand-edit, disclosed): upstream repo+user+PR 404 - terminal marker closed/closed so sync stops selecting an unverifiable row"
+    },
+    {
+      "ts": "2026-11-28T09:55:00Z",
+      "type": "status_update",
+      "ref": "Bodila51/muse-jev-playbook#2",
+      "desc": "Retired (hand-edit, disclosed): upstream repo+user+PR 404 - terminal marker closed/closed so sync stops selecting an unverifiable row"
     }
   ]
 }
