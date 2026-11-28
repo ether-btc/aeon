@@ -3643,6 +3643,26 @@
       "notes": "",
       "labels": [],
       "is_upstream": true
+    },
+    {
+      "id": "NousResearch/hermes-agent#161091",
+      "repo": "NousResearch/hermes-agent",
+      "number": 161091,
+      "type": "pr",
+      "title": "fix(mcp): ignore empty stdio args placeholder (exact-empty only, preserves whitespace)",
+      "state": "open",
+      "status": "pending_review",
+      "next_action": "Await upstream review",
+      "evidence_tier": "mergeable_state=blocked (first-time-contributor run-approval gate); mergeable=true; branch fix/26886-mcp-empty-args-exact @ 7870b45219 on ether-btc fork; references #26886 and #26907",
+      "filed_at": "2026-11-28T11:33:24Z",
+      "last_action": "2026-11-28T11:33:24Z",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/161091",
+      "actions_taken": [
+        "Filed: fix(mcp): ignore empty stdio args placeholder (exact-empty only, preserves whitespace)"
+      ],
+      "notes": "",
+      "labels": [],
+      "is_upstream": true
     }
   ],
   "issues": [
@@ -4873,7 +4893,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-28T11:14:37Z",
+  "last_synced": "2026-11-28T11:33:46Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -6944,6 +6964,12 @@
       "type": "status_update",
       "ref": "ether-btc/wiki#6",
       "desc": "closed Closed stale PR (null mergeability); work preserved on branch"
+    },
+    {
+      "ts": "2026-11-28T11:33:46Z",
+      "type": "filed",
+      "ref": "NousResearch/hermes-agent#161091",
+      "desc": "Filed: fix(mcp): ignore empty stdio args placeholder (exact-empty only, preserves whitespace)"
     }
   ]
 }
