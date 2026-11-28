@@ -3009,15 +3009,16 @@
       "number": 9,
       "type": "pr",
       "title": "fix: resolve merge conflicts for PR #75194 orphaned FK self-heal",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-10-28T13:41:23Z",
-      "last_action": "2026-10-28T13:41:23Z",
+      "last_action": "2026-11-28T11:12:55Z",
       "url": "https://github.com/ether-btc/hermes-agent/pull/9",
       "actions_taken": [
-        "Filed: fix: resolve merge conflicts for PR #75194 orphaned FK self-heal"
+        "Filed: fix: resolve merge conflicts for PR #75194 orphaned FK self-heal",
+        "Closed stale conflicting PR; work preserved on branch"
       ],
       "notes": "",
       "labels": [],
@@ -3029,16 +3030,17 @@
       "number": 136,
       "type": "pr",
       "title": "fix: per-lane fill verification, cash-basis P&L, and close sizing from held base",
-      "state": "open",
-      "status": "stale",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-10-21T14:59:27Z",
-      "last_action": "2026-11-08T13:37:58Z",
+      "last_action": "2026-11-28T11:13:16Z",
       "url": "https://github.com/ether-btc/prompro/pull/136",
       "actions_taken": [
         "Filed: fix: per-lane fill verification, cash-basis P&L, and close sizing from held base",
-        "Marked stale: repo retired 2026-11-02"
+        "Marked stale: repo retired 2026-11-02",
+        "Closed stale conflicting draft PR; work preserved on branch"
       ],
       "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
       "labels": [],
@@ -3050,16 +3052,17 @@
       "number": 102,
       "type": "pr",
       "title": "Adopted-row peak-track exit: paper replay tool (PAPER-ONLY)",
-      "state": "open",
-      "status": "stale",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-10-11T19:53:18Z",
-      "last_action": "2026-11-08T13:37:57Z",
+      "last_action": "2026-11-28T11:13:11Z",
       "url": "https://github.com/ether-btc/prompro/pull/102",
       "actions_taken": [
         "Filed: Adopted-row peak-track exit: paper replay tool (PAPER-ONLY)",
-        "Marked stale: repo retired 2026-11-02"
+        "Marked stale: repo retired 2026-11-02",
+        "Closed stale conflicting PR; work preserved on branch"
       ],
       "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
       "labels": [],
@@ -3071,16 +3074,17 @@
       "number": 101,
       "type": "pr",
       "title": "B6: Signal-decay exit (paper trial arm, env-gated, default-inert)",
-      "state": "open",
-      "status": "stale",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-10-11T19:52:37Z",
-      "last_action": "2026-11-08T13:37:57Z",
+      "last_action": "2026-11-28T11:13:05Z",
       "url": "https://github.com/ether-btc/prompro/pull/101",
       "actions_taken": [
         "Filed: B6: Signal-decay exit (paper trial arm, env-gated, default-inert)",
-        "Marked stale: repo retired 2026-11-02"
+        "Marked stale: repo retired 2026-11-02",
+        "Closed stale conflicting PR; work preserved on branch"
       ],
       "notes": "Repo retired 2026-11-02: abandoned online-only (102/102 branches + 3/3 tags on origin, wiki log.md:23). Reopening reopens a retired project.",
       "labels": [],
@@ -3132,15 +3136,16 @@
       "number": 6,
       "type": "pr",
       "title": "audit: default profile missing from desktop selector — investigation",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-09-27T09:16:13Z",
-      "last_action": "2026-09-27T09:16:13Z",
+      "last_action": "2026-11-28T11:13:49Z",
       "url": "https://github.com/ether-btc/wiki/pull/6",
       "actions_taken": [
-        "Filed: audit: default profile missing from desktop selector — investigation"
+        "Filed: audit: default profile missing from desktop selector — investigation",
+        "Closed stale PR (null mergeability); work preserved on branch"
       ],
       "notes": "",
       "labels": [],
@@ -3216,15 +3221,16 @@
       "number": 5,
       "type": "pr",
       "title": "docs: file PROMPRO Alchemy canary",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-09-24T06:03:38Z",
-      "last_action": "2026-09-24T06:03:38Z",
+      "last_action": "2026-11-28T11:13:48Z",
       "url": "https://github.com/ether-btc/wiki/pull/5",
       "actions_taken": [
-        "Filed: docs: file PROMPRO Alchemy canary"
+        "Filed: docs: file PROMPRO Alchemy canary",
+        "Closed stale PR (null mergeability); work preserved on branch"
       ],
       "notes": "",
       "labels": [],
@@ -3236,15 +3242,16 @@
       "number": 4,
       "type": "pr",
       "title": "docs: file Understand Anything Hermes PRAXIS assessment",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-09-12T19:29:39Z",
-      "last_action": "2026-09-12T19:29:39Z",
+      "last_action": "2026-11-28T11:13:48Z",
       "url": "https://github.com/ether-btc/wiki/pull/4",
       "actions_taken": [
-        "Filed: docs: file Understand Anything Hermes PRAXIS assessment"
+        "Filed: docs: file Understand Anything Hermes PRAXIS assessment",
+        "Closed stale PR (null mergeability); work preserved on branch"
       ],
       "notes": "",
       "labels": [],
@@ -3256,15 +3263,16 @@
       "number": 3,
       "type": "pr",
       "title": "audit(prompro): PR #35 attestation remediation checkpoint — locally verified, review-gated",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-09-12T18:57:06Z",
-      "last_action": "2026-09-12T18:57:06Z",
+      "last_action": "2026-11-28T11:13:47Z",
       "url": "https://github.com/ether-btc/wiki/pull/3",
       "actions_taken": [
-        "Filed: audit(prompro): PR #35 attestation remediation checkpoint — locally verified, review-gated"
+        "Filed: audit(prompro): PR #35 attestation remediation checkpoint — locally verified, review-gated",
+        "Closed stale PR (null mergeability); work preserved on branch"
       ],
       "notes": "",
       "labels": [],
@@ -3296,15 +3304,16 @@
       "number": 4,
       "type": "pr",
       "title": "feat(model): add /model <name> --chat for per-chat sticky model selection",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-08-25T12:19:03Z",
-      "last_action": "2026-08-25T12:19:03Z",
+      "last_action": "2026-11-28T11:13:35Z",
       "url": "https://github.com/ether-btc/hermes-agent/pull/4",
       "actions_taken": [
-        "Filed: feat(model): add /model <name> --chat for per-chat sticky model selection"
+        "Filed: feat(model): add /model <name> --chat for per-chat sticky model selection",
+        "Closed stale PR (null mergeability); work preserved on branch"
       ],
       "notes": "",
       "labels": [],
@@ -3336,15 +3345,16 @@
       "number": 15,
       "type": "pr",
       "title": "rebuild/v0.6.1: bring local master in sync with origin/master + ship v0.6.1",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-08-09T18:12:46Z",
-      "last_action": "2026-08-09T18:12:46Z",
+      "last_action": "2026-11-28T11:13:22Z",
       "url": "https://github.com/ether-btc/rust-cave-001/pull/15",
       "actions_taken": [
-        "Filed: rebuild/v0.6.1: bring local master in sync with origin/master + ship v0.6.1"
+        "Filed: rebuild/v0.6.1: bring local master in sync with origin/master + ship v0.6.1",
+        "Closed stale conflicting PR; work preserved on branch"
       ],
       "notes": "",
       "labels": [],
@@ -3416,15 +3426,16 @@
       "number": 3,
       "type": "pr",
       "title": "fix: preserve user-installed packages during runtime repair (mnemosyne-oss/mnemosyne#537)",
-      "state": "open",
-      "status": "pending_review",
+      "state": "closed",
+      "status": "closed",
       "next_action": "Await upstream review",
       "evidence_tier": "backfill 2026-11-08: open-author PR recorded from live gh search prs (state=open; url and createdAt from live)",
       "filed_at": "2026-07-27T17:30:51Z",
-      "last_action": "2026-07-27T17:30:51Z",
+      "last_action": "2026-11-28T11:13:29Z",
       "url": "https://github.com/ether-btc/hermes-agent/pull/3",
       "actions_taken": [
-        "Filed: fix: preserve user-installed packages during runtime repair (mnemosyne-oss/mnemosyne#537)"
+        "Filed: fix: preserve user-installed packages during runtime repair (mnemosyne-oss/mnemosyne#537)",
+        "Closed stale PR (null mergeability); work preserved on branch"
       ],
       "notes": "",
       "labels": [],
@@ -4862,7 +4873,7 @@
     }
   ],
   "version": "1.1.1",
-  "last_synced": "2026-11-27T06:06:01Z",
+  "last_synced": "2026-11-28T11:14:37Z",
   "account": "ether-btc",
   "activity_log": [
     {
@@ -6867,6 +6878,72 @@
       "type": "status_update",
       "ref": "Bodila51/muse-jev-playbook#2",
       "desc": "Retired (hand-edit, disclosed): upstream repo+user+PR 404 - terminal marker closed/closed so sync stops selecting an unverifiable row"
+    },
+    {
+      "ts": "2026-11-28T11:12:55Z",
+      "type": "status_update",
+      "ref": "ether-btc/hermes-agent#9",
+      "desc": "closed Closed stale conflicting PR; work preserved on branch"
+    },
+    {
+      "ts": "2026-11-28T11:13:05Z",
+      "type": "status_update",
+      "ref": "ether-btc/prompro#101",
+      "desc": "closed Closed stale conflicting PR; work preserved on branch"
+    },
+    {
+      "ts": "2026-11-28T11:13:11Z",
+      "type": "status_update",
+      "ref": "ether-btc/prompro#102",
+      "desc": "closed Closed stale conflicting PR; work preserved on branch"
+    },
+    {
+      "ts": "2026-11-28T11:13:17Z",
+      "type": "status_update",
+      "ref": "ether-btc/prompro#136",
+      "desc": "closed Closed stale conflicting draft PR; work preserved on branch"
+    },
+    {
+      "ts": "2026-11-28T11:13:22Z",
+      "type": "status_update",
+      "ref": "ether-btc/rust-cave-001#15",
+      "desc": "closed Closed stale conflicting PR; work preserved on branch"
+    },
+    {
+      "ts": "2026-11-28T11:13:29Z",
+      "type": "status_update",
+      "ref": "ether-btc/hermes-agent#3",
+      "desc": "closed Closed stale PR (null mergeability); work preserved on branch"
+    },
+    {
+      "ts": "2026-11-28T11:13:35Z",
+      "type": "status_update",
+      "ref": "ether-btc/hermes-agent#4",
+      "desc": "closed Closed stale PR (null mergeability); work preserved on branch"
+    },
+    {
+      "ts": "2026-11-28T11:13:48Z",
+      "type": "status_update",
+      "ref": "ether-btc/wiki#3",
+      "desc": "closed Closed stale PR (null mergeability); work preserved on branch"
+    },
+    {
+      "ts": "2026-11-28T11:13:48Z",
+      "type": "status_update",
+      "ref": "ether-btc/wiki#4",
+      "desc": "closed Closed stale PR (null mergeability); work preserved on branch"
+    },
+    {
+      "ts": "2026-11-28T11:13:48Z",
+      "type": "status_update",
+      "ref": "ether-btc/wiki#5",
+      "desc": "closed Closed stale PR (null mergeability); work preserved on branch"
+    },
+    {
+      "ts": "2026-11-28T11:13:49Z",
+      "type": "status_update",
+      "ref": "ether-btc/wiki#6",
+      "desc": "closed Closed stale PR (null mergeability); work preserved on branch"
     }
   ]
 }
